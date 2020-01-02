@@ -1,2 +1,2 @@
 # winter-front
-my frontend framework
+My frontend framework
