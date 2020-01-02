@@ -1,0 +1,55 @@
+[class*='tag-list'] {
+    display: inline-block;
+    list-style: none;
+    text-align: left;
+
+    li{
+        margin: $es;
+        display: inline-block;
+    }
+}
+
+.tag-item,
+.tag-item-bt{
+    padding: $es $re;
+    display: inline-block;
+    border-radius: 2rem;
+    position: relative;
+}
+
+.tag-item-bt{
+
+    .tag-bt{
+        position: relative;
+        top: -1px !important;
+        margin-left: $sm;
+        box-shadow: none;
+    }
+}
+
+@each $color in $arrColor {
+    .tag-#{$color} {
+        @extend %extend-border-solid;
+        background-color: color-extra-light(#{$color});
+        border-color: color-extra-light-border(#{$color});
+        color: color-dark(#{$color});
+
+        .link{
+            color: color-dark(#{$color}) !important;
+
+            &:hover,
+                &:link,
+                &:focus,
+                &.active{
+                color: color-dark(#{$color});
+            }
+        }
+
+        .tag-bt{
+
+            .fa{
+                color: color-regular(#{$color});
+            }
+        }
+    }
+}

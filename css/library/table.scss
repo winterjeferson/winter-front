@@ -1,0 +1,100 @@
+.table{
+    width: 100%;
+    display: table;
+    @extend %extend-border-solid;
+    position: relative;
+
+    tr{
+        background-color: $color-white;
+    }
+
+    td{
+        border-top: 0;
+        border-bottom: 0;
+        padding: $re;
+        vertical-align: top;
+
+        &:first-child{
+            border-left: 0;
+        }
+
+        &:last-child{
+            border-right: 0;
+        }
+    }
+
+    thead{
+
+        tr,
+        th,
+        td{
+            font-family: $font-family-bold;
+            text-align: center;
+        }
+
+        th,
+        td{
+            border: transparent;
+            padding: $bi;
+        }
+    }
+
+    tbody{
+
+        td{
+            @extend %extend-border-solid;
+            border-top: 0;
+            border-bottom: 0;
+        }
+    }
+
+    .minimum{
+        width: 1px;
+    }
+
+    .td-wrapper{
+        width: 100%;
+        max-height: 48px;
+        overflow: auto;
+        white-space: pre-line;
+    }
+
+    .td-wrapper-auto{
+        max-height: initial !important;
+    }
+}
+
+.table-responsive{
+    overflow-x:auto;
+    max-width: 100%;
+}
+
+@each $color in $arrColor {
+    .table-#{$color} {
+        border-color: color-light(#{$color});
+
+        thead{
+            border-color: color-light(#{$color});
+
+            td,
+            th{
+                color: color-dark(#{$color});
+                background-color: color-light(#{$color});
+            }
+        }
+
+        tbody{
+
+            tr{
+
+                &:nth-child(even){
+                    background-color: color-extra-light(#{$color});
+                }
+
+                td{
+                    border-color: color-light(#{$color});
+                }
+            }
+        }
+    }
+}

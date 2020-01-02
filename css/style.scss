@@ -1,0 +1,1476 @@
+$z-index-negative: -1;
+
+$arr-z-index: (
+"drop-down",
+"notify",
+"modal",
+"tooltip",
+"confirm",
+"loading-main"
+);
+
+$font-es: 8px;
+$font-sm: 12px;
+$font-re: 16px;
+$font-bi: 20px;
+$font-eb: 24px;
+
+$font-family-regular: 'roboto-regular';
+$font-family-thin: 'roboto-thin';
+$font-family-black: 'roboto-black';
+$font-family-bold: 'roboto-bold';
+$font-family-awesome: 'FontAwesome';
+
+$break-point-es: 0;
+$break-point-sm: 576px;
+$break-point-re: 768px;
+$break-point-bi: 992px;
+$break-point-eb: 1200px;
+$break-point-fhd: 1900px;
+
+$col-0: 0%;
+$col-1: 8.3333333333%;
+$col-2: 16.666666666%;
+$col-3: 25%;
+$col-4: 33.333333333%;
+$col-5: 41.666666666%;
+$col-6: 50%;
+$col-7: 58.333333333%;
+$col-8: 66.66666667%;
+$col-9: 75%;
+$col-10: 83.333333333%;
+$col-11: 91.66666667%;
+$col-12: 100%;
+
+$transition: .3s;
+
+$component-opacity: .5;
+
+$re: 10px; /*regular*/
+$sm: $re / 2; /*small*/
+$es: $re / 4; /*extra small*/
+$bi: $re * 2; /*big*/
+$eb: $re * 4; /*extra big*/
+
+$border-radius-re: 4px;
+$border-radius-sm: $border-radius-re / 2;
+$border-radius-es: $border-radius-re / 4;
+$border-radius-bi: $border-radius-re * 2;
+$border-radius-eb: $border-radius-re * 4;
+
+$color-scale: 5%;
+
+$multiply-1: $color-scale;
+$multiply-2: $color-scale * 2;
+$multiply-3: $color-scale * 3;
+$multiply-4: $color-scale * 4;
+$multiply-5: $color-scale * 5;
+$multiply-6: $color-scale * 6;
+$multiply-7: $color-scale * 7;
+$multiply-8: $color-scale * 8;
+$multiply-9: $color-scale * 9;
+$multiply-10: $color-scale * 10;
+$multiply-11: $color-scale * 11;
+$multiply-12: $color-scale * 12;
+$multiply-13: $color-scale * 13;
+$multiply-14: $color-scale * 14;
+$multiply-15: $color-scale * 15;
+$multiply-16: $color-scale * 16;
+$multiply-17: $color-scale * 17;;
+$multiply-18: $color-scale * 18;;
+$multiply-19: $color-scale * 19;
+$multiply-20: $color-scale * 20;
+$arrColor: grey blue green cyan orange red yellow purple brown black white pink;
+
+$color-grey: #bec3c7;
+$color-blue: #3297db;
+$color-green: #2dcc70;
+$color-cyan: #23C4AF;
+$color-orange: #e77e22;
+$color-red: #E14B4A;
+$color-yellow: #f1c50e;
+$color-purple: #9a59b5;
+$color-brown: #7F4D04;
+$color-pink: #E81CB6;
+$color-black: #333333;
+$color-white: #ffffff;
+
+$color-facebook: #3b5998;
+$color-twitter: #55acee;
+$color-youtube: #bb0000;
+$color-linkedin: #007bb5;
+$color-pinterest: #cb2027;
+$color-instagram: #125688;
+
+
+$color-grey-lighten-1: lighten($color-grey, $multiply-1);
+$color-grey-lighten-2: lighten($color-grey, $multiply-2);
+$color-grey-lighten-3: lighten($color-grey, $multiply-3);
+$color-grey-lighten-4: lighten($color-grey, $multiply-4);
+$color-grey-lighten-5: lighten($color-grey, $multiply-5);
+$color-grey-lighten-6: lighten($color-grey, $multiply-6);
+$color-grey-lighten-7: lighten($color-grey, $multiply-7);
+$color-grey-lighten-8: lighten($color-grey, $multiply-8);
+$color-grey-lighten-9: lighten($color-grey, $multiply-9);
+$color-grey-lighten-10: lighten($color-grey, $multiply-10);
+$color-grey-lighten-11: lighten($color-grey, $multiply-11);
+$color-grey-lighten-12: lighten($color-grey, $multiply-12);
+$color-grey-lighten-13: lighten($color-grey, $multiply-13);
+$color-grey-lighten-14: lighten($color-grey, $multiply-14);
+$color-grey-lighten-15: lighten($color-grey, $multiply-15);
+$color-grey-lighten-16: lighten($color-grey, $multiply-16);
+$color-grey-lighten-17: lighten($color-grey, $multiply-17);
+$color-grey-lighten-18: lighten($color-grey, $multiply-18);
+$color-grey-lighten-19: lighten($color-grey, $multiply-19);
+$color-grey-lighten-20: lighten($color-grey, $multiply-20);
+$color-grey-darken-1: darken($color-grey, $multiply-1);
+$color-grey-darken-2: darken($color-grey, $multiply-2);
+$color-grey-darken-3: darken($color-grey, $multiply-3);
+$color-grey-darken-4: darken($color-grey, $multiply-4);
+$color-grey-darken-5: darken($color-grey, $multiply-5);
+$color-grey-darken-6: darken($color-grey, $multiply-6);
+$color-grey-darken-7: darken($color-grey, $multiply-7);
+$color-grey-darken-8: darken($color-grey, $multiply-8);
+$color-grey-darken-9: darken($color-grey, $multiply-9);
+$color-grey-darken-10: darken($color-grey, $multiply-10);
+$color-grey-darken-11: darken($color-grey, $multiply-11);
+$color-grey-darken-12: darken($color-grey, $multiply-12);
+$color-grey-darken-13: darken($color-grey, $multiply-13);
+$color-grey-darken-14: darken($color-grey, $multiply-14);
+$color-grey-darken-15: darken($color-grey, $multiply-15);
+$color-grey-darken-16: darken($color-grey, $multiply-16);
+$color-grey-darken-17: darken($color-grey, $multiply-17);
+$color-grey-darken-18: darken($color-grey, $multiply-18);
+$color-grey-darken-19: darken($color-grey, $multiply-19);
+$color-grey-darken-20: darken($color-grey, $multiply-20);
+
+
+
+$color-blue-lighten-1: lighten($color-blue, $multiply-1);
+$color-blue-lighten-2: lighten($color-blue, $multiply-2);
+$color-blue-lighten-3: lighten($color-blue, $multiply-3);
+$color-blue-lighten-4: lighten($color-blue, $multiply-4);
+$color-blue-lighten-5: lighten($color-blue, $multiply-5);
+$color-blue-lighten-6: lighten($color-blue, $multiply-6);
+$color-blue-lighten-7: lighten($color-blue, $multiply-7);
+$color-blue-lighten-8: lighten($color-blue, $multiply-8);
+$color-blue-lighten-9: lighten($color-blue, $multiply-9);
+$color-blue-lighten-10: lighten($color-blue, $multiply-10);
+$color-blue-lighten-11: lighten($color-blue, $multiply-11);
+$color-blue-lighten-12: lighten($color-blue, $multiply-12);
+$color-blue-lighten-13: lighten($color-blue, $multiply-13);
+$color-blue-lighten-14: lighten($color-blue, $multiply-14);
+$color-blue-lighten-15: lighten($color-blue, $multiply-15);
+$color-blue-lighten-16: lighten($color-blue, $multiply-16);
+$color-blue-lighten-17: lighten($color-blue, $multiply-17);
+$color-blue-lighten-18: lighten($color-blue, $multiply-18);
+$color-blue-lighten-19: lighten($color-blue, $multiply-19);
+$color-blue-lighten-20: lighten($color-blue, $multiply-20);
+$color-blue-darken-1: darken($color-blue, $multiply-1);
+$color-blue-darken-2: darken($color-blue, $multiply-2);
+$color-blue-darken-3: darken($color-blue, $multiply-3);
+$color-blue-darken-4: darken($color-blue, $multiply-4);
+$color-blue-darken-5: darken($color-blue, $multiply-5);
+$color-blue-darken-6: darken($color-blue, $multiply-6);
+$color-blue-darken-7: darken($color-blue, $multiply-7);
+$color-blue-darken-8: darken($color-blue, $multiply-8);
+$color-blue-darken-9: darken($color-blue, $multiply-9);
+$color-blue-darken-10: darken($color-blue, $multiply-10);
+$color-blue-darken-11: darken($color-blue, $multiply-11);
+$color-blue-darken-12: darken($color-blue, $multiply-12);
+$color-blue-darken-13: darken($color-blue, $multiply-13);
+$color-blue-darken-14: darken($color-blue, $multiply-14);
+$color-blue-darken-15: darken($color-blue, $multiply-15);
+$color-blue-darken-16: darken($color-blue, $multiply-16);
+$color-blue-darken-17: darken($color-blue, $multiply-17);
+$color-blue-darken-18: darken($color-blue, $multiply-18);
+$color-blue-darken-19: darken($color-blue, $multiply-19);
+$color-blue-darken-20: darken($color-blue, $multiply-20);
+
+
+
+$color-green-lighten-1: lighten($color-green, $multiply-1);
+$color-green-lighten-2: lighten($color-green, $multiply-2);
+$color-green-lighten-3: lighten($color-green, $multiply-3);
+$color-green-lighten-4: lighten($color-green, $multiply-4);
+$color-green-lighten-5: lighten($color-green, $multiply-5);
+$color-green-lighten-6: lighten($color-green, $multiply-6);
+$color-green-lighten-7: lighten($color-green, $multiply-7);
+$color-green-lighten-8: lighten($color-green, $multiply-8);
+$color-green-lighten-9: lighten($color-green, $multiply-9);
+$color-green-lighten-10: lighten($color-green, $multiply-10);
+$color-green-lighten-11: lighten($color-green, $multiply-11);
+$color-green-lighten-12: lighten($color-green, $multiply-12);
+$color-green-lighten-13: lighten($color-green, $multiply-13);
+$color-green-lighten-14: lighten($color-green, $multiply-14);
+$color-green-lighten-15: lighten($color-green, $multiply-15);
+$color-green-lighten-16: lighten($color-green, $multiply-16);
+$color-green-lighten-17: lighten($color-green, $multiply-17);
+$color-green-lighten-18: lighten($color-green, $multiply-18);
+$color-green-lighten-19: lighten($color-green, $multiply-19);
+$color-green-lighten-20: lighten($color-green, $multiply-20);
+$color-green-darken-1: darken($color-green, $multiply-1);
+$color-green-darken-2: darken($color-green, $multiply-2);
+$color-green-darken-3: darken($color-green, $multiply-3);
+$color-green-darken-4: darken($color-green, $multiply-4);
+$color-green-darken-5: darken($color-green, $multiply-5);
+$color-green-darken-6: darken($color-green, $multiply-6);
+$color-green-darken-7: darken($color-green, $multiply-7);
+$color-green-darken-8: darken($color-green, $multiply-8);
+$color-green-darken-9: darken($color-green, $multiply-9);
+$color-green-darken-10: darken($color-green, $multiply-10);
+$color-green-darken-11: darken($color-green, $multiply-11);
+$color-green-darken-12: darken($color-green, $multiply-12);
+$color-green-darken-13: darken($color-green, $multiply-13);
+$color-green-darken-14: darken($color-green, $multiply-14);
+$color-green-darken-15: darken($color-green, $multiply-15);
+$color-green-darken-16: darken($color-green, $multiply-16);
+$color-green-darken-17: darken($color-green, $multiply-17);
+$color-green-darken-18: darken($color-green, $multiply-18);
+$color-green-darken-19: darken($color-green, $multiply-19);
+$color-green-darken-20: darken($color-green, $multiply-20);
+
+
+
+$color-cyan-lighten-1: lighten($color-cyan, $multiply-1);
+$color-cyan-lighten-2: lighten($color-cyan, $multiply-2);
+$color-cyan-lighten-3: lighten($color-cyan, $multiply-3);
+$color-cyan-lighten-4: lighten($color-cyan, $multiply-4);
+$color-cyan-lighten-5: lighten($color-cyan, $multiply-5);
+$color-cyan-lighten-6: lighten($color-cyan, $multiply-6);
+$color-cyan-lighten-7: lighten($color-cyan, $multiply-7);
+$color-cyan-lighten-8: lighten($color-cyan, $multiply-8);
+$color-cyan-lighten-9: lighten($color-cyan, $multiply-9);
+$color-cyan-lighten-10: lighten($color-cyan, $multiply-10);
+$color-cyan-lighten-11: lighten($color-cyan, $multiply-11);
+$color-cyan-lighten-12: lighten($color-cyan, $multiply-12);
+$color-cyan-lighten-13: lighten($color-cyan, $multiply-13);
+$color-cyan-lighten-14: lighten($color-cyan, $multiply-14);
+$color-cyan-lighten-15: lighten($color-cyan, $multiply-15);
+$color-cyan-lighten-16: lighten($color-cyan, $multiply-16);
+$color-cyan-lighten-17: lighten($color-cyan, $multiply-17);
+$color-cyan-lighten-18: lighten($color-cyan, $multiply-18);
+$color-cyan-lighten-19: lighten($color-cyan, $multiply-19);
+$color-cyan-lighten-20: lighten($color-cyan, $multiply-20);
+$color-cyan-darken-1: darken($color-cyan, $multiply-1);
+$color-cyan-darken-2: darken($color-cyan, $multiply-2);
+$color-cyan-darken-3: darken($color-cyan, $multiply-3);
+$color-cyan-darken-4: darken($color-cyan, $multiply-4);
+$color-cyan-darken-5: darken($color-cyan, $multiply-5);
+$color-cyan-darken-6: darken($color-cyan, $multiply-6);
+$color-cyan-darken-7: darken($color-cyan, $multiply-7);
+$color-cyan-darken-8: darken($color-cyan, $multiply-8);
+$color-cyan-darken-9: darken($color-cyan, $multiply-9);
+$color-cyan-darken-10: darken($color-cyan, $multiply-10);
+$color-cyan-darken-11: darken($color-cyan, $multiply-11);
+$color-cyan-darken-12: darken($color-cyan, $multiply-12);
+$color-cyan-darken-13: darken($color-cyan, $multiply-13);
+$color-cyan-darken-14: darken($color-cyan, $multiply-14);
+$color-cyan-darken-15: darken($color-cyan, $multiply-15);
+$color-cyan-darken-16: darken($color-cyan, $multiply-16);
+$color-cyan-darken-17: darken($color-cyan, $multiply-17);
+$color-cyan-darken-18: darken($color-cyan, $multiply-18);
+$color-cyan-darken-19: darken($color-cyan, $multiply-19);
+$color-cyan-darken-20: darken($color-cyan, $multiply-20);
+
+
+
+$color-orange-lighten-1: lighten($color-orange, $multiply-1);
+$color-orange-lighten-2: lighten($color-orange, $multiply-2);
+$color-orange-lighten-3: lighten($color-orange, $multiply-3);
+$color-orange-lighten-4: lighten($color-orange, $multiply-4);
+$color-orange-lighten-5: lighten($color-orange, $multiply-5);
+$color-orange-lighten-6: lighten($color-orange, $multiply-6);
+$color-orange-lighten-7: lighten($color-orange, $multiply-7);
+$color-orange-lighten-8: lighten($color-orange, $multiply-8);
+$color-orange-lighten-9: lighten($color-orange, $multiply-9);
+$color-orange-lighten-10: lighten($color-orange, $multiply-10);
+$color-orange-lighten-11: lighten($color-orange, $multiply-11);
+$color-orange-lighten-12: lighten($color-orange, $multiply-12);
+$color-orange-lighten-13: lighten($color-orange, $multiply-13);
+$color-orange-lighten-14: lighten($color-orange, $multiply-14);
+$color-orange-lighten-15: lighten($color-orange, $multiply-15);
+$color-orange-lighten-16: lighten($color-orange, $multiply-16);
+$color-orange-lighten-17: lighten($color-orange, $multiply-17);
+$color-orange-lighten-18: lighten($color-orange, $multiply-18);
+$color-orange-lighten-19: lighten($color-orange, $multiply-19);
+$color-orange-lighten-20: lighten($color-orange, $multiply-20);
+$color-orange-darken-1: darken($color-orange, $multiply-1);
+$color-orange-darken-2: darken($color-orange, $multiply-2);
+$color-orange-darken-3: darken($color-orange, $multiply-3);
+$color-orange-darken-4: darken($color-orange, $multiply-4);
+$color-orange-darken-5: darken($color-orange, $multiply-5);
+$color-orange-darken-6: darken($color-orange, $multiply-6);
+$color-orange-darken-7: darken($color-orange, $multiply-7);
+$color-orange-darken-8: darken($color-orange, $multiply-8);
+$color-orange-darken-9: darken($color-orange, $multiply-9);
+$color-orange-darken-10: darken($color-orange, $multiply-10);
+$color-orange-darken-11: darken($color-orange, $multiply-11);
+$color-orange-darken-12: darken($color-orange, $multiply-12);
+$color-orange-darken-13: darken($color-orange, $multiply-13);
+$color-orange-darken-14: darken($color-orange, $multiply-14);
+$color-orange-darken-15: darken($color-orange, $multiply-15);
+$color-orange-darken-16: darken($color-orange, $multiply-16);
+$color-orange-darken-17: darken($color-orange, $multiply-17);
+$color-orange-darken-18: darken($color-orange, $multiply-18);
+$color-orange-darken-19: darken($color-orange, $multiply-19);
+$color-orange-darken-20: darken($color-orange, $multiply-20);
+
+
+
+$color-red-lighten-1: lighten($color-red, $multiply-1);
+$color-red-lighten-2: lighten($color-red, $multiply-2);
+$color-red-lighten-3: lighten($color-red, $multiply-3);
+$color-red-lighten-4: lighten($color-red, $multiply-4);
+$color-red-lighten-5: lighten($color-red, $multiply-5);
+$color-red-lighten-6: lighten($color-red, $multiply-6);
+$color-red-lighten-7: lighten($color-red, $multiply-7);
+$color-red-lighten-8: lighten($color-red, $multiply-8);
+$color-red-lighten-9: lighten($color-red, $multiply-9);
+$color-red-lighten-10: lighten($color-red, $multiply-10);
+$color-red-lighten-11: lighten($color-red, $multiply-11);
+$color-red-lighten-12: lighten($color-red, $multiply-12);
+$color-red-lighten-13: lighten($color-red, $multiply-13);
+$color-red-lighten-14: lighten($color-red, $multiply-14);
+$color-red-lighten-15: lighten($color-red, $multiply-15);
+$color-red-lighten-16: lighten($color-red, $multiply-16);
+$color-red-lighten-17: lighten($color-red, $multiply-17);
+$color-red-lighten-18: lighten($color-red, $multiply-18);
+$color-red-lighten-19: lighten($color-red, $multiply-19);
+$color-red-lighten-20: lighten($color-red, $multiply-20);
+$color-red-darken-1: darken($color-red, $multiply-1);
+$color-red-darken-2: darken($color-red, $multiply-2);
+$color-red-darken-3: darken($color-red, $multiply-3);
+$color-red-darken-4: darken($color-red, $multiply-4);
+$color-red-darken-5: darken($color-red, $multiply-5);
+$color-red-darken-6: darken($color-red, $multiply-6);
+$color-red-darken-7: darken($color-red, $multiply-7);
+$color-red-darken-8: darken($color-red, $multiply-8);
+$color-red-darken-9: darken($color-red, $multiply-9);
+$color-red-darken-10: darken($color-red, $multiply-10);
+$color-red-darken-11: darken($color-red, $multiply-11);
+$color-red-darken-12: darken($color-red, $multiply-12);
+$color-red-darken-13: darken($color-red, $multiply-13);
+$color-red-darken-14: darken($color-red, $multiply-14);
+$color-red-darken-15: darken($color-red, $multiply-15);
+$color-red-darken-16: darken($color-red, $multiply-16);
+$color-red-darken-17: darken($color-red, $multiply-17);
+$color-red-darken-18: darken($color-red, $multiply-18);
+$color-red-darken-19: darken($color-red, $multiply-19);
+$color-red-darken-20: darken($color-red, $multiply-20);
+
+
+
+$color-yellow-lighten-1: lighten($color-yellow, $multiply-1);
+$color-yellow-lighten-2: lighten($color-yellow, $multiply-2);
+$color-yellow-lighten-3: lighten($color-yellow, $multiply-3);
+$color-yellow-lighten-4: lighten($color-yellow, $multiply-4);
+$color-yellow-lighten-5: lighten($color-yellow, $multiply-5);
+$color-yellow-lighten-6: lighten($color-yellow, $multiply-6);
+$color-yellow-lighten-7: lighten($color-yellow, $multiply-7);
+$color-yellow-lighten-8: lighten($color-yellow, $multiply-8);
+$color-yellow-lighten-9: lighten($color-yellow, $multiply-9);
+$color-yellow-lighten-10: lighten($color-yellow, $multiply-10);
+$color-yellow-lighten-11: lighten($color-yellow, $multiply-11);
+$color-yellow-lighten-12: lighten($color-yellow, $multiply-12);
+$color-yellow-lighten-13: lighten($color-yellow, $multiply-13);
+$color-yellow-lighten-14: lighten($color-yellow, $multiply-14);
+$color-yellow-lighten-15: lighten($color-yellow, $multiply-15);
+$color-yellow-lighten-16: lighten($color-yellow, $multiply-16);
+$color-yellow-lighten-17: lighten($color-yellow, $multiply-17);
+$color-yellow-lighten-18: lighten($color-yellow, $multiply-18);
+$color-yellow-lighten-19: lighten($color-yellow, $multiply-19);
+$color-yellow-lighten-20: lighten($color-yellow, $multiply-20);
+$color-yellow-darken-1: darken($color-yellow, $multiply-1);
+$color-yellow-darken-2: darken($color-yellow, $multiply-2);
+$color-yellow-darken-3: darken($color-yellow, $multiply-3);
+$color-yellow-darken-4: darken($color-yellow, $multiply-4);
+$color-yellow-darken-5: darken($color-yellow, $multiply-5);
+$color-yellow-darken-6: darken($color-yellow, $multiply-6);
+$color-yellow-darken-7: darken($color-yellow, $multiply-7);
+$color-yellow-darken-8: darken($color-yellow, $multiply-8);
+$color-yellow-darken-9: darken($color-yellow, $multiply-9);
+$color-yellow-darken-10: darken($color-yellow, $multiply-10);
+$color-yellow-darken-11: darken($color-yellow, $multiply-11);
+$color-yellow-darken-12: darken($color-yellow, $multiply-12);
+$color-yellow-darken-13: darken($color-yellow, $multiply-13);
+$color-yellow-darken-14: darken($color-yellow, $multiply-14);
+$color-yellow-darken-15: darken($color-yellow, $multiply-15);
+$color-yellow-darken-16: darken($color-yellow, $multiply-16);
+$color-yellow-darken-17: darken($color-yellow, $multiply-17);
+$color-yellow-darken-18: darken($color-yellow, $multiply-18);
+$color-yellow-darken-19: darken($color-yellow, $multiply-19);
+$color-yellow-darken-20: darken($color-yellow, $multiply-20);
+
+
+$color-purple-lighten-1: lighten($color-purple, $multiply-1);
+$color-purple-lighten-2: lighten($color-purple, $multiply-2);
+$color-purple-lighten-3: lighten($color-purple, $multiply-3);
+$color-purple-lighten-4: lighten($color-purple, $multiply-4);
+$color-purple-lighten-5: lighten($color-purple, $multiply-5);
+$color-purple-lighten-6: lighten($color-purple, $multiply-6);
+$color-purple-lighten-7: lighten($color-purple, $multiply-7);
+$color-purple-lighten-8: lighten($color-purple, $multiply-8);
+$color-purple-lighten-9: lighten($color-purple, $multiply-9);
+$color-purple-lighten-10: lighten($color-purple, $multiply-10);
+$color-purple-lighten-11: lighten($color-purple, $multiply-11);
+$color-purple-lighten-12: lighten($color-purple, $multiply-12);
+$color-purple-lighten-13: lighten($color-purple, $multiply-13);
+$color-purple-lighten-14: lighten($color-purple, $multiply-14);
+$color-purple-lighten-15: lighten($color-purple, $multiply-15);
+$color-purple-lighten-16: lighten($color-purple, $multiply-16);
+$color-purple-lighten-17: lighten($color-purple, $multiply-17);
+$color-purple-lighten-18: lighten($color-purple, $multiply-18);
+$color-purple-lighten-19: lighten($color-purple, $multiply-19);
+$color-purple-lighten-20: lighten($color-purple, $multiply-20);
+$color-purple-darken-1: darken($color-purple, $multiply-1);
+$color-purple-darken-2: darken($color-purple, $multiply-2);
+$color-purple-darken-3: darken($color-purple, $multiply-3);
+$color-purple-darken-4: darken($color-purple, $multiply-4);
+$color-purple-darken-5: darken($color-purple, $multiply-5);
+$color-purple-darken-6: darken($color-purple, $multiply-6);
+$color-purple-darken-7: darken($color-purple, $multiply-7);
+$color-purple-darken-8: darken($color-purple, $multiply-8);
+$color-purple-darken-9: darken($color-purple, $multiply-9);
+$color-purple-darken-10: darken($color-purple, $multiply-10);
+$color-purple-darken-11: darken($color-purple, $multiply-11);
+$color-purple-darken-12: darken($color-purple, $multiply-12);
+$color-purple-darken-13: darken($color-purple, $multiply-13);
+$color-purple-darken-14: darken($color-purple, $multiply-14);
+$color-purple-darken-15: darken($color-purple, $multiply-15);
+$color-purple-darken-16: darken($color-purple, $multiply-16);
+$color-purple-darken-17: darken($color-purple, $multiply-17);
+$color-purple-darken-18: darken($color-purple, $multiply-18);
+$color-purple-darken-19: darken($color-purple, $multiply-19);
+$color-purple-darken-20: darken($color-purple, $multiply-20);
+
+
+
+$color-brown-lighten-1: lighten($color-brown, $multiply-1);
+$color-brown-lighten-2: lighten($color-brown, $multiply-2);
+$color-brown-lighten-3: lighten($color-brown, $multiply-3);
+$color-brown-lighten-4: lighten($color-brown, $multiply-4);
+$color-brown-lighten-5: lighten($color-brown, $multiply-5);
+$color-brown-lighten-6: lighten($color-brown, $multiply-6);
+$color-brown-lighten-7: lighten($color-brown, $multiply-7);
+$color-brown-lighten-8: lighten($color-brown, $multiply-8);
+$color-brown-lighten-9: lighten($color-brown, $multiply-9);
+$color-brown-lighten-10: lighten($color-brown, $multiply-10);
+$color-brown-lighten-11: lighten($color-brown, $multiply-11);
+$color-brown-lighten-12: lighten($color-brown, $multiply-12);
+$color-brown-lighten-13: lighten($color-brown, $multiply-13);
+$color-brown-lighten-14: lighten($color-brown, $multiply-14);
+$color-brown-lighten-15: lighten($color-brown, $multiply-15);
+$color-brown-lighten-16: lighten($color-brown, $multiply-16);
+$color-brown-lighten-17: lighten($color-brown, $multiply-17);
+$color-brown-lighten-18: lighten($color-brown, $multiply-18);
+$color-brown-lighten-19: lighten($color-brown, $multiply-19);
+$color-brown-lighten-20: lighten($color-brown, $multiply-20);
+$color-brown-darken-1: darken($color-brown, $multiply-1);
+$color-brown-darken-2: darken($color-brown, $multiply-2);
+$color-brown-darken-3: darken($color-brown, $multiply-3);
+$color-brown-darken-4: darken($color-brown, $multiply-4);
+$color-brown-darken-5: darken($color-brown, $multiply-5);
+$color-brown-darken-6: darken($color-brown, $multiply-6);
+$color-brown-darken-7: darken($color-brown, $multiply-7);
+$color-brown-darken-8: darken($color-brown, $multiply-8);
+$color-brown-darken-9: darken($color-brown, $multiply-9);
+$color-brown-darken-10: darken($color-brown, $multiply-10);
+$color-brown-darken-11: darken($color-brown, $multiply-11);
+$color-brown-darken-12: darken($color-brown, $multiply-12);
+$color-brown-darken-13: darken($color-brown, $multiply-13);
+$color-brown-darken-14: darken($color-brown, $multiply-14);
+$color-brown-darken-15: darken($color-brown, $multiply-15);
+$color-brown-darken-16: darken($color-brown, $multiply-16);
+$color-brown-darken-17: darken($color-brown, $multiply-17);
+$color-brown-darken-18: darken($color-brown, $multiply-18);
+$color-brown-darken-19: darken($color-brown, $multiply-19);
+$color-brown-darken-20: darken($color-brown, $multiply-20);
+
+
+
+$color-pink-lighten-1: lighten($color-pink, $multiply-1);
+$color-pink-lighten-2: lighten($color-pink, $multiply-2);
+$color-pink-lighten-3: lighten($color-pink, $multiply-3);
+$color-pink-lighten-4: lighten($color-pink, $multiply-4);
+$color-pink-lighten-5: lighten($color-pink, $multiply-5);
+$color-pink-lighten-6: lighten($color-pink, $multiply-6);
+$color-pink-lighten-7: lighten($color-pink, $multiply-7);
+$color-pink-lighten-8: lighten($color-pink, $multiply-8);
+$color-pink-lighten-9: lighten($color-pink, $multiply-9);
+$color-pink-lighten-10: lighten($color-pink, $multiply-10);
+$color-pink-lighten-11: lighten($color-pink, $multiply-11);
+$color-pink-lighten-12: lighten($color-pink, $multiply-12);
+$color-pink-lighten-13: lighten($color-pink, $multiply-13);
+$color-pink-lighten-14: lighten($color-pink, $multiply-14);
+$color-pink-lighten-15: lighten($color-pink, $multiply-15);
+$color-pink-lighten-16: lighten($color-pink, $multiply-16);
+$color-pink-lighten-17: lighten($color-pink, $multiply-17);
+$color-pink-lighten-18: lighten($color-pink, $multiply-18);
+$color-pink-lighten-19: lighten($color-pink, $multiply-19);
+$color-pink-lighten-20: lighten($color-pink, $multiply-20);
+$color-pink-darken-1: darken($color-pink, $multiply-1);
+$color-pink-darken-2: darken($color-pink, $multiply-2);
+$color-pink-darken-3: darken($color-pink, $multiply-3);
+$color-pink-darken-4: darken($color-pink, $multiply-4);
+$color-pink-darken-5: darken($color-pink, $multiply-5);
+$color-pink-darken-6: darken($color-pink, $multiply-6);
+$color-pink-darken-7: darken($color-pink, $multiply-7);
+$color-pink-darken-8: darken($color-pink, $multiply-8);
+$color-pink-darken-9: darken($color-pink, $multiply-9);
+$color-pink-darken-10: darken($color-pink, $multiply-10);
+$color-pink-darken-11: darken($color-pink, $multiply-11);
+$color-pink-darken-12: darken($color-pink, $multiply-12);
+$color-pink-darken-13: darken($color-pink, $multiply-13);
+$color-pink-darken-14: darken($color-pink, $multiply-14);
+$color-pink-darken-15: darken($color-pink, $multiply-15);
+$color-pink-darken-16: darken($color-pink, $multiply-16);
+$color-pink-darken-17: darken($color-pink, $multiply-17);
+$color-pink-darken-18: darken($color-pink, $multiply-18);
+$color-pink-darken-19: darken($color-pink, $multiply-19);
+$color-pink-darken-20: darken($color-pink, $multiply-20);
+
+
+
+$color-black-lighten-1: lighten($color-black, $multiply-1);
+$color-black-lighten-2: lighten($color-black, $multiply-2);
+$color-black-lighten-3: lighten($color-black, $multiply-3);
+$color-black-lighten-4: lighten($color-black, $multiply-4);
+$color-black-lighten-5: lighten($color-black, $multiply-5);
+$color-black-lighten-6: lighten($color-black, $multiply-6);
+$color-black-lighten-7: lighten($color-black, $multiply-7);
+$color-black-lighten-8: lighten($color-black, $multiply-8);
+$color-black-lighten-9: lighten($color-black, $multiply-9);
+$color-black-lighten-10: lighten($color-black, $multiply-10);
+$color-black-lighten-11: lighten($color-black, $multiply-11);
+$color-black-lighten-12: lighten($color-black, $multiply-12);
+$color-black-lighten-13: lighten($color-black, $multiply-13);
+$color-black-lighten-14: lighten($color-black, $multiply-14);
+$color-black-lighten-15: lighten($color-black, $multiply-15);
+$color-black-lighten-16: lighten($color-black, $multiply-16);
+$color-black-lighten-17: lighten($color-black, $multiply-17);
+$color-black-lighten-18: lighten($color-black, $multiply-18);
+$color-black-lighten-19: lighten($color-black, $multiply-19);
+$color-black-lighten-20: lighten($color-black, $multiply-20);
+$color-black-darken-1: darken($color-black, $multiply-1);
+$color-black-darken-2: darken($color-black, $multiply-2);
+$color-black-darken-3: darken($color-black, $multiply-3);
+$color-black-darken-4: darken($color-black, $multiply-4);
+$color-black-darken-5: darken($color-black, $multiply-5);
+$color-black-darken-6: darken($color-black, $multiply-6);
+$color-black-darken-7: darken($color-black, $multiply-7);
+$color-black-darken-8: darken($color-black, $multiply-8);
+$color-black-darken-9: darken($color-black, $multiply-9);
+$color-black-darken-10: darken($color-black, $multiply-10);
+$color-black-darken-11: darken($color-black, $multiply-11);
+$color-black-darken-12: darken($color-black, $multiply-12);
+$color-black-darken-13: darken($color-black, $multiply-13);
+$color-black-darken-14: darken($color-black, $multiply-14);
+$color-black-darken-15: darken($color-black, $multiply-15);
+$color-black-darken-16: darken($color-black, $multiply-16);
+$color-black-darken-17: darken($color-black, $multiply-17);
+$color-black-darken-18: darken($color-black, $multiply-18);
+$color-black-darken-19: darken($color-black, $multiply-19);
+$color-black-darken-20: darken($color-black, $multiply-20);
+
+
+
+$color-white-lighten-1: lighten($color-white, $multiply-1);
+$color-white-lighten-2: lighten($color-white, $multiply-2);
+$color-white-lighten-3: lighten($color-white, $multiply-3);
+$color-white-lighten-4: lighten($color-white, $multiply-4);
+$color-white-lighten-5: lighten($color-white, $multiply-5);
+$color-white-lighten-6: lighten($color-white, $multiply-6);
+$color-white-lighten-7: lighten($color-white, $multiply-7);
+$color-white-lighten-8: lighten($color-white, $multiply-8);
+$color-white-lighten-9: lighten($color-white, $multiply-9);
+$color-white-lighten-10: lighten($color-white, $multiply-10);
+$color-white-lighten-11: lighten($color-white, $multiply-11);
+$color-white-lighten-12: lighten($color-white, $multiply-12);
+$color-white-lighten-13: lighten($color-white, $multiply-13);
+$color-white-lighten-14: lighten($color-white, $multiply-14);
+$color-white-lighten-15: lighten($color-white, $multiply-15);
+$color-white-lighten-16: lighten($color-white, $multiply-16);
+$color-white-lighten-17: lighten($color-white, $multiply-17);
+$color-white-lighten-18: lighten($color-white, $multiply-18);
+$color-white-lighten-19: lighten($color-white, $multiply-19);
+$color-white-lighten-20: lighten($color-white, $multiply-20);
+$color-white-darken-1: darken($color-white, $multiply-1);
+$color-white-darken-2: darken($color-white, $multiply-2);
+$color-white-darken-3: darken($color-white, $multiply-3);
+$color-white-darken-4: darken($color-white, $multiply-4);
+$color-white-darken-5: darken($color-white, $multiply-5);
+$color-white-darken-6: darken($color-white, $multiply-6);
+$color-white-darken-7: darken($color-white, $multiply-7);
+$color-white-darken-8: darken($color-white, $multiply-8);
+$color-white-darken-9: darken($color-white, $multiply-9);
+$color-white-darken-10: darken($color-white, $multiply-10);
+$color-white-darken-11: darken($color-white, $multiply-11);
+$color-white-darken-12: darken($color-white, $multiply-12);
+$color-white-darken-13: darken($color-white, $multiply-13);
+$color-white-darken-14: darken($color-white, $multiply-14);
+$color-white-darken-15: darken($color-white, $multiply-15);
+$color-white-darken-16: darken($color-white, $multiply-16);
+$color-white-darken-17: darken($color-white, $multiply-17);
+$color-white-darken-18: darken($color-white, $multiply-18);
+$color-white-darken-19: darken($color-white, $multiply-19);
+$color-white-darken-20: darken($color-white, $multiply-20);
+
+/* ------------------------------------------------------------------ SOCIAL */
+
+
+
+$color-facebook-lighten-1: lighten($color-facebook, $multiply-1);
+$color-facebook-lighten-2: lighten($color-facebook, $multiply-2);
+$color-facebook-lighten-3: lighten($color-facebook, $multiply-3);
+$color-facebook-lighten-4: lighten($color-facebook, $multiply-4);
+$color-facebook-lighten-5: lighten($color-facebook, $multiply-5);
+$color-facebook-lighten-6: lighten($color-facebook, $multiply-6);
+$color-facebook-lighten-7: lighten($color-facebook, $multiply-7);
+$color-facebook-lighten-8: lighten($color-facebook, $multiply-8);
+$color-facebook-lighten-9: lighten($color-facebook, $multiply-9);
+$color-facebook-lighten-10: lighten($color-facebook, $multiply-10);
+$color-facebook-lighten-11: lighten($color-facebook, $multiply-11);
+$color-facebook-lighten-12: lighten($color-facebook, $multiply-12);
+$color-facebook-lighten-13: lighten($color-facebook, $multiply-13);
+$color-facebook-lighten-14: lighten($color-facebook, $multiply-14);
+$color-facebook-lighten-15: lighten($color-facebook, $multiply-15);
+$color-facebook-lighten-16: lighten($color-facebook, $multiply-16);
+$color-facebook-lighten-17: lighten($color-facebook, $multiply-17);
+$color-facebook-lighten-18: lighten($color-facebook, $multiply-18);
+$color-facebook-lighten-19: lighten($color-facebook, $multiply-19);
+$color-facebook-lighten-20: lighten($color-facebook, $multiply-20);
+$color-facebook-darken-1: darken($color-facebook, $multiply-1);
+$color-facebook-darken-2: darken($color-facebook, $multiply-2);
+$color-facebook-darken-3: darken($color-facebook, $multiply-3);
+$color-facebook-darken-4: darken($color-facebook, $multiply-4);
+$color-facebook-darken-5: darken($color-facebook, $multiply-5);
+$color-facebook-darken-6: darken($color-facebook, $multiply-6);
+$color-facebook-darken-7: darken($color-facebook, $multiply-7);
+$color-facebook-darken-8: darken($color-facebook, $multiply-8);
+$color-facebook-darken-9: darken($color-facebook, $multiply-9);
+$color-facebook-darken-10: darken($color-facebook, $multiply-10);
+$color-facebook-darken-11: darken($color-facebook, $multiply-11);
+$color-facebook-darken-12: darken($color-facebook, $multiply-12);
+$color-facebook-darken-13: darken($color-facebook, $multiply-13);
+$color-facebook-darken-14: darken($color-facebook, $multiply-14);
+$color-facebook-darken-15: darken($color-facebook, $multiply-15);
+$color-facebook-darken-16: darken($color-facebook, $multiply-16);
+$color-facebook-darken-17: darken($color-facebook, $multiply-17);
+$color-facebook-darken-18: darken($color-facebook, $multiply-18);
+$color-facebook-darken-19: darken($color-facebook, $multiply-19);
+$color-facebook-darken-20: darken($color-facebook, $multiply-20);
+
+
+
+$color-twitter-lighten-1: lighten($color-twitter, $multiply-1);
+$color-twitter-lighten-2: lighten($color-twitter, $multiply-2);
+$color-twitter-lighten-3: lighten($color-twitter, $multiply-3);
+$color-twitter-lighten-4: lighten($color-twitter, $multiply-4);
+$color-twitter-lighten-5: lighten($color-twitter, $multiply-5);
+$color-twitter-lighten-6: lighten($color-twitter, $multiply-6);
+$color-twitter-lighten-7: lighten($color-twitter, $multiply-7);
+$color-twitter-lighten-8: lighten($color-twitter, $multiply-8);
+$color-twitter-lighten-9: lighten($color-twitter, $multiply-9);
+$color-twitter-lighten-10: lighten($color-twitter, $multiply-10);
+$color-twitter-lighten-11: lighten($color-twitter, $multiply-11);
+$color-twitter-lighten-12: lighten($color-twitter, $multiply-12);
+$color-twitter-lighten-13: lighten($color-twitter, $multiply-13);
+$color-twitter-lighten-14: lighten($color-twitter, $multiply-14);
+$color-twitter-lighten-15: lighten($color-twitter, $multiply-15);
+$color-twitter-lighten-16: lighten($color-twitter, $multiply-16);
+$color-twitter-lighten-17: lighten($color-twitter, $multiply-17);
+$color-twitter-lighten-18: lighten($color-twitter, $multiply-18);
+$color-twitter-lighten-19: lighten($color-twitter, $multiply-19);
+$color-twitter-lighten-20: lighten($color-twitter, $multiply-20);
+$color-twitter-darken-1: darken($color-twitter, $multiply-1);
+$color-twitter-darken-2: darken($color-twitter, $multiply-2);
+$color-twitter-darken-3: darken($color-twitter, $multiply-3);
+$color-twitter-darken-4: darken($color-twitter, $multiply-4);
+$color-twitter-darken-5: darken($color-twitter, $multiply-5);
+$color-twitter-darken-6: darken($color-twitter, $multiply-6);
+$color-twitter-darken-7: darken($color-twitter, $multiply-7);
+$color-twitter-darken-8: darken($color-twitter, $multiply-8);
+$color-twitter-darken-9: darken($color-twitter, $multiply-9);
+$color-twitter-darken-10: darken($color-twitter, $multiply-10);
+$color-twitter-darken-11: darken($color-twitter, $multiply-11);
+$color-twitter-darken-12: darken($color-twitter, $multiply-12);
+$color-twitter-darken-13: darken($color-twitter, $multiply-13);
+$color-twitter-darken-14: darken($color-twitter, $multiply-14);
+$color-twitter-darken-15: darken($color-twitter, $multiply-15);
+$color-twitter-darken-16: darken($color-twitter, $multiply-16);
+$color-twitter-darken-17: darken($color-twitter, $multiply-17);
+$color-twitter-darken-18: darken($color-twitter, $multiply-18);
+$color-twitter-darken-19: darken($color-twitter, $multiply-19);
+$color-twitter-darken-20: darken($color-twitter, $multiply-20);
+
+
+
+$color-youtube-lighten-1: lighten($color-youtube, $multiply-1);
+$color-youtube-lighten-2: lighten($color-youtube, $multiply-2);
+$color-youtube-lighten-3: lighten($color-youtube, $multiply-3);
+$color-youtube-lighten-4: lighten($color-youtube, $multiply-4);
+$color-youtube-lighten-5: lighten($color-youtube, $multiply-5);
+$color-youtube-lighten-6: lighten($color-youtube, $multiply-6);
+$color-youtube-lighten-7: lighten($color-youtube, $multiply-7);
+$color-youtube-lighten-8: lighten($color-youtube, $multiply-8);
+$color-youtube-lighten-9: lighten($color-youtube, $multiply-9);
+$color-youtube-lighten-10: lighten($color-youtube, $multiply-10);
+$color-youtube-lighten-11: lighten($color-youtube, $multiply-11);
+$color-youtube-lighten-12: lighten($color-youtube, $multiply-12);
+$color-youtube-lighten-13: lighten($color-youtube, $multiply-13);
+$color-youtube-lighten-14: lighten($color-youtube, $multiply-14);
+$color-youtube-lighten-15: lighten($color-youtube, $multiply-15);
+$color-youtube-lighten-16: lighten($color-youtube, $multiply-16);
+$color-youtube-lighten-17: lighten($color-youtube, $multiply-17);
+$color-youtube-lighten-18: lighten($color-youtube, $multiply-18);
+$color-youtube-lighten-19: lighten($color-youtube, $multiply-19);
+$color-youtube-lighten-20: lighten($color-youtube, $multiply-20);
+$color-youtube-darken-1: darken($color-youtube, $multiply-1);
+$color-youtube-darken-2: darken($color-youtube, $multiply-2);
+$color-youtube-darken-3: darken($color-youtube, $multiply-3);
+$color-youtube-darken-4: darken($color-youtube, $multiply-4);
+$color-youtube-darken-5: darken($color-youtube, $multiply-5);
+$color-youtube-darken-6: darken($color-youtube, $multiply-6);
+$color-youtube-darken-7: darken($color-youtube, $multiply-7);
+$color-youtube-darken-8: darken($color-youtube, $multiply-8);
+$color-youtube-darken-9: darken($color-youtube, $multiply-9);
+$color-youtube-darken-10: darken($color-youtube, $multiply-10);
+$color-youtube-darken-11: darken($color-youtube, $multiply-11);
+$color-youtube-darken-12: darken($color-youtube, $multiply-12);
+$color-youtube-darken-13: darken($color-youtube, $multiply-13);
+$color-youtube-darken-14: darken($color-youtube, $multiply-14);
+$color-youtube-darken-15: darken($color-youtube, $multiply-15);
+$color-youtube-darken-16: darken($color-youtube, $multiply-16);
+$color-youtube-darken-17: darken($color-youtube, $multiply-17);
+$color-youtube-darken-18: darken($color-youtube, $multiply-18);
+$color-youtube-darken-19: darken($color-youtube, $multiply-19);
+$color-youtube-darken-20: darken($color-youtube, $multiply-20);
+
+
+
+$color-linkedin-lighten-1: lighten($color-linkedin, $multiply-1);
+$color-linkedin-lighten-2: lighten($color-linkedin, $multiply-2);
+$color-linkedin-lighten-3: lighten($color-linkedin, $multiply-3);
+$color-linkedin-lighten-4: lighten($color-linkedin, $multiply-4);
+$color-linkedin-lighten-5: lighten($color-linkedin, $multiply-5);
+$color-linkedin-lighten-6: lighten($color-linkedin, $multiply-6);
+$color-linkedin-lighten-7: lighten($color-linkedin, $multiply-7);
+$color-linkedin-lighten-8: lighten($color-linkedin, $multiply-8);
+$color-linkedin-lighten-9: lighten($color-linkedin, $multiply-9);
+$color-linkedin-lighten-10: lighten($color-linkedin, $multiply-10);
+$color-linkedin-lighten-11: lighten($color-linkedin, $multiply-11);
+$color-linkedin-lighten-12: lighten($color-linkedin, $multiply-12);
+$color-linkedin-lighten-13: lighten($color-linkedin, $multiply-13);
+$color-linkedin-lighten-14: lighten($color-linkedin, $multiply-14);
+$color-linkedin-lighten-15: lighten($color-linkedin, $multiply-15);
+$color-linkedin-lighten-16: lighten($color-linkedin, $multiply-16);
+$color-linkedin-lighten-17: lighten($color-linkedin, $multiply-17);
+$color-linkedin-lighten-18: lighten($color-linkedin, $multiply-18);
+$color-linkedin-lighten-19: lighten($color-linkedin, $multiply-19);
+$color-linkedin-lighten-20: lighten($color-linkedin, $multiply-20);
+$color-linkedin-darken-1: darken($color-linkedin, $multiply-1);
+$color-linkedin-darken-2: darken($color-linkedin, $multiply-2);
+$color-linkedin-darken-3: darken($color-linkedin, $multiply-3);
+$color-linkedin-darken-4: darken($color-linkedin, $multiply-4);
+$color-linkedin-darken-5: darken($color-linkedin, $multiply-5);
+$color-linkedin-darken-6: darken($color-linkedin, $multiply-6);
+$color-linkedin-darken-7: darken($color-linkedin, $multiply-7);
+$color-linkedin-darken-8: darken($color-linkedin, $multiply-8);
+$color-linkedin-darken-9: darken($color-linkedin, $multiply-9);
+$color-linkedin-darken-10: darken($color-linkedin, $multiply-10);
+$color-linkedin-darken-11: darken($color-linkedin, $multiply-11);
+$color-linkedin-darken-12: darken($color-linkedin, $multiply-12);
+$color-linkedin-darken-13: darken($color-linkedin, $multiply-13);
+$color-linkedin-darken-14: darken($color-linkedin, $multiply-14);
+$color-linkedin-darken-15: darken($color-linkedin, $multiply-15);
+$color-linkedin-darken-16: darken($color-linkedin, $multiply-16);
+$color-linkedin-darken-17: darken($color-linkedin, $multiply-17);
+$color-linkedin-darken-18: darken($color-linkedin, $multiply-18);
+$color-linkedin-darken-19: darken($color-linkedin, $multiply-19);
+$color-linkedin-darken-20: darken($color-linkedin, $multiply-20);
+
+
+
+$color-pinterest-lighten-1: lighten($color-pinterest, $multiply-1);
+$color-pinterest-lighten-2: lighten($color-pinterest, $multiply-2);
+$color-pinterest-lighten-3: lighten($color-pinterest, $multiply-3);
+$color-pinterest-lighten-4: lighten($color-pinterest, $multiply-4);
+$color-pinterest-lighten-5: lighten($color-pinterest, $multiply-5);
+$color-pinterest-lighten-6: lighten($color-pinterest, $multiply-6);
+$color-pinterest-lighten-7: lighten($color-pinterest, $multiply-7);
+$color-pinterest-lighten-8: lighten($color-pinterest, $multiply-8);
+$color-pinterest-lighten-9: lighten($color-pinterest, $multiply-9);
+$color-pinterest-lighten-10: lighten($color-pinterest, $multiply-10);
+$color-pinterest-lighten-11: lighten($color-pinterest, $multiply-11);
+$color-pinterest-lighten-12: lighten($color-pinterest, $multiply-12);
+$color-pinterest-lighten-13: lighten($color-pinterest, $multiply-13);
+$color-pinterest-lighten-14: lighten($color-pinterest, $multiply-14);
+$color-pinterest-lighten-15: lighten($color-pinterest, $multiply-15);
+$color-pinterest-lighten-16: lighten($color-pinterest, $multiply-16);
+$color-pinterest-lighten-17: lighten($color-pinterest, $multiply-17);
+$color-pinterest-lighten-18: lighten($color-pinterest, $multiply-18);
+$color-pinterest-lighten-19: lighten($color-pinterest, $multiply-19);
+$color-pinterest-lighten-20: lighten($color-pinterest, $multiply-20);
+$color-pinterest-darken-1: darken($color-pinterest, $multiply-1);
+$color-pinterest-darken-2: darken($color-pinterest, $multiply-2);
+$color-pinterest-darken-3: darken($color-pinterest, $multiply-3);
+$color-pinterest-darken-4: darken($color-pinterest, $multiply-4);
+$color-pinterest-darken-5: darken($color-pinterest, $multiply-5);
+$color-pinterest-darken-6: darken($color-pinterest, $multiply-6);
+$color-pinterest-darken-7: darken($color-pinterest, $multiply-7);
+$color-pinterest-darken-8: darken($color-pinterest, $multiply-8);
+$color-pinterest-darken-9: darken($color-pinterest, $multiply-9);
+$color-pinterest-darken-10: darken($color-pinterest, $multiply-10);
+$color-pinterest-darken-11: darken($color-pinterest, $multiply-11);
+$color-pinterest-darken-12: darken($color-pinterest, $multiply-12);
+$color-pinterest-darken-13: darken($color-pinterest, $multiply-13);
+$color-pinterest-darken-14: darken($color-pinterest, $multiply-14);
+$color-pinterest-darken-15: darken($color-pinterest, $multiply-15);
+$color-pinterest-darken-16: darken($color-pinterest, $multiply-16);
+$color-pinterest-darken-17: darken($color-pinterest, $multiply-17);
+$color-pinterest-darken-18: darken($color-pinterest, $multiply-18);
+$color-pinterest-darken-19: darken($color-pinterest, $multiply-19);
+$color-pinterest-darken-20: darken($color-pinterest, $multiply-20);
+
+
+
+$color-instagram-lighten-1: lighten($color-instagram, $multiply-1);
+$color-instagram-lighten-2: lighten($color-instagram, $multiply-2);
+$color-instagram-lighten-3: lighten($color-instagram, $multiply-3);
+$color-instagram-lighten-4: lighten($color-instagram, $multiply-4);
+$color-instagram-lighten-5: lighten($color-instagram, $multiply-5);
+$color-instagram-lighten-6: lighten($color-instagram, $multiply-6);
+$color-instagram-lighten-7: lighten($color-instagram, $multiply-7);
+$color-instagram-lighten-8: lighten($color-instagram, $multiply-8);
+$color-instagram-lighten-9: lighten($color-instagram, $multiply-9);
+$color-instagram-lighten-10: lighten($color-instagram, $multiply-10);
+$color-instagram-lighten-11: lighten($color-instagram, $multiply-11);
+$color-instagram-lighten-12: lighten($color-instagram, $multiply-12);
+$color-instagram-lighten-13: lighten($color-instagram, $multiply-13);
+$color-instagram-lighten-14: lighten($color-instagram, $multiply-14);
+$color-instagram-lighten-15: lighten($color-instagram, $multiply-15);
+$color-instagram-lighten-16: lighten($color-instagram, $multiply-16);
+$color-instagram-lighten-17: lighten($color-instagram, $multiply-17);
+$color-instagram-lighten-18: lighten($color-instagram, $multiply-18);
+$color-instagram-lighten-19: lighten($color-instagram, $multiply-19);
+$color-instagram-lighten-20: lighten($color-instagram, $multiply-20);
+$color-instagram-darken-1: darken($color-instagram, $multiply-1);
+$color-instagram-darken-2: darken($color-instagram, $multiply-2);
+$color-instagram-darken-3: darken($color-instagram, $multiply-3);
+$color-instagram-darken-4: darken($color-instagram, $multiply-4);
+$color-instagram-darken-5: darken($color-instagram, $multiply-5);
+$color-instagram-darken-6: darken($color-instagram, $multiply-6);
+$color-instagram-darken-7: darken($color-instagram, $multiply-7);
+$color-instagram-darken-8: darken($color-instagram, $multiply-8);
+$color-instagram-darken-9: darken($color-instagram, $multiply-9);
+$color-instagram-darken-10: darken($color-instagram, $multiply-10);
+$color-instagram-darken-11: darken($color-instagram, $multiply-11);
+$color-instagram-darken-12: darken($color-instagram, $multiply-12);
+$color-instagram-darken-13: darken($color-instagram, $multiply-13);
+$color-instagram-darken-14: darken($color-instagram, $multiply-14);
+$color-instagram-darken-15: darken($color-instagram, $multiply-15);
+$color-instagram-darken-16: darken($color-instagram, $multiply-16);
+$color-instagram-darken-17: darken($color-instagram, $multiply-17);
+$color-instagram-darken-18: darken($color-instagram, $multiply-18);
+$color-instagram-darken-19: darken($color-instagram, $multiply-19);
+$color-instagram-darken-20: darken($color-instagram, $multiply-20);
+
+
+
+
+
+
+
+$arr-color-extra-light: (
+"grey": $color-grey-lighten-4,
+"blue": $color-blue-lighten-8,
+"green": $color-green-lighten-9,
+"cyan": $color-cyan-lighten-9,
+"orange": $color-orange-lighten-8,
+"red": $color-red-lighten-7,
+"yellow": $color-yellow-lighten-9,
+"purple": $color-purple-lighten-8,
+"brown": $color-brown-lighten-14,
+"pink": $color-pink-lighten-9,
+"black": $color-black-lighten-15,
+"white": $color-white
+);
+
+$arr-color-extra-light-border: (
+"grey": $color-grey-lighten-2,
+"blue": $color-blue-lighten-7,
+"green": $color-green-lighten-7,
+"cyan": $color-cyan-lighten-7,
+"orange": $color-orange-lighten-7,
+"red": $color-red-lighten-6,
+"yellow": $color-yellow-lighten-6,
+"purple": $color-purple-lighten-7,
+"brown": $color-brown-lighten-12,
+"pink": $color-pink-lighten-8,
+"black": $color-black-lighten-13,
+"white": $color-white-darken-2
+);
+
+$arr-color-light: (
+"grey": $color-grey-lighten-3,
+"blue": $color-blue-lighten-7,
+"green": $color-green-lighten-7,
+"cyan": $color-cyan-lighten-7,
+"orange": $color-orange-lighten-7,
+"red": $color-red-lighten-7,
+"yellow": $color-yellow-lighten-7,
+"purple": $color-purple-lighten-7,
+"brown": $color-brown-lighten-10,
+"pink": $color-pink-lighten-8,
+"black": $color-black-lighten-12,
+"white": $color-white
+);
+
+$arr-color-light-border: (
+"grey": $color-grey-lighten-2,
+"blue": $color-blue-lighten-5,
+"green": $color-green-lighten-3,
+"cyan": $color-cyan-lighten-2,
+"orange": $color-orange-lighten-5,
+"red": $color-red-lighten-6,
+"yellow": $color-yellow-lighten-3,
+"purple": $color-purple-lighten-5,
+"brown": $color-brown-lighten-7,
+"pink": $color-pink-lighten-7,
+"black": $color-black-lighten-10,
+"white": $color-white-lighten-4
+);
+
+$arr-color-regular: (
+"grey": $color-grey,
+"blue": $color-blue,
+"green": $color-green,
+"cyan": $color-cyan,
+"orange": $color-orange,
+"red": $color-red,
+"yellow": $color-yellow,
+"purple": $color-purple,
+"brown": $color-brown,
+"pink": $color-pink,
+"black": $color-black,
+"white": $color-white
+);
+
+$arr-color-regular-border: (
+"grey": $color-grey-darken-1,
+"blue": $color-blue-darken-1,
+"green": $color-green-darken-1,
+"cyan": $color-cyan-darken-1,
+"orange": $color-orange-darken-1,
+"red": $color-red-darken-1,
+"yellow": $color-yellow-darken-1,
+"purple": $color-purple-darken-1,
+"brown": $color-brown-darken-1,
+"pink": $color-pink-darken-1,
+"black": $color-black-darken-1,
+"white": $color-white-darken-1
+);
+
+$arr-color-regular-invalid: (
+"grey": $color-red,
+"blue": $color-red,
+"green": $color-red,
+"cyan": $color-red,
+"orange": $color-red,
+"red": $color-red-darken-2,
+"yellow": $color-red,
+"purple": $color-red,
+"brown": $color-red,
+"pink": $color-red,
+"black": $color-red,
+"white": $color-red
+);
+
+$arr-color-regular-contrast: (
+"grey": $color-black,
+"blue": $color-white,
+"green": $color-white,
+"cyan": $color-white,
+"orange": $color-white,
+"red": $color-white,
+"yellow": $color-white,
+"purple": $color-white,
+"brown": $color-white,
+"pink": $color-white,
+"black": $color-white,
+"white": $color-black
+);
+
+$arr-color-dark: (
+"grey": $color-grey-darken-5,
+"blue": $color-blue-darken-3,
+"green": $color-green-darken-3,
+"cyan": $color-cyan-darken-3,
+"orange": $color-orange-darken-3,
+"red": $color-red-darken-3,
+"yellow": $color-yellow-darken-3,
+"purple": $color-purple-darken-3,
+"brown": $color-brown-darken-2,
+"pink": $color-pink-darken-3,
+"black": $color-black-darken-3,
+"white": $color-white-darken-3
+);
+/* ----------------------------------------------------------------------------- TRIANGLE */
+
+@mixin triangle($color, $direction, $size: 6px, $position: absolute, $round: false){
+    @include pseudo-element($position: $position);
+    width: 0;
+    height: 0;
+    @if $round {
+        border-radius: 3px;
+    }
+    @if $direction == down {
+        border-left: $size solid transparent;
+        border-right: $size solid transparent;
+        border-top: $size solid $color;
+        margin-top: $size;
+    } @else if $direction == up {
+        border-left: $size solid transparent;
+        border-right: $size solid transparent;
+        border-bottom: $size solid $color;
+        margin-bottom: $size;
+    } @else if $direction == right {
+        border-top: $size solid transparent;
+        border-bottom: $size solid transparent;
+        border-left: $size solid $color;
+        margin-right: -$size;
+    } @else if  $direction == left {
+        border-top: $size solid transparent;
+        border-bottom: $size solid transparent;
+        border-right: $size solid $color;
+        margin-left: -$size;
+    }
+}
+
+/* ----------------------------------------------------------------------------- Z-INDEX */
+
+@function z-index($name) {
+    @if index($arr-z-index, $name) {
+        @return (length($arr-z-index) - index($arr-z-index, $name)) + 1;
+    } @else {
+        @warn 'There is no item "#{$name}" in this list; choose one of: #{$arr-z-index}';
+        @return null;
+    }
+}
+
+/* ----------------------------------------------------------------------------- PSEUDO ELEMENT */
+
+@mixin pseudo-element($display: block, $position: absolute, $content: ''){
+    content: $content;
+    display: $display;
+    position: $position;
+}
+
+/* ----------------------------------------------------------------------------- FUNCTION */
+
+@function color-extra-light($key) {
+    @return map-get($arr-color-extra-light, $key);
+}
+
+@function color-extra-light-border($key) {
+    @return map-get($arr-color-extra-light-border, $key);
+}
+
+@function color-light($key) {
+    @return map-get($arr-color-light, $key);
+}
+
+@function color-light-border($key) {
+    @return map-get($arr-color-light-border, $key);
+}
+
+@function color-regular($key) {
+    @return map-get($arr-color-regular, $key);
+}
+
+@function color-regular-invalid($key) {
+    @return map-get($arr-color-regular-invalid, $key);
+}
+
+@function color-regular-border($key) {
+    @return map-get($arr-color-regular-border, $key);
+}
+
+@function color-regular-contrast($key) {
+    @return map-get($arr-color-regular-contrast, $key);
+}
+
+@function color-dark($key) {
+    @return map-get($arr-color-dark, $key);
+}
+
+/* ----------------------------------------------------------------------------- EXTEND */
+
+%extend-background-black{
+    background-color: rgba($color-black, .9);
+}
+
+%extend-border-solid{
+    border-width: 1px;
+    border-style: solid;
+}
+
+%extend-truncate{
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+/*
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+
+}
+*/
+.google-maps{
+    height: 400px;
+    width: 100%;
+    border: 0;
+}
+
+.error{
+    text-align: center;
+
+    .title,
+    .text{
+        line-height: 50%;
+    }
+
+    .title{
+        font-family: $font-family-black;
+    }
+}
+
+
+#page_home{
+    height: 100%;
+
+    .carousel-slide,
+    .carousel,
+    .carousel-list,
+    .slide,
+    .carousel-list li{
+        height: 100%;
+    }
+
+    .slide-content{
+        color: $color-white;
+        font-family: $font-family-thin;
+        text-align: center;
+
+        @media (min-width: $break-point-es) {
+            font-size: $font-bi + $font-sm;
+            padding: $eb;
+        }
+
+        @media (min-width: $break-point-bi) {
+            font-size: $font-eb * 3;
+            padding: $eb * 2;
+        }
+    }
+}
+
+#page_palette{
+
+    [class*="color-"] {
+        position: relative;
+        width: calc(100% / 31);
+        float: left;
+
+        &:before{
+            @include pseudo-element(block, relative, '');
+            padding: 50%;
+        }
+
+        @each $color in $arrColor {
+            &.color-#{$color} {
+                background-color: color-regular(#{$color});
+
+                &:after{
+                    @include pseudo-element;
+                    top: calc(50% - #{$sm / 2});
+                    left: calc(50% - #{$sm / 2});
+                    width: $sm;
+                    height: $sm;
+                    background-color: rgba(0,0,0,.2);
+                }
+            }
+        }
+
+        @for $i from 1 through 15 {
+            &.color-grey-lighten-#{$i} { 
+                background-color: lighten($color-grey, $i * $color-scale);
+            }
+
+            &.color-grey-darken-#{$i} { 
+                background-color: darken($color-grey, $i * $color-scale);
+            }
+
+            &.color-blue-lighten-#{$i} { 
+                background-color: lighten($color-blue, $i * $color-scale);
+            }
+
+            &.color-blue-darken-#{$i} { 
+                background-color: darken($color-blue, $i * $color-scale);
+            }
+
+            &.color-green-lighten-#{$i} { 
+                background-color: lighten($color-green, $i * $color-scale);
+            }
+
+            &.color-green-darken-#{$i} { 
+                background-color: darken($color-green, $i * $color-scale);
+            }
+
+            &.color-cyan-lighten-#{$i} { 
+                background-color: lighten($color-cyan, $i * $color-scale);
+            }
+
+            &.color-cyan-darken-#{$i} { 
+                background-color: darken($color-cyan, $i * $color-scale);
+            }
+
+            &.color-orange-lighten-#{$i} { 
+                background-color: lighten($color-orange, $i * $color-scale);
+            }
+
+            &.color-orange-darken-#{$i} { 
+                background-color: darken($color-orange, $i * $color-scale);
+            }
+
+            &.color-red-lighten-#{$i} { 
+                background-color: lighten($color-red, $i * $color-scale);
+            }
+
+            &.color-red-darken-#{$i} { 
+                background-color: darken($color-red, $i * $color-scale);
+            }
+
+            &.color-yellow-lighten-#{$i} { 
+                background-color: lighten($color-yellow, $i * $color-scale);
+            }
+
+            &.color-yellow-darken-#{$i} { 
+                background-color: darken($color-yellow, $i * $color-scale);
+            }
+
+            &.color-purple-lighten-#{$i} { 
+                background-color: lighten($color-purple, $i * $color-scale);
+            }
+
+            &.color-purple-darken-#{$i} { 
+                background-color: darken($color-purple, $i * $color-scale);
+            }
+
+            &.color-brown-lighten-#{$i} { 
+                background-color: lighten($color-brown, $i * $color-scale);
+            }
+
+            &.color-brown-darken-#{$i} { 
+                background-color: darken($color-brown, $i * $color-scale);
+            }
+
+            &.color-pink-lighten-#{$i} { 
+                background-color: lighten($color-pink, $i * $color-scale);
+            }
+
+            &.color-pink-darken-#{$i} { 
+                background-color: darken($color-pink, $i * $color-scale);
+            }
+
+            &.color-black-lighten-#{$i} { 
+                background-color: lighten($color-black, $i * $color-scale);
+            }
+
+            &.color-black-darken-#{$i} { 
+                background-color: darken($color-black, $i * $color-scale);
+            }
+
+            &.color-white-lighten-#{$i} { 
+                background-color: lighten($color-white, $i * $color-scale);
+            }
+
+            &.color-white-darken-#{$i} { 
+                background-color: darken($color-white, $i * $color-scale);
+            }
+
+        }
+    }
+}
+
+#page_responsive_grid,
+#page_responsive{
+
+    [class*="grid-col-"],
+    [class*="col-"] {
+        text-align: center;
+        color: $color-white;
+        border: 1px dotted rgba($color-black, .2);
+        padding: $re;
+
+        &:before{
+            text-align: center;
+
+            @media (min-width: $break-point-es) {
+                content: 'ES - ';
+            }
+
+            @media (min-width: $break-point-sm) {
+                content: 'SM - ';
+            }
+
+            @media (min-width: $break-point-re) {
+                content: 'RE - ';
+            }
+
+            @media (min-width: $break-point-bi) {
+                content: 'BI - ';
+            }
+
+            @media (min-width: $break-point-eb) {
+                content: 'EB - ';
+            }
+        }
+    }
+
+    @for $i from 1 through 12 {
+        [class*="-#{$i}"] {
+
+            &:after{
+                content: '#{$i}';
+            } 
+        }
+    }
+}
+
+#page_responsive{
+
+    *{
+        &:after,
+            &:before{
+            display: inline;
+            font-weight: regular;
+        }
+    }
+}
+
+#page_form{
+
+    .form{
+        margin-bottom: 150px;
+    }
+}
+
+#page_scroll{
+
+    .scrollbar {
+        height: 300px;
+        overflow-y: scroll;
+    }
+
+    .scrollbar-force-overflow {
+        min-height: 450px;
+    }
+}
+body{
+    display: flex;
+    height: 100vh;
+    flex-direction: column; 
+}
+
+main{
+    flex: 1;
+
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        flex-grow: 1;
+        flex-shrink: 0;
+        flex-basis: auto;
+    }
+}
+
+
+
+
+
+#header{
+    border-bottom: 1px solid;
+}
+
+#footer{
+    flex: none;
+    border-top: 1px solid;
+}
+
+#header,
+#footer{
+    display: block;
+    background-color: $color-grey-lighten-3;
+    padding: $re;
+    text-align: right;
+    border-color: $color-grey-lighten-2;
+
+    .about{
+        margin: 0 $sm;
+        font-size: $font-sm;
+    }
+}
+
+#main_wrapper{
+
+    @media (min-width: $break-point-es) {
+        height: auto;
+    }
+
+    @media (min-width: $break-point-bi) {
+        height: 100%;
+    }
+}
+
+#main_menu,
+#main_content{
+    padding: $re;
+}
+
+#main_menu{
+    background-color: $color-grey-lighten-4;
+    text-transform: capitalize;
+
+    @media (min-width: $break-point-bi) {
+        border-right: 1px solid $color-grey-lighten-3;
+    }
+
+    .menu {
+
+        li{
+            width: 100%;
+        }
+    }
+
+    .active{
+        box-shadow: none;
+
+        @media (min-width: $break-point-bi) {
+            &:after{
+                content: "\f061";
+                font-family: $font-family-awesome;
+                color: $color-blue-lighten-2;
+                float: right;
+                margin: 2px;
+            }
+        }
+    }
+}
+
+
+
+
+.page-title{
+    font-family: $font-family-thin;
+    text-align: center;
+    color: $color-grey;
+    width: 100%;
+}

@@ -1,0 +1,47 @@
+#notify {
+    position: fixed; 
+    top: 0; 
+    right: 0; 
+    z-index: z-index('notify');
+}
+
+[class*='notify-list'] {
+    list-style: none;
+    text-align: right;
+
+    li{
+        margin: $sm;
+    }
+}
+
+.notify-item{
+    @extend %extend-border-solid;
+    padding: $re;
+    display: inline-block;
+    border-radius: $border-radius-re;
+
+    .bt{
+        box-shadow: none;
+        padding: $sm;
+        border: 0;
+    }
+}
+
+.notify-white{
+
+    .text{
+        color: $color-black;
+    }
+}
+
+@each $color in $arrColor {
+    .notify-#{$color} {
+        background-color: color-extra-light(#{$color});
+        border-color: color-extra-light-border(#{$color});
+        color: color-dark(#{$color});
+
+        .fa{
+            color: color-regular(#{$color});
+        }
+    }
+}

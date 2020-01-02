@@ -1,0 +1,82 @@
+$z-index-negative: -1;
+
+$arr-z-index: (
+"drop-down",
+"notify",
+"modal",
+"tooltip",
+"confirm",
+"loading-main"
+);
+
+$font-es: 8px;
+$font-sm: 12px;
+$font-re: 16px;
+$font-bi: 20px;
+$font-eb: 24px;
+
+$font-family-regular: 'roboto-regular';
+$font-family-thin: 'roboto-thin';
+$font-family-black: 'roboto-black';
+$font-family-bold: 'roboto-bold';
+$font-family-awesome: 'FontAwesome';
+
+$break-point-es: 0;
+$break-point-sm: 576px;
+$break-point-re: 768px;
+$break-point-bi: 992px;
+$break-point-eb: 1200px;
+$break-point-fhd: 1900px;
+
+$col-0: 0%;
+$col-1: 8.3333333333%;
+$col-2: 16.666666666%;
+$col-3: 25%;
+$col-4: 33.333333333%;
+$col-5: 41.666666666%;
+$col-6: 50%;
+$col-7: 58.333333333%;
+$col-8: 66.66666667%;
+$col-9: 75%;
+$col-10: 83.333333333%;
+$col-11: 91.66666667%;
+$col-12: 100%;
+
+$transition: .3s;
+
+$component-opacity: .5;
+
+$re: 10px; /*regular*/
+$sm: $re / 2; /*small*/
+$es: $re / 4; /*extra small*/
+$bi: $re * 2; /*big*/
+$eb: $re * 4; /*extra big*/
+
+$border-radius-re: 4px;
+$border-radius-sm: $border-radius-re / 2;
+$border-radius-es: $border-radius-re / 4;
+$border-radius-bi: $border-radius-re * 2;
+$border-radius-eb: $border-radius-re * 4;
+
+$color-scale: 5%;
+
+$multiply-1: $color-scale;
+$multiply-2: $color-scale * 2;
+$multiply-3: $color-scale * 3;
+$multiply-4: $color-scale * 4;
+$multiply-5: $color-scale * 5;
+$multiply-6: $color-scale * 6;
+$multiply-7: $color-scale * 7;
+$multiply-8: $color-scale * 8;
+$multiply-9: $color-scale * 9;
+$multiply-10: $color-scale * 10;
+$multiply-11: $color-scale * 11;
+$multiply-12: $color-scale * 12;
+$multiply-13: $color-scale * 13;
+$multiply-14: $color-scale * 14;
+$multiply-15: $color-scale * 15;
+$multiply-16: $color-scale * 16;
+$multiply-17: $color-scale * 17;;
+$multiply-18: $color-scale * 18;;
+$multiply-19: $color-scale * 19;
+$multiply-20: $color-scale * 20;

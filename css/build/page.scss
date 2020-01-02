@@ -1,0 +1,250 @@
+.google-maps{
+    height: 400px;
+    width: 100%;
+    border: 0;
+}
+
+.error{
+    text-align: center;
+
+    .title,
+    .text{
+        line-height: 50%;
+    }
+
+    .title{
+        font-family: $font-family-black;
+    }
+}
+
+
+#page_home{
+    height: 100%;
+
+    .carousel-slide,
+    .carousel,
+    .carousel-list,
+    .slide,
+    .carousel-list li{
+        height: 100%;
+    }
+
+    .slide-content{
+        color: $color-white;
+        font-family: $font-family-thin;
+        text-align: center;
+
+        @media (min-width: $break-point-es) {
+            font-size: $font-bi + $font-sm;
+            padding: $eb;
+        }
+
+        @media (min-width: $break-point-bi) {
+            font-size: $font-eb * 3;
+            padding: $eb * 2;
+        }
+    }
+}
+
+#page_palette{
+
+    [class*="color-"] {
+        position: relative;
+        width: calc(100% / 31);
+        float: left;
+
+        &:before{
+            @include pseudo-element(block, relative, '');
+            padding: 50%;
+        }
+
+        @each $color in $arrColor {
+            &.color-#{$color} {
+                background-color: color-regular(#{$color});
+
+                &:after{
+                    @include pseudo-element;
+                    top: calc(50% - #{$sm / 2});
+                    left: calc(50% - #{$sm / 2});
+                    width: $sm;
+                    height: $sm;
+                    background-color: rgba(0,0,0,.2);
+                }
+            }
+        }
+
+        @for $i from 1 through 15 {
+            &.color-grey-lighten-#{$i} { 
+                background-color: lighten($color-grey, $i * $color-scale);
+            }
+
+            &.color-grey-darken-#{$i} { 
+                background-color: darken($color-grey, $i * $color-scale);
+            }
+
+            &.color-blue-lighten-#{$i} { 
+                background-color: lighten($color-blue, $i * $color-scale);
+            }
+
+            &.color-blue-darken-#{$i} { 
+                background-color: darken($color-blue, $i * $color-scale);
+            }
+
+            &.color-green-lighten-#{$i} { 
+                background-color: lighten($color-green, $i * $color-scale);
+            }
+
+            &.color-green-darken-#{$i} { 
+                background-color: darken($color-green, $i * $color-scale);
+            }
+
+            &.color-cyan-lighten-#{$i} { 
+                background-color: lighten($color-cyan, $i * $color-scale);
+            }
+
+            &.color-cyan-darken-#{$i} { 
+                background-color: darken($color-cyan, $i * $color-scale);
+            }
+
+            &.color-orange-lighten-#{$i} { 
+                background-color: lighten($color-orange, $i * $color-scale);
+            }
+
+            &.color-orange-darken-#{$i} { 
+                background-color: darken($color-orange, $i * $color-scale);
+            }
+
+            &.color-red-lighten-#{$i} { 
+                background-color: lighten($color-red, $i * $color-scale);
+            }
+
+            &.color-red-darken-#{$i} { 
+                background-color: darken($color-red, $i * $color-scale);
+            }
+
+            &.color-yellow-lighten-#{$i} { 
+                background-color: lighten($color-yellow, $i * $color-scale);
+            }
+
+            &.color-yellow-darken-#{$i} { 
+                background-color: darken($color-yellow, $i * $color-scale);
+            }
+
+            &.color-purple-lighten-#{$i} { 
+                background-color: lighten($color-purple, $i * $color-scale);
+            }
+
+            &.color-purple-darken-#{$i} { 
+                background-color: darken($color-purple, $i * $color-scale);
+            }
+
+            &.color-brown-lighten-#{$i} { 
+                background-color: lighten($color-brown, $i * $color-scale);
+            }
+
+            &.color-brown-darken-#{$i} { 
+                background-color: darken($color-brown, $i * $color-scale);
+            }
+
+            &.color-pink-lighten-#{$i} { 
+                background-color: lighten($color-pink, $i * $color-scale);
+            }
+
+            &.color-pink-darken-#{$i} { 
+                background-color: darken($color-pink, $i * $color-scale);
+            }
+
+            &.color-black-lighten-#{$i} { 
+                background-color: lighten($color-black, $i * $color-scale);
+            }
+
+            &.color-black-darken-#{$i} { 
+                background-color: darken($color-black, $i * $color-scale);
+            }
+
+            &.color-white-lighten-#{$i} { 
+                background-color: lighten($color-white, $i * $color-scale);
+            }
+
+            &.color-white-darken-#{$i} { 
+                background-color: darken($color-white, $i * $color-scale);
+            }
+
+        }
+    }
+}
+
+#page_responsive_grid,
+#page_responsive{
+
+    [class*="grid-col-"],
+    [class*="col-"] {
+        text-align: center;
+        color: $color-white;
+        border: 1px dotted rgba($color-black, .2);
+        padding: $re;
+
+        &:before{
+            text-align: center;
+
+            @media (min-width: $break-point-es) {
+                content: 'ES - ';
+            }
+
+            @media (min-width: $break-point-sm) {
+                content: 'SM - ';
+            }
+
+            @media (min-width: $break-point-re) {
+                content: 'RE - ';
+            }
+
+            @media (min-width: $break-point-bi) {
+                content: 'BI - ';
+            }
+
+            @media (min-width: $break-point-eb) {
+                content: 'EB - ';
+            }
+        }
+    }
+
+    @for $i from 1 through 12 {
+        [class*="-#{$i}"] {
+
+            &:after{
+                content: '#{$i}';
+            } 
+        }
+    }
+}
+
+#page_responsive{
+
+    *{
+        &:after,
+            &:before{
+            display: inline;
+            font-weight: regular;
+        }
+    }
+}
+
+#page_form{
+
+    .form{
+        margin-bottom: 150px;
+    }
+}
+
+#page_scroll{
+
+    .scrollbar {
+        height: 300px;
+        overflow-y: scroll;
+    }
+
+    .scrollbar-force-overflow {
+        min-height: 450px;
+    }
+}

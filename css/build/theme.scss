@@ -1,0 +1,98 @@
+body{
+    display: flex;
+    height: 100vh;
+    flex-direction: column; 
+}
+
+main{
+    flex: 1;
+
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        flex-grow: 1;
+        flex-shrink: 0;
+        flex-basis: auto;
+    }
+}
+
+
+
+
+
+#header{
+    border-bottom: 1px solid;
+}
+
+#footer{
+    flex: none;
+    border-top: 1px solid;
+}
+
+#header,
+#footer{
+    display: block;
+    background-color: $color-grey-lighten-3;
+    padding: $re;
+    text-align: right;
+    border-color: $color-grey-lighten-2;
+
+    .about{
+        margin: 0 $sm;
+        font-size: $font-sm;
+    }
+}
+
+#main_wrapper{
+
+    @media (min-width: $break-point-es) {
+        height: auto;
+    }
+
+    @media (min-width: $break-point-bi) {
+        height: 100%;
+    }
+}
+
+#main_menu,
+#main_content{
+    padding: $re;
+}
+
+#main_menu{
+    background-color: $color-grey-lighten-4;
+    text-transform: capitalize;
+
+    @media (min-width: $break-point-bi) {
+        border-right: 1px solid $color-grey-lighten-3;
+    }
+
+    .menu {
+
+        li{
+            width: 100%;
+        }
+    }
+
+    .active{
+        box-shadow: none;
+
+        @media (min-width: $break-point-bi) {
+            &:after{
+                content: "\f061";
+                font-family: $font-family-awesome;
+                color: $color-blue-lighten-2;
+                float: right;
+                margin: 2px;
+            }
+        }
+    }
+}
+
+
+
+
+.page-title{
+    font-family: $font-family-thin;
+    text-align: center;
+    color: $color-grey;
+    width: 100%;
+}

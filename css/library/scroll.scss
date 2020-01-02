@@ -1,0 +1,19 @@
+.scrollbar::-webkit-scrollbar {
+    width: $re !important;
+}
+
+@each $color in $arrColor {
+    .scrollbar-style-#{$color} {
+
+        scrollbar-color: color-regular(#{$color}) color-extra-light(#{$color});
+
+        &::-webkit-scrollbar {
+            width: 12px;
+            background-color: color-light(#{$color});
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: color-regular(#{$color});
+        }
+    }
+}

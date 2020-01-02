@@ -1,0 +1,653 @@
+/* ---------------------------------------------------------------- CONTAINER */
+
+.container {
+    margin: auto;
+    box-sizing: border-box;
+    flex: 0 0 auto;
+    flex-grow: 1;
+    flex-basis: 0;
+    width: 100%;
+    max-width: 100%;
+
+    @media (min-width: $break-point-re) {
+        max-width: 750px;
+    }
+
+    @media (min-width: $break-point-bi) {
+        max-width: 970px;
+    }
+
+    @media (min-width: $break-point-eb) {
+        max-width: 1170px;
+
+    }
+}
+
+/* ---------------------------------------------------------------- DEFAULT */
+
+.row {
+    box-sizing: border-box;
+    display: flex;
+    flex: 0 1 auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: $col-12;
+}
+
+[class*="col"] {
+    box-sizing: border-box;
+    flex: 0 0 auto;
+    flex-grow: 1;
+    // flex-basis: 0;
+    flex-basis: $col-12;
+    max-width: $col-12;
+    position: relative;
+}
+
+.col-middle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+/* ---------------------------------------------------------------- COLUMN EXTRA SMALL */
+
+@media only screen and (min-width: $break-point-es) {
+    .col-es-1 {
+        max-width: $col-1;
+        flex-basis: $col-1;
+    }
+
+    .col-es-2 {
+        max-width: $col-2;
+        flex-basis: $col-2;
+    }
+
+    .col-es-3 {
+        max-width: $col-3;
+        flex-basis: $col-3;
+    }
+
+    .col-es-4 {
+        max-width: $col-4;
+        flex-basis: $col-4;
+    }
+
+    .col-es-5 {
+        max-width: $col-5;
+        flex-basis: $col-5;
+    }
+
+    .col-es-6 {
+        max-width: $col-6;
+        flex-basis: $col-6;
+    }
+
+    .col-es-7 {
+        max-width: $col-7;
+        flex-basis: $col-7;
+    }
+
+    .col-es-8 {
+        max-width: $col-8;
+        flex-basis: $col-8;
+    }
+
+    .col-es-9 {
+        max-width: $col-9;
+        flex-basis: $col-9;
+    }
+
+    .col-es-10 {
+        max-width: $col-10;
+        flex-basis: $col-10;
+    }
+
+    .col-es-11 {
+        max-width: $col-11;
+        flex-basis: $col-11;
+    }
+
+    .col-es-12 {
+        max-width: $col-12;
+        flex-basis: $col-12;
+    }
+}
+
+/* ---------------------------------------------------------------- COLUMN SMALL */
+
+@media only screen and (min-width: $break-point-sm){
+    .col-sm-1 {
+        max-width: $col-1;
+        flex-basis: $col-1;
+    }
+
+    .col-sm-2 {
+        max-width: $col-2;
+        flex-basis: $col-2;
+    }
+
+    .col-sm-3 {
+        max-width: $col-3;
+        flex-basis: $col-3;
+    }
+
+    .col-sm-4 {
+        max-width: $col-4;
+        flex-basis: $col-4;
+    }
+
+    .col-sm-5 {
+        max-width: $col-5;
+        flex-basis: $col-5;
+    }
+
+    .col-sm-6 {
+        max-width: $col-6;
+        flex-basis: $col-6;
+    }
+
+    .col-sm-7 {
+        max-width: $col-7;
+        flex-basis: $col-7;
+    }
+
+    .col-sm-8 {
+        max-width: $col-8;
+        flex-basis: $col-8;
+    }
+
+    .col-sm-9 {
+        max-width: $col-9;
+        flex-basis: $col-9;
+    }
+
+    .col-sm-10 {
+        max-width: $col-10;
+        flex-basis: $col-10;
+    }
+
+    .col-sm-11 {
+        max-width: $col-11;
+        flex-basis: $col-11;
+    }
+
+    .col-sm-12 {
+        max-width: $col-12;
+        flex-basis: $col-12;
+    }
+}
+
+
+/* ---------------------------------------------------------------- COLUMN REGULAR */
+
+@media only screen and (min-width: $break-point-re) { 
+    .col-re-1 {
+        max-width: $col-1;
+        flex-basis: $col-1;
+    }
+
+    .col-re-2 {
+        max-width: $col-2;
+        flex-basis: $col-2;
+    }
+
+    .col-re-3 {
+        max-width: $col-3;
+        flex-basis: $col-3;
+    }
+
+    .col-re-4 {
+        max-width: $col-4;
+        flex-basis: $col-4;
+    }
+
+    .col-re-5 {
+        max-width: $col-5;
+        flex-basis: $col-5;
+    }
+
+    .col-re-6 {
+        max-width: $col-6;
+        flex-basis: $col-6;
+    }
+
+    .col-re-7 {
+        max-width: $col-7;
+        flex-basis: $col-7;
+    }
+
+    .col-re-8 {
+        max-width: $col-8;
+        flex-basis: $col-8;
+    }
+
+    .col-re-9 {
+        max-width: $col-9;
+        flex-basis: $col-9;
+    }
+
+    .col-re-10 {
+        max-width: $col-10;
+        flex-basis: $col-10;
+    }
+
+    .col-re-11 {
+        max-width: $col-11;
+        flex-basis: $col-11;
+    }
+
+    .col-re-12 {
+        max-width: $col-12;
+        flex-basis: $col-12;
+    }
+}
+
+/* ---------------------------------------------------------------- COLUMN BIG */
+
+@media only screen and (min-width: $break-point-bi){
+    .col-bi-1 {
+        max-width: $col-1;
+        flex-basis: $col-1;
+    }
+
+    .col-bi-2 {
+        max-width: $col-2;
+        flex-basis: $col-2;
+    }
+
+    .col-bi-3 {
+        max-width: $col-3;
+        flex-basis: $col-3;
+    }
+
+    .col-bi-4 {
+        max-width: $col-4;
+        flex-basis: $col-4;
+    }
+
+    .col-bi-5 {
+        max-width: $col-5;
+        flex-basis: $col-5;
+    }
+
+    .col-bi-6 {
+        max-width: $col-6;
+        flex-basis: $col-6;
+    }
+
+    .col-bi-7 {
+        max-width: $col-7;
+        flex-basis: $col-7;
+    }
+
+    .col-bi-8 {
+        max-width: $col-8;
+        flex-basis: $col-8;
+    }
+
+    .col-bi-9 {
+        max-width: $col-9;
+        flex-basis: $col-9;
+    }
+
+    .col-bi-10 {
+        max-width: $col-10;
+        flex-basis: $col-10;
+    }
+
+    .col-bi-11 {
+        max-width: $col-11;
+        flex-basis: $col-11;
+    }
+
+    .col-bi-12 {
+        max-width: $col-12;
+        flex-basis: $col-12;
+    }
+}
+
+/* ---------------------------------------------------------------- COLUMN EXTRA BIG */
+
+@media only screen and (min-width: $break-point-eb){
+    .col-eb-1 {
+        max-width: $col-1;
+        flex-basis: $col-1;
+    }
+
+    .col-eb-2 {
+        max-width: $col-2;
+        flex-basis: $col-2;
+    }
+
+    .col-eb-3 {
+        max-width: $col-3;
+        flex-basis: $col-3;
+    }
+
+    .col-eb-4 {
+        max-width: $col-4;
+        flex-basis: $col-4;
+    }
+
+    .col-eb-5 {
+        max-width: $col-5;
+        flex-basis: $col-5;
+    }
+
+    .col-eb-6 {
+        max-width: $col-6;
+        flex-basis: $col-6;
+    }
+
+    .col-eb-7 {
+        max-width: $col-7;
+        flex-basis: $col-7;
+    }
+
+    .col-eb-8 {
+        max-width: $col-8;
+        flex-basis: $col-8;
+    }
+
+    .col-eb-9 {
+        max-width: $col-9;
+        flex-basis: $col-9;
+    }
+
+    .col-eb-10 {
+        max-width: $col-10;
+        flex-basis: $col-10;
+    }
+
+    .col-eb-11 {
+        max-width: $col-11;
+        flex-basis: $col-11;
+    }
+
+    .col-eb-12 {
+        max-width: $col-12;
+        flex-basis: $col-12;
+    }
+}
+
+/* ---------------------------------------------------------------- OFFSET EXTRA SMALL */
+
+@media only screen and (min-width: $break-point-es){ 
+    .col-es-off-0 {
+        margin-left: $col-0;
+    }
+
+    .col-es-off-1 {
+        margin-left: $col-1;
+    }
+
+    .col-es-off-2 {
+        margin-left: $col-2;
+    }
+
+    .col-es-off-3 {
+        margin-left: $col-3;
+    }
+
+    .col-es-off-4 {
+        margin-left: $col-4;
+    }
+
+    .col-es-off-5 {
+        margin-left: $col-5;
+    }
+
+    .col-es-off-6 {
+        margin-left: $col-6;
+    }
+
+    .col-es-off-7 {
+        margin-left: $col-7;
+    }
+
+    .col-es-off-8 {
+        margin-left: $col-8;
+    }
+
+    .col-es-off-9 {
+        margin-left: $col-9;
+    }
+
+    .col-es-off-10 {
+        margin-left: $col-10;
+    }
+
+    .col-es-off-11 {
+        margin-left: $col-11;
+    }
+
+    .col-es-off-12 {
+        margin-left: $col-12;
+    }
+}
+
+/* ---------------------------------------------------------------- OFFSET SMALL */
+
+@media only screen and (min-width: $break-point-sm) { 
+    .col-sm-off-0 {
+        margin-left: $col-0;
+    }
+
+    .col-sm-off-1 {
+        margin-left: $col-1;
+    }
+
+    .col-sm-off-2 {
+        margin-left: $col-2;
+    }
+
+    .col-sm-off-3 {
+        margin-left: $col-3;
+    }
+
+    .col-sm-off-4 {
+        margin-left: $col-4;
+    }
+
+    .col-sm-off-5 {
+        margin-left: $col-5;
+    }
+
+    .col-sm-off-6 {
+        margin-left: $col-6;
+    }
+
+    .col-sm-off-7 {
+        margin-left: $col-7;
+    }
+
+    .col-sm-off-8 {
+        margin-left: $col-8;
+    }
+
+    .col-sm-off-9 {
+        margin-left: $col-9;
+    }
+
+    .col-sm-off-10 {
+        margin-left: $col-10;
+    }
+
+    .col-sm-off-11 {
+        margin-left: $col-11;
+    }
+
+    .col-sm-off-12 {
+        margin-left: $col-12;
+    }
+}
+
+/* ---------------------------------------------------------------- OFFSET EXTRA REGULAR */
+
+@media only screen and (min-width: $break-point-re){ 
+    .col-re-off-0 {
+        margin-left: $col-0;
+    }
+
+    .col-re-off-1 {
+        margin-left: $col-1;
+    }
+
+    .col-re-off-2 {
+        margin-left: $col-2;
+    }
+
+    .col-re-off-3 {
+        margin-left: $col-3;
+    }
+
+    .col-re-off-4 {
+        margin-left: $col-4;
+    }
+
+    .col-re-off-5 {
+        margin-left: $col-5;
+    }
+
+    .col-re-off-6 {
+        margin-left: $col-6;
+    }
+
+    .col-re-off-7 {
+        margin-left: $col-7;
+    }
+
+    .col-re-off-8 {
+        margin-left: $col-8;
+    }
+
+    .col-re-off-9 {
+        margin-left: $col-9;
+    }
+
+    .col-re-off-10 {
+        margin-left: $col-10;
+    }
+
+    .col-re-off-11 {
+        margin-left: $col-11;
+    }
+
+    .col-re-off-12 {
+        margin-left: $col-12;
+    }
+}
+
+/* ---------------------------------------------------------------- OFFSET BIG */
+
+@media only screen and (min-width: $break-point-bi){ 
+    .col-bi-off-0 {
+        margin-left: $col-0;
+    }
+
+    .col-bi-off-1 {
+        margin-left: $col-1;
+    }
+
+    .col-bi-off-2 {
+        margin-left: $col-2;
+    }
+
+    .col-bi-off-3 {
+        margin-left: $col-3;
+    }
+
+    .col-bi-off-4 {
+        margin-left: $col-4;
+    }
+
+    .col-bi-off-5 {
+        margin-left: $col-5;
+    }
+
+    .col-bi-off-6 {
+        margin-left: $col-6;
+    }
+
+    .col-bi-off-7 {
+        margin-left: $col-7;
+    }
+
+    .col-bi-off-8 {
+        margin-left: $col-8;
+    }
+
+    .col-bi-off-9 {
+        margin-left: $col-9;
+    }
+
+    .col-bi-off-10 {
+        margin-left: $col-10;
+    }
+
+    .col-bi-off-11 {
+        margin-left: $col-11;
+    }
+
+    .col-bi-off-12 {
+        margin-left: $col-12;
+    }
+}
+
+/* ---------------------------------------------------------------- OFFSET EXTRA BIG */
+
+@media only screen and (min-width: $break-point-eb) { 
+    .col-eb-off-0 {
+        margin-left: $col-0;
+    }
+
+    .col-eb-off-1 {
+        margin-left: $col-1;
+    }
+
+    .col-eb-off-2 {
+        margin-left: $col-2;
+    }
+
+    .col-eb-off-3 {
+        margin-left: $col-3;
+    }
+
+    .col-eb-off-4 {
+        margin-left: $col-4;
+    }
+
+    .col-eb-off-5 {
+        margin-left: $col-5;
+    }
+
+    .col-eb-off-6 {
+        margin-left: $col-6;
+    }
+
+    .col-eb-off-7 {
+        margin-left: $col-7;
+    }
+
+    .col-eb-off-8 {
+        margin-left: $col-8;
+    }
+
+    .col-eb-off-9 {
+        margin-left: $col-9;
+    }
+
+    .col-eb-off-10 {
+        margin-left: $col-10;
+    }
+
+    .col-eb-off-11 {
+        margin-left: $col-11;
+    }
+
+    .col-eb-off-12 {
+        margin-left: $col-12;
+    }
+}

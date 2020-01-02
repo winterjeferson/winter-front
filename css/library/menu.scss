@@ -1,0 +1,312 @@
+/* ---------------------------------------------------------------- MENU */
+
+.menu {
+
+    ul{
+        font-size: 0;
+        list-style: none;
+
+        li{
+            font-size: initial;
+        }
+    }
+}
+
+.menu-vertical{
+
+    >ul{
+
+        >li{
+            width: 100%;
+            display: table;
+            margin-bottom: $re;
+            padding: 0;
+            margin: $sm auto;
+        }
+    }
+}
+
+.menu-horizontal{
+
+    >ul{
+
+        >li{
+            display: inline-block;
+            margin: $es;
+        }
+    }
+}
+
+.menu-mobile{
+
+    @media only screen and (min-width: $break-point-es) {
+        li,
+        .bt{
+            width: 100%;
+        }
+    }
+
+    @media only screen and (min-width: $break-point-re) {
+        li,
+        .bt{
+            width: auto;
+        }
+    }
+}
+
+.menu-hover-field{
+    position: absolute;
+    bottom: 6px;
+    right: 16px;
+}
+
+/* ---------------------------------------------------------------- PAGINATION */
+
+.pagination{
+
+    .bt{
+        border-radius: 0;
+
+        &.active{
+            box-shadow: none;
+            pointer-events: none;
+        }
+    }
+
+    li{
+        margin: 0 !important;
+        margin-left: -1px !important;
+
+        &:first-child{
+
+            .bt-es,
+            .bt-sm{
+                border-radius: $border-radius-sm 0 0 $border-radius-sm;
+            }
+
+            .bt-re,
+            .bt-bi{
+                border-radius: $border-radius-re 0 0 $border-radius-re;
+            }
+
+            .bt-eb{
+                border-radius: $border-radius-bi 0 0 $border-radius-bi;
+            }
+        }
+
+        &:last-child{
+
+            .bt-es,
+            .bt-sm{
+                border-radius: 0 $border-radius-sm $border-radius-sm 0;
+            }
+
+            .bt-re,
+            .bt-bi{
+                border-radius: 0 $border-radius-re $border-radius-re 0;
+            }
+
+            .bt-eb{
+                border-radius: 0 $border-radius-bi $border-radius-bi 0;
+            }
+        }
+    }
+}
+
+/* ---------------------------------------------------------------- MENU TAB */
+
+.menu-tab{
+    position: relative;
+    width: 100%;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+
+    .bt{
+        border: 0;
+    }
+
+    &.text-left{
+
+        >ul{
+
+            > li{
+                left: -3px;
+            }
+        }
+    }
+
+    &.text-right{
+
+        >ul{
+
+            > li{
+                right: -3px;
+            }
+        }
+    }
+
+    >ul{
+        display: table !important;
+
+        > li{
+            position: relative;
+            top: 3px;
+            @extend %extend-border-solid;
+            border-color: transparent;
+            border-radius: $border-radius-re $border-radius-re 0 0;
+            transition: $transition;
+
+            > ul{
+                border-color: $color-grey;
+                margin-top: 3px;
+                margin-left: -1px;
+
+                > li{
+                    margin-top: 0;
+
+                    .bt{
+                        color: $color-black !important;
+
+                        &:hover{
+                            color: $color-black !important;
+                        }
+                    }
+                }
+            }
+
+            &.menu-tab-active{
+                border-bottom-color: transparent !important;
+                transition: $transition;
+            }
+        }
+    }
+}
+
+.menu-tab-white{
+    ul{
+        li{
+            ul{
+                li{
+                    .bt{
+                        color: $color-black;
+
+                        &:hover{
+                            color:  $color-black;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ---------------------------------------------------------------- NAVIGATION ARROW */
+
+.navigation-arrow{
+    position: absolute;
+    width: 100%;
+    font-size: 0;
+
+    @media only screen and (min-width: $break-point-es) { 
+        top: calc(50% - 35px);
+    }
+
+    @media only screen and (min-width: $break-point-bi) { 
+        top: calc(50% - 55px);
+    }
+
+    .fa{
+
+        @media only screen and (min-width: $break-point-es) { 
+            font-size: 2em;
+        }
+
+        @media only screen and (min-width: $break-point-bi) { 
+            font-size: 4em;
+        }
+    }
+
+    li{
+        position: relative;
+        width: calc(50% - #{$sm});
+
+        &:first-child{
+            text-align: left;
+        }
+
+        &:last-child{
+            text-align: right;
+        }
+
+        .bt{
+            color: $color-white;
+            border: 0;
+
+            @media only screen and (min-width: $break-point-es) { 
+                margin: $re;
+            }
+
+            @media only screen and (min-width: $break-point-bi) { 
+                margin: $bi;
+            }
+        }
+    }
+}
+
+
+@each $color in $arrColor {
+
+    /* ---------------------------------------------------------------- MENU TAB */
+
+    .menu-tab-#{$color}{
+        border-color: color-regular(#{$color});
+
+        ul{
+
+            > li{
+
+                > ul{
+                    border-color: color-regular(#{$color});
+
+                    > li{
+
+                        &:hover{
+                            background-color: color-extra-light(#{$color});
+                        }
+                    }
+                }
+            }
+        }
+
+        .bt{
+            color: color-regular(#{$color});
+
+            &:focus{
+                box-shadow: 0 0 0 4px rgba(color-regular(#{$color}), $component-opacity);
+            }
+        }
+
+        li{
+
+            &:hover,
+                &:focus,
+                &.active{
+                background-color: color-regular(#{$color});
+
+                .bt{
+                    border-color: color-regular(#{$color});
+                    color: color-regular-contrast(#{$color});
+                }
+            }
+
+            &.menu-tab-active{
+                border-color: color-regular(#{$color});
+                background-color: color-regular(#{$color});
+
+                .bt{
+                    color: color-regular-contrast(#{$color});
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,9 @@
+@each $color in $arrColor {
+    .color-#{$color} {
+        color: color-regular(#{$color});
+    }
+    
+    .bg-#{$color} {
+        background-color: color-regular(#{$color});
+    }
+}

@@ -1,0 +1,57 @@
+{% from 'include/template_nunjucks.html' import arrSize, arrColor %}
+{% include "include/head.html" %}
+<h1 class="page-title">
+    Tag
+</h1>
+<div class="row">
+    <div class="col-es-12">
+        <ul class="tag-list">
+            {% for color in arrColor %}
+            <li>
+                <div class="tag-item tag-{{color}}">
+                    <span class="text">tag-{{color}}</span>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+<div class="row">
+    <div class="col-es-12">
+        <ul class="tag-list">
+            {% for color in arrColor %}
+            <li>
+                <div class="tag-item-bt tag-{{color}}">
+                    <span class="text">
+                        {{color}}
+                        <button type="button" class="tag-bt"
+                            aria-label="close">
+                            <span class="fa fa-times" aria-hidden="true"></span>
+                        </button>
+                    </span>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+<div class="row">
+    <div class="col-es-12">
+        <ul class="tag-list">
+            {% for color in arrColor %}
+            <li>
+                <div class="tag-item-bt tag-{{color}}">
+                    <a href="javascript:;" class="link link-{{color}}">
+                        {{color}}
+                    </a>
+                    <button type="button" class="tag-bt"
+                        aria-label="close">
+                        <span class="fa fa-times" aria-hidden="true"></span>
+                    </button>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% include "include/footer.html" %}

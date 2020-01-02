@@ -1,0 +1,14 @@
+{
+    "403": {
+        "title": "Erro 403",
+        "text": "Acesso Proibido"
+    },
+    "404": {
+        "title": "Erro 404",
+        "text": "Página não encontrada"
+    },
+    "500": {
+        "title": "Erro 500",
+        "text": "Erro interno no Servidor"
+    }
+}

@@ -1,0 +1,95 @@
+.bt-facebook{
+    color: $color-white;
+    background-color: $color-facebook;
+    @extend %extend-border-solid;
+    border-color: $color-facebook-darken-2;
+    box-shadow: none;
+
+    &:hover,
+        &:focus,
+        &.button-active{
+        background-color: $color-facebook-darken-3;
+        @extend %extend-border-solid;
+        border-color:  $color-facebook-darken-6;
+    }
+}
+
+.bt-twitter{
+    color: $color-white;
+    background-color: $color-twitter;
+    @extend %extend-border-solid;
+    border-color: $color-twitter-darken-3;
+    box-shadow: none;
+
+    &:hover,
+        &:focus,
+        &.button-active{
+        background-color: $color-twitter-darken-5;
+        @extend %extend-border-solid;
+        border-color: $color-twitter-darken-7;
+    }
+}
+
+.bt-youtube{
+    color: $color-white;
+    background-color: $color-youtube;
+    @extend %extend-border-solid;
+    border-color: $color-youtube-darken-2;
+    box-shadow: none;
+
+    &:hover,
+        &:focus,
+        &.button-active{
+        background-color: $color-youtube-darken-2;
+        @extend %extend-border-solid;
+        border-color: $color-youtube-darken-4;
+    }
+}
+
+.bt-linkedin{
+    color: $color-white;
+    background-color: $color-linkedin;
+    @extend %extend-border-solid;
+    border-color: $color-linkedin-darken-2;
+    box-shadow: none;
+
+    &:hover,
+        &:focus,
+        &.button-active{
+        background-color: $color-linkedin-darken-3;
+        @extend %extend-border-solid;
+        border-color: $color-linkedin-darken-5;
+    }
+}
+
+.bt-pinterest{
+    color: $color-white;
+    background-color: $color-pinterest;
+    @extend %extend-border-solid;
+    border-color: $color-pinterest-darken-2;
+    box-shadow: none;
+
+    &:hover,
+        &:focus,
+        &.button-active{
+        background-color: $color-pinterest-darken-4;
+        @extend %extend-border-solid;
+        border-color: $color-pinterest-darken-5;
+    }
+}
+
+.bt-instagram{
+    color: $color-white;
+    background-color: $color-instagram;
+    @extend %extend-border-solid;
+    border-color: $color-instagram-darken-3;
+    box-shadow: none;
+
+    &:hover,
+        &:focus,
+        &.button-active{
+        background-color: $color-instagram-darken-2;
+        @extend %extend-border-solid;
+        border-color: $color-instagram-darken-4;
+    }
+}

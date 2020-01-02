@@ -1,0 +1,95 @@
+{
+    "default": {
+    "password": "Senha",
+    "confirm": "Confirmar",
+    "cancel": "Cancelar",
+    "input_upload": "Selecione o Arquivo...",
+    "add": "Adicionar",
+    "remove": "Remover",
+    "first_page": "Primeira Página",
+    "last_page": "Última Página",
+    "menu": "Menu",
+    "close": "Fechar",
+    "previous": "Anterior",
+    "next": "Próximo"
+}
+    ,
+    "template": {
+    "blog": "Blog",
+    "login_inactive": "Usuário inativo. Contate um administrador.",
+    "login_wrong_email": "E-mail não encontrado.",
+    "login_wrong_password": "Senha incorreta. Tente novamente.",
+    "login_empty": "ATENÇÃO: Nenhum campo pode ficar vazio.",
+    "language": "Language / Idioma",
+    "home": "Página inicial",
+    "select_background": "Selecione a cor de fundo",
+    "modal": "Abrir Modal",
+    "confirmation": "Abrir Confirmação",
+    "url": "Pegar parâmetro na URL (l)",
+    "navigation": "Navegação",
+    "progress": "Barras de progresso",
+    "progress_es": "Barras de progresso extra pequenas",
+    "progress_sm": "Barras de progresso pequenas",
+    "progress_re": "Barras de progresso regulares",
+    "progress_bi": "Barras de progresso grandes",
+    "progress_eb": "Barras de progresso muito grandes",
+    "button": "Botão",
+    "button_es": "Botões muito pequenos",
+    "button_sm": "Botões pequenos",
+    "button_re": "Botões regulares",
+    "button_bi": "Botões grandes",
+    "button_eb": "Botões muito grandes",
+    "button_fu": "Botões largura máxima",
+    "button_outline": "Botões contorno",
+    "button_active": "Botões ativos",
+    "button_disabled": "Botões desativados",
+    "button_social": "Botões de redes sociais",
+    "button_pagination": "Botões de paginação",
+    "button_link": "Link",
+    "menu_drop_down": "Menu drop down",
+    "menu_tab": "Menu em abas",
+    "notification": "Notificações",
+    "notification_default_place": "Adicionar notificação",
+    "notification_pointing_place": "Adicionar notificação apontando o local",
+    "responsive": "Grade responsiva",
+    "table": "Tabelas",
+    "table_scroll": "Tabelas com scroll",
+    "tag": "Etiquetas",
+    "text": "Textos",
+    "loading": "Carregando",
+    "gallery": "Galerias",
+    "tooltip": "Tooltip",
+    "icon": "Ícones",
+    "form": "Formulários",
+    "color_palette": "Paleta de cores",
+    "carousel": "Carrossel",
+    "card": "Cartões",
+    "card_small": "Cartão pequeno",
+    "card_regular": "Cartão padrão",
+    "card_big": "Cartão grande"
+}
+    ,
+    "error": {
+    "403": {
+        "title": "Erro 403",
+        "text": "Acesso Proibido"
+    },
+    "404": {
+        "title": "Erro 404",
+        "text": "Página não encontrada"
+    },
+    "500": {
+        "title": "Erro 500",
+        "text": "Erro interno no Servidor"
+    }
+}
+    ,
+    "meta_tag": {
+    "address": "https://www.jefersonwinter.com/",
+    "author": "Jeferson Winter",
+    "description": "Description",
+    "keywords": "key, words",
+    "lang": "pt-br",
+    "title": "Framework 12_0_0"
+}
+}

@@ -1,0 +1,214 @@
+.bt-transparent{
+    border-color: transparent !important;
+    background-color: transparent !important;
+}
+
+/* ----------------------------------------------------------------------------- BUTTON */
+
+.bt-toggle {
+    margin-bottom: $sm;
+
+    @media only screen and (min-width: $break-point-es) {
+        display: inline-block !important;
+    }
+
+    @media only screen and (min-width: $break-point-bi) {
+        display: none !important;
+    }
+}
+
+/* ----------------------------------------------------------------------------- BUTTON SIZE */
+
+.bt {
+    user-select: none;
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+    transition: $transition;
+    @extend %extend-border-solid;
+
+    &.disabled,
+    &:disabled{
+        pointer-events: none;
+        opacity: .6;
+
+        &:focus{
+            box-shadow: 0;
+        }
+    }
+}
+
+.bt,
+.link,
+.bt-re,
+.bt-fu{
+    font-size: $font-re;
+}
+
+.bt-re,
+.bt-fu{
+    border-radius: $border-radius-re;
+}
+
+.bt-es,
+.bt-sm{
+    border-radius: $border-radius-sm;
+    font-size: $font-sm;
+}
+
+.bt-re{
+    padding: $re $re + $sm;
+}
+
+.bt-sm{
+    padding: $sm $sm + $es;
+}
+
+.bt-es{
+    padding: $es $sm;
+}
+
+.bt-bi{
+    border-radius: $border-radius-re;
+    padding: $bi;
+}
+
+.bt-eb{
+    border-radius: $border-radius-bi;
+    padding: $eb;
+}
+
+.bt-fu{
+    padding: $re;
+    width: 100%;
+}
+
+.bt-square-es{
+    padding: $es $es;
+}
+
+.bt-square-sm{
+    padding: $sm $sm;
+}
+
+.bt-square-re{
+    padding: $re $re;
+}
+
+.bt-square-bi{
+    padding: $bi $bi;
+}
+
+.bt-square-fu{
+    padding: $bi $bi;
+}
+/* ----------------------------------------------------------------------------- OUTLINE */
+
+.bt-outline{
+    background-color: transparent;
+    box-shadow: none;
+}
+
+
+/* ----------------------------------------------------------------------------- LINK */
+
+.link{
+    text-decoration: none;
+
+    &:active,
+        &:visited,
+        &:focus,
+        &:hover{
+        text-decoration: underline;
+    }
+}
+
+@each $color in $arrColor {
+    /* ------------------------------------------------------------------------- BT */
+
+    .bt-#{$color} {
+        color: color-regular-contrast(#{$color});
+        background-color: color-regular(#{$color});
+        border-color: color-regular-border(#{$color});
+
+        &:hover{
+            color: color-regular-contrast(#{$color});
+            background-color: color-dark(#{$color});
+            border-color: color-dark-border(#{$color});
+
+            .fa{
+                color: color-regular-contrast(#{$color});
+            }
+        }
+
+        &.active{
+            background-color: color-dark(#{$color});
+        }
+
+        &:disabled{
+            border-color: color-regular(#{$color});
+        }
+    }
+
+
+    /* ------------------------------------------------------------------------- BT OUTLINE */
+
+    .bt-outline-#{$color} {
+        color: color-dark(#{$color});
+        border-color: color-regular(#{$color});
+
+        &:hover,
+            &:focus,
+            &.active{
+            border-color: color-regular(#{$color});
+            background-color: color-regular(#{$color});
+            color: color-regular-contrast(#{$color});
+        }
+    }
+
+    /* ------------------------------------------------------------------------- FOCUS */
+
+    .bt-#{$color},
+    .bt-outline-#{$color} {
+
+        &.bt-es,
+        &.bt-sm{
+
+            &:focus,
+                &.active{
+                box-shadow: 0 0 0 3px rgba(color-regular(#{$color}), $component-opacity);
+            }
+        }
+
+        &.bt-re,
+        &.bt-bi,
+        &.bt-fu{
+
+            &:focus,
+                &.active{
+                box-shadow: 0 0 0 4px rgba(color-regular(#{$color}), $component-opacity); 
+            }
+        }
+
+        &.bt-eb{
+
+            &:focus,
+                &.active{
+                box-shadow: 0 0 0 6px rgba(color-regular(#{$color}), $component-opacity); 
+            }
+        }
+    }
+
+    /* ------------------------------------------------------------------------- LINK */
+
+    .link-#{$color} {
+        color: color-regular(#{$color});
+
+        &:active,
+            &:visited,
+            &:focus,
+            &:hover{
+            color: color-dark(#{$color});
+        }
+    }
+}

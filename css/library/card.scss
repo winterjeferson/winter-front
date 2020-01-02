@@ -1,0 +1,96 @@
+.card{
+    margin: $sm;
+
+    .menu-tab{
+        border-bottom: 0;
+    }
+
+    header,    
+    .card-body,
+    footer{
+        @extend %extend-border-solid;
+        text-align: center;
+    }
+
+    header{
+        border-radius: $border-radius-re $border-radius-re 0 0;
+        font-family: $font-family-bold;
+        border-bottom: transparent;
+    }
+
+    .card-body{
+        border-top: 0;
+        border-bottom: 0;
+        background-color: $color-white;
+    }
+
+    footer{
+        border-radius: 0 0 $border-radius-re $border-radius-re;
+        border-top: transparent;
+    }
+}
+
+.card-es{
+
+    header,    
+    .card-body,
+    footer{
+        padding: $es;
+    }
+}
+
+.card-sm{
+
+    header,    
+    .card-body,
+    footer{
+        padding: $sm;
+    }
+}
+
+.card-re{
+
+    header,    
+    .card-body,
+    footer{
+        padding: $re;
+    }
+}
+
+.card-bi{
+
+    header,    
+    .card-body,
+    footer{
+        padding: $bi;
+    }
+}
+
+.card-eb{
+
+    header,    
+    .card-body,
+    footer{
+        padding: $eb;
+    }
+}
+
+@each $color in $arrColor {
+    .card-#{$color} {
+
+        header{
+            color: color-dark(#{$color});
+        }
+
+        header,
+        .card-body,
+        footer{
+            border-color: color-light(#{$color});
+        }
+
+        header,
+        footer{
+            background-color: color-light(#{$color});
+        }
+    }
+}

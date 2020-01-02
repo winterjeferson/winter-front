@@ -1,0 +1,301 @@
+#loading_main{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: z-index('loading-main');
+    width: 100vw;
+    height: 100vh;
+    opacity: 1;
+    transition: $transition;
+    overflow: hidden;
+    display: flex;
+
+    .progress-bar{
+        width: 0;
+    }
+}
+
+.loading-main-done{
+    opacity: 0 !important;
+    transition: $transition;
+    pointer-events: none;
+}
+
+/* ----------------------------------------------------------------------------- SIZE */
+
+.loading-es {
+    border-width: $es;
+    width: $es * 10;
+    height: $es * 10;
+}
+
+.loading-sm {
+    border-width: $sm;
+    width: $sm * 10;
+    height: $sm * 10;
+}
+
+.loading-re {
+    border-width: $re;
+    width: $re * 10;
+    height: $re * 10;
+}
+
+.loading-bi {
+    border-width: $bi;
+    width: $bi * 10;
+    height: $bi * 10;
+}
+
+.loading-eb {
+    border-width: $eb;
+    width: $eb * 10;
+    height: $eb * 10;
+}
+
+/* ----------------------------------------------------------------------------- STYLE */
+
+.loading-1 {
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    margin: auto;
+    border-style: solid;
+    display: inline-block;
+    border-top-color: transparent !important;
+}
+
+
+.loading-2,
+.loading-2:before,
+.loading-2:after {
+    animation: load2 1s infinite ease-in-out;
+    width: 10px;
+}
+
+.loading-2 {
+    text-indent: -9999em;
+    position: relative;
+    font-size: 11px;
+    transform: translateZ(0);
+    animation-delay: -0.16s;
+    display: inline-block;
+    margin: 2em;
+
+    &:before,
+        &:after {
+        position: absolute;
+        top: 0;
+        content: '';
+    }
+    &:before {
+        left: -1.5em;
+        animation-delay: -0.32s;
+    }
+    &:after {
+        left: 1.5em;
+    }
+
+    @keyframes load2 {
+        0%,
+        80%,
+        100% {
+            box-shadow: 0 0;
+            height: 1em;
+        }
+        40% {
+            box-shadow: 0 -1em;
+            height: 2em;
+        }
+    }
+}
+
+.loading-3,
+.loading-3:before,
+.loading-3:after {
+    animation: load3 1s infinite ease-in-out;
+    width: 10px;
+}
+
+.loading-3 {
+    text-indent: -9999em;
+    position: relative;
+    font-size: 11px;
+    transform: translateZ(0);
+    animation-delay: -0.16s;
+    display: inline-block;
+    margin: 2em 2em 0 2em;
+
+    &:before,
+        &:after {
+        position: absolute;
+        top: 0;
+        content: '';
+    }
+    &:before {
+        left: -1.5em;
+        animation-delay: -0.32s;
+    }
+    &:after {
+        left: 1.5em;
+    }
+
+    @keyframes load3 {
+        0%,
+        80%,
+        100% {
+            box-shadow: 0 0;
+            height: 1em;
+        }
+        40% {
+            box-shadow: 0 -2em;
+            height: -2em;
+        }
+    }
+}
+
+.loading-4 {
+    font-size: 10px;
+    position: relative;
+    text-indent: -9999em;
+    transform: translateZ(0);
+    animation-delay: -0.16s;
+    display: inline-block;
+    height: 1em;
+    margin: 0 4em 2em 4em;
+
+    @keyframes load4 {
+        0%,
+        80%,
+        100% {
+            box-shadow: 0 2.5em 0 -1.3em;
+        }
+        40% {
+            box-shadow: 0 2.5em 0 0;
+        }
+    }
+}
+
+.loading-4,
+.loading-4:before,
+.loading-4:after {
+    border-radius: 50%;
+    width: 2.5em;
+    height: 2.5em;
+    animation-fill-mode: both;
+    animation: load4 1.8s infinite ease-in-out;
+}
+.loading-4:before,
+.loading-4:after {
+    content: '';
+    position: absolute;
+    top: 0;
+}
+.loading-4:before {
+    left: -3.5em;
+    animation-delay: -0.32s;
+}
+.loading-4:after {
+    left: 3.5em;
+}
+
+
+.loading-5 {
+    font-size: 20px;
+    width: .7em;
+    height: .7em;
+    border-radius: 50%;
+    position: relative;
+    text-indent: -9999em;
+    animation: load5 1.3s infinite linear;
+    transform: translateZ(0);
+    display: inline-block;
+    margin: 2em;
+
+    @keyframes load5 {
+        0%,
+        100% {
+            box-shadow: 0 -1.5em 0 0.1em, 1em -1em 0 0em, 1.5em 0 0 -0.5em, 1em 1em 0 -0.5em, 0 1.5em 0 -0.5em, -1em 1em 0 -0.5em, -1.5em 0 0 -0.5em, -1em -1em 0 0;
+        }
+        12.5% {
+            box-shadow: 0 -1.5em 0 0, 1em -1em 0 0.1em, 1.5em 0 0 0, 1em 1em 0 -0.5em, 0 1.5em 0 -0.5em, -1em 1em 0 -0.5em, -1.5em 0 0 -0.5em, -1em -1em 0 -0.5em;
+        }
+        25% {
+            box-shadow: 0 -1.5em 0 -0.5em, 1em -1em 0 0, 1.5em 0 0 0.1em, 1em 1em 0 0, 0 1.5em 0 -0.5em, -1em 1em 0 -0.5em, -1.5em 0 0 -0.5em, -1em -1em 0 -0.5em;
+        }
+        37.5% {
+            box-shadow: 0 -1.5em 0 -0.5em, 1em -1em 0 -0.5em, 1.5em 0em 0 0, 1em 1em 0 0.1em, 0 1.5em 0 0em, -1em 1em 0 -0.5em, -1.5em 0em 0 -0.5em, -1em -1em 0 -0.5em;
+        }
+        50% {
+            box-shadow: 0 -1.5em 0 -0.5em, 1em -1em 0 -0.5em, 1.5em 0 0 -0.5em, 1em 1em 0 0em, 0 1.5em 0 0.1em, -1em 1em 0 0, -1.5em 0em 0 -0.5em, -1em -1em 0 -0.5em;
+        }
+        62.5% {
+            box-shadow: 0 -1.5em 0 -0.5em, 1em -1em 0 -0.5em, 1.5em 0 0 -0.5em, 1em 1em 0 -0.5em, 0 1.5em 0 0, -1em 1em 0 0.1em, -1.5em 0 0 0, -1em -1em 0 -0.5em;
+        }
+        75% {
+            box-shadow: 0em -1.5em 0 -0.5em, 1em -1em 0 -0.5em, 1.5em 0em 0 -0.5em, 1em 1em 0 -0.5em, 0 1.5em 0 -0.5em, -1em 1em 0 0, -1.5em 0em 0 0.1em, -1em -1em 0 0;
+        }
+        87.5% {
+            box-shadow: 0em -1.5em 0 0, 1em -1em 0 -0.5em, 1.5em 0 0 -0.5em, 1em 1em 0 -0.5em, 0 1.5em 0 -0.5em, -1em 1em 0 0, -1.5em 0em 0 0, -1em -1em 0 0.1em;
+        }
+    }
+}
+
+
+.loading-6 {
+    height: 30px;
+    width: 30px;
+    padding: 10px;
+    margin: 10px auto;
+    animation: sk-rotateplane 1.2s infinite ease-in-out;
+    display: inline-block;
+
+    @keyframes sk-rotateplane {
+        0% { 
+            transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+        } 50% { 
+            transform: perspective(120px) rotateX(-180deg) rotateY(0deg);
+        } 100% { 
+            transform: perspective(120px) rotateX(-180deg) rotateY(-180deg);
+        }
+    }
+}
+
+/* ----------------------------------------------------------------------------- COLOR */
+
+@each $color in $arrColor {
+    .loading-main-#{$color} {
+        background-color: color-extra-light(#{$color});
+        color: color-extra-light(#{$color});
+    }
+
+    .loading-1-#{$color} {
+        border-color: color-regular(#{$color});
+    }
+
+    .loading-2-#{$color},
+    .loading-2-#{$color}:before,
+        .loading-2-#{$color}:after {
+        background-color: color-regular(#{$color});
+    }
+
+    .loading-2-#{$color} {
+        color: color-regular(#{$color});
+    }
+
+    .loading-3-#{$color} {
+        color: color-regular(#{$color});
+    }
+
+    .loading-4-#{$color} {
+        color: color-regular(#{$color});
+    }
+
+    .loading-5-#{$color} {
+        color: color-regular(#{$color});
+    }
+
+    .loading-6-#{$color} {
+        color: color-regular(#{$color});
+    }
+}

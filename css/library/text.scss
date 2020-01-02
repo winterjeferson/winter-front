@@ -1,0 +1,79 @@
+html, 
+body {
+    font-size: $font-re;
+    font-family: $font-family-regular;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+h2 {
+    font-size: 2rem;
+}
+h3 {
+    font-size: 1.75rem;
+}
+h4 {
+    font-size:  1.5rem;
+}
+h5 {
+    font-size: 1.25rem;
+}
+h6 {
+    font-size: 1rem;
+}	
+
+h1, 
+h2,
+h3, 
+h4,
+h5, 
+h6 {
+    margin: .5em auto;
+    font-weight: normal;
+}
+
+p {
+    line-height: 150%;
+    margin-bottom: $re;
+}
+
+strong{
+    font-family: $font-family-bold;
+}
+
+small {
+    font-size: $font-sm;
+}
+
+.text-column{
+    vertical-align: top;
+    padding: 0;
+
+    @media only screen and (min-width: $break-point-es) {
+        column-gap: $bi;
+        column-count: 1;
+    }
+
+    @media only screen and (min-width: $break-point-re) {
+        column-count: 2;
+    }
+}
+
+/* ------------------------------------------------------------------ ALIGN */
+
+.text-left{
+    text-align: left !important;
+}
+
+.text-right{
+    text-align: right !important;
+}
+
+.text-center{
+    text-align: center !important;
+}
+
+.text-justify{
+    text-align: justify !important;
+}

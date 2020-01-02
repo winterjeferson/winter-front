@@ -1,0 +1,160 @@
+.menu-drop-down-text,
+.menu-drop-down{
+    width: calc(100% - 6px);
+
+    > ul{
+        position: relative;
+        width: 100%;
+
+        ul{
+            display: none;
+            z-index: z-index('drop-down');
+
+            @media only screen and (min-width: $break-point-es) { 
+                position: relative;
+                width: 100%;
+            }
+
+            @media only screen and (min-width: $break-point-bi) { 
+                position: absolute;
+                width: auto;
+            }
+        }
+
+        li{
+            position: relative;
+            vertical-align: top;
+        }
+
+        > li{
+            @media only screen and (min-width: $break-point-es) { 
+                margin: 0;
+            }
+
+            @media only screen and (min-width: $break-point-bi) { 
+                margin: $es;
+            }
+
+            li{
+                width: 100%;
+            }
+        }
+    }
+}
+
+.menu-drop-down{
+
+    > ul{
+
+        @media only screen and (min-width: $break-point-es) { 
+            display: none;
+        }
+
+        @media only screen and (min-width: $break-point-bi) { 
+            display: table;
+        }
+
+        ul{
+            margin-top: 1px;
+            border-radius: $border-radius-re;
+            border: 1px solid $color-grey;
+            background-color: $color-white;
+
+            @media only screen and (min-width: $break-point-es) { 
+                position: relative;
+                width: 100%;
+            }
+
+            @media only screen and (min-width: $break-point-bi) { 
+                position: absolute;
+                width: auto;
+            }
+
+            .bt{
+                border-radius: 0;
+                background-color: transparent;
+                border-color: transparent;
+                color: initial;
+                box-shadow: none;
+            }
+
+            li{
+                background-color: transparent;
+                @extend %extend-border-solid;
+                border-color: transparent;
+                border-bottom-color: $color-grey-lighten-3;
+
+                &:hover{
+                    background-color: $color-grey-lighten-3;
+                }
+
+                &:first-child{
+                    border-radius: $border-radius-re $border-radius-re 0 0;
+                }
+
+                &:last-child{
+                    border-radius: 0 0 $border-radius-re $border-radius-re;
+                    border-bottom: 0;
+                }
+            }
+        }
+
+        li{
+            margin-top: -1px;
+        }
+
+        > li{
+
+            @media only screen and (min-width: $break-point-es) { 
+                margin: $es;
+                width: 100%;
+            }
+
+            @media only screen and (min-width: $break-point-bi) { 
+                width: auto;
+            }
+        }
+
+        .bt{
+            width: 100%;
+            white-space: nowrap;
+
+            @media only screen and (min-width: $break-point-es) { 
+                text-align: left;
+            }
+
+            @media only screen and (min-width: $break-point-bi) { 
+                text-align: start;
+            }
+        }
+    }
+}
+
+.menu-drop-down-text{
+    vertical-align: top;
+
+    > ul{
+
+        ul{
+            position: relative;
+            width: 100%;
+            padding-left: $re;
+        }
+
+        > li{
+            padding: $sm; 
+
+            li{
+                padding: $sm; 
+
+                &:first-child{
+                    padding-top: $re; 
+                }
+
+                &:last-child{
+                    padding-bottom: 0; 
+                }
+            }
+        }
+    }
+}

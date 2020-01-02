@@ -1,0 +1,44 @@
+.progress{
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    background-color: $color-grey-lighten-3;
+    box-shadow: 
+        inset 0 1px 0 $color-grey-lighten-2,
+        inset 0 -1px 0 $color-grey-lighten-2,
+        inset -1px 0 0 $color-grey-lighten-2;
+    .progress-bar{
+        height: 100%;
+    }
+}
+
+/* ------------------------------------------------------------------ SIZE */
+
+.progress-es{
+    height: $es;
+}
+
+.progress-sm{
+    height: $sm;
+}
+
+.progress-re{
+    height: $re;
+}
+
+.progress-bi{
+    height: $bi;
+}
+
+.progress-eb{
+    height: $eb;
+}
+
+@each $color in $arrColor {
+    .progress-style-#{$color} {
+
+        .progress-bar{
+            background-color: color-regular(#{$color});
+        }
+    }
+}

@@ -1,0 +1,88 @@
+#tooltip {
+    position: absolute;
+    z-index: z-index('tooltip');
+    opacity: 0;
+    pointer-events: none;
+
+    @media only screen and (min-width: $break-point-es){
+        display: none;
+    }
+
+    @media only screen and (min-width: $break-point-re){
+        display: block;
+    }
+}
+
+.tooltip {
+    @extend %extend-border-solid;
+    padding: $re;
+    border-radius: $border-radius-re;
+    font-size: $font-re;
+}
+
+.tooltip-show {
+    opacity: 1 !important;
+}
+
+[class*="tooltip-direction-"] {
+    position: absolute;
+    border-style: solid;
+}
+
+.tooltip-direction-top {
+    bottom: -$sm;
+    border-width: $sm $sm 0 $sm;
+    border-right-color: transparent !important;
+    border-bottom-color: transparent !important;
+    border-left-color: transparent !important;
+}
+
+.tooltip-direction-right {
+    left: -$sm;
+    top: calc(50% - #{$sm});
+    border-width: $sm $sm $sm 0;
+    border-top-color: transparent !important;
+    border-bottom-color: transparent !important;
+    border-top-color: transparent !important;
+}
+
+.tooltip-direction-bottom {
+    top: -$sm;
+    border-width: 0px $sm $sm $sm;
+    border-right-color: transparent !important;
+    border-left-color: transparent !important;
+    border-top-color: transparent !important;
+}
+
+.tooltip-direction-left {
+    right: -$sm;
+    top: calc(50% - #{$sm});
+    border-width: $sm 0 $sm $sm;
+    border-right-color: transparent !important;
+    border-bottom-color: transparent !important;
+    border-top-color: transparent !important;
+}
+
+@each $color in $arrColor {
+    .tooltip-#{$color} {
+        background-color: color-extra-light(#{$color});
+        border-color: color-extra-light(#{$color});;
+        color: color-regular(#{$color});
+
+        .tooltip-direction-top {
+            border-color: color-extra-light(#{$color});;
+        }
+
+        .tooltip-direction-right {
+            border-color: color-extra-light(#{$color});;
+        }
+
+        .tooltip-direction-bottom {
+            border-color: color-extra-light(#{$color});;
+        }
+
+        .tooltip-direction-left {
+            border-color: color-extra-light(#{$color});;
+        }
+    }
+}

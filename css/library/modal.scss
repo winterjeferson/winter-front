@@ -1,0 +1,182 @@
+#modal{
+    will-change: auto;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    z-index: z-index('modal');
+    opacity: 1;
+    transition: $transition;
+    @extend %extend-background-black;
+    
+    @media only screen and (min-width: $break-point-es) { 
+        padding: $sm;
+    }
+
+    @media only screen and (min-width: $break-point-bi) { 
+        padding: $bi;
+    }
+
+    .modal-box{
+        will-change: auto;
+        position: relative;
+        pointer-events: initial;
+        width: 100%;
+        background-color: $color-white;
+        margin: auto;
+        transition: $transition;
+        transform: translate(0, -200px);
+        align-items: center;
+        justify-content: center;
+
+        @media only screen and (min-width: $break-point-es) { 
+            border-radius: 0;
+        }
+
+        @media only screen and (min-width: $break-point-bi) { 
+            border-radius: $border-radius-re;
+        }
+
+        header,
+        footer{
+            padding: $re;
+            display: table;
+            width: 100%;
+        }
+
+        footer{
+            background-color: color-extra-light('black');
+
+            @media only screen and (min-width: $break-point-bi) { 
+                border-radius: 0 0 $border-radius-re $border-radius-re;
+            }
+        }
+    }
+
+    .arrow-active{
+        opacity: 1;
+        pointer-events: initial;
+    }
+
+    .arrow-inactive{
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    hr{
+        width: calc(100% - #{$bi * 2});
+        margin: auto;
+    }
+
+    .menu-tab{
+
+        ul{
+            ul{
+                margin-top: -1px;
+            }
+        }
+    }
+}
+
+#modal_content{
+    position: relative;
+    padding: $re;
+
+    .modal-description{
+        background-color: rgba($color-black, .6);
+        color: $color-white;
+        position: absolute;
+        text-align: center;
+        bottom: 0;
+        width: calc(100% - #{$bi});
+
+        @media only screen and (min-width: $break-point-es) { 
+            padding: $sm;
+        }
+
+        @media only screen and (min-width: $break-point-bi) { 
+            padding: $re;
+        }
+    }
+}
+
+#modal_close{
+    float: right;
+}
+
+.modal-es{
+    @media only screen and (min-width: $break-point-es) { 
+        max-width: 100%;
+    }
+
+    @media only screen and (min-width: $break-point-bi) { 
+        max-width: $break-point-es;
+    }
+}
+
+.modal-sm{
+    @media only screen and (min-width: $break-point-es) { 
+        max-width: 100%;
+    }
+
+    @media only screen and (min-width: $break-point-bi) { 
+        max-width: $break-point-sm;
+    }
+}
+
+.modal-re{
+    @media only screen and (min-width: $break-point-es) { 
+        max-width: 100%;
+    }
+
+    @media only screen and (min-width: $break-point-bi) { 
+        max-width: $break-point-re;
+    }
+}
+
+.modal-bi{
+    @media only screen and (min-width: $break-point-es) { 
+        max-width: 100%;
+    }
+
+    @media only screen and (min-width: $break-point-bi) { 
+        max-width: $break-point-bi;
+    }
+}
+
+.modal-eb{
+    @media only screen and (min-width: $break-point-es) { 
+        max-width: 100%;
+    }
+
+    @media only screen and (min-width: $break-point-bi) { 
+        max-width: $break-point-eb;
+    }
+}
+
+.modal-fu{
+    max-width: 100%;
+}
+
+.modal-close{
+    opacity: 0 !important;
+    transition: $transition;
+    pointer-events: none !important;
+
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        position: absolute;
+        top: -100% !important;
+    }
+
+    *{
+        pointer-events: none !important;
+    }
+}
+
+.modal-animate{
+    transition: $transition;
+    transform: translate(0, 0) !important;
+}
