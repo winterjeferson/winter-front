@@ -9,13 +9,8 @@ var configuration = require('./configuration.js');
 
 
 
-var fileJsAdminFinal = 'admin.js';
 var fileJsDefaultFinal = 'script.js';
 var fileJsPluginFinal = 'plugin.js';
-
-var fileJsAdmin = [
-    configuration.branches + 'js/admin/**/*.*',
-];
 
 var fileJs = [
     configuration.branches + 'js/build/**/*.*',
@@ -78,19 +73,6 @@ gulp.task('build_js_plugin', gulp.series(
 
 
 
-gulp.task('js_admin_concat', function () {
-    return gulp.src(fileJsAdmin)
-            .pipe(concat(fileJsAdminFinal))
-            .pipe(gulp.dest(configuration.branchesPublic + 'js/'));
-});
-
-gulp.task('build_js_admin', gulp.series(
-        'js_admin_concat',
-        'beep'
-        ));
-
-
-
 gulp.task('js_minify', function () {
     return gulp.src(configuration.branchesPublic + 'js/*.*')
             .pipe(uglify())
@@ -102,6 +84,5 @@ gulp.task('js_minify', function () {
 
 module.exports = {
     fileJs: fileJs,
-    fileJsAdmin: fileJsAdmin,
     fileJsPlugin: fileJsPlugin
 };

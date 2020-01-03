@@ -1,0 +1,3 @@
+Sitemap: https://www.jefersonwinter.com/winterstrap/sitemap.xml
+User-agent: *
+Disallow: /admin/

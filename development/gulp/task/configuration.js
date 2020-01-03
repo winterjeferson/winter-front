@@ -6,8 +6,8 @@ module.exports = {
     projectAdress: projectAdress,
     projectVersion: projectVersion,
     projectName: projectName,
-    branches: projectAdress + 'branches/' + projectName + projectVersion,
-    branchesPublic: projectAdress + 'branches/' + projectName + projectVersion + 'public/',
-    tags: projectAdress + 'tags/' + projectName + projectVersion,
-    trunk: projectAdress + 'trunk/' + projectName + projectVersion,
+    branches: projectAdress + 'branches/' + projectName + projectVersion + 'development/',
+    branchesPublic: projectAdress + 'branches/' + projectName + projectVersion + 'homologation/',
+    tags: projectAdress + 'branches/' + projectName + projectVersion + 'homologation/',
+    trunk: projectAdress + 'branches/' + projectName + projectVersion + 'production/',
 }

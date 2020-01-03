@@ -24,7 +24,7 @@ var fileImgPublic = [
 
 
 function clean(path) {
-    return del(path, {force: true}); // returns a promise
+    return del(path, { force: true }); // returns a promise
 }
 
 gulp.task('image_clean', function () {
@@ -34,24 +34,26 @@ gulp.task('image_clean', function () {
 
 gulp.task('image_move', function (done) {
     return gulp
-            .src(configuration.branches + 'img/**/*.*')
-            .pipe(gulp.dest(configuration.branchesPublic + "img/"));
+        .src(configuration.branches + 'img/**/*.*')
+        .pipe(gulp.dest(configuration.branchesPublic + "img/"));
     done();
 });
 
+
+// fix enoent problem: node node_modules/optipng-bin/lib/install.js
 gulp.task('image_imagemin', function () {
     return gulp
-            .src(fileImgPublic)
-            .pipe(newer(configuration.trunk + "img/"))
-            .pipe(imagemin())
-            .pipe(gulp.dest(configuration.trunk + "img/"));
+        .src(configuration.branchesPublic + 'img/**')
+        .pipe(newer(configuration.trunk + "img/"))
+        .pipe(imagemin())
+        .pipe(gulp.dest(configuration.trunk + "img/"));
 });
 
 gulp.task('build_image', gulp.series(
-        'image_clean',
-        'image_move',
-        'beep'
-        ));
+    'image_clean',
+    'image_move',
+    'beep'
+));
 
 
 

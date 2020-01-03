@@ -17,11 +17,4 @@ var objFrameworkTranslation = new FrameworkTranslation();
 var objFrameworkManagement = new FrameworkManagement();
 var objTheme = new Theme();
 
-if (objFrameworkLayout.verifyHasFodler('admin')) {
-    var objFrameworkAdmin = new FrameworkAdmin();
-    var objFrameworkAdminBlog = new FrameworkAdminBlog();
-    var objFrameworkAdminPage = new FrameworkAdminPage();
-    var objFrameworkLogin = new FrameworkLogin();
-}
-
 objFrameworkManagement.verifyLoad();

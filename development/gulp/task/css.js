@@ -14,10 +14,6 @@ var fileCssSass = [
     configuration.branches + 'css/plugin/sass.scss',
 ];
 
-var fileCssAdmin = [
-    configuration.branches + 'css/admin/*.scss'
-];
-
 var fileCssDefault = [
     configuration.branches + 'css/build/*.scss'
 ];
@@ -26,10 +22,8 @@ var fileCssPlugin = [
     configuration.branches + 'css/library/*.scss'
 ];
 
-var cssAdminConcat = fileCssSass.concat(fileCssAdmin);
 var cssDefaultConcat = fileCssSass.concat(fileCssDefault);
 var cssPluginConcat = fileCssSass.concat(fileCssPlugin);
-var fileAdmin = 'admin';
 var fileDefault = 'style';
 var filePlugin = 'plugin';
 
@@ -37,25 +31,6 @@ var filePlugin = 'plugin';
 
 
 
-gulp.task('css_admin_concat', function () {
-    return gulp
-            .src(cssAdminConcat)
-            .pipe(concat(fileAdmin + '.scss'))
-            .pipe(gulp.dest(configuration.branches + 'css/'));
-});
-
-gulp.task('css_admin_sass', function () {
-    return gulp
-            .src(configuration.branches + 'css/' + fileAdmin + '.scss')
-            .pipe(sass.sync().on('error', sass.logError))
-            .pipe(gulp.dest(configuration.branchesPublic + 'css/'));
-});
-
-gulp.task('build_css_admin', gulp.series(
-        'css_admin_concat',
-        'css_admin_sass',
-        'beep'
-        ));
 
 
 
@@ -63,23 +38,23 @@ gulp.task('build_css_admin', gulp.series(
 
 gulp.task('css_default_concat', function () {
     return gulp
-            .src(cssDefaultConcat)
-            .pipe(concat(fileDefault + '.scss'))
-            .pipe(gulp.dest(configuration.branches + 'css/'));
+        .src(cssDefaultConcat)
+        .pipe(concat(fileDefault + '.scss'))
+        .pipe(gulp.dest(configuration.branches + 'css/'));
 });
 
 gulp.task('css_default_sass', function () {
     return gulp
-            .src(configuration.branches + 'css/' + fileDefault + '.scss')
-            .pipe(sass.sync().on('error', sass.logError))
-            .pipe(gulp.dest(configuration.branchesPublic + 'css/'));
+        .src(configuration.branches + 'css/' + fileDefault + '.scss')
+        .pipe(sass.sync().on('error', sass.logError))
+        .pipe(gulp.dest(configuration.branchesPublic + 'css/'));
 });
 
 gulp.task('build_css_default', gulp.series(
-        'css_default_concat',
-        'css_default_sass',
-        'beep'
-        ));
+    'css_default_concat',
+    'css_default_sass',
+    'beep'
+));
 
 
 
@@ -88,37 +63,36 @@ gulp.task('build_css_default', gulp.series(
 
 gulp.task('css_plugin_concat', function () {
     return gulp
-            .src(cssPluginConcat)
-            .pipe(concat(filePlugin + '.scss'))
-            .pipe(gulp.dest(configuration.branches + 'css/'));
+        .src(cssPluginConcat)
+        .pipe(concat(filePlugin + '.scss'))
+        .pipe(gulp.dest(configuration.branches + 'css/'));
 });
 
 gulp.task('css_plugin_sass', function () {
     return gulp
-            .src(configuration.branches + 'css/' + filePlugin + '.scss')
-            .pipe(sass.sync().on('error', sass.logError))
-            .pipe(gulp.dest(configuration.branchesPublic + 'css/'));
+        .src(configuration.branches + 'css/' + filePlugin + '.scss')
+        .pipe(sass.sync().on('error', sass.logError))
+        .pipe(gulp.dest(configuration.branchesPublic + 'css/'));
 });
 
 gulp.task('build_css_plugin', gulp.series(
-        'css_plugin_concat',
-        'css_plugin_sass',
-        'beep'
-        ));
+    'css_plugin_concat',
+    'css_plugin_sass',
+    'beep'
+));
 
 
 gulp.task('css_minify', function () {
     return gulp
-            .src(configuration.branchesPublic + 'css/*.*')
-            .pipe(csso())
-            .pipe(gulp.dest(configuration.trunk + 'css/'));
+        .src(configuration.branchesPublic + 'css/*.*')
+        .pipe(csso())
+        .pipe(gulp.dest(configuration.trunk + 'css/'));
 });
 
 
 
 
 module.exports = {
-    cssAdminConcat: cssAdminConcat,
     cssDefaultConcat: cssDefaultConcat,
     cssPluginConcat: cssPluginConcat
 };
