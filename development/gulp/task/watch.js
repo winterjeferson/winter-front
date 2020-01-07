@@ -3,7 +3,6 @@ var css = require('./css.js');
 var font = require('./font.js');
 var img = require('./image.js');
 var js = require('./js.js');
-var json = require('./json.js');
 var other = require('./other.js');
 var php = require('./php.js');
 var template = require('./template.js');
@@ -64,13 +63,6 @@ gulp.task('default', function () {
             
 
     gulp.watch(template.fileTemplateWatch, gulp.series('build_template'))
-            .on('change', function (evt) {
-                console.log(evt);
-            });
-
-
-
-    gulp.watch(json.fileJson, gulp.series('build_json'))
             .on('change', function (evt) {
                 console.log(evt);
             });

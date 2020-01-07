@@ -1,9 +1,0 @@
-{
-    "default": {% include "default.json" %}
-    ,
-    "template": {% include "template.json" %}
-    ,
-    "error": {% include "error.json" %}
-    ,
-    "meta_tag": {% include "meta_tag.json" %}
-}

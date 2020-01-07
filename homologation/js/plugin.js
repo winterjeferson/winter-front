@@ -1,34 +1,6 @@
 "use strict";
 
-function _typeof5(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof5 = function _typeof5(obj) { return typeof obj; }; } else { _typeof5 = function _typeof5(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof5(obj); }
-
-function _typeof4(obj) {
-  if (typeof Symbol === "function" && _typeof5(Symbol.iterator) === "symbol") {
-    _typeof4 = function _typeof4(obj) {
-      return _typeof5(obj);
-    };
-  } else {
-    _typeof4 = function _typeof4(obj) {
-      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : _typeof5(obj);
-    };
-  }
-
-  return _typeof4(obj);
-}
-
-function _typeof3(obj) {
-  if (typeof Symbol === "function" && _typeof4(Symbol.iterator) === "symbol") {
-    _typeof3 = function _typeof3(obj) {
-      return _typeof4(obj);
-    };
-  } else {
-    _typeof3 = function _typeof3(obj) {
-      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : _typeof4(obj);
-    };
-  }
-
-  return _typeof3(obj);
-}
+function _typeof3(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof3 = function _typeof3(obj) { return typeof obj; }; } else { _typeof3 = function _typeof3(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof3(obj); }
 
 function _typeof2(obj) {
   if (typeof Symbol === "function" && _typeof3(Symbol.iterator) === "symbol") {
@@ -4441,7 +4413,7 @@ function () {
       /*endRemoveIf(production)*/
 
       var inputFile = '';
-      var textFile = objFrameworkTranslation.translation.default.input_upload;
+      var textFile = objFrameworkTranslation.translation["default"].input_upload;
       inputFile += '<div class="input-file">';
       inputFile += '    <div class="input-file-name"></div>';
       inputFile += '    <div class="input-file-text"><span class="fa fa-upload" aria-hidden="true"></span>&nbsp; ' + textFile + '</div>';
@@ -4669,7 +4641,7 @@ function () {
       string += '<div id="modal" class="modal-close">';
       string += '     <div class="modal-box">';
       string += '         <header>';
-      string += '             <button id="modal_close" type="button" aria-label="' + objFrameworkTranslation.translation.default.close + '" class="bt bt-sm bt-grey bt-transparent">';
+      string += '             <button id="modal_close" type="button" aria-label="' + objFrameworkTranslation.translation["default"].close + '" class="bt bt-sm bt-grey bt-transparent">';
       string += '                 <span class="fa fa-times" aria-hidden="true"></span>';
       string += '             </button>';
       string += '         </header>';
@@ -4679,12 +4651,12 @@ function () {
       string += '         <div class="menu-horizontal">';
       string += '             <ul class="navigation-arrow">';
       string += '                 <li>';
-      string += '                     <button type="button" class="bt bt-bi" data-id="nav-left" aria-label="' + objFrameworkTranslation.translation.default.previous + '" >';
+      string += '                     <button type="button" class="bt bt-bi" data-id="nav-left" aria-label="' + objFrameworkTranslation.translation["default"].previous + '" >';
       string += '                         <span class="fa fa-angle-left" aria-hidden="true"></span>';
       string += '                     </button>';
       string += '                 </li>';
       string += '                 <li>';
-      string += '                     <button type="button" class="bt bt-bi" data-id="nav-right" aria-label="' + objFrameworkTranslation.translation.default.next + '" >';
+      string += '                     <button type="button" class="bt bt-bi" data-id="nav-right" aria-label="' + objFrameworkTranslation.translation["default"].next + '" >';
       string += '                         <span class="fa fa-angle-right" aria-hidden="true"></span>';
       string += '                     </button>';
       string += '                 </li>';
@@ -4714,8 +4686,8 @@ function () {
       objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
       /*endRemoveIf(production)*/
 
-      $(this.$modalFooterConfirm).html(objFrameworkTranslation.translation.default.confirm);
-      $(this.$modalFooterCancel).html(objFrameworkTranslation.translation.default.cancel);
+      $(this.$modalFooterConfirm).html(objFrameworkTranslation.translation["default"].confirm);
+      $(this.$modalFooterCancel).html(objFrameworkTranslation.translation["default"].cancel);
     }
   }, {
     key: "buildMenu",
@@ -5074,7 +5046,7 @@ function () {
       concat += '         <span class="text">';
       concat += message;
       concat += '         </span>';
-      concat += '         <button type="button" class="bt" onclick="$(this).parent().parent().remove();" aria-label="' + objFrameworkTranslation.translation.default.close + '">';
+      concat += '         <button type="button" class="bt" onclick="$(this).parent().parent().remove();" aria-label="' + objFrameworkTranslation.translation["default"].close + '">';
       concat += '            <span class="fa fa-times" aria-hidden="true"></span>';
       concat += '         </button>';
       concat += '     </div>';
@@ -5562,66 +5534,21 @@ function () {
   }
 
   _createClass(FrameworkTranslation, [{
-    key: "loadFile",
-    value: function loadFile() {
+    key: "defineLanguege",
+    value: function defineLanguege() {
       /*removeIf(production)*/
       objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
       /*endRemoveIf(production)*/
 
-      var self = this;
-      var folder = objFrameworkLayout.verifyHasFodler('admin') ? '../' : '';
-      var url = globalFrameworkUrl + folder + 'json/' + globalFrameworkLanguage + '.json';
-      return $.ajax({
-        url: url,
-        success: function success(data) {
-          self.translation = data;
-          self.defineSelectLanguage();
-        }
-      });
-    }
-  }, {
-    key: "defineSelectLanguage",
-    value: function defineSelectLanguage() {
-      /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
-      /*endRemoveIf(production)*/
+      switch (globalFrameworkLanguage) {
+        case 'pt':
+          this.translation = translationPTBR;
+          break;
 
-      var self = this;
-      var $select = $('#page_language_select');
-
-      if ($select.length === 0) {
-        return false;
-      } //        $select.val(globalFrameworkLanguage);
-
-
-      $select.change(function (e) {
-        self.setLanguage(e.target.options[e.target.selectedIndex].value);
-        /*endRemoveIf(production)*/
-      });
-    }
-  }, {
-    key: "setLanguage",
-    value: function setLanguage(language) {
-      /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), language);
-      /*endRemoveIf(production)*/
-
-      var self = this;
-      $.ajax({
-        url: 'php/controller.php',
-        data: '&c=FrameworkTranslation' + '&m=changeLanguage' + '&language=' + language,
-        type: 'POST',
-        success: function success(data) {
-          switch (data) {
-            case 'r1':
-              location.reload();
-              break;
-
-            default:
-              self.setLanguage('en');
-          }
-        }
-      });
+        case 'en':
+          this.translation = translationEN;
+          break;
+      }
     }
   }]);
 
