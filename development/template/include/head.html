@@ -41,12 +41,12 @@
 </head>
 
 <body>
-    {% include "include/loading_main.html" %}
-    <header id="header">
-        {% include "include/template_header.html" %}
-    </header>
-    <main class="row" id="main_wrapper">
-        <section id="main_menu" class="col-es-12 col-bi-2">
+    <main class="grid">
+        {% include "include/loading_main.html" %}
+        <header id="header" class="grid-header">
+            {% include "include/template_header.html" %}
+        </header>
+        <section id="main_menu" class="grid-menu">
             {% include "include/template_menu.html" %}
         </section>
-        <section id="main_content" class="col-es-12 col-bi-10">
+        <section id="main_content" class="grid-content">

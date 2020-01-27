@@ -41,7 +41,8 @@
 </head>
 
 <body>
-    <div id="loading_main" class="bg-grey">
+    <main class="grid">
+        <div id="loading_main" class="bg-grey">
     <div class="col-middle">
         <div class="row">
             <div class="col-es-2 col-es-off-5">
@@ -52,14 +53,14 @@
         </div>
     </div>
 </div>
-    <header id="header">
-        <div class="row">
-    <div class="col-es-12 col-sm-2 text-left mobile-hide">
+        <header id="header" class="grid-header">
+            <div class="row">
+    <div class="col-es-2 text-left">
         <a href="index.html" class="bt bt-re bt-grey" aria-label="home">
             <span class="fa fa-home" aria-hidden="true"></span>
         </a>
     </div>
-    <div class="col-es-12 col-sm-10 text-right">
+    <div class="col-es-10 text-right">
         <form class="form form-grey">
             <nav class="menu menu-horizontal">
                 <ul>
@@ -77,9 +78,8 @@
         </form>
     </div>
 </div>
-    </header>
-    <main class="row" id="main_wrapper">
-        <section id="main_menu" class="col-es-12 col-bi-2">
+        </header>
+        <section id="main_menu" class="grid-menu">
             
 
 <div class="row">
@@ -204,7 +204,7 @@
     </div>
 </div>
         </section>
-        <section id="main_content" class="col-es-12 col-bi-10">
+        <section id="main_content" class="grid-content">
 <h1 class="page-title">
     Gallery
 </h1>
@@ -226,9 +226,8 @@
     </div>
 </div>
         </section>
-    </main>
-    <footer id="footer">
-        <div class="row">
+        <footer id="footer" class=grid-footer>
+            <div class="row">
     <div class="col-es-12">
         <span class="about">By:</span>
         <a href="https://www.jefersonwinter.com" target="_blank" rel="noopener" class="bt bt-sm bt-grey">
@@ -236,10 +235,11 @@
         </a>
     </div>
 </div>
-    </footer>
+        </footer>
 
-    <script src="./js/plugin.js"></script>
-    <script src="./js/script.js"></script>
+        <script src="./js/plugin.js"></script>
+        <script src="./js/script.js"></script>
+    </main>
 </body>
 
 </html>

@@ -91,7 +91,7 @@
       height: 5px;
       background-color: rgba(0, 0, 0, 0.2); }
   #page_palette [class*="color-"].color-cyan {
-    background-color: #23C4AF; }
+    background-color: #23c4af; }
     #page_palette [class*="color-"].color-cyan:after {
       content: "";
       display: block;
@@ -113,7 +113,7 @@
       height: 5px;
       background-color: rgba(0, 0, 0, 0.2); }
   #page_palette [class*="color-"].color-red {
-    background-color: #E14B4A; }
+    background-color: #e14b4a; }
     #page_palette [class*="color-"].color-red:after {
       content: "";
       display: block;
@@ -146,7 +146,7 @@
       height: 5px;
       background-color: rgba(0, 0, 0, 0.2); }
   #page_palette [class*="color-"].color-brown {
-    background-color: #7F4D04; }
+    background-color: #7f4d04; }
     #page_palette [class*="color-"].color-brown:after {
       content: "";
       display: block;
@@ -179,7 +179,7 @@
       height: 5px;
       background-color: rgba(0, 0, 0, 0.2); }
   #page_palette [class*="color-"].color-pink {
-    background-color: #E81CB6; }
+    background-color: #e81cb6; }
     #page_palette [class*="color-"].color-pink:after {
       content: "";
       display: block;
@@ -928,31 +928,31 @@
       #page_responsive_grid [class*="col-"]:before,
       #page_responsive [class*="grid-col-"]:before,
       #page_responsive [class*="col-"]:before {
-        content: 'ES - '; } }
+        content: "ES - "; } }
     @media (min-width: 576px) {
       #page_responsive_grid [class*="grid-col-"]:before,
       #page_responsive_grid [class*="col-"]:before,
       #page_responsive [class*="grid-col-"]:before,
       #page_responsive [class*="col-"]:before {
-        content: 'SM - '; } }
+        content: "SM - "; } }
     @media (min-width: 768px) {
       #page_responsive_grid [class*="grid-col-"]:before,
       #page_responsive_grid [class*="col-"]:before,
       #page_responsive [class*="grid-col-"]:before,
       #page_responsive [class*="col-"]:before {
-        content: 'RE - '; } }
+        content: "RE - "; } }
     @media (min-width: 992px) {
       #page_responsive_grid [class*="grid-col-"]:before,
       #page_responsive_grid [class*="col-"]:before,
       #page_responsive [class*="grid-col-"]:before,
       #page_responsive [class*="col-"]:before {
-        content: 'BI - '; } }
+        content: "BI - "; } }
     @media (min-width: 1200px) {
       #page_responsive_grid [class*="grid-col-"]:before,
       #page_responsive_grid [class*="col-"]:before,
       #page_responsive [class*="grid-col-"]:before,
       #page_responsive [class*="col-"]:before {
-        content: 'EB - '; } }
+        content: "EB - "; } }
 
 #page_responsive_grid [class*="-1"]:after,
 #page_responsive [class*="-1"]:after {
@@ -1016,25 +1016,55 @@
 #page_scroll .scrollbar-force-overflow {
   min-height: 450px; }
 
-body {
-  display: flex;
-  height: 100vh;
-  flex-direction: column; }
+.grid {
+  min-height: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr; }
+  @media (min-width: 0) {
+    .grid {
+      grid-template-rows: min-content min-content auto min-content; } }
+  @media (min-width: 992px) {
+    .grid {
+      grid-template-rows: min-content auto min-content; } }
 
-main {
-  flex: 1; }
-  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-    main {
-      flex-grow: 1;
-      flex-shrink: 0;
-      flex-basis: auto; } }
+.grid-header {
+  border-bottom: 1px solid;
+  grid-row: 1;
+  grid-column: 1 / span 2; }
 
-#header {
-  border-bottom: 1px solid; }
+@media (min-width: 0) {
+  .grid-menu {
+    width: 100%;
+    grid-row: 2;
+    grid-column: 1; } }
 
-#footer {
-  flex: none;
+@media (min-width: 992px) {
+  .grid-menu {
+    width: 250px;
+    grid-row: 2;
+    grid-column: 1; } }
+
+@media (min-width: 0) {
+  .grid-content {
+    grid-row: 3;
+    grid-column: 1; } }
+
+@media (min-width: 992px) {
+  .grid-content {
+    grid-row: 2;
+    grid-column: 2; } }
+
+.grid-footer {
   border-top: 1px solid; }
+  @media (min-width: 0) {
+    .grid-footer {
+      grid-row: 4;
+      grid-column: 1; } }
+  @media (min-width: 992px) {
+    .grid-footer {
+      grid-row: 3;
+      grid-column: 1 / span 2; } }
 
 #header,
 #footer {

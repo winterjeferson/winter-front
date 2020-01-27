@@ -1,13 +1,6 @@
 $z-index-negative: -1;
 
-$arr-z-index: (
-"drop-down",
-"notify",
-"modal",
-"tooltip",
-"confirm",
-"loading-main"
-);
+$arr-z-index: ("drop-down", "notify", "modal", "tooltip", "confirm", "loading-main");
 
 $font-es: 8px;
 $font-sm: 12px;
@@ -15,11 +8,11 @@ $font-re: 16px;
 $font-bi: 20px;
 $font-eb: 24px;
 
-$font-family-regular: 'roboto-regular';
-$font-family-thin: 'roboto-thin';
-$font-family-black: 'roboto-black';
-$font-family-bold: 'roboto-bold';
-$font-family-awesome: 'FontAwesome';
+$font-family-regular: "roboto-regular";
+$font-family-thin: "roboto-thin";
+$font-family-black: "roboto-black";
+$font-family-bold: "roboto-bold";
+$font-family-awesome: "FontAwesome";
 
 $break-point-es: 0;
 $break-point-sm: 576px;
@@ -42,9 +35,9 @@ $col-10: 83.333333333%;
 $col-11: 91.66666667%;
 $col-12: 100%;
 
-$transition: .3s;
+$transition: 0.3s;
 
-$component-opacity: .5;
+$component-opacity: 0.5;
 
 $re: 10px; /*regular*/
 $sm: $re / 2; /*small*/
@@ -76,7 +69,7 @@ $multiply-13: $color-scale * 13;
 $multiply-14: $color-scale * 14;
 $multiply-15: $color-scale * 15;
 $multiply-16: $color-scale * 16;
-$multiply-17: $color-scale * 17;;
-$multiply-18: $color-scale * 18;;
+$multiply-17: $color-scale * 17;
+$multiply-18: $color-scale * 18;
 $multiply-19: $color-scale * 19;
 $multiply-20: $color-scale * 20;

@@ -1,52 +1,52 @@
-.carousel{
+.carousel {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+
+  .carousel-list {
     position: relative;
-    overflow:hidden;
-    width:100%;
+    list-style: none;
+    transition: $transition;
+    will-change: auto;
 
-    .carousel-list{
-        position: relative;
-        list-style: none;
-        transition: $transition;
-        will-change: auto;
-
-        li{
-            position:relative;
-            float: left;
-        }
+    li {
+      position: relative;
+      float: left;
     }
+  }
 
-    .carousel-controller{
-        position: relative;
-        display: inline-table;
+  .carousel-controller {
+    position: relative;
+    display: inline-table;
 
-        .carousel-controller-bt{
-            opacity: .3;
+    .carousel-controller-bt {
+      opacity: 0.3;
 
-            &.active{
-                opacity: .8;
-            }
-        }
+      &.active {
+        opacity: 0.8;
+      }
     }
+  }
 
-    .menu-horizontal{
-        text-align: center;
-        width: 100%;
-    }
+  .menu-horizontal {
+    text-align: center;
+    width: 100%;
+  }
 
-    .carousel-controller-over{
-        bottom: $bi;
-        position: absolute;
-    }
+  .carousel-controller-over {
+    bottom: $bi;
+    position: absolute;
+  }
 
-    .carousel-controller-bt{
-        .fa{
-            color: $color-white;
-        }
+  .carousel-controller-bt {
+    .fa {
+      color: $color-white;
     }
+  }
 
-    .carousel-controller-black{
-        .fa{
-            color: $color-black !important;
-        }
+  .carousel-controller-black {
+    .fa {
+      color: $color-black !important;
     }
+  }
 }

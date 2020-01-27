@@ -3,13 +3,13 @@ $arrColor: grey blue green cyan orange red yellow purple brown black white pink;
 $color-grey: #bec3c7;
 $color-blue: #3297db;
 $color-green: #2dcc70;
-$color-cyan: #23C4AF;
+$color-cyan: #23c4af;
 $color-orange: #e77e22;
-$color-red: #E14B4A;
+$color-red: #e14b4a;
 $color-yellow: #f1c50e;
 $color-purple: #9a59b5;
-$color-brown: #7F4D04;
-$color-pink: #E81CB6;
+$color-brown: #7f4d04;
+$color-pink: #e81cb6;
 $color-black: #333333;
 $color-white: #ffffff;
 
@@ -19,7 +19,6 @@ $color-youtube: #bb0000;
 $color-linkedin: #007bb5;
 $color-pinterest: #cb2027;
 $color-instagram: #125688;
-
 
 $color-grey-lighten-1: lighten($color-grey, $multiply-1);
 $color-grey-lighten-2: lighten($color-grey, $multiply-2);
@@ -62,8 +61,6 @@ $color-grey-darken-18: darken($color-grey, $multiply-18);
 $color-grey-darken-19: darken($color-grey, $multiply-19);
 $color-grey-darken-20: darken($color-grey, $multiply-20);
 
-
-
 $color-blue-lighten-1: lighten($color-blue, $multiply-1);
 $color-blue-lighten-2: lighten($color-blue, $multiply-2);
 $color-blue-lighten-3: lighten($color-blue, $multiply-3);
@@ -104,8 +101,6 @@ $color-blue-darken-17: darken($color-blue, $multiply-17);
 $color-blue-darken-18: darken($color-blue, $multiply-18);
 $color-blue-darken-19: darken($color-blue, $multiply-19);
 $color-blue-darken-20: darken($color-blue, $multiply-20);
-
-
 
 $color-green-lighten-1: lighten($color-green, $multiply-1);
 $color-green-lighten-2: lighten($color-green, $multiply-2);
@@ -148,8 +143,6 @@ $color-green-darken-18: darken($color-green, $multiply-18);
 $color-green-darken-19: darken($color-green, $multiply-19);
 $color-green-darken-20: darken($color-green, $multiply-20);
 
-
-
 $color-cyan-lighten-1: lighten($color-cyan, $multiply-1);
 $color-cyan-lighten-2: lighten($color-cyan, $multiply-2);
 $color-cyan-lighten-3: lighten($color-cyan, $multiply-3);
@@ -190,8 +183,6 @@ $color-cyan-darken-17: darken($color-cyan, $multiply-17);
 $color-cyan-darken-18: darken($color-cyan, $multiply-18);
 $color-cyan-darken-19: darken($color-cyan, $multiply-19);
 $color-cyan-darken-20: darken($color-cyan, $multiply-20);
-
-
 
 $color-orange-lighten-1: lighten($color-orange, $multiply-1);
 $color-orange-lighten-2: lighten($color-orange, $multiply-2);
@@ -234,8 +225,6 @@ $color-orange-darken-18: darken($color-orange, $multiply-18);
 $color-orange-darken-19: darken($color-orange, $multiply-19);
 $color-orange-darken-20: darken($color-orange, $multiply-20);
 
-
-
 $color-red-lighten-1: lighten($color-red, $multiply-1);
 $color-red-lighten-2: lighten($color-red, $multiply-2);
 $color-red-lighten-3: lighten($color-red, $multiply-3);
@@ -276,8 +265,6 @@ $color-red-darken-17: darken($color-red, $multiply-17);
 $color-red-darken-18: darken($color-red, $multiply-18);
 $color-red-darken-19: darken($color-red, $multiply-19);
 $color-red-darken-20: darken($color-red, $multiply-20);
-
-
 
 $color-yellow-lighten-1: lighten($color-yellow, $multiply-1);
 $color-yellow-lighten-2: lighten($color-yellow, $multiply-2);
@@ -320,7 +307,6 @@ $color-yellow-darken-18: darken($color-yellow, $multiply-18);
 $color-yellow-darken-19: darken($color-yellow, $multiply-19);
 $color-yellow-darken-20: darken($color-yellow, $multiply-20);
 
-
 $color-purple-lighten-1: lighten($color-purple, $multiply-1);
 $color-purple-lighten-2: lighten($color-purple, $multiply-2);
 $color-purple-lighten-3: lighten($color-purple, $multiply-3);
@@ -361,8 +347,6 @@ $color-purple-darken-17: darken($color-purple, $multiply-17);
 $color-purple-darken-18: darken($color-purple, $multiply-18);
 $color-purple-darken-19: darken($color-purple, $multiply-19);
 $color-purple-darken-20: darken($color-purple, $multiply-20);
-
-
 
 $color-brown-lighten-1: lighten($color-brown, $multiply-1);
 $color-brown-lighten-2: lighten($color-brown, $multiply-2);
@@ -405,8 +389,6 @@ $color-brown-darken-18: darken($color-brown, $multiply-18);
 $color-brown-darken-19: darken($color-brown, $multiply-19);
 $color-brown-darken-20: darken($color-brown, $multiply-20);
 
-
-
 $color-pink-lighten-1: lighten($color-pink, $multiply-1);
 $color-pink-lighten-2: lighten($color-pink, $multiply-2);
 $color-pink-lighten-3: lighten($color-pink, $multiply-3);
@@ -448,8 +430,6 @@ $color-pink-darken-18: darken($color-pink, $multiply-18);
 $color-pink-darken-19: darken($color-pink, $multiply-19);
 $color-pink-darken-20: darken($color-pink, $multiply-20);
 
-
-
 $color-black-lighten-1: lighten($color-black, $multiply-1);
 $color-black-lighten-2: lighten($color-black, $multiply-2);
 $color-black-lighten-3: lighten($color-black, $multiply-3);
@@ -490,8 +470,6 @@ $color-black-darken-17: darken($color-black, $multiply-17);
 $color-black-darken-18: darken($color-black, $multiply-18);
 $color-black-darken-19: darken($color-black, $multiply-19);
 $color-black-darken-20: darken($color-black, $multiply-20);
-
-
 
 $color-white-lighten-1: lighten($color-white, $multiply-1);
 $color-white-lighten-2: lighten($color-white, $multiply-2);
@@ -536,8 +514,6 @@ $color-white-darken-20: darken($color-white, $multiply-20);
 
 /* ------------------------------------------------------------------ SOCIAL */
 
-
-
 $color-facebook-lighten-1: lighten($color-facebook, $multiply-1);
 $color-facebook-lighten-2: lighten($color-facebook, $multiply-2);
 $color-facebook-lighten-3: lighten($color-facebook, $multiply-3);
@@ -578,8 +554,6 @@ $color-facebook-darken-17: darken($color-facebook, $multiply-17);
 $color-facebook-darken-18: darken($color-facebook, $multiply-18);
 $color-facebook-darken-19: darken($color-facebook, $multiply-19);
 $color-facebook-darken-20: darken($color-facebook, $multiply-20);
-
-
 
 $color-twitter-lighten-1: lighten($color-twitter, $multiply-1);
 $color-twitter-lighten-2: lighten($color-twitter, $multiply-2);
@@ -622,8 +596,6 @@ $color-twitter-darken-18: darken($color-twitter, $multiply-18);
 $color-twitter-darken-19: darken($color-twitter, $multiply-19);
 $color-twitter-darken-20: darken($color-twitter, $multiply-20);
 
-
-
 $color-youtube-lighten-1: lighten($color-youtube, $multiply-1);
 $color-youtube-lighten-2: lighten($color-youtube, $multiply-2);
 $color-youtube-lighten-3: lighten($color-youtube, $multiply-3);
@@ -664,8 +636,6 @@ $color-youtube-darken-17: darken($color-youtube, $multiply-17);
 $color-youtube-darken-18: darken($color-youtube, $multiply-18);
 $color-youtube-darken-19: darken($color-youtube, $multiply-19);
 $color-youtube-darken-20: darken($color-youtube, $multiply-20);
-
-
 
 $color-linkedin-lighten-1: lighten($color-linkedin, $multiply-1);
 $color-linkedin-lighten-2: lighten($color-linkedin, $multiply-2);
@@ -708,8 +678,6 @@ $color-linkedin-darken-18: darken($color-linkedin, $multiply-18);
 $color-linkedin-darken-19: darken($color-linkedin, $multiply-19);
 $color-linkedin-darken-20: darken($color-linkedin, $multiply-20);
 
-
-
 $color-pinterest-lighten-1: lighten($color-pinterest, $multiply-1);
 $color-pinterest-lighten-2: lighten($color-pinterest, $multiply-2);
 $color-pinterest-lighten-3: lighten($color-pinterest, $multiply-3);
@@ -750,8 +718,6 @@ $color-pinterest-darken-17: darken($color-pinterest, $multiply-17);
 $color-pinterest-darken-18: darken($color-pinterest, $multiply-18);
 $color-pinterest-darken-19: darken($color-pinterest, $multiply-19);
 $color-pinterest-darken-20: darken($color-pinterest, $multiply-20);
-
-
 
 $color-instagram-lighten-1: lighten($color-instagram, $multiply-1);
 $color-instagram-lighten-2: lighten($color-instagram, $multiply-2);
@@ -794,143 +760,137 @@ $color-instagram-darken-18: darken($color-instagram, $multiply-18);
 $color-instagram-darken-19: darken($color-instagram, $multiply-19);
 $color-instagram-darken-20: darken($color-instagram, $multiply-20);
 
-
-
-
-
-
-
 $arr-color-extra-light: (
-"grey": $color-grey-lighten-4,
-"blue": $color-blue-lighten-8,
-"green": $color-green-lighten-9,
-"cyan": $color-cyan-lighten-9,
-"orange": $color-orange-lighten-8,
-"red": $color-red-lighten-7,
-"yellow": $color-yellow-lighten-9,
-"purple": $color-purple-lighten-8,
-"brown": $color-brown-lighten-14,
-"pink": $color-pink-lighten-9,
-"black": $color-black-lighten-15,
-"white": $color-white
+  "grey": $color-grey-lighten-4,
+  "blue": $color-blue-lighten-8,
+  "green": $color-green-lighten-9,
+  "cyan": $color-cyan-lighten-9,
+  "orange": $color-orange-lighten-8,
+  "red": $color-red-lighten-7,
+  "yellow": $color-yellow-lighten-9,
+  "purple": $color-purple-lighten-8,
+  "brown": $color-brown-lighten-14,
+  "pink": $color-pink-lighten-9,
+  "black": $color-black-lighten-15,
+  "white": $color-white
 );
 
 $arr-color-extra-light-border: (
-"grey": $color-grey-lighten-2,
-"blue": $color-blue-lighten-7,
-"green": $color-green-lighten-7,
-"cyan": $color-cyan-lighten-7,
-"orange": $color-orange-lighten-7,
-"red": $color-red-lighten-6,
-"yellow": $color-yellow-lighten-6,
-"purple": $color-purple-lighten-7,
-"brown": $color-brown-lighten-12,
-"pink": $color-pink-lighten-8,
-"black": $color-black-lighten-13,
-"white": $color-white-darken-2
+  "grey": $color-grey-lighten-2,
+  "blue": $color-blue-lighten-7,
+  "green": $color-green-lighten-7,
+  "cyan": $color-cyan-lighten-7,
+  "orange": $color-orange-lighten-7,
+  "red": $color-red-lighten-6,
+  "yellow": $color-yellow-lighten-6,
+  "purple": $color-purple-lighten-7,
+  "brown": $color-brown-lighten-12,
+  "pink": $color-pink-lighten-8,
+  "black": $color-black-lighten-13,
+  "white": $color-white-darken-2
 );
 
 $arr-color-light: (
-"grey": $color-grey-lighten-3,
-"blue": $color-blue-lighten-7,
-"green": $color-green-lighten-7,
-"cyan": $color-cyan-lighten-7,
-"orange": $color-orange-lighten-7,
-"red": $color-red-lighten-7,
-"yellow": $color-yellow-lighten-7,
-"purple": $color-purple-lighten-7,
-"brown": $color-brown-lighten-10,
-"pink": $color-pink-lighten-8,
-"black": $color-black-lighten-12,
-"white": $color-white
+  "grey": $color-grey-lighten-3,
+  "blue": $color-blue-lighten-7,
+  "green": $color-green-lighten-7,
+  "cyan": $color-cyan-lighten-7,
+  "orange": $color-orange-lighten-7,
+  "red": $color-red-lighten-7,
+  "yellow": $color-yellow-lighten-7,
+  "purple": $color-purple-lighten-7,
+  "brown": $color-brown-lighten-10,
+  "pink": $color-pink-lighten-8,
+  "black": $color-black-lighten-12,
+  "white": $color-white
 );
 
 $arr-color-light-border: (
-"grey": $color-grey-lighten-2,
-"blue": $color-blue-lighten-5,
-"green": $color-green-lighten-3,
-"cyan": $color-cyan-lighten-2,
-"orange": $color-orange-lighten-5,
-"red": $color-red-lighten-6,
-"yellow": $color-yellow-lighten-3,
-"purple": $color-purple-lighten-5,
-"brown": $color-brown-lighten-7,
-"pink": $color-pink-lighten-7,
-"black": $color-black-lighten-10,
-"white": $color-white-lighten-4
+  "grey": $color-grey-lighten-2,
+  "blue": $color-blue-lighten-5,
+  "green": $color-green-lighten-3,
+  "cyan": $color-cyan-lighten-2,
+  "orange": $color-orange-lighten-5,
+  "red": $color-red-lighten-6,
+  "yellow": $color-yellow-lighten-3,
+  "purple": $color-purple-lighten-5,
+  "brown": $color-brown-lighten-7,
+  "pink": $color-pink-lighten-7,
+  "black": $color-black-lighten-10,
+  "white": $color-white-lighten-4
 );
 
 $arr-color-regular: (
-"grey": $color-grey,
-"blue": $color-blue,
-"green": $color-green,
-"cyan": $color-cyan,
-"orange": $color-orange,
-"red": $color-red,
-"yellow": $color-yellow,
-"purple": $color-purple,
-"brown": $color-brown,
-"pink": $color-pink,
-"black": $color-black,
-"white": $color-white
+  "grey": $color-grey,
+  "blue": $color-blue,
+  "green": $color-green,
+  "cyan": $color-cyan,
+  "orange": $color-orange,
+  "red": $color-red,
+  "yellow": $color-yellow,
+  "purple": $color-purple,
+  "brown": $color-brown,
+  "pink": $color-pink,
+  "black": $color-black,
+  "white": $color-white
 );
 
 $arr-color-regular-border: (
-"grey": $color-grey-darken-1,
-"blue": $color-blue-darken-1,
-"green": $color-green-darken-1,
-"cyan": $color-cyan-darken-1,
-"orange": $color-orange-darken-1,
-"red": $color-red-darken-1,
-"yellow": $color-yellow-darken-1,
-"purple": $color-purple-darken-1,
-"brown": $color-brown-darken-1,
-"pink": $color-pink-darken-1,
-"black": $color-black-darken-1,
-"white": $color-white-darken-1
+  "grey": $color-grey-darken-1,
+  "blue": $color-blue-darken-1,
+  "green": $color-green-darken-1,
+  "cyan": $color-cyan-darken-1,
+  "orange": $color-orange-darken-1,
+  "red": $color-red-darken-1,
+  "yellow": $color-yellow-darken-1,
+  "purple": $color-purple-darken-1,
+  "brown": $color-brown-darken-1,
+  "pink": $color-pink-darken-1,
+  "black": $color-black-darken-1,
+  "white": $color-white-darken-1
 );
 
 $arr-color-regular-invalid: (
-"grey": $color-red,
-"blue": $color-red,
-"green": $color-red,
-"cyan": $color-red,
-"orange": $color-red,
-"red": $color-red-darken-2,
-"yellow": $color-red,
-"purple": $color-red,
-"brown": $color-red,
-"pink": $color-red,
-"black": $color-red,
-"white": $color-red
+  "grey": $color-red,
+  "blue": $color-red,
+  "green": $color-red,
+  "cyan": $color-red,
+  "orange": $color-red,
+  "red": $color-red-darken-2,
+  "yellow": $color-red,
+  "purple": $color-red,
+  "brown": $color-red,
+  "pink": $color-red,
+  "black": $color-red,
+  "white": $color-red
 );
 
 $arr-color-regular-contrast: (
-"grey": $color-black,
-"blue": $color-white,
-"green": $color-white,
-"cyan": $color-white,
-"orange": $color-white,
-"red": $color-white,
-"yellow": $color-white,
-"purple": $color-white,
-"brown": $color-white,
-"pink": $color-white,
-"black": $color-white,
-"white": $color-black
+  "grey": $color-black,
+  "blue": $color-white,
+  "green": $color-white,
+  "cyan": $color-white,
+  "orange": $color-white,
+  "red": $color-white,
+  "yellow": $color-white,
+  "purple": $color-white,
+  "brown": $color-white,
+  "pink": $color-white,
+  "black": $color-white,
+  "white": $color-black
 );
 
 $arr-color-dark: (
-"grey": $color-grey-darken-5,
-"blue": $color-blue-darken-3,
-"green": $color-green-darken-3,
-"cyan": $color-cyan-darken-3,
-"orange": $color-orange-darken-3,
-"red": $color-red-darken-3,
-"yellow": $color-yellow-darken-3,
-"purple": $color-purple-darken-3,
-"brown": $color-brown-darken-2,
-"pink": $color-pink-darken-3,
-"black": $color-black-darken-3,
-"white": $color-white-darken-3
+  "grey": $color-grey-darken-5,
+  "blue": $color-blue-darken-3,
+  "green": $color-green-darken-3,
+  "cyan": $color-cyan-darken-3,
+  "orange": $color-orange-darken-3,
+  "red": $color-red-darken-3,
+  "yellow": $color-yellow-darken-3,
+  "purple": $color-purple-darken-3,
+  "brown": $color-brown-darken-2,
+  "pink": $color-pink-darken-3,
+  "black": $color-black-darken-3,
+  "white": $color-white-darken-3
 );

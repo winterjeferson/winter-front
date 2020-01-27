@@ -1,13 +1,6 @@
 $z-index-negative: -1;
 
-$arr-z-index: (
-"drop-down",
-"notify",
-"modal",
-"tooltip",
-"confirm",
-"loading-main"
-);
+$arr-z-index: ("drop-down", "notify", "modal", "tooltip", "confirm", "loading-main");
 
 $font-es: 8px;
 $font-sm: 12px;
@@ -15,11 +8,11 @@ $font-re: 16px;
 $font-bi: 20px;
 $font-eb: 24px;
 
-$font-family-regular: 'roboto-regular';
-$font-family-thin: 'roboto-thin';
-$font-family-black: 'roboto-black';
-$font-family-bold: 'roboto-bold';
-$font-family-awesome: 'FontAwesome';
+$font-family-regular: "roboto-regular";
+$font-family-thin: "roboto-thin";
+$font-family-black: "roboto-black";
+$font-family-bold: "roboto-bold";
+$font-family-awesome: "FontAwesome";
 
 $break-point-es: 0;
 $break-point-sm: 576px;
@@ -42,9 +35,9 @@ $col-10: 83.333333333%;
 $col-11: 91.66666667%;
 $col-12: 100%;
 
-$transition: .3s;
+$transition: 0.3s;
 
-$component-opacity: .5;
+$component-opacity: 0.5;
 
 $re: 10px; /*regular*/
 $sm: $re / 2; /*small*/
@@ -76,22 +69,23 @@ $multiply-13: $color-scale * 13;
 $multiply-14: $color-scale * 14;
 $multiply-15: $color-scale * 15;
 $multiply-16: $color-scale * 16;
-$multiply-17: $color-scale * 17;;
-$multiply-18: $color-scale * 18;;
+$multiply-17: $color-scale * 17;
+$multiply-18: $color-scale * 18;
 $multiply-19: $color-scale * 19;
 $multiply-20: $color-scale * 20;
+
 $arrColor: grey blue green cyan orange red yellow purple brown black white pink;
 
 $color-grey: #bec3c7;
 $color-blue: #3297db;
 $color-green: #2dcc70;
-$color-cyan: #23C4AF;
+$color-cyan: #23c4af;
 $color-orange: #e77e22;
-$color-red: #E14B4A;
+$color-red: #e14b4a;
 $color-yellow: #f1c50e;
 $color-purple: #9a59b5;
-$color-brown: #7F4D04;
-$color-pink: #E81CB6;
+$color-brown: #7f4d04;
+$color-pink: #e81cb6;
 $color-black: #333333;
 $color-white: #ffffff;
 
@@ -101,7 +95,6 @@ $color-youtube: #bb0000;
 $color-linkedin: #007bb5;
 $color-pinterest: #cb2027;
 $color-instagram: #125688;
-
 
 $color-grey-lighten-1: lighten($color-grey, $multiply-1);
 $color-grey-lighten-2: lighten($color-grey, $multiply-2);
@@ -144,8 +137,6 @@ $color-grey-darken-18: darken($color-grey, $multiply-18);
 $color-grey-darken-19: darken($color-grey, $multiply-19);
 $color-grey-darken-20: darken($color-grey, $multiply-20);
 
-
-
 $color-blue-lighten-1: lighten($color-blue, $multiply-1);
 $color-blue-lighten-2: lighten($color-blue, $multiply-2);
 $color-blue-lighten-3: lighten($color-blue, $multiply-3);
@@ -186,8 +177,6 @@ $color-blue-darken-17: darken($color-blue, $multiply-17);
 $color-blue-darken-18: darken($color-blue, $multiply-18);
 $color-blue-darken-19: darken($color-blue, $multiply-19);
 $color-blue-darken-20: darken($color-blue, $multiply-20);
-
-
 
 $color-green-lighten-1: lighten($color-green, $multiply-1);
 $color-green-lighten-2: lighten($color-green, $multiply-2);
@@ -230,8 +219,6 @@ $color-green-darken-18: darken($color-green, $multiply-18);
 $color-green-darken-19: darken($color-green, $multiply-19);
 $color-green-darken-20: darken($color-green, $multiply-20);
 
-
-
 $color-cyan-lighten-1: lighten($color-cyan, $multiply-1);
 $color-cyan-lighten-2: lighten($color-cyan, $multiply-2);
 $color-cyan-lighten-3: lighten($color-cyan, $multiply-3);
@@ -272,8 +259,6 @@ $color-cyan-darken-17: darken($color-cyan, $multiply-17);
 $color-cyan-darken-18: darken($color-cyan, $multiply-18);
 $color-cyan-darken-19: darken($color-cyan, $multiply-19);
 $color-cyan-darken-20: darken($color-cyan, $multiply-20);
-
-
 
 $color-orange-lighten-1: lighten($color-orange, $multiply-1);
 $color-orange-lighten-2: lighten($color-orange, $multiply-2);
@@ -316,8 +301,6 @@ $color-orange-darken-18: darken($color-orange, $multiply-18);
 $color-orange-darken-19: darken($color-orange, $multiply-19);
 $color-orange-darken-20: darken($color-orange, $multiply-20);
 
-
-
 $color-red-lighten-1: lighten($color-red, $multiply-1);
 $color-red-lighten-2: lighten($color-red, $multiply-2);
 $color-red-lighten-3: lighten($color-red, $multiply-3);
@@ -358,8 +341,6 @@ $color-red-darken-17: darken($color-red, $multiply-17);
 $color-red-darken-18: darken($color-red, $multiply-18);
 $color-red-darken-19: darken($color-red, $multiply-19);
 $color-red-darken-20: darken($color-red, $multiply-20);
-
-
 
 $color-yellow-lighten-1: lighten($color-yellow, $multiply-1);
 $color-yellow-lighten-2: lighten($color-yellow, $multiply-2);
@@ -402,7 +383,6 @@ $color-yellow-darken-18: darken($color-yellow, $multiply-18);
 $color-yellow-darken-19: darken($color-yellow, $multiply-19);
 $color-yellow-darken-20: darken($color-yellow, $multiply-20);
 
-
 $color-purple-lighten-1: lighten($color-purple, $multiply-1);
 $color-purple-lighten-2: lighten($color-purple, $multiply-2);
 $color-purple-lighten-3: lighten($color-purple, $multiply-3);
@@ -443,8 +423,6 @@ $color-purple-darken-17: darken($color-purple, $multiply-17);
 $color-purple-darken-18: darken($color-purple, $multiply-18);
 $color-purple-darken-19: darken($color-purple, $multiply-19);
 $color-purple-darken-20: darken($color-purple, $multiply-20);
-
-
 
 $color-brown-lighten-1: lighten($color-brown, $multiply-1);
 $color-brown-lighten-2: lighten($color-brown, $multiply-2);
@@ -487,8 +465,6 @@ $color-brown-darken-18: darken($color-brown, $multiply-18);
 $color-brown-darken-19: darken($color-brown, $multiply-19);
 $color-brown-darken-20: darken($color-brown, $multiply-20);
 
-
-
 $color-pink-lighten-1: lighten($color-pink, $multiply-1);
 $color-pink-lighten-2: lighten($color-pink, $multiply-2);
 $color-pink-lighten-3: lighten($color-pink, $multiply-3);
@@ -530,8 +506,6 @@ $color-pink-darken-18: darken($color-pink, $multiply-18);
 $color-pink-darken-19: darken($color-pink, $multiply-19);
 $color-pink-darken-20: darken($color-pink, $multiply-20);
 
-
-
 $color-black-lighten-1: lighten($color-black, $multiply-1);
 $color-black-lighten-2: lighten($color-black, $multiply-2);
 $color-black-lighten-3: lighten($color-black, $multiply-3);
@@ -572,8 +546,6 @@ $color-black-darken-17: darken($color-black, $multiply-17);
 $color-black-darken-18: darken($color-black, $multiply-18);
 $color-black-darken-19: darken($color-black, $multiply-19);
 $color-black-darken-20: darken($color-black, $multiply-20);
-
-
 
 $color-white-lighten-1: lighten($color-white, $multiply-1);
 $color-white-lighten-2: lighten($color-white, $multiply-2);
@@ -618,8 +590,6 @@ $color-white-darken-20: darken($color-white, $multiply-20);
 
 /* ------------------------------------------------------------------ SOCIAL */
 
-
-
 $color-facebook-lighten-1: lighten($color-facebook, $multiply-1);
 $color-facebook-lighten-2: lighten($color-facebook, $multiply-2);
 $color-facebook-lighten-3: lighten($color-facebook, $multiply-3);
@@ -660,8 +630,6 @@ $color-facebook-darken-17: darken($color-facebook, $multiply-17);
 $color-facebook-darken-18: darken($color-facebook, $multiply-18);
 $color-facebook-darken-19: darken($color-facebook, $multiply-19);
 $color-facebook-darken-20: darken($color-facebook, $multiply-20);
-
-
 
 $color-twitter-lighten-1: lighten($color-twitter, $multiply-1);
 $color-twitter-lighten-2: lighten($color-twitter, $multiply-2);
@@ -704,8 +672,6 @@ $color-twitter-darken-18: darken($color-twitter, $multiply-18);
 $color-twitter-darken-19: darken($color-twitter, $multiply-19);
 $color-twitter-darken-20: darken($color-twitter, $multiply-20);
 
-
-
 $color-youtube-lighten-1: lighten($color-youtube, $multiply-1);
 $color-youtube-lighten-2: lighten($color-youtube, $multiply-2);
 $color-youtube-lighten-3: lighten($color-youtube, $multiply-3);
@@ -746,8 +712,6 @@ $color-youtube-darken-17: darken($color-youtube, $multiply-17);
 $color-youtube-darken-18: darken($color-youtube, $multiply-18);
 $color-youtube-darken-19: darken($color-youtube, $multiply-19);
 $color-youtube-darken-20: darken($color-youtube, $multiply-20);
-
-
 
 $color-linkedin-lighten-1: lighten($color-linkedin, $multiply-1);
 $color-linkedin-lighten-2: lighten($color-linkedin, $multiply-2);
@@ -790,8 +754,6 @@ $color-linkedin-darken-18: darken($color-linkedin, $multiply-18);
 $color-linkedin-darken-19: darken($color-linkedin, $multiply-19);
 $color-linkedin-darken-20: darken($color-linkedin, $multiply-20);
 
-
-
 $color-pinterest-lighten-1: lighten($color-pinterest, $multiply-1);
 $color-pinterest-lighten-2: lighten($color-pinterest, $multiply-2);
 $color-pinterest-lighten-3: lighten($color-pinterest, $multiply-3);
@@ -832,8 +794,6 @@ $color-pinterest-darken-17: darken($color-pinterest, $multiply-17);
 $color-pinterest-darken-18: darken($color-pinterest, $multiply-18);
 $color-pinterest-darken-19: darken($color-pinterest, $multiply-19);
 $color-pinterest-darken-20: darken($color-pinterest, $multiply-20);
-
-
 
 $color-instagram-lighten-1: lighten($color-instagram, $multiply-1);
 $color-instagram-lighten-2: lighten($color-instagram, $multiply-2);
@@ -876,726 +836,711 @@ $color-instagram-darken-18: darken($color-instagram, $multiply-18);
 $color-instagram-darken-19: darken($color-instagram, $multiply-19);
 $color-instagram-darken-20: darken($color-instagram, $multiply-20);
 
-
-
-
-
-
-
 $arr-color-extra-light: (
-"grey": $color-grey-lighten-4,
-"blue": $color-blue-lighten-8,
-"green": $color-green-lighten-9,
-"cyan": $color-cyan-lighten-9,
-"orange": $color-orange-lighten-8,
-"red": $color-red-lighten-7,
-"yellow": $color-yellow-lighten-9,
-"purple": $color-purple-lighten-8,
-"brown": $color-brown-lighten-14,
-"pink": $color-pink-lighten-9,
-"black": $color-black-lighten-15,
-"white": $color-white
+  "grey": $color-grey-lighten-4,
+  "blue": $color-blue-lighten-8,
+  "green": $color-green-lighten-9,
+  "cyan": $color-cyan-lighten-9,
+  "orange": $color-orange-lighten-8,
+  "red": $color-red-lighten-7,
+  "yellow": $color-yellow-lighten-9,
+  "purple": $color-purple-lighten-8,
+  "brown": $color-brown-lighten-14,
+  "pink": $color-pink-lighten-9,
+  "black": $color-black-lighten-15,
+  "white": $color-white
 );
 
 $arr-color-extra-light-border: (
-"grey": $color-grey-lighten-2,
-"blue": $color-blue-lighten-7,
-"green": $color-green-lighten-7,
-"cyan": $color-cyan-lighten-7,
-"orange": $color-orange-lighten-7,
-"red": $color-red-lighten-6,
-"yellow": $color-yellow-lighten-6,
-"purple": $color-purple-lighten-7,
-"brown": $color-brown-lighten-12,
-"pink": $color-pink-lighten-8,
-"black": $color-black-lighten-13,
-"white": $color-white-darken-2
+  "grey": $color-grey-lighten-2,
+  "blue": $color-blue-lighten-7,
+  "green": $color-green-lighten-7,
+  "cyan": $color-cyan-lighten-7,
+  "orange": $color-orange-lighten-7,
+  "red": $color-red-lighten-6,
+  "yellow": $color-yellow-lighten-6,
+  "purple": $color-purple-lighten-7,
+  "brown": $color-brown-lighten-12,
+  "pink": $color-pink-lighten-8,
+  "black": $color-black-lighten-13,
+  "white": $color-white-darken-2
 );
 
 $arr-color-light: (
-"grey": $color-grey-lighten-3,
-"blue": $color-blue-lighten-7,
-"green": $color-green-lighten-7,
-"cyan": $color-cyan-lighten-7,
-"orange": $color-orange-lighten-7,
-"red": $color-red-lighten-7,
-"yellow": $color-yellow-lighten-7,
-"purple": $color-purple-lighten-7,
-"brown": $color-brown-lighten-10,
-"pink": $color-pink-lighten-8,
-"black": $color-black-lighten-12,
-"white": $color-white
+  "grey": $color-grey-lighten-3,
+  "blue": $color-blue-lighten-7,
+  "green": $color-green-lighten-7,
+  "cyan": $color-cyan-lighten-7,
+  "orange": $color-orange-lighten-7,
+  "red": $color-red-lighten-7,
+  "yellow": $color-yellow-lighten-7,
+  "purple": $color-purple-lighten-7,
+  "brown": $color-brown-lighten-10,
+  "pink": $color-pink-lighten-8,
+  "black": $color-black-lighten-12,
+  "white": $color-white
 );
 
 $arr-color-light-border: (
-"grey": $color-grey-lighten-2,
-"blue": $color-blue-lighten-5,
-"green": $color-green-lighten-3,
-"cyan": $color-cyan-lighten-2,
-"orange": $color-orange-lighten-5,
-"red": $color-red-lighten-6,
-"yellow": $color-yellow-lighten-3,
-"purple": $color-purple-lighten-5,
-"brown": $color-brown-lighten-7,
-"pink": $color-pink-lighten-7,
-"black": $color-black-lighten-10,
-"white": $color-white-lighten-4
+  "grey": $color-grey-lighten-2,
+  "blue": $color-blue-lighten-5,
+  "green": $color-green-lighten-3,
+  "cyan": $color-cyan-lighten-2,
+  "orange": $color-orange-lighten-5,
+  "red": $color-red-lighten-6,
+  "yellow": $color-yellow-lighten-3,
+  "purple": $color-purple-lighten-5,
+  "brown": $color-brown-lighten-7,
+  "pink": $color-pink-lighten-7,
+  "black": $color-black-lighten-10,
+  "white": $color-white-lighten-4
 );
 
 $arr-color-regular: (
-"grey": $color-grey,
-"blue": $color-blue,
-"green": $color-green,
-"cyan": $color-cyan,
-"orange": $color-orange,
-"red": $color-red,
-"yellow": $color-yellow,
-"purple": $color-purple,
-"brown": $color-brown,
-"pink": $color-pink,
-"black": $color-black,
-"white": $color-white
+  "grey": $color-grey,
+  "blue": $color-blue,
+  "green": $color-green,
+  "cyan": $color-cyan,
+  "orange": $color-orange,
+  "red": $color-red,
+  "yellow": $color-yellow,
+  "purple": $color-purple,
+  "brown": $color-brown,
+  "pink": $color-pink,
+  "black": $color-black,
+  "white": $color-white
 );
 
 $arr-color-regular-border: (
-"grey": $color-grey-darken-1,
-"blue": $color-blue-darken-1,
-"green": $color-green-darken-1,
-"cyan": $color-cyan-darken-1,
-"orange": $color-orange-darken-1,
-"red": $color-red-darken-1,
-"yellow": $color-yellow-darken-1,
-"purple": $color-purple-darken-1,
-"brown": $color-brown-darken-1,
-"pink": $color-pink-darken-1,
-"black": $color-black-darken-1,
-"white": $color-white-darken-1
+  "grey": $color-grey-darken-1,
+  "blue": $color-blue-darken-1,
+  "green": $color-green-darken-1,
+  "cyan": $color-cyan-darken-1,
+  "orange": $color-orange-darken-1,
+  "red": $color-red-darken-1,
+  "yellow": $color-yellow-darken-1,
+  "purple": $color-purple-darken-1,
+  "brown": $color-brown-darken-1,
+  "pink": $color-pink-darken-1,
+  "black": $color-black-darken-1,
+  "white": $color-white-darken-1
 );
 
 $arr-color-regular-invalid: (
-"grey": $color-red,
-"blue": $color-red,
-"green": $color-red,
-"cyan": $color-red,
-"orange": $color-red,
-"red": $color-red-darken-2,
-"yellow": $color-red,
-"purple": $color-red,
-"brown": $color-red,
-"pink": $color-red,
-"black": $color-red,
-"white": $color-red
+  "grey": $color-red,
+  "blue": $color-red,
+  "green": $color-red,
+  "cyan": $color-red,
+  "orange": $color-red,
+  "red": $color-red-darken-2,
+  "yellow": $color-red,
+  "purple": $color-red,
+  "brown": $color-red,
+  "pink": $color-red,
+  "black": $color-red,
+  "white": $color-red
 );
 
 $arr-color-regular-contrast: (
-"grey": $color-black,
-"blue": $color-white,
-"green": $color-white,
-"cyan": $color-white,
-"orange": $color-white,
-"red": $color-white,
-"yellow": $color-white,
-"purple": $color-white,
-"brown": $color-white,
-"pink": $color-white,
-"black": $color-white,
-"white": $color-black
+  "grey": $color-black,
+  "blue": $color-white,
+  "green": $color-white,
+  "cyan": $color-white,
+  "orange": $color-white,
+  "red": $color-white,
+  "yellow": $color-white,
+  "purple": $color-white,
+  "brown": $color-white,
+  "pink": $color-white,
+  "black": $color-white,
+  "white": $color-black
 );
 
 $arr-color-dark: (
-"grey": $color-grey-darken-5,
-"blue": $color-blue-darken-3,
-"green": $color-green-darken-3,
-"cyan": $color-cyan-darken-3,
-"orange": $color-orange-darken-3,
-"red": $color-red-darken-3,
-"yellow": $color-yellow-darken-3,
-"purple": $color-purple-darken-3,
-"brown": $color-brown-darken-2,
-"pink": $color-pink-darken-3,
-"black": $color-black-darken-3,
-"white": $color-white-darken-3
+  "grey": $color-grey-darken-5,
+  "blue": $color-blue-darken-3,
+  "green": $color-green-darken-3,
+  "cyan": $color-cyan-darken-3,
+  "orange": $color-orange-darken-3,
+  "red": $color-red-darken-3,
+  "yellow": $color-yellow-darken-3,
+  "purple": $color-purple-darken-3,
+  "brown": $color-brown-darken-2,
+  "pink": $color-pink-darken-3,
+  "black": $color-black-darken-3,
+  "white": $color-white-darken-3
 );
+
 /* ----------------------------------------------------------------------------- TRIANGLE */
 
-@mixin triangle($color, $direction, $size: 6px, $position: absolute, $round: false){
-    @include pseudo-element($position: $position);
-    width: 0;
-    height: 0;
-    @if $round {
-        border-radius: 3px;
-    }
-    @if $direction == down {
-        border-left: $size solid transparent;
-        border-right: $size solid transparent;
-        border-top: $size solid $color;
-        margin-top: $size;
-    } @else if $direction == up {
-        border-left: $size solid transparent;
-        border-right: $size solid transparent;
-        border-bottom: $size solid $color;
-        margin-bottom: $size;
-    } @else if $direction == right {
-        border-top: $size solid transparent;
-        border-bottom: $size solid transparent;
-        border-left: $size solid $color;
-        margin-right: -$size;
-    } @else if  $direction == left {
-        border-top: $size solid transparent;
-        border-bottom: $size solid transparent;
-        border-right: $size solid $color;
-        margin-left: -$size;
-    }
+@mixin triangle($color, $direction, $size: 6px, $position: absolute, $round: false) {
+  @include pseudo-element($position: $position);
+  width: 0;
+  height: 0;
+  @if $round {
+    border-radius: 3px;
+  }
+  @if $direction == down {
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+    border-top: $size solid $color;
+    margin-top: $size;
+  } @else if $direction == up {
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+    border-bottom: $size solid $color;
+    margin-bottom: $size;
+  } @else if $direction == right {
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-left: $size solid $color;
+    margin-right: -$size;
+  } @else if $direction == left {
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-right: $size solid $color;
+    margin-left: -$size;
+  }
 }
 
 /* ----------------------------------------------------------------------------- Z-INDEX */
 
 @function z-index($name) {
-    @if index($arr-z-index, $name) {
-        @return (length($arr-z-index) - index($arr-z-index, $name)) + 1;
-    } @else {
-        @warn 'There is no item "#{$name}" in this list; choose one of: #{$arr-z-index}';
-        @return null;
-    }
+  @if index($arr-z-index, $name) {
+    @return (length($arr-z-index) - index($arr-z-index, $name)) + 1;
+  } @else {
+    @warn 'There is no item "#{$name}" in this list; choose one of: #{$arr-z-index}';
+    @return null;
+  }
 }
 
 /* ----------------------------------------------------------------------------- PSEUDO ELEMENT */
 
-@mixin pseudo-element($display: block, $position: absolute, $content: ''){
-    content: $content;
-    display: $display;
-    position: $position;
+@mixin pseudo-element($display: block, $position: absolute, $content: "") {
+  content: $content;
+  display: $display;
+  position: $position;
 }
 
 /* ----------------------------------------------------------------------------- FUNCTION */
 
 @function color-extra-light($key) {
-    @return map-get($arr-color-extra-light, $key);
+  @return map-get($arr-color-extra-light, $key);
 }
 
 @function color-extra-light-border($key) {
-    @return map-get($arr-color-extra-light-border, $key);
+  @return map-get($arr-color-extra-light-border, $key);
 }
 
 @function color-light($key) {
-    @return map-get($arr-color-light, $key);
+  @return map-get($arr-color-light, $key);
 }
 
 @function color-light-border($key) {
-    @return map-get($arr-color-light-border, $key);
+  @return map-get($arr-color-light-border, $key);
 }
 
 @function color-regular($key) {
-    @return map-get($arr-color-regular, $key);
+  @return map-get($arr-color-regular, $key);
 }
 
 @function color-regular-invalid($key) {
-    @return map-get($arr-color-regular-invalid, $key);
+  @return map-get($arr-color-regular-invalid, $key);
 }
 
 @function color-regular-border($key) {
-    @return map-get($arr-color-regular-border, $key);
+  @return map-get($arr-color-regular-border, $key);
 }
 
 @function color-regular-contrast($key) {
-    @return map-get($arr-color-regular-contrast, $key);
+  @return map-get($arr-color-regular-contrast, $key);
 }
 
 @function color-dark($key) {
-    @return map-get($arr-color-dark, $key);
+  @return map-get($arr-color-dark, $key);
 }
 
 /* ----------------------------------------------------------------------------- EXTEND */
 
-%extend-background-black{
-    background-color: rgba($color-black, .9);
+%extend-background-black {
+  background-color: rgba($color-black, 0.9);
 }
 
-%extend-border-solid{
-    border-width: 1px;
-    border-style: solid;
+%extend-border-solid {
+  border-width: 1px;
+  border-style: solid;
 }
 
-%extend-truncate{
-    white-space: nowrap; 
-    overflow: hidden;
-    text-overflow: ellipsis;
+%extend-truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-.bt-transparent{
-    border-color: transparent !important;
-    background-color: transparent !important;
+
+.bt-transparent {
+  border-color: transparent !important;
+  background-color: transparent !important;
 }
 
 /* ----------------------------------------------------------------------------- BUTTON */
 
 .bt-toggle {
-    margin-bottom: $sm;
+  margin-bottom: $sm;
 
-    @media only screen and (min-width: $break-point-es) {
-        display: inline-block !important;
-    }
+  @media only screen and (min-width: $break-point-es) {
+    display: inline-block !important;
+  }
 
-    @media only screen and (min-width: $break-point-bi) {
-        display: none !important;
-    }
+  @media only screen and (min-width: $break-point-bi) {
+    display: none !important;
+  }
 }
 
 /* ----------------------------------------------------------------------------- BUTTON SIZE */
 
 .bt {
-    user-select: none;
-    display: inline-block;
-    cursor: pointer;
-    text-decoration: none;
-    transition: $transition;
-    @extend %extend-border-solid;
+  user-select: none;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  transition: $transition;
+  @extend %extend-border-solid;
 
-    &.disabled,
-    &:disabled{
-        pointer-events: none;
-        opacity: .6;
+  &.disabled,
+  &:disabled {
+    pointer-events: none;
+    opacity: 0.6;
 
-        &:focus{
-            box-shadow: 0;
-        }
+    &:focus {
+      box-shadow: 0;
     }
+  }
 }
 
 .bt,
 .link,
 .bt-re,
-.bt-fu{
-    font-size: $font-re;
+.bt-fu {
+  font-size: $font-re;
 }
 
 .bt-re,
-.bt-fu{
-    border-radius: $border-radius-re;
+.bt-fu {
+  border-radius: $border-radius-re;
 }
 
 .bt-es,
-.bt-sm{
-    border-radius: $border-radius-sm;
-    font-size: $font-sm;
+.bt-sm {
+  border-radius: $border-radius-sm;
+  font-size: $font-sm;
 }
 
-.bt-re{
-    padding: $re $re + $sm;
+.bt-re {
+  padding: $re $re + $sm;
 }
 
-.bt-sm{
-    padding: $sm $sm + $es;
+.bt-sm {
+  padding: $sm $sm + $es;
 }
 
-.bt-es{
-    padding: $es $sm;
+.bt-es {
+  padding: $es $sm;
 }
 
-.bt-bi{
-    border-radius: $border-radius-re;
-    padding: $bi;
+.bt-bi {
+  border-radius: $border-radius-re;
+  padding: $bi;
 }
 
-.bt-eb{
-    border-radius: $border-radius-bi;
-    padding: $eb;
+.bt-eb {
+  border-radius: $border-radius-bi;
+  padding: $eb;
 }
 
-.bt-fu{
-    padding: $re;
-    width: 100%;
+.bt-fu {
+  padding: $re;
+  width: 100%;
 }
 
-.bt-square-es{
-    padding: $es $es;
+.bt-square-es {
+  padding: $es $es;
 }
 
-.bt-square-sm{
-    padding: $sm $sm;
+.bt-square-sm {
+  padding: $sm $sm;
 }
 
-.bt-square-re{
-    padding: $re $re;
+.bt-square-re {
+  padding: $re $re;
 }
 
-.bt-square-bi{
-    padding: $bi $bi;
+.bt-square-bi {
+  padding: $bi $bi;
 }
 
-.bt-square-fu{
-    padding: $bi $bi;
+.bt-square-fu {
+  padding: $bi $bi;
 }
 /* ----------------------------------------------------------------------------- OUTLINE */
 
-.bt-outline{
-    background-color: transparent;
-    box-shadow: none;
+.bt-outline {
+  background-color: transparent;
+  box-shadow: none;
 }
-
 
 /* ----------------------------------------------------------------------------- LINK */
 
-.link{
-    text-decoration: none;
+.link {
+  text-decoration: none;
+
+  &:active,
+  &:visited,
+  &:focus,
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+@each $color in $arrColor {
+  /* ------------------------------------------------------------------------- BT */
+
+  .bt-#{$color} {
+    color: color-regular-contrast(#{$color});
+    background-color: color-regular(#{$color});
+    border-color: color-regular-border(#{$color});
+
+    &:hover {
+      color: color-regular-contrast(#{$color});
+      background-color: color-dark(#{$color});
+      border-color: color-dark-border(#{$color});
+
+      .fa {
+        color: color-regular-contrast(#{$color});
+      }
+    }
+
+    &.active {
+      background-color: color-dark(#{$color});
+    }
+
+    &:disabled {
+      border-color: color-regular(#{$color});
+    }
+  }
+
+  /* ------------------------------------------------------------------------- BT OUTLINE */
+
+  .bt-outline-#{$color} {
+    color: color-dark(#{$color});
+    border-color: color-regular(#{$color});
+
+    &:hover,
+    &:focus,
+    &.active {
+      border-color: color-regular(#{$color});
+      background-color: color-regular(#{$color});
+      color: color-regular-contrast(#{$color});
+    }
+  }
+
+  /* ------------------------------------------------------------------------- FOCUS */
+
+  .bt-#{$color},
+  .bt-outline-#{$color} {
+    &.bt-es,
+    &.bt-sm {
+      &:focus,
+      &.active {
+        box-shadow: 0 0 0 3px rgba(color-regular(#{$color}), $component-opacity);
+      }
+    }
+
+    &.bt-re,
+    &.bt-bi,
+    &.bt-fu {
+      &:focus,
+      &.active {
+        box-shadow: 0 0 0 4px rgba(color-regular(#{$color}), $component-opacity);
+      }
+    }
+
+    &.bt-eb {
+      &:focus,
+      &.active {
+        box-shadow: 0 0 0 6px rgba(color-regular(#{$color}), $component-opacity);
+      }
+    }
+  }
+
+  /* ------------------------------------------------------------------------- LINK */
+
+  .link-#{$color} {
+    color: color-regular(#{$color});
 
     &:active,
-        &:visited,
-        &:focus,
-        &:hover{
-        text-decoration: underline;
+    &:visited,
+    &:focus,
+    &:hover {
+      color: color-dark(#{$color});
     }
+  }
+}
+
+.card {
+  margin: $sm;
+
+  .menu-tab {
+    border-bottom: 0;
+  }
+
+  header,
+  .card-body,
+  footer {
+    @extend %extend-border-solid;
+    text-align: center;
+  }
+
+  header {
+    border-radius: $border-radius-re $border-radius-re 0 0;
+    font-family: $font-family-bold;
+    border-bottom: transparent;
+  }
+
+  .card-body {
+    border-top: 0;
+    border-bottom: 0;
+    background-color: $color-white;
+  }
+
+  footer {
+    border-radius: 0 0 $border-radius-re $border-radius-re;
+    border-top: transparent;
+  }
+}
+
+.card-es {
+  header,
+  .card-body,
+  footer {
+    padding: $es;
+  }
+}
+
+.card-sm {
+  header,
+  .card-body,
+  footer {
+    padding: $sm;
+  }
+}
+
+.card-re {
+  header,
+  .card-body,
+  footer {
+    padding: $re;
+  }
+}
+
+.card-bi {
+  header,
+  .card-body,
+  footer {
+    padding: $bi;
+  }
+}
+
+.card-eb {
+  header,
+  .card-body,
+  footer {
+    padding: $eb;
+  }
 }
 
 @each $color in $arrColor {
-    /* ------------------------------------------------------------------------- BT */
-
-    .bt-#{$color} {
-        color: color-regular-contrast(#{$color});
-        background-color: color-regular(#{$color});
-        border-color: color-regular-border(#{$color});
-
-        &:hover{
-            color: color-regular-contrast(#{$color});
-            background-color: color-dark(#{$color});
-            border-color: color-dark-border(#{$color});
-
-            .fa{
-                color: color-regular-contrast(#{$color});
-            }
-        }
-
-        &.active{
-            background-color: color-dark(#{$color});
-        }
-
-        &:disabled{
-            border-color: color-regular(#{$color});
-        }
+  .card-#{$color} {
+    header {
+      color: color-dark(#{$color});
     }
 
-
-    /* ------------------------------------------------------------------------- BT OUTLINE */
-
-    .bt-outline-#{$color} {
-        color: color-dark(#{$color});
-        border-color: color-regular(#{$color});
-
-        &:hover,
-            &:focus,
-            &.active{
-            border-color: color-regular(#{$color});
-            background-color: color-regular(#{$color});
-            color: color-regular-contrast(#{$color});
-        }
-    }
-
-    /* ------------------------------------------------------------------------- FOCUS */
-
-    .bt-#{$color},
-    .bt-outline-#{$color} {
-
-        &.bt-es,
-        &.bt-sm{
-
-            &:focus,
-                &.active{
-                box-shadow: 0 0 0 3px rgba(color-regular(#{$color}), $component-opacity);
-            }
-        }
-
-        &.bt-re,
-        &.bt-bi,
-        &.bt-fu{
-
-            &:focus,
-                &.active{
-                box-shadow: 0 0 0 4px rgba(color-regular(#{$color}), $component-opacity); 
-            }
-        }
-
-        &.bt-eb{
-
-            &:focus,
-                &.active{
-                box-shadow: 0 0 0 6px rgba(color-regular(#{$color}), $component-opacity); 
-            }
-        }
-    }
-
-    /* ------------------------------------------------------------------------- LINK */
-
-    .link-#{$color} {
-        color: color-regular(#{$color});
-
-        &:active,
-            &:visited,
-            &:focus,
-            &:hover{
-            color: color-dark(#{$color});
-        }
-    }
-}
-.card{
-    margin: $sm;
-
-    .menu-tab{
-        border-bottom: 0;
-    }
-
-    header,    
+    header,
     .card-body,
-    footer{
-        @extend %extend-border-solid;
-        text-align: center;
+    footer {
+      border-color: color-light(#{$color});
     }
 
-    header{
-        border-radius: $border-radius-re $border-radius-re 0 0;
-        font-family: $font-family-bold;
-        border-bottom: transparent;
+    header,
+    footer {
+      background-color: color-light(#{$color});
     }
-
-    .card-body{
-        border-top: 0;
-        border-bottom: 0;
-        background-color: $color-white;
-    }
-
-    footer{
-        border-radius: 0 0 $border-radius-re $border-radius-re;
-        border-top: transparent;
-    }
+  }
 }
 
-.card-es{
+.carousel {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
 
-    header,    
-    .card-body,
-    footer{
-        padding: $es;
-    }
-}
-
-.card-sm{
-
-    header,    
-    .card-body,
-    footer{
-        padding: $sm;
-    }
-}
-
-.card-re{
-
-    header,    
-    .card-body,
-    footer{
-        padding: $re;
-    }
-}
-
-.card-bi{
-
-    header,    
-    .card-body,
-    footer{
-        padding: $bi;
-    }
-}
-
-.card-eb{
-
-    header,    
-    .card-body,
-    footer{
-        padding: $eb;
-    }
-}
-
-@each $color in $arrColor {
-    .card-#{$color} {
-
-        header{
-            color: color-dark(#{$color});
-        }
-
-        header,
-        .card-body,
-        footer{
-            border-color: color-light(#{$color});
-        }
-
-        header,
-        footer{
-            background-color: color-light(#{$color});
-        }
-    }
-}
-.carousel{
+  .carousel-list {
     position: relative;
-    overflow:hidden;
-    width:100%;
+    list-style: none;
+    transition: $transition;
+    will-change: auto;
 
-    .carousel-list{
-        position: relative;
-        list-style: none;
-        transition: $transition;
-        will-change: auto;
-
-        li{
-            position:relative;
-            float: left;
-        }
+    li {
+      position: relative;
+      float: left;
     }
+  }
 
-    .carousel-controller{
-        position: relative;
-        display: inline-table;
+  .carousel-controller {
+    position: relative;
+    display: inline-table;
 
-        .carousel-controller-bt{
-            opacity: .3;
+    .carousel-controller-bt {
+      opacity: 0.3;
 
-            &.active{
-                opacity: .8;
-            }
-        }
+      &.active {
+        opacity: 0.8;
+      }
     }
+  }
 
-    .menu-horizontal{
-        text-align: center;
-        width: 100%;
-    }
-
-    .carousel-controller-over{
-        bottom: $bi;
-        position: absolute;
-    }
-
-    .carousel-controller-bt{
-        .fa{
-            color: $color-white;
-        }
-    }
-
-    .carousel-controller-black{
-        .fa{
-            color: $color-black !important;
-        }
-    }
-}
-html,
-body{
+  .menu-horizontal {
+    text-align: center;
     width: 100%;
-    height: 100%;
-    position: relative;
+  }
+
+  .carousel-controller-over {
+    bottom: $bi;
+    position: absolute;
+  }
+
+  .carousel-controller-bt {
+    .fa {
+      color: $color-white;
+    }
+  }
+
+  .carousel-controller-black {
+    .fa {
+      color: $color-black !important;
+    }
+  }
 }
 
-hr{
-    border: 0;
-    border-top: 1px dotted $color-grey;
+html,
+body {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+hr {
+  border: 0;
+  border-top: 1px dotted $color-grey;
 }
 
 b,
-strong{
-    font-family: $font-family-bold;
+strong {
+  font-family: $font-family-bold;
 }
 
 /* ------------------------------------------------------------------ SPACEMENT */
 
-.padding-re{
-    padding: $re;
+.padding-re {
+  padding: $re;
 }
 
-.padding-bi{
-    padding: $bi;
+.padding-bi {
+  padding: $bi;
 }
 
-.padding-eb{
-    padding: $bi * 2;
+.padding-eb {
+  padding: $bi * 2;
 }
 
-.padding-sm{
-    padding: $sm;
+.padding-sm {
+  padding: $sm;
 }
 
-.padding-es{
-    padding: $es;
+.padding-es {
+  padding: $es;
 }
 
-
-
-
-.margin-re{
-    margin-top: $re;
+.margin-re {
+  margin-top: $re;
 }
 
-.margin-bi{
-    margin-top: $bi;
+.margin-bi {
+  margin-top: $bi;
 }
 
-.margin-eb{
-    margin-top: $eb;
+.margin-eb {
+  margin-top: $eb;
 }
 
-.margin-sm{
-    margin-top: $sm;
+.margin-sm {
+  margin-top: $sm;
 }
 
-.margin-es{
-    margin-top: $es;
+.margin-es {
+  margin-top: $es;
 }
 
 /* ------------------------------------------------------------------ MOBILE */
 
-.mobile-show{
-    @media only screen and (min-width: $break-point-es) { 
-        display: table !important;
-    }
+.mobile-show {
+  @media only screen and (min-width: $break-point-es) {
+    display: table !important;
+  }
 }
 
-.mobile-hide{
-    @media only screen and (min-width: $break-point-es) { 
-        display: none !important;
-    }
+.mobile-hide {
+  @media only screen and (min-width: $break-point-es) {
+    display: none !important;
+  }
 
-    @media only screen and (min-width: $break-point-bi) {
-        display: block !important;
-    }
+  @media only screen and (min-width: $break-point-bi) {
+    display: block !important;
+  }
 }
 
 /* ------------------------------------------------------------------ IMAGE */
 
-.img-responsive{
-    max-width: 100%;
-    height: auto;
-    margin: auto;
+.img-responsive {
+  max-width: 100%;
+  height: auto;
+  margin: auto;
 }
 
-.img-responsive-vertical{
-    max-height: 100%;
-    width: auto;
-    margin: auto;
+.img-responsive-vertical {
+  max-height: 100%;
+  width: auto;
+  margin: auto;
 }
 
 /* ------------------------------------------------------------------ OTHER */
 
-.overflow-auto{
-    overflow: auto;
+.overflow-auto {
+  overflow: auto;
 }
 
-.overflow-hidden{
-    overflow: hidden;
+.overflow-hidden {
+  overflow: hidden;
 }
 
 .scroll-off {
-    pointer-events: none;
+  pointer-events: none;
 }
 
 /* ------------------------------------------------------------------ DISPLAY */
 
-.display-none{
-    display: none !important;
+.display-none {
+  display: none !important;
 }
+
 /*!
  *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
@@ -1652,9 +1597,9 @@ strong{
   left: -1.85714286em;
 }
 .fa-border {
-  padding: .2em .25em .15em;
+  padding: 0.2em 0.25em 0.15em;
   border: solid 0.08em #eeeeee;
-  border-radius: .1em;
+  border-radius: 0.1em;
 }
 .fa-pull-left {
   float: left;
@@ -1663,10 +1608,10 @@ strong{
   float: right;
 }
 .fa.fa-pull-left {
-  margin-right: .3em;
+  margin-right: 0.3em;
 }
 .fa.fa-pull-right {
-  margin-left: .3em;
+  margin-left: 0.3em;
 }
 /* Deprecated as of 4.4.0 */
 .pull-right {
@@ -1676,10 +1621,10 @@ strong{
   float: left;
 }
 .fa.pull-left {
-  margin-right: .3em;
+  margin-right: 0.3em;
 }
 .fa.pull-right {
-  margin-left: .3em;
+  margin-left: 0.3em;
 }
 .fa-spin {
   -webkit-animation: fa-spin 2s infinite linear;
@@ -3929,2895 +3874,2896 @@ strong{
 }
 
 @font-face {
-    font-family: $font-family-regular; 
-    src: 
-        url('../font/roboto-regular/roboto-regular.woff2') format('woff2'),
-        url('../font/roboto-regular/roboto-regular.eot'),
-        url('../font/roboto-regular/roboto-regular.woff') format('woff'),
-        url('../font/roboto-regular/roboto-regular.ttf') format('truetype'),
-        url('../font/roboto-regular/roboto-regular.svg#roboto-regular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
+  font-family: $font-family-regular;
+  src: url("../font/roboto-regular/roboto-regular.woff2") format("woff2"),
+    url("../font/roboto-regular/roboto-regular.eot"), url("../font/roboto-regular/roboto-regular.woff") format("woff"),
+    url("../font/roboto-regular/roboto-regular.ttf") format("truetype"),
+    url("../font/roboto-regular/roboto-regular.svg#roboto-regular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: $font-family-bold; 
-    src: 
-        url('../font/roboto-bold/roboto-bold.woff2') format('woff2'),
-        url('../font/roboto-bold/roboto-bold.woff') format('woff'),
-        url('../font/roboto-bold/roboto-bold.eot'),
-        url('../font/roboto-bold/roboto-bold.svg#roboto-bold') format('svg'),
-        url('../font/roboto-bold/roboto-bold.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
+  font-family: $font-family-bold;
+  src: url("../font/roboto-bold/roboto-bold.woff2") format("woff2"),
+    url("../font/roboto-bold/roboto-bold.woff") format("woff"), url("../font/roboto-bold/roboto-bold.eot"),
+    url("../font/roboto-bold/roboto-bold.svg#roboto-bold") format("svg"),
+    url("../font/roboto-bold/roboto-bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: $font-family-thin; 
-    src: 
-        url('../font/roboto-thin/roboto-thin.woff2') format('woff2'),
-        url('../font/roboto-thin/roboto-thin.eot'),
-        url('../font/roboto-thin/roboto-thin.woff') format('woff'),
-        url('../font/roboto-thin/roboto-thin.ttf') format('truetype'),
-        url('../font/roboto-thin/roboto-thin.svg#roboto-thin') format('svg');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
+  font-family: $font-family-thin;
+  src: url("../font/roboto-thin/roboto-thin.woff2") format("woff2"), url("../font/roboto-thin/roboto-thin.eot"),
+    url("../font/roboto-thin/roboto-thin.woff") format("woff"),
+    url("../font/roboto-thin/roboto-thin.ttf") format("truetype"),
+    url("../font/roboto-thin/roboto-thin.svg#roboto-thin") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: $font-family-black; 
-    src: 
-        url('../font/roboto-black/roboto-black.woff2') format('woff2'),
-        url('../font/roboto-black/roboto-black.woff') format('woff'),
-        url('../font/roboto-black/roboto-black.eot'),
-        url('../font/roboto-black/roboto-black.ttf') format('truetype'),
-        url('../font/roboto-black/roboto-black.svg#roboto-black') format('svg');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
+  font-family: $font-family-black;
+  src: url("../font/roboto-black/roboto-black.woff2") format("woff2"),
+    url("../font/roboto-black/roboto-black.woff") format("woff"), url("../font/roboto-black/roboto-black.eot"),
+    url("../font/roboto-black/roboto-black.ttf") format("truetype"),
+    url("../font/roboto-black/roboto-black.svg#roboto-black") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: $font-family-awesome;
-    src: 
-        url('../font/fontawesome/fontawesome-webfont.woff2?v=4.7.0') format('woff2'), 
-        url('../font/fontawesome/fontawesome-webfont.woff?v=4.7.0') format('woff'),
-        url('../font/fontawesome/fontawesome-webfont.eot?v=4.7.0'),
-        url('../font/fontawesome/fontawesome-webfont.ttf?v=4.7.0') format('truetype'),
-        url('../font/fontawesome/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
+  font-family: $font-family-awesome;
+  src: url("../font/fontawesome/fontawesome-webfont.woff2?v=4.7.0") format("woff2"),
+    url("../font/fontawesome/fontawesome-webfont.woff?v=4.7.0") format("woff"),
+    url("../font/fontawesome/fontawesome-webfont.eot?v=4.7.0"),
+    url("../font/fontawesome/fontawesome-webfont.ttf?v=4.7.0") format("truetype"),
+    url("../font/fontawesome/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
+
 input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus, 
-input:-webkit-autofill:active  {
-    -webkit-box-shadow: 0 0 0 30px white inset !important;
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
 }
 
 .form {
-    padding: $bi auto;
+  padding: $bi auto;
 
-    label{
-        padding: $re;
-        display: inline-block;
-        user-select: none;  
+  label {
+    padding: $re;
+    display: inline-block;
+    user-select: none;
 
-        span{
-            display: inline-block;
-        }
+    span {
+      display: inline-block;
+    }
+  }
+
+  input[type="color"] {
+    height: 44px;
+  }
+
+  input:not([type="checkbox"]),
+  input:not([type="radio"]),
+  select,
+  textarea {
+    padding: $re;
+  }
+
+  .input-file,
+  input:not([type="checkbox"]),
+  input:not([type="radio"]),
+  select,
+  textarea {
+    width: 100%;
+    border-radius: $border-radius-re;
+    background-color: $color-white;
+    font-size: $font-re;
+    @extend %extend-border-solid;
+
+    &:required,
+    &:focus {
+      border-color: transparent;
     }
 
-    input[type="color"]{
-        height: 44px;
+    &::placeholder {
+      font-size: $font-sm;
     }
 
-    input:not([type=checkbox]),
-        input:not([type=radio]),
-        select,
-        textarea{
-        padding: $re;
+    &:disabled {
+      cursor: not-allowed;
+    }
+  }
+
+  textarea {
+    resize: vertical;
+    font-size: 1rem;
+  }
+
+  select[multiple],
+  textarea {
+    min-height: 140px;
+  }
+
+  select {
+    padding-bottom: $re - 1;
+  }
+
+  select,
+  textarea,
+  input {
+    transition: $transition;
+
+    &:invalid {
+      transition: $transition;
     }
 
-    .input-file,
-    input:not([type=checkbox]),
-        input:not([type=radio]),
-        select,
-        textarea{
-        width: 100%;
-        border-radius: $border-radius-re;
-        background-color: $color-white;
-        font-size: $font-re;
-        @extend %extend-border-solid;
-
-        &:required,
-        &:focus{
-            border-color: transparent;
-        }
-
-        &::placeholder {
-            font-size: $font-sm;
-        }
-
-        &:disabled{
-            cursor: not-allowed;
-        }
+    &:disabled {
+      user-select: none;
     }
+  }
 
-    textarea{
-        resize: vertical;
-        font-size: 1rem;
-    }
+  input[type="radio"],
+  input[type="checkbox"] {
+    width: auto;
+    margin: auto $es;
+    transform: scale(1) !important;
+  }
 
-    select[multiple],
-    textarea{
-        min-height: 140px;
-    }
-
-    select{
-        padding-bottom: $re - 1;
-    }
-
-    select,
-    textarea,
-    input{
-        transition: $transition;
-
-        &:invalid{
-            transition: $transition;
-        }
-
-        &:disabled{
-            user-select: none;
-        }
-    }
+  .radio,
+  .checkbox {
+    display: inline;
+    margin: $re $bi $re 0;
 
     input[type="radio"],
     input[type="checkbox"] {
-        width: auto;
-        margin: auto $es;
-        transform: scale(1) !important;
+      position: absolute;
+      opacity: 0;
     }
+  }
 
+  .radio {
+    input[type="radio"] {
+      + .radio-label {
+        cursor: pointer;
 
-    .radio,
-    .checkbox {
-        display: inline;
-        margin: $re $bi $re 0;
-
-        input[type="radio"],
-        input[type="checkbox"]{
-            position: absolute;
-            opacity: 0;
+        &:before {
+          @include pseudo-element(inline-block, relative, "");
+          background: transparent;
+          border-radius: 100%;
+          bottom: -3px;
+          width: 14px;
+          height: 14px;
+          margin-right: 5px;
+          vertical-align: top;
+          cursor: pointer;
+          text-align: center;
+          transition: all 250ms ease;
+          box-shadow: inset 0 0 0 3px $color-white;
+          background-color: $color-white;
+          @extend %extend-border-solid;
         }
-    }
+      }
 
-    .radio {
-
-        input[type="radio"] {
-
-            + .radio-label {
-                cursor: pointer;
-
-                &:before {
-                    @include pseudo-element(inline-block, relative, '');
-                    background: transparent;
-                    border-radius: 100%;
-                    bottom: -3px;
-                    width: 14px;
-                    height: 14px;
-                    margin-right: 5px;
-                    vertical-align: top;
-                    cursor: pointer;
-                    text-align: center;
-                    transition: all 250ms ease;
-                    box-shadow: inset 0 0 0 3px $color-white;
-                    background-color: $color-white;
-                    @extend  %extend-border-solid;
-                }
-            }
-
-            &:focus {
-                + .radio-label {
-                    &:before {
-                        box-shadow: inset 0 0 0 3px $color-white;
-                    }
-                }
-            }
-
-            &:disabled {
-                + .radio-label {
-                    cursor: not-allowed;
-                    &:before {
-                        opacity: .3;
-                    }
-                }
-            }
-
-            + .radio-label {
-                &:empty {
-                    &:before {
-                        margin-right: 0;
-                        box-shadow: inset 0 0 0 3px $color-white;
-                    }
-                }
-            }
+      &:focus {
+        + .radio-label {
+          &:before {
+            box-shadow: inset 0 0 0 3px $color-white;
+          }
         }
-    }
+      }
 
-    .checkbox {
-
-        input[type="checkbox"] {
-
-            + .checkbox-label {
-                cursor: pointer;
-                position: relative;
-
-                &:before {
-                    @include pseudo-element(inline-block, relative, '');
-                    background: transparent;
-                    border-radius: 2px;
-                    bottom: -3px;
-                    width: 14px;
-                    height: 14px;
-                    margin-right: 5px;
-                    vertical-align: top;
-                    cursor: pointer;
-                    text-align: center;
-                    transition: all 250ms ease;
-                    box-shadow: inset 0 0 0 0px $color-white;
-                    background-color: $color-white;
-                    @extend  %extend-border-solid;
-                }
-
-                &:after {
-                    content: '\f00c';
-                    position: absolute;
-                    display: none;
-                    font-size: .6rem;
-                    font-family: $font-family-awesome;
-                    color: $color-white;
-                    left: 13px;
-                    top: 16px;
-                }
-            }
-
-            &:checked {
-
-                + .checkbox-label {
-
-                    &:after {
-                        display: inline-block;
-                    }
-                }
-            }
-
-            &:disabled {
-                + .checkbox-label {
-                    cursor: not-allowed;
-                    &:before {
-                        opacity: .3;
-                    }
-                }
-            }
-
-            + .checkbox-label {
-                &:empty {
-                    &:before {
-                        display: none;
-                    }
-                }
-            }
+      &:disabled {
+        + .radio-label {
+          cursor: not-allowed;
+          &:before {
+            opacity: 0.3;
+          }
         }
+      }
+
+      + .radio-label {
+        &:empty {
+          &:before {
+            margin-right: 0;
+            box-shadow: inset 0 0 0 3px $color-white;
+          }
+        }
+      }
     }
+  }
+
+  .checkbox {
+    input[type="checkbox"] {
+      + .checkbox-label {
+        cursor: pointer;
+        position: relative;
+
+        &:before {
+          @include pseudo-element(inline-block, relative, "");
+          background: transparent;
+          border-radius: 2px;
+          bottom: -3px;
+          width: 14px;
+          height: 14px;
+          margin-right: 5px;
+          vertical-align: top;
+          cursor: pointer;
+          text-align: center;
+          transition: all 250ms ease;
+          box-shadow: inset 0 0 0 0px $color-white;
+          background-color: $color-white;
+          @extend %extend-border-solid;
+        }
+
+        &:after {
+          content: "\f00c";
+          position: absolute;
+          display: none;
+          font-size: 0.6rem;
+          font-family: $font-family-awesome;
+          color: $color-white;
+          left: 13px;
+          top: 16px;
+        }
+      }
+
+      &:checked {
+        + .checkbox-label {
+          &:after {
+            display: inline-block;
+          }
+        }
+      }
+
+      &:disabled {
+        + .checkbox-label {
+          cursor: not-allowed;
+          &:before {
+            opacity: 0.3;
+          }
+        }
+      }
+
+      + .checkbox-label {
+        &:empty {
+          &:before {
+            display: none;
+          }
+        }
+      }
+    }
+  }
 }
 
 .form-field {
-    padding: $re;
-    padding-bottom: 0;
+  padding: $re;
+  padding-bottom: 0;
 
-    [class*="responsive-column"] {
-        position: relative;
-    }
+  [class*="responsive-column"] {
+    position: relative;
+  }
 }
 
 .input-file {
-    cursor: pointer;
-    padding: 0;
-    display: table;
+  cursor: pointer;
+  padding: 0;
+  display: table;
 
-    *{
-        font-size: $font-sm;
-        user-select: none;
-    }
+  * {
+    font-size: $font-sm;
+    user-select: none;
+  }
 
-    .input-file-name{
-        display: inline-block;
-        margin: $re;
-        float: left;
-    }
-
-    .input-file-text{
-        float: right;
-        display: inline-block;
-        padding: $re;
-    }
-}
-
-.input-switch{
+  .input-file-name {
     display: inline-block;
     margin: $re;
-    text-align: right !important;
+    float: left;
+  }
 
-    input {
-        display: none;
-    }
-
-    label {
-        cursor: pointer;
-        padding-right: 35px;
-        position: relative;
-        display: block;
-        padding-right: 40px ;
-    }
-
-    input[type="checkbox"],
-    input[type="radio"] {
-        position: absolute;
-        visibility: hidden !important;
-    }
-
-    input[type="checkbox"] + label:before,
-        input[type="radio"] + label:before,
-        input[type="checkbox"] + label:after,
-        input[type="radio"] + label:after {
-        content: '';
-        position: absolute;
-        top: 50%;
-        margin-top: -7.5px;
-        box-sizing: border-box;
-    }
-
-    input[type="checkbox"] + label:before,
-        input[type="radio"] + label:before {
-        @extend %extend-border-solid;
-        width: 30px;
-        height: 15px;
-        right: 0px;
-        border-radius: 15px;
-    }
-
-    input[type="checkbox"] + label:after,
-        input[type="radio"] + label:after {
-        @extend %extend-border-solid;
-        width: 17px;
-        height: 17px;
-        right: 15px;
-        margin-top: -8px;
-        border-radius: 50%;
-        -webkit-transition: all 200ms ease-out;
-        transition: all 200ms ease-out;
-    }
-
-    input[type="checkbox"]:checked + label:after,
-        input[type="radio"]:checked + label:after {
-        right: 0px;
-    }
+  .input-file-text {
+    float: right;
+    display: inline-block;
+    padding: $re;
+  }
 }
 
+.input-switch {
+  display: inline-block;
+  margin: $re;
+  text-align: right !important;
+
+  input {
+    display: none;
+  }
+
+  label {
+    cursor: pointer;
+    padding-right: 35px;
+    position: relative;
+    display: block;
+    padding-right: 40px;
+  }
+
+  input[type="checkbox"],
+  input[type="radio"] {
+    position: absolute;
+    visibility: hidden !important;
+  }
+
+  input[type="checkbox"] + label:before,
+  input[type="radio"] + label:before,
+  input[type="checkbox"] + label:after,
+  input[type="radio"] + label:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    margin-top: -7.5px;
+    box-sizing: border-box;
+  }
+
+  input[type="checkbox"] + label:before,
+  input[type="radio"] + label:before {
+    @extend %extend-border-solid;
+    width: 30px;
+    height: 15px;
+    right: 0px;
+    border-radius: 15px;
+  }
+
+  input[type="checkbox"] + label:after,
+  input[type="radio"] + label:after {
+    @extend %extend-border-solid;
+    width: 17px;
+    height: 17px;
+    right: 15px;
+    margin-top: -8px;
+    border-radius: 50%;
+    -webkit-transition: all 200ms ease-out;
+    transition: all 200ms ease-out;
+  }
+
+  input[type="checkbox"]:checked + label:after,
+  input[type="radio"]:checked + label:after {
+    right: 0px;
+  }
+}
 
 @each $color in $arrColor {
-    .form-#{$color} {
+  .form-#{$color} {
+    .input-file,
+    input,
+    textarea,
+    select {
+      border-color: color-light-border(#{$color});
 
-        .input-file,
-        input,
-        textarea,
-        select{
-            border-color: color-light-border(#{$color});
-
-            &:focus{
-                box-shadow: 0 0 0 3px rgba(color-regular(#{$color}), $component-opacity);  
-            }
-        }
-
-        .input-file {
-
-            &.focus{
-                box-shadow: 0 0 0 3px rgba(color-regular(#{$color}), $component-opacity); 
-            }
-
-            i,
-            .input-file-text{
-                color: color-regular-border(#{$color});
-                background-color: color-light(#{$color});
-            }
-        }
-
-        .radio {
-
-            &:focus {
-
-                .radio-label {
-                    box-shadow: 0 0 0 3px rgba(color-regular(#{$color}), $component-opacity); 
-                }
-            }
-
-            input[type="radio"] {
-                border-color: color-regular-border(#{$color});
-
-                + .radio-label {
-
-                    &:before {
-                        border-color: color-regular(#{$color});
-                    }
-                }
-
-                &:checked {
-                    + .radio-label {
-                        &:before {
-                            background-color: color-regular(#{$color});
-                            border-color: color-regular(#{$color});
-                        }
-                    }
-                }
-
-                &:disabled {
-                    + .radio-label {
-                        &:before {
-                            background-color: color-light(#{$color});
-                        }
-                    }
-                }
-            }
-        }
-
-        .checkbox {
-
-            &:focus {
-
-                .checkbox-label {
-                    box-shadow: 0 0 0 3px rgba(color-regular(#{$color}), $component-opacity); 
-                }
-            }
-
-            input[type="checkbox"] {
-                border-color: color-regular-border(#{$color});
-
-                + .checkbox-label {
-
-                    &:before {
-                        background-color: color-light(#{$color});
-                        border-color: color-regular(#{$color});
-                    }
-                }
-
-                &:checked {
-                    + .checkbox-label {
-                        &:before {
-                            background-color: color-regular(#{$color});
-                            border-color: color-regular(#{$color});
-                        }
-                    }
-                }
-
-                &:disabled {
-                    + .checkbox-label {
-                        &:before {
-                            background-color: color-light(#{$color});
-                        }
-                    }
-                }
-            }
-        }
-
-        .input-switch{
-
-            &:focus{
-                box-shadow: 0 0 0 3px rgba(color-regular(#{$color}), $component-opacity); 
-            }
-
-            input[type="checkbox"] + label:before,
-                input[type="radio"] + label:before {
-                border-color: color-light-border(#{$color});
-                background-color: color-light(#{$color});
-            }
-
-            input[type="checkbox"] + label:after,
-                input[type="radio"] + label:after ,
-                input[type="checkbox"]:checked + label:after,
-                input[type="radio"]:checked + label:after {
-                border-color: color-regular-border(#{$color});
-                color: color-regular(#{$color});
-                background-color: color-regular(#{$color});
-            }
-        }
-
-        input{
-
-            &:invalid{
-                border-color: color-regular-invalid(#{$color}); 
-                box-shadow: 0 0 0 3px rgba(color-regular-invalid(#{$color}), $component-opacity); 
-            }
-
-            &:disabled{
-                border-color: color-light(#{$color});
-                background-color: color-extra-light(#{$color});
-                color: color-light-border(#{$color});
-            }
-        }
+      &:focus {
+        box-shadow: 0 0 0 3px rgba(color-regular(#{$color}), $component-opacity);
+      }
     }
-}
-#loading_main{
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: z-index('loading-main');
-    width: 100vw;
-    height: 100vh;
-    opacity: 1;
-    transition: $transition;
-    overflow: hidden;
-    display: flex;
 
-    .progress-bar{
-        width: 0;
+    .input-file {
+      &.focus {
+        box-shadow: 0 0 0 3px rgba(color-regular(#{$color}), $component-opacity);
+      }
+
+      i,
+      .input-file-text {
+        color: color-regular-border(#{$color});
+        background-color: color-light(#{$color});
+      }
     }
+
+    .radio {
+      &:focus {
+        .radio-label {
+          box-shadow: 0 0 0 3px rgba(color-regular(#{$color}), $component-opacity);
+        }
+      }
+
+      input[type="radio"] {
+        border-color: color-regular-border(#{$color});
+
+        + .radio-label {
+          &:before {
+            border-color: color-regular(#{$color});
+          }
+        }
+
+        &:checked {
+          + .radio-label {
+            &:before {
+              background-color: color-regular(#{$color});
+              border-color: color-regular(#{$color});
+            }
+          }
+        }
+
+        &:disabled {
+          + .radio-label {
+            &:before {
+              background-color: color-light(#{$color});
+            }
+          }
+        }
+      }
+    }
+
+    .checkbox {
+      &:focus {
+        .checkbox-label {
+          box-shadow: 0 0 0 3px rgba(color-regular(#{$color}), $component-opacity);
+        }
+      }
+
+      input[type="checkbox"] {
+        border-color: color-regular-border(#{$color});
+
+        + .checkbox-label {
+          &:before {
+            background-color: color-light(#{$color});
+            border-color: color-regular(#{$color});
+          }
+        }
+
+        &:checked {
+          + .checkbox-label {
+            &:before {
+              background-color: color-regular(#{$color});
+              border-color: color-regular(#{$color});
+            }
+          }
+        }
+
+        &:disabled {
+          + .checkbox-label {
+            &:before {
+              background-color: color-light(#{$color});
+            }
+          }
+        }
+      }
+    }
+
+    .input-switch {
+      &:focus {
+        box-shadow: 0 0 0 3px rgba(color-regular(#{$color}), $component-opacity);
+      }
+
+      input[type="checkbox"] + label:before,
+      input[type="radio"] + label:before {
+        border-color: color-light-border(#{$color});
+        background-color: color-light(#{$color});
+      }
+
+      input[type="checkbox"] + label:after,
+      input[type="radio"] + label:after,
+      input[type="checkbox"]:checked + label:after,
+      input[type="radio"]:checked + label:after {
+        border-color: color-regular-border(#{$color});
+        color: color-regular(#{$color});
+        background-color: color-regular(#{$color});
+      }
+    }
+
+    input {
+      &:invalid {
+        border-color: color-regular-invalid(#{$color});
+        box-shadow: 0 0 0 3px rgba(color-regular-invalid(#{$color}), $component-opacity);
+      }
+
+      &:disabled {
+        border-color: color-light(#{$color});
+        background-color: color-extra-light(#{$color});
+        color: color-light-border(#{$color});
+      }
+    }
+  }
 }
 
-.loading-main-done{
-    opacity: 0 !important;
-    transition: $transition;
-    pointer-events: none;
+#loading_main {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: z-index("loading-main");
+  width: 100vw;
+  height: 100vh;
+  opacity: 1;
+  transition: $transition;
+  overflow: hidden;
+  display: flex;
+
+  .progress-bar {
+    width: 0;
+  }
+}
+
+.loading-main-done {
+  opacity: 0 !important;
+  transition: $transition;
+  pointer-events: none;
 }
 
 /* ----------------------------------------------------------------------------- SIZE */
 
 .loading-es {
-    border-width: $es;
-    width: $es * 10;
-    height: $es * 10;
+  border-width: $es;
+  width: $es * 10;
+  height: $es * 10;
 }
 
 .loading-sm {
-    border-width: $sm;
-    width: $sm * 10;
-    height: $sm * 10;
+  border-width: $sm;
+  width: $sm * 10;
+  height: $sm * 10;
 }
 
 .loading-re {
-    border-width: $re;
-    width: $re * 10;
-    height: $re * 10;
+  border-width: $re;
+  width: $re * 10;
+  height: $re * 10;
 }
 
 .loading-bi {
-    border-width: $bi;
-    width: $bi * 10;
-    height: $bi * 10;
+  border-width: $bi;
+  width: $bi * 10;
+  height: $bi * 10;
 }
 
 .loading-eb {
-    border-width: $eb;
-    width: $eb * 10;
-    height: $eb * 10;
+  border-width: $eb;
+  width: $eb * 10;
+  height: $eb * 10;
 }
 
 /* ----------------------------------------------------------------------------- STYLE */
 
 .loading-1 {
-    align-items: center;
-    justify-content: center;
-    border-radius: 100%;
-    margin: auto;
-    border-style: solid;
-    display: inline-block;
-    border-top-color: transparent !important;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  margin: auto;
+  border-style: solid;
+  display: inline-block;
+  border-top-color: transparent !important;
 }
-
 
 .loading-2,
 .loading-2:before,
 .loading-2:after {
-    animation: load2 1s infinite ease-in-out;
-    width: 10px;
+  animation: load2 1s infinite ease-in-out;
+  width: 10px;
 }
 
 .loading-2 {
-    text-indent: -9999em;
-    position: relative;
-    font-size: 11px;
-    transform: translateZ(0);
-    animation-delay: -0.16s;
-    display: inline-block;
-    margin: 2em;
+  text-indent: -9999em;
+  position: relative;
+  font-size: 11px;
+  transform: translateZ(0);
+  animation-delay: -0.16s;
+  display: inline-block;
+  margin: 2em;
 
-    &:before,
-        &:after {
-        position: absolute;
-        top: 0;
-        content: '';
-    }
-    &:before {
-        left: -1.5em;
-        animation-delay: -0.32s;
-    }
-    &:after {
-        left: 1.5em;
-    }
+  &:before,
+  &:after {
+    position: absolute;
+    top: 0;
+    content: "";
+  }
+  &:before {
+    left: -1.5em;
+    animation-delay: -0.32s;
+  }
+  &:after {
+    left: 1.5em;
+  }
 
-    @keyframes load2 {
-        0%,
-        80%,
-        100% {
-            box-shadow: 0 0;
-            height: 1em;
-        }
-        40% {
-            box-shadow: 0 -1em;
-            height: 2em;
-        }
+  @keyframes load2 {
+    0%,
+    80%,
+    100% {
+      box-shadow: 0 0;
+      height: 1em;
     }
+    40% {
+      box-shadow: 0 -1em;
+      height: 2em;
+    }
+  }
 }
 
 .loading-3,
 .loading-3:before,
 .loading-3:after {
-    animation: load3 1s infinite ease-in-out;
-    width: 10px;
+  animation: load3 1s infinite ease-in-out;
+  width: 10px;
 }
 
 .loading-3 {
-    text-indent: -9999em;
-    position: relative;
-    font-size: 11px;
-    transform: translateZ(0);
-    animation-delay: -0.16s;
-    display: inline-block;
-    margin: 2em 2em 0 2em;
+  text-indent: -9999em;
+  position: relative;
+  font-size: 11px;
+  transform: translateZ(0);
+  animation-delay: -0.16s;
+  display: inline-block;
+  margin: 2em 2em 0 2em;
 
-    &:before,
-        &:after {
-        position: absolute;
-        top: 0;
-        content: '';
-    }
-    &:before {
-        left: -1.5em;
-        animation-delay: -0.32s;
-    }
-    &:after {
-        left: 1.5em;
-    }
+  &:before,
+  &:after {
+    position: absolute;
+    top: 0;
+    content: "";
+  }
+  &:before {
+    left: -1.5em;
+    animation-delay: -0.32s;
+  }
+  &:after {
+    left: 1.5em;
+  }
 
-    @keyframes load3 {
-        0%,
-        80%,
-        100% {
-            box-shadow: 0 0;
-            height: 1em;
-        }
-        40% {
-            box-shadow: 0 -2em;
-            height: -2em;
-        }
+  @keyframes load3 {
+    0%,
+    80%,
+    100% {
+      box-shadow: 0 0;
+      height: 1em;
     }
+    40% {
+      box-shadow: 0 -2em;
+      height: -2em;
+    }
+  }
 }
 
 .loading-4 {
-    font-size: 10px;
-    position: relative;
-    text-indent: -9999em;
-    transform: translateZ(0);
-    animation-delay: -0.16s;
-    display: inline-block;
-    height: 1em;
-    margin: 0 4em 2em 4em;
+  font-size: 10px;
+  position: relative;
+  text-indent: -9999em;
+  transform: translateZ(0);
+  animation-delay: -0.16s;
+  display: inline-block;
+  height: 1em;
+  margin: 0 4em 2em 4em;
 
-    @keyframes load4 {
-        0%,
-        80%,
-        100% {
-            box-shadow: 0 2.5em 0 -1.3em;
-        }
-        40% {
-            box-shadow: 0 2.5em 0 0;
-        }
+  @keyframes load4 {
+    0%,
+    80%,
+    100% {
+      box-shadow: 0 2.5em 0 -1.3em;
     }
+    40% {
+      box-shadow: 0 2.5em 0 0;
+    }
+  }
 }
 
 .loading-4,
 .loading-4:before,
 .loading-4:after {
-    border-radius: 50%;
-    width: 2.5em;
-    height: 2.5em;
-    animation-fill-mode: both;
-    animation: load4 1.8s infinite ease-in-out;
+  border-radius: 50%;
+  width: 2.5em;
+  height: 2.5em;
+  animation-fill-mode: both;
+  animation: load4 1.8s infinite ease-in-out;
 }
 .loading-4:before,
 .loading-4:after {
-    content: '';
-    position: absolute;
-    top: 0;
+  content: "";
+  position: absolute;
+  top: 0;
 }
 .loading-4:before {
-    left: -3.5em;
-    animation-delay: -0.32s;
+  left: -3.5em;
+  animation-delay: -0.32s;
 }
 .loading-4:after {
-    left: 3.5em;
+  left: 3.5em;
 }
-
 
 .loading-5 {
-    font-size: 20px;
-    width: .7em;
-    height: .7em;
-    border-radius: 50%;
-    position: relative;
-    text-indent: -9999em;
-    animation: load5 1.3s infinite linear;
-    transform: translateZ(0);
-    display: inline-block;
-    margin: 2em;
+  font-size: 20px;
+  width: 0.7em;
+  height: 0.7em;
+  border-radius: 50%;
+  position: relative;
+  text-indent: -9999em;
+  animation: load5 1.3s infinite linear;
+  transform: translateZ(0);
+  display: inline-block;
+  margin: 2em;
 
-    @keyframes load5 {
-        0%,
-        100% {
-            box-shadow: 0 -1.5em 0 0.1em, 1em -1em 0 0em, 1.5em 0 0 -0.5em, 1em 1em 0 -0.5em, 0 1.5em 0 -0.5em, -1em 1em 0 -0.5em, -1.5em 0 0 -0.5em, -1em -1em 0 0;
-        }
-        12.5% {
-            box-shadow: 0 -1.5em 0 0, 1em -1em 0 0.1em, 1.5em 0 0 0, 1em 1em 0 -0.5em, 0 1.5em 0 -0.5em, -1em 1em 0 -0.5em, -1.5em 0 0 -0.5em, -1em -1em 0 -0.5em;
-        }
-        25% {
-            box-shadow: 0 -1.5em 0 -0.5em, 1em -1em 0 0, 1.5em 0 0 0.1em, 1em 1em 0 0, 0 1.5em 0 -0.5em, -1em 1em 0 -0.5em, -1.5em 0 0 -0.5em, -1em -1em 0 -0.5em;
-        }
-        37.5% {
-            box-shadow: 0 -1.5em 0 -0.5em, 1em -1em 0 -0.5em, 1.5em 0em 0 0, 1em 1em 0 0.1em, 0 1.5em 0 0em, -1em 1em 0 -0.5em, -1.5em 0em 0 -0.5em, -1em -1em 0 -0.5em;
-        }
-        50% {
-            box-shadow: 0 -1.5em 0 -0.5em, 1em -1em 0 -0.5em, 1.5em 0 0 -0.5em, 1em 1em 0 0em, 0 1.5em 0 0.1em, -1em 1em 0 0, -1.5em 0em 0 -0.5em, -1em -1em 0 -0.5em;
-        }
-        62.5% {
-            box-shadow: 0 -1.5em 0 -0.5em, 1em -1em 0 -0.5em, 1.5em 0 0 -0.5em, 1em 1em 0 -0.5em, 0 1.5em 0 0, -1em 1em 0 0.1em, -1.5em 0 0 0, -1em -1em 0 -0.5em;
-        }
-        75% {
-            box-shadow: 0em -1.5em 0 -0.5em, 1em -1em 0 -0.5em, 1.5em 0em 0 -0.5em, 1em 1em 0 -0.5em, 0 1.5em 0 -0.5em, -1em 1em 0 0, -1.5em 0em 0 0.1em, -1em -1em 0 0;
-        }
-        87.5% {
-            box-shadow: 0em -1.5em 0 0, 1em -1em 0 -0.5em, 1.5em 0 0 -0.5em, 1em 1em 0 -0.5em, 0 1.5em 0 -0.5em, -1em 1em 0 0, -1.5em 0em 0 0, -1em -1em 0 0.1em;
-        }
+  @keyframes load5 {
+    0%,
+    100% {
+      box-shadow: 0 -1.5em 0 0.1em, 1em -1em 0 0em, 1.5em 0 0 -0.5em, 1em 1em 0 -0.5em, 0 1.5em 0 -0.5em,
+        -1em 1em 0 -0.5em, -1.5em 0 0 -0.5em, -1em -1em 0 0;
     }
+    12.5% {
+      box-shadow: 0 -1.5em 0 0, 1em -1em 0 0.1em, 1.5em 0 0 0, 1em 1em 0 -0.5em, 0 1.5em 0 -0.5em, -1em 1em 0 -0.5em,
+        -1.5em 0 0 -0.5em, -1em -1em 0 -0.5em;
+    }
+    25% {
+      box-shadow: 0 -1.5em 0 -0.5em, 1em -1em 0 0, 1.5em 0 0 0.1em, 1em 1em 0 0, 0 1.5em 0 -0.5em, -1em 1em 0 -0.5em,
+        -1.5em 0 0 -0.5em, -1em -1em 0 -0.5em;
+    }
+    37.5% {
+      box-shadow: 0 -1.5em 0 -0.5em, 1em -1em 0 -0.5em, 1.5em 0em 0 0, 1em 1em 0 0.1em, 0 1.5em 0 0em, -1em 1em 0 -0.5em,
+        -1.5em 0em 0 -0.5em, -1em -1em 0 -0.5em;
+    }
+    50% {
+      box-shadow: 0 -1.5em 0 -0.5em, 1em -1em 0 -0.5em, 1.5em 0 0 -0.5em, 1em 1em 0 0em, 0 1.5em 0 0.1em, -1em 1em 0 0,
+        -1.5em 0em 0 -0.5em, -1em -1em 0 -0.5em;
+    }
+    62.5% {
+      box-shadow: 0 -1.5em 0 -0.5em, 1em -1em 0 -0.5em, 1.5em 0 0 -0.5em, 1em 1em 0 -0.5em, 0 1.5em 0 0,
+        -1em 1em 0 0.1em, -1.5em 0 0 0, -1em -1em 0 -0.5em;
+    }
+    75% {
+      box-shadow: 0em -1.5em 0 -0.5em, 1em -1em 0 -0.5em, 1.5em 0em 0 -0.5em, 1em 1em 0 -0.5em, 0 1.5em 0 -0.5em,
+        -1em 1em 0 0, -1.5em 0em 0 0.1em, -1em -1em 0 0;
+    }
+    87.5% {
+      box-shadow: 0em -1.5em 0 0, 1em -1em 0 -0.5em, 1.5em 0 0 -0.5em, 1em 1em 0 -0.5em, 0 1.5em 0 -0.5em, -1em 1em 0 0,
+        -1.5em 0em 0 0, -1em -1em 0 0.1em;
+    }
+  }
 }
 
-
 .loading-6 {
-    height: 30px;
-    width: 30px;
-    padding: 10px;
-    margin: 10px auto;
-    animation: sk-rotateplane 1.2s infinite ease-in-out;
-    display: inline-block;
+  height: 30px;
+  width: 30px;
+  padding: 10px;
+  margin: 10px auto;
+  animation: sk-rotateplane 1.2s infinite ease-in-out;
+  display: inline-block;
 
-    @keyframes sk-rotateplane {
-        0% { 
-            transform: perspective(120px) rotateX(0deg) rotateY(0deg);
-        } 50% { 
-            transform: perspective(120px) rotateX(-180deg) rotateY(0deg);
-        } 100% { 
-            transform: perspective(120px) rotateX(-180deg) rotateY(-180deg);
-        }
+  @keyframes sk-rotateplane {
+    0% {
+      transform: perspective(120px) rotateX(0deg) rotateY(0deg);
     }
+    50% {
+      transform: perspective(120px) rotateX(-180deg) rotateY(0deg);
+    }
+    100% {
+      transform: perspective(120px) rotateX(-180deg) rotateY(-180deg);
+    }
+  }
 }
 
 /* ----------------------------------------------------------------------------- COLOR */
 
 @each $color in $arrColor {
-    .loading-main-#{$color} {
-        background-color: color-extra-light(#{$color});
-        color: color-extra-light(#{$color});
-    }
+  .loading-main-#{$color} {
+    background-color: color-extra-light(#{$color});
+    color: color-extra-light(#{$color});
+  }
 
-    .loading-1-#{$color} {
-        border-color: color-regular(#{$color});
-    }
+  .loading-1-#{$color} {
+    border-color: color-regular(#{$color});
+  }
 
-    .loading-2-#{$color},
-    .loading-2-#{$color}:before,
-        .loading-2-#{$color}:after {
-        background-color: color-regular(#{$color});
-    }
+  .loading-2-#{$color},
+  .loading-2-#{$color}:before,
+  .loading-2-#{$color}:after {
+    background-color: color-regular(#{$color});
+  }
 
-    .loading-2-#{$color} {
-        color: color-regular(#{$color});
-    }
+  .loading-2-#{$color} {
+    color: color-regular(#{$color});
+  }
 
-    .loading-3-#{$color} {
-        color: color-regular(#{$color});
-    }
+  .loading-3-#{$color} {
+    color: color-regular(#{$color});
+  }
 
-    .loading-4-#{$color} {
-        color: color-regular(#{$color});
-    }
+  .loading-4-#{$color} {
+    color: color-regular(#{$color});
+  }
 
-    .loading-5-#{$color} {
-        color: color-regular(#{$color});
-    }
+  .loading-5-#{$color} {
+    color: color-regular(#{$color});
+  }
 
-    .loading-6-#{$color} {
-        color: color-regular(#{$color});
-    }
+  .loading-6-#{$color} {
+    color: color-regular(#{$color});
+  }
 }
 
 /* ---------------------------------------------------------------- MENU */
 
 .menu {
+  ul {
+    font-size: 0;
+    list-style: none;
 
-    ul{
-        font-size: 0;
-        list-style: none;
-
-        li{
-            font-size: initial;
-        }
+    li {
+      font-size: initial;
     }
+  }
 }
 
-.menu-vertical{
-
-    >ul{
-
-        >li{
-            width: 100%;
-            display: table;
-            margin-bottom: $re;
-            padding: 0;
-            margin: $sm auto;
-        }
+.menu-vertical {
+  > ul {
+    > li {
+      width: 100%;
+      display: table;
+      margin-bottom: $re;
+      padding: 0;
+      margin: $sm auto;
     }
+  }
 }
 
-.menu-horizontal{
-
-    >ul{
-
-        >li{
-            display: inline-block;
-            margin: $es;
-        }
+.menu-horizontal {
+  > ul {
+    > li {
+      display: inline-block;
+      margin: $es;
     }
+  }
 }
 
-.menu-mobile{
-
-    @media only screen and (min-width: $break-point-es) {
-        li,
-        .bt{
-            width: 100%;
-        }
+.menu-mobile {
+  @media only screen and (min-width: $break-point-es) {
+    li,
+    .bt {
+      width: 100%;
     }
+  }
 
-    @media only screen and (min-width: $break-point-re) {
-        li,
-        .bt{
-            width: auto;
-        }
+  @media only screen and (min-width: $break-point-re) {
+    li,
+    .bt {
+      width: auto;
     }
+  }
 }
 
-.menu-hover-field{
-    position: absolute;
-    bottom: 6px;
-    right: 16px;
+.menu-hover-field {
+  position: absolute;
+  bottom: 6px;
+  right: 16px;
 }
 
 /* ---------------------------------------------------------------- PAGINATION */
 
-.pagination{
+.pagination {
+  .bt {
+    border-radius: 0;
 
-    .bt{
-        border-radius: 0;
+    &.active {
+      box-shadow: none;
+      pointer-events: none;
+    }
+  }
 
-        &.active{
-            box-shadow: none;
-            pointer-events: none;
-        }
+  li {
+    margin: 0 !important;
+    margin-left: -1px !important;
+
+    &:first-child {
+      .bt-es,
+      .bt-sm {
+        border-radius: $border-radius-sm 0 0 $border-radius-sm;
+      }
+
+      .bt-re,
+      .bt-bi {
+        border-radius: $border-radius-re 0 0 $border-radius-re;
+      }
+
+      .bt-eb {
+        border-radius: $border-radius-bi 0 0 $border-radius-bi;
+      }
     }
 
-    li{
-        margin: 0 !important;
-        margin-left: -1px !important;
+    &:last-child {
+      .bt-es,
+      .bt-sm {
+        border-radius: 0 $border-radius-sm $border-radius-sm 0;
+      }
 
-        &:first-child{
+      .bt-re,
+      .bt-bi {
+        border-radius: 0 $border-radius-re $border-radius-re 0;
+      }
 
-            .bt-es,
-            .bt-sm{
-                border-radius: $border-radius-sm 0 0 $border-radius-sm;
-            }
-
-            .bt-re,
-            .bt-bi{
-                border-radius: $border-radius-re 0 0 $border-radius-re;
-            }
-
-            .bt-eb{
-                border-radius: $border-radius-bi 0 0 $border-radius-bi;
-            }
-        }
-
-        &:last-child{
-
-            .bt-es,
-            .bt-sm{
-                border-radius: 0 $border-radius-sm $border-radius-sm 0;
-            }
-
-            .bt-re,
-            .bt-bi{
-                border-radius: 0 $border-radius-re $border-radius-re 0;
-            }
-
-            .bt-eb{
-                border-radius: 0 $border-radius-bi $border-radius-bi 0;
-            }
-        }
+      .bt-eb {
+        border-radius: 0 $border-radius-bi $border-radius-bi 0;
+      }
     }
+  }
 }
 
 /* ---------------------------------------------------------------- MENU TAB */
 
-.menu-tab{
-    position: relative;
-    width: 100%;
-    border-bottom-width: 1px;
-    border-bottom-style: solid;
+.menu-tab {
+  position: relative;
+  width: 100%;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
 
-    .bt{
-        border: 0;
+  .bt {
+    border: 0;
+  }
+
+  &.text-left {
+    > ul {
+      > li {
+        left: -3px;
+      }
     }
+  }
 
-    &.text-left{
+  &.text-right {
+    > ul {
+      > li {
+        right: -3px;
+      }
+    }
+  }
 
-        >ul{
+  > ul {
+    display: table !important;
 
-            > li{
-                left: -3px;
+    > li {
+      position: relative;
+      top: 3px;
+      @extend %extend-border-solid;
+      border-color: transparent;
+      border-radius: $border-radius-re $border-radius-re 0 0;
+      transition: $transition;
+
+      > ul {
+        border-color: $color-grey;
+        margin-top: 3px;
+        margin-left: -1px;
+
+        > li {
+          margin-top: 0;
+
+          .bt {
+            color: $color-black !important;
+
+            &:hover {
+              color: $color-black !important;
             }
+          }
         }
+      }
+
+      &.menu-tab-active {
+        border-bottom-color: transparent !important;
+        transition: $transition;
+      }
     }
-
-    &.text-right{
-
-        >ul{
-
-            > li{
-                right: -3px;
-            }
-        }
-    }
-
-    >ul{
-        display: table !important;
-
-        > li{
-            position: relative;
-            top: 3px;
-            @extend %extend-border-solid;
-            border-color: transparent;
-            border-radius: $border-radius-re $border-radius-re 0 0;
-            transition: $transition;
-
-            > ul{
-                border-color: $color-grey;
-                margin-top: 3px;
-                margin-left: -1px;
-
-                > li{
-                    margin-top: 0;
-
-                    .bt{
-                        color: $color-black !important;
-
-                        &:hover{
-                            color: $color-black !important;
-                        }
-                    }
-                }
-            }
-
-            &.menu-tab-active{
-                border-bottom-color: transparent !important;
-                transition: $transition;
-            }
-        }
-    }
+  }
 }
 
-.menu-tab-white{
-    ul{
-        li{
-            ul{
-                li{
-                    .bt{
-                        color: $color-black;
+.menu-tab-white {
+  ul {
+    li {
+      ul {
+        li {
+          .bt {
+            color: $color-black;
 
-                        &:hover{
-                            color:  $color-black;
-                        }
-                    }
-                }
+            &:hover {
+              color: $color-black;
             }
+          }
         }
+      }
     }
+  }
 }
 
 /* ---------------------------------------------------------------- NAVIGATION ARROW */
 
-.navigation-arrow{
-    position: absolute;
-    width: 100%;
-    font-size: 0;
+.navigation-arrow {
+  position: absolute;
+  width: 100%;
+  font-size: 0;
 
-    @media only screen and (min-width: $break-point-es) { 
-        top: calc(50% - 35px);
+  @media only screen and (min-width: $break-point-es) {
+    top: calc(50% - 35px);
+  }
+
+  @media only screen and (min-width: $break-point-bi) {
+    top: calc(50% - 55px);
+  }
+
+  .fa {
+    @media only screen and (min-width: $break-point-es) {
+      font-size: 2em;
     }
 
-    @media only screen and (min-width: $break-point-bi) { 
-        top: calc(50% - 55px);
+    @media only screen and (min-width: $break-point-bi) {
+      font-size: 4em;
+    }
+  }
+
+  li {
+    position: relative;
+    width: calc(50% - #{$sm});
+
+    &:first-child {
+      text-align: left;
     }
 
-    .fa{
-
-        @media only screen and (min-width: $break-point-es) { 
-            font-size: 2em;
-        }
-
-        @media only screen and (min-width: $break-point-bi) { 
-            font-size: 4em;
-        }
+    &:last-child {
+      text-align: right;
     }
 
-    li{
-        position: relative;
-        width: calc(50% - #{$sm});
+    .bt {
+      color: $color-white;
+      border: 0;
 
-        &:first-child{
-            text-align: left;
-        }
+      @media only screen and (min-width: $break-point-es) {
+        margin: $re;
+      }
 
-        &:last-child{
-            text-align: right;
-        }
-
-        .bt{
-            color: $color-white;
-            border: 0;
-
-            @media only screen and (min-width: $break-point-es) { 
-                margin: $re;
-            }
-
-            @media only screen and (min-width: $break-point-bi) { 
-                margin: $bi;
-            }
-        }
+      @media only screen and (min-width: $break-point-bi) {
+        margin: $bi;
+      }
     }
+  }
 }
-
 
 @each $color in $arrColor {
+  /* ---------------------------------------------------------------- MENU TAB */
 
-    /* ---------------------------------------------------------------- MENU TAB */
+  .menu-tab-#{$color} {
+    border-color: color-regular(#{$color});
 
-    .menu-tab-#{$color}{
+    ul {
+      > li {
+        > ul {
+          border-color: color-regular(#{$color});
+
+          > li {
+            &:hover {
+              background-color: color-extra-light(#{$color});
+            }
+          }
+        }
+      }
+    }
+
+    .bt {
+      color: color-regular(#{$color});
+
+      &:focus {
+        box-shadow: 0 0 0 4px rgba(color-regular(#{$color}), $component-opacity);
+      }
+    }
+
+    li {
+      &:hover,
+      &:focus,
+      &.active {
+        background-color: color-regular(#{$color});
+
+        .bt {
+          border-color: color-regular(#{$color});
+          color: color-regular-contrast(#{$color});
+        }
+      }
+
+      &.menu-tab-active {
         border-color: color-regular(#{$color});
+        background-color: color-regular(#{$color});
 
-        ul{
-
-            > li{
-
-                > ul{
-                    border-color: color-regular(#{$color});
-
-                    > li{
-
-                        &:hover{
-                            background-color: color-extra-light(#{$color});
-                        }
-                    }
-                }
-            }
+        .bt {
+          color: color-regular-contrast(#{$color});
         }
-
-        .bt{
-            color: color-regular(#{$color});
-
-            &:focus{
-                box-shadow: 0 0 0 4px rgba(color-regular(#{$color}), $component-opacity);
-            }
-        }
-
-        li{
-
-            &:hover,
-                &:focus,
-                &.active{
-                background-color: color-regular(#{$color});
-
-                .bt{
-                    border-color: color-regular(#{$color});
-                    color: color-regular-contrast(#{$color});
-                }
-            }
-
-            &.menu-tab-active{
-                border-color: color-regular(#{$color});
-                background-color: color-regular(#{$color});
-
-                .bt{
-                    color: color-regular-contrast(#{$color});
-                }
-            }
-        }
+      }
     }
+  }
 }
+
 .menu-drop-down-text,
-.menu-drop-down{
-    width: calc(100% - 6px);
+.menu-drop-down {
+  width: calc(100% - 6px);
 
-    > ul{
-        position: relative;
-        width: 100%;
-
-        ul{
-            display: none;
-            z-index: z-index('drop-down');
-
-            @media only screen and (min-width: $break-point-es) { 
-                position: relative;
-                width: 100%;
-            }
-
-            @media only screen and (min-width: $break-point-bi) { 
-                position: absolute;
-                width: auto;
-            }
-        }
-
-        li{
-            position: relative;
-            vertical-align: top;
-        }
-
-        > li{
-            @media only screen and (min-width: $break-point-es) { 
-                margin: 0;
-            }
-
-            @media only screen and (min-width: $break-point-bi) { 
-                margin: $es;
-            }
-
-            li{
-                width: 100%;
-            }
-        }
-    }
-}
-
-.menu-drop-down{
-
-    > ul{
-
-        @media only screen and (min-width: $break-point-es) { 
-            display: none;
-        }
-
-        @media only screen and (min-width: $break-point-bi) { 
-            display: table;
-        }
-
-        ul{
-            margin-top: 1px;
-            border-radius: $border-radius-re;
-            border: 1px solid $color-grey;
-            background-color: $color-white;
-
-            @media only screen and (min-width: $break-point-es) { 
-                position: relative;
-                width: 100%;
-            }
-
-            @media only screen and (min-width: $break-point-bi) { 
-                position: absolute;
-                width: auto;
-            }
-
-            .bt{
-                border-radius: 0;
-                background-color: transparent;
-                border-color: transparent;
-                color: initial;
-                box-shadow: none;
-            }
-
-            li{
-                background-color: transparent;
-                @extend %extend-border-solid;
-                border-color: transparent;
-                border-bottom-color: $color-grey-lighten-3;
-
-                &:hover{
-                    background-color: $color-grey-lighten-3;
-                }
-
-                &:first-child{
-                    border-radius: $border-radius-re $border-radius-re 0 0;
-                }
-
-                &:last-child{
-                    border-radius: 0 0 $border-radius-re $border-radius-re;
-                    border-bottom: 0;
-                }
-            }
-        }
-
-        li{
-            margin-top: -1px;
-        }
-
-        > li{
-
-            @media only screen and (min-width: $break-point-es) { 
-                margin: $es;
-                width: 100%;
-            }
-
-            @media only screen and (min-width: $break-point-bi) { 
-                width: auto;
-            }
-        }
-
-        .bt{
-            width: 100%;
-            white-space: nowrap;
-
-            @media only screen and (min-width: $break-point-es) { 
-                text-align: left;
-            }
-
-            @media only screen and (min-width: $break-point-bi) { 
-                text-align: start;
-            }
-        }
-    }
-}
-
-.menu-drop-down-text{
-    vertical-align: top;
-
-    > ul{
-
-        ul{
-            position: relative;
-            width: 100%;
-            padding-left: $re;
-        }
-
-        > li{
-            padding: $sm; 
-
-            li{
-                padding: $sm; 
-
-                &:first-child{
-                    padding-top: $re; 
-                }
-
-                &:last-child{
-                    padding-bottom: 0; 
-                }
-            }
-        }
-    }
-}
-.bt-facebook{
-    color: $color-white;
-    background-color: $color-facebook;
-    @extend %extend-border-solid;
-    border-color: $color-facebook-darken-2;
-    box-shadow: none;
-
-    &:hover,
-        &:focus,
-        &.button-active{
-        background-color: $color-facebook-darken-3;
-        @extend %extend-border-solid;
-        border-color:  $color-facebook-darken-6;
-    }
-}
-
-.bt-twitter{
-    color: $color-white;
-    background-color: $color-twitter;
-    @extend %extend-border-solid;
-    border-color: $color-twitter-darken-3;
-    box-shadow: none;
-
-    &:hover,
-        &:focus,
-        &.button-active{
-        background-color: $color-twitter-darken-5;
-        @extend %extend-border-solid;
-        border-color: $color-twitter-darken-7;
-    }
-}
-
-.bt-youtube{
-    color: $color-white;
-    background-color: $color-youtube;
-    @extend %extend-border-solid;
-    border-color: $color-youtube-darken-2;
-    box-shadow: none;
-
-    &:hover,
-        &:focus,
-        &.button-active{
-        background-color: $color-youtube-darken-2;
-        @extend %extend-border-solid;
-        border-color: $color-youtube-darken-4;
-    }
-}
-
-.bt-linkedin{
-    color: $color-white;
-    background-color: $color-linkedin;
-    @extend %extend-border-solid;
-    border-color: $color-linkedin-darken-2;
-    box-shadow: none;
-
-    &:hover,
-        &:focus,
-        &.button-active{
-        background-color: $color-linkedin-darken-3;
-        @extend %extend-border-solid;
-        border-color: $color-linkedin-darken-5;
-    }
-}
-
-.bt-pinterest{
-    color: $color-white;
-    background-color: $color-pinterest;
-    @extend %extend-border-solid;
-    border-color: $color-pinterest-darken-2;
-    box-shadow: none;
-
-    &:hover,
-        &:focus,
-        &.button-active{
-        background-color: $color-pinterest-darken-4;
-        @extend %extend-border-solid;
-        border-color: $color-pinterest-darken-5;
-    }
-}
-
-.bt-instagram{
-    color: $color-white;
-    background-color: $color-instagram;
-    @extend %extend-border-solid;
-    border-color: $color-instagram-darken-3;
-    box-shadow: none;
-
-    &:hover,
-        &:focus,
-        &.button-active{
-        background-color: $color-instagram-darken-2;
-        @extend %extend-border-solid;
-        border-color: $color-instagram-darken-4;
-    }
-}
-
-#modal{
-    will-change: auto;
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    overflow-x: hidden;
-    overflow-y: auto;
-    z-index: z-index('modal');
-    opacity: 1;
-    transition: $transition;
-    @extend %extend-background-black;
-    
-    @media only screen and (min-width: $break-point-es) { 
-        padding: $sm;
-    }
-
-    @media only screen and (min-width: $break-point-bi) { 
-        padding: $bi;
-    }
-
-    .modal-box{
-        will-change: auto;
-        position: relative;
-        pointer-events: initial;
-        width: 100%;
-        background-color: $color-white;
-        margin: auto;
-        transition: $transition;
-        transform: translate(0, -200px);
-        align-items: center;
-        justify-content: center;
-
-        @media only screen and (min-width: $break-point-es) { 
-            border-radius: 0;
-        }
-
-        @media only screen and (min-width: $break-point-bi) { 
-            border-radius: $border-radius-re;
-        }
-
-        header,
-        footer{
-            padding: $re;
-            display: table;
-            width: 100%;
-        }
-
-        footer{
-            background-color: color-extra-light('black');
-
-            @media only screen and (min-width: $break-point-bi) { 
-                border-radius: 0 0 $border-radius-re $border-radius-re;
-            }
-        }
-    }
-
-    .arrow-active{
-        opacity: 1;
-        pointer-events: initial;
-    }
-
-    .arrow-inactive{
-        opacity: 0;
-        pointer-events: none;
-    }
-
-    hr{
-        width: calc(100% - #{$bi * 2});
-        margin: auto;
-    }
-
-    .menu-tab{
-
-        ul{
-            ul{
-                margin-top: -1px;
-            }
-        }
-    }
-}
-
-#modal_content{
+  > ul {
     position: relative;
-    padding: $re;
+    width: 100%;
 
-    .modal-description{
-        background-color: rgba($color-black, .6);
-        color: $color-white;
+    ul {
+      display: none;
+      z-index: z-index("drop-down");
+
+      @media only screen and (min-width: $break-point-es) {
+        position: relative;
+        width: 100%;
+      }
+
+      @media only screen and (min-width: $break-point-bi) {
         position: absolute;
-        text-align: center;
-        bottom: 0;
-        width: calc(100% - #{$bi});
+        width: auto;
+      }
+    }
 
-        @media only screen and (min-width: $break-point-es) { 
-            padding: $sm;
+    li {
+      position: relative;
+      vertical-align: top;
+    }
+
+    > li {
+      @media only screen and (min-width: $break-point-es) {
+        margin: 0;
+      }
+
+      @media only screen and (min-width: $break-point-bi) {
+        margin: $es;
+      }
+
+      li {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.menu-drop-down {
+  > ul {
+    @media only screen and (min-width: $break-point-es) {
+      display: none;
+    }
+
+    @media only screen and (min-width: $break-point-bi) {
+      display: table;
+    }
+
+    ul {
+      margin-top: 1px;
+      border-radius: $border-radius-re;
+      border: 1px solid $color-grey;
+      background-color: $color-white;
+
+      @media only screen and (min-width: $break-point-es) {
+        position: relative;
+        width: 100%;
+      }
+
+      @media only screen and (min-width: $break-point-bi) {
+        position: absolute;
+        width: auto;
+      }
+
+      .bt {
+        border-radius: 0;
+        background-color: transparent;
+        border-color: transparent;
+        color: initial;
+        box-shadow: none;
+      }
+
+      li {
+        background-color: transparent;
+        @extend %extend-border-solid;
+        border-color: transparent;
+        border-bottom-color: $color-grey-lighten-3;
+
+        &:hover {
+          background-color: $color-grey-lighten-3;
         }
 
-        @media only screen and (min-width: $break-point-bi) { 
-            padding: $re;
+        &:first-child {
+          border-radius: $border-radius-re $border-radius-re 0 0;
         }
+
+        &:last-child {
+          border-radius: 0 0 $border-radius-re $border-radius-re;
+          border-bottom: 0;
+        }
+      }
     }
+
+    li {
+      margin-top: -1px;
+    }
+
+    > li {
+      @media only screen and (min-width: $break-point-es) {
+        margin: $es;
+        width: 100%;
+      }
+
+      @media only screen and (min-width: $break-point-bi) {
+        width: auto;
+      }
+    }
+
+    .bt {
+      width: 100%;
+      white-space: nowrap;
+
+      @media only screen and (min-width: $break-point-es) {
+        text-align: left;
+      }
+
+      @media only screen and (min-width: $break-point-bi) {
+        text-align: start;
+      }
+    }
+  }
 }
 
-#modal_close{
-    float: right;
+.menu-drop-down-text {
+  vertical-align: top;
+
+  > ul {
+    ul {
+      position: relative;
+      width: 100%;
+      padding-left: $re;
+    }
+
+    > li {
+      padding: $sm;
+
+      li {
+        padding: $sm;
+
+        &:first-child {
+          padding-top: $re;
+        }
+
+        &:last-child {
+          padding-bottom: 0;
+        }
+      }
+    }
+  }
 }
 
-.modal-es{
-    @media only screen and (min-width: $break-point-es) { 
-        max-width: 100%;
-    }
+.bt-facebook {
+  color: $color-white;
+  background-color: $color-facebook;
+  @extend %extend-border-solid;
+  border-color: $color-facebook-darken-2;
+  box-shadow: none;
 
-    @media only screen and (min-width: $break-point-bi) { 
-        max-width: $break-point-es;
-    }
+  &:hover,
+  &:focus,
+  &.button-active {
+    background-color: $color-facebook-darken-3;
+    @extend %extend-border-solid;
+    border-color: $color-facebook-darken-6;
+  }
 }
 
-.modal-sm{
-    @media only screen and (min-width: $break-point-es) { 
-        max-width: 100%;
-    }
+.bt-twitter {
+  color: $color-white;
+  background-color: $color-twitter;
+  @extend %extend-border-solid;
+  border-color: $color-twitter-darken-3;
+  box-shadow: none;
 
-    @media only screen and (min-width: $break-point-bi) { 
-        max-width: $break-point-sm;
-    }
+  &:hover,
+  &:focus,
+  &.button-active {
+    background-color: $color-twitter-darken-5;
+    @extend %extend-border-solid;
+    border-color: $color-twitter-darken-7;
+  }
 }
 
-.modal-re{
-    @media only screen and (min-width: $break-point-es) { 
-        max-width: 100%;
-    }
+.bt-youtube {
+  color: $color-white;
+  background-color: $color-youtube;
+  @extend %extend-border-solid;
+  border-color: $color-youtube-darken-2;
+  box-shadow: none;
 
-    @media only screen and (min-width: $break-point-bi) { 
-        max-width: $break-point-re;
-    }
+  &:hover,
+  &:focus,
+  &.button-active {
+    background-color: $color-youtube-darken-2;
+    @extend %extend-border-solid;
+    border-color: $color-youtube-darken-4;
+  }
 }
 
-.modal-bi{
-    @media only screen and (min-width: $break-point-es) { 
-        max-width: 100%;
-    }
+.bt-linkedin {
+  color: $color-white;
+  background-color: $color-linkedin;
+  @extend %extend-border-solid;
+  border-color: $color-linkedin-darken-2;
+  box-shadow: none;
 
-    @media only screen and (min-width: $break-point-bi) { 
-        max-width: $break-point-bi;
-    }
+  &:hover,
+  &:focus,
+  &.button-active {
+    background-color: $color-linkedin-darken-3;
+    @extend %extend-border-solid;
+    border-color: $color-linkedin-darken-5;
+  }
 }
 
-.modal-eb{
-    @media only screen and (min-width: $break-point-es) { 
-        max-width: 100%;
-    }
+.bt-pinterest {
+  color: $color-white;
+  background-color: $color-pinterest;
+  @extend %extend-border-solid;
+  border-color: $color-pinterest-darken-2;
+  box-shadow: none;
 
-    @media only screen and (min-width: $break-point-bi) { 
-        max-width: $break-point-eb;
-    }
+  &:hover,
+  &:focus,
+  &.button-active {
+    background-color: $color-pinterest-darken-4;
+    @extend %extend-border-solid;
+    border-color: $color-pinterest-darken-5;
+  }
 }
 
-.modal-fu{
+.bt-instagram {
+  color: $color-white;
+  background-color: $color-instagram;
+  @extend %extend-border-solid;
+  border-color: $color-instagram-darken-3;
+  box-shadow: none;
+
+  &:hover,
+  &:focus,
+  &.button-active {
+    background-color: $color-instagram-darken-2;
+    @extend %extend-border-solid;
+    border-color: $color-instagram-darken-4;
+  }
+}
+
+#modal {
+  will-change: auto;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  z-index: z-index("modal");
+  opacity: 1;
+  transition: $transition;
+  @extend %extend-background-black;
+
+  @media only screen and (min-width: $break-point-es) {
+    padding: $sm;
+  }
+
+  @media only screen and (min-width: $break-point-bi) {
+    padding: $bi;
+  }
+
+  .modal-box {
+    will-change: auto;
+    position: relative;
+    pointer-events: initial;
+    width: 100%;
+    background-color: $color-white;
+    margin: auto;
+    transition: $transition;
+    transform: translate(0, -200px);
+    align-items: center;
+    justify-content: center;
+
+    @media only screen and (min-width: $break-point-es) {
+      border-radius: 0;
+    }
+
+    @media only screen and (min-width: $break-point-bi) {
+      border-radius: $border-radius-re;
+    }
+
+    header,
+    footer {
+      padding: $re;
+      display: table;
+      width: 100%;
+    }
+
+    footer {
+      background-color: color-extra-light("black");
+
+      @media only screen and (min-width: $break-point-bi) {
+        border-radius: 0 0 $border-radius-re $border-radius-re;
+      }
+    }
+  }
+
+  .arrow-active {
+    opacity: 1;
+    pointer-events: initial;
+  }
+
+  .arrow-inactive {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  hr {
+    width: calc(100% - #{$bi * 2});
+    margin: auto;
+  }
+
+  .menu-tab {
+    ul {
+      ul {
+        margin-top: -1px;
+      }
+    }
+  }
+}
+
+#modal_content {
+  position: relative;
+  padding: $re;
+
+  .modal-description {
+    background-color: rgba($color-black, 0.6);
+    color: $color-white;
+    position: absolute;
+    text-align: center;
+    bottom: 0;
+    width: calc(100% - #{$bi});
+
+    @media only screen and (min-width: $break-point-es) {
+      padding: $sm;
+    }
+
+    @media only screen and (min-width: $break-point-bi) {
+      padding: $re;
+    }
+  }
+}
+
+#modal_close {
+  float: right;
+}
+
+.modal-es {
+  @media only screen and (min-width: $break-point-es) {
     max-width: 100%;
+  }
+
+  @media only screen and (min-width: $break-point-bi) {
+    max-width: $break-point-es;
+  }
 }
 
-.modal-close{
-    opacity: 0 !important;
-    transition: $transition;
+.modal-sm {
+  @media only screen and (min-width: $break-point-es) {
+    max-width: 100%;
+  }
+
+  @media only screen and (min-width: $break-point-bi) {
+    max-width: $break-point-sm;
+  }
+}
+
+.modal-re {
+  @media only screen and (min-width: $break-point-es) {
+    max-width: 100%;
+  }
+
+  @media only screen and (min-width: $break-point-bi) {
+    max-width: $break-point-re;
+  }
+}
+
+.modal-bi {
+  @media only screen and (min-width: $break-point-es) {
+    max-width: 100%;
+  }
+
+  @media only screen and (min-width: $break-point-bi) {
+    max-width: $break-point-bi;
+  }
+}
+
+.modal-eb {
+  @media only screen and (min-width: $break-point-es) {
+    max-width: 100%;
+  }
+
+  @media only screen and (min-width: $break-point-bi) {
+    max-width: $break-point-eb;
+  }
+}
+
+.modal-fu {
+  max-width: 100%;
+}
+
+.modal-close {
+  opacity: 0 !important;
+  transition: $transition;
+  pointer-events: none !important;
+
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    position: absolute;
+    top: -100% !important;
+  }
+
+  * {
     pointer-events: none !important;
-
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        position: absolute;
-        top: -100% !important;
-    }
-
-    *{
-        pointer-events: none !important;
-    }
+  }
 }
 
-.modal-animate{
-    transition: $transition;
-    transform: translate(0, 0) !important;
+.modal-animate {
+  transition: $transition;
+  transform: translate(0, 0) !important;
 }
 
 #notify {
-    position: fixed; 
-    top: 0; 
-    right: 0; 
-    z-index: z-index('notify');
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: z-index("notify");
 }
 
-[class*='notify-list'] {
-    list-style: none;
-    text-align: right;
+[class*="notify-list"] {
+  list-style: none;
+  text-align: right;
 
-    li{
-        margin: $sm;
-    }
+  li {
+    margin: $sm;
+  }
 }
 
-.notify-item{
-    @extend %extend-border-solid;
-    padding: $re;
-    display: inline-block;
-    border-radius: $border-radius-re;
+.notify-item {
+  @extend %extend-border-solid;
+  padding: $re;
+  display: inline-block;
+  border-radius: $border-radius-re;
 
-    .bt{
-        box-shadow: none;
-        padding: $sm;
-        border: 0;
-    }
+  .bt {
+    box-shadow: none;
+    padding: $sm;
+    border: 0;
+  }
 }
 
-.notify-white{
-
-    .text{
-        color: $color-black;
-    }
+.notify-white {
+  .text {
+    color: $color-black;
+  }
 }
 
 @each $color in $arrColor {
-    .notify-#{$color} {
-        background-color: color-extra-light(#{$color});
-        border-color: color-extra-light-border(#{$color});
-        color: color-dark(#{$color});
+  .notify-#{$color} {
+    background-color: color-extra-light(#{$color});
+    border-color: color-extra-light-border(#{$color});
+    color: color-dark(#{$color});
 
-        .fa{
-            color: color-regular(#{$color});
-        }
+    .fa {
+      color: color-regular(#{$color});
     }
+  }
 }
+
 @media print {
-    * {
-        background: transparent !important; 
-        color: black !important; 
-        text-shadow: none !important; 
-        filter:none !important; 
-        -ms-filter: none !important;
-    } /* Black prints faster */
-    a, 
-    a:visited {
-        color: #444 !important; 
-        text-decoration: underline;
-    }
-    a[href]:after {
-        content: " (" attr(href) ")"
-    }
-    abbr[title]:after {
-        content: " (" attr(title) ")"
-    }
-    .ir a:after, 
-    a[href^="javascript:"]:after, 
-    a[href^="#"]:after {
-        content: "";
-    }  /* Don't print links for images, javascript or internal links */
-    pre, 
-    blockquote {
-        border: 1px solid #999; 
-        page-break-inside: avoid; 
-    }
-    thead {
-        display: table-header-group; 
-    } /* Repeat header row at top of each printed page */
-    tr, 
-    img {
-        page-break-inside: avoid; 
-    }
-    img {
-        max-width: 100% !important; 
-    }
-    @page {
-        margin: 0.5cm;
-    }
-    p, 
-    h2, 
-    h3 {
-        orphans: 3; 
-        widows: 3;
-    }
-    h2, 
-    h3{
-        page-break-after: avoid;
-    }
+  * {
+    background: transparent !important;
+    color: black !important;
+    text-shadow: none !important;
+    filter: none !important;
+    -ms-filter: none !important;
+  } /* Black prints faster */
+  a,
+  a:visited {
+    color: #444 !important;
+    text-decoration: underline;
+  }
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+  .ir a:after,
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
+    content: "";
+  } /* Don't print links for images, javascript or internal links */
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+  thead {
+    display: table-header-group;
+  } /* Repeat header row at top of each printed page */
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+  img {
+    max-width: 100% !important;
+  }
+  @page {
+    margin: 0.5cm;
+  }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
 }
-.progress{
-    width: 100%;
-    display: block;
-    overflow: hidden;
-    background-color: $color-grey-lighten-3;
-    box-shadow: 
-        inset 0 1px 0 $color-grey-lighten-2,
-        inset 0 -1px 0 $color-grey-lighten-2,
-        inset -1px 0 0 $color-grey-lighten-2;
-    .progress-bar{
-        height: 100%;
-    }
+
+.progress {
+  width: 100%;
+  display: block;
+  overflow: hidden;
+  background-color: $color-grey-lighten-3;
+  box-shadow: inset 0 1px 0 $color-grey-lighten-2, inset 0 -1px 0 $color-grey-lighten-2,
+    inset -1px 0 0 $color-grey-lighten-2;
+  .progress-bar {
+    height: 100%;
+  }
 }
 
 /* ------------------------------------------------------------------ SIZE */
 
-.progress-es{
-    height: $es;
+.progress-es {
+  height: $es;
 }
 
-.progress-sm{
-    height: $sm;
+.progress-sm {
+  height: $sm;
 }
 
-.progress-re{
-    height: $re;
+.progress-re {
+  height: $re;
 }
 
-.progress-bi{
-    height: $bi;
+.progress-bi {
+  height: $bi;
 }
 
-.progress-eb{
-    height: $eb;
+.progress-eb {
+  height: $eb;
 }
 
 @each $color in $arrColor {
-    .progress-style-#{$color} {
-
-        .progress-bar{
-            background-color: color-regular(#{$color});
-        }
+  .progress-style-#{$color} {
+    .progress-bar {
+      background-color: color-regular(#{$color});
     }
+  }
 }
-html, body, div, span, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, address, cite, code,
-del, dfn, em, img, ins, kbd, q, samp,
-small, strike, strong, sub, sup, var,
-b, i,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    vertical-align: baseline;
-    background: transparent;
+
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
 }
 
 blockquote,
 q {
-    quotes:none;
+  quotes: none;
 }
 
 article,
-aside, 
+aside,
 dialog,
-details, 
-figcaption, 
-figure, 
-footer, 
-header, 
-hgroup, 
-img, 
-menu, 
-nav, 
-section, 
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+img,
+menu,
+nav,
+section,
 dialog {
-    display: block;
+  display: block;
 }
 audio[controls],
 canvas,
 video {
-    display: inline-block; 
-    zoom: 1;
+  display: inline-block;
+  zoom: 1;
 }
 audio:not([controls]) {
-    display: none; 
-    height: 0;
+  display: none;
+  height: 0;
 }
 
 hr {
-    box-sizing: content-box; 
-    height: 0; 
+  box-sizing: content-box;
+  height: 0;
 }
 
-html, 
-body{
-    width: 100%; 
-    height: 100%; 
-    min-width: 100%; 
-    min-height: 100%; 
-    font-family: sans-serif;  
-    font-size: 62.5%;
-    text-rendering: optimizeLegibility;
+html,
+body {
+  width: 100%;
+  height: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  font-family: sans-serif;
+  font-size: 62.5%;
+  text-rendering: optimizeLegibility;
 }
 
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
 
-button{
-    border: 0;
-    background: transparent;
-    padding: 0;
-    margin: 0;
-}
-
-button, 
-input, 
-select, 
-textarea {
-    font-family: inherit; 
-    margin: 0; 
-    line-height: normal;
-}
-
-button, 
-input {
-    line-height: normal;
-}
-
-button, 
-select {
-    text-transform: none;
+button {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  margin: 0;
 }
 
 button,
-input[type="button"], 
-input[type="reset"], 
+input,
+select,
+textarea {
+  font-family: inherit;
+  margin: 0;
+  line-height: normal;
+}
+
+button,
+input {
+  line-height: normal;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+button,
+input[type="button"],
+input[type="reset"],
 input[type="submit"] {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 button[disabled] {
-    cursor: default;
+  cursor: default;
 }
 
-button::-moz-focus-inner, 
-input::-moz-focus-inner { 
-    border: 0;
-    padding: 0;
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
 }
 
-input[type="checkbox"], 
+input[type="checkbox"],
 input[type="radio"] {
-    box-sizing: border-box; 
-    padding: 0;
+  box-sizing: border-box;
+  padding: 0;
 }
 
 input[type="search"] {
-    -webkit-appearance: textfield;
-    -moz-box-sizing: content-box;
-    -webkit-box-sizing: content-box;
-    box-sizing: content-box;
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
 }
 
-input[type="search"]::-webkit-search-cancel-button, 
+input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
-    -webkit-appearance: none;
+  -webkit-appearance: none;
 }
 
 input,
-textarea, 
+textarea,
 select {
-    background-color: transparent;
+  background-color: transparent;
 }
 
 textarea {
-    overflow: auto; 
-    vertical-align: top; 
+  overflow: auto;
+  vertical-align: top;
 }
 
 a {
-    background: transparent; 
-    cursor: pointer;
+  background: transparent;
+  cursor: pointer;
 }
 
-nav{
-    ul{
-        list-style: none;
-    }
+nav {
+  ul {
+    list-style: none;
+  }
 }
 
 fieldset {
-    border: 1px solid silver; 
-    margin: 0 2px; 
-    padding: 0.35em 0.625em 0.75em;
+  border: 1px solid silver;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
 }
 
 table,
 table td {
-    border:none;
-    border-collapse:collapse;
-    padding:0;
+  border: none;
+  border-collapse: collapse;
+  padding: 0;
 }
 
-*{
-    &:focus{
-        outline: 0;
-    }
+* {
+  &:focus {
+    outline: 0;
+  }
 }
+
 /* ---------------------------------------------------------------- CONTAINER */
 
 .container {
-    margin: auto;
-    box-sizing: border-box;
-    flex: 0 0 auto;
-    flex-grow: 1;
-    flex-basis: 0;
-    width: 100%;
-    max-width: 100%;
+  margin: auto;
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  flex-grow: 1;
+  flex-basis: 0;
+  width: 100%;
+  max-width: 100%;
 
-    @media (min-width: $break-point-re) {
-        max-width: 750px;
-    }
+  @media (min-width: $break-point-re) {
+    max-width: 750px;
+  }
 
-    @media (min-width: $break-point-bi) {
-        max-width: 970px;
-    }
+  @media (min-width: $break-point-bi) {
+    max-width: 970px;
+  }
 
-    @media (min-width: $break-point-eb) {
-        max-width: 1170px;
-
-    }
+  @media (min-width: $break-point-eb) {
+    max-width: 1170px;
+  }
 }
 
 /* ---------------------------------------------------------------- DEFAULT */
 
 .row {
-    box-sizing: border-box;
-    display: flex;
-    flex: 0 1 auto;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: $col-12;
+  box-sizing: border-box;
+  display: flex;
+  flex: 0 1 auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: $col-12;
 }
 
 [class*="col"] {
-    box-sizing: border-box;
-    flex: 0 0 auto;
-    flex-grow: 1;
-    flex-basis: 0;
-    flex-basis: $col-12;
-    max-width: $col-12;
-    position: relative;
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  flex-grow: 1;
+  // flex-basis: 0;
+  flex-basis: $col-12;
+  max-width: $col-12;
+  position: relative;
 }
 
-.col-middle{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
+.col-middle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
 
 /* ---------------------------------------------------------------- COLUMN EXTRA SMALL */
 
 @media only screen and (min-width: $break-point-es) {
-    .col-es-1 {
-        max-width: $col-1;
-        flex-basis: $col-1;
-    }
+  .col-es-1 {
+    max-width: $col-1;
+    flex-basis: $col-1;
+  }
 
-    .col-es-2 {
-        max-width: $col-2;
-        flex-basis: $col-2;
-    }
+  .col-es-2 {
+    max-width: $col-2;
+    flex-basis: $col-2;
+  }
 
-    .col-es-3 {
-        max-width: $col-3;
-        flex-basis: $col-3;
-    }
+  .col-es-3 {
+    max-width: $col-3;
+    flex-basis: $col-3;
+  }
 
-    .col-es-4 {
-        max-width: $col-4;
-        flex-basis: $col-4;
-    }
+  .col-es-4 {
+    max-width: $col-4;
+    flex-basis: $col-4;
+  }
 
-    .col-es-5 {
-        max-width: $col-5;
-        flex-basis: $col-5;
-    }
+  .col-es-5 {
+    max-width: $col-5;
+    flex-basis: $col-5;
+  }
 
-    .col-es-6 {
-        max-width: $col-6;
-        flex-basis: $col-6;
-    }
+  .col-es-6 {
+    max-width: $col-6;
+    flex-basis: $col-6;
+  }
 
-    .col-es-7 {
-        max-width: $col-7;
-        flex-basis: $col-7;
-    }
+  .col-es-7 {
+    max-width: $col-7;
+    flex-basis: $col-7;
+  }
 
-    .col-es-8 {
-        max-width: $col-8;
-        flex-basis: $col-8;
-    }
+  .col-es-8 {
+    max-width: $col-8;
+    flex-basis: $col-8;
+  }
 
-    .col-es-9 {
-        max-width: $col-9;
-        flex-basis: $col-9;
-    }
+  .col-es-9 {
+    max-width: $col-9;
+    flex-basis: $col-9;
+  }
 
-    .col-es-10 {
-        max-width: $col-10;
-        flex-basis: $col-10;
-    }
+  .col-es-10 {
+    max-width: $col-10;
+    flex-basis: $col-10;
+  }
 
-    .col-es-11 {
-        max-width: $col-11;
-        flex-basis: $col-11;
-    }
+  .col-es-11 {
+    max-width: $col-11;
+    flex-basis: $col-11;
+  }
 
-    .col-es-12 {
-        max-width: $col-12;
-        flex-basis: $col-12;
-    }
+  .col-es-12 {
+    max-width: $col-12;
+    flex-basis: $col-12;
+  }
 }
 
 /* ---------------------------------------------------------------- COLUMN SMALL */
 
-@media only screen and (min-width: $break-point-sm){
-    .col-sm-1 {
-        max-width: $col-1;
-        flex-basis: $col-1;
-    }
+@media only screen and (min-width: $break-point-sm) {
+  .col-sm-1 {
+    max-width: $col-1;
+    flex-basis: $col-1;
+  }
 
-    .col-sm-2 {
-        max-width: $col-2;
-        flex-basis: $col-2;
-    }
+  .col-sm-2 {
+    max-width: $col-2;
+    flex-basis: $col-2;
+  }
 
-    .col-sm-3 {
-        max-width: $col-3;
-        flex-basis: $col-3;
-    }
+  .col-sm-3 {
+    max-width: $col-3;
+    flex-basis: $col-3;
+  }
 
-    .col-sm-4 {
-        max-width: $col-4;
-        flex-basis: $col-4;
-    }
+  .col-sm-4 {
+    max-width: $col-4;
+    flex-basis: $col-4;
+  }
 
-    .col-sm-5 {
-        max-width: $col-5;
-        flex-basis: $col-5;
-    }
+  .col-sm-5 {
+    max-width: $col-5;
+    flex-basis: $col-5;
+  }
 
-    .col-sm-6 {
-        max-width: $col-6;
-        flex-basis: $col-6;
-    }
+  .col-sm-6 {
+    max-width: $col-6;
+    flex-basis: $col-6;
+  }
 
-    .col-sm-7 {
-        max-width: $col-7;
-        flex-basis: $col-7;
-    }
+  .col-sm-7 {
+    max-width: $col-7;
+    flex-basis: $col-7;
+  }
 
-    .col-sm-8 {
-        max-width: $col-8;
-        flex-basis: $col-8;
-    }
+  .col-sm-8 {
+    max-width: $col-8;
+    flex-basis: $col-8;
+  }
 
-    .col-sm-9 {
-        max-width: $col-9;
-        flex-basis: $col-9;
-    }
+  .col-sm-9 {
+    max-width: $col-9;
+    flex-basis: $col-9;
+  }
 
-    .col-sm-10 {
-        max-width: $col-10;
-        flex-basis: $col-10;
-    }
+  .col-sm-10 {
+    max-width: $col-10;
+    flex-basis: $col-10;
+  }
 
-    .col-sm-11 {
-        max-width: $col-11;
-        flex-basis: $col-11;
-    }
+  .col-sm-11 {
+    max-width: $col-11;
+    flex-basis: $col-11;
+  }
 
-    .col-sm-12 {
-        max-width: $col-12;
-        flex-basis: $col-12;
-    }
+  .col-sm-12 {
+    max-width: $col-12;
+    flex-basis: $col-12;
+  }
 }
-
 
 /* ---------------------------------------------------------------- COLUMN REGULAR */
 
-@media only screen and (min-width: $break-point-re) { 
-    .col-re-1 {
-        max-width: $col-1;
-        flex-basis: $col-1;
-    }
+@media only screen and (min-width: $break-point-re) {
+  .col-re-1 {
+    max-width: $col-1;
+    flex-basis: $col-1;
+  }
 
-    .col-re-2 {
-        max-width: $col-2;
-        flex-basis: $col-2;
-    }
+  .col-re-2 {
+    max-width: $col-2;
+    flex-basis: $col-2;
+  }
 
-    .col-re-3 {
-        max-width: $col-3;
-        flex-basis: $col-3;
-    }
+  .col-re-3 {
+    max-width: $col-3;
+    flex-basis: $col-3;
+  }
 
-    .col-re-4 {
-        max-width: $col-4;
-        flex-basis: $col-4;
-    }
+  .col-re-4 {
+    max-width: $col-4;
+    flex-basis: $col-4;
+  }
 
-    .col-re-5 {
-        max-width: $col-5;
-        flex-basis: $col-5;
-    }
+  .col-re-5 {
+    max-width: $col-5;
+    flex-basis: $col-5;
+  }
 
-    .col-re-6 {
-        max-width: $col-6;
-        flex-basis: $col-6;
-    }
+  .col-re-6 {
+    max-width: $col-6;
+    flex-basis: $col-6;
+  }
 
-    .col-re-7 {
-        max-width: $col-7;
-        flex-basis: $col-7;
-    }
+  .col-re-7 {
+    max-width: $col-7;
+    flex-basis: $col-7;
+  }
 
-    .col-re-8 {
-        max-width: $col-8;
-        flex-basis: $col-8;
-    }
+  .col-re-8 {
+    max-width: $col-8;
+    flex-basis: $col-8;
+  }
 
-    .col-re-9 {
-        max-width: $col-9;
-        flex-basis: $col-9;
-    }
+  .col-re-9 {
+    max-width: $col-9;
+    flex-basis: $col-9;
+  }
 
-    .col-re-10 {
-        max-width: $col-10;
-        flex-basis: $col-10;
-    }
+  .col-re-10 {
+    max-width: $col-10;
+    flex-basis: $col-10;
+  }
 
-    .col-re-11 {
-        max-width: $col-11;
-        flex-basis: $col-11;
-    }
+  .col-re-11 {
+    max-width: $col-11;
+    flex-basis: $col-11;
+  }
 
-    .col-re-12 {
-        max-width: $col-12;
-        flex-basis: $col-12;
-    }
+  .col-re-12 {
+    max-width: $col-12;
+    flex-basis: $col-12;
+  }
 }
 
 /* ---------------------------------------------------------------- COLUMN BIG */
 
-@media only screen and (min-width: $break-point-bi){
-    .col-bi-1 {
-        max-width: $col-1;
-        flex-basis: $col-1;
-    }
+@media only screen and (min-width: $break-point-bi) {
+  .col-bi-1 {
+    max-width: $col-1;
+    flex-basis: $col-1;
+  }
 
-    .col-bi-2 {
-        max-width: $col-2;
-        flex-basis: $col-2;
-    }
+  .col-bi-2 {
+    max-width: $col-2;
+    flex-basis: $col-2;
+  }
 
-    .col-bi-3 {
-        max-width: $col-3;
-        flex-basis: $col-3;
-    }
+  .col-bi-3 {
+    max-width: $col-3;
+    flex-basis: $col-3;
+  }
 
-    .col-bi-4 {
-        max-width: $col-4;
-        flex-basis: $col-4;
-    }
+  .col-bi-4 {
+    max-width: $col-4;
+    flex-basis: $col-4;
+  }
 
-    .col-bi-5 {
-        max-width: $col-5;
-        flex-basis: $col-5;
-    }
+  .col-bi-5 {
+    max-width: $col-5;
+    flex-basis: $col-5;
+  }
 
-    .col-bi-6 {
-        max-width: $col-6;
-        flex-basis: $col-6;
-    }
+  .col-bi-6 {
+    max-width: $col-6;
+    flex-basis: $col-6;
+  }
 
-    .col-bi-7 {
-        max-width: $col-7;
-        flex-basis: $col-7;
-    }
+  .col-bi-7 {
+    max-width: $col-7;
+    flex-basis: $col-7;
+  }
 
-    .col-bi-8 {
-        max-width: $col-8;
-        flex-basis: $col-8;
-    }
+  .col-bi-8 {
+    max-width: $col-8;
+    flex-basis: $col-8;
+  }
 
-    .col-bi-9 {
-        max-width: $col-9;
-        flex-basis: $col-9;
-    }
+  .col-bi-9 {
+    max-width: $col-9;
+    flex-basis: $col-9;
+  }
 
-    .col-bi-10 {
-        max-width: $col-10;
-        flex-basis: $col-10;
-    }
+  .col-bi-10 {
+    max-width: $col-10;
+    flex-basis: $col-10;
+  }
 
-    .col-bi-11 {
-        max-width: $col-11;
-        flex-basis: $col-11;
-    }
+  .col-bi-11 {
+    max-width: $col-11;
+    flex-basis: $col-11;
+  }
 
-    .col-bi-12 {
-        max-width: $col-12;
-        flex-basis: $col-12;
-    }
+  .col-bi-12 {
+    max-width: $col-12;
+    flex-basis: $col-12;
+  }
 }
 
 /* ---------------------------------------------------------------- COLUMN EXTRA BIG */
 
-@media only screen and (min-width: $break-point-eb){
-    .col-eb-1 {
-        max-width: $col-1;
-        flex-basis: $col-1;
-    }
+@media only screen and (min-width: $break-point-eb) {
+  .col-eb-1 {
+    max-width: $col-1;
+    flex-basis: $col-1;
+  }
 
-    .col-eb-2 {
-        max-width: $col-2;
-        flex-basis: $col-2;
-    }
+  .col-eb-2 {
+    max-width: $col-2;
+    flex-basis: $col-2;
+  }
 
-    .col-eb-3 {
-        max-width: $col-3;
-        flex-basis: $col-3;
-    }
+  .col-eb-3 {
+    max-width: $col-3;
+    flex-basis: $col-3;
+  }
 
-    .col-eb-4 {
-        max-width: $col-4;
-        flex-basis: $col-4;
-    }
+  .col-eb-4 {
+    max-width: $col-4;
+    flex-basis: $col-4;
+  }
 
-    .col-eb-5 {
-        max-width: $col-5;
-        flex-basis: $col-5;
-    }
+  .col-eb-5 {
+    max-width: $col-5;
+    flex-basis: $col-5;
+  }
 
-    .col-eb-6 {
-        max-width: $col-6;
-        flex-basis: $col-6;
-    }
+  .col-eb-6 {
+    max-width: $col-6;
+    flex-basis: $col-6;
+  }
 
-    .col-eb-7 {
-        max-width: $col-7;
-        flex-basis: $col-7;
-    }
+  .col-eb-7 {
+    max-width: $col-7;
+    flex-basis: $col-7;
+  }
 
-    .col-eb-8 {
-        max-width: $col-8;
-        flex-basis: $col-8;
-    }
+  .col-eb-8 {
+    max-width: $col-8;
+    flex-basis: $col-8;
+  }
 
-    .col-eb-9 {
-        max-width: $col-9;
-        flex-basis: $col-9;
-    }
+  .col-eb-9 {
+    max-width: $col-9;
+    flex-basis: $col-9;
+  }
 
-    .col-eb-10 {
-        max-width: $col-10;
-        flex-basis: $col-10;
-    }
+  .col-eb-10 {
+    max-width: $col-10;
+    flex-basis: $col-10;
+  }
 
-    .col-eb-11 {
-        max-width: $col-11;
-        flex-basis: $col-11;
-    }
+  .col-eb-11 {
+    max-width: $col-11;
+    flex-basis: $col-11;
+  }
 
-    .col-eb-12 {
-        max-width: $col-12;
-        flex-basis: $col-12;
-    }
+  .col-eb-12 {
+    max-width: $col-12;
+    flex-basis: $col-12;
+  }
 }
 
 /* ---------------------------------------------------------------- OFFSET EXTRA SMALL */
 
-@media only screen and (min-width: $break-point-es){ 
-    .col-es-off-0 {
-        margin-left: $col-0;
-    }
+@media only screen and (min-width: $break-point-es) {
+  .col-es-off-0 {
+    margin-left: $col-0;
+  }
 
-    .col-es-off-1 {
-        margin-left: $col-1;
-    }
+  .col-es-off-1 {
+    margin-left: $col-1;
+  }
 
-    .col-es-off-2 {
-        margin-left: $col-2;
-    }
+  .col-es-off-2 {
+    margin-left: $col-2;
+  }
 
-    .col-es-off-3 {
-        margin-left: $col-3;
-    }
+  .col-es-off-3 {
+    margin-left: $col-3;
+  }
 
-    .col-es-off-4 {
-        margin-left: $col-4;
-    }
+  .col-es-off-4 {
+    margin-left: $col-4;
+  }
 
-    .col-es-off-5 {
-        margin-left: $col-5;
-    }
+  .col-es-off-5 {
+    margin-left: $col-5;
+  }
 
-    .col-es-off-6 {
-        margin-left: $col-6;
-    }
+  .col-es-off-6 {
+    margin-left: $col-6;
+  }
 
-    .col-es-off-7 {
-        margin-left: $col-7;
-    }
+  .col-es-off-7 {
+    margin-left: $col-7;
+  }
 
-    .col-es-off-8 {
-        margin-left: $col-8;
-    }
+  .col-es-off-8 {
+    margin-left: $col-8;
+  }
 
-    .col-es-off-9 {
-        margin-left: $col-9;
-    }
+  .col-es-off-9 {
+    margin-left: $col-9;
+  }
 
-    .col-es-off-10 {
-        margin-left: $col-10;
-    }
+  .col-es-off-10 {
+    margin-left: $col-10;
+  }
 
-    .col-es-off-11 {
-        margin-left: $col-11;
-    }
+  .col-es-off-11 {
+    margin-left: $col-11;
+  }
 
-    .col-es-off-12 {
-        margin-left: $col-12;
-    }
+  .col-es-off-12 {
+    margin-left: $col-12;
+  }
 }
 
 /* ---------------------------------------------------------------- OFFSET SMALL */
 
-@media only screen and (min-width: $break-point-sm) { 
-    .col-sm-off-0 {
-        margin-left: $col-0;
-    }
+@media only screen and (min-width: $break-point-sm) {
+  .col-sm-off-0 {
+    margin-left: $col-0;
+  }
 
-    .col-sm-off-1 {
-        margin-left: $col-1;
-    }
+  .col-sm-off-1 {
+    margin-left: $col-1;
+  }
 
-    .col-sm-off-2 {
-        margin-left: $col-2;
-    }
+  .col-sm-off-2 {
+    margin-left: $col-2;
+  }
 
-    .col-sm-off-3 {
-        margin-left: $col-3;
-    }
+  .col-sm-off-3 {
+    margin-left: $col-3;
+  }
 
-    .col-sm-off-4 {
-        margin-left: $col-4;
-    }
+  .col-sm-off-4 {
+    margin-left: $col-4;
+  }
 
-    .col-sm-off-5 {
-        margin-left: $col-5;
-    }
+  .col-sm-off-5 {
+    margin-left: $col-5;
+  }
 
-    .col-sm-off-6 {
-        margin-left: $col-6;
-    }
+  .col-sm-off-6 {
+    margin-left: $col-6;
+  }
 
-    .col-sm-off-7 {
-        margin-left: $col-7;
-    }
+  .col-sm-off-7 {
+    margin-left: $col-7;
+  }
 
-    .col-sm-off-8 {
-        margin-left: $col-8;
-    }
+  .col-sm-off-8 {
+    margin-left: $col-8;
+  }
 
-    .col-sm-off-9 {
-        margin-left: $col-9;
-    }
+  .col-sm-off-9 {
+    margin-left: $col-9;
+  }
 
-    .col-sm-off-10 {
-        margin-left: $col-10;
-    }
+  .col-sm-off-10 {
+    margin-left: $col-10;
+  }
 
-    .col-sm-off-11 {
-        margin-left: $col-11;
-    }
+  .col-sm-off-11 {
+    margin-left: $col-11;
+  }
 
-    .col-sm-off-12 {
-        margin-left: $col-12;
-    }
+  .col-sm-off-12 {
+    margin-left: $col-12;
+  }
 }
 
 /* ---------------------------------------------------------------- OFFSET EXTRA REGULAR */
 
-@media only screen and (min-width: $break-point-re){ 
-    .col-re-off-0 {
-        margin-left: $col-0;
-    }
+@media only screen and (min-width: $break-point-re) {
+  .col-re-off-0 {
+    margin-left: $col-0;
+  }
 
-    .col-re-off-1 {
-        margin-left: $col-1;
-    }
+  .col-re-off-1 {
+    margin-left: $col-1;
+  }
 
-    .col-re-off-2 {
-        margin-left: $col-2;
-    }
+  .col-re-off-2 {
+    margin-left: $col-2;
+  }
 
-    .col-re-off-3 {
-        margin-left: $col-3;
-    }
+  .col-re-off-3 {
+    margin-left: $col-3;
+  }
 
-    .col-re-off-4 {
-        margin-left: $col-4;
-    }
+  .col-re-off-4 {
+    margin-left: $col-4;
+  }
 
-    .col-re-off-5 {
-        margin-left: $col-5;
-    }
+  .col-re-off-5 {
+    margin-left: $col-5;
+  }
 
-    .col-re-off-6 {
-        margin-left: $col-6;
-    }
+  .col-re-off-6 {
+    margin-left: $col-6;
+  }
 
-    .col-re-off-7 {
-        margin-left: $col-7;
-    }
+  .col-re-off-7 {
+    margin-left: $col-7;
+  }
 
-    .col-re-off-8 {
-        margin-left: $col-8;
-    }
+  .col-re-off-8 {
+    margin-left: $col-8;
+  }
 
-    .col-re-off-9 {
-        margin-left: $col-9;
-    }
+  .col-re-off-9 {
+    margin-left: $col-9;
+  }
 
-    .col-re-off-10 {
-        margin-left: $col-10;
-    }
+  .col-re-off-10 {
+    margin-left: $col-10;
+  }
 
-    .col-re-off-11 {
-        margin-left: $col-11;
-    }
+  .col-re-off-11 {
+    margin-left: $col-11;
+  }
 
-    .col-re-off-12 {
-        margin-left: $col-12;
-    }
+  .col-re-off-12 {
+    margin-left: $col-12;
+  }
 }
 
 /* ---------------------------------------------------------------- OFFSET BIG */
 
-@media only screen and (min-width: $break-point-bi){ 
-    .col-bi-off-0 {
-        margin-left: $col-0;
-    }
+@media only screen and (min-width: $break-point-bi) {
+  .col-bi-off-0 {
+    margin-left: $col-0;
+  }
 
-    .col-bi-off-1 {
-        margin-left: $col-1;
-    }
+  .col-bi-off-1 {
+    margin-left: $col-1;
+  }
 
-    .col-bi-off-2 {
-        margin-left: $col-2;
-    }
+  .col-bi-off-2 {
+    margin-left: $col-2;
+  }
 
-    .col-bi-off-3 {
-        margin-left: $col-3;
-    }
+  .col-bi-off-3 {
+    margin-left: $col-3;
+  }
 
-    .col-bi-off-4 {
-        margin-left: $col-4;
-    }
+  .col-bi-off-4 {
+    margin-left: $col-4;
+  }
 
-    .col-bi-off-5 {
-        margin-left: $col-5;
-    }
+  .col-bi-off-5 {
+    margin-left: $col-5;
+  }
 
-    .col-bi-off-6 {
-        margin-left: $col-6;
-    }
+  .col-bi-off-6 {
+    margin-left: $col-6;
+  }
 
-    .col-bi-off-7 {
-        margin-left: $col-7;
-    }
+  .col-bi-off-7 {
+    margin-left: $col-7;
+  }
 
-    .col-bi-off-8 {
-        margin-left: $col-8;
-    }
+  .col-bi-off-8 {
+    margin-left: $col-8;
+  }
 
-    .col-bi-off-9 {
-        margin-left: $col-9;
-    }
+  .col-bi-off-9 {
+    margin-left: $col-9;
+  }
 
-    .col-bi-off-10 {
-        margin-left: $col-10;
-    }
+  .col-bi-off-10 {
+    margin-left: $col-10;
+  }
 
-    .col-bi-off-11 {
-        margin-left: $col-11;
-    }
+  .col-bi-off-11 {
+    margin-left: $col-11;
+  }
 
-    .col-bi-off-12 {
-        margin-left: $col-12;
-    }
+  .col-bi-off-12 {
+    margin-left: $col-12;
+  }
 }
 
 /* ---------------------------------------------------------------- OFFSET EXTRA BIG */
 
-@media only screen and (min-width: $break-point-eb) { 
-    .col-eb-off-0 {
-        margin-left: $col-0;
-    }
+@media only screen and (min-width: $break-point-eb) {
+  .col-eb-off-0 {
+    margin-left: $col-0;
+  }
 
-    .col-eb-off-1 {
-        margin-left: $col-1;
-    }
+  .col-eb-off-1 {
+    margin-left: $col-1;
+  }
 
-    .col-eb-off-2 {
-        margin-left: $col-2;
-    }
+  .col-eb-off-2 {
+    margin-left: $col-2;
+  }
 
-    .col-eb-off-3 {
-        margin-left: $col-3;
-    }
+  .col-eb-off-3 {
+    margin-left: $col-3;
+  }
 
-    .col-eb-off-4 {
-        margin-left: $col-4;
-    }
+  .col-eb-off-4 {
+    margin-left: $col-4;
+  }
 
-    .col-eb-off-5 {
-        margin-left: $col-5;
-    }
+  .col-eb-off-5 {
+    margin-left: $col-5;
+  }
 
-    .col-eb-off-6 {
-        margin-left: $col-6;
-    }
+  .col-eb-off-6 {
+    margin-left: $col-6;
+  }
 
-    .col-eb-off-7 {
-        margin-left: $col-7;
-    }
+  .col-eb-off-7 {
+    margin-left: $col-7;
+  }
 
-    .col-eb-off-8 {
-        margin-left: $col-8;
-    }
+  .col-eb-off-8 {
+    margin-left: $col-8;
+  }
 
-    .col-eb-off-9 {
-        margin-left: $col-9;
-    }
+  .col-eb-off-9 {
+    margin-left: $col-9;
+  }
 
-    .col-eb-off-10 {
-        margin-left: $col-10;
-    }
+  .col-eb-off-10 {
+    margin-left: $col-10;
+  }
 
-    .col-eb-off-11 {
-        margin-left: $col-11;
-    }
+  .col-eb-off-11 {
+    margin-left: $col-11;
+  }
 
-    .col-eb-off-12 {
-        margin-left: $col-12;
-    }
+  .col-eb-off-12 {
+    margin-left: $col-12;
+  }
 }
+
 .scrollbar::-webkit-scrollbar {
-    width: $re !important;
+  width: $re !important;
 }
 
 @each $color in $arrColor {
-    .scrollbar-style-#{$color} {
+  .scrollbar-style-#{$color} {
+    scrollbar-color: color-regular(#{$color}) color-extra-light(#{$color});
 
-        scrollbar-color: color-regular(#{$color}) color-extra-light(#{$color});
-
-        &::-webkit-scrollbar {
-            width: 12px;
-            background-color: color-light(#{$color});
-        }
-
-        &::-webkit-scrollbar-thumb {
-            background-color: color-regular(#{$color});
-        }
+    &::-webkit-scrollbar {
+      width: 12px;
+      background-color: color-light(#{$color});
     }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: color-regular(#{$color});
+    }
+  }
 }
-.table{
+
+.table {
+  width: 100%;
+  display: table;
+  @extend %extend-border-solid;
+  position: relative;
+
+  tr {
+    background-color: $color-white;
+  }
+
+  td {
+    border-top: 0;
+    border-bottom: 0;
+    padding: $re;
+    vertical-align: top;
+
+    &:first-child {
+      border-left: 0;
+    }
+
+    &:last-child {
+      border-right: 0;
+    }
+  }
+
+  thead {
+    tr,
+    th,
+    td {
+      font-family: $font-family-bold;
+      text-align: center;
+    }
+
+    th,
+    td {
+      border: transparent;
+      padding: $bi;
+    }
+  }
+
+  tbody {
+    td {
+      @extend %extend-border-solid;
+      border-top: 0;
+      border-bottom: 0;
+    }
+  }
+
+  .minimum {
+    width: 1px;
+  }
+
+  .td-wrapper {
     width: 100%;
-    display: table;
-    @extend %extend-border-solid;
-    position: relative;
+    max-height: 48px;
+    overflow: auto;
+    white-space: pre-line;
+  }
 
-    tr{
-        background-color: $color-white;
-    }
-
-    td{
-        border-top: 0;
-        border-bottom: 0;
-        padding: $re;
-        vertical-align: top;
-
-        &:first-child{
-            border-left: 0;
-        }
-
-        &:last-child{
-            border-right: 0;
-        }
-    }
-
-    thead{
-
-        tr,
-        th,
-        td{
-            font-family: $font-family-bold;
-            text-align: center;
-        }
-
-        th,
-        td{
-            border: transparent;
-            padding: $bi;
-        }
-    }
-
-    tbody{
-
-        td{
-            @extend %extend-border-solid;
-            border-top: 0;
-            border-bottom: 0;
-        }
-    }
-
-    .minimum{
-        width: 1px;
-    }
-
-    .td-wrapper{
-        width: 100%;
-        max-height: 48px;
-        overflow: auto;
-        white-space: pre-line;
-    }
-
-    .td-wrapper-auto{
-        max-height: initial !important;
-    }
+  .td-wrapper-auto {
+    max-height: initial !important;
+  }
 }
 
-.table-responsive{
-    overflow-x:auto;
-    max-width: 100%;
+.table-responsive {
+  overflow-x: auto;
+  max-width: 100%;
 }
 
 @each $color in $arrColor {
-    .table-#{$color} {
-        border-color: color-light(#{$color});
+  .table-#{$color} {
+    border-color: color-light(#{$color});
 
-        thead{
-            border-color: color-light(#{$color});
+    thead {
+      border-color: color-light(#{$color});
 
-            td,
-            th{
-                color: color-dark(#{$color});
-                background-color: color-light(#{$color});
-            }
-        }
-
-        tbody{
-
-            tr{
-
-                &:nth-child(even){
-                    background-color: color-extra-light(#{$color});
-                }
-
-                td{
-                    border-color: color-light(#{$color});
-                }
-            }
-        }
+      td,
+      th {
+        color: color-dark(#{$color});
+        background-color: color-light(#{$color});
+      }
     }
+
+    tbody {
+      tr {
+        &:nth-child(even) {
+          background-color: color-extra-light(#{$color});
+        }
+
+        td {
+          border-color: color-light(#{$color});
+        }
+      }
+    }
+  }
 }
-[class*='tag-list'] {
-    display: inline-block;
-    list-style: none;
-    text-align: left;
 
-    li{
-        margin: $es;
-        display: inline-block;
-    }
+[class*="tag-list"] {
+  display: inline-block;
+  list-style: none;
+  text-align: left;
+
+  li {
+    margin: $es;
+    display: inline-block;
+  }
 }
 
 .tag-item,
-.tag-item-bt{
-    padding: $es $re;
-    display: inline-block;
-    border-radius: 2rem;
-    position: relative;
+.tag-item-bt {
+  padding: $es $re;
+  display: inline-block;
+  border-radius: 2rem;
+  position: relative;
 }
 
-.tag-item-bt{
-
-    .tag-bt{
-        position: relative;
-        top: -1px !important;
-        margin-left: $sm;
-        box-shadow: none;
-    }
+.tag-item-bt {
+  .tag-bt {
+    position: relative;
+    top: -1px !important;
+    margin-left: $sm;
+    box-shadow: none;
+  }
 }
 
 @each $color in $arrColor {
-    .tag-#{$color} {
-        @extend %extend-border-solid;
-        background-color: color-extra-light(#{$color});
-        border-color: color-extra-light-border(#{$color});
+  .tag-#{$color} {
+    @extend %extend-border-solid;
+    background-color: color-extra-light(#{$color});
+    border-color: color-extra-light-border(#{$color});
+    color: color-dark(#{$color});
+
+    .link {
+      color: color-dark(#{$color}) !important;
+
+      &:hover,
+      &:link,
+      &:focus,
+      &.active {
         color: color-dark(#{$color});
-
-        .link{
-            color: color-dark(#{$color}) !important;
-
-            &:hover,
-                &:link,
-                &:focus,
-                &.active{
-                color: color-dark(#{$color});
-            }
-        }
-
-        .tag-bt{
-
-            .fa{
-                color: color-regular(#{$color});
-            }
-        }
+      }
     }
+
+    .tag-bt {
+      .fa {
+        color: color-regular(#{$color});
+      }
+    }
+  }
 }
-html, 
+
+html,
 body {
-    font-size: $font-re;
-    font-family: $font-family-regular;
+  font-size: $font-re;
+  font-family: $font-family-regular;
 }
 
 h1 {
-    font-size: 2.5rem;
+  font-size: 2.5rem;
 }
 h2 {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 h3 {
-    font-size: 1.75rem;
+  font-size: 1.75rem;
 }
 h4 {
-    font-size:  1.5rem;
+  font-size: 1.5rem;
 }
 h5 {
-    font-size: 1.25rem;
+  font-size: 1.25rem;
 }
 h6 {
-    font-size: 1rem;
-}	
+  font-size: 1rem;
+}
 
-h1, 
+h1,
 h2,
-h3, 
+h3,
 h4,
-h5, 
+h5,
 h6 {
-    margin: .5em auto;
-    font-weight: normal;
+  margin: 0.5em auto;
+  font-weight: normal;
 }
 
 p {
-    line-height: 150%;
-    margin-bottom: $re;
+  line-height: 150%;
+  margin-bottom: $re;
 }
 
-strong{
-    font-family: $font-family-bold;
+strong {
+  font-family: $font-family-bold;
 }
 
 small {
-    font-size: $font-sm;
+  font-size: $font-sm;
 }
 
-.text-column{
-    vertical-align: top;
-    padding: 0;
+.text-column {
+  vertical-align: top;
+  padding: 0;
 
-    @media only screen and (min-width: $break-point-es) {
-        column-gap: $bi;
-        column-count: 1;
-    }
+  @media only screen and (min-width: $break-point-es) {
+    column-gap: $bi;
+    column-count: 1;
+  }
 
-    @media only screen and (min-width: $break-point-re) {
-        column-count: 2;
-    }
+  @media only screen and (min-width: $break-point-re) {
+    column-count: 2;
+  }
 }
 
 /* ------------------------------------------------------------------ ALIGN */
 
-.text-left{
-    text-align: left !important;
+.text-left {
+  text-align: left !important;
 }
 
-.text-right{
-    text-align: right !important;
+.text-right {
+  text-align: right !important;
 }
 
-.text-center{
-    text-align: center !important;
+.text-center {
+  text-align: center !important;
 }
 
-.text-justify{
-    text-align: justify !important;
+.text-justify {
+  text-align: justify !important;
 }
+
 @each $color in $arrColor {
-    .color-#{$color} {
-        color: color-regular(#{$color});
-    }
-    
-    .bg-#{$color} {
-        background-color: color-regular(#{$color});
-    }
+  .color-#{$color} {
+    color: color-regular(#{$color});
+  }
+
+  .bg-#{$color} {
+    background-color: color-regular(#{$color});
+  }
 }
+
 #tooltip {
-    position: absolute;
-    z-index: z-index('tooltip');
-    opacity: 0;
-    pointer-events: none;
+  position: absolute;
+  z-index: z-index("tooltip");
+  opacity: 0;
+  pointer-events: none;
 
-    @media only screen and (min-width: $break-point-es){
-        display: none;
-    }
+  @media only screen and (min-width: $break-point-es) {
+    display: none;
+  }
 
-    @media only screen and (min-width: $break-point-re){
-        display: block;
-    }
+  @media only screen and (min-width: $break-point-re) {
+    display: block;
+  }
 }
 
 .tooltip {
-    @extend %extend-border-solid;
-    padding: $re;
-    border-radius: $border-radius-re;
-    font-size: $font-re;
+  @extend %extend-border-solid;
+  padding: $re;
+  border-radius: $border-radius-re;
+  font-size: $font-re;
 }
 
 .tooltip-show {
-    opacity: 1 !important;
+  opacity: 1 !important;
 }
 
 [class*="tooltip-direction-"] {
-    position: absolute;
-    border-style: solid;
+  position: absolute;
+  border-style: solid;
 }
 
 .tooltip-direction-top {
-    bottom: -$sm;
-    border-width: $sm $sm 0 $sm;
-    border-right-color: transparent !important;
-    border-bottom-color: transparent !important;
-    border-left-color: transparent !important;
+  bottom: -$sm;
+  border-width: $sm $sm 0 $sm;
+  border-right-color: transparent !important;
+  border-bottom-color: transparent !important;
+  border-left-color: transparent !important;
 }
 
 .tooltip-direction-right {
-    left: -$sm;
-    top: calc(50% - #{$sm});
-    border-width: $sm $sm $sm 0;
-    border-top-color: transparent !important;
-    border-bottom-color: transparent !important;
-    border-top-color: transparent !important;
+  left: -$sm;
+  top: calc(50% - #{$sm});
+  border-width: $sm $sm $sm 0;
+  border-top-color: transparent !important;
+  border-bottom-color: transparent !important;
+  border-top-color: transparent !important;
 }
 
 .tooltip-direction-bottom {
-    top: -$sm;
-    border-width: 0px $sm $sm $sm;
-    border-right-color: transparent !important;
-    border-left-color: transparent !important;
-    border-top-color: transparent !important;
+  top: -$sm;
+  border-width: 0px $sm $sm $sm;
+  border-right-color: transparent !important;
+  border-left-color: transparent !important;
+  border-top-color: transparent !important;
 }
 
 .tooltip-direction-left {
-    right: -$sm;
-    top: calc(50% - #{$sm});
-    border-width: $sm 0 $sm $sm;
-    border-right-color: transparent !important;
-    border-bottom-color: transparent !important;
-    border-top-color: transparent !important;
+  right: -$sm;
+  top: calc(50% - #{$sm});
+  border-width: $sm 0 $sm $sm;
+  border-right-color: transparent !important;
+  border-bottom-color: transparent !important;
+  border-top-color: transparent !important;
 }
 
 @each $color in $arrColor {
-    .tooltip-#{$color} {
-        background-color: color-extra-light(#{$color});
-        border-color: color-extra-light(#{$color});;
-        color: color-regular(#{$color});
+  .tooltip-#{$color} {
+    background-color: color-extra-light(#{$color});
+    border-color: color-extra-light(#{$color});
+    color: color-regular(#{$color});
 
-        .tooltip-direction-top {
-            border-color: color-extra-light(#{$color});;
-        }
-
-        .tooltip-direction-right {
-            border-color: color-extra-light(#{$color});;
-        }
-
-        .tooltip-direction-bottom {
-            border-color: color-extra-light(#{$color});;
-        }
-
-        .tooltip-direction-left {
-            border-color: color-extra-light(#{$color});;
-        }
+    .tooltip-direction-top {
+      border-color: color-extra-light(#{$color});
     }
+
+    .tooltip-direction-right {
+      border-color: color-extra-light(#{$color});
+    }
+
+    .tooltip-direction-bottom {
+      border-color: color-extra-light(#{$color});
+    }
+
+    .tooltip-direction-left {
+      border-color: color-extra-light(#{$color});
+    }
+  }
 }
