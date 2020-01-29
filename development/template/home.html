@@ -1,7 +1,6 @@
 {% set arrSlide = [
-['Javascript / JQuery, SASS,  Gulp JS, Nunjuck, Font Awasome' , 'cyan'],
-['ES(extra small), SM(small), RE(regular), BI(big), EB(extra big) e FU(full)' , 'orange'],
-['Admin / Friendly URLs' , 'purple']
+['SASS,  Gulp JS, Nunjuck, Font Awasome' , 'cyan'],
+['Size: <br/> ES(extra small), SM(small), RE(regular), BI(big), EB(extra big) e FU(full)' , 'orange']
 ] %}
 
 <div id="page_home" class="row">
@@ -14,7 +13,7 @@
                         <li>
                             <div class="slide bg-{{slide[1]}}">
                                 <div class="col-middle slide-content">
-                                    {{slide[0]}}
+                                    {{slide[0] | safe}}
                                 </div>
                             </div>
                         </li>
@@ -30,7 +29,7 @@
                         </button>
                     </li>
                     <li>
-                        <button type="button" class="bt bt-big" data-id="nav-right" aria-label="previous" >
+                        <button type="button" class="bt bt-big" data-id="nav-right" aria-label="previous">
                             <span class="fa fa-angle-right fa-4x" aria-hidden="true"></span>
                         </button>
                     </li>

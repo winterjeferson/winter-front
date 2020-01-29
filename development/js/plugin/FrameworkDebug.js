@@ -10,7 +10,6 @@ class FrameworkDebug {
         this.isFrameworkLogin = true;
 
         this.isLoading = true;
-        this.isHelper= true;
         this.isTheme = true;
 
         this.isFrameworkCarousel = true;
