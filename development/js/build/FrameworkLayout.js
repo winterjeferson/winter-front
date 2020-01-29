@@ -11,18 +11,9 @@ class FrameworkLayout {
         this.breakPointExtraBig = 1200;
     }
 
-    buildLayout() {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
-        // $('button, a').on('click', function (event) {
-        //     event.stopPropagation();
-        // });
-    }
-
     switchDisplay(target, action = '') {
         /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), [target, action]); /*endRemoveIf(production)*/
         let classDisplay = 'display-none';
-
-        // console.log('switchDisplay switchDisplay switchDisplay switchDisplay switchDisplay switchDisplay switchDisplay switchDisplay switchDisplay switchDisplay switchDisplay switchDisplay');
 
         if (action === '') {
             if (target.hasClass(classDisplay)) {
@@ -32,13 +23,10 @@ class FrameworkLayout {
             }
         }
 
-        switch (action) {
-            case 'show':
-                $(target).removeClass(classDisplay);
-                break;
-            case 'hide':
-                $(target).addClass(classDisplay);
-                break;
+        if (action === 'show') {
+            $(target).removeClass(classDisplay);
+        } else {
+            $(target).addClass(classDisplay);
         }
     }
 
@@ -57,55 +45,39 @@ class FrameworkLayout {
 
     buildToggle() {
         /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
-        $('.bt-toggle').each(function () {
-            $(this).unbind();
+        let element = document.querySelectorAll('.bt-toggle');
 
-            $(this).on('click', function () {
-                let $nav = $(this).siblings('nav').find(' > ul');
-                let $navAll = $(this).siblings('nav').find('ul');
-                let $class = 'mobile-show';
+        Array.prototype.forEach.call(element, function (el, i) {
+            el.onclick = function () {
+                let $ul1 = el.parentNode.querySelector('nav > ul');
+                let $ulAll = el.parentNode.querySelector('nav ul');
+                let classDisplay = 'mobile-show';
 
-                if ($nav.hasClass($class)) {
-                    $nav.removeClass($class);
-                    $navAll.removeClass($class);
+                if ($ul1.classList.contains(classDisplay)) {
+                    $ul1.classList.remove(classDisplay);
+                    $ulAll.classList.remove(classDisplay);
                 } else {
-                    $nav.addClass($class);
+                    $ul1.classList.add(classDisplay);
                 }
-            });
+            }
         });
     }
+    
+    // verifyUndefined(target) {
+    //     /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), target); /*endRemoveIf(production)*/
+    //     if (typeof target === 'undefined' || target === null || target === '') {
+    //         return true;
+    //     } else {
+    //         return false;
+    //     }
+    // }
 
-    getUrlParameter(target) {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), target); /*endRemoveIf(production)*/
-        let url = top.location.search.substring(1);
-        let parameter = url.split('&');
-
-        for (let i = 0; i < parameter.length; i++) {
-            let parameterName = parameter[i].split('=');
-
-            if (parameterName[0] === target) {
-                return parameterName[1];
-            }
-        }
-    }
-
-    verifyHasFodler(target) {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), target); /*endRemoveIf(production)*/
-        let arrFolder = window.location.pathname.split('/');
-
-        if (arrFolder.indexOf(target) > -1) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    verifyUndefined(target) {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), target); /*endRemoveIf(production)*/
-        if (typeof target === 'undefined' || target === null || target === '') {
-            return true;
-        } else {
-            return false;
-        }
-    }
+    // buildLayout() {
+    /*removeIf(production)*/
+    // objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); 
+    /*endRemoveIf(production)*/
+    // $('button, a').on('click', function (event) {
+    //     event.stopPropagation();
+    // });
+    // }
 }

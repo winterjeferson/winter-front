@@ -1418,16 +1418,6 @@ $arr-color-dark: (
 
   .active {
     box-shadow: none;
-
-    @media (min-width: $break-point-bi) {
-      &:after {
-        content: "\f061";
-        font-family: $font-family-awesome;
-        color: $color-blue-lighten-2;
-        float: right;
-        margin: 2px;
-      }
-    }
   }
 }
 

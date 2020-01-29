@@ -1,213 +1,14 @@
 "use strict";
 
-function _typeof14(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof14 = function _typeof14(obj) { return typeof obj; }; } else { _typeof14 = function _typeof14(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof14(obj); }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function _typeof13(obj) {
-  if (typeof Symbol === "function" && _typeof14(Symbol.iterator) === "symbol") {
-    _typeof13 = function _typeof13(obj) {
-      return _typeof14(obj);
-    };
-  } else {
-    _typeof13 = function _typeof13(obj) {
-      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : _typeof14(obj);
-    };
-  }
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-  return _typeof13(obj);
-}
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-function _typeof12(obj) {
-  if (typeof Symbol === "function" && _typeof13(Symbol.iterator) === "symbol") {
-    _typeof12 = function _typeof12(obj) {
-      return _typeof13(obj);
-    };
-  } else {
-    _typeof12 = function _typeof12(obj) {
-      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : _typeof13(obj);
-    };
-  }
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
-  return _typeof12(obj);
-}
-
-function _typeof11(obj) {
-  if (typeof Symbol === "function" && _typeof12(Symbol.iterator) === "symbol") {
-    _typeof11 = function _typeof11(obj) {
-      return _typeof12(obj);
-    };
-  } else {
-    _typeof11 = function _typeof11(obj) {
-      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : _typeof12(obj);
-    };
-  }
-
-  return _typeof11(obj);
-}
-
-function _typeof10(obj) {
-  if (typeof Symbol === "function" && _typeof11(Symbol.iterator) === "symbol") {
-    _typeof10 = function _typeof10(obj) {
-      return _typeof11(obj);
-    };
-  } else {
-    _typeof10 = function _typeof10(obj) {
-      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : _typeof11(obj);
-    };
-  }
-
-  return _typeof10(obj);
-}
-
-function _typeof9(obj) {
-  if (typeof Symbol === "function" && _typeof10(Symbol.iterator) === "symbol") {
-    _typeof9 = function _typeof9(obj) {
-      return _typeof10(obj);
-    };
-  } else {
-    _typeof9 = function _typeof9(obj) {
-      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : _typeof10(obj);
-    };
-  }
-
-  return _typeof9(obj);
-}
-
-function _typeof8(obj) {
-  if (typeof Symbol === "function" && _typeof9(Symbol.iterator) === "symbol") {
-    _typeof8 = function _typeof8(obj) {
-      return _typeof9(obj);
-    };
-  } else {
-    _typeof8 = function _typeof8(obj) {
-      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : _typeof9(obj);
-    };
-  }
-
-  return _typeof8(obj);
-}
-
-function _typeof7(obj) {
-  if (typeof Symbol === "function" && _typeof8(Symbol.iterator) === "symbol") {
-    _typeof7 = function _typeof7(obj) {
-      return _typeof8(obj);
-    };
-  } else {
-    _typeof7 = function _typeof7(obj) {
-      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : _typeof8(obj);
-    };
-  }
-
-  return _typeof7(obj);
-}
-
-function _typeof6(obj) {
-  if (typeof Symbol === "function" && _typeof7(Symbol.iterator) === "symbol") {
-    _typeof6 = function _typeof6(obj) {
-      return _typeof7(obj);
-    };
-  } else {
-    _typeof6 = function _typeof6(obj) {
-      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : _typeof7(obj);
-    };
-  }
-
-  return _typeof6(obj);
-}
-
-function _typeof5(obj) {
-  if (typeof Symbol === "function" && _typeof6(Symbol.iterator) === "symbol") {
-    _typeof5 = function _typeof5(obj) {
-      return _typeof6(obj);
-    };
-  } else {
-    _typeof5 = function _typeof5(obj) {
-      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : _typeof6(obj);
-    };
-  }
-
-  return _typeof5(obj);
-}
-
-function _typeof4(obj) {
-  if (typeof Symbol === "function" && _typeof5(Symbol.iterator) === "symbol") {
-    _typeof4 = function _typeof4(obj) {
-      return _typeof5(obj);
-    };
-  } else {
-    _typeof4 = function _typeof4(obj) {
-      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : _typeof5(obj);
-    };
-  }
-
-  return _typeof4(obj);
-}
-
-function _typeof3(obj) {
-  if (typeof Symbol === "function" && _typeof4(Symbol.iterator) === "symbol") {
-    _typeof3 = function _typeof3(obj) {
-      return _typeof4(obj);
-    };
-  } else {
-    _typeof3 = function _typeof3(obj) {
-      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : _typeof4(obj);
-    };
-  }
-
-  return _typeof3(obj);
-}
-
-function _typeof2(obj) {
-  if (typeof Symbol === "function" && _typeof3(Symbol.iterator) === "symbol") {
-    _typeof2 = function _typeof2(obj) {
-      return _typeof3(obj);
-    };
-  } else {
-    _typeof2 = function _typeof2(obj) {
-      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : _typeof3(obj);
-    };
-  }
-
-  return _typeof2(obj);
-}
-
-function _classCallCheck(instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError("Cannot call a class as a function");
-  }
-}
-
-function _defineProperties(target, props) {
-  for (var i = 0; i < props.length; i++) {
-    var descriptor = props[i];
-    descriptor.enumerable = descriptor.enumerable || false;
-    descriptor.configurable = true;
-    if ("value" in descriptor) descriptor.writable = true;
-    Object.defineProperty(target, descriptor.key, descriptor);
-  }
-}
-
-function _createClass(Constructor, protoProps, staticProps) {
-  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
-  if (staticProps) _defineProperties(Constructor, staticProps);
-  return Constructor;
-}
-
-function _typeof(obj) {
-  if (typeof Symbol === "function" && _typeof2(Symbol.iterator) === "symbol") {
-    _typeof = function _typeof(obj) {
-      return _typeof2(obj);
-    };
-  } else {
-    _typeof = function _typeof(obj) {
-      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : _typeof2(obj);
-    };
-  }
-
-  return _typeof(obj);
-}
 /*! jQuery v3.4.1 | (c) JS Foundation and other contributors | jquery.org/license */
-
-
 !function (e, t) {
   "use strict";
 
@@ -4227,9 +4028,8 @@ var FrameworkCarousel =
 function () {
   function FrameworkCarousel() {
     _classCallCheck(this, FrameworkCarousel);
+
     /*removeIf(production)*/
-
-
     objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
     /*endRemoveIf(production)*/
 
@@ -4446,6 +4246,7 @@ function () {
     this.isFrameworkAdminPage = true;
     this.isFrameworkLogin = true;
     this.isLoading = true;
+    this.isHelper = true;
     this.isTheme = true;
     this.isFrameworkCarousel = true;
     this.isFrameworkGeneric = true;
@@ -4500,7 +4301,7 @@ function () {
       var e = new Error('dummy');
       var stack = e.stack.split('\n')[2] // " at functionName ( ..." => "functionName"
       .replace(/^\s+at\s+(.+?)\s.+/g, '$1');
-      var split = stack.split(".");
+      var split = stack.split('.');
 
       if (stack !== 'new') {
         return split[1];
@@ -4619,9 +4420,8 @@ var FrameworkGeneric =
 function () {
   function FrameworkGeneric() {
     _classCallCheck(this, FrameworkGeneric);
+
     /*removeIf(production)*/
-
-
     objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
     /*endRemoveIf(production)*/
   }
@@ -4744,9 +4544,8 @@ var FrameworkModal =
 function () {
   function FrameworkModal() {
     _classCallCheck(this, FrameworkModal);
+
     /*removeIf(production)*/
-
-
     objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
     /*endRemoveIf(production)*/
 
@@ -4938,8 +4737,8 @@ function () {
     value: function buildModal(kind, content) {
       var size = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 're';
       var action = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 'open';
-      /*removeIf(production)*/
 
+      /*removeIf(production)*/
       objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), [kind, content, size, action]);
       /*endRemoveIf(production)*/
 
@@ -5011,8 +4810,8 @@ function () {
     key: "buildModalSize",
     value: function buildModalSize() {
       var size = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 're';
-      /*removeIf(production)*/
 
+      /*removeIf(production)*/
       objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), size);
       /*endRemoveIf(production)*/
 
@@ -5110,9 +4909,8 @@ var FrameworkNotification =
 function () {
   function FrameworkNotification() {
     _classCallCheck(this, FrameworkNotification);
+
     /*removeIf(production)*/
-
-
     objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
     /*endRemoveIf(production)*/
 
@@ -5241,9 +5039,8 @@ var FrameworkProgress =
 function () {
   function FrameworkProgress() {
     _classCallCheck(this, FrameworkProgress);
+
     /*removeIf(production)*/
-
-
     objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
     /*endRemoveIf(production)*/
 
@@ -5345,9 +5142,8 @@ var FrameworkTooltip =
 function () {
   function FrameworkTooltip() {
     _classCallCheck(this, FrameworkTooltip);
+
     /*removeIf(production)*/
-
-
     objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
     /*endRemoveIf(production)*/
 
@@ -5679,9 +5475,8 @@ var FrameworkTranslation =
 function () {
   function FrameworkTranslation() {
     _classCallCheck(this, FrameworkTranslation);
+
     /*removeIf(production)*/
-
-
     objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
     /*endRemoveIf(production)*/
 

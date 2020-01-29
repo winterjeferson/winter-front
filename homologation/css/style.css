@@ -1079,13 +1079,6 @@
     width: 100%; }
   #main_menu .active {
     box-shadow: none; }
-    @media (min-width: 992px) {
-      #main_menu .active:after {
-        content: "\f061";
-        font-family: "FontAwesome";
-        color: #5dade3;
-        float: right;
-        margin: 2px; } }
 
 .page-title {
   font-family: "roboto-thin";

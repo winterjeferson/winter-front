@@ -1,18 +1,35 @@
 "use strict";
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
 
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+function _defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, descriptor.key, descriptor);
+  }
+}
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+function _createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) _defineProperties(Constructor, staticProps);
+  return Constructor;
+}
 
 var FrameworkLayout =
 /*#__PURE__*/
 function () {
   function FrameworkLayout() {
     _classCallCheck(this, FrameworkLayout);
-
     /*removeIf(production)*/
+
+
     objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
     /*endRemoveIf(production)*/
 
@@ -26,25 +43,15 @@ function () {
   }
 
   _createClass(FrameworkLayout, [{
-    key: "buildLayout",
-    value: function buildLayout() {
-      /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
-      /*endRemoveIf(production)*/
-      // $('button, a').on('click', function (event) {
-      //     event.stopPropagation();
-      // });
-    }
-  }, {
     key: "switchDisplay",
     value: function switchDisplay(target) {
       var action = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
-
       /*removeIf(production)*/
+
       objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), [target, action]);
       /*endRemoveIf(production)*/
 
-      var classDisplay = 'display-none'; // console.log('switchDisplay switchDisplay switchDisplay switchDisplay switchDisplay switchDisplay switchDisplay switchDisplay switchDisplay switchDisplay switchDisplay switchDisplay');
+      var classDisplay = 'display-none';
 
       if (action === '') {
         if (target.hasClass(classDisplay)) {
@@ -54,14 +61,10 @@ function () {
         }
       }
 
-      switch (action) {
-        case 'show':
-          $(target).removeClass(classDisplay);
-          break;
-
-        case 'hide':
-          $(target).addClass(classDisplay);
-          break;
+      if (action === 'show') {
+        $(target).removeClass(classDisplay);
+      } else {
+        $(target).addClass(classDisplay);
       }
     }
   }, {
@@ -86,68 +89,40 @@ function () {
       objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
       /*endRemoveIf(production)*/
 
-      $('.bt-toggle').each(function () {
-        $(this).unbind();
-        $(this).on('click', function () {
-          var $nav = $(this).siblings('nav').find(' > ul');
-          var $navAll = $(this).siblings('nav').find('ul');
-          var $class = 'mobile-show';
+      var element = document.querySelectorAll('.bt-toggle');
+      Array.prototype.forEach.call(element, function (el, i) {
+        el.onclick = function () {
+          var $ul1 = el.parentNode.querySelector('nav > ul');
+          var $ulAll = el.parentNode.querySelector('nav ul');
+          var classDisplay = 'mobile-show';
 
-          if ($nav.hasClass($class)) {
-            $nav.removeClass($class);
-            $navAll.removeClass($class);
+          if ($ul1.classList.contains(classDisplay)) {
+            $ul1.classList.remove(classDisplay);
+            $ulAll.classList.remove(classDisplay);
           } else {
-            $nav.addClass($class);
+            $ul1.classList.add(classDisplay);
           }
-        });
+        };
       });
-    }
-  }, {
-    key: "getUrlParameter",
-    value: function getUrlParameter(target) {
-      /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), target);
-      /*endRemoveIf(production)*/
+    } // verifyUndefined(target) {
+    //     /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), target); /*endRemoveIf(production)*/
+    //     if (typeof target === 'undefined' || target === null || target === '') {
+    //         return true;
+    //     } else {
+    //         return false;
+    //     }
+    // }
+    // buildLayout() {
 
-      var url = top.location.search.substring(1);
-      var parameter = url.split('&');
+    /*removeIf(production)*/
+    // objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); 
 
-      for (var i = 0; i < parameter.length; i++) {
-        var parameterName = parameter[i].split('=');
+    /*endRemoveIf(production)*/
+    // $('button, a').on('click', function (event) {
+    //     event.stopPropagation();
+    // });
+    // }
 
-        if (parameterName[0] === target) {
-          return parameterName[1];
-        }
-      }
-    }
-  }, {
-    key: "verifyHasFodler",
-    value: function verifyHasFodler(target) {
-      /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), target);
-      /*endRemoveIf(production)*/
-
-      var arrFolder = window.location.pathname.split('/');
-
-      if (arrFolder.indexOf(target) > -1) {
-        return true;
-      } else {
-        return false;
-      }
-    }
-  }, {
-    key: "verifyUndefined",
-    value: function verifyUndefined(target) {
-      /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), target);
-      /*endRemoveIf(production)*/
-
-      if (typeof target === 'undefined' || target === null || target === '') {
-        return true;
-      } else {
-        return false;
-      }
-    }
   }]);
 
   return FrameworkLayout;
@@ -201,13 +176,64 @@ function () {
   return FrameworkManagement;
 }();
 
+var Helper =
+/*#__PURE__*/
+function () {
+  function Helper() {
+    _classCallCheck(this, Helper);
+    /*removeIf(production)*/
+
+
+    objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+    /*endRemoveIf(production)*/
+  }
+
+  _createClass(Helper, [{
+    key: "getUrlParameter",
+    value: function getUrlParameter(target) {
+      /*removeIf(production)*/
+      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), target);
+      /*endRemoveIf(production)*/
+
+      var url = top.location.search.substring(1);
+      var parameter = url.split('&');
+
+      for (var i = 0; i < parameter.length; i++) {
+        var parameterName = parameter[i].split('=');
+
+        if (parameterName[0] === target) {
+          return parameterName[1];
+        }
+      }
+    }
+  }, {
+    key: "verifyUrlFodler",
+    value: function verifyUrlFodler(target) {
+      /*removeIf(production)*/
+      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), target);
+      /*endRemoveIf(production)*/
+
+      var arrFolder = window.location.pathname.split('/');
+
+      if (arrFolder.indexOf(target) > -1) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+  }]);
+
+  return Helper;
+}();
+
 var Loading =
 /*#__PURE__*/
 function () {
   function Loading() {
     _classCallCheck(this, Loading);
-
     /*removeIf(production)*/
+
+
     objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
     /*endRemoveIf(production)*/
 
@@ -245,28 +271,30 @@ var Theme =
 function () {
   function Theme() {
     _classCallCheck(this, Theme);
-
     /*removeIf(production)*/
+
+
     objFrameworkDebug.debugMethod(this, 'constructor');
     /*endRemoveIf(production)*/
 
     this.$body = $('body');
     this.arrStyle = ['grey', 'blue', 'green', 'cyan', 'orange', 'red', 'yellow', 'purple', 'brown', 'black', 'white'];
     this.arrStyleLength = this.arrStyle.length;
-    this.buildLoad();
+    this.verifyLoad();
   }
 
   _createClass(Theme, [{
-    key: "buildLoad",
-    value: function buildLoad() {
+    key: "verifyLoad",
+    value: function verifyLoad() {
       /*removeIf(production)*/
       objFrameworkDebug.debugMethod(this, 'buildLoad');
       /*endRemoveIf(production)*/
 
       var self = this;
-      $(window).on('load', function () {
+
+      window.onload = function () {
         self.buildActiveMenu();
-      });
+      };
     }
   }, {
     key: "buildActiveMenu",
@@ -275,37 +303,35 @@ function () {
       objFrameworkDebug.debugMethod(this, 'buildActiveMenu');
       /*endRemoveIf(production)*/
 
-      var urlParameter = objFrameworkLayout.getUrlParameter('p');
-      $('#main_menu').find('[data-id="' + urlParameter + '"]').addClass('active');
-    }
-  }, {
-    key: "buildGoogleMaps",
-    value: function buildGoogleMaps() {
-      /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, 'buildGoogleMaps');
-      /*endRemoveIf(production)*/
+      var url = top.location.href;
+      var urlSplit = url.split('/');
+      var length = urlSplit.length;
+      var file = urlSplit[length - 1];
+      var fileSplit = file.split('.');
+      var target = document.querySelectorAll('#main_menu [data-id="' + fileSplit[0] + '"]');
 
-      var $maps1 = $('#google_maps_map');
-      var $maps1Box = $('#google_maps_box');
-      $maps1.addClass('scroll-off');
-      $maps1Box.on('click', function () {
-        $maps1.removeClass('scroll-off');
-      });
-      $maps1Box.mouseleave(function () {
-        $maps1.addClass('scroll-off');
-      });
-    }
-  }, {
-    key: "doSlide",
-    value: function doSlide(target) {
-      /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, 'doSlide', target);
-      /*endRemoveIf(production)*/
+      if (target.length > 0) {
+        target[0].classList.add('active');
+      }
+    } // buildGoogleMaps() {
+    //     /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, 'buildGoogleMaps'); /*endRemoveIf(production)*/
+    //     let $maps1 = $('#google_maps_map');
+    //     let $maps1Box = $('#google_maps_box');
+    //     $maps1.addClass('scroll-off');
+    //     $maps1Box.on('click', function () {
+    //         $maps1.removeClass('scroll-off');
+    //     });
+    //     $maps1Box.mouseleave(function () {
+    //         $maps1.addClass('scroll-off');
+    //     });
+    // }
+    // doSlide(target) {
+    //     /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, 'doSlide', target); /*endRemoveIf(production)*/
+    //     $('html, body').animate({
+    //         scrollTop: ($(target).offset().top) + 'px'
+    //     }, 500);
+    // }
 
-      $('html, body').animate({
-        scrollTop: $(target).offset().top + 'px'
-      }, 500);
-    }
   }]);
 
   return Theme;
@@ -514,6 +540,7 @@ var objFrameworkTable = new FrameworkTable();
 var objFrameworkTooltip = new FrameworkTooltip();
 var objFrameworkTranslation = new FrameworkTranslation();
 var objFrameworkManagement = new FrameworkManagement();
-var objTheme = new Theme();
+var objHelper = new Helper();
 var objLoading = new Loading();
+var objTheme = new Theme();
 objFrameworkManagement.verifyLoad();

@@ -10,6 +10,7 @@ class FrameworkDebug {
         this.isFrameworkLogin = true;
 
         this.isLoading = true;
+        this.isHelper= true;
         this.isTheme = true;
 
         this.isFrameworkCarousel = true;
@@ -64,7 +65,7 @@ class FrameworkDebug {
         let stack = e.stack.split('\n')[2]
             // " at functionName ( ..." => "functionName"
             .replace(/^\s+at\s+(.+?)\s.+/g, '$1');
-        let split = stack.split(".");
+        let split = stack.split('.');
 
         if (stack !== 'new') {
             return split[1];
