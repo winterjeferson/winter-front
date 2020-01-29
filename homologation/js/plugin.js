@@ -1,6 +1,160 @@
 "use strict";
 
-function _typeof3(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof3 = function _typeof3(obj) { return typeof obj; }; } else { _typeof3 = function _typeof3(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof3(obj); }
+function _typeof14(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof14 = function _typeof14(obj) { return typeof obj; }; } else { _typeof14 = function _typeof14(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof14(obj); }
+
+function _typeof13(obj) {
+  if (typeof Symbol === "function" && _typeof14(Symbol.iterator) === "symbol") {
+    _typeof13 = function _typeof13(obj) {
+      return _typeof14(obj);
+    };
+  } else {
+    _typeof13 = function _typeof13(obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : _typeof14(obj);
+    };
+  }
+
+  return _typeof13(obj);
+}
+
+function _typeof12(obj) {
+  if (typeof Symbol === "function" && _typeof13(Symbol.iterator) === "symbol") {
+    _typeof12 = function _typeof12(obj) {
+      return _typeof13(obj);
+    };
+  } else {
+    _typeof12 = function _typeof12(obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : _typeof13(obj);
+    };
+  }
+
+  return _typeof12(obj);
+}
+
+function _typeof11(obj) {
+  if (typeof Symbol === "function" && _typeof12(Symbol.iterator) === "symbol") {
+    _typeof11 = function _typeof11(obj) {
+      return _typeof12(obj);
+    };
+  } else {
+    _typeof11 = function _typeof11(obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : _typeof12(obj);
+    };
+  }
+
+  return _typeof11(obj);
+}
+
+function _typeof10(obj) {
+  if (typeof Symbol === "function" && _typeof11(Symbol.iterator) === "symbol") {
+    _typeof10 = function _typeof10(obj) {
+      return _typeof11(obj);
+    };
+  } else {
+    _typeof10 = function _typeof10(obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : _typeof11(obj);
+    };
+  }
+
+  return _typeof10(obj);
+}
+
+function _typeof9(obj) {
+  if (typeof Symbol === "function" && _typeof10(Symbol.iterator) === "symbol") {
+    _typeof9 = function _typeof9(obj) {
+      return _typeof10(obj);
+    };
+  } else {
+    _typeof9 = function _typeof9(obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : _typeof10(obj);
+    };
+  }
+
+  return _typeof9(obj);
+}
+
+function _typeof8(obj) {
+  if (typeof Symbol === "function" && _typeof9(Symbol.iterator) === "symbol") {
+    _typeof8 = function _typeof8(obj) {
+      return _typeof9(obj);
+    };
+  } else {
+    _typeof8 = function _typeof8(obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : _typeof9(obj);
+    };
+  }
+
+  return _typeof8(obj);
+}
+
+function _typeof7(obj) {
+  if (typeof Symbol === "function" && _typeof8(Symbol.iterator) === "symbol") {
+    _typeof7 = function _typeof7(obj) {
+      return _typeof8(obj);
+    };
+  } else {
+    _typeof7 = function _typeof7(obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : _typeof8(obj);
+    };
+  }
+
+  return _typeof7(obj);
+}
+
+function _typeof6(obj) {
+  if (typeof Symbol === "function" && _typeof7(Symbol.iterator) === "symbol") {
+    _typeof6 = function _typeof6(obj) {
+      return _typeof7(obj);
+    };
+  } else {
+    _typeof6 = function _typeof6(obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : _typeof7(obj);
+    };
+  }
+
+  return _typeof6(obj);
+}
+
+function _typeof5(obj) {
+  if (typeof Symbol === "function" && _typeof6(Symbol.iterator) === "symbol") {
+    _typeof5 = function _typeof5(obj) {
+      return _typeof6(obj);
+    };
+  } else {
+    _typeof5 = function _typeof5(obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : _typeof6(obj);
+    };
+  }
+
+  return _typeof5(obj);
+}
+
+function _typeof4(obj) {
+  if (typeof Symbol === "function" && _typeof5(Symbol.iterator) === "symbol") {
+    _typeof4 = function _typeof4(obj) {
+      return _typeof5(obj);
+    };
+  } else {
+    _typeof4 = function _typeof4(obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : _typeof5(obj);
+    };
+  }
+
+  return _typeof4(obj);
+}
+
+function _typeof3(obj) {
+  if (typeof Symbol === "function" && _typeof4(Symbol.iterator) === "symbol") {
+    _typeof3 = function _typeof3(obj) {
+      return _typeof4(obj);
+    };
+  } else {
+    _typeof3 = function _typeof3(obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : _typeof4(obj);
+    };
+  }
+
+  return _typeof3(obj);
+}
 
 function _typeof2(obj) {
   if (typeof Symbol === "function" && _typeof3(Symbol.iterator) === "symbol") {
@@ -4291,6 +4445,7 @@ function () {
     this.isFrameworkAdminBlog = true;
     this.isFrameworkAdminPage = true;
     this.isFrameworkLogin = true;
+    this.isLoading = true;
     this.isTheme = true;
     this.isFrameworkCarousel = true;
     this.isFrameworkGeneric = true;
@@ -5126,7 +5281,7 @@ function () {
       }, 0.01, function () {
         if (self.$bar[0].style.width >= '100%') {
           if (!self.isFinish) {
-            objFrameworkManagement.finishLoading();
+            objLoading.finish();
             self.isFinish = true;
           }
         }

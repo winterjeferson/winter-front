@@ -9,6 +9,7 @@ class FrameworkDebug {
         this.isFrameworkAdminPage = true;
         this.isFrameworkLogin = true;
 
+        this.isLoading = true;
         this.isTheme = true;
 
         this.isFrameworkCarousel = true;
@@ -27,7 +28,7 @@ class FrameworkDebug {
     debugMethod(obj, method, parameter = '') {
         let string = '';
         let className = obj.constructor.name;
-//        let arrMethod = Object.getOwnPropertyNames(Object.getPrototypeOf(obj));
+        //        let arrMethod = Object.getOwnPropertyNames(Object.getPrototypeOf(obj));
 
         if (!this['is' + className]) {
             return false;
@@ -61,8 +62,8 @@ class FrameworkDebug {
 
         let e = new Error('dummy');
         let stack = e.stack.split('\n')[2]
-                // " at functionName ( ..." => "functionName"
-                .replace(/^\s+at\s+(.+?)\s.+/g, '$1');
+            // " at functionName ( ..." => "functionName"
+            .replace(/^\s+at\s+(.+?)\s.+/g, '$1');
         let split = stack.split(".");
 
         if (stack !== 'new') {

@@ -26,7 +26,7 @@ class FrameworkProgress {
         this.$bar.animate({width: progressWidth + '%'}, 0.01, function () {
             if (self.$bar[0].style.width >= '100%') {
                 if (!self.isFinish) {
-                    objFrameworkManagement.finishLoading();
+                    objLoading.finish();
                     self.isFinish = true;
                 }
             }

@@ -16,9 +16,8 @@ function () {
     objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
     /*endRemoveIf(production)*/
 
-    this.$loadingMain = $('#loading_main');
-    this.$body = $('body');
-    this.$window = $(window);
+    this.$body = document.querySelector('body'); // this.$window = document.querySelector('window');
+
     this.breakPointExtraSmall = 0;
     this.breakPointSmall = 576;
     this.breakPointMedium = 768;
@@ -32,10 +31,9 @@ function () {
       /*removeIf(production)*/
       objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
       /*endRemoveIf(production)*/
-
-      $('button, a').on('click', function (event) {
-        event.stopPropagation();
-      });
+      // $('button, a').on('click', function (event) {
+      //     event.stopPropagation();
+      // });
     }
   }, {
     key: "switchDisplay",
@@ -46,7 +44,7 @@ function () {
       objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), [target, action]);
       /*endRemoveIf(production)*/
 
-      var classDisplay = 'display-none';
+      var classDisplay = 'display-none'; // console.log('switchDisplay switchDisplay switchDisplay switchDisplay switchDisplay switchDisplay switchDisplay switchDisplay switchDisplay switchDisplay switchDisplay switchDisplay');
 
       if (action === '') {
         if (target.hasClass(classDisplay)) {
@@ -178,8 +176,8 @@ function () {
       /*removeIf(production)*/
       objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
       /*endRemoveIf(production)*/
+      // objFrameworkLayout.buildLayout();
 
-      objFrameworkLayout.buildLayout();
       objFrameworkLayout.buildToggle();
       objFrameworkForm.buildFocus();
       objFrameworkForm.buildInputFile();
@@ -198,29 +196,48 @@ function () {
       objFrameworkTooltip.start();
       objFrameworkProgress.start();
     }
-  }, {
-    key: "finishLoading",
-    value: function finishLoading() {
-      /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
-      /*endRemoveIf(production)*/
-
-      objFrameworkLayout.$loadingMain.addClass('loading-main-done');
-      objFrameworkLayout.$body.removeClass('overflow-hidden');
-      setTimeout(this.removeLoading, 1000);
-    }
-  }, {
-    key: "removeLoading",
-    value: function removeLoading() {
-      /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
-      /*endRemoveIf(production)*/
-
-      objFrameworkLayout.$loadingMain.remove();
-    }
   }]);
 
   return FrameworkManagement;
+}();
+
+var Loading =
+/*#__PURE__*/
+function () {
+  function Loading() {
+    _classCallCheck(this, Loading);
+
+    /*removeIf(production)*/
+    objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+    /*endRemoveIf(production)*/
+
+    this.$loadingMain = document.getElementById('loading_main');
+    this.$body = document.querySelector('body');
+  }
+
+  _createClass(Loading, [{
+    key: "finish",
+    value: function finish() {
+      /*removeIf(production)*/
+      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      /*endRemoveIf(production)*/
+
+      this.$loadingMain.classList.add('loading-main-done');
+      this.$body.classList.remove('overflow-hidden');
+      setTimeout(this.remove(this.$loadingMain), 1000);
+    }
+  }, {
+    key: "remove",
+    value: function remove(element) {
+      /*removeIf(production)*/
+      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      /*endRemoveIf(production)*/
+
+      element.parentNode.removeChild(element);
+    }
+  }]);
+
+  return Loading;
 }();
 
 var Theme =
@@ -498,4 +515,5 @@ var objFrameworkTooltip = new FrameworkTooltip();
 var objFrameworkTranslation = new FrameworkTranslation();
 var objFrameworkManagement = new FrameworkManagement();
 var objTheme = new Theme();
+var objLoading = new Loading();
 objFrameworkManagement.verifyLoad();

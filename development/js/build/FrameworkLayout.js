@@ -1,9 +1,8 @@
 class FrameworkLayout {
     constructor() {
         /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
-        this.$loadingMain = $('#loading_main');
-        this.$body = $('body');
-        this.$window = $(window);
+        this.$body = document.querySelector('body');
+        // this.$window = document.querySelector('window');
 
         this.breakPointExtraSmall = 0;
         this.breakPointSmall = 576;
@@ -14,14 +13,16 @@ class FrameworkLayout {
 
     buildLayout() {
         /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
-        $('button, a').on('click', function (event) {
-            event.stopPropagation();
-        });
+        // $('button, a').on('click', function (event) {
+        //     event.stopPropagation();
+        // });
     }
 
     switchDisplay(target, action = '') {
         /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), [target, action]); /*endRemoveIf(production)*/
         let classDisplay = 'display-none';
+
+        // console.log('switchDisplay switchDisplay switchDisplay switchDisplay switchDisplay switchDisplay switchDisplay switchDisplay switchDisplay switchDisplay switchDisplay switchDisplay');
 
         if (action === '') {
             if (target.hasClass(classDisplay)) {
@@ -38,7 +39,7 @@ class FrameworkLayout {
             case 'hide':
                 $(target).addClass(classDisplay);
                 break;
-    }
+        }
     }
 
     buildSpinner(style) {

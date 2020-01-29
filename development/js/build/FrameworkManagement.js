@@ -7,7 +7,7 @@ class FrameworkManagement {
 
     applyClass() {
         /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
-        objFrameworkLayout.buildLayout();
+        // objFrameworkLayout.buildLayout();
         objFrameworkLayout.buildToggle();
 
         objFrameworkForm.buildFocus();
@@ -34,17 +34,5 @@ class FrameworkManagement {
 
         objFrameworkTooltip.start();
         objFrameworkProgress.start();
-    }
-
-    finishLoading() {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
-        objFrameworkLayout.$loadingMain.addClass('loading-main-done');
-        objFrameworkLayout.$body.removeClass('overflow-hidden');
-        setTimeout(this.removeLoading, 1000);
-    }
-
-    removeLoading() {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
-        objFrameworkLayout.$loadingMain.remove();
     }
 }

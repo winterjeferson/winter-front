@@ -1,12 +1,12 @@
 {% from 'include/template_nunjucks.html' import arrSize, arrColor %}
 {% include "include/head.html" %}
 
+<h1 class="page-title">
+    Button
+</h1>
 <div class="row">
     {% for size in arrSize %}
     <div class="col-es-12 text-center">
-        <h1 class="page-title">
-            Button
-        </h1>
         <nav class="menu {% if size === 'fu' %}menu-vertical{% else %}menu-horizontal{% endif %}">
             <ul>
                 {% for color in arrColor %}

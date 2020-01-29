@@ -16,5 +16,6 @@ var objFrameworkTooltip = new FrameworkTooltip();
 var objFrameworkTranslation = new FrameworkTranslation();
 var objFrameworkManagement = new FrameworkManagement();
 var objTheme = new Theme();
+var objLoading = new Loading();
 
 objFrameworkManagement.verifyLoad();
