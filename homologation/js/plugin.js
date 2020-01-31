@@ -4033,6 +4033,8 @@ function () {
     objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
     /*endRemoveIf(production)*/
 
+    this.$carousel = document.querySelectorAll('.carousel');
+    this.classDisplay = 'display-none';
     this.counterCurrent = 0;
   }
 
@@ -4043,8 +4045,13 @@ function () {
       objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
       /*endRemoveIf(production)*/
 
+      if (this.$carousel.length < 1) {
+        return;
+      }
+
       this.buildLayout();
       this.buildNavigation();
+      this.watchResize();
       this.buildCounter();
     }
   }, {
@@ -4055,13 +4062,37 @@ function () {
       /*endRemoveIf(production)*/
 
       var self = this;
-      $('.carousel').each(function () {
-        var target = $(this);
-        var length = target.find('.carousel-list').find('li').length;
-        self.resizeLayout(target);
-        self.buildLayoutController(target, length);
-        self.defineActive(target.find('.carousel-controller').find('[data-id="' + target.attr('data-current-slide') + '"]'));
+      Array.prototype.forEach.call(this.$carousel, function (item, index) {
+        var length = item.querySelectorAll('.carousel-list li').length;
+        self.resizeLayout(item);
+        self.buildLayoutController(item, length);
+        self.defineActive(item.querySelector('[data-id="' + item.getAttribute('data-current-slide') + '"]')); // self.defineActive(item.querySelector('.carousel-controller [data-id="' + item.getAttribute('data-current-slide') + '"]'));
+
+        if (length === 1) {
+          item.querySelector('[data-id="nav-left"]').classList.add(self.classDisplay);
+          item.querySelector('[data-id="nav-right"]').classList.add(self.classDisplay);
+          item.querySelector('.carousel-controller').classList.add(self.classDisplay);
+        }
       });
+    }
+  }, {
+    key: "watchResize",
+    value: function watchResize() {
+      /*removeIf(production)*/
+      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      /*endRemoveIf(production)*/
+
+      var self = this;
+
+      window.onresize = function () {
+        Array.prototype.forEach.call(self.$carousel, function (item, index) {
+          var $this = item.parentNode.parentNode.parentNode.parentNode;
+          var $carouselList = $this.querySelector('.carousel-list');
+          var newSlide = 0;
+          self.defineActive($this.querySelector('[data-id="' + newSlide + '"]'));
+          self.animate(newSlide, $carouselList, 'arrow');
+        });
+      };
     }
   }, {
     key: "buildLayoutController",
@@ -4080,7 +4111,7 @@ function () {
         concat += '</li>';
       }
 
-      target.find('.carousel-controller').append(concat);
+      target.querySelector('.carousel-controller').innerHTML = concat;
     }
   }, {
     key: "buildNavigation",
@@ -4090,95 +4121,114 @@ function () {
       /*endRemoveIf(production)*/
 
       var self = this;
-      var $carousel = $('.carousel');
-      $carousel.find('.carousel-controller-bt').each(function () {
-        $(this).on('click', function () {
-          $(this).parent().parent().parent().parent().attr('data-current-slide', $(this).attr('data-id'));
-          self.defineActive($(this));
-          self.buildAnimation($(this).attr('data-id'), $(this), 'navigation');
-        });
-      });
-      $carousel.find('[data-id="nav-left"]').each(function () {
-        $(this).on('click', function () {
-          var $carousel = $(this).parent().parent().parent().parent();
-          var $carouselList = $carousel.find('.carousel-list');
-          var $carouselListLength = Number($carouselList.find('li').length);
-          var currentSlide = Number($carousel.attr('data-current-slide'));
-          var newSlide = 0;
-
-          if (currentSlide === 0) {
-            newSlide = $carouselListLength - 1;
-            $carousel.attr('data-current-slide', newSlide);
-          } else {
-            newSlide = currentSlide - 1;
-            $carousel.attr('data-current-slide', newSlide);
-          }
-
-          self.defineActive($carousel.find('[data-id="' + newSlide + '"]'));
-          self.buildAnimation(newSlide, $carouselList, 'arrow');
-        });
-      });
-      $carousel.find('[data-id="nav-right"]').each(function () {
-        $(this).on('click', function () {
-          var $carousel = $(this).parent().parent().parent().parent();
-          var $carouselList = $carousel.find('.carousel-list');
-          var $carouselListLength = Number($carouselList.find('li').length);
-          var currentSlide = Number($carousel.attr('data-current-slide'));
-          var newSlide = 0;
-
-          if (currentSlide === $carouselListLength - 1) {
-            newSlide = 0;
-            $carousel.attr('data-current-slide', newSlide);
-          } else {
-            newSlide = currentSlide + 1;
-            $carousel.attr('data-current-slide', newSlide);
-          }
-
-          self.defineActive($carousel.find('[data-id="' + newSlide + '"]'));
-          self.buildAnimation(newSlide, $carouselList, 'arrow');
-        });
-      });
-      $carousel.each(function () {
-        var $this = $(this);
-        var carouselLength = $this.find('.carousel-list').find('li').length;
-
-        if (carouselLength === 1) {
-          $this.find('[data-id="nav-left"]').addClass('display-none');
-          $this.find('[data-id="nav-right"]').addClass('display-none');
-          $this.find('.carousel-controller').addClass('display-none');
-        }
-      });
-      $(window).resize(function () {
-        $carousel.each(function () {
-          var $this = $(this).parent().parent().parent().parent();
-          var $carouselList = $this.find('.carousel-list');
-          var newSlide = 0;
-          self.defineActive($this.find('[data-id="' + newSlide + '"]'));
-          self.buildAnimation(newSlide, $carouselList, 'arrow');
-        });
+      var $carousel = document.querySelectorAll('.carousel');
+      Array.prototype.forEach.call($carousel, function (item, index) {
+        self.buildNavigationControllerBt(item);
+        self.buildNavigationArrowLeft(item);
+        self.buildNavigationArrowRight(item);
       });
     }
   }, {
-    key: "buildAnimation",
-    value: function buildAnimation(currentSlide, target, from) {
+    key: "buildNavigationControllerBt",
+    value: function buildNavigationControllerBt(target) {
+      /*removeIf(production)*/
+      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      /*endRemoveIf(production)*/
+
+      var self = this;
+      var button = target.querySelectorAll('.carousel-controller-bt');
+      Array.prototype.forEach.call(button, function (item, index) {
+        item.onclick = function () {
+          item.parentNode.parentNode.parentNode.parentNode.querySelector('[data-current-slide="' + item.getAttribute('data-id') + '"]');
+          self.defineActive(item);
+          self.animate(item.getAttribute('data-id'), item, 'navigation');
+        };
+      });
+    }
+  }, {
+    key: "buildNavigationArrowLeft",
+    value: function buildNavigationArrowLeft(target) {
+      /*removeIf(production)*/
+      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      /*endRemoveIf(production)*/
+
+      var self = this;
+      var button = target.querySelector('[data-id="nav-left"]');
+
+      button.onclick = function () {
+        var $carousel = button.parentNode.parentNode.parentNode.parentNode;
+        var $carouselList = $carousel.querySelector('.carousel-list');
+        var $carouselListLength = Number($carouselList.querySelectorAll('li').length);
+        var currentSlide = Number($carousel.getAttribute('data-current-slide'));
+        var newSlide = 0;
+
+        if (currentSlide === 0) {
+          newSlide = $carouselListLength - 1;
+          $carousel.setAttribute('data-current-slide', newSlide);
+        } else {
+          newSlide = currentSlide - 1;
+          $carousel.setAttribute('data-current-slide', newSlide);
+        }
+
+        self.defineActive($carousel.querySelector('[data-id="' + newSlide + '"]'));
+        self.animate(newSlide, $carouselList, 'arrow');
+      };
+    }
+  }, {
+    key: "buildNavigationArrowRight",
+    value: function buildNavigationArrowRight(target) {
+      /*removeIf(production)*/
+      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      /*endRemoveIf(production)*/
+
+      var self = this;
+      var button = target.querySelector('[data-id="nav-right"]');
+
+      button.onclick = function () {
+        var $carousel = button.parentNode.parentNode.parentNode.parentNode;
+        var $carouselList = $carousel.querySelector('.carousel-list');
+        var $carouselListLength = Number($carouselList.querySelectorAll('li').length);
+        var currentSlide = Number($carousel.getAttribute('data-current-slide'));
+        var newSlide = 0;
+
+        if (currentSlide === $carouselListLength - 1) {
+          newSlide = 0;
+          $carousel.setAttribute('data-current-slide', newSlide);
+        } else {
+          newSlide = currentSlide + 1;
+          $carousel.setAttribute('data-current-slide', newSlide);
+        }
+
+        self.defineActive($carousel.querySelector('[data-id="' + newSlide + '"]'));
+        self.animate(newSlide, $carouselList, 'arrow');
+      };
+    }
+  }, {
+    key: "animate",
+    value: function animate(currentSlide, target, from) {
       /*removeIf(production)*/
       objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), [currentSlide, target, from]);
       /*endRemoveIf(production)*/
 
-      var $carouselList = from === 'arrow' ? target.parent().parent().parent().find('.carousel-list') : target.parent().parent().parent().parent().find('.carousel-list');
-      var $carousel = $carouselList.parent().parent().parent();
-      var slideSize = Number($carouselList.find('li').width());
+      var $carouselList = from === 'arrow' ? target.parentNode.parentNode.parentNode.querySelector('.carousel-list') : target.parentNode.parentNode.parentNode.parentNode.querySelector('.carousel-list');
+      var $carousel = $carouselList.parentNode.parentNode.parentNode;
+      var slideSize = Number($carouselList.querySelector('li').offsetWidth);
       var currentPosition = Number(currentSlide * slideSize);
       var transition = '.7s';
 
-      switch ($carousel.attr('data-style')) {
+      switch ($carousel.getAttribute('data-style')) {
         case 'fade':
-          $carouselList.find('li').css('opacity', '0').css('transition', transition);
-          $carouselList.find('li:eq(' + currentSlide + ')').css('left', '-' + currentPosition + 'px').css('opacity', '1').css('transition', transition);
+          Array.prototype.forEach.call($carouselList.querySelectorAll('li'), function (item, index) {
+            item.style.opacity = 0;
+          });
+          $carouselList.querySelector('li').style.transition = transition;
+          $carouselList.querySelectorAll('li')[currentSlide].style.opacity = 1;
+          $carouselList.querySelectorAll('li')[currentSlide].style.left = '-' + currentPosition + 'px';
+          $carouselList.querySelectorAll('li')[currentSlide].style.transition = transition;
           break;
 
         default:
-          $carouselList.css('transform', ' translate(-' + currentPosition + 'px, 0)');
+          $carouselList.style.transform = 'translateX(-' + currentPosition + 'px)';
           break;
       }
     }
@@ -4197,8 +4247,8 @@ function () {
 
         if (self.counterCurrent >= 5) {
           self.counterCurrent = 0;
-          $('.carousel').each(function () {
-            $(this).find('[data-id="nav-right"]').click();
+          Array.prototype.forEach.call(self.$carousel, function (item, index) {
+            item.querySelector('[data-id="nav-right"]').click();
           });
         }
       }
@@ -4210,8 +4260,11 @@ function () {
       objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), target);
       /*endRemoveIf(production)*/
 
-      target.parent().parent().find('.carousel-controller-bt').removeClass('active');
-      target.addClass('active');
+      var listBt = target.parentNode.parentNode.querySelectorAll('.carousel-controller-bt');
+      Array.prototype.forEach.call(listBt, function (item, index) {
+        item.classList.remove('active');
+      });
+      target.classList.add('active');
     }
   }, {
     key: "resizeLayout",
@@ -4220,11 +4273,13 @@ function () {
       objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), target);
       /*endRemoveIf(production)*/
 
-      var carouselList = $(target).find('.carousel-list');
-      var carouselListItem = carouselList.find('li');
-      var carouselItemLength = carouselListItem.length;
-      carouselList.css('width', carouselItemLength * 100 + "%");
-      carouselListItem.css('width', 100 / carouselItemLength + "%");
+      var $carouselList = target.querySelector('.carousel-list');
+      var $carouselListItem = $carouselList.querySelectorAll('li');
+      var length = $carouselListItem.length;
+      $carouselList.setAttribute('style', 'width: ' + length * 100 + '%');
+      Array.prototype.forEach.call($carouselListItem, function (item, index) {
+        item.setAttribute('style', 'width: ' + 100 / length + '%');
+      });
     }
   }]);
 
@@ -4246,7 +4301,6 @@ function () {
     this.isFrameworkAdminPage = true;
     this.isFrameworkLogin = true;
     this.isLoading = true;
-    this.isHelper = true;
     this.isTheme = true;
     this.isFrameworkCarousel = true;
     this.isFrameworkGeneric = true;
@@ -4266,7 +4320,7 @@ function () {
     value: function debugMethod(obj, method) {
       var parameter = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : '';
       var string = '';
-      var className = obj.constructor.name; //        let arrMethod = Object.getOwnPropertyNames(Object.getPrototypeOf(obj));
+      var className = obj.constructor.name; // let arrMethod = Object.getOwnPropertyNames(Object.getPrototypeOf(obj));
 
       if (!this['is' + className]) {
         return false;
@@ -4443,6 +4497,39 @@ function () {
       .replace(/-+/g, '-') // Remove duplicate dashes
       .replace(/^-*/, '') // Remove starting dashes
       .replace(/-*$/, ''); // Remove trailing dashes
+    }
+  }, {
+    key: "getUrlParameter",
+    value: function getUrlParameter(target) {
+      /*removeIf(production)*/
+      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), target);
+      /*endRemoveIf(production)*/
+
+      var url = top.location.search.substring(1);
+      var parameter = url.split('&');
+
+      for (var i = 0; i < parameter.length; i++) {
+        var parameterName = parameter[i].split('=');
+
+        if (parameterName[0] === target) {
+          return parameterName[1];
+        }
+      }
+    }
+  }, {
+    key: "verifyUrlFodler",
+    value: function verifyUrlFodler(target) {
+      /*removeIf(production)*/
+      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), target);
+      /*endRemoveIf(production)*/
+
+      var arrFolder = window.location.pathname.split('/');
+
+      if (arrFolder.indexOf(target) > -1) {
+        return true;
+      } else {
+        return false;
+      }
     }
   }]);
 

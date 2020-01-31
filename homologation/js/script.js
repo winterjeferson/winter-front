@@ -176,56 +176,6 @@ function () {
   return FrameworkManagement;
 }();
 
-var Helper =
-/*#__PURE__*/
-function () {
-  function Helper() {
-    _classCallCheck(this, Helper);
-    /*removeIf(production)*/
-
-
-    objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
-    /*endRemoveIf(production)*/
-  }
-
-  _createClass(Helper, [{
-    key: "getUrlParameter",
-    value: function getUrlParameter(target) {
-      /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), target);
-      /*endRemoveIf(production)*/
-
-      var url = top.location.search.substring(1);
-      var parameter = url.split('&');
-
-      for (var i = 0; i < parameter.length; i++) {
-        var parameterName = parameter[i].split('=');
-
-        if (parameterName[0] === target) {
-          return parameterName[1];
-        }
-      }
-    }
-  }, {
-    key: "verifyUrlFodler",
-    value: function verifyUrlFodler(target) {
-      /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), target);
-      /*endRemoveIf(production)*/
-
-      var arrFolder = window.location.pathname.split('/');
-
-      if (arrFolder.indexOf(target) > -1) {
-        return true;
-      } else {
-        return false;
-      }
-    }
-  }]);
-
-  return Helper;
-}();
-
 var Loading =
 /*#__PURE__*/
 function () {
@@ -540,7 +490,6 @@ var objFrameworkTable = new FrameworkTable();
 var objFrameworkTooltip = new FrameworkTooltip();
 var objFrameworkTranslation = new FrameworkTranslation();
 var objFrameworkManagement = new FrameworkManagement();
-var objHelper = new Helper();
 var objLoading = new Loading();
 var objTheme = new Theme();
 objFrameworkManagement.verifyLoad();

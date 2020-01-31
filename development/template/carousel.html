@@ -1,6 +1,6 @@
 {% from 'include/template_nunjucks.html' import arrSize, arrColor %}
 {% include "include/head.html" %}
-{% set arrStyle = ['', 'fade'] %}
+{% set arrStyle = ['slide', 'fade'] %}
 
 <h1 class="page-title">
     Carousel
@@ -8,6 +8,9 @@
 <div class="row">
     {% for style in arrStyle %}
     <div class="col-es-12 col-eb-6 padding-re">
+        <h2 class="page-title">
+            {{style}}
+        </h2>
         <div class="carousel" data-current-slide="0" data-style="{{style}}">
             <div class="row">
                 <div class="col-es-12">

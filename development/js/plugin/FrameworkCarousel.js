@@ -1,13 +1,20 @@
 class FrameworkCarousel {
     constructor() {
         /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
+        this.$carousel = document.querySelectorAll('.carousel');
+        this.classDisplay = 'display-none';
         this.counterCurrent = 0;
     }
 
     buildCarousel() {
         /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
+        if (this.$carousel.length < 1) {
+            return;
+        }
+
         this.buildLayout();
         this.buildNavigation();
+        this.watchResize();
         this.buildCounter();
     }
 
@@ -15,14 +22,36 @@ class FrameworkCarousel {
         /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
 
-        $('.carousel').each(function () {
-            let target = $(this);
-            let length = target.find('.carousel-list').find('li').length;
+        Array.prototype.forEach.call(this.$carousel, function (item, index) {
+            let length = item.querySelectorAll('.carousel-list li').length;
 
-            self.resizeLayout(target);
-            self.buildLayoutController(target, length);
-            self.defineActive(target.find('.carousel-controller').find('[data-id="' + target.attr('data-current-slide') + '"]'));
+            self.resizeLayout(item);
+            self.buildLayoutController(item, length);
+            self.defineActive(item.querySelector('[data-id="' + item.getAttribute('data-current-slide') + '"]'));
+            // self.defineActive(item.querySelector('.carousel-controller [data-id="' + item.getAttribute('data-current-slide') + '"]'));
+
+            if (length === 1) {
+                item.querySelector('[data-id="nav-left"]').classList.add(self.classDisplay);
+                item.querySelector('[data-id="nav-right"]').classList.add(self.classDisplay);
+                item.querySelector('.carousel-controller').classList.add(self.classDisplay);
+            }
         });
+    }
+
+    watchResize() {
+        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
+        let self = this;
+
+        window.onresize = function () {
+            Array.prototype.forEach.call(self.$carousel, function (item, index) {
+                let $this = item.parentNode.parentNode.parentNode.parentNode;
+                let $carouselList = $this.querySelector('.carousel-list');
+                let newSlide = 0;
+
+                self.defineActive($this.querySelector('[data-id="' + newSlide + '"]'));
+                self.animate(newSlide, $carouselList, 'arrow');
+            });
+        };
     }
 
     buildLayoutController(target, length) {
@@ -37,102 +66,108 @@ class FrameworkCarousel {
             concat += '</li>';
         }
 
-        target.find('.carousel-controller').append(concat);
+        target.querySelector('.carousel-controller').innerHTML = concat;
     }
 
     buildNavigation() {
         /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
-        let $carousel = $('.carousel');
+        let $carousel = document.querySelectorAll('.carousel');
 
-        $carousel.find('.carousel-controller-bt').each(function () {
-            $(this).on('click', function () {
-                $(this).parent().parent().parent().parent().attr('data-current-slide', $(this).attr('data-id'));
-                self.defineActive($(this));
-                self.buildAnimation($(this).attr('data-id'), $(this), 'navigation');
-            });
-        });
-
-        $carousel.find('[data-id="nav-left"]').each(function () {
-            $(this).on('click', function () {
-                let $carousel = $(this).parent().parent().parent().parent();
-                let $carouselList = $carousel.find('.carousel-list');
-                let $carouselListLength = Number($carouselList.find('li').length);
-                let currentSlide = Number($carousel.attr('data-current-slide'));
-                let newSlide = 0;
-
-                if (currentSlide === 0) {
-                    newSlide = $carouselListLength - 1;
-                    $carousel.attr('data-current-slide', newSlide);
-                } else {
-                    newSlide = currentSlide - 1;
-                    $carousel.attr('data-current-slide', newSlide);
-                }
-
-                self.defineActive($carousel.find('[data-id="' + newSlide + '"]'));
-                self.buildAnimation(newSlide, $carouselList, 'arrow');
-            });
-        });
-
-        $carousel.find('[data-id="nav-right"]').each(function () {
-            $(this).on('click', function () {
-                let $carousel = $(this).parent().parent().parent().parent();
-                let $carouselList = $carousel.find('.carousel-list');
-                let $carouselListLength = Number($carouselList.find('li').length);
-                let currentSlide = Number($carousel.attr('data-current-slide'));
-                let newSlide = 0;
-
-                if (currentSlide === ($carouselListLength - 1)) {
-                    newSlide = 0;
-                    $carousel.attr('data-current-slide', newSlide);
-                } else {
-                    newSlide = currentSlide + 1;
-                    $carousel.attr('data-current-slide', newSlide);
-                }
-
-                self.defineActive($carousel.find('[data-id="' + newSlide + '"]'));
-                self.buildAnimation(newSlide, $carouselList, 'arrow');
-            });
-        });
-
-        $carousel.each(function () {
-            let $this = $(this);
-            let carouselLength = $this.find('.carousel-list').find('li').length;
-
-            if (carouselLength === 1) {
-                $this.find('[data-id="nav-left"]').addClass('display-none');
-                $this.find('[data-id="nav-right"]').addClass('display-none');
-                $this.find('.carousel-controller').addClass('display-none');
-            }
-        });
-
-        $(window).resize(function () {
-            $carousel.each(function () {
-                let $this = $(this).parent().parent().parent().parent();
-                let $carouselList = $this.find('.carousel-list');
-                let newSlide = 0;
-
-                self.defineActive($this.find('[data-id="' + newSlide + '"]'));
-                self.buildAnimation(newSlide, $carouselList, 'arrow');
-            });
+        Array.prototype.forEach.call($carousel, function (item, index) {
+            self.buildNavigationControllerBt(item);
+            self.buildNavigationArrowLeft(item);
+            self.buildNavigationArrowRight(item);
         });
     }
 
-    buildAnimation(currentSlide, target, from) {
+    buildNavigationControllerBt(target) {
+        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
+        let self = this;
+        let button = target.querySelectorAll('.carousel-controller-bt');
+
+        Array.prototype.forEach.call(button, function (item, index) {
+            item.onclick = function () {
+                item.parentNode.parentNode.parentNode.parentNode.querySelector('[data-current-slide="' + item.getAttribute('data-id') + '"]');
+                self.defineActive(item);
+                self.animate(item.getAttribute('data-id'), item, 'navigation');
+            }
+        });
+    }
+
+    buildNavigationArrowLeft(target) {
+        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
+        let self = this;
+        let button = target.querySelector('[data-id="nav-left"]');
+
+        button.onclick = function () {
+            let $carousel = button.parentNode.parentNode.parentNode.parentNode;
+            let $carouselList = $carousel.querySelector('.carousel-list');
+            let $carouselListLength = Number($carouselList.querySelectorAll('li').length);
+            let currentSlide = Number($carousel.getAttribute('data-current-slide'));
+            let newSlide = 0;
+
+            if (currentSlide === 0) {
+                newSlide = $carouselListLength - 1;
+                $carousel.setAttribute('data-current-slide', newSlide);
+            } else {
+                newSlide = currentSlide - 1;
+                $carousel.setAttribute('data-current-slide', newSlide);
+            }
+
+            self.defineActive($carousel.querySelector('[data-id="' + newSlide + '"]'));
+            self.animate(newSlide, $carouselList, 'arrow');
+        }
+    }
+
+    buildNavigationArrowRight(target) {
+        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
+        let self = this;
+        let button = target.querySelector('[data-id="nav-right"]');
+
+        button.onclick = function () {
+            let $carousel = button.parentNode.parentNode.parentNode.parentNode;
+            let $carouselList = $carousel.querySelector('.carousel-list');
+            let $carouselListLength = Number($carouselList.querySelectorAll('li').length);
+            let currentSlide = Number($carousel.getAttribute('data-current-slide'));
+            let newSlide = 0;
+
+            if (currentSlide === ($carouselListLength - 1)) {
+                newSlide = 0;
+                $carousel.setAttribute('data-current-slide', newSlide);
+            } else {
+                newSlide = currentSlide + 1;
+                $carousel.setAttribute('data-current-slide', newSlide);
+            }
+
+            self.defineActive($carousel.querySelector('[data-id="' + newSlide + '"]'));
+            self.animate(newSlide, $carouselList, 'arrow');
+        }
+    }
+
+    animate(currentSlide, target, from) {
         /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), [currentSlide, target, from]); /*endRemoveIf(production)*/
-        let $carouselList = from === 'arrow' ? target.parent().parent().parent().find('.carousel-list') : target.parent().parent().parent().parent().find('.carousel-list');
-        let $carousel = $carouselList.parent().parent().parent();
-        let slideSize = Number($carouselList.find('li').width());
+        let $carouselList = from === 'arrow'
+            ? target.parentNode.parentNode.parentNode.querySelector('.carousel-list')
+            : target.parentNode.parentNode.parentNode.parentNode.querySelector('.carousel-list');
+        let $carousel = $carouselList.parentNode.parentNode.parentNode;
+        let slideSize = Number($carouselList.querySelector('li').offsetWidth);
         let currentPosition = Number(currentSlide * slideSize);
         let transition = '.7s';
 
-        switch ($carousel.attr('data-style')) {
+        switch ($carousel.getAttribute('data-style')) {
             case 'fade':
-                $carouselList.find('li').css('opacity', '0').css('transition', transition);
-                $carouselList.find('li:eq(' + currentSlide + ')').css('left', '-' + currentPosition + 'px').css('opacity', '1').css('transition', transition);
+                Array.prototype.forEach.call($carouselList.querySelectorAll('li'), function (item, index) {
+                    item.style.opacity = 0;
+                });
+
+                $carouselList.querySelector('li').style.transition = transition;
+                $carouselList.querySelectorAll('li')[currentSlide].style.opacity = 1;
+                $carouselList.querySelectorAll('li')[currentSlide].style.left = '-' + currentPosition + 'px';
+                $carouselList.querySelectorAll('li')[currentSlide].style.transition = transition;
                 break;
             default:
-                $carouselList.css('transform', ' translate(-' + currentPosition + 'px, 0)');
+                $carouselList.style.transform = 'translateX(-' + currentPosition + 'px)';
                 break;
         }
     }
@@ -147,8 +182,8 @@ class FrameworkCarousel {
             if (self.counterCurrent >= 5) {
                 self.counterCurrent = 0;
 
-                $('.carousel').each(function () {
-                    $(this).find('[data-id="nav-right"]').click();
+                Array.prototype.forEach.call(self.$carousel, function (item, index) {
+                    item.querySelector('[data-id="nav-right"]').click();
                 });
             }
         }
@@ -156,17 +191,25 @@ class FrameworkCarousel {
 
     defineActive(target) {
         /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), target); /*endRemoveIf(production)*/
-        target.parent().parent().find('.carousel-controller-bt').removeClass('active');
-        target.addClass('active');
+        let listBt = target.parentNode.parentNode.querySelectorAll('.carousel-controller-bt');
+
+        Array.prototype.forEach.call(listBt, function (item, index) {
+            item.classList.remove('active');
+        });
+
+        target.classList.add('active');
     }
 
     resizeLayout(target) {
         /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), target); /*endRemoveIf(production)*/
-        let carouselList = $(target).find('.carousel-list');
-        let carouselListItem = carouselList.find('li');
-        let carouselItemLength = carouselListItem.length;
+        let $carouselList = target.querySelector('.carousel-list');
+        let $carouselListItem = $carouselList.querySelectorAll('li');
+        let length = $carouselListItem.length;
 
-        carouselList.css('width', carouselItemLength * 100 + "%");
-        carouselListItem.css('width', 100 / carouselItemLength + "%");
+        $carouselList.setAttribute('style', 'width: ' + length * 100 + '%');
+
+        Array.prototype.forEach.call($carouselListItem, function (item, index) {
+            item.setAttribute('style', 'width: ' + 100 / length + '%');
+        });
     }
 }

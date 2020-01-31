@@ -28,7 +28,7 @@ class FrameworkDebug {
     debugMethod(obj, method, parameter = '') {
         let string = '';
         let className = obj.constructor.name;
-        //        let arrMethod = Object.getOwnPropertyNames(Object.getPrototypeOf(obj));
+        // let arrMethod = Object.getOwnPropertyNames(Object.getPrototypeOf(obj));
 
         if (!this['is' + className]) {
             return false;
