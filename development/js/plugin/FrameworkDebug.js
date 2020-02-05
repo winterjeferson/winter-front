@@ -4,11 +4,6 @@ class FrameworkDebug {
         this.isFrameworkLayout = true;
         this.isFrameworkManagement = true;
 
-        this.isFrameworkAdmin = true;
-        this.isFrameworkAdminBlog = true;
-        this.isFrameworkAdminPage = true;
-        this.isFrameworkLogin = true;
-
         this.isLoading = true;
         this.isTheme = true;
 

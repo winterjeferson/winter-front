@@ -6,7 +6,7 @@ class FrameworkCarousel {
         this.counterCurrent = 0;
     }
 
-    buildCarousel() {
+    build() {
         /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
         if (this.$carousel.length < 1) {
             return;
@@ -22,7 +22,7 @@ class FrameworkCarousel {
         /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
 
-        Array.prototype.forEach.call(this.$carousel, function (item, index) {
+        Array.prototype.forEach.call(this.$carousel, function (item) {
             let length = item.querySelectorAll('.carousel-list li').length;
 
             self.resizeLayout(item);

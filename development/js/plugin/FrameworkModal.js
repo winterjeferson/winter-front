@@ -225,7 +225,7 @@ class FrameworkModal {
         this.$modalContent.empty();
 
         if (typeof objFrameworkMenuDropDown !== 'undefined') {
-            objFrameworkMenuDropDown.buildMenu();
+            objFrameworkMenuDropDown.build();
         }
 
         if (typeof objFrameworkMenuTab !== 'undefined') {
@@ -260,8 +260,7 @@ class FrameworkModal {
                 objFrameworkForm.buildInputFile();
 
                 if (typeof objFrameworkMenuDropDown !== 'undefined') {
-                    objFrameworkMenuDropDown.buildStyle();
-                    objFrameworkMenuDropDown.buildMenu();
+                    objFrameworkMenuDropDown.build();
                 }
 
                 if (typeof objFrameworkMenuTab !== 'undefined') {

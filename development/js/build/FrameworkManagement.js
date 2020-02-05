@@ -18,10 +18,9 @@ class FrameworkManagement {
         objFrameworkModal.buildMenu();
         objFrameworkModal.buildTranslation();
 
-        objFrameworkCarousel.buildCarousel();
+        objFrameworkCarousel.build();
 
-        objFrameworkMenuDropDown.buildMenu();
-        objFrameworkMenuDropDown.buildStyle();
+        objFrameworkMenuDropDown.build();
 
         objFrameworkMenuTab.defineActive();
 
