@@ -1,23 +1,23 @@
 /*removeIf(production)*/
 class FrameworkDebug {
     constructor() {
-        this.isFrameworkLayout = true;
-        this.isFrameworkManagement = true;
+        // this.isFrameworkLayout = true;
+        // this.isFrameworkManagement = true;
 
-        this.isLoading = true;
-        this.isTheme = true;
+        // this.isLoading = true;
+        // this.isTheme = true;
 
-        this.isFrameworkCarousel = true;
-        this.isFrameworkGeneric = true;
+        // this.isFrameworkCarousel = true;
+        // this.isFrameworkGeneric = true;
         this.isFrameworkMenuDropDown = true;
-        this.isFrameworkMenuTab = true;
-        this.isFrameworkModal = true;
-        this.isFrameworkNotification = true;
-        this.isFrameworkProgress = true;
-        this.isFrameworkTable = true;
-        this.isFrameworkTag = true;
-        this.isFrameworkTooltip = true;
-        this.isFrameworkTranslation = true;
+        // this.isFrameworkMenuTab = true;
+        // this.isFrameworkModal = true;
+        // this.isFrameworkNotification = true;
+        // this.isFrameworkProgress = true;
+        // this.isFrameworkTable = true;
+        // this.isFrameworkTag = true;
+        // this.isFrameworkTooltip = true;
+        // this.isFrameworkTranslation = true;
     }
 
     debugMethod(obj, method, parameter = '') {

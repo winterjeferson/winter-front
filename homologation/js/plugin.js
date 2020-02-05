@@ -4039,8 +4039,8 @@ function () {
   }
 
   _createClass(FrameworkCarousel, [{
-    key: "buildCarousel",
-    value: function buildCarousel() {
+    key: "build",
+    value: function build() {
       /*removeIf(production)*/
       objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
       /*endRemoveIf(production)*/
@@ -4062,7 +4062,7 @@ function () {
       /*endRemoveIf(production)*/
 
       var self = this;
-      Array.prototype.forEach.call(this.$carousel, function (item, index) {
+      Array.prototype.forEach.call(this.$carousel, function (item) {
         var length = item.querySelectorAll('.carousel-list li').length;
         self.resizeLayout(item);
         self.buildLayoutController(item, length);
@@ -4294,25 +4294,20 @@ function () {
   function FrameworkDebug() {
     _classCallCheck(this, FrameworkDebug);
 
-    this.isFrameworkLayout = true;
-    this.isFrameworkManagement = true;
-    this.isFrameworkAdmin = true;
-    this.isFrameworkAdminBlog = true;
-    this.isFrameworkAdminPage = true;
-    this.isFrameworkLogin = true;
-    this.isLoading = true;
-    this.isTheme = true;
-    this.isFrameworkCarousel = true;
-    this.isFrameworkGeneric = true;
-    this.isFrameworkMenuDropDown = true;
-    this.isFrameworkMenuTab = true;
-    this.isFrameworkModal = true;
-    this.isFrameworkNotification = true;
-    this.isFrameworkProgress = true;
-    this.isFrameworkTable = true;
-    this.isFrameworkTag = true;
-    this.isFrameworkTooltip = true;
-    this.isFrameworkTranslation = true;
+    // this.isFrameworkLayout = true;
+    // this.isFrameworkManagement = true;
+    // this.isLoading = true;
+    // this.isTheme = true;
+    // this.isFrameworkCarousel = true;
+    // this.isFrameworkGeneric = true;
+    this.isFrameworkMenuDropDown = true; // this.isFrameworkMenuTab = true;
+    // this.isFrameworkModal = true;
+    // this.isFrameworkNotification = true;
+    // this.isFrameworkProgress = true;
+    // this.isFrameworkTable = true;
+    // this.isFrameworkTag = true;
+    // this.isFrameworkTooltip = true;
+    // this.isFrameworkTranslation = true;
   }
 
   _createClass(FrameworkDebug, [{
@@ -4541,59 +4536,125 @@ var FrameworkMenuDropDown =
 function () {
   function FrameworkMenuDropDown() {
     _classCallCheck(this, FrameworkMenuDropDown);
+
+    /*removeIf(production)*/
+    objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+    /*endRemoveIf(production)*/
+
+    this.isClickBuild = false;
+    this.classMenu = 'menu-drop-down';
+    this.classArrow = 'bt-arrow';
+    this.classMenuText = this.classMenu + '-text';
+    this.classShowMobile = 'mobile-show';
+    this.$menu = document.querySelectorAll('.' + this.classMenu + ' , ' + '.' + this.classMenuText);
+    this.$menuDropDownUl = document.querySelectorAll('.' + this.classMenu + ' ul' + ' , ' + '.' + this.classMenuText + ' ul');
+    this.$menuDropDownLi = document.querySelectorAll('.' + this.classMenu + ' ul li' + ' , ' + '.' + this.classMenuText + ' ul li');
+    this.$icon = '<span class="' + this.classArrow + '">&nbsp;&nbsp;<span class="fa fa-caret-down" aria-hidden="true"></span></span>';
   }
 
   _createClass(FrameworkMenuDropDown, [{
-    key: "buildStyle",
-    value: function buildStyle() {
+    key: "build",
+    value: function build() {
       /*removeIf(production)*/
       objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
       /*endRemoveIf(production)*/
 
-      var $menuDropDown = $('.menu-drop-down, .menu-drop-down-text').find('ul');
-      $menuDropDown.find('li').find('ul').each(function () {
-        if ($(this).find('li').find('.link').length) {
-          $(this).parent().parent().parent().addClass('menu-drop-down-text');
-        } else if ($(this).find('li').find('.bt').length) {
-          $(this).parent().parent().parent().addClass('menu-drop-down');
-        }
-      });
-      $menuDropDown.children('li').children('ul').each(function () {
-        if ($(this).parent('li').children('.bt, .link').find('.bt-arrow').length !== 1) {
-          $(this).parent('li').children('.bt, .link').append('<span class="bt-arrow">&nbsp;&nbsp;<i class="fa fa-caret-down" aria-hidden="true"></i></span>');
+      if (this.$menu.length < 1) {
+        return;
+      }
+
+      this.buildIcon();
+
+      if (!this.isClickBuild) {
+        this.isClickBuild = true;
+        this.buildClick();
+      }
+
+      this.buildClickOut();
+    }
+  }, {
+    key: "buildIcon",
+    value: function buildIcon() {
+      /*removeIf(production)*/
+      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      /*endRemoveIf(production)*/
+
+      var self = this;
+      var $arr = document.querySelectorAll('.' + this.classMenu + ' ul > li > ul' + ' , .' + this.classMenuText + ' ul > li > ul');
+      Array.prototype.forEach.call($arr, function (item) {
+        if (!document.body.contains(item.parentNode.querySelector('.bt .' + self.classArrow + ' , .link .' + self.classArrow))) {
+          item.parentNode.querySelector('.bt , .link').insertAdjacentHTML('beforeend', self.$icon);
         }
       });
     }
   }, {
-    key: "buildMenu",
-    value: function buildMenu() {
+    key: "buildClick",
+    value: function buildClick() {
       /*removeIf(production)*/
       objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
       /*endRemoveIf(production)*/
 
-      var classString = 'mobile-show';
-      var $menuDropDown = $('.menu-drop-down, .menu-drop-down-text').find('ul');
-      $('.mobile-show').css('opacity', 0);
-      $menuDropDown.find('ul').removeClass(classString);
-      $menuDropDown.find('.bt, .link').removeClass('active');
-      $menuDropDown.find('.bt, .link').on('click', function () {
-        var $menuChild = $(this).siblings('ul');
-        $menuDropDown.find('ul').removeClass(classString);
-        $menuDropDown.find('.bt, .link').removeClass('active');
-        $(this).addClass('active');
-        $('.mobile-show').css('opacity', 0);
-
-        if ($menuChild.hasClass(classString)) {
-          $menuChild.removeClass(classString);
-        } else {
-          $menuChild.addClass(classString);
-        }
-
-        event.stopPropagation();
+      var self = this;
+      Array.prototype.forEach.call(this.$menu, function (item) {
+        var $bt = item.querySelectorAll('li > .bt , li > .link');
+        var $btSubMenu = item.querySelectorAll('ul > li > ul > li > .bt , ul > li > ul > li > .link');
+        Array.prototype.forEach.call($bt, function (item) {
+          item.addEventListener('click', function () {
+            self.buildClickAction(item);
+          });
+        });
+        Array.prototype.forEach.call($btSubMenu, function (item) {
+          item.addEventListener('click', function () {
+            item.parentNode.parentNode.classList.remove(self.classShowMobile);
+          });
+        });
       });
-      $menuDropDown.find('li').find('.bt, .link').on('click', function () {
-        $(this).parent().parent().removeClass(classString);
-        $('.mobile-show').css('opacity', 1);
+    }
+  }, {
+    key: "buildClickAction",
+    value: function buildClickAction(item) {
+      /*removeIf(production)*/
+      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      /*endRemoveIf(production)*/
+
+      var $menuChild = item.parentNode.querySelector('ul');
+
+      if (!document.body.contains($menuChild)) {
+        return;
+      }
+
+      var $menuDropDown = $menuChild.parentNode.parentNode.parentNode;
+      var $menuDropDownUl = $menuDropDown.querySelector('ul > li > ul');
+
+      if ($menuDropDownUl.classList.contains(this.classShowMobile)) {
+        $menuDropDownUl.classList.remove(this.classShowMobile);
+      }
+
+      if ($menuChild.classList.contains(this.classShowMobile)) {
+        $menuChild.classList.remove(this.classShowMobile);
+      } else {
+        $menuChild.classList.add(this.classShowMobile);
+      }
+
+      $menuChild.classList.remove(self.classShowMobile);
+      $menuChild.style.opacity = 1;
+    }
+  }, {
+    key: "buildClickOut",
+    value: function buildClickOut() {
+      /*removeIf(production)*/
+      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      /*endRemoveIf(production)*/
+
+      var self = this;
+      Array.prototype.forEach.call(this.$menuDropDownUl, function (item) {
+        var $bt = item.querySelectorAll('.bt , .link');
+        item.classList.remove(self.classShowMobile);
+        Array.prototype.forEach.call($bt, function (itemBt) {
+          if (itemBt.classList.contains('active')) {
+            itemBt.classList.remove('active');
+          }
+        });
       });
     }
   }]);
@@ -4615,11 +4676,27 @@ function () {
       objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
       /*endRemoveIf(production)*/
 
-      var activeClass = 'menu-tab-active';
-      $('.menu-tab').children('ul').children('li').children('.bt').on('click', function () {
-        $(this).parent().parent().find('li').removeClass(activeClass);
-        $(this).parent().addClass(activeClass);
+      var self = this;
+      var $arr = document.querySelectorAll('.menu-tab > ul > li > .bt');
+      Array.prototype.forEach.call($arr, function (item) {
+        item.addEventListener('click', function () {
+          self.buildClick(item);
+        });
       });
+    }
+  }, {
+    key: "buildClick",
+    value: function buildClick(item) {
+      /*removeIf(production)*/
+      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      /*endRemoveIf(production)*/
+
+      var classActive = 'menu-tab-active';
+      var $arr = item.parentNode.parentNode.querySelectorAll('li');
+      Array.prototype.forEach.call($arr, function (item) {
+        item.classList.remove(classActive);
+      });
+      item.parentNode.classList.add(classActive);
     }
   }]);
 
@@ -4886,7 +4963,7 @@ function () {
       this.$modalContent.empty();
 
       if (typeof objFrameworkMenuDropDown !== 'undefined') {
-        objFrameworkMenuDropDown.buildMenu();
+        objFrameworkMenuDropDown.build();
       }
 
       if (typeof objFrameworkMenuTab !== 'undefined') {
@@ -4922,8 +4999,7 @@ function () {
           objFrameworkForm.buildInputFile();
 
           if (typeof objFrameworkMenuDropDown !== 'undefined') {
-            objFrameworkMenuDropDown.buildStyle();
-            objFrameworkMenuDropDown.buildMenu();
+            objFrameworkMenuDropDown.build();
           }
 
           if (typeof objFrameworkMenuTab !== 'undefined') {

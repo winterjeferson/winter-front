@@ -160,9 +160,8 @@ function () {
       objFrameworkModal.buildHtml();
       objFrameworkModal.buildMenu();
       objFrameworkModal.buildTranslation();
-      objFrameworkCarousel.buildCarousel();
-      objFrameworkMenuDropDown.buildMenu();
-      objFrameworkMenuDropDown.buildStyle();
+      objFrameworkCarousel.build();
+      objFrameworkMenuDropDown.build();
       objFrameworkMenuTab.defineActive();
       objFrameworkNotification.buildHtml();
       objFrameworkNotification.buildNavigation();
