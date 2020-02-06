@@ -8,30 +8,16 @@ class FrameworkManagement {
     applyClass() {
         /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
         // objFrameworkLayout.buildLayout();
-        objFrameworkLayout.buildToggle();
-
-        objFrameworkForm.buildFocus();
-        objFrameworkForm.buildInputFile();
-        objFrameworkForm.buildMask();
-
-        objFrameworkModal.buildHtml();
-        objFrameworkModal.buildMenu();
-        objFrameworkModal.buildTranslation();
-
+        objFrameworkProgress.build();
+        objFrameworkLayout.build();
+        objFrameworkForm.build();
+        objFrameworkModal.build();
         objFrameworkCarousel.build();
-
         objFrameworkMenuDropDown.build();
-
-        objFrameworkMenuTab.defineActive();
-
-        objFrameworkNotification.buildHtml();
-        objFrameworkNotification.buildNavigation();
-
-        objFrameworkTable.buildTableResponsive();
-
-        objFrameworkTag.buildNavigation();
-
-        objFrameworkTooltip.start();
-        objFrameworkProgress.start();
+        objFrameworkMenuTab.build();
+        objFrameworkNotification.build();
+        objFrameworkTable.build();
+        objFrameworkTag.build();
+        objFrameworkTooltip.build();
     }
 }

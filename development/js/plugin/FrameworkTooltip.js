@@ -25,7 +25,7 @@ class FrameworkTooltip {
         this.positionLeft = 0;
     }
 
-    start() {
+    build() {
         /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
         this.buildHtml();
         this.updateVariable(false);

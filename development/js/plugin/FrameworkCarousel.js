@@ -4,6 +4,7 @@ class FrameworkCarousel {
         this.$carousel = document.querySelectorAll('.carousel');
         this.classDisplay = 'display-none';
         this.counterCurrent = 0;
+        this.transition = 5;
     }
 
     build() {
@@ -12,10 +13,10 @@ class FrameworkCarousel {
             return;
         }
 
+        this.interval = setInterval(this.verifyInternval, 1000);
         this.buildLayout();
         this.buildNavigation();
         this.watchResize();
-        this.buildCounter();
     }
 
     buildLayout() {
@@ -28,7 +29,6 @@ class FrameworkCarousel {
             self.resizeLayout(item);
             self.buildLayoutController(item, length);
             self.defineActive(item.querySelector('[data-id="' + item.getAttribute('data-current-slide') + '"]'));
-            // self.defineActive(item.querySelector('.carousel-controller [data-id="' + item.getAttribute('data-current-slide') + '"]'));
 
             if (length === 1) {
                 item.querySelector('[data-id="nav-left"]').classList.add(self.classDisplay);
@@ -43,7 +43,7 @@ class FrameworkCarousel {
         let self = this;
 
         window.onresize = function () {
-            Array.prototype.forEach.call(self.$carousel, function (item, index) {
+            Array.prototype.forEach.call(self.$carousel, function (item) {
                 let $this = item.parentNode.parentNode.parentNode.parentNode;
                 let $carouselList = $this.querySelector('.carousel-list');
                 let newSlide = 0;
@@ -74,7 +74,7 @@ class FrameworkCarousel {
         let self = this;
         let $carousel = document.querySelectorAll('.carousel');
 
-        Array.prototype.forEach.call($carousel, function (item, index) {
+        Array.prototype.forEach.call($carousel, function (item) {
             self.buildNavigationControllerBt(item);
             self.buildNavigationArrowLeft(item);
             self.buildNavigationArrowRight(item);
@@ -86,7 +86,7 @@ class FrameworkCarousel {
         let self = this;
         let button = target.querySelectorAll('.carousel-controller-bt');
 
-        Array.prototype.forEach.call(button, function (item, index) {
+        Array.prototype.forEach.call(button, function (item) {
             item.onclick = function () {
                 item.parentNode.parentNode.parentNode.parentNode.querySelector('[data-current-slide="' + item.getAttribute('data-id') + '"]');
                 self.defineActive(item);
@@ -157,7 +157,7 @@ class FrameworkCarousel {
 
         switch ($carousel.getAttribute('data-style')) {
             case 'fade':
-                Array.prototype.forEach.call($carouselList.querySelectorAll('li'), function (item, index) {
+                Array.prototype.forEach.call($carouselList.querySelectorAll('li'), function (item) {
                     item.style.opacity = 0;
                 });
 
@@ -172,20 +172,18 @@ class FrameworkCarousel {
         }
     }
 
-    buildCounter() {
+    verifyInternval() {
         /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
-        let self = this;
-        const interval = setInterval(verifyInternval, 1000);
+        let self = objFrameworkCarousel;
 
-        function verifyInternval() {
-            self.counterCurrent++;
-            if (self.counterCurrent >= 5) {
-                self.counterCurrent = 0;
+        self.counterCurrent++;
 
-                Array.prototype.forEach.call(self.$carousel, function (item, index) {
-                    item.querySelector('[data-id="nav-right"]').click();
-                });
-            }
+        if (self.counterCurrent >= self.transition) {
+            self.counterCurrent = 0;
+
+            Array.prototype.forEach.call(self.$carousel, function (item) {
+                item.querySelector('[data-id="nav-right"]').click();
+            });
         }
     }
 
@@ -193,7 +191,7 @@ class FrameworkCarousel {
         /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), target); /*endRemoveIf(production)*/
         let listBt = target.parentNode.parentNode.querySelectorAll('.carousel-controller-bt');
 
-        Array.prototype.forEach.call(listBt, function (item, index) {
+        Array.prototype.forEach.call(listBt, function (item) {
             item.classList.remove('active');
         });
 
@@ -206,10 +204,10 @@ class FrameworkCarousel {
         let $carouselListItem = $carouselList.querySelectorAll('li');
         let length = $carouselListItem.length;
 
-        $carouselList.setAttribute('style', 'width: ' + length * 100 + '%');
+        $carouselList.style.width = + length * 100 + '%';
 
-        Array.prototype.forEach.call($carouselListItem, function (item, index) {
-            item.setAttribute('style', 'width: ' + 100 / length + '%');
+        Array.prototype.forEach.call($carouselListItem, function (item) {
+            item.style.width = + 100 / length + '%';
         });
     }
 }

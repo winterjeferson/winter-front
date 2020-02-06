@@ -10,7 +10,12 @@ class FrameworkLayout {
         this.breakPointBig = 992;
         this.breakPointExtraBig = 1200;
     }
-
+    
+    build() {
+        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
+        this.buildToggle();
+    }
+    
     switchDisplay(target, action = '') {
         /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), [target, action]); /*endRemoveIf(production)*/
         let classDisplay = 'display-none';
@@ -62,22 +67,4 @@ class FrameworkLayout {
             }
         });
     }
-    
-    // verifyUndefined(target) {
-    //     /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), target); /*endRemoveIf(production)*/
-    //     if (typeof target === 'undefined' || target === null || target === '') {
-    //         return true;
-    //     } else {
-    //         return false;
-    //     }
-    // }
-
-    // buildLayout() {
-    /*removeIf(production)*/
-    // objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); 
-    /*endRemoveIf(production)*/
-    // $('button, a').on('click', function (event) {
-    //     event.stopPropagation();
-    // });
-    // }
 }

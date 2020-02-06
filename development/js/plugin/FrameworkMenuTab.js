@@ -1,4 +1,9 @@
 class FrameworkMenuTab {
+    build() {
+        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
+        this.defineActive();
+    }
+
     defineActive() {
         /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;

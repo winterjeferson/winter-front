@@ -1,18 +1,7 @@
 class FrameworkModal {
     constructor() {
         /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
-        this.$body = $('body');
-        this.$modal = '';
-        this.$modalFooter = '';
-        this.$modalFooterConfirm = '';
-        this.$modalFooterCancel = '';
-        this.$modalTitle = '';
-        this.$modalClose = '';
-        this.$modalContent = '';
-        this.$modalBox = '';
-        this.$modalNavigationArrow = '';
-        this.$modalNavigationArrowLeft = '';
-        this.$modalNavigationArrowRight = '';
+        this.$body = document.querySelector('body');
 
         this.targetBuildGalleryChange = '';
         this.cssDisplay = 'display-none';
@@ -20,17 +9,27 @@ class FrameworkModal {
 
     updateVariable() {
         /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
-        this.$modal = $('#modal');
-        this.$modalFooter = this.$modal.find('footer');
-        this.$modalFooterConfirm = this.$modalFooter.find('[data-id="confirm"]');
-        this.$modalFooterCancel = this.$modalFooter.find('[data-id="cancel"]');
-        this.$modalTitle = this.$modal.find('.page-title');
-        this.$modalClose = $('#modal_close');
-        this.$modalContent = $('#modal_content');
-        this.$modalBox = this.$modal.find('.modal-box');
-        this.$modalNavigationArrow = this.$modal.find('.navigation-arrow');
-        this.$modalNavigationArrowLeft = this.$modalNavigationArrow.find('[data-id="nav-left"]');
-        this.$modalNavigationArrowRight = this.$modalNavigationArrow.find('[data-id="nav-right"]');
+        this.$modal = document.querySelector('#modal');
+        this.$modalFooter = this.$modal.querySelector('footer');
+        this.$modalFooterConfirm = this.$modalFooter.querySelector('[data-id="confirm"]');
+        this.$modalFooterCancel = this.$modalFooter.querySelector('[data-id="cancel"]');
+        this.$modalClose = document.querySelector('#modal_close');
+        this.$modalContent = document.querySelector('#modal_content');
+        this.$modalBox = this.$modal.querySelector('.modal-box');
+        this.$modalNavigationArrow = this.$modal.querySelector('.navigation-arrow');
+        this.$modalNavigationArrowLeft = this.$modalNavigationArrow.querySelector('[data-id="nav-left"]');
+        this.$modalNavigationArrowRight = this.$modalNavigationArrow.querySelector('[data-id="nav-right"]');
+        this.$gallery = document.querySelectorAll('.gallery');
+    }
+
+    build() {
+            /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
+        this.buildHtml();
+        this.updateVariable();
+        this.buildMenu();
+        this.buildMenuGallery();
+        this.buildKeyboard();
+        this.buildTranslation();
     }
 
     buildHtml() {
@@ -76,111 +75,135 @@ class FrameworkModal {
         string += '     </div>';
         string += '</div>';
 
-        this.$body.prepend(string);
-        this.updateVariable();
+        this.$body.insertAdjacentHTML('afterbegin', string);
     }
 
     buildTranslation() {
         /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
-        $(this.$modalFooterConfirm).html(objFrameworkTranslation.translation.default.confirm);
-        $(this.$modalFooterCancel).html(objFrameworkTranslation.translation.default.cancel);
+        this.$modalFooterConfirm.innerHTML = objFrameworkTranslation.translation.default.confirm;
+        this.$modalFooterCancel.innerHTML = objFrameworkTranslation.translation.default.cancel;
+    }
+
+    buildKeyboard() {
+        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
+        let self = this;
+
+        window.addEventListener('keyup', function (event) {
+            if (event.keyCode === 27) {
+                self.closeModal();
+            }
+
+            if (event.keyCode === 37) {
+                if (self.$modalNavigationArrowLeft.classList.contains(self.cssDisplay)) {
+                    return;
+                } else {
+                    self.$modalNavigationArrowLeft.click();
+                }
+            }
+
+            if (event.keyCode === 39) {
+                if (self.$modalNavigationArrowRight.classList.contains(self.cssDisplay)) {
+                    return;
+                } else {
+                    self.$modalNavigationArrowRight.click();
+                }
+            }
+        })
+    }
+
+    buildMenuGallery() {
+        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
+        let self = this;
+
+        if (!this.$gallery) {
+            return;
+        }
+
+        Array.prototype.forEach.call(this.$gallery, function (item) {
+            let button = item.querySelectorAll('a');
+
+            Array.prototype.forEach.call(button, function (itemBt) {
+                itemBt.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    self.buildModal('gallery', false, 'fu');
+                    self.buildGalleryImage($(this).attr('href'), $(this).find('img').attr('data-description'));
+                    self.buildGalleryNavigation(itemBt);
+                });
+            });
+        });
+
+        this.$modalNavigationArrowLeft.addEventListener('click', function () {
+            self.targetBuildGalleryChange.parentNode.previousElementSibling.querySelector('a').click();
+        });
+
+        this.$modalNavigationArrowRight.addEventListener('click', function () {
+            self.targetBuildGalleryChange.parentNode.nextElementSibling.querySelector('a').click();
+        });
     }
 
     buildMenu() {
         /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
-        let $arrowLeft = $('[data-id="nav-left"]');
-        let $arrowRight = $('[data-id="nav-right"]');
 
-        this.$modalClose.click(function () {
+        this.$modalClose.addEventListener('click', function () {
             self.closeModal();
         });
 
-        $(document).keyup(function (e) {
-            if (e.keyCode === 27) {
-                self.closeModal();
+        document.addEventListener('click', function (event) {
+            var isButton = event.target.matches('button *, a *');
+
+            if (isButton) {
+                return;
             }
+
+            // self.closeModal();
         });
 
-        $(document).keyup(function (e) {
-            if (e.keyCode === 37) {
-                if ($arrowLeft.hasClass(self.cssDisplay)) {
-                    return false;
-                } else {
-                    $arrowLeft.click();
-                }
-            }
-        });
-
-        $(document).keyup(function (e) {
-            if (e.keyCode === 39) {
-                if ($arrowRight.hasClass(self.cssDisplay)) {
-                    return false;
-                } else {
-                    $arrowRight.click();
-                }
-            }
-        });
-
-        $(document).click(function (event) {
-            if (!$(event.target).closest('button, a').length) {
-                self.closeModal();
-            }
-        });
-
-        $('.gallery').find('a').on('click', function (event) {
-            event.preventDefault();
-            self.buildModal('gallery', false, 'fu');
-            self.buildContentStatic($(this).attr('href'), $(this).find('img').attr('alt'), $(this).find('img').attr('data-description'));
-            self.buildGalleryNavigation(this);
-        });
-
-        this.$modalNavigationArrowLeft.click(function () {
-            $(self.targetBuildGalleryChange).parent().prev().find('a').click();
-        });
-
-        this.$modalNavigationArrowRight.click(function () {
-            $(self.targetBuildGalleryChange).parent().next().find('a').click();
-        });
-
-        this.$modalFooter.find('[data-id="cancel"]').click(function () {
+        this.$modalFooter.querySelector('[data-id="cancel"]').addEventListener('click', function (event) {
             self.closeModal();
         });
 
-        this.$modal.find('.modal-box').on('click', function (event) {
+        this.$modal.querySelector('.modal-box').addEventListener('click', function (event) {
             event.stopPropagation();
         });
     }
 
     buildGalleryNavigation(target) {
         /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), target); /*endRemoveIf(production)*/
-        let verifySiblings = $(target).parent().siblings().find('a').length;
-        let currentPosition = $(target).parent().parent().find('a').index(target);
+        let array = [];
+        let currentGallery = target.parentNode.parentNode;
+        let siblingLength = currentGallery.querySelectorAll('a').length - 1;
 
-        if (verifySiblings > 0) {
-            this.$modalNavigationArrow.removeClass(this.cssDisplay);
+        Array.prototype.forEach.call(currentGallery.querySelectorAll('a'), function (item) {
+            array.push(item);
+        });
+
+        let currentPosition = array.indexOf(target);
+
+        if (siblingLength > 0) {
+            this.$modalNavigationArrow.classList.remove(this.cssDisplay);
             this.targetBuildGalleryChange = target;
 
             if (currentPosition <= 0) {
-                this.$modalNavigationArrowLeft.addClass(this.cssDisplay);
+                this.$modalNavigationArrowLeft.classList.add(this.cssDisplay);
             } else {
-                this.$modalNavigationArrowLeft.removeClass(this.cssDisplay);
+                this.$modalNavigationArrowLeft.classList.remove(this.cssDisplay);
             }
 
-            if (currentPosition >= verifySiblings) {
-                this.$modalNavigationArrowRight.addClass(this.cssDisplay);
+            if (currentPosition >= siblingLength) {
+                this.$modalNavigationArrowRight.classList.add(this.cssDisplay);
             } else {
-                this.$modalNavigationArrowRight.removeClass(this.cssDisplay);
+                this.$modalNavigationArrowRight.classList.remove(this.cssDisplay);
             }
 
         } else {
-            this.$modalNavigationArrow.addClass(this.cssDisplay);
+            this.$modalNavigationArrow.classList.add(this.cssDisplay);
         }
     }
 
     buildModal(kind, content, size = 're', action = 'open') {
         /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), [kind, content, size, action]); /*endRemoveIf(production)*/
-        this.$modalFooter.addClass(this.cssDisplay);
+        this.$modalFooter.classList.add(this.cssDisplay);
         action === 'open' ? this.openModal() : this.closeModal();
         this.buildModalSize(size);
         this.buildModalKind(kind, content);
@@ -188,41 +211,44 @@ class FrameworkModal {
 
     buildModalKind(kind, content) {
         /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), [kind, content]); /*endRemoveIf(production)*/
+
+        if (kind === 'ajax') {
+            this.buildContentAjax(content);
+        }
+
+        if (kind === 'confirmation') {
+            this.buildContentConfirmation(content);
+        }
+
         switch (kind) {
-            case 'ajax':
-                this.buildContentAjax(content);
-                this.$modalNavigationArrow.removeClass('arrow-active').addClass('arrow-inactive');
-                break;
             case 'gallery':
-                this.$modalNavigationArrow.removeClass('arrow-inactive').addClass('arrow-active');
-                break;
-            case 'confirmation':
-                this.$modalNavigationArrow.removeClass('arrow-active').addClass('arrow-inactive');
-                this.buildContentConfirmation(content);
+                this.$modalNavigationArrow.classList.remove('arrow-inactive');
+                this.$modalNavigationArrow.classList.add('arrow-active');
                 break;
             default:
-                this.$modalNavigationArrow.removeClass('arrow-active').addClass('arrow-inactive');
+                this.$modalNavigationArrow.classList.remove('arrow-active');
+                this.$modalNavigationArrow.classList.add('arrow-inactive');
                 break;
         }
     }
 
     openModal() {
         /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
-        this.$modalContent.empty();
-        this.$body
-                .removeClass('overflow-y')
-                .addClass('overflow-hidden')
-                .css('overflow-y', 'hidden');
-        this.$modal.removeClass('modal-close');
-        this.$modalBox.addClass('modal-animate');
+        this.$body.classList.remove('overflow-y');
+        this.$body.classList.add('overflow-hidden');
+        this.$body.style.overflowY = 'hidden';
+        this.$modal.classList.remove('modal-close');
+        this.$modalBox.classList.add('modal-animate');
     }
 
     closeModal() {
         /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
-        this.$body.addClass('overflow-y').removeClass('overflow-hidden').css('overflow-y', 'auto').css('position', 'relative');
-        this.$modal.addClass('modal-close');
-        this.$modalBox.removeClass('modal-animate');
-        this.$modalContent.empty();
+        this.$body.classList.add('overflow-y');
+        this.$body.classList.remove('overflow-hidden');
+        this.$body.style.overflowY = 'auto';
+        this.$body.style.position = 'relative';
+        this.$modal.classList.add('modal-close');
+        this.$modalBox.classList.remove('modal-animate');
 
         if (typeof objFrameworkMenuDropDown !== 'undefined') {
             objFrameworkMenuDropDown.build();
@@ -235,63 +261,74 @@ class FrameworkModal {
 
     buildModalSize(size = 're') {
         /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), size); /*endRemoveIf(production)*/
-        this.$modalBox
-                .removeClass('modal-es')
-                .removeClass('modal-sm')
-                .removeClass('modal-re')
-                .removeClass('modal-bi')
-                .removeClass('modal-eb')
-                .removeClass('modal-fu')
-                .addClass('modal-' + size);
+        this.$modalBox.classList.remove('modal-es');
+        this.$modalBox.classList.remove('modal-sm');
+        this.$modalBox.classList.remove('modal-re');
+        this.$modalBox.classList.remove('modal-bi');
+        this.$modalBox.classList.remove('modal-eb');
+        this.$modalBox.classList.remove('modal-fu');
+        this.$modalBox.classList.add('modal-' + size);
     }
 
     buildContentAjax(target) {
         /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), target); /*endRemoveIf(production)*/
         let self = this;
+        let ajax = new XMLHttpRequest();
 
-        this.$modalContent.append(objFrameworkLayout.buildSpinner('white'));
-
-        return $.ajax({
-            url: target,
-            success: function (data) {
-                self.$modalContent.empty();
-                self.$modalContent.append(data);
-                objFrameworkLayout.buildToggle();
-                objFrameworkForm.buildInputFile();
-
-                if (typeof objFrameworkMenuDropDown !== 'undefined') {
-                    objFrameworkMenuDropDown.build();
-                }
-
-                if (typeof objFrameworkMenuTab !== 'undefined') {
-                    objFrameworkMenuTab.defineActive();
-                }
+        ajax.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                self.buildContentAjaxSuccess(this.responseText);
             }
-        });
+        };
+
+        ajax.open('POST', target, true);
+        ajax.send();
     }
 
-    buildContentStatic(image, title, description) {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), [image, title, description]); /*endRemoveIf(production)*/
+    buildContentAjaxSuccess(data) {
+        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
+        this.$modalContent.innerHTML = data;
+
+        if (typeof objFrameworkLayout !== 'undefined') {
+            objFrameworkLayout.buildToggle();
+        }
+
+        if (typeof objFrameworkForm !== 'undefined') {
+            objFrameworkForm.buildInputFile();
+        }
+
+        if (typeof objFrameworkMenuDropDown !== 'undefined') {
+            objFrameworkMenuDropDown.build();
+        }
+
+        if (typeof objFrameworkMenuTab !== 'undefined') {
+            objFrameworkMenuTab.defineActive();
+        }
+    }
+
+    buildGalleryImage(image, description) {
+        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), [image, description]); /*endRemoveIf(production)*/
         let stringImage = '<img src="' + image + '" class="img-responsive" style="margin:auto;" title="" alt=""/>';
 
-        this.$modalContent.empty();
-        this.$modalContent.append(stringImage);
-        this.changeText(title, description);
+        this.$modalContent.innerHTML = stringImage;
+        this.changeText(description);
     }
 
     buildContentConfirmation(content) {
         /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), content); /*endRemoveIf(production)*/
-        this.$modalFooter.removeClass(this.cssDisplay);
-        this.$modalContent.html('<div class="padding-re text-center">' + content + '</div>');
+        let string = '<div class="padding-re text-center">' + content + '</div>';
+
+        this.$modalFooter.classList.remove(this.cssDisplay);
+        this.$modalContent.innerHTML = string;
     }
 
     buildContentConfirmationAction(action) {
         /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), action); /*endRemoveIf(production)*/
-        this.$modalFooterConfirm.attr('onclick', action);
+        this.$modalFooterConfirm.setAttribute('onclick', action);
     }
 
-    changeText(title, description) {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), [title, description]); /*endRemoveIf(production)*/
+    changeText(description) {
+        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), [description]); /*endRemoveIf(production)*/
         let string = '';
 
         if (description === '') {
@@ -303,9 +340,7 @@ class FrameworkModal {
         string += '</p>';
 
         if (typeof description !== typeof undefined) {
-            this.$modalContent.append(string);
+            this.$modalContent.insertAdjacentHTML('beforeend', string);
         }
-
-        this.$modalTitle.text(title);
     }
 }

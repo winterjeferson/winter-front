@@ -1,35 +1,64 @@
 class FrameworkProgress {
     constructor() {
         /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
-        this.$bar = $('#loading_main').find('.progress-bar');
-        this.$all = $('div, section, article');
-        this.$allLength = Math.round(this.$all.length / 10);
+        this.$bar = document.querySelector('#loading_main .progress-bar');
+        this.$all = document.querySelectorAll('div, section, article');
+        this.$allLength = this.$all.length;
 
         this.isFinish = false;
         this.progressSize = 0;
     }
 
-    start() {
+    build() {
         /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
-        for (let i = 0; i < this.$allLength; i++) {
-            this.checkElement();
+        let self = this;
+        let interval = setInterval(frame, 1);
+        let total = this.buildProportion();
+
+        function frame() {
+            let porcentage = self.progressSize * 100 / total;
+
+            self.progressSize++;
+            self.$bar.style.width = porcentage + '%';
+
+            if (self.progressSize >= total) {
+                clearInterval(interval);
+                objLoading.finish();
+                self.isFinish = true;
+            }
         }
     }
 
-    checkElement() {
+    buildProportion() {
         /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
-        let self = this;
-        let percent = 100 / this.$allLength;
-        let progressWidth = percent + this.progressSize;
+        if (this.$allLength > 1000) {
+            return this.$allLength / 50;
+        }
+        if (this.$allLength > 900) {
+            return this.$allLength / 45;
+        }
+        if (this.$allLength > 800) {
+            return this.$allLength / 40;
+        }
+        if (this.$allLength > 700) {
+            return this.$allLength / 35;
+        }
+        if (this.$allLength > 600) {
+            return this.$allLength / 30;
+        }
+        if (this.$allLength > 500) {
+            return this.$allLength / 25;
+        }
+        if (this.$allLength > 400) {
+            return this.$allLength / 20;
+        }
+        if (this.$allLength > 300) {
+            return this.$allLength / 15;
+        }
+        if (this.$allLength > 200) {
+            return this.$allLength / 10;
+        }
 
-        this.progressSize = progressWidth;
-        this.$bar.animate({width: progressWidth + '%'}, 0.01, function () {
-            if (self.$bar[0].style.width >= '100%') {
-                if (!self.isFinish) {
-                    objLoading.finish();
-                    self.isFinish = true;
-                }
-            }
-        });
+        return this.$allLength;
     }
 }

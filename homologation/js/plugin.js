@@ -4036,6 +4036,7 @@ function () {
     this.$carousel = document.querySelectorAll('.carousel');
     this.classDisplay = 'display-none';
     this.counterCurrent = 0;
+    this.transition = 5;
   }
 
   _createClass(FrameworkCarousel, [{
@@ -4049,10 +4050,10 @@ function () {
         return;
       }
 
+      this.interval = setInterval(this.verifyInternval, 1000);
       this.buildLayout();
       this.buildNavigation();
       this.watchResize();
-      this.buildCounter();
     }
   }, {
     key: "buildLayout",
@@ -4066,7 +4067,7 @@ function () {
         var length = item.querySelectorAll('.carousel-list li').length;
         self.resizeLayout(item);
         self.buildLayoutController(item, length);
-        self.defineActive(item.querySelector('[data-id="' + item.getAttribute('data-current-slide') + '"]')); // self.defineActive(item.querySelector('.carousel-controller [data-id="' + item.getAttribute('data-current-slide') + '"]'));
+        self.defineActive(item.querySelector('[data-id="' + item.getAttribute('data-current-slide') + '"]'));
 
         if (length === 1) {
           item.querySelector('[data-id="nav-left"]').classList.add(self.classDisplay);
@@ -4085,7 +4086,7 @@ function () {
       var self = this;
 
       window.onresize = function () {
-        Array.prototype.forEach.call(self.$carousel, function (item, index) {
+        Array.prototype.forEach.call(self.$carousel, function (item) {
           var $this = item.parentNode.parentNode.parentNode.parentNode;
           var $carouselList = $this.querySelector('.carousel-list');
           var newSlide = 0;
@@ -4122,7 +4123,7 @@ function () {
 
       var self = this;
       var $carousel = document.querySelectorAll('.carousel');
-      Array.prototype.forEach.call($carousel, function (item, index) {
+      Array.prototype.forEach.call($carousel, function (item) {
         self.buildNavigationControllerBt(item);
         self.buildNavigationArrowLeft(item);
         self.buildNavigationArrowRight(item);
@@ -4137,7 +4138,7 @@ function () {
 
       var self = this;
       var button = target.querySelectorAll('.carousel-controller-bt');
-      Array.prototype.forEach.call(button, function (item, index) {
+      Array.prototype.forEach.call(button, function (item) {
         item.onclick = function () {
           item.parentNode.parentNode.parentNode.parentNode.querySelector('[data-current-slide="' + item.getAttribute('data-id') + '"]');
           self.defineActive(item);
@@ -4218,7 +4219,7 @@ function () {
 
       switch ($carousel.getAttribute('data-style')) {
         case 'fade':
-          Array.prototype.forEach.call($carouselList.querySelectorAll('li'), function (item, index) {
+          Array.prototype.forEach.call($carouselList.querySelectorAll('li'), function (item) {
             item.style.opacity = 0;
           });
           $carouselList.querySelector('li').style.transition = transition;
@@ -4233,24 +4234,20 @@ function () {
       }
     }
   }, {
-    key: "buildCounter",
-    value: function buildCounter() {
+    key: "verifyInternval",
+    value: function verifyInternval() {
       /*removeIf(production)*/
       objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
       /*endRemoveIf(production)*/
 
-      var self = this;
-      var interval = setInterval(verifyInternval, 1000);
+      var self = objFrameworkCarousel;
+      self.counterCurrent++;
 
-      function verifyInternval() {
-        self.counterCurrent++;
-
-        if (self.counterCurrent >= 5) {
-          self.counterCurrent = 0;
-          Array.prototype.forEach.call(self.$carousel, function (item, index) {
-            item.querySelector('[data-id="nav-right"]').click();
-          });
-        }
+      if (self.counterCurrent >= self.transition) {
+        self.counterCurrent = 0;
+        Array.prototype.forEach.call(self.$carousel, function (item) {
+          item.querySelector('[data-id="nav-right"]').click();
+        });
       }
     }
   }, {
@@ -4261,7 +4258,7 @@ function () {
       /*endRemoveIf(production)*/
 
       var listBt = target.parentNode.parentNode.querySelectorAll('.carousel-controller-bt');
-      Array.prototype.forEach.call(listBt, function (item, index) {
+      Array.prototype.forEach.call(listBt, function (item) {
         item.classList.remove('active');
       });
       target.classList.add('active');
@@ -4276,9 +4273,9 @@ function () {
       var $carouselList = target.querySelector('.carousel-list');
       var $carouselListItem = $carouselList.querySelectorAll('li');
       var length = $carouselListItem.length;
-      $carouselList.setAttribute('style', 'width: ' + length * 100 + '%');
-      Array.prototype.forEach.call($carouselListItem, function (item, index) {
-        item.setAttribute('style', 'width: ' + 100 / length + '%');
+      $carouselList.style.width = +length * 100 + '%';
+      Array.prototype.forEach.call($carouselListItem, function (item) {
+        item.style.width = +100 / length + '%';
       });
     }
   }]);
@@ -4294,20 +4291,21 @@ function () {
   function FrameworkDebug() {
     _classCallCheck(this, FrameworkDebug);
 
-    // this.isFrameworkLayout = true;
-    // this.isFrameworkManagement = true;
-    // this.isLoading = true;
-    // this.isTheme = true;
-    // this.isFrameworkCarousel = true;
-    // this.isFrameworkGeneric = true;
-    this.isFrameworkMenuDropDown = true; // this.isFrameworkMenuTab = true;
-    // this.isFrameworkModal = true;
-    // this.isFrameworkNotification = true;
-    // this.isFrameworkProgress = true;
-    // this.isFrameworkTable = true;
-    // this.isFrameworkTag = true;
-    // this.isFrameworkTooltip = true;
-    // this.isFrameworkTranslation = true;
+    this.isFrameworkLayout = true;
+    this.isFrameworkManagement = true;
+    this.isLoading = true;
+    this.isTheme = true;
+    this.isFrameworkCarousel = true;
+    this.isFrameworkGeneric = true;
+    this.isFrameworkMenuDropDown = true;
+    this.isFrameworkMenuTab = true;
+    this.isFrameworkModal = true;
+    this.isFrameworkNotification = true;
+    this.isFrameworkProgress = true;
+    this.isFrameworkTable = true;
+    this.isFrameworkTag = true;
+    this.isFrameworkTooltip = true;
+    this.isFrameworkTranslation = true;
   }
 
   _createClass(FrameworkDebug, [{
@@ -4373,6 +4371,17 @@ function () {
   }
 
   _createClass(FrameworkForm, [{
+    key: "build",
+    value: function build() {
+      /*removeIf(production)*/
+      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      /*endRemoveIf(production)*/
+
+      this.buildFocus();
+      this.buildInputFile();
+      this.buildMask();
+    }
+  }, {
     key: "buildMask",
     value: function buildMask() {
       /*removeIf(production)*/
@@ -4670,6 +4679,15 @@ function () {
   }
 
   _createClass(FrameworkMenuTab, [{
+    key: "build",
+    value: function build() {
+      /*removeIf(production)*/
+      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      /*endRemoveIf(production)*/
+
+      this.defineActive();
+    }
+  }, {
     key: "defineActive",
     value: function defineActive() {
       /*removeIf(production)*/
@@ -4713,18 +4731,7 @@ function () {
     objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
     /*endRemoveIf(production)*/
 
-    this.$body = $('body');
-    this.$modal = '';
-    this.$modalFooter = '';
-    this.$modalFooterConfirm = '';
-    this.$modalFooterCancel = '';
-    this.$modalTitle = '';
-    this.$modalClose = '';
-    this.$modalContent = '';
-    this.$modalBox = '';
-    this.$modalNavigationArrow = '';
-    this.$modalNavigationArrowLeft = '';
-    this.$modalNavigationArrowRight = '';
+    this.$body = document.querySelector('body');
     this.targetBuildGalleryChange = '';
     this.cssDisplay = 'display-none';
   }
@@ -4736,17 +4743,31 @@ function () {
       objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
       /*endRemoveIf(production)*/
 
-      this.$modal = $('#modal');
-      this.$modalFooter = this.$modal.find('footer');
-      this.$modalFooterConfirm = this.$modalFooter.find('[data-id="confirm"]');
-      this.$modalFooterCancel = this.$modalFooter.find('[data-id="cancel"]');
-      this.$modalTitle = this.$modal.find('.page-title');
-      this.$modalClose = $('#modal_close');
-      this.$modalContent = $('#modal_content');
-      this.$modalBox = this.$modal.find('.modal-box');
-      this.$modalNavigationArrow = this.$modal.find('.navigation-arrow');
-      this.$modalNavigationArrowLeft = this.$modalNavigationArrow.find('[data-id="nav-left"]');
-      this.$modalNavigationArrowRight = this.$modalNavigationArrow.find('[data-id="nav-right"]');
+      this.$modal = document.querySelector('#modal');
+      this.$modalFooter = this.$modal.querySelector('footer');
+      this.$modalFooterConfirm = this.$modalFooter.querySelector('[data-id="confirm"]');
+      this.$modalFooterCancel = this.$modalFooter.querySelector('[data-id="cancel"]');
+      this.$modalClose = document.querySelector('#modal_close');
+      this.$modalContent = document.querySelector('#modal_content');
+      this.$modalBox = this.$modal.querySelector('.modal-box');
+      this.$modalNavigationArrow = this.$modal.querySelector('.navigation-arrow');
+      this.$modalNavigationArrowLeft = this.$modalNavigationArrow.querySelector('[data-id="nav-left"]');
+      this.$modalNavigationArrowRight = this.$modalNavigationArrow.querySelector('[data-id="nav-right"]');
+      this.$gallery = document.querySelectorAll('.gallery');
+    }
+  }, {
+    key: "build",
+    value: function build() {
+      /*removeIf(production)*/
+      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      /*endRemoveIf(production)*/
+
+      this.buildHtml();
+      this.updateVariable();
+      this.buildMenu();
+      this.buildMenuGallery();
+      this.buildKeyboard();
+      this.buildTranslation();
     }
   }, {
     key: "buildHtml",
@@ -4794,8 +4815,7 @@ function () {
       string += '         </footer>';
       string += '     </div>';
       string += '</div>';
-      this.$body.prepend(string);
-      this.updateVariable();
+      this.$body.insertAdjacentHTML('afterbegin', string);
     }
   }, {
     key: "buildTranslation",
@@ -4804,8 +4824,69 @@ function () {
       objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
       /*endRemoveIf(production)*/
 
-      $(this.$modalFooterConfirm).html(objFrameworkTranslation.translation["default"].confirm);
-      $(this.$modalFooterCancel).html(objFrameworkTranslation.translation["default"].cancel);
+      this.$modalFooterConfirm.innerHTML = objFrameworkTranslation.translation["default"].confirm;
+      this.$modalFooterCancel.innerHTML = objFrameworkTranslation.translation["default"].cancel;
+    }
+  }, {
+    key: "buildKeyboard",
+    value: function buildKeyboard() {
+      /*removeIf(production)*/
+      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      /*endRemoveIf(production)*/
+
+      var self = this;
+      window.addEventListener('keyup', function (event) {
+        if (event.keyCode === 27) {
+          self.closeModal();
+        }
+
+        if (event.keyCode === 37) {
+          if (self.$modalNavigationArrowLeft.classList.contains(self.cssDisplay)) {
+            return;
+          } else {
+            self.$modalNavigationArrowLeft.click();
+          }
+        }
+
+        if (event.keyCode === 39) {
+          if (self.$modalNavigationArrowRight.classList.contains(self.cssDisplay)) {
+            return;
+          } else {
+            self.$modalNavigationArrowRight.click();
+          }
+        }
+      });
+    }
+  }, {
+    key: "buildMenuGallery",
+    value: function buildMenuGallery() {
+      /*removeIf(production)*/
+      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      /*endRemoveIf(production)*/
+
+      var self = this;
+
+      if (!this.$gallery) {
+        return;
+      }
+
+      Array.prototype.forEach.call(this.$gallery, function (item) {
+        var button = item.querySelectorAll('a');
+        Array.prototype.forEach.call(button, function (itemBt) {
+          itemBt.addEventListener('click', function (event) {
+            event.preventDefault();
+            self.buildModal('gallery', false, 'fu');
+            self.buildGalleryImage($(this).attr('href'), $(this).find('img').attr('data-description'));
+            self.buildGalleryNavigation(itemBt);
+          });
+        });
+      });
+      this.$modalNavigationArrowLeft.addEventListener('click', function () {
+        self.targetBuildGalleryChange.parentNode.previousElementSibling.querySelector('a').click();
+      });
+      this.$modalNavigationArrowRight.addEventListener('click', function () {
+        self.targetBuildGalleryChange.parentNode.nextElementSibling.querySelector('a').click();
+      });
     }
   }, {
     key: "buildMenu",
@@ -4815,55 +4896,21 @@ function () {
       /*endRemoveIf(production)*/
 
       var self = this;
-      var $arrowLeft = $('[data-id="nav-left"]');
-      var $arrowRight = $('[data-id="nav-right"]');
-      this.$modalClose.click(function () {
+      this.$modalClose.addEventListener('click', function () {
         self.closeModal();
       });
-      $(document).keyup(function (e) {
-        if (e.keyCode === 27) {
-          self.closeModal();
-        }
+      document.addEventListener('click', function (event) {
+        var isButton = event.target.matches('button *, a *');
+
+        if (isButton) {
+          return;
+        } // self.closeModal();
+
       });
-      $(document).keyup(function (e) {
-        if (e.keyCode === 37) {
-          if ($arrowLeft.hasClass(self.cssDisplay)) {
-            return false;
-          } else {
-            $arrowLeft.click();
-          }
-        }
-      });
-      $(document).keyup(function (e) {
-        if (e.keyCode === 39) {
-          if ($arrowRight.hasClass(self.cssDisplay)) {
-            return false;
-          } else {
-            $arrowRight.click();
-          }
-        }
-      });
-      $(document).click(function (event) {
-        if (!$(event.target).closest('button, a').length) {
-          self.closeModal();
-        }
-      });
-      $('.gallery').find('a').on('click', function (event) {
-        event.preventDefault();
-        self.buildModal('gallery', false, 'fu');
-        self.buildContentStatic($(this).attr('href'), $(this).find('img').attr('alt'), $(this).find('img').attr('data-description'));
-        self.buildGalleryNavigation(this);
-      });
-      this.$modalNavigationArrowLeft.click(function () {
-        $(self.targetBuildGalleryChange).parent().prev().find('a').click();
-      });
-      this.$modalNavigationArrowRight.click(function () {
-        $(self.targetBuildGalleryChange).parent().next().find('a').click();
-      });
-      this.$modalFooter.find('[data-id="cancel"]').click(function () {
+      this.$modalFooter.querySelector('[data-id="cancel"]').addEventListener('click', function (event) {
         self.closeModal();
       });
-      this.$modal.find('.modal-box').on('click', function (event) {
+      this.$modal.querySelector('.modal-box').addEventListener('click', function (event) {
         event.stopPropagation();
       });
     }
@@ -4874,26 +4921,31 @@ function () {
       objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), target);
       /*endRemoveIf(production)*/
 
-      var verifySiblings = $(target).parent().siblings().find('a').length;
-      var currentPosition = $(target).parent().parent().find('a').index(target);
+      var array = [];
+      var currentGallery = target.parentNode.parentNode;
+      var siblingLength = currentGallery.querySelectorAll('a').length - 1;
+      Array.prototype.forEach.call(currentGallery.querySelectorAll('a'), function (item) {
+        array.push(item);
+      });
+      var currentPosition = array.indexOf(target);
 
-      if (verifySiblings > 0) {
-        this.$modalNavigationArrow.removeClass(this.cssDisplay);
+      if (siblingLength > 0) {
+        this.$modalNavigationArrow.classList.remove(this.cssDisplay);
         this.targetBuildGalleryChange = target;
 
         if (currentPosition <= 0) {
-          this.$modalNavigationArrowLeft.addClass(this.cssDisplay);
+          this.$modalNavigationArrowLeft.classList.add(this.cssDisplay);
         } else {
-          this.$modalNavigationArrowLeft.removeClass(this.cssDisplay);
+          this.$modalNavigationArrowLeft.classList.remove(this.cssDisplay);
         }
 
-        if (currentPosition >= verifySiblings) {
-          this.$modalNavigationArrowRight.addClass(this.cssDisplay);
+        if (currentPosition >= siblingLength) {
+          this.$modalNavigationArrowRight.classList.add(this.cssDisplay);
         } else {
-          this.$modalNavigationArrowRight.removeClass(this.cssDisplay);
+          this.$modalNavigationArrowRight.classList.remove(this.cssDisplay);
         }
       } else {
-        this.$modalNavigationArrow.addClass(this.cssDisplay);
+        this.$modalNavigationArrow.classList.add(this.cssDisplay);
       }
     }
   }, {
@@ -4906,7 +4958,7 @@ function () {
       objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), [kind, content, size, action]);
       /*endRemoveIf(production)*/
 
-      this.$modalFooter.addClass(this.cssDisplay);
+      this.$modalFooter.classList.add(this.cssDisplay);
       action === 'open' ? this.openModal() : this.closeModal();
       this.buildModalSize(size);
       this.buildModalKind(kind, content);
@@ -4918,23 +4970,23 @@ function () {
       objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), [kind, content]);
       /*endRemoveIf(production)*/
 
+      if (kind === 'ajax') {
+        this.buildContentAjax(content);
+      }
+
+      if (kind === 'confirmation') {
+        this.buildContentConfirmation(content);
+      }
+
       switch (kind) {
-        case 'ajax':
-          this.buildContentAjax(content);
-          this.$modalNavigationArrow.removeClass('arrow-active').addClass('arrow-inactive');
-          break;
-
         case 'gallery':
-          this.$modalNavigationArrow.removeClass('arrow-inactive').addClass('arrow-active');
-          break;
-
-        case 'confirmation':
-          this.$modalNavigationArrow.removeClass('arrow-active').addClass('arrow-inactive');
-          this.buildContentConfirmation(content);
+          this.$modalNavigationArrow.classList.remove('arrow-inactive');
+          this.$modalNavigationArrow.classList.add('arrow-active');
           break;
 
         default:
-          this.$modalNavigationArrow.removeClass('arrow-active').addClass('arrow-inactive');
+          this.$modalNavigationArrow.classList.remove('arrow-active');
+          this.$modalNavigationArrow.classList.add('arrow-inactive');
           break;
       }
     }
@@ -4945,10 +4997,11 @@ function () {
       objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
       /*endRemoveIf(production)*/
 
-      this.$modalContent.empty();
-      this.$body.removeClass('overflow-y').addClass('overflow-hidden').css('overflow-y', 'hidden');
-      this.$modal.removeClass('modal-close');
-      this.$modalBox.addClass('modal-animate');
+      this.$body.classList.remove('overflow-y');
+      this.$body.classList.add('overflow-hidden');
+      this.$body.style.overflowY = 'hidden';
+      this.$modal.classList.remove('modal-close');
+      this.$modalBox.classList.add('modal-animate');
     }
   }, {
     key: "closeModal",
@@ -4957,10 +5010,12 @@ function () {
       objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
       /*endRemoveIf(production)*/
 
-      this.$body.addClass('overflow-y').removeClass('overflow-hidden').css('overflow-y', 'auto').css('position', 'relative');
-      this.$modal.addClass('modal-close');
-      this.$modalBox.removeClass('modal-animate');
-      this.$modalContent.empty();
+      this.$body.classList.add('overflow-y');
+      this.$body.classList.remove('overflow-hidden');
+      this.$body.style.overflowY = 'auto';
+      this.$body.style.position = 'relative';
+      this.$modal.classList.add('modal-close');
+      this.$modalBox.classList.remove('modal-animate');
 
       if (typeof objFrameworkMenuDropDown !== 'undefined') {
         objFrameworkMenuDropDown.build();
@@ -4979,7 +5034,13 @@ function () {
       objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), size);
       /*endRemoveIf(production)*/
 
-      this.$modalBox.removeClass('modal-es').removeClass('modal-sm').removeClass('modal-re').removeClass('modal-bi').removeClass('modal-eb').removeClass('modal-fu').addClass('modal-' + size);
+      this.$modalBox.classList.remove('modal-es');
+      this.$modalBox.classList.remove('modal-sm');
+      this.$modalBox.classList.remove('modal-re');
+      this.$modalBox.classList.remove('modal-bi');
+      this.$modalBox.classList.remove('modal-eb');
+      this.$modalBox.classList.remove('modal-fu');
+      this.$modalBox.classList.add('modal-' + size);
     }
   }, {
     key: "buildContentAjax",
@@ -4989,36 +5050,52 @@ function () {
       /*endRemoveIf(production)*/
 
       var self = this;
-      this.$modalContent.append(objFrameworkLayout.buildSpinner('white'));
-      return $.ajax({
-        url: target,
-        success: function success(data) {
-          self.$modalContent.empty();
-          self.$modalContent.append(data);
-          objFrameworkLayout.buildToggle();
-          objFrameworkForm.buildInputFile();
+      var ajax = new XMLHttpRequest();
 
-          if (typeof objFrameworkMenuDropDown !== 'undefined') {
-            objFrameworkMenuDropDown.build();
-          }
-
-          if (typeof objFrameworkMenuTab !== 'undefined') {
-            objFrameworkMenuTab.defineActive();
-          }
+      ajax.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          self.buildContentAjaxSuccess(this.responseText);
         }
-      });
+      };
+
+      ajax.open('POST', target, true);
+      ajax.send();
     }
   }, {
-    key: "buildContentStatic",
-    value: function buildContentStatic(image, title, description) {
+    key: "buildContentAjaxSuccess",
+    value: function buildContentAjaxSuccess(data) {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), [image, title, description]);
+      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      /*endRemoveIf(production)*/
+
+      this.$modalContent.innerHTML = data;
+
+      if (typeof objFrameworkLayout !== 'undefined') {
+        objFrameworkLayout.buildToggle();
+      }
+
+      if (typeof objFrameworkForm !== 'undefined') {
+        objFrameworkForm.buildInputFile();
+      }
+
+      if (typeof objFrameworkMenuDropDown !== 'undefined') {
+        objFrameworkMenuDropDown.build();
+      }
+
+      if (typeof objFrameworkMenuTab !== 'undefined') {
+        objFrameworkMenuTab.defineActive();
+      }
+    }
+  }, {
+    key: "buildGalleryImage",
+    value: function buildGalleryImage(image, description) {
+      /*removeIf(production)*/
+      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), [image, description]);
       /*endRemoveIf(production)*/
 
       var stringImage = '<img src="' + image + '" class="img-responsive" style="margin:auto;" title="" alt=""/>';
-      this.$modalContent.empty();
-      this.$modalContent.append(stringImage);
-      this.changeText(title, description);
+      this.$modalContent.innerHTML = stringImage;
+      this.changeText(description);
     }
   }, {
     key: "buildContentConfirmation",
@@ -5027,8 +5104,9 @@ function () {
       objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), content);
       /*endRemoveIf(production)*/
 
-      this.$modalFooter.removeClass(this.cssDisplay);
-      this.$modalContent.html('<div class="padding-re text-center">' + content + '</div>');
+      var string = '<div class="padding-re text-center">' + content + '</div>';
+      this.$modalFooter.classList.remove(this.cssDisplay);
+      this.$modalContent.innerHTML = string;
     }
   }, {
     key: "buildContentConfirmationAction",
@@ -5037,13 +5115,13 @@ function () {
       objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), action);
       /*endRemoveIf(production)*/
 
-      this.$modalFooterConfirm.attr('onclick', action);
+      this.$modalFooterConfirm.setAttribute('onclick', action);
     }
   }, {
     key: "changeText",
-    value: function changeText(title, description) {
+    value: function changeText(description) {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), [title, description]);
+      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), [description]);
       /*endRemoveIf(production)*/
 
       var string = '';
@@ -5057,10 +5135,8 @@ function () {
       string += '</p>';
 
       if (_typeof(description) !== (typeof undefined === "undefined" ? "undefined" : _typeof(undefined))) {
-        this.$modalContent.append(string);
+        this.$modalContent.insertAdjacentHTML('beforeend', string);
       }
-
-      this.$modalTitle.text(title);
     }
   }]);
 
@@ -5077,26 +5153,58 @@ function () {
     objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
     /*endRemoveIf(production)*/
 
-    this.$body = $('body');
-    this.$notify = '';
-    this.$notifyItem = $('.notify-item');
+    this.$body = document.querySelector('body');
+    this.$notifyItem = document.querySelectorAll('.notify-item');
     this.notifyId = 0;
   }
 
   _createClass(FrameworkNotification, [{
+    key: "build",
+    value: function build() {
+      /*removeIf(production)*/
+      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      /*endRemoveIf(production)*/
+
+      this.buildHtml();
+      this.buildNavigation();
+    }
+  }, {
     key: "buildHtml",
     value: function buildHtml() {
       /*removeIf(production)*/
       objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
       /*endRemoveIf(production)*/
 
-      var concat = '';
-      concat += '<div id="notify">';
-      concat += '    <ul class="notify-list">';
-      concat += '    </ul>';
-      concat += '</div>';
-      this.$body.prepend(concat);
-      this.$notify = $('#notify').find('.notify-list');
+      var string = '';
+      string += '<div id="notify">';
+      string += '    <ul class="notify-list">';
+      string += '    </ul>';
+      string += '</div>';
+      this.$body.insertAdjacentHTML('beforeend', string);
+      this.$notify = document.querySelector('#notify .notify-list');
+    }
+  }, {
+    key: "buildHtmlItem",
+    value: function buildHtmlItem() {
+      var style = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'grey';
+      var message = arguments.length > 1 ? arguments[1] : undefined;
+
+      /*removeIf(production)*/
+      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), [style, message]);
+      /*endRemoveIf(production)*/
+
+      var string = '';
+      string += '<li id="notify_' + this.notifyId + '">';
+      string += '     <div class="notify-item notify-' + style + '">';
+      string += '         <span class="text">';
+      string += message;
+      string += '         </span>';
+      string += '         <button type="button" class="bt" onclick="$(this).parent().parent().remove();" aria-label="' + objFrameworkTranslation.translation["default"].close + '">';
+      string += '            <span class="fa fa-times" aria-hidden="true"></span>';
+      string += '         </button>';
+      string += '     </div>';
+      string += '</li>';
+      return string;
     }
   }, {
     key: "buildNavigation",
@@ -5105,76 +5213,46 @@ function () {
       objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
       /*endRemoveIf(production)*/
 
-      this.$notifyItem.find('.bt').each(function () {
-        $(this).on('click', function () {
-          $(this).parent().parent().remove();
+      Array.prototype.forEach.call(this.$notifyItem, function (item) {
+        var bt = item.querySelectorAll('.bt');
+        Array.prototype.forEach.call(bt, function (item) {
+          item.addEventListener('click', function () {
+            item.parentNode.parentNode.parentNode.removeChild(item.parentNode.parentNode);
+          });
         });
       });
     }
   }, {
     key: "addNotification",
-    value: function addNotification(message, style, place) {
+    value: function addNotification(message, style) {
+      var place = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : this.$notify;
+
       /*removeIf(production)*/
       objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), [message, style, place]);
       /*endRemoveIf(production)*/
 
-      var newPlace = place;
-      var newStyle = style;
-
-      if (objFrameworkLayout.verifyUndefined(newPlace)) {
-        newPlace = this.$notify;
-      }
-
-      if (objFrameworkLayout.verifyUndefined(newStyle)) {
-        newStyle = 'grey';
-      }
-
-      if (newPlace.length >= 1) {
-        this.addNotificationBuildListItem(message, newStyle, newPlace);
-      } else {
-        this.addNotificationBuildListItem(message, newStyle, newPlace);
-      }
-    }
-  }, {
-    key: "addNotificationBuildListItem",
-    value: function addNotificationBuildListItem(message, style, place) {
-      /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), [message, style, place]);
-      /*endRemoveIf(production)*/
-
-      var concat = '';
+      var string = this.buildHtmlItem(style, message);
       var newPlace = '';
 
-      if (objFrameworkLayout.verifyUndefined(message)) {
+      if (!message) {
         return false;
       }
 
       if (place !== this.$notify) {
-        newPlace = $(place);
+        newPlace = document.querySelector(place);
 
-        if (newPlace.children('.notify-list').length < 1) {
-          newPlace.append('<ul class="notify-list"></ul>');
+        if (!newPlace.querySelector('.notify-list')) {
+          newPlace.insertAdjacentHTML('beforeend', '<ul class="notify-list"></ul>');
         }
       }
 
-      concat += '<li id="notify_' + this.notifyId + '">';
-      concat += '     <div class="notify-item notify-' + style + '">';
-      concat += '         <span class="text">';
-      concat += message;
-      concat += '         </span>';
-      concat += '         <button type="button" class="bt" onclick="$(this).parent().parent().remove();" aria-label="' + objFrameworkTranslation.translation["default"].close + '">';
-      concat += '            <span class="fa fa-times" aria-hidden="true"></span>';
-      concat += '         </button>';
-      concat += '     </div>';
-      concat += '</li>';
-
       if (place !== this.$notify) {
-        newPlace.children('.notify-list').prepend(concat);
+        newPlace.querySelector('.notify-list').insertAdjacentHTML('beforeend', string);
       } else {
-        place.append(concat);
+        place.insertAdjacentHTML('beforeend', string);
       }
 
-      this.removeNotifyListItem('#notify_' + this.notifyId, message.length);
+      this.removeNotifyListItem(document.querySelector('#notify_' + this.notifyId), message.length);
       this.notifyId++;
     }
   }, {
@@ -5184,13 +5262,13 @@ function () {
       objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), [item, messageLength]);
       /*endRemoveIf(production)*/
 
-      var myVar;
       var messageTime = messageLength * 150;
-      myVar = setTimeout(remove, messageTime);
 
       function remove() {
-        $(item).remove();
+        item.parentNode.removeChild(item);
       }
+
+      setTimeout(remove, messageTime);
     }
   }]);
 
@@ -5207,45 +5285,80 @@ function () {
     objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
     /*endRemoveIf(production)*/
 
-    this.$bar = $('#loading_main').find('.progress-bar');
-    this.$all = $('div, section, article');
-    this.$allLength = Math.round(this.$all.length / 10);
+    this.$bar = document.querySelector('#loading_main .progress-bar');
+    this.$all = document.querySelectorAll('div, section, article');
+    this.$allLength = this.$all.length;
     this.isFinish = false;
     this.progressSize = 0;
   }
 
   _createClass(FrameworkProgress, [{
-    key: "start",
-    value: function start() {
-      /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
-      /*endRemoveIf(production)*/
-
-      for (var i = 0; i < this.$allLength; i++) {
-        this.checkElement();
-      }
-    }
-  }, {
-    key: "checkElement",
-    value: function checkElement() {
+    key: "build",
+    value: function build() {
       /*removeIf(production)*/
       objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
       /*endRemoveIf(production)*/
 
       var self = this;
-      var percent = 100 / this.$allLength;
-      var progressWidth = percent + this.progressSize;
-      this.progressSize = progressWidth;
-      this.$bar.animate({
-        width: progressWidth + '%'
-      }, 0.01, function () {
-        if (self.$bar[0].style.width >= '100%') {
-          if (!self.isFinish) {
-            objLoading.finish();
-            self.isFinish = true;
-          }
+      var interval = setInterval(frame, 1);
+      var total = this.buildProportion();
+
+      function frame() {
+        var porcentage = self.progressSize * 100 / total;
+        self.progressSize++;
+        self.$bar.style.width = porcentage + '%';
+
+        if (self.progressSize >= total) {
+          clearInterval(interval);
+          objLoading.finish();
+          self.isFinish = true;
         }
-      });
+      }
+    }
+  }, {
+    key: "buildProportion",
+    value: function buildProportion() {
+      /*removeIf(production)*/
+      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      /*endRemoveIf(production)*/
+
+      if (this.$allLength > 1000) {
+        return this.$allLength / 50;
+      }
+
+      if (this.$allLength > 900) {
+        return this.$allLength / 45;
+      }
+
+      if (this.$allLength > 800) {
+        return this.$allLength / 40;
+      }
+
+      if (this.$allLength > 700) {
+        return this.$allLength / 35;
+      }
+
+      if (this.$allLength > 600) {
+        return this.$allLength / 30;
+      }
+
+      if (this.$allLength > 500) {
+        return this.$allLength / 25;
+      }
+
+      if (this.$allLength > 400) {
+        return this.$allLength / 20;
+      }
+
+      if (this.$allLength > 300) {
+        return this.$allLength / 15;
+      }
+
+      if (this.$allLength > 200) {
+        return this.$allLength / 10;
+      }
+
+      return this.$allLength;
     }
   }]);
 
@@ -5260,8 +5373,8 @@ function () {
   }
 
   _createClass(FrameworkTable, [{
-    key: "buildTableResponsive",
-    value: function buildTableResponsive() {
+    key: "build",
+    value: function build() {
       /*removeIf(production)*/
       objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
       /*endRemoveIf(production)*/
@@ -5283,8 +5396,8 @@ function () {
   }
 
   _createClass(FrameworkTag, [{
-    key: "buildNavigation",
-    value: function buildNavigation() {
+    key: "build",
+    value: function build() {
       /*removeIf(production)*/
       objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
       /*endRemoveIf(production)*/
@@ -5334,8 +5447,8 @@ function () {
   }
 
   _createClass(FrameworkTooltip, [{
-    key: "start",
-    value: function start() {
+    key: "build",
+    value: function build() {
       /*removeIf(production)*/
       objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
       /*endRemoveIf(production)*/

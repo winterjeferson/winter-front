@@ -43,6 +43,15 @@ function () {
   }
 
   _createClass(FrameworkLayout, [{
+    key: "build",
+    value: function build() {
+      /*removeIf(production)*/
+      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      /*endRemoveIf(production)*/
+
+      this.buildToggle();
+    }
+  }, {
     key: "switchDisplay",
     value: function switchDisplay(target) {
       var action = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
@@ -104,25 +113,7 @@ function () {
           }
         };
       });
-    } // verifyUndefined(target) {
-    //     /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), target); /*endRemoveIf(production)*/
-    //     if (typeof target === 'undefined' || target === null || target === '') {
-    //         return true;
-    //     } else {
-    //         return false;
-    //     }
-    // }
-    // buildLayout() {
-
-    /*removeIf(production)*/
-    // objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); 
-
-    /*endRemoveIf(production)*/
-    // $('button, a').on('click', function (event) {
-    //     event.stopPropagation();
-    // });
-    // }
-
+    }
   }]);
 
   return FrameworkLayout;
@@ -153,22 +144,17 @@ function () {
       /*endRemoveIf(production)*/
       // objFrameworkLayout.buildLayout();
 
-      objFrameworkLayout.buildToggle();
-      objFrameworkForm.buildFocus();
-      objFrameworkForm.buildInputFile();
-      objFrameworkForm.buildMask();
-      objFrameworkModal.buildHtml();
-      objFrameworkModal.buildMenu();
-      objFrameworkModal.buildTranslation();
+      objFrameworkProgress.build();
+      objFrameworkLayout.build();
+      objFrameworkForm.build();
+      objFrameworkModal.build();
       objFrameworkCarousel.build();
       objFrameworkMenuDropDown.build();
-      objFrameworkMenuTab.defineActive();
-      objFrameworkNotification.buildHtml();
-      objFrameworkNotification.buildNavigation();
-      objFrameworkTable.buildTableResponsive();
-      objFrameworkTag.buildNavigation();
-      objFrameworkTooltip.start();
-      objFrameworkProgress.start();
+      objFrameworkMenuTab.build();
+      objFrameworkNotification.build();
+      objFrameworkTable.build();
+      objFrameworkTag.build();
+      objFrameworkTooltip.build();
     }
   }]);
 

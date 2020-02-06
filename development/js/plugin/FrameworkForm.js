@@ -2,6 +2,13 @@ class FrameworkForm {
     constructor() {
     }
 
+    build() {
+        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
+        this.buildFocus();
+        this.buildInputFile();
+        this.buildMask();
+    }
+
     buildMask() {
         /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
 

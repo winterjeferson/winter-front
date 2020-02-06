@@ -1,102 +1,98 @@
 class FrameworkNotification {
     constructor() {
         /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
-        this.$body = $('body');
-        this.$notify = '';
-        this.$notifyItem = $('.notify-item');
+        this.$body = document.querySelector('body');
+        this.$notifyItem = document.querySelectorAll('.notify-item');
+
         this.notifyId = 0;
+    }
+
+    build() {
+        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
+        this.buildHtml();
+        this.buildNavigation();
     }
 
     buildHtml() {
         /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
-        let concat = '';
+        let string = '';
 
-        concat += '<div id="notify">';
-        concat += '    <ul class="notify-list">';
-        concat += '    </ul>';
-        concat += '</div>';
+        string += '<div id="notify">';
+        string += '    <ul class="notify-list">';
+        string += '    </ul>';
+        string += '</div>';
 
-        this.$body.prepend(concat);
-        this.$notify = $('#notify').find('.notify-list');
+        this.$body.insertAdjacentHTML('beforeend', string);
+        this.$notify = document.querySelector('#notify .notify-list');
+    }
+
+    buildHtmlItem(style = 'grey', message) {
+        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), [style, message]); /*endRemoveIf(production)*/
+        let string = '';
+
+        string += '<li id="notify_' + this.notifyId + '">';
+        string += '     <div class="notify-item notify-' + style + '">';
+        string += '         <span class="text">';
+        string += message;
+        string += '         </span>';
+        string += '         <button type="button" class="bt" onclick="$(this).parent().parent().remove();" aria-label="' + objFrameworkTranslation.translation.default.close + '">';
+        string += '            <span class="fa fa-times" aria-hidden="true"></span>';
+        string += '         </button>';
+        string += '     </div>';
+        string += '</li>';
+
+        return string;
     }
 
     buildNavigation() {
         /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
-        this.$notifyItem.find('.bt').each(function () {
-            $(this).on('click', function () {
-                $(this).parent().parent().remove();
+
+        Array.prototype.forEach.call(this.$notifyItem, function (item) {
+            let bt = item.querySelectorAll('.bt')
+
+            Array.prototype.forEach.call(bt, function (item) {
+                item.addEventListener('click', function () {
+                    item.parentNode.parentNode.parentNode.removeChild(item.parentNode.parentNode);
+                });
             });
         });
     }
 
-    addNotification(message, style, place) {
+    addNotification(message, style, place = this.$notify) {
         /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), [message, style, place]); /*endRemoveIf(production)*/
-        let newPlace = place;
-        let newStyle = style;
-
-        if (objFrameworkLayout.verifyUndefined(newPlace)) {
-            newPlace = this.$notify;
-        }
-
-        if (objFrameworkLayout.verifyUndefined(newStyle)) {
-            newStyle = 'grey';
-        }
-
-        if (newPlace.length >= 1) {
-            this.addNotificationBuildListItem(message, newStyle, newPlace);
-        } else {
-            this.addNotificationBuildListItem(message, newStyle, newPlace);
-        }
-    }
-
-    addNotificationBuildListItem(message, style, place) {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), [message, style, place]); /*endRemoveIf(production)*/
-        let concat = '';
+        let string = this.buildHtmlItem(style, message);
         let newPlace = '';
 
-        if (objFrameworkLayout.verifyUndefined(message)) {
+        if (!message) {
             return false;
         }
 
         if (place !== this.$notify) {
-            newPlace = $(place);
+            newPlace = document.querySelector(place);
 
-
-            if (newPlace.children('.notify-list').length < 1) {
-                newPlace.append('<ul class="notify-list"></ul>');
+            if (!newPlace.querySelector('.notify-list')) {
+                newPlace.insertAdjacentHTML('beforeend', '<ul class="notify-list"></ul>');
             }
         }
 
-        concat += '<li id="notify_' + this.notifyId + '">';
-        concat += '     <div class="notify-item notify-' + style + '">';
-        concat += '         <span class="text">';
-        concat += message;
-        concat += '         </span>';
-        concat += '         <button type="button" class="bt" onclick="$(this).parent().parent().remove();" aria-label="' + objFrameworkTranslation.translation.default.close + '">';
-        concat += '            <span class="fa fa-times" aria-hidden="true"></span>';
-        concat += '         </button>';
-        concat += '     </div>';
-        concat += '</li>';
-
         if (place !== this.$notify) {
-            newPlace.children('.notify-list').prepend(concat);
+            newPlace.querySelector('.notify-list').insertAdjacentHTML('beforeend', string);
         } else {
-            place.append(concat);
+            place.insertAdjacentHTML('beforeend', string);
         }
 
-        this.removeNotifyListItem('#notify_' + this.notifyId, message.length);
+        this.removeNotifyListItem(document.querySelector('#notify_' + this.notifyId), message.length);
         this.notifyId++;
     }
 
     removeNotifyListItem(item, messageLength) {
         /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), [item, messageLength]); /*endRemoveIf(production)*/
-        let myVar;
         let messageTime = messageLength * 150;
 
-        myVar = setTimeout(remove, messageTime);
-
         function remove() {
-            $(item).remove();
+            item.parentNode.removeChild(item);
         }
+
+        setTimeout(remove, messageTime);
     }
 }
