@@ -5535,15 +5535,15 @@ function () {
       this.$tooltipBody = document.querySelector('#tooltip_body');
       this.$tooltipPointer = document.querySelector('#tooltip_pointer');
       this.$tooltipData = document.querySelectorAll('[data-tooltip="true"]');
-      this.windowWidth = window.outerWidth;
-      this.windowHeight = window.outerHeight;
+      this.windowWidth = window.offsetWidth;
+      this.windowHeight = window.offsetHeight;
       this.currentWindowScroll = window.scrollY;
-      this.elementTop = element !== false ? $(element).offset().top : 0;
-      this.elementLeft = element !== false ? $(element).offset().left : 0;
-      this.elementWidth = element !== false ? $(element).outerWidth(true) : 0;
-      this.elementHeight = element !== false ? $(element).outerHeight(true) : 0;
-      this.tooltipWidth = $(this.$tooltip).outerWidth(true);
-      this.tooltipHeight = $(this.$tooltip).outerHeight(true);
+      this.elementTop = element !== false ? offset(element).top : 0;
+      this.elementLeft = element !== false ? offset(element).left : 0;
+      this.elementWidth = element !== false ? element.offsetWidth : 0;
+      this.elementHeight = element !== false ? element.offsetHeight : 0;
+      this.tooltipWidth = this.$tooltip.offsetWidth;
+      this.tooltipHeight = this.$tooltip.offsetHeight;
       this.centerWidth = (this.tooltipWidth - this.elementWidth) / 2;
       this.centerHeight = this.elementHeight / 2 - this.tooltipHeight / 2;
       this.positionLeft = this.elementLeft - this.centerWidth;
@@ -5843,3 +5843,13 @@ function () {
 
   return FrameworkTranslation;
 }();
+
+function offset(element) {
+  var rect = element.getBoundingClientRect(),
+      scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+      scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  return {
+    top: rect.top + scrollTop,
+    left: rect.left + scrollLeft
+  };
+}
