@@ -301,6 +301,10 @@ class FrameworkModal {
             objFrameworkMenuDropDown.build();
         }
 
+        if (typeof objFrameworkTooltip !== 'undefined') {
+            objFrameworkTooltip.build();
+        }
+
         if (typeof objFrameworkMenuTab !== 'undefined') {
             objFrameworkMenuTab.defineActive();
         }

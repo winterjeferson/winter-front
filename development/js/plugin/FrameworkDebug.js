@@ -8,6 +8,7 @@ class FrameworkDebug {
         this.isTheme = true;
 
         this.isFrameworkCarousel = true;
+        this.isFrameworkForm = true;
         this.isFrameworkGeneric = true;
         this.isFrameworkMenuDropDown = true;
         this.isFrameworkMenuTab = true;

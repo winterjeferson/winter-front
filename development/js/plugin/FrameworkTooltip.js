@@ -1,19 +1,15 @@
 class FrameworkTooltip {
     constructor() {
         /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
-        this.$window = $(window);
-        this.$body = $('body');
-        this.$tooltip = '';
-        this.$tooltipBody = '';
-        this.$tooltipPointer = '';
+        this.$body = document.querySelector('body');
 
-        this.style = 'black';
-        this.space = 5;
         this.elementTop = 0;
         this.elementLeft = 0;
         this.elementWidth = 0;
         this.elementHeight = 0;
         this.elementLeft = 0;
+        this.style = 'black';
+        this.space = 5;
         this.tooltipWidth = 0;
         this.tooltipHeight = 0;
         this.currentWindowScroll = 0;
@@ -29,106 +25,101 @@ class FrameworkTooltip {
         /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
         this.buildHtml();
         this.updateVariable(false);
+
+        if (this.$tooltipData.length < 1) {
+            return;
+        }
+
         this.buildMaxWidth();
         this.buildResize();
         this.buildTooltip();
-        this.buildAjax();
-    }
-
-    buildHtml() {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
-        let concat = '';
-
-        concat += '<div id="tooltip">';
-        concat += '    <div id="tooltip_body"></div>';
-        concat += '    <div id="tooltip_pointer"></div>';
-        concat += '</div>';
-
-        this.$body.prepend(concat);
-
-        this.$tooltip = $('#tooltip');
-        this.$tooltipBody = $('#tooltip_body');
-        this.$tooltipPointer = $('#tooltip_pointer');
-    }
-
-    buildAjax() {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
-        let self = this;
-
-        $(document).ajaxSuccess(function () {
-            self.buildTooltip();
-        });
-    }
-
-    buildResize() {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
-        let self = this;
-
-        this.$window.resize(function () {
-            self.updateVariable(false);
-            self.buildMaxWidth();
-        });
-    }
-
-    buildTooltip() {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
-        let self = this;
-
-        self.showTooltip(false);
-
-        $('.has-tooltip').each(function () {
-            let element = $(this);
-            let attr = element.attr('title');
-
-            if (typeof attr !== 'undefined' && attr !== null && attr !== '') {
-                element.attr('data-tooltip-text', attr);
-                element.removeAttr('title');
-
-                element.hover(function () {
-                    self.$tooltipBody.html(element.attr('data-tooltip-text'));
-                    self.changeLayout(element.attr('data-tooltip-color'));
-                    self.positionTooltip(element, element.attr('data-tooltip-placement'));
-                    self.showTooltip(true);
-                }, function () {
-                    self.showTooltip(false);
-                });
-            }
-        });
-    }
-
-    buildMaxWidth() {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
-        this.$tooltip.css('max-width', this.windowWidth - (this.space * 2));
-    }
-
-    showTooltip(action) {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), action); /*endRemoveIf(production)*/
-        if (action) {
-            this.$tooltip.addClass('tooltip-show');
-        } else {
-            this.$tooltip.removeClass('tooltip-show');
-        }
     }
 
     updateVariable(element) {
         /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), element); /*endRemoveIf(production)*/
-        this.windowWidth = this.$window.width();
-        this.windowHeight = this.$window.height();
-        this.currentWindowScroll = this.$window.scrollTop();
+        this.$tooltip = document.querySelector('#tooltip');
+        this.$tooltipBody = document.querySelector('#tooltip_body');
+        this.$tooltipPointer = document.querySelector('#tooltip_pointer');
+        this.$tooltipData = document.querySelectorAll('[data-tooltip="true"]');
 
-        this.elementTop = element !== false ? element.offset().top : 0;
-        this.elementLeft = element !== false ? element.offset().left : 0;
-        this.elementWidth = element !== false ? element.outerWidth(true) : 0;
-        this.elementHeight = element !== false ? element.outerHeight(true) : 0;
+        this.windowWidth = window.outerWidth;
+        this.windowHeight = window.outerHeight;
+        this.currentWindowScroll = window.scrollY;
 
-        this.tooltipWidth = this.$tooltip.outerWidth(true);
-        this.tooltipHeight = this.$tooltip.outerHeight(true);
+        this.elementTop = element !== false ? $(element).offset().top : 0;
+        this.elementLeft = element !== false ? $(element).offset().left : 0;
+        this.elementWidth = element !== false ? $(element).outerWidth(true) : 0;
+        this.elementHeight = element !== false ? $(element).outerHeight(true) : 0;
+
+        this.tooltipWidth = $(this.$tooltip).outerWidth(true);
+        this.tooltipHeight = $(this.$tooltip).outerHeight(true);
 
         this.centerWidth = (this.tooltipWidth - this.elementWidth) / 2;
         this.centerHeight = (this.elementHeight / 2) - (this.tooltipHeight / 2);
 
         this.positionLeft = this.elementLeft - this.centerWidth;
         this.positionTop = this.elementTop - this.tooltipHeight - this.space;
+    }
+
+    buildHtml() {
+        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
+        let string = '';
+
+        string += '<div id="tooltip">';
+        string += '    <div id="tooltip_body"></div>';
+        string += '    <div id="tooltip_pointer"></div>';
+        string += '</div>';
+
+        this.$body.insertAdjacentHTML('beforeend', string);
+    }
+
+    buildResize() {
+        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
+        let self = this;
+
+        window.onresize = function () {
+            self.updateVariable(false);
+            self.buildMaxWidth();
+        }
+    }
+
+    buildTooltip() {
+        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
+        let self = this;
+
+        this.showTooltip(false);
+        Array.prototype.forEach.call(this.$tooltipData, function (item) {
+            let title = item.getAttribute('title');
+
+            if (typeof title !== 'undefined' && title !== null && title !== '') {
+                item.setAttribute('data-tooltip-text', title);
+                item.removeAttribute('title');
+                item.onmouseover = function () {
+                    self.$tooltipBody.innerHTML = item.getAttribute('data-tooltip-text');
+                    self.changeLayout(item.getAttribute('data-tooltip-color'));
+                    self.positionTooltip(item, item.getAttribute('data-tooltip-placement'));
+                    self.showTooltip(true);
+                };
+
+                item.onmouseout = function () {
+                    self.showTooltip(false);
+                };
+            }
+        });
+    }
+
+    buildMaxWidth() {
+        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
+        this.$tooltip.style.maxWidth = this.windowWidth - (this.space * 2);
+    }
+
+    showTooltip(action) {
+        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), action); /*endRemoveIf(production)*/
+        if (action) {
+            this.$tooltip.classList.add('tooltip-show');
+        } else {
+            this.$tooltip.classList.remove('tooltip-show');
+        }
     }
 
     positionTooltipSwitchDirection(placement) {
@@ -208,7 +199,8 @@ class FrameworkTooltip {
 
         this.changeArrowDirection(direction);
         this.buildLimits();
-        this.$tooltip.css('top', this.positionTop).css('left', this.positionLeft);
+        this.$tooltip.style.top = this.positionTop + 'px';
+        this.$tooltip.style.left = this.positionLeft + 'px';
 
         if (direction === 'top' || direction === 'bottom') {
             this.changeArrowPositionHorizontal();
@@ -230,23 +222,29 @@ class FrameworkTooltip {
 
     changeArrowPositionHorizontal() {
         /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
-        this.$tooltipPointer.css('left', this.elementLeft - this.$tooltipBody.position().left - this.$tooltip.position().left + (this.elementWidth / 2));
+        this.$tooltipPointer.style.left = this.elementLeft - $(this.$tooltipBody).position().left - $(this.$tooltip).position().left + (this.elementWidth / 2) + 'px';
     }
 
     changeArrowPositionVertical() {
         /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
-        this.$tooltipPointer.css('left', '');
+        this.$tooltipPointer.style.left = '';
     }
 
     changeArrowDirection(direction) {
         /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), direction); /*endRemoveIf(production)*/
-        this.$tooltipPointer.removeClass('tooltip-direction-top').removeClass('tooltip-direction-bottom').removeClass('tooltip-direction-left').removeClass('tooltip-direction-right').addClass('tooltip-direction-' + direction);
+        this.$tooltipPointer.classList.remove('tooltip-direction-top');
+        this.$tooltipPointer.classList.remove('tooltip-direction-bottom');
+        this.$tooltipPointer.classList.remove('tooltip-direction-left');
+        this.$tooltipPointer.classList.remove('tooltip-direction-right');
+        this.$tooltipPointer.classList.add('tooltip-direction-' + direction);
     }
 
     changeLayout(style) {
         /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), style); /*endRemoveIf(production)*/
         let newStyle = typeof style === 'undefined' ? newStyle = this.style : style;
 
-        this.$tooltip.removeAttr("class").addClass("tooltip tooltip-" + newStyle);
+        this.$tooltip.removeAttribute('class');
+        this.$tooltip.classList.add('tooltip');
+        this.$tooltip.classList.add('tooltip-' + newStyle);
     }
 }

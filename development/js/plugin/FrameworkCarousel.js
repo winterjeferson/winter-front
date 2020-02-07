@@ -2,6 +2,7 @@ class FrameworkCarousel {
     constructor() {
         /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
         this.$carousel = document.querySelectorAll('.carousel');
+        
         this.classDisplay = 'display-none';
         this.counterCurrent = 0;
         this.transition = 5;
