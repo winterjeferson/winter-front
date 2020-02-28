@@ -1,6 +1,6 @@
-class FrameworkCarousel {
+class Carousel {
     constructor() {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
         this.$carousel = document.querySelectorAll('.carousel');
         
         this.classDisplay = 'display-none';
@@ -9,7 +9,7 @@ class FrameworkCarousel {
     }
 
     build() {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
         if (this.$carousel.length < 1) {
             return;
         }
@@ -21,7 +21,7 @@ class FrameworkCarousel {
     }
 
     buildLayout() {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
 
         Array.prototype.forEach.call(this.$carousel, function (item) {
@@ -40,7 +40,7 @@ class FrameworkCarousel {
     }
 
     watchResize() {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
 
         window.onresize = function () {
@@ -56,7 +56,7 @@ class FrameworkCarousel {
     }
 
     buildLayoutController(target, length) {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), [target, length]); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName(), [target, length]); /*endRemoveIf(production)*/
         let concat = '';
 
         for (let i = 0; i < length; i++) {
@@ -71,7 +71,7 @@ class FrameworkCarousel {
     }
 
     buildNavigation() {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
         let $carousel = document.querySelectorAll('.carousel');
 
@@ -83,7 +83,7 @@ class FrameworkCarousel {
     }
 
     buildNavigationControllerBt(target) {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
         let button = target.querySelectorAll('.carousel-controller-bt');
 
@@ -97,7 +97,7 @@ class FrameworkCarousel {
     }
 
     buildNavigationArrowLeft(target) {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
         let button = target.querySelector('[data-id="nav-left"]');
 
@@ -122,7 +122,7 @@ class FrameworkCarousel {
     }
 
     buildNavigationArrowRight(target) {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
         let button = target.querySelector('[data-id="nav-right"]');
 
@@ -147,7 +147,7 @@ class FrameworkCarousel {
     }
 
     animate(currentSlide, target, from) {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), [currentSlide, target, from]); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName(), [currentSlide, target, from]); /*endRemoveIf(production)*/
         let $carouselList = from === 'arrow'
             ? target.parentNode.parentNode.parentNode.querySelector('.carousel-list')
             : target.parentNode.parentNode.parentNode.parentNode.querySelector('.carousel-list');
@@ -174,8 +174,8 @@ class FrameworkCarousel {
     }
 
     verifyInternval() {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
-        let self = objFrameworkCarousel;
+        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
+        let self = objCarousel;
 
         self.counterCurrent++;
 
@@ -189,7 +189,7 @@ class FrameworkCarousel {
     }
 
     defineActive(target) {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), target); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName(), target); /*endRemoveIf(production)*/
         let listBt = target.parentNode.parentNode.querySelectorAll('.carousel-controller-bt');
 
         Array.prototype.forEach.call(listBt, function (item) {
@@ -200,7 +200,7 @@ class FrameworkCarousel {
     }
 
     resizeLayout(target) {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), target); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName(), target); /*endRemoveIf(production)*/
         let $carouselList = target.querySelector('.carousel-list');
         let $carouselListItem = $carouselList.querySelectorAll('li');
         let length = $carouselListItem.length;

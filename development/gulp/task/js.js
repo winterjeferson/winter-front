@@ -12,7 +12,7 @@ var fileJsDefaultFinal = 'script.js';
 var fileJsPluginFinal = 'plugin.js';
 
 var fileJs = [
-    configuration.branches + 'js/build/**/*.*',
+    configuration.branches + 'js/script/**/*.*',
     configuration.branches + 'js/main.js'
 ];
 

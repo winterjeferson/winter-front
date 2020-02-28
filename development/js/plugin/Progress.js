@@ -1,6 +1,6 @@
-class FrameworkProgress {
+class Progress {
     constructor() {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
         this.$bar = document.querySelector('#loading_main .progress-bar');
         this.$all = document.querySelectorAll('div, section, article');
         this.$allLength = this.$all.length;
@@ -10,7 +10,7 @@ class FrameworkProgress {
     }
 
     build() {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
         let interval = setInterval(frame, 1);
         let total = this.buildProportion();
@@ -30,7 +30,7 @@ class FrameworkProgress {
     }
 
     buildProportion() {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
         if (this.$allLength > 1000) {
             return this.$allLength / 50;
         }

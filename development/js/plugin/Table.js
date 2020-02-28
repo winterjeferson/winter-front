@@ -1,11 +1,11 @@
-class FrameworkTable {
+class Table {
     constructor() {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
         this.$table = document.querySelectorAll('.table');
     }
 
     build() {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
         if (this.$table.length < 1) {
             return;
         }
@@ -14,7 +14,7 @@ class FrameworkTable {
     }
 
     buildResponsive() {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
         Array.prototype.forEach.call(this.$table, function (item) {
             let wrapper = document.createElement('div');
             wrapper.className = 'table-responsive';

@@ -8,14 +8,14 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var FrameworkCarousel =
+var Carousel =
 /*#__PURE__*/
 function () {
-  function FrameworkCarousel() {
-    _classCallCheck(this, FrameworkCarousel);
+  function Carousel() {
+    _classCallCheck(this, Carousel);
 
     /*removeIf(production)*/
-    objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+    objDebug.debugMethod(this, objDebug.getMethodName());
     /*endRemoveIf(production)*/
 
     this.$carousel = document.querySelectorAll('.carousel');
@@ -24,11 +24,11 @@ function () {
     this.transition = 5;
   }
 
-  _createClass(FrameworkCarousel, [{
+  _createClass(Carousel, [{
     key: "build",
     value: function build() {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      objDebug.debugMethod(this, objDebug.getMethodName());
       /*endRemoveIf(production)*/
 
       if (this.$carousel.length < 1) {
@@ -44,7 +44,7 @@ function () {
     key: "buildLayout",
     value: function buildLayout() {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      objDebug.debugMethod(this, objDebug.getMethodName());
       /*endRemoveIf(production)*/
 
       var self = this;
@@ -65,7 +65,7 @@ function () {
     key: "watchResize",
     value: function watchResize() {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      objDebug.debugMethod(this, objDebug.getMethodName());
       /*endRemoveIf(production)*/
 
       var self = this;
@@ -84,7 +84,7 @@ function () {
     key: "buildLayoutController",
     value: function buildLayoutController(target, length) {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), [target, length]);
+      objDebug.debugMethod(this, objDebug.getMethodName(), [target, length]);
       /*endRemoveIf(production)*/
 
       var concat = '';
@@ -103,7 +103,7 @@ function () {
     key: "buildNavigation",
     value: function buildNavigation() {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      objDebug.debugMethod(this, objDebug.getMethodName());
       /*endRemoveIf(production)*/
 
       var self = this;
@@ -118,7 +118,7 @@ function () {
     key: "buildNavigationControllerBt",
     value: function buildNavigationControllerBt(target) {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      objDebug.debugMethod(this, objDebug.getMethodName());
       /*endRemoveIf(production)*/
 
       var self = this;
@@ -135,7 +135,7 @@ function () {
     key: "buildNavigationArrowLeft",
     value: function buildNavigationArrowLeft(target) {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      objDebug.debugMethod(this, objDebug.getMethodName());
       /*endRemoveIf(production)*/
 
       var self = this;
@@ -164,7 +164,7 @@ function () {
     key: "buildNavigationArrowRight",
     value: function buildNavigationArrowRight(target) {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      objDebug.debugMethod(this, objDebug.getMethodName());
       /*endRemoveIf(production)*/
 
       var self = this;
@@ -193,7 +193,7 @@ function () {
     key: "animate",
     value: function animate(currentSlide, target, from) {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), [currentSlide, target, from]);
+      objDebug.debugMethod(this, objDebug.getMethodName(), [currentSlide, target, from]);
       /*endRemoveIf(production)*/
 
       var $carouselList = from === 'arrow' ? target.parentNode.parentNode.parentNode.querySelector('.carousel-list') : target.parentNode.parentNode.parentNode.parentNode.querySelector('.carousel-list');
@@ -222,10 +222,10 @@ function () {
     key: "verifyInternval",
     value: function verifyInternval() {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      objDebug.debugMethod(this, objDebug.getMethodName());
       /*endRemoveIf(production)*/
 
-      var self = objFrameworkCarousel;
+      var self = objCarousel;
       self.counterCurrent++;
 
       if (self.counterCurrent >= self.transition) {
@@ -239,7 +239,7 @@ function () {
     key: "defineActive",
     value: function defineActive(target) {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), target);
+      objDebug.debugMethod(this, objDebug.getMethodName(), target);
       /*endRemoveIf(production)*/
 
       var listBt = target.parentNode.parentNode.querySelectorAll('.carousel-controller-bt');
@@ -252,7 +252,7 @@ function () {
     key: "resizeLayout",
     value: function resizeLayout(target) {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), target);
+      objDebug.debugMethod(this, objDebug.getMethodName(), target);
       /*endRemoveIf(production)*/
 
       var $carouselList = target.querySelector('.carousel-list');
@@ -265,36 +265,36 @@ function () {
     }
   }]);
 
-  return FrameworkCarousel;
+  return Carousel;
 }();
 /*removeIf(production)*/
 
 
-var FrameworkDebug =
+var Debug =
 /*#__PURE__*/
 function () {
-  function FrameworkDebug() {
-    _classCallCheck(this, FrameworkDebug);
+  function Debug() {
+    _classCallCheck(this, Debug);
 
-    this.isFrameworkLayout = true;
-    this.isFrameworkManagement = true;
+    this.isLayout = true;
+    this.isManagement = true;
     this.isLoading = true;
     this.isTheme = true;
-    this.isFrameworkCarousel = true;
-    this.isFrameworkForm = true;
-    this.isFrameworkGeneric = true;
-    this.isFrameworkMenuDropDown = true;
-    this.isFrameworkMenuTab = true;
-    this.isFrameworkModal = true;
-    this.isFrameworkNotification = true;
-    this.isFrameworkProgress = true;
-    this.isFrameworkTable = true;
-    this.isFrameworkTag = true;
-    this.isFrameworkTooltip = true;
-    this.isFrameworkTranslation = true;
+    this.isCarousel = true;
+    this.isForm = true;
+    this.isGeneric = true;
+    this.isMenuDropDown = true;
+    this.isMenuTab = true;
+    this.isModal = true;
+    this.isNotification = true;
+    this.isProgress = true;
+    this.isTable = true;
+    this.isTag = true;
+    this.isTooltip = true;
+    this.isTranslation = true;
   }
 
-  _createClass(FrameworkDebug, [{
+  _createClass(Debug, [{
     key: "debugMethod",
     value: function debugMethod(obj, method) {
       var parameter = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : '';
@@ -344,23 +344,23 @@ function () {
     }
   }]);
 
-  return FrameworkDebug;
+  return Debug;
 }();
 /*endRemoveIf(production)*/
 
 
-var FrameworkForm =
+var Form =
 /*#__PURE__*/
 function () {
-  function FrameworkForm() {
-    _classCallCheck(this, FrameworkForm);
+  function Form() {
+    _classCallCheck(this, Form);
   }
 
-  _createClass(FrameworkForm, [{
+  _createClass(Form, [{
     key: "build",
     value: function build() {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      objDebug.debugMethod(this, objDebug.getMethodName());
       /*endRemoveIf(production)*/
 
       if (document.querySelectorAll('form').length < 1) {
@@ -374,7 +374,7 @@ function () {
     key: "buildKeyboard",
     value: function buildKeyboard() {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      objDebug.debugMethod(this, objDebug.getMethodName());
       /*endRemoveIf(production)*/
 
       var self = this;
@@ -390,7 +390,7 @@ function () {
     key: "buildFocus",
     value: function buildFocus(target) {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      objDebug.debugMethod(this, objDebug.getMethodName());
       /*endRemoveIf(production)*/
 
       var $arr = document.querySelectorAll(target);
@@ -406,7 +406,7 @@ function () {
     key: "buildInputFile",
     value: function buildInputFile() {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      objDebug.debugMethod(this, objDebug.getMethodName());
       /*endRemoveIf(production)*/
 
       var self = this;
@@ -441,11 +441,11 @@ function () {
     key: "buildInputFileHtml",
     value: function buildInputFileHtml() {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      objDebug.debugMethod(this, objDebug.getMethodName());
       /*endRemoveIf(production)*/
 
       var inputFile = '';
-      var textFile = objFrameworkTranslation.translation["default"].input_upload;
+      var textFile = objTranslation.translation["default"].input_upload;
       inputFile += '<div class="input-file">';
       inputFile += '    <div class="input-file-name"></div>';
       inputFile += '    <div class="input-file-text"><span class="fa fa-upload" aria-hidden="true"></span>&nbsp; ' + textFile + '</div>';
@@ -456,7 +456,7 @@ function () {
     key: "validateEmpty",
     value: function validateEmpty(arr) {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      objDebug.debugMethod(this, objDebug.getMethodName());
       /*endRemoveIf(production)*/
 
       var arrEmpty = arr;
@@ -473,84 +473,75 @@ function () {
     }
   }]);
 
-  return FrameworkForm;
+  return Form;
 }();
 
-var FrameworkGeneric =
-/*#__PURE__*/
-function () {
-  function FrameworkGeneric() {
-    _classCallCheck(this, FrameworkGeneric);
+function buildURL(url) {
+  /*removeIf(production)*/
+  objDebug.debugMethod(this, objDebug.getMethodName());
+  /*endRemoveIf(production)*/
 
-    /*removeIf(production)*/
-    objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
-    /*endRemoveIf(production)*/
+  return url.toString() // Convert to string
+  .normalize('NFD') // Change diacritics
+  .replace(/[\u0300-\u036f]/g, '') // Remove illegal characters
+  .replace(/\s+/g, '-') // Change whitespace to dashes
+  .toLowerCase() // Change to lowercase
+  .replace(/&/g, '-and-') // Replace ampersand
+  .replace(/[^a-z0-9\-]/g, '') // Remove anything that is not a letter, number or dash
+  .replace(/-+/g, '-') // Remove duplicate dashes
+  .replace(/^-*/, '') // Remove starting dashes
+  .replace(/-*$/, ''); // Remove trailing dashes
+}
+
+function getUrlParameter(target) {
+  /*removeIf(production)*/
+  objDebug.debugMethod(this, objDebug.getMethodName(), target);
+  /*endRemoveIf(production)*/
+
+  var url = top.location.search.substring(1);
+  var parameter = url.split('&');
+
+  for (var i = 0; i < parameter.length; i++) {
+    var parameterName = parameter[i].split('=');
+
+    if (parameterName[0] === target) {
+      return parameterName[1];
+    }
   }
+}
 
-  _createClass(FrameworkGeneric, [{
-    key: "buildURL",
-    value: function buildURL(url) {
-      /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
-      /*endRemoveIf(production)*/
+function offset(element) {
+  var rect = element.getBoundingClientRect(),
+      scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+      scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  return {
+    top: rect.top + scrollTop,
+    left: rect.left + scrollLeft
+  };
+}
 
-      return url.toString() // Convert to string
-      .normalize('NFD') // Change diacritics
-      .replace(/[\u0300-\u036f]/g, '') // Remove illegal characters
-      .replace(/\s+/g, '-') // Change whitespace to dashes
-      .toLowerCase() // Change to lowercase
-      .replace(/&/g, '-and-') // Replace ampersand
-      .replace(/[^a-z0-9\-]/g, '') // Remove anything that is not a letter, number or dash
-      .replace(/-+/g, '-') // Remove duplicate dashes
-      .replace(/^-*/, '') // Remove starting dashes
-      .replace(/-*$/, ''); // Remove trailing dashes
-    }
-  }, {
-    key: "getUrlParameter",
-    value: function getUrlParameter(target) {
-      /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), target);
-      /*endRemoveIf(production)*/
+function verifyUrlFodler(target) {
+  /*removeIf(production)*/
+  objDebug.debugMethod(this, objDebug.getMethodName(), target);
+  /*endRemoveIf(production)*/
 
-      var url = top.location.search.substring(1);
-      var parameter = url.split('&');
+  var arrFolder = window.location.pathname.split('/');
 
-      for (var i = 0; i < parameter.length; i++) {
-        var parameterName = parameter[i].split('=');
+  if (arrFolder.indexOf(target) > -1) {
+    return true;
+  } else {
+    return false;
+  }
+}
 
-        if (parameterName[0] === target) {
-          return parameterName[1];
-        }
-      }
-    }
-  }, {
-    key: "verifyUrlFodler",
-    value: function verifyUrlFodler(target) {
-      /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), target);
-      /*endRemoveIf(production)*/
-
-      var arrFolder = window.location.pathname.split('/');
-
-      if (arrFolder.indexOf(target) > -1) {
-        return true;
-      } else {
-        return false;
-      }
-    }
-  }]);
-
-  return FrameworkGeneric;
-}();
-
-var FrameworkMenuDropDown =
+var MenuDropDown =
 /*#__PURE__*/
 function () {
-  function FrameworkMenuDropDown() {
-    _classCallCheck(this, FrameworkMenuDropDown);
+  function MenuDropDown() {
+    _classCallCheck(this, MenuDropDown);
 
     /*removeIf(production)*/
-    objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+    objDebug.debugMethod(this, objDebug.getMethodName());
     /*endRemoveIf(production)*/
 
     this.isClickBuild = false;
@@ -564,11 +555,11 @@ function () {
     this.$icon = '<span class="' + this.classArrow + '">&nbsp;&nbsp;<span class="fa fa-caret-down" aria-hidden="true"></span></span>';
   }
 
-  _createClass(FrameworkMenuDropDown, [{
+  _createClass(MenuDropDown, [{
     key: "build",
     value: function build() {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      objDebug.debugMethod(this, objDebug.getMethodName());
       /*endRemoveIf(production)*/
 
       if (this.$menu.length < 1) {
@@ -588,7 +579,7 @@ function () {
     key: "buildIcon",
     value: function buildIcon() {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      objDebug.debugMethod(this, objDebug.getMethodName());
       /*endRemoveIf(production)*/
 
       var self = this;
@@ -603,7 +594,7 @@ function () {
     key: "buildClick",
     value: function buildClick() {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      objDebug.debugMethod(this, objDebug.getMethodName());
       /*endRemoveIf(production)*/
 
       var self = this;
@@ -626,7 +617,7 @@ function () {
     key: "buildClickAction",
     value: function buildClickAction(item) {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      objDebug.debugMethod(this, objDebug.getMethodName());
       /*endRemoveIf(production)*/
 
       var $menuChild = item.parentNode.querySelector('ul');
@@ -655,7 +646,7 @@ function () {
     key: "buildClickOut",
     value: function buildClickOut() {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      objDebug.debugMethod(this, objDebug.getMethodName());
       /*endRemoveIf(production)*/
 
       var self = this;
@@ -671,21 +662,21 @@ function () {
     }
   }]);
 
-  return FrameworkMenuDropDown;
+  return MenuDropDown;
 }();
 
-var FrameworkMenuTab =
+var MenuTab =
 /*#__PURE__*/
 function () {
-  function FrameworkMenuTab() {
-    _classCallCheck(this, FrameworkMenuTab);
+  function MenuTab() {
+    _classCallCheck(this, MenuTab);
   }
 
-  _createClass(FrameworkMenuTab, [{
+  _createClass(MenuTab, [{
     key: "build",
     value: function build() {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      objDebug.debugMethod(this, objDebug.getMethodName());
       /*endRemoveIf(production)*/
 
       this.defineActive();
@@ -694,7 +685,7 @@ function () {
     key: "defineActive",
     value: function defineActive() {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      objDebug.debugMethod(this, objDebug.getMethodName());
       /*endRemoveIf(production)*/
 
       var self = this;
@@ -709,7 +700,7 @@ function () {
     key: "buildClick",
     value: function buildClick(item) {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      objDebug.debugMethod(this, objDebug.getMethodName());
       /*endRemoveIf(production)*/
 
       var classActive = 'menu-tab-active';
@@ -721,17 +712,17 @@ function () {
     }
   }]);
 
-  return FrameworkMenuTab;
+  return MenuTab;
 }();
 
-var FrameworkModal =
+var Modal =
 /*#__PURE__*/
 function () {
-  function FrameworkModal() {
-    _classCallCheck(this, FrameworkModal);
+  function Modal() {
+    _classCallCheck(this, Modal);
 
     /*removeIf(production)*/
-    objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+    objDebug.debugMethod(this, objDebug.getMethodName());
     /*endRemoveIf(production)*/
 
     this.$body = document.querySelector('body');
@@ -739,11 +730,11 @@ function () {
     this.cssDisplay = 'display-none';
   }
 
-  _createClass(FrameworkModal, [{
+  _createClass(Modal, [{
     key: "updateVariable",
     value: function updateVariable() {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      objDebug.debugMethod(this, objDebug.getMethodName());
       /*endRemoveIf(production)*/
 
       this.$modal = document.querySelector('#modal');
@@ -762,7 +753,7 @@ function () {
     key: "build",
     value: function build() {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      objDebug.debugMethod(this, objDebug.getMethodName());
       /*endRemoveIf(production)*/
 
       this.buildHtml();
@@ -776,14 +767,14 @@ function () {
     key: "buildHtml",
     value: function buildHtml() {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      objDebug.debugMethod(this, objDebug.getMethodName());
       /*endRemoveIf(production)*/
 
       var string = '';
       string += '<div id="modal" class="modal-close">';
       string += '     <div class="modal-box">';
       string += '         <header>';
-      string += '             <button id="modal_close" type="button" aria-label="' + objFrameworkTranslation.translation["default"].close + '" class="bt bt-sm bt-grey bt-transparent">';
+      string += '             <button id="modal_close" type="button" aria-label="' + objTranslation.translation["default"].close + '" class="bt bt-sm bt-grey bt-transparent">';
       string += '                 <span class="fa fa-times" aria-hidden="true"></span>';
       string += '             </button>';
       string += '         </header>';
@@ -793,12 +784,12 @@ function () {
       string += '         <div class="menu-horizontal">';
       string += '             <ul class="navigation-arrow">';
       string += '                 <li>';
-      string += '                     <button type="button" class="bt bt-bi" data-id="nav-left" aria-label="' + objFrameworkTranslation.translation["default"].previous + '" >';
+      string += '                     <button type="button" class="bt bt-bi" data-id="nav-left" aria-label="' + objTranslation.translation["default"].previous + '" >';
       string += '                         <span class="fa fa-angle-left" aria-hidden="true"></span>';
       string += '                     </button>';
       string += '                 </li>';
       string += '                 <li>';
-      string += '                     <button type="button" class="bt bt-bi" data-id="nav-right" aria-label="' + objFrameworkTranslation.translation["default"].next + '" >';
+      string += '                     <button type="button" class="bt bt-bi" data-id="nav-right" aria-label="' + objTranslation.translation["default"].next + '" >';
       string += '                         <span class="fa fa-angle-right" aria-hidden="true"></span>';
       string += '                     </button>';
       string += '                 </li>';
@@ -824,17 +815,17 @@ function () {
     key: "buildTranslation",
     value: function buildTranslation() {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      objDebug.debugMethod(this, objDebug.getMethodName());
       /*endRemoveIf(production)*/
 
-      this.$modalFooterConfirm.innerHTML = objFrameworkTranslation.translation["default"].confirm;
-      this.$modalFooterCancel.innerHTML = objFrameworkTranslation.translation["default"].cancel;
+      this.$modalFooterConfirm.innerHTML = objTranslation.translation["default"].confirm;
+      this.$modalFooterCancel.innerHTML = objTranslation.translation["default"].cancel;
     }
   }, {
     key: "buildKeyboard",
     value: function buildKeyboard() {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      objDebug.debugMethod(this, objDebug.getMethodName());
       /*endRemoveIf(production)*/
 
       var self = this;
@@ -864,7 +855,7 @@ function () {
     key: "buildMenuGallery",
     value: function buildMenuGallery() {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      objDebug.debugMethod(this, objDebug.getMethodName());
       /*endRemoveIf(production)*/
 
       var self = this;
@@ -895,7 +886,7 @@ function () {
     key: "buildMenu",
     value: function buildMenu() {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      objDebug.debugMethod(this, objDebug.getMethodName());
       /*endRemoveIf(production)*/
 
       var self = this;
@@ -921,7 +912,7 @@ function () {
     key: "buildGalleryNavigation",
     value: function buildGalleryNavigation(target) {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), target);
+      objDebug.debugMethod(this, objDebug.getMethodName(), target);
       /*endRemoveIf(production)*/
 
       var array = [];
@@ -958,7 +949,7 @@ function () {
       var action = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 'open';
 
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), [kind, content, size, action]);
+      objDebug.debugMethod(this, objDebug.getMethodName(), [kind, content, size, action]);
       /*endRemoveIf(production)*/
 
       this.$modalFooter.classList.add(this.cssDisplay);
@@ -970,7 +961,7 @@ function () {
     key: "buildModalKind",
     value: function buildModalKind(kind, content) {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), [kind, content]);
+      objDebug.debugMethod(this, objDebug.getMethodName(), [kind, content]);
       /*endRemoveIf(production)*/
 
       if (kind === 'ajax') {
@@ -997,7 +988,7 @@ function () {
     key: "openModal",
     value: function openModal() {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      objDebug.debugMethod(this, objDebug.getMethodName());
       /*endRemoveIf(production)*/
 
       this.$body.classList.remove('overflow-y');
@@ -1010,7 +1001,7 @@ function () {
     key: "closeModal",
     value: function closeModal() {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      objDebug.debugMethod(this, objDebug.getMethodName());
       /*endRemoveIf(production)*/
 
       this.$body.classList.add('overflow-y');
@@ -1020,12 +1011,12 @@ function () {
       this.$modal.classList.add('modal-close');
       this.$modalBox.classList.remove('modal-animate');
 
-      if (typeof objFrameworkMenuDropDown !== 'undefined') {
-        objFrameworkMenuDropDown.build();
+      if (typeof objMenuDropDown !== 'undefined') {
+        objMenuDropDown.build();
       }
 
-      if (typeof objFrameworkMenuTab !== 'undefined') {
-        objFrameworkMenuTab.defineActive();
+      if (typeof objMenuTab !== 'undefined') {
+        objMenuTab.defineActive();
       }
     }
   }, {
@@ -1034,7 +1025,7 @@ function () {
       var size = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 're';
 
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), size);
+      objDebug.debugMethod(this, objDebug.getMethodName(), size);
       /*endRemoveIf(production)*/
 
       this.$modalBox.classList.remove('modal-es');
@@ -1049,7 +1040,7 @@ function () {
     key: "buildContentAjax",
     value: function buildContentAjax(target) {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), target);
+      objDebug.debugMethod(this, objDebug.getMethodName(), target);
       /*endRemoveIf(production)*/
 
       var self = this;
@@ -1068,36 +1059,36 @@ function () {
     key: "buildContentAjaxSuccess",
     value: function buildContentAjaxSuccess(data) {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      objDebug.debugMethod(this, objDebug.getMethodName());
       /*endRemoveIf(production)*/
 
       this.$modalContent.innerHTML = data;
 
-      if (typeof objFrameworkLayout !== 'undefined') {
-        objFrameworkLayout.buildToggle();
+      if (typeof objLayout !== 'undefined') {
+        objLayout.buildToggle();
       }
 
-      if (typeof objFrameworkForm !== 'undefined') {
-        objFrameworkForm.buildInputFile();
+      if (typeof objForm !== 'undefined') {
+        objForm.buildInputFile();
       }
 
-      if (typeof objFrameworkMenuDropDown !== 'undefined') {
-        objFrameworkMenuDropDown.build();
+      if (typeof objMenuDropDown !== 'undefined') {
+        objMenuDropDown.build();
       }
 
-      if (typeof objFrameworkTooltip !== 'undefined') {
-        objFrameworkTooltip.build();
+      if (typeof objTooltip !== 'undefined') {
+        objTooltip.build();
       }
 
-      if (typeof objFrameworkMenuTab !== 'undefined') {
-        objFrameworkMenuTab.defineActive();
+      if (typeof objMenuTab !== 'undefined') {
+        objMenuTab.defineActive();
       }
     }
   }, {
     key: "buildGalleryImage",
     value: function buildGalleryImage(image, description) {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), [image, description]);
+      objDebug.debugMethod(this, objDebug.getMethodName(), [image, description]);
       /*endRemoveIf(production)*/
 
       var stringImage = '<img src="' + image + '" class="img-responsive" style="margin:auto;" title="" alt=""/>';
@@ -1108,7 +1099,7 @@ function () {
     key: "buildContentConfirmation",
     value: function buildContentConfirmation(content) {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), content);
+      objDebug.debugMethod(this, objDebug.getMethodName(), content);
       /*endRemoveIf(production)*/
 
       var string = '<div class="padding-re text-center">' + content + '</div>';
@@ -1119,7 +1110,7 @@ function () {
     key: "buildContentConfirmationAction",
     value: function buildContentConfirmationAction(action) {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), action);
+      objDebug.debugMethod(this, objDebug.getMethodName(), action);
       /*endRemoveIf(production)*/
 
       this.$modalFooterConfirm.setAttribute('onclick', action);
@@ -1128,7 +1119,7 @@ function () {
     key: "changeText",
     value: function changeText(description) {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), [description]);
+      objDebug.debugMethod(this, objDebug.getMethodName(), [description]);
       /*endRemoveIf(production)*/
 
       var string = '';
@@ -1147,17 +1138,17 @@ function () {
     }
   }]);
 
-  return FrameworkModal;
+  return Modal;
 }();
 
-var FrameworkNotification =
+var Notification =
 /*#__PURE__*/
 function () {
-  function FrameworkNotification() {
-    _classCallCheck(this, FrameworkNotification);
+  function Notification() {
+    _classCallCheck(this, Notification);
 
     /*removeIf(production)*/
-    objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+    objDebug.debugMethod(this, objDebug.getMethodName());
     /*endRemoveIf(production)*/
 
     this.$body = document.querySelector('body');
@@ -1165,11 +1156,11 @@ function () {
     this.notifyId = 0;
   }
 
-  _createClass(FrameworkNotification, [{
+  _createClass(Notification, [{
     key: "build",
     value: function build() {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      objDebug.debugMethod(this, objDebug.getMethodName());
       /*endRemoveIf(production)*/
 
       this.buildHtml();
@@ -1179,7 +1170,7 @@ function () {
     key: "buildHtml",
     value: function buildHtml() {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      objDebug.debugMethod(this, objDebug.getMethodName());
       /*endRemoveIf(production)*/
 
       var string = '';
@@ -1197,7 +1188,7 @@ function () {
       var message = arguments.length > 1 ? arguments[1] : undefined;
 
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), [style, message]);
+      objDebug.debugMethod(this, objDebug.getMethodName(), [style, message]);
       /*endRemoveIf(production)*/
 
       var string = '';
@@ -1206,7 +1197,7 @@ function () {
       string += '         <span class="text">';
       string += message;
       string += '         </span>';
-      string += '         <button type="button" class="bt" onclick="$(this).parent().parent().remove();" aria-label="' + objFrameworkTranslation.translation["default"].close + '">';
+      string += '         <button type="button" class="bt" onclick="$(this).parent().parent().remove();" aria-label="' + objTranslation.translation["default"].close + '">';
       string += '            <span class="fa fa-times" aria-hidden="true"></span>';
       string += '         </button>';
       string += '     </div>';
@@ -1217,7 +1208,7 @@ function () {
     key: "buildNavigation",
     value: function buildNavigation() {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      objDebug.debugMethod(this, objDebug.getMethodName());
       /*endRemoveIf(production)*/
 
       Array.prototype.forEach.call(this.$notifyItem, function (item) {
@@ -1235,7 +1226,7 @@ function () {
       var place = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : this.$notify;
 
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), [message, style, place]);
+      objDebug.debugMethod(this, objDebug.getMethodName(), [message, style, place]);
       /*endRemoveIf(production)*/
 
       var string = this.buildHtmlItem(style, message);
@@ -1266,7 +1257,7 @@ function () {
     key: "removeNotifyListItem",
     value: function removeNotifyListItem(item, messageLength) {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), [item, messageLength]);
+      objDebug.debugMethod(this, objDebug.getMethodName(), [item, messageLength]);
       /*endRemoveIf(production)*/
 
       var messageTime = messageLength * 150;
@@ -1279,17 +1270,17 @@ function () {
     }
   }]);
 
-  return FrameworkNotification;
+  return Notification;
 }();
 
-var FrameworkProgress =
+var Progress =
 /*#__PURE__*/
 function () {
-  function FrameworkProgress() {
-    _classCallCheck(this, FrameworkProgress);
+  function Progress() {
+    _classCallCheck(this, Progress);
 
     /*removeIf(production)*/
-    objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+    objDebug.debugMethod(this, objDebug.getMethodName());
     /*endRemoveIf(production)*/
 
     this.$bar = document.querySelector('#loading_main .progress-bar');
@@ -1299,11 +1290,11 @@ function () {
     this.progressSize = 0;
   }
 
-  _createClass(FrameworkProgress, [{
+  _createClass(Progress, [{
     key: "build",
     value: function build() {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      objDebug.debugMethod(this, objDebug.getMethodName());
       /*endRemoveIf(production)*/
 
       var self = this;
@@ -1326,7 +1317,7 @@ function () {
     key: "buildProportion",
     value: function buildProportion() {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      objDebug.debugMethod(this, objDebug.getMethodName());
       /*endRemoveIf(production)*/
 
       if (this.$allLength > 1000) {
@@ -1369,27 +1360,27 @@ function () {
     }
   }]);
 
-  return FrameworkProgress;
+  return Progress;
 }();
 
-var FrameworkTable =
+var Table =
 /*#__PURE__*/
 function () {
-  function FrameworkTable() {
-    _classCallCheck(this, FrameworkTable);
+  function Table() {
+    _classCallCheck(this, Table);
 
     /*removeIf(production)*/
-    objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+    objDebug.debugMethod(this, objDebug.getMethodName());
     /*endRemoveIf(production)*/
 
     this.$table = document.querySelectorAll('.table');
   }
 
-  _createClass(FrameworkTable, [{
+  _createClass(Table, [{
     key: "build",
     value: function build() {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      objDebug.debugMethod(this, objDebug.getMethodName());
       /*endRemoveIf(production)*/
 
       if (this.$table.length < 1) {
@@ -1402,7 +1393,7 @@ function () {
     key: "buildResponsive",
     value: function buildResponsive() {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      objDebug.debugMethod(this, objDebug.getMethodName());
       /*endRemoveIf(production)*/
 
       Array.prototype.forEach.call(this.$table, function (item) {
@@ -1414,27 +1405,27 @@ function () {
     }
   }]);
 
-  return FrameworkTable;
+  return Table;
 }();
 
-var FrameworkTag =
+var Tag =
 /*#__PURE__*/
 function () {
-  function FrameworkTag() {
-    _classCallCheck(this, FrameworkTag);
+  function Tag() {
+    _classCallCheck(this, Tag);
 
     /*removeIf(production)*/
-    objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+    objDebug.debugMethod(this, objDebug.getMethodName());
     /*endRemoveIf(production)*/
 
     this.$tagBt = document.querySelectorAll('.tag-item-bt');
   }
 
-  _createClass(FrameworkTag, [{
+  _createClass(Tag, [{
     key: "build",
     value: function build() {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      objDebug.debugMethod(this, objDebug.getMethodName());
       /*endRemoveIf(production)*/
 
       if (this.$tagBt.length < 1) {
@@ -1447,7 +1438,7 @@ function () {
     key: "buildClick",
     value: function buildClick() {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      objDebug.debugMethod(this, objDebug.getMethodName());
       /*endRemoveIf(production)*/
 
       Array.prototype.forEach.call(this.$tagBt, function (item) {
@@ -1459,17 +1450,17 @@ function () {
     }
   }]);
 
-  return FrameworkTag;
+  return Tag;
 }();
 
-var FrameworkTooltip =
+var Tooltip =
 /*#__PURE__*/
 function () {
-  function FrameworkTooltip() {
-    _classCallCheck(this, FrameworkTooltip);
+  function Tooltip() {
+    _classCallCheck(this, Tooltip);
 
     /*removeIf(production)*/
-    objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+    objDebug.debugMethod(this, objDebug.getMethodName());
     /*endRemoveIf(production)*/
 
     this.$body = document.querySelector('body');
@@ -1491,11 +1482,11 @@ function () {
     this.positionLeft = 0;
   }
 
-  _createClass(FrameworkTooltip, [{
+  _createClass(Tooltip, [{
     key: "build",
     value: function build() {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      objDebug.debugMethod(this, objDebug.getMethodName());
       /*endRemoveIf(production)*/
 
       this.buildHtml();
@@ -1513,7 +1504,7 @@ function () {
     key: "updateVariable",
     value: function updateVariable(element) {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), element);
+      objDebug.debugMethod(this, objDebug.getMethodName(), element);
       /*endRemoveIf(production)*/
 
       this.$tooltip = document.querySelector('#tooltip');
@@ -1538,7 +1529,7 @@ function () {
     key: "buildHtml",
     value: function buildHtml() {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      objDebug.debugMethod(this, objDebug.getMethodName());
       /*endRemoveIf(production)*/
 
       var string = '';
@@ -1552,7 +1543,7 @@ function () {
     key: "buildResize",
     value: function buildResize() {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      objDebug.debugMethod(this, objDebug.getMethodName());
       /*endRemoveIf(production)*/
 
       var self = this;
@@ -1566,7 +1557,7 @@ function () {
     key: "buildTooltip",
     value: function buildTooltip() {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      objDebug.debugMethod(this, objDebug.getMethodName());
       /*endRemoveIf(production)*/
 
       var self = this;
@@ -1595,7 +1586,7 @@ function () {
     key: "buildMaxWidth",
     value: function buildMaxWidth() {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      objDebug.debugMethod(this, objDebug.getMethodName());
       /*endRemoveIf(production)*/
 
       this.$tooltip.style.maxWidth = this.windowWidth - this.space * 2;
@@ -1604,7 +1595,7 @@ function () {
     key: "showTooltip",
     value: function showTooltip(action) {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), action);
+      objDebug.debugMethod(this, objDebug.getMethodName(), action);
       /*endRemoveIf(production)*/
 
       if (action) {
@@ -1617,7 +1608,7 @@ function () {
     key: "positionTooltipSwitchDirection",
     value: function positionTooltipSwitchDirection(placement) {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), placement);
+      objDebug.debugMethod(this, objDebug.getMethodName(), placement);
       /*endRemoveIf(production)*/
 
       var direction = typeof placement === 'undefined' ? 'top' : placement;
@@ -1658,7 +1649,7 @@ function () {
     key: "positionTooltipTop",
     value: function positionTooltipTop() {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      objDebug.debugMethod(this, objDebug.getMethodName());
       /*endRemoveIf(production)*/
 
       this.positionTop = this.elementTop - this.tooltipHeight - this.space;
@@ -1668,7 +1659,7 @@ function () {
     key: "positionTooltipBottom",
     value: function positionTooltipBottom() {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      objDebug.debugMethod(this, objDebug.getMethodName());
       /*endRemoveIf(production)*/
 
       this.positionTop = this.elementTop + this.elementHeight + this.space;
@@ -1678,7 +1669,7 @@ function () {
     key: "positionTooltipRight",
     value: function positionTooltipRight() {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      objDebug.debugMethod(this, objDebug.getMethodName());
       /*endRemoveIf(production)*/
 
       this.positionTop = this.elementTop + this.centerHeight;
@@ -1688,7 +1679,7 @@ function () {
     key: "positionTooltipLeft",
     value: function positionTooltipLeft() {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      objDebug.debugMethod(this, objDebug.getMethodName());
       /*endRemoveIf(production)*/
 
       this.positionTop = this.elementTop + this.centerHeight;
@@ -1698,7 +1689,7 @@ function () {
     key: "positionTooltip",
     value: function positionTooltip(element, placement) {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), [element, placement]);
+      objDebug.debugMethod(this, objDebug.getMethodName(), [element, placement]);
       this.updateVariable(element);
       var direction = this.positionTooltipSwitchDirection(placement);
 
@@ -1735,7 +1726,7 @@ function () {
     key: "buildLimits",
     value: function buildLimits() {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      objDebug.debugMethod(this, objDebug.getMethodName());
       /*endRemoveIf(production)*/
 
       if (this.positionLeft <= 0) {
@@ -1750,7 +1741,7 @@ function () {
     key: "changeArrowPositionHorizontal",
     value: function changeArrowPositionHorizontal() {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      objDebug.debugMethod(this, objDebug.getMethodName());
       /*endRemoveIf(production)*/
 
       this.$tooltipPointer.style.left = this.$tooltip.offsetWidth / 2 + 'px';
@@ -1759,7 +1750,7 @@ function () {
     key: "changeArrowPositionVertical",
     value: function changeArrowPositionVertical() {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      objDebug.debugMethod(this, objDebug.getMethodName());
       /*endRemoveIf(production)*/
 
       this.$tooltipPointer.style.left = '';
@@ -1768,7 +1759,7 @@ function () {
     key: "changeArrowDirection",
     value: function changeArrowDirection(direction) {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), direction);
+      objDebug.debugMethod(this, objDebug.getMethodName(), direction);
       /*endRemoveIf(production)*/
 
       this.$tooltipPointer.classList.remove('tooltip-direction-top');
@@ -1781,7 +1772,7 @@ function () {
     key: "changeLayout",
     value: function changeLayout(style) {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), style);
+      objDebug.debugMethod(this, objDebug.getMethodName(), style);
       /*endRemoveIf(production)*/
 
       var newStyle = typeof style === 'undefined' ? newStyle = this.style : style;
@@ -1791,27 +1782,27 @@ function () {
     }
   }]);
 
-  return FrameworkTooltip;
+  return Tooltip;
 }();
 
-var FrameworkTranslation =
+var Translation =
 /*#__PURE__*/
 function () {
-  function FrameworkTranslation() {
-    _classCallCheck(this, FrameworkTranslation);
+  function Translation() {
+    _classCallCheck(this, Translation);
 
     /*removeIf(production)*/
-    objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+    objDebug.debugMethod(this, objDebug.getMethodName());
     /*endRemoveIf(production)*/
 
     this.translation = '';
   }
 
-  _createClass(FrameworkTranslation, [{
+  _createClass(Translation, [{
     key: "build",
     value: function build() {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      objDebug.debugMethod(this, objDebug.getMethodName());
       /*endRemoveIf(production)*/
 
       this.defineLanguege();
@@ -1820,7 +1811,7 @@ function () {
     key: "defineLanguege",
     value: function defineLanguege() {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      objDebug.debugMethod(this, objDebug.getMethodName());
       /*endRemoveIf(production)*/
 
       switch (globalFrameworkLanguage) {
@@ -1835,15 +1826,5 @@ function () {
     }
   }]);
 
-  return FrameworkTranslation;
+  return Translation;
 }();
-
-function offset(element) {
-  var rect = element.getBoundingClientRect(),
-      scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
-      scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-  return {
-    top: rect.top + scrollTop,
-    left: rect.left + scrollLeft
-  };
-}

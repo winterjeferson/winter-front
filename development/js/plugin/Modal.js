@@ -1,6 +1,6 @@
-class FrameworkModal {
+class Modal {
     constructor() {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
         this.$body = document.querySelector('body');
 
         this.targetBuildGalleryChange = '';
@@ -8,7 +8,7 @@ class FrameworkModal {
     }
 
     updateVariable() {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
         this.$modal = document.querySelector('#modal');
         this.$modalFooter = this.$modal.querySelector('footer');
         this.$modalFooterConfirm = this.$modalFooter.querySelector('[data-id="confirm"]');
@@ -23,7 +23,7 @@ class FrameworkModal {
     }
 
     build() {
-            /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
+            /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
         this.buildHtml();
         this.updateVariable();
         this.buildMenu();
@@ -33,13 +33,13 @@ class FrameworkModal {
     }
 
     buildHtml() {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
         let string = '';
 
         string += '<div id="modal" class="modal-close">';
         string += '     <div class="modal-box">';
         string += '         <header>';
-        string += '             <button id="modal_close" type="button" aria-label="' + objFrameworkTranslation.translation.default.close + '" class="bt bt-sm bt-grey bt-transparent">';
+        string += '             <button id="modal_close" type="button" aria-label="' + objTranslation.translation.default.close + '" class="bt bt-sm bt-grey bt-transparent">';
         string += '                 <span class="fa fa-times" aria-hidden="true"></span>';
         string += '             </button>';
         string += '         </header>';
@@ -49,12 +49,12 @@ class FrameworkModal {
         string += '         <div class="menu-horizontal">';
         string += '             <ul class="navigation-arrow">';
         string += '                 <li>';
-        string += '                     <button type="button" class="bt bt-bi" data-id="nav-left" aria-label="' + objFrameworkTranslation.translation.default.previous + '" >';
+        string += '                     <button type="button" class="bt bt-bi" data-id="nav-left" aria-label="' + objTranslation.translation.default.previous + '" >';
         string += '                         <span class="fa fa-angle-left" aria-hidden="true"></span>';
         string += '                     </button>';
         string += '                 </li>';
         string += '                 <li>';
-        string += '                     <button type="button" class="bt bt-bi" data-id="nav-right" aria-label="' + objFrameworkTranslation.translation.default.next + '" >';
+        string += '                     <button type="button" class="bt bt-bi" data-id="nav-right" aria-label="' + objTranslation.translation.default.next + '" >';
         string += '                         <span class="fa fa-angle-right" aria-hidden="true"></span>';
         string += '                     </button>';
         string += '                 </li>';
@@ -79,13 +79,13 @@ class FrameworkModal {
     }
 
     buildTranslation() {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
-        this.$modalFooterConfirm.innerHTML = objFrameworkTranslation.translation.default.confirm;
-        this.$modalFooterCancel.innerHTML = objFrameworkTranslation.translation.default.cancel;
+        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
+        this.$modalFooterConfirm.innerHTML = objTranslation.translation.default.confirm;
+        this.$modalFooterCancel.innerHTML = objTranslation.translation.default.cancel;
     }
 
     buildKeyboard() {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
 
         window.addEventListener('keyup', function (event) {
@@ -112,7 +112,7 @@ class FrameworkModal {
     }
 
     buildMenuGallery() {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
 
         if (!this.$gallery) {
@@ -142,7 +142,7 @@ class FrameworkModal {
     }
 
     buildMenu() {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
 
         this.$modalClose.addEventListener('click', function () {
@@ -169,7 +169,7 @@ class FrameworkModal {
     }
 
     buildGalleryNavigation(target) {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), target); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName(), target); /*endRemoveIf(production)*/
         let array = [];
         let currentGallery = target.parentNode.parentNode;
         let siblingLength = currentGallery.querySelectorAll('a').length - 1;
@@ -202,7 +202,7 @@ class FrameworkModal {
     }
 
     buildModal(kind, content, size = 're', action = 'open') {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), [kind, content, size, action]); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName(), [kind, content, size, action]); /*endRemoveIf(production)*/
         this.$modalFooter.classList.add(this.cssDisplay);
         action === 'open' ? this.openModal() : this.closeModal();
         this.buildModalSize(size);
@@ -210,7 +210,7 @@ class FrameworkModal {
     }
 
     buildModalKind(kind, content) {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), [kind, content]); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName(), [kind, content]); /*endRemoveIf(production)*/
 
         if (kind === 'ajax') {
             this.buildContentAjax(content);
@@ -233,7 +233,7 @@ class FrameworkModal {
     }
 
     openModal() {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
         this.$body.classList.remove('overflow-y');
         this.$body.classList.add('overflow-hidden');
         this.$body.style.overflowY = 'hidden';
@@ -242,7 +242,7 @@ class FrameworkModal {
     }
 
     closeModal() {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
         this.$body.classList.add('overflow-y');
         this.$body.classList.remove('overflow-hidden');
         this.$body.style.overflowY = 'auto';
@@ -250,17 +250,17 @@ class FrameworkModal {
         this.$modal.classList.add('modal-close');
         this.$modalBox.classList.remove('modal-animate');
 
-        if (typeof objFrameworkMenuDropDown !== 'undefined') {
-            objFrameworkMenuDropDown.build();
+        if (typeof objMenuDropDown !== 'undefined') {
+            objMenuDropDown.build();
         }
 
-        if (typeof objFrameworkMenuTab !== 'undefined') {
-            objFrameworkMenuTab.defineActive();
+        if (typeof objMenuTab !== 'undefined') {
+            objMenuTab.defineActive();
         }
     }
 
     buildModalSize(size = 're') {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), size); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName(), size); /*endRemoveIf(production)*/
         this.$modalBox.classList.remove('modal-es');
         this.$modalBox.classList.remove('modal-sm');
         this.$modalBox.classList.remove('modal-re');
@@ -271,7 +271,7 @@ class FrameworkModal {
     }
 
     buildContentAjax(target) {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), target); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName(), target); /*endRemoveIf(production)*/
         let self = this;
         let ajax = new XMLHttpRequest();
 
@@ -286,32 +286,32 @@ class FrameworkModal {
     }
 
     buildContentAjaxSuccess(data) {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
         this.$modalContent.innerHTML = data;
 
-        if (typeof objFrameworkLayout !== 'undefined') {
-            objFrameworkLayout.buildToggle();
+        if (typeof objLayout !== 'undefined') {
+            objLayout.buildToggle();
         }
 
-        if (typeof objFrameworkForm !== 'undefined') {
-            objFrameworkForm.buildInputFile();
+        if (typeof objForm !== 'undefined') {
+            objForm.buildInputFile();
         }
 
-        if (typeof objFrameworkMenuDropDown !== 'undefined') {
-            objFrameworkMenuDropDown.build();
+        if (typeof objMenuDropDown !== 'undefined') {
+            objMenuDropDown.build();
         }
 
-        if (typeof objFrameworkTooltip !== 'undefined') {
-            objFrameworkTooltip.build();
+        if (typeof objTooltip !== 'undefined') {
+            objTooltip.build();
         }
 
-        if (typeof objFrameworkMenuTab !== 'undefined') {
-            objFrameworkMenuTab.defineActive();
+        if (typeof objMenuTab !== 'undefined') {
+            objMenuTab.defineActive();
         }
     }
 
     buildGalleryImage(image, description) {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), [image, description]); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName(), [image, description]); /*endRemoveIf(production)*/
         let stringImage = '<img src="' + image + '" class="img-responsive" style="margin:auto;" title="" alt=""/>';
 
         this.$modalContent.innerHTML = stringImage;
@@ -319,7 +319,7 @@ class FrameworkModal {
     }
 
     buildContentConfirmation(content) {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), content); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName(), content); /*endRemoveIf(production)*/
         let string = '<div class="padding-re text-center">' + content + '</div>';
 
         this.$modalFooter.classList.remove(this.cssDisplay);
@@ -327,12 +327,12 @@ class FrameworkModal {
     }
 
     buildContentConfirmationAction(action) {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), action); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName(), action); /*endRemoveIf(production)*/
         this.$modalFooterConfirm.setAttribute('onclick', action);
     }
 
     changeText(description) {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), [description]); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName(), [description]); /*endRemoveIf(production)*/
         let string = '';
 
         if (description === '') {

@@ -1,6 +1,6 @@
-class FrameworkLayout {
+class Layout {
     constructor() {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
         this.$body = document.querySelector('body');
         // this.$window = document.querySelector('window');
 
@@ -12,12 +12,12 @@ class FrameworkLayout {
     }
     
     build() {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
         this.buildToggle();
     }
 
     buildSpinner(style) {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), style); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName(), style); /*endRemoveIf(production)*/
         let spinner = '';
 
         spinner += '<div class="row text-center">';
@@ -30,7 +30,7 @@ class FrameworkLayout {
     }
 
     buildToggle() {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
         let element = document.querySelectorAll('.bt-toggle');
 
         Array.prototype.forEach.call(element, function (el, i) {

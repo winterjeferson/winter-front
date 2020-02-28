@@ -1,6 +1,6 @@
 class Theme {
     constructor() {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, 'constructor'); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objDebug.debugMethod(this, 'constructor'); /*endRemoveIf(production)*/
         this.$body = document.querySelector('body');
         this.arrStyle = ['grey', 'blue', 'green', 'cyan', 'orange', 'red', 'yellow', 'purple', 'brown', 'black', 'white'];
         this.arrStyleLength = this.arrStyle.length;
@@ -9,7 +9,7 @@ class Theme {
     }
 
     verifyLoad() {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, 'buildLoad'); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objDebug.debugMethod(this, 'buildLoad'); /*endRemoveIf(production)*/
         let self = this;
 
         window.onload = function () {
@@ -18,7 +18,7 @@ class Theme {
     }
 
     buildActiveMenu() {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, 'buildActiveMenu'); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objDebug.debugMethod(this, 'buildActiveMenu'); /*endRemoveIf(production)*/
         let url = top.location.href;
         let urlSplit = url.split('/');
         let length = urlSplit.length;
@@ -32,7 +32,7 @@ class Theme {
     }
 
     // buildGoogleMaps() {
-    //     /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, 'buildGoogleMaps'); /*endRemoveIf(production)*/
+    //     /*removeIf(production)*/ objDebug.debugMethod(this, 'buildGoogleMaps'); /*endRemoveIf(production)*/
     //     let $maps1 = $('#google_maps_map');
     //     let $maps1Box = $('#google_maps_box');
 
@@ -48,7 +48,7 @@ class Theme {
     // }
 
     // doSlide(target) {
-    //     /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, 'doSlide', target); /*endRemoveIf(production)*/
+    //     /*removeIf(production)*/ objDebug.debugMethod(this, 'doSlide', target); /*endRemoveIf(production)*/
     //     $('html, body').animate({
     //         scrollTop: ($(target).offset().top) + 'px'
     //     }, 500);

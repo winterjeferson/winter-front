@@ -1,9 +1,9 @@
-class FrameworkForm {
+class Form {
     constructor() {
     }
 
     build() {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
         if (document.querySelectorAll('form').length < 1) {
             return;
         }
@@ -13,7 +13,7 @@ class FrameworkForm {
     }
 
     buildKeyboard() {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
 
         window.addEventListener('keyup', function (event) {
@@ -26,7 +26,7 @@ class FrameworkForm {
     }
 
     buildFocus(target) {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
         let $arr = document.querySelectorAll(target);
 
         Array.prototype.forEach.call($arr, function (item) {
@@ -39,7 +39,7 @@ class FrameworkForm {
     }
 
     buildInputFile() {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
 
         Array.prototype.forEach.call(document.querySelectorAll('input[type="file"]'), function (item) {
@@ -76,9 +76,9 @@ class FrameworkForm {
     }
 
     buildInputFileHtml() {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
         let inputFile = '';
-        let textFile = objFrameworkTranslation.translation.default.input_upload;
+        let textFile = objTranslation.translation.default.input_upload;
 
         inputFile += '<div class="input-file">';
         inputFile += '    <div class="input-file-name"></div>';
@@ -89,7 +89,7 @@ class FrameworkForm {
     }
 
     validateEmpty(arr) {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
         let arrEmpty = arr;
         let length = arrEmpty.length;
 

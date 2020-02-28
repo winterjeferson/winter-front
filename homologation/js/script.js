@@ -22,15 +22,15 @@ function _createClass(Constructor, protoProps, staticProps) {
   return Constructor;
 }
 
-var FrameworkLayout =
+var Layout =
 /*#__PURE__*/
 function () {
-  function FrameworkLayout() {
-    _classCallCheck(this, FrameworkLayout);
+  function Layout() {
+    _classCallCheck(this, Layout);
     /*removeIf(production)*/
 
 
-    objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+    objDebug.debugMethod(this, objDebug.getMethodName());
     /*endRemoveIf(production)*/
 
     this.$body = document.querySelector('body'); // this.$window = document.querySelector('window');
@@ -42,11 +42,11 @@ function () {
     this.breakPointExtraBig = 1200;
   }
 
-  _createClass(FrameworkLayout, [{
+  _createClass(Layout, [{
     key: "build",
     value: function build() {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      objDebug.debugMethod(this, objDebug.getMethodName());
       /*endRemoveIf(production)*/
 
       this.buildToggle();
@@ -55,7 +55,7 @@ function () {
     key: "buildSpinner",
     value: function buildSpinner(style) {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), style);
+      objDebug.debugMethod(this, objDebug.getMethodName(), style);
       /*endRemoveIf(production)*/
 
       var spinner = '';
@@ -70,7 +70,7 @@ function () {
     key: "buildToggle",
     value: function buildToggle() {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      objDebug.debugMethod(this, objDebug.getMethodName());
       /*endRemoveIf(production)*/
 
       var element = document.querySelectorAll('.bt-toggle');
@@ -91,7 +91,7 @@ function () {
     }
   }]);
 
-  return FrameworkLayout;
+  return Layout;
 }();
 
 var Loading =
@@ -102,7 +102,7 @@ function () {
     /*removeIf(production)*/
 
 
-    objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+    objDebug.debugMethod(this, objDebug.getMethodName());
     /*endRemoveIf(production)*/
 
     this.$loadingMain = document.getElementById('loading_main');
@@ -113,7 +113,7 @@ function () {
     key: "finish",
     value: function finish() {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      objDebug.debugMethod(this, objDebug.getMethodName());
       /*endRemoveIf(production)*/
 
       this.$loadingMain.classList.add('loading-main-done');
@@ -124,7 +124,7 @@ function () {
     key: "remove",
     value: function remove(element) {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
+      objDebug.debugMethod(this, objDebug.getMethodName());
       /*endRemoveIf(production)*/
 
       element.parentNode.removeChild(element);
@@ -142,7 +142,7 @@ function () {
     /*removeIf(production)*/
 
 
-    objFrameworkDebug.debugMethod(this, 'constructor');
+    objDebug.debugMethod(this, 'constructor');
     /*endRemoveIf(production)*/
 
     this.$body = document.querySelector('body');
@@ -155,7 +155,7 @@ function () {
     key: "verifyLoad",
     value: function verifyLoad() {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, 'buildLoad');
+      objDebug.debugMethod(this, 'buildLoad');
       /*endRemoveIf(production)*/
 
       var self = this;
@@ -168,7 +168,7 @@ function () {
     key: "buildActiveMenu",
     value: function buildActiveMenu() {
       /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, 'buildActiveMenu');
+      objDebug.debugMethod(this, 'buildActiveMenu');
       /*endRemoveIf(production)*/
 
       var url = top.location.href;
@@ -182,7 +182,7 @@ function () {
         target[0].classList.add('active');
       }
     } // buildGoogleMaps() {
-    //     /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, 'buildGoogleMaps'); /*endRemoveIf(production)*/
+    //     /*removeIf(production)*/ objDebug.debugMethod(this, 'buildGoogleMaps'); /*endRemoveIf(production)*/
     //     let $maps1 = $('#google_maps_map');
     //     let $maps1Box = $('#google_maps_box');
     //     $maps1.addClass('scroll-off');
@@ -194,7 +194,7 @@ function () {
     //     });
     // }
     // doSlide(target) {
-    //     /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, 'doSlide', target); /*endRemoveIf(production)*/
+    //     /*removeIf(production)*/ objDebug.debugMethod(this, 'doSlide', target); /*endRemoveIf(production)*/
     //     $('html, body').animate({
     //         scrollTop: ($(target).offset().top) + 'px'
     //     }, 500);
@@ -391,33 +391,32 @@ var translationPTBR = {
 };
 /*removeIf(production)*/
 
-var objFrameworkDebug = new FrameworkDebug();
+var objDebug = new Debug();
 /*endRemoveIf(production)*/
 
-var objFrameworkLayout = new FrameworkLayout();
-var objFrameworkCarousel = new FrameworkCarousel();
-var objFrameworkForm = new FrameworkForm();
-var objFrameworkGeneric = new FrameworkGeneric();
-var objFrameworkMenuDropDown = new FrameworkMenuDropDown();
-var objFrameworkMenuTab = new FrameworkMenuTab();
-var objFrameworkModal = new FrameworkModal();
-var objFrameworkNotification = new FrameworkNotification();
-var objFrameworkProgress = new FrameworkProgress();
-var objFrameworkTag = new FrameworkTag();
-var objFrameworkTable = new FrameworkTable();
-var objFrameworkTooltip = new FrameworkTooltip();
-var objFrameworkTranslation = new FrameworkTranslation();
+var objLayout = new Layout();
+var objCarousel = new Carousel();
+var objForm = new Form();
+var objMenuDropDown = new MenuDropDown();
+var objMenuTab = new MenuTab();
+var objModal = new Modal();
+var objNotification = new Notification();
+var objProgress = new Progress();
+var objTag = new Tag();
+var objTable = new Table();
+var objTooltip = new Tooltip();
+var objTranslation = new Translation();
 var objLoading = new Loading();
 var objTheme = new Theme();
-objFrameworkTranslation.build();
-objFrameworkProgress.build();
-objFrameworkLayout.build();
-objFrameworkForm.build();
-objFrameworkModal.build();
-objFrameworkCarousel.build();
-objFrameworkMenuDropDown.build();
-objFrameworkMenuTab.build();
-objFrameworkNotification.build();
-objFrameworkTable.build();
-objFrameworkTag.build();
-objFrameworkTooltip.build();
+objTranslation.build();
+objProgress.build();
+objLayout.build();
+objForm.build();
+objModal.build();
+objCarousel.build();
+objMenuDropDown.build();
+objMenuTab.build();
+objNotification.build();
+objTable.build();
+objTag.build();
+objTooltip.build();

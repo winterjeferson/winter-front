@@ -1,6 +1,6 @@
-class FrameworkMenuDropDown {
+class MenuDropDown {
     constructor() {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
         this.isClickBuild = false;
         this.classMenu = 'menu-drop-down';
         this.classArrow = 'bt-arrow';
@@ -14,7 +14,7 @@ class FrameworkMenuDropDown {
     }
 
     build() {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
         if (this.$menu.length < 1) {
             return;
         }
@@ -30,7 +30,7 @@ class FrameworkMenuDropDown {
     }
 
     buildIcon() {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
         let $arr = document.querySelectorAll('.' + this.classMenu + ' ul > li > ul' + ' , .' + this.classMenuText + ' ul > li > ul');
 
@@ -42,7 +42,7 @@ class FrameworkMenuDropDown {
     }
 
     buildClick() {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
 
         Array.prototype.forEach.call(this.$menu, function (item) {
@@ -64,7 +64,7 @@ class FrameworkMenuDropDown {
     }
 
     buildClickAction(item) {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
         let $menuChild = item.parentNode.querySelector('ul');
 
         if (!document.body.contains($menuChild)) {
@@ -89,7 +89,7 @@ class FrameworkMenuDropDown {
     }
 
     buildClickOut() {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
 
         document.addEventListener('click', (event) => {

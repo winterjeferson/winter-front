@@ -1,11 +1,11 @@
-class FrameworkTag {
+class Tag {
     constructor() {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
         this.$tagBt = document.querySelectorAll('.tag-item-bt');
     }
 
     build() {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
         if (this.$tagBt.length < 1) {
             return;
         }
@@ -14,7 +14,7 @@ class FrameworkTag {
     }
 
     buildClick() {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
         Array.prototype.forEach.call(this.$tagBt, function (item) {
             let $bt = item.querySelector('.tag-bt');
 
