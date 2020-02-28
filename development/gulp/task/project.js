@@ -5,18 +5,18 @@ var del = require('del'); //npm install del --save-dev //https://www.npmjs.com/p
 
 gulp.task('project_move_trunk', function () {
     gulp
-        .src(configuration.branchesPublic + '*.php')
+        .src(configuration.tags + '*.php')
         .pipe(gulp.dest(configuration.trunk));
 
     gulp
-        .src(configuration.branchesPublic + '/php/**/*.*')
+        .src(configuration.tags + '/php/**/*.*')
         .pipe(gulp.dest(configuration.trunk + '/php/'));
 
     gulp
-        .src(configuration.branchesPublic + '.htaccess')
+        .src(configuration.tags + '.htaccess')
         .pipe(gulp.dest(configuration.trunk));
 
     return gulp
-        .src(configuration.branchesPublic + '/font/**/*.*')
+        .src(configuration.tags + '/font/**/*.*')
         .pipe(gulp.dest(configuration.trunk + '/font/'));
 });

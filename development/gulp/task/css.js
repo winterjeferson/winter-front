@@ -47,7 +47,7 @@ gulp.task('css_default_sass', function () {
     return gulp
         .src(configuration.branches + 'css/' + fileDefault + '.scss')
         .pipe(sass.sync().on('error', sass.logError))
-        .pipe(gulp.dest(configuration.branchesPublic + 'css/'));
+        .pipe(gulp.dest(configuration.tags + 'css/'));
 });
 
 gulp.task('build_css_default', gulp.series(
@@ -72,7 +72,7 @@ gulp.task('css_plugin_sass', function () {
     return gulp
         .src(configuration.branches + 'css/' + filePlugin + '.scss')
         .pipe(sass.sync().on('error', sass.logError))
-        .pipe(gulp.dest(configuration.branchesPublic + 'css/'));
+        .pipe(gulp.dest(configuration.tags + 'css/'));
 });
 
 gulp.task('build_css_plugin', gulp.series(
@@ -84,7 +84,7 @@ gulp.task('build_css_plugin', gulp.series(
 
 gulp.task('css_minify', function () {
     return gulp
-        .src(configuration.branchesPublic + 'css/*.*')
+        .src(configuration.tags + 'css/*.*')
         .pipe(csso())
         .pipe(gulp.dest(configuration.trunk + 'css/'));
 });

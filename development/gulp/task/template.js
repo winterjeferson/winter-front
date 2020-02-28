@@ -24,8 +24,8 @@ function clean(path) {
 
 gulp.task('template_clean', function () {
     var files = [
-        configuration.branchesPublic + '*.html',
-        configuration.branchesPublic + 'admin/' + '*.html',
+        configuration.tags + '*.html',
+        configuration.tags + 'admin/' + '*.html',
     ];
     return clean(files);
 });
@@ -38,7 +38,7 @@ gulp.task('template_include', function () {
                 path: [folderTemplate]
             }))
             .pipe(rename({extname: '.html'}))
-            .pipe(gulp.dest(configuration.branchesPublic));
+            .pipe(gulp.dest(configuration.tags));
 });
 
 gulp.task('template_include_admin', function () {
@@ -49,12 +49,12 @@ gulp.task('template_include_admin', function () {
                 path: [folderTemplate]
             }))
             .pipe(rename({extname: '.html'}))
-            .pipe(gulp.dest(configuration.branchesPublic + 'admin/'));
+            .pipe(gulp.dest(configuration.tags + 'admin/'));
 });
 
 gulp.task('template_minify', function () {
     return gulp
-            .src(configuration.branchesPublic + '*.html')
+            .src(configuration.tags + '*.html')
             .pipe(htmlmin({collapseWhitespace: true}))
             .pipe(gulp.dest(configuration.trunk));
 });

@@ -15,9 +15,9 @@ var fileOther = [
 ];
 
 var fileOtherPublic = [
-    configuration.branchesPublic + '.htaccess',
-    configuration.branchesPublic + '*.htaccess',
-    configuration.branchesPublic + '*.txt'
+    configuration.tags + '.htaccess',
+    configuration.tags + '*.htaccess',
+    configuration.tags + '*.txt'
 ];
 
 
@@ -32,7 +32,7 @@ gulp.task('other_clean', function () {
 gulp.task('other_move', function (done) {
     return gulp
             .src(fileOther)
-            .pipe(gulp.dest(configuration.branchesPublic));
+            .pipe(gulp.dest(configuration.tags));
     done();
 });
 

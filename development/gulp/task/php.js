@@ -14,10 +14,10 @@ var filePHP = [
 ];
 
 var filePHPPublic = [
-    configuration.branchesPublic + 'php/*',
-    configuration.branchesPublic + 'php/**',
-    configuration.branchesPublic + 'php/**/*',
-    configuration.branchesPublic + 'php/**/*.*'
+    configuration.tags + 'php/*',
+    configuration.tags + 'php/**',
+    configuration.tags + 'php/**/*',
+    configuration.tags + 'php/**/*.*'
 ];
 
 
@@ -26,7 +26,7 @@ function clean(path) {
 }
 
 gulp.task('php_clean', function () {
-    var files = [configuration.branchesPublic + 'php/**'];
+    var files = [configuration.tags + 'php/**'];
     return clean(files);
 });
 
@@ -34,7 +34,7 @@ gulp.task('php_clean', function () {
 gulp.task('php_move', function (done) {
     return gulp
             .src(configuration.branches + 'php/**/*.*')
-            .pipe(gulp.dest(configuration.branchesPublic + "php/"));
+            .pipe(gulp.dest(configuration.tags + "php/"));
     done();
 });
 

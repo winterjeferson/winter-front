@@ -17,8 +17,8 @@ var fileJs = [
 ];
 
 var fileJsFinal = [
-    configuration.branchesPublic + 'js/' + fileJsDefaultFinal,
-    configuration.branchesPublic + 'js/' + fileJsPluginFinal
+    configuration.tags + 'js/' + fileJsDefaultFinal,
+    configuration.tags + 'js/' + fileJsPluginFinal
 ];
 
 var fileJsPlugin = [
@@ -35,17 +35,17 @@ gulp.task('js_babel', function () {
         .pipe(babel({
             presets: ['@babel/env']
         }))
-        .pipe(gulp.dest(configuration.branchesPublic + 'js/'));
+        .pipe(gulp.dest(configuration.tags + 'js/'));
 });
 
 gulp.task('js_default_concat', function () {
     return gulp.src(fileJs)
         .pipe(concat(fileJsDefaultFinal))
-        .pipe(gulp.dest(configuration.branchesPublic + 'js/'));
+        .pipe(gulp.dest(configuration.tags + 'js/'));
 });
 
 gulp.task('js_remove_code', function () {
-    return gulp.src(configuration.branchesPublic + 'js/*.js')
+    return gulp.src(configuration.tags + 'js/*.js')
         .pipe(removeCode({ production: true }))
         .pipe(removeCode({ noDevFeatures: false, commentStart: '/*', commentEnd: '*/' }))
         .pipe(gulp.dest(configuration.trunk + 'js/'));
@@ -61,7 +61,7 @@ gulp.task('build_js_default', gulp.series(
 gulp.task('js_plugin_concat', function () {
     return gulp.src(fileJsPlugin)
         .pipe(concat(fileJsPluginFinal))
-        .pipe(gulp.dest(configuration.branchesPublic + 'js/'));
+        .pipe(gulp.dest(configuration.tags + 'js/'));
 });
 
 gulp.task('build_js_plugin', gulp.series(
@@ -72,7 +72,7 @@ gulp.task('build_js_plugin', gulp.series(
 
 
 gulp.task('js_minify', function () {
-    return gulp.src(configuration.branchesPublic + 'js/*.*')
+    return gulp.src(configuration.tags + 'js/*.*')
         .pipe(uglify())
         .pipe(gulp.dest(configuration.trunk + 'js/'));
 });

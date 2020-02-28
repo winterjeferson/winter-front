@@ -16,10 +16,10 @@ var fileImg = [
 ];
 
 var fileImgPublic = [
-    configuration.branchesPublic + 'img/*',
-    configuration.branchesPublic + 'img/**',
-    configuration.branchesPublic + 'img/**/*',
-    configuration.branchesPublic + 'img/**/*.*'
+    configuration.tags + 'img/*',
+    configuration.tags + 'img/**',
+    configuration.tags + 'img/**/*',
+    configuration.tags + 'img/**/*.*'
 ];
 
 
@@ -28,14 +28,14 @@ function clean(path) {
 }
 
 gulp.task('image_clean', function () {
-    var files = [configuration.branchesPublic + 'img/**'];
+    var files = [configuration.tags + 'img/**'];
     return clean(files);
 });
 
 gulp.task('image_move', function (done) {
     return gulp
         .src(configuration.branches + 'img/**/*.*')
-        .pipe(gulp.dest(configuration.branchesPublic + "img/"));
+        .pipe(gulp.dest(configuration.tags + "img/"));
     done();
 });
 
@@ -43,7 +43,7 @@ gulp.task('image_move', function (done) {
 // fix enoent problem: node node_modules/optipng-bin/lib/install.js
 gulp.task('image_imagemin', function () {
     return gulp
-        .src(configuration.branchesPublic + 'img/**')
+        .src(configuration.tags + 'img/**')
         .pipe(newer(configuration.trunk + "img/"))
         .pipe(imagemin())
         .pipe(gulp.dest(configuration.trunk + "img/"));

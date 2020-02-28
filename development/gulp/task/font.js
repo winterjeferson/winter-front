@@ -14,10 +14,10 @@ var fileFont = [
 ];
 
 var fileFontPublic = [
-    configuration.branchesPublic + 'font/*',
-    configuration.branchesPublic + 'font/**',
-    configuration.branchesPublic + 'font/**/*',
-    configuration.branchesPublic + 'font/**/*.*'
+    configuration.tags + 'font/*',
+    configuration.tags + 'font/**',
+    configuration.tags + 'font/**/*',
+    configuration.tags + 'font/**/*.*'
 ];
 
 function clean(path) {
@@ -25,14 +25,14 @@ function clean(path) {
 }
 
 gulp.task('font_clean', function () {
-    var files = [configuration.branchesPublic + 'font/**'];
+    var files = [configuration.tags + 'font/**'];
     return clean(files);
 });
 
 gulp.task('font_move', function (done) {
     return gulp
             .src(configuration.branches + 'font/**/*.*')
-            .pipe(gulp.dest(configuration.branchesPublic + "font/"));
+            .pipe(gulp.dest(configuration.tags + "font/"));
     done();
 });
 
