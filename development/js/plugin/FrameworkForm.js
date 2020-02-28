@@ -44,8 +44,8 @@ class FrameworkForm {
 
         Array.prototype.forEach.call(document.querySelectorAll('input[type="file"]'), function (item) {
             let target = item.parentNode;
-
-            objFrameworkLayout.switchDisplay(item, 'hide');
+            
+            item.style.display = 'none';
             target.insertAdjacentHTML('beforeend', self.buildInputFileHtml());
             target.setAttribute('tabIndex', 0);
             target.style.outline = 0;

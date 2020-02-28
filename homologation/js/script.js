@@ -52,31 +52,6 @@ function () {
       this.buildToggle();
     }
   }, {
-    key: "switchDisplay",
-    value: function switchDisplay(target) {
-      var action = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
-      /*removeIf(production)*/
-
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), [target, action]);
-      /*endRemoveIf(production)*/
-
-      var classDisplay = 'display-none';
-
-      if (action === '') {
-        if (target.hasClass(classDisplay)) {
-          action = 'show';
-        } else {
-          action = 'hide';
-        }
-      }
-
-      if (action === 'show') {
-        $(target).removeClass(classDisplay);
-      } else {
-        $(target).addClass(classDisplay);
-      }
-    }
-  }, {
     key: "buildSpinner",
     value: function buildSpinner(style) {
       /*removeIf(production)*/
@@ -117,48 +92,6 @@ function () {
   }]);
 
   return FrameworkLayout;
-}();
-
-var FrameworkManagement =
-/*#__PURE__*/
-function () {
-  function FrameworkManagement() {
-    _classCallCheck(this, FrameworkManagement);
-  }
-
-  _createClass(FrameworkManagement, [{
-    key: "verifyLoad",
-    value: function verifyLoad() {
-      /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
-      /*endRemoveIf(production)*/
-
-      objFrameworkTranslation.defineLanguege();
-      this.applyClass();
-    }
-  }, {
-    key: "applyClass",
-    value: function applyClass() {
-      /*removeIf(production)*/
-      objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName());
-      /*endRemoveIf(production)*/
-      // objFrameworkLayout.buildLayout();
-
-      objFrameworkProgress.build();
-      objFrameworkLayout.build();
-      objFrameworkForm.build();
-      objFrameworkModal.build();
-      objFrameworkCarousel.build();
-      objFrameworkMenuDropDown.build();
-      objFrameworkMenuTab.build();
-      objFrameworkNotification.build();
-      objFrameworkTable.build();
-      objFrameworkTag.build();
-      objFrameworkTooltip.build();
-    }
-  }]);
-
-  return FrameworkManagement;
 }();
 
 var Loading =
@@ -212,7 +145,7 @@ function () {
     objFrameworkDebug.debugMethod(this, 'constructor');
     /*endRemoveIf(production)*/
 
-    this.$body = $('body');
+    this.$body = document.querySelector('body');
     this.arrStyle = ['grey', 'blue', 'green', 'cyan', 'orange', 'red', 'yellow', 'purple', 'brown', 'black', 'white'];
     this.arrStyleLength = this.arrStyle.length;
     this.verifyLoad();
@@ -474,7 +407,17 @@ var objFrameworkTag = new FrameworkTag();
 var objFrameworkTable = new FrameworkTable();
 var objFrameworkTooltip = new FrameworkTooltip();
 var objFrameworkTranslation = new FrameworkTranslation();
-var objFrameworkManagement = new FrameworkManagement();
 var objLoading = new Loading();
 var objTheme = new Theme();
-objFrameworkManagement.verifyLoad();
+objFrameworkTranslation.build();
+objFrameworkProgress.build();
+objFrameworkLayout.build();
+objFrameworkForm.build();
+objFrameworkModal.build();
+objFrameworkCarousel.build();
+objFrameworkMenuDropDown.build();
+objFrameworkMenuTab.build();
+objFrameworkNotification.build();
+objFrameworkTable.build();
+objFrameworkTag.build();
+objFrameworkTooltip.build();

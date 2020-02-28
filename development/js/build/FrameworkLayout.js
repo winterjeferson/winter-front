@@ -15,25 +15,6 @@ class FrameworkLayout {
         /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
         this.buildToggle();
     }
-    
-    switchDisplay(target, action = '') {
-        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), [target, action]); /*endRemoveIf(production)*/
-        let classDisplay = 'display-none';
-
-        if (action === '') {
-            if (target.hasClass(classDisplay)) {
-                action = 'show';
-            } else {
-                action = 'hide';
-            }
-        }
-
-        if (action === 'show') {
-            $(target).removeClass(classDisplay);
-        } else {
-            $(target).addClass(classDisplay);
-        }
-    }
 
     buildSpinner(style) {
         /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName(), style); /*endRemoveIf(production)*/

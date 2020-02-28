@@ -126,7 +126,7 @@ class FrameworkModal {
                 itemBt.addEventListener('click', function (event) {
                     event.preventDefault();
                     self.buildModal('gallery', false, 'fu');
-                    self.buildGalleryImage($(this).attr('href'), $(this).find('img').attr('data-description'));
+                    self.buildGalleryImage(itemBt.getAttribute('href'), itemBt.querySelector('img').getAttribute('data-description'));
                     self.buildGalleryNavigation(itemBt);
                 });
             });

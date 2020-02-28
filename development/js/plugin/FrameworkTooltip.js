@@ -222,7 +222,7 @@ class FrameworkTooltip {
 
     changeArrowPositionHorizontal() {
         /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
-        this.$tooltipPointer.style.left = this.elementLeft - $(this.$tooltipBody).position().left - $(this.$tooltip).position().left + (this.elementWidth / 2) + 'px';
+        this.$tooltipPointer.style.left = this.$tooltip.offsetWidth / 2 + 'px';
     }
 
     changeArrowPositionVertical() {

@@ -1,22 +1,34 @@
 /*removeIf(production)*/
-var objFrameworkDebug = new FrameworkDebug();
+const objFrameworkDebug = new FrameworkDebug();
 /*endRemoveIf(production)*/
-var objFrameworkLayout = new FrameworkLayout();
-var objFrameworkCarousel = new FrameworkCarousel();
-var objFrameworkForm = new FrameworkForm();
-var objFrameworkGeneric = new FrameworkGeneric();
-var objFrameworkMenuDropDown = new FrameworkMenuDropDown();
-var objFrameworkMenuTab = new FrameworkMenuTab();
-var objFrameworkModal = new FrameworkModal();
-var objFrameworkNotification = new FrameworkNotification();
-var objFrameworkProgress = new FrameworkProgress();
-var objFrameworkTag = new FrameworkTag();
-var objFrameworkTable = new FrameworkTable();
-var objFrameworkTooltip = new FrameworkTooltip();
-var objFrameworkTranslation = new FrameworkTranslation();
-var objFrameworkManagement = new FrameworkManagement();
+const objFrameworkLayout = new FrameworkLayout();
+const objFrameworkCarousel = new FrameworkCarousel();
+const objFrameworkForm = new FrameworkForm();
+const objFrameworkGeneric = new FrameworkGeneric();
+const objFrameworkMenuDropDown = new FrameworkMenuDropDown();
+const objFrameworkMenuTab = new FrameworkMenuTab();
+const objFrameworkModal = new FrameworkModal();
+const objFrameworkNotification = new FrameworkNotification();
+const objFrameworkProgress = new FrameworkProgress();
+const objFrameworkTag = new FrameworkTag();
+const objFrameworkTable = new FrameworkTable();
+const objFrameworkTooltip = new FrameworkTooltip();
+const objFrameworkTranslation = new FrameworkTranslation();
 
-var objLoading = new Loading();
-var objTheme = new Theme();
+const objLoading = new Loading();
+const objTheme = new Theme();
 
-objFrameworkManagement.verifyLoad();
+
+
+objFrameworkTranslation.build();
+objFrameworkProgress.build();
+objFrameworkLayout.build();
+objFrameworkForm.build();
+objFrameworkModal.build();
+objFrameworkCarousel.build();
+objFrameworkMenuDropDown.build();
+objFrameworkMenuTab.build();
+objFrameworkNotification.build();
+objFrameworkTable.build();
+objFrameworkTag.build();
+objFrameworkTooltip.build();

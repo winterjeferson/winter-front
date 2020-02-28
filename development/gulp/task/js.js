@@ -22,7 +22,6 @@ var fileJsFinal = [
 ];
 
 var fileJsPlugin = [
-    configuration.branches + 'js/library/**/*.*',
     configuration.branches + 'js/plugin/**/*.*'
 ];
 

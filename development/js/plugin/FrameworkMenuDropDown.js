@@ -92,15 +92,13 @@ class FrameworkMenuDropDown {
         /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
 
-        Array.prototype.forEach.call(this.$menuDropDownUl, function (item) {
-            let $bt = item.querySelectorAll('.bt , .link');
+        document.addEventListener('click', (event) => {
+            if (event.toElement.classList.contains('bt') || event.toElement.classList.contains('link')) {
+                return;
+            }
 
-            item.classList.remove(self.classShowMobile);
-
-            Array.prototype.forEach.call($bt, function (itemBt) {
-                if (itemBt.classList.contains('active')) {
-                    itemBt.classList.remove('active');
-                }
+            Array.prototype.forEach.call(document.querySelectorAll('.mobile-show'), function (item) {
+                item.classList.remove(self.classShowMobile);
             });
         });
     }

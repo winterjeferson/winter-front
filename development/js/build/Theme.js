@@ -1,7 +1,7 @@
 class Theme {
     constructor() {
         /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, 'constructor'); /*endRemoveIf(production)*/
-        this.$body = $('body');
+        this.$body = document.querySelector('body');
         this.arrStyle = ['grey', 'blue', 'green', 'cyan', 'orange', 'red', 'yellow', 'purple', 'brown', 'black', 'white'];
         this.arrStyleLength = this.arrStyle.length;
 

@@ -4,6 +4,11 @@ class FrameworkTranslation {
         this.translation = '';
     }
 
+    build() {
+        /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
+        this.defineLanguege();
+    }
+
     defineLanguege() {
         /*removeIf(production)*/ objFrameworkDebug.debugMethod(this, objFrameworkDebug.getMethodName()); /*endRemoveIf(production)*/
         switch (globalFrameworkLanguage) {
