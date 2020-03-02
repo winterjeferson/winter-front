@@ -10,11 +10,6 @@ class Layout {
         this.breakPointBig = 992;
         this.breakPointExtraBig = 1200;
     }
-    
-    build() {
-        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
-        this.buildToggle();
-    }
 
     buildSpinner(style) {
         /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName(), style); /*endRemoveIf(production)*/
@@ -27,25 +22,5 @@ class Layout {
         spinner += '</div>';
 
         return spinner;
-    }
-
-    buildToggle() {
-        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
-        let element = document.querySelectorAll('.bt-toggle');
-
-        Array.prototype.forEach.call(element, function (el, i) {
-            el.onclick = function () {
-                let $ul1 = el.parentNode.querySelector('nav > ul');
-                let $ulAll = el.parentNode.querySelector('nav ul');
-                let classDisplay = 'mobile-show';
-
-                if ($ul1.classList.contains(classDisplay)) {
-                    $ul1.classList.remove(classDisplay);
-                    $ulAll.classList.remove(classDisplay);
-                } else {
-                    $ul1.classList.add(classDisplay);
-                }
-            }
-        });
     }
 }

@@ -1,18 +1,35 @@
 "use strict";
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
 
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+function _defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, descriptor.key, descriptor);
+  }
+}
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+function _createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) _defineProperties(Constructor, staticProps);
+  return Constructor;
+}
 
 var Layout =
 /*#__PURE__*/
 function () {
   function Layout() {
     _classCallCheck(this, Layout);
-
     /*removeIf(production)*/
+
+
     objDebug.debugMethod(this, objDebug.getMethodName());
     /*endRemoveIf(production)*/
 
@@ -26,15 +43,6 @@ function () {
   }
 
   _createClass(Layout, [{
-    key: "build",
-    value: function build() {
-      /*removeIf(production)*/
-      objDebug.debugMethod(this, objDebug.getMethodName());
-      /*endRemoveIf(production)*/
-
-      this.buildToggle();
-    }
-  }, {
     key: "buildSpinner",
     value: function buildSpinner(style) {
       /*removeIf(production)*/
@@ -49,29 +57,6 @@ function () {
       spinner += '</div>';
       return spinner;
     }
-  }, {
-    key: "buildToggle",
-    value: function buildToggle() {
-      /*removeIf(production)*/
-      objDebug.debugMethod(this, objDebug.getMethodName());
-      /*endRemoveIf(production)*/
-
-      var element = document.querySelectorAll('.bt-toggle');
-      Array.prototype.forEach.call(element, function (el, i) {
-        el.onclick = function () {
-          var $ul1 = el.parentNode.querySelector('nav > ul');
-          var $ulAll = el.parentNode.querySelector('nav ul');
-          var classDisplay = 'mobile-show';
-
-          if ($ul1.classList.contains(classDisplay)) {
-            $ul1.classList.remove(classDisplay);
-            $ulAll.classList.remove(classDisplay);
-          } else {
-            $ul1.classList.add(classDisplay);
-          }
-        };
-      });
-    }
   }]);
 
   return Layout;
@@ -82,8 +67,9 @@ var Loading =
 function () {
   function Loading() {
     _classCallCheck(this, Loading);
-
     /*removeIf(production)*/
+
+
     objDebug.debugMethod(this, objDebug.getMethodName());
     /*endRemoveIf(production)*/
 
@@ -121,8 +107,9 @@ var Theme =
 function () {
   function Theme() {
     _classCallCheck(this, Theme);
-
     /*removeIf(production)*/
+
+
     objDebug.debugMethod(this, 'constructor');
     /*endRemoveIf(production)*/
 
@@ -380,6 +367,7 @@ var objCarousel = new Carousel();
 var objForm = new Form();
 var objMenuDropDown = new MenuDropDown();
 var objMenuTab = new MenuTab();
+var objMenuToggle = new MenuToggle();
 var objModal = new Modal();
 var objNotification = new Notification();
 var objProgress = new Progress();
@@ -391,12 +379,12 @@ var objLoading = new Loading();
 var objTheme = new Theme();
 objTranslation.build();
 objProgress.build();
-objLayout.build();
 objForm.build();
 objModal.build();
 objCarousel.build();
 objMenuDropDown.build();
 objMenuTab.build();
+objMenuToggle.build();
 objNotification.build();
 objTable.build();
 objTag.build();

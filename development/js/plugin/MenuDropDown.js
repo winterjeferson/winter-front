@@ -90,16 +90,25 @@ class MenuDropDown {
 
     buildClickOut() {
         /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
-        let self = this;
+        document.addEventListener('click', this.listener, true);
+    }
 
-        document.addEventListener('click', (event) => {
-            if (event.toElement.classList.contains('bt') || event.toElement.classList.contains('link')) {
-                return;
-            }
+    listener(event) {
+        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
+        if (event.toElement.classList.contains('bt') || event.toElement.classList.contains('link')) {
+            return;
+        }
 
-            Array.prototype.forEach.call(document.querySelectorAll('.mobile-show'), function (item) {
-                item.classList.remove(self.classShowMobile);
-            });
+        Array.prototype.forEach.call(document.querySelectorAll('.' + objMenuDropDown.classShowMobile), function (item) {
+            item.classList.remove(objMenuDropDown.classShowMobile);
         });
+    }
+
+    reset() {
+        document.removeEventListener('click', event, true);
+        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
+        objMenuDropDown = new MenuDropDown();
+        document.removeEventListener('click', this.listener, true);
+        objMenuDropDown.build();
     }
 }

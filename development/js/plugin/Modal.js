@@ -155,16 +155,10 @@ class Modal {
             if (isButton) {
                 return;
             }
-
-            // self.closeModal();
         });
 
         this.$modalFooter.querySelector('[data-id="cancel"]').addEventListener('click', function (event) {
             self.closeModal();
-        });
-
-        this.$modal.querySelector('.modal-box').addEventListener('click', function (event) {
-            event.stopPropagation();
         });
     }
 
@@ -250,13 +244,7 @@ class Modal {
         this.$modal.classList.add('modal-close');
         this.$modalBox.classList.remove('modal-animate');
 
-        if (typeof objMenuDropDown !== 'undefined') {
-            objMenuDropDown.build();
-        }
-
-        if (typeof objMenuTab !== 'undefined') {
-            objMenuTab.defineActive();
-        }
+        this.resetOtherClass();
     }
 
     buildModalSize(size = 're') {
@@ -277,37 +265,13 @@ class Modal {
 
         ajax.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
-                self.buildContentAjaxSuccess(this.responseText);
+                self.$modalContent.innerHTML = this.responseText;
+                self.resetOtherClass();
             }
         };
 
         ajax.open('POST', target, true);
         ajax.send();
-    }
-
-    buildContentAjaxSuccess(data) {
-        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
-        this.$modalContent.innerHTML = data;
-
-        if (typeof objLayout !== 'undefined') {
-            objLayout.buildToggle();
-        }
-
-        if (typeof objForm !== 'undefined') {
-            objForm.buildInputFile();
-        }
-
-        if (typeof objMenuDropDown !== 'undefined') {
-            objMenuDropDown.build();
-        }
-
-        if (typeof objTooltip !== 'undefined') {
-            objTooltip.build();
-        }
-
-        if (typeof objMenuTab !== 'undefined') {
-            objMenuTab.defineActive();
-        }
     }
 
     buildGalleryImage(image, description) {
@@ -345,6 +309,30 @@ class Modal {
 
         if (typeof description !== typeof undefined) {
             this.$modalContent.insertAdjacentHTML('beforeend', string);
+        }
+    }
+
+    resetOtherClass() {
+        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
+
+        if (typeof objForm !== 'undefined') {
+            objForm.buildInputFile();
+        }
+
+        if (typeof objMenuDropDown !== 'undefined') {
+            objMenuDropDown.reset();
+        }
+
+        if (typeof objMenuToggle !== 'undefined') {
+            objMenuToggle.build();
+        }
+
+        if (typeof objTooltip !== 'undefined') {
+            objTooltip.reset();
+        }
+
+        if (typeof objMenuTab !== 'undefined') {
+            objMenuTab.defineActive();
         }
     }
 }

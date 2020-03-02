@@ -5589,7 +5589,7 @@ input:-webkit-autofill:active {
   left: 0;
   overflow-x: hidden;
   overflow-y: auto;
-  z-index: 4;
+  z-index: 3;
   opacity: 1;
   transition: 0.3s; }
   @media only screen and (min-width: 0) {
@@ -7088,7 +7088,7 @@ small {
 
 #tooltip {
   position: absolute;
-  z-index: 3;
+  z-index: 4;
   opacity: 0;
   pointer-events: none; }
   @media only screen and (min-width: 0) {

@@ -1,8 +1,6 @@
 class Tooltip {
     constructor() {
         /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
-        this.$body = document.querySelector('body');
-
         this.elementTop = 0;
         this.elementLeft = 0;
         this.elementWidth = 0;
@@ -10,8 +8,6 @@ class Tooltip {
         this.elementLeft = 0;
         this.style = 'black';
         this.space = 5;
-        this.tooltipWidth = 0;
-        this.tooltipHeight = 0;
         this.currentWindowScroll = 0;
         this.windowWidth = 0;
         this.windowHeight = 0;
@@ -51,8 +47,8 @@ class Tooltip {
         this.elementWidth = element !== false ? element.offsetWidth : 0;
         this.elementHeight = element !== false ? element.offsetHeight : 0;
 
-        this.tooltipWidth = this.$tooltip.offsetWidth;
-        this.tooltipHeight = this.$tooltip.offsetHeight;
+        this.tooltipWidth = element !== false ? this.$tooltip.offsetWidth : 0;
+        this.tooltipHeight = element !== false ? this.$tooltip.offsetHeight : 0;
 
         this.centerWidth = (this.tooltipWidth - this.elementWidth) / 2;
         this.centerHeight = (this.elementHeight / 2) - (this.tooltipHeight / 2);
@@ -70,7 +66,7 @@ class Tooltip {
         string += '    <div id="tooltip_pointer"></div>';
         string += '</div>';
 
-        this.$body.insertAdjacentHTML('beforeend', string);
+        document.querySelector('body').insertAdjacentHTML('beforeend', string);
     }
 
     buildResize() {
@@ -90,11 +86,12 @@ class Tooltip {
         this.showTooltip(false);
         Array.prototype.forEach.call(this.$tooltipData, function (item) {
             let title = item.getAttribute('title');
-
+            
             if (typeof title !== 'undefined' && title !== null && title !== '') {
                 item.setAttribute('data-tooltip-text', title);
                 item.removeAttribute('title');
                 item.onmouseover = function () {
+
                     self.$tooltipBody.innerHTML = item.getAttribute('data-tooltip-text');
                     self.changeLayout(item.getAttribute('data-tooltip-color'));
                     self.positionTooltip(item, item.getAttribute('data-tooltip-placement'));
@@ -246,5 +243,14 @@ class Tooltip {
         this.$tooltip.removeAttribute('class');
         this.$tooltip.classList.add('tooltip');
         this.$tooltip.classList.add('tooltip-' + newStyle);
+    }
+
+    reset() {
+        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
+        let element = document.getElementById('tooltip');
+
+        element.parentNode.removeChild(element);
+        objTooltip = new Tooltip();
+        objTooltip.build();
     }
 }

@@ -1,51 +1,20 @@
 "use strict";
 
-function _typeof2(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof2 = function _typeof2(obj) { return typeof obj; }; } else { _typeof2 = function _typeof2(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof2(obj); }
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
-function _typeof(obj) {
-  if (typeof Symbol === "function" && _typeof2(Symbol.iterator) === "symbol") {
-    _typeof = function _typeof(obj) {
-      return _typeof2(obj);
-    };
-  } else {
-    _typeof = function _typeof(obj) {
-      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : _typeof2(obj);
-    };
-  }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-  return _typeof(obj);
-}
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-function _classCallCheck(instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError("Cannot call a class as a function");
-  }
-}
-
-function _defineProperties(target, props) {
-  for (var i = 0; i < props.length; i++) {
-    var descriptor = props[i];
-    descriptor.enumerable = descriptor.enumerable || false;
-    descriptor.configurable = true;
-    if ("value" in descriptor) descriptor.writable = true;
-    Object.defineProperty(target, descriptor.key, descriptor);
-  }
-}
-
-function _createClass(Constructor, protoProps, staticProps) {
-  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
-  if (staticProps) _defineProperties(Constructor, staticProps);
-  return Constructor;
-}
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
 var Carousel =
 /*#__PURE__*/
 function () {
   function Carousel() {
     _classCallCheck(this, Carousel);
+
     /*removeIf(production)*/
-
-
     objDebug.debugMethod(this, objDebug.getMethodName());
     /*endRemoveIf(production)*/
 
@@ -316,6 +285,7 @@ function () {
     this.isGeneric = true;
     this.isMenuDropDown = true;
     this.isMenuTab = true;
+    this.isMenuToggle = true;
     this.isModal = true;
     this.isNotification = true;
     this.isProgress = true;
@@ -570,9 +540,8 @@ var MenuDropDown =
 function () {
   function MenuDropDown() {
     _classCallCheck(this, MenuDropDown);
+
     /*removeIf(production)*/
-
-
     objDebug.debugMethod(this, objDebug.getMethodName());
     /*endRemoveIf(production)*/
 
@@ -681,16 +650,35 @@ function () {
       objDebug.debugMethod(this, objDebug.getMethodName());
       /*endRemoveIf(production)*/
 
-      var self = this;
-      document.addEventListener('click', function (event) {
-        if (event.toElement.classList.contains('bt') || event.toElement.classList.contains('link')) {
-          return;
-        }
+      document.addEventListener('click', this.listener, true);
+    }
+  }, {
+    key: "listener",
+    value: function listener(event) {
+      /*removeIf(production)*/
+      objDebug.debugMethod(this, objDebug.getMethodName());
+      /*endRemoveIf(production)*/
 
-        Array.prototype.forEach.call(document.querySelectorAll('.mobile-show'), function (item) {
-          item.classList.remove(self.classShowMobile);
-        });
+      if (event.toElement.classList.contains('bt') || event.toElement.classList.contains('link')) {
+        return;
+      }
+
+      Array.prototype.forEach.call(document.querySelectorAll('.' + objMenuDropDown.classShowMobile), function (item) {
+        item.classList.remove(objMenuDropDown.classShowMobile);
       });
+    }
+  }, {
+    key: "reset",
+    value: function reset() {
+      document.removeEventListener('click', event, true);
+      /*removeIf(production)*/
+
+      objDebug.debugMethod(this, objDebug.getMethodName());
+      /*endRemoveIf(production)*/
+
+      objMenuDropDown = new MenuDropDown();
+      document.removeEventListener('click', this.listener, true);
+      objMenuDropDown.build();
     }
   }]);
 
@@ -747,14 +735,93 @@ function () {
   return MenuTab;
 }();
 
+var MenuToggle =
+/*#__PURE__*/
+function () {
+  function MenuToggle() {
+    _classCallCheck(this, MenuToggle);
+
+    /*removeIf(production)*/
+    objDebug.debugMethod(this, objDebug.getMethodName());
+    /*endRemoveIf(production)*/
+  }
+
+  _createClass(MenuToggle, [{
+    key: "build",
+    value: function build() {
+      /*removeIf(production)*/
+      objDebug.debugMethod(this, objDebug.getMethodName());
+      /*endRemoveIf(production)*/
+
+      this.updateVariable();
+      this.buildBt();
+      this.watchResize();
+    }
+  }, {
+    key: "updateVariable",
+    value: function updateVariable() {
+      /*removeIf(production)*/
+      objDebug.debugMethod(this, objDebug.getMethodName());
+      /*endRemoveIf(production)*/
+
+      this.$bt = document.querySelectorAll('.bt-toggle');
+    }
+  }, {
+    key: "buildBt",
+    value: function buildBt() {
+      /*removeIf(production)*/
+      objDebug.debugMethod(this, objDebug.getMethodName());
+      /*endRemoveIf(production)*/
+
+      Array.prototype.forEach.call(this.$bt, function (el, i) {
+        el.onclick = function () {
+          var $ul1 = el.parentNode.querySelector('nav > ul');
+          var $ulAll = el.parentNode.querySelector('nav ul');
+          var classDisplay = 'mobile-show';
+
+          if ($ul1.classList.contains(classDisplay)) {
+            $ul1.classList.remove(classDisplay);
+            $ulAll.classList.remove(classDisplay);
+          } else {
+            $ul1.classList.add(classDisplay);
+          }
+        };
+      });
+    }
+  }, {
+    key: "watchResize",
+    value: function watchResize() {
+      /*removeIf(production)*/
+      objDebug.debugMethod(this, objDebug.getMethodName());
+      /*endRemoveIf(production)*/
+
+      var self = this;
+
+      window.onresize = function () {
+        self.build();
+      };
+    }
+  }, {
+    key: "reset",
+    value: function reset() {
+      /*removeIf(production)*/
+      objDebug.debugMethod(this, objDebug.getMethodName());
+      /*endRemoveIf(production)*/
+
+      this.build();
+    }
+  }]);
+
+  return MenuToggle;
+}();
+
 var Modal =
 /*#__PURE__*/
 function () {
   function Modal() {
     _classCallCheck(this, Modal);
+
     /*removeIf(production)*/
-
-
     objDebug.debugMethod(this, objDebug.getMethodName());
     /*endRemoveIf(production)*/
 
@@ -931,14 +998,10 @@ function () {
 
         if (isButton) {
           return;
-        } // self.closeModal();
-
+        }
       });
       this.$modalFooter.querySelector('[data-id="cancel"]').addEventListener('click', function (event) {
         self.closeModal();
-      });
-      this.$modal.querySelector('.modal-box').addEventListener('click', function (event) {
-        event.stopPropagation();
       });
     }
   }, {
@@ -980,8 +1043,8 @@ function () {
     value: function buildModal(kind, content) {
       var size = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 're';
       var action = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 'open';
-      /*removeIf(production)*/
 
+      /*removeIf(production)*/
       objDebug.debugMethod(this, objDebug.getMethodName(), [kind, content, size, action]);
       /*endRemoveIf(production)*/
 
@@ -1043,21 +1106,14 @@ function () {
       this.$body.style.position = 'relative';
       this.$modal.classList.add('modal-close');
       this.$modalBox.classList.remove('modal-animate');
-
-      if (typeof objMenuDropDown !== 'undefined') {
-        objMenuDropDown.build();
-      }
-
-      if (typeof objMenuTab !== 'undefined') {
-        objMenuTab.defineActive();
-      }
+      this.resetOtherClass();
     }
   }, {
     key: "buildModalSize",
     value: function buildModalSize() {
       var size = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 're';
-      /*removeIf(production)*/
 
+      /*removeIf(production)*/
       objDebug.debugMethod(this, objDebug.getMethodName(), size);
       /*endRemoveIf(production)*/
 
@@ -1081,41 +1137,13 @@ function () {
 
       ajax.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-          self.buildContentAjaxSuccess(this.responseText);
+          self.$modalContent.innerHTML = this.responseText;
+          self.resetOtherClass();
         }
       };
 
       ajax.open('POST', target, true);
       ajax.send();
-    }
-  }, {
-    key: "buildContentAjaxSuccess",
-    value: function buildContentAjaxSuccess(data) {
-      /*removeIf(production)*/
-      objDebug.debugMethod(this, objDebug.getMethodName());
-      /*endRemoveIf(production)*/
-
-      this.$modalContent.innerHTML = data;
-
-      if (typeof objLayout !== 'undefined') {
-        objLayout.buildToggle();
-      }
-
-      if (typeof objForm !== 'undefined') {
-        objForm.buildInputFile();
-      }
-
-      if (typeof objMenuDropDown !== 'undefined') {
-        objMenuDropDown.build();
-      }
-
-      if (typeof objTooltip !== 'undefined') {
-        objTooltip.build();
-      }
-
-      if (typeof objMenuTab !== 'undefined') {
-        objMenuTab.defineActive();
-      }
     }
   }, {
     key: "buildGalleryImage",
@@ -1169,6 +1197,33 @@ function () {
         this.$modalContent.insertAdjacentHTML('beforeend', string);
       }
     }
+  }, {
+    key: "resetOtherClass",
+    value: function resetOtherClass() {
+      /*removeIf(production)*/
+      objDebug.debugMethod(this, objDebug.getMethodName());
+      /*endRemoveIf(production)*/
+
+      if (typeof objForm !== 'undefined') {
+        objForm.buildInputFile();
+      }
+
+      if (typeof objMenuDropDown !== 'undefined') {
+        objMenuDropDown.reset();
+      }
+
+      if (typeof objMenuToggle !== 'undefined') {
+        objMenuToggle.build();
+      }
+
+      if (typeof objTooltip !== 'undefined') {
+        objTooltip.reset();
+      }
+
+      if (typeof objMenuTab !== 'undefined') {
+        objMenuTab.defineActive();
+      }
+    }
   }]);
 
   return Modal;
@@ -1179,9 +1234,8 @@ var Notification =
 function () {
   function Notification() {
     _classCallCheck(this, Notification);
+
     /*removeIf(production)*/
-
-
     objDebug.debugMethod(this, objDebug.getMethodName());
     /*endRemoveIf(production)*/
 
@@ -1220,8 +1274,8 @@ function () {
     value: function buildHtmlItem() {
       var style = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'grey';
       var message = arguments.length > 1 ? arguments[1] : undefined;
-      /*removeIf(production)*/
 
+      /*removeIf(production)*/
       objDebug.debugMethod(this, objDebug.getMethodName(), [style, message]);
       /*endRemoveIf(production)*/
 
@@ -1258,8 +1312,8 @@ function () {
     key: "addNotification",
     value: function addNotification(message, style) {
       var place = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : this.$notify;
-      /*removeIf(production)*/
 
+      /*removeIf(production)*/
       objDebug.debugMethod(this, objDebug.getMethodName(), [message, style, place]);
       /*endRemoveIf(production)*/
 
@@ -1312,9 +1366,8 @@ var Progress =
 function () {
   function Progress() {
     _classCallCheck(this, Progress);
+
     /*removeIf(production)*/
-
-
     objDebug.debugMethod(this, objDebug.getMethodName());
     /*endRemoveIf(production)*/
 
@@ -1403,9 +1456,8 @@ var Table =
 function () {
   function Table() {
     _classCallCheck(this, Table);
+
     /*removeIf(production)*/
-
-
     objDebug.debugMethod(this, objDebug.getMethodName());
     /*endRemoveIf(production)*/
 
@@ -1449,9 +1501,8 @@ var Tag =
 function () {
   function Tag() {
     _classCallCheck(this, Tag);
+
     /*removeIf(production)*/
-
-
     objDebug.debugMethod(this, objDebug.getMethodName());
     /*endRemoveIf(production)*/
 
@@ -1495,13 +1546,11 @@ var Tooltip =
 function () {
   function Tooltip() {
     _classCallCheck(this, Tooltip);
+
     /*removeIf(production)*/
-
-
     objDebug.debugMethod(this, objDebug.getMethodName());
     /*endRemoveIf(production)*/
 
-    this.$body = document.querySelector('body');
     this.elementTop = 0;
     this.elementLeft = 0;
     this.elementWidth = 0;
@@ -1509,8 +1558,6 @@ function () {
     this.elementLeft = 0;
     this.style = 'black';
     this.space = 5;
-    this.tooltipWidth = 0;
-    this.tooltipHeight = 0;
     this.currentWindowScroll = 0;
     this.windowWidth = 0;
     this.windowHeight = 0;
@@ -1556,8 +1603,8 @@ function () {
       this.elementLeft = element !== false ? offset(element).left : 0;
       this.elementWidth = element !== false ? element.offsetWidth : 0;
       this.elementHeight = element !== false ? element.offsetHeight : 0;
-      this.tooltipWidth = this.$tooltip.offsetWidth;
-      this.tooltipHeight = this.$tooltip.offsetHeight;
+      this.tooltipWidth = element !== false ? this.$tooltip.offsetWidth : 0;
+      this.tooltipHeight = element !== false ? this.$tooltip.offsetHeight : 0;
       this.centerWidth = (this.tooltipWidth - this.elementWidth) / 2;
       this.centerHeight = this.elementHeight / 2 - this.tooltipHeight / 2;
       this.positionLeft = this.elementLeft - this.centerWidth;
@@ -1575,7 +1622,7 @@ function () {
       string += '    <div id="tooltip_body"></div>';
       string += '    <div id="tooltip_pointer"></div>';
       string += '</div>';
-      this.$body.insertAdjacentHTML('beforeend', string);
+      document.querySelector('body').insertAdjacentHTML('beforeend', string);
     }
   }, {
     key: "buildResize",
@@ -1818,6 +1865,18 @@ function () {
       this.$tooltip.classList.add('tooltip');
       this.$tooltip.classList.add('tooltip-' + newStyle);
     }
+  }, {
+    key: "reset",
+    value: function reset() {
+      /*removeIf(production)*/
+      objDebug.debugMethod(this, objDebug.getMethodName());
+      /*endRemoveIf(production)*/
+
+      var element = document.getElementById('tooltip');
+      element.parentNode.removeChild(element);
+      objTooltip = new Tooltip();
+      objTooltip.build();
+    }
   }]);
 
   return Tooltip;
@@ -1828,9 +1887,8 @@ var Translation =
 function () {
   function Translation() {
     _classCallCheck(this, Translation);
+
     /*removeIf(production)*/
-
-
     objDebug.debugMethod(this, objDebug.getMethodName());
     /*endRemoveIf(production)*/
 

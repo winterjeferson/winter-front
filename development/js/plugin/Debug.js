@@ -12,6 +12,7 @@ class Debug {
         this.isGeneric = true;
         this.isMenuDropDown = true;
         this.isMenuTab = true;
+        this.isMenuToggle = true;
         this.isModal = true;
         this.isNotification = true;
         this.isProgress = true;
