@@ -270,7 +270,7 @@ class Modal {
             }
         };
 
-        ajax.open('POST', target, true);
+        ajax.open('GET', target, true);
         ajax.send();
     }
 
