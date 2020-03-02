@@ -7,17 +7,17 @@ var del = require('del'); //npm install del --save-dev //https://www.npmjs.com/p
 
 
 var fileOther = [
-    configuration.branches + 'other/.htaccess',
-    configuration.branches + 'other/*',
-    configuration.branches + 'other/**',
-    configuration.branches + 'other/**/*',
-    configuration.branches + 'other/**/*.*'
+    configuration.development + 'other/.htaccess',
+    configuration.development + 'other/*',
+    configuration.development + 'other/**',
+    configuration.development + 'other/**/*',
+    configuration.development + 'other/**/*.*'
 ];
 
 var fileOtherPublic = [
-    configuration.tags + '.htaccess',
-    configuration.tags + '*.htaccess',
-    configuration.tags + '*.txt'
+    configuration.homologation + '.htaccess',
+    configuration.homologation + '*.htaccess',
+    configuration.homologation + '*.txt'
 ];
 
 
@@ -32,7 +32,7 @@ gulp.task('other_clean', function () {
 gulp.task('other_move', function (done) {
     return gulp
             .src(fileOther)
-            .pipe(gulp.dest(configuration.tags));
+            .pipe(gulp.dest(configuration.homologation));
     done();
 });
 

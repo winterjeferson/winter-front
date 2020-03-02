@@ -1,20 +1,51 @@
 "use strict";
 
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+function _typeof2(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof2 = function _typeof2(obj) { return typeof obj; }; } else { _typeof2 = function _typeof2(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof2(obj); }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _typeof(obj) {
+  if (typeof Symbol === "function" && _typeof2(Symbol.iterator) === "symbol") {
+    _typeof = function _typeof(obj) {
+      return _typeof2(obj);
+    };
+  } else {
+    _typeof = function _typeof(obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : _typeof2(obj);
+    };
+  }
 
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+  return _typeof(obj);
+}
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+function _defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, descriptor.key, descriptor);
+  }
+}
+
+function _createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) _defineProperties(Constructor, staticProps);
+  return Constructor;
+}
 
 var Carousel =
 /*#__PURE__*/
 function () {
   function Carousel() {
     _classCallCheck(this, Carousel);
-
     /*removeIf(production)*/
+
+
     objDebug.debugMethod(this, objDebug.getMethodName());
     /*endRemoveIf(production)*/
 
@@ -540,8 +571,9 @@ var MenuDropDown =
 function () {
   function MenuDropDown() {
     _classCallCheck(this, MenuDropDown);
-
     /*removeIf(production)*/
+
+
     objDebug.debugMethod(this, objDebug.getMethodName());
     /*endRemoveIf(production)*/
 
@@ -740,8 +772,9 @@ var MenuToggle =
 function () {
   function MenuToggle() {
     _classCallCheck(this, MenuToggle);
-
     /*removeIf(production)*/
+
+
     objDebug.debugMethod(this, objDebug.getMethodName());
     /*endRemoveIf(production)*/
   }
@@ -820,8 +853,9 @@ var Modal =
 function () {
   function Modal() {
     _classCallCheck(this, Modal);
-
     /*removeIf(production)*/
+
+
     objDebug.debugMethod(this, objDebug.getMethodName());
     /*endRemoveIf(production)*/
 
@@ -1043,8 +1077,8 @@ function () {
     value: function buildModal(kind, content) {
       var size = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 're';
       var action = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 'open';
-
       /*removeIf(production)*/
+
       objDebug.debugMethod(this, objDebug.getMethodName(), [kind, content, size, action]);
       /*endRemoveIf(production)*/
 
@@ -1112,8 +1146,8 @@ function () {
     key: "buildModalSize",
     value: function buildModalSize() {
       var size = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 're';
-
       /*removeIf(production)*/
+
       objDebug.debugMethod(this, objDebug.getMethodName(), size);
       /*endRemoveIf(production)*/
 
@@ -1234,8 +1268,9 @@ var Notification =
 function () {
   function Notification() {
     _classCallCheck(this, Notification);
-
     /*removeIf(production)*/
+
+
     objDebug.debugMethod(this, objDebug.getMethodName());
     /*endRemoveIf(production)*/
 
@@ -1274,8 +1309,8 @@ function () {
     value: function buildHtmlItem() {
       var style = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'grey';
       var message = arguments.length > 1 ? arguments[1] : undefined;
-
       /*removeIf(production)*/
+
       objDebug.debugMethod(this, objDebug.getMethodName(), [style, message]);
       /*endRemoveIf(production)*/
 
@@ -1312,8 +1347,8 @@ function () {
     key: "addNotification",
     value: function addNotification(message, style) {
       var place = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : this.$notify;
-
       /*removeIf(production)*/
+
       objDebug.debugMethod(this, objDebug.getMethodName(), [message, style, place]);
       /*endRemoveIf(production)*/
 
@@ -1366,8 +1401,9 @@ var Progress =
 function () {
   function Progress() {
     _classCallCheck(this, Progress);
-
     /*removeIf(production)*/
+
+
     objDebug.debugMethod(this, objDebug.getMethodName());
     /*endRemoveIf(production)*/
 
@@ -1456,8 +1492,9 @@ var Table =
 function () {
   function Table() {
     _classCallCheck(this, Table);
-
     /*removeIf(production)*/
+
+
     objDebug.debugMethod(this, objDebug.getMethodName());
     /*endRemoveIf(production)*/
 
@@ -1501,8 +1538,9 @@ var Tag =
 function () {
   function Tag() {
     _classCallCheck(this, Tag);
-
     /*removeIf(production)*/
+
+
     objDebug.debugMethod(this, objDebug.getMethodName());
     /*endRemoveIf(production)*/
 
@@ -1546,8 +1584,9 @@ var Tooltip =
 function () {
   function Tooltip() {
     _classCallCheck(this, Tooltip);
-
     /*removeIf(production)*/
+
+
     objDebug.debugMethod(this, objDebug.getMethodName());
     /*endRemoveIf(production)*/
 
@@ -1887,8 +1926,9 @@ var Translation =
 function () {
   function Translation() {
     _classCallCheck(this, Translation);
-
     /*removeIf(production)*/
+
+
     objDebug.debugMethod(this, objDebug.getMethodName());
     /*endRemoveIf(production)*/
 

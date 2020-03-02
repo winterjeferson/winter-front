@@ -7,17 +7,17 @@ var del = require('del'); //npm install del --save-dev //https://www.npmjs.com/p
 
 
 var fileFont = [
-    configuration.branches + 'font/*',
-    configuration.branches + 'font/**',
-    configuration.branches + 'font/**/*',
-    configuration.branches + 'font/**/*.*'
+    configuration.development + 'font/*',
+    configuration.development + 'font/**',
+    configuration.development + 'font/**/*',
+    configuration.development + 'font/**/*.*'
 ];
 
 var fileFontPublic = [
-    configuration.tags + 'font/*',
-    configuration.tags + 'font/**',
-    configuration.tags + 'font/**/*',
-    configuration.tags + 'font/**/*.*'
+    configuration.homologation + 'font/*',
+    configuration.homologation + 'font/**',
+    configuration.homologation + 'font/**/*',
+    configuration.homologation + 'font/**/*.*'
 ];
 
 function clean(path) {
@@ -25,14 +25,14 @@ function clean(path) {
 }
 
 gulp.task('font_clean', function () {
-    var files = [configuration.tags + 'font/**'];
+    var files = [configuration.homologation + 'font/**'];
     return clean(files);
 });
 
 gulp.task('font_move', function (done) {
     return gulp
-            .src(configuration.branches + 'font/**/*.*')
-            .pipe(gulp.dest(configuration.tags + "font/"));
+            .src(configuration.development + 'font/**/*.*')
+            .pipe(gulp.dest(configuration.homologation + "font/"));
     done();
 });
 

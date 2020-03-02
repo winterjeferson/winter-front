@@ -27,8 +27,8 @@ gulp.task('build_ftp', function () {
     });
 
     var globs = [
-        configuration.trunk + '**/*.*',
-        configuration.trunk + '.htaccess'
+        configuration.production + '**/*.*',
+        configuration.production + '.htaccess'
     ];
 
     return gulp

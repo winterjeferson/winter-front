@@ -8,7 +8,7 @@ var del = require('del'); //npm install del --save-dev //https://www.npmjs.com/p
 
 
 
-var folderTemplate = configuration.branches + 'template/';
+var folderTemplate = configuration.development + 'template/';
 var fileTemplate = folderTemplate + '*.html';
 var fileTemplateAdmin = folderTemplate + 'admin/*.html';
 var fileTemplateWatch = [
@@ -24,8 +24,8 @@ function clean(path) {
 
 gulp.task('template_clean', function () {
     var files = [
-        configuration.tags + '*.html',
-        configuration.tags + 'admin/' + '*.html',
+        configuration.homologation + '*.html',
+        configuration.homologation + 'admin/' + '*.html',
     ];
     return clean(files);
 });
@@ -38,7 +38,7 @@ gulp.task('template_include', function () {
                 path: [folderTemplate]
             }))
             .pipe(rename({extname: '.html'}))
-            .pipe(gulp.dest(configuration.tags));
+            .pipe(gulp.dest(configuration.homologation));
 });
 
 gulp.task('template_include_admin', function () {
@@ -49,14 +49,14 @@ gulp.task('template_include_admin', function () {
                 path: [folderTemplate]
             }))
             .pipe(rename({extname: '.html'}))
-            .pipe(gulp.dest(configuration.tags + 'admin/'));
+            .pipe(gulp.dest(configuration.homologation + 'admin/'));
 });
 
 gulp.task('template_minify', function () {
     return gulp
-            .src(configuration.tags + '*.html')
+            .src(configuration.homologation + '*.html')
             .pipe(htmlmin({collapseWhitespace: true}))
-            .pipe(gulp.dest(configuration.trunk));
+            .pipe(gulp.dest(configuration.production));
 });
 
 gulp.task('build_template', gulp.series(

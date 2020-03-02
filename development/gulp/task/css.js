@@ -9,17 +9,17 @@ var util = require('./util.js');
 
 
 var fileCssSass = [
-    configuration.branches + 'css/plugin/sass_variable.scss',
-    configuration.branches + 'css/plugin/sass_color.scss',
-    configuration.branches + 'css/plugin/sass.scss',
+    configuration.development + 'css/plugin/sass_variable.scss',
+    configuration.development + 'css/plugin/sass_color.scss',
+    configuration.development + 'css/plugin/sass.scss',
 ];
 
 var fileCssDefault = [
-    configuration.branches + 'css/build/*.scss'
+    configuration.development + 'css/build/*.scss'
 ];
 
 var fileCssPlugin = [
-    configuration.branches + 'css/library/*.scss'
+    configuration.development + 'css/library/*.scss'
 ];
 
 var cssDefaultConcat = fileCssSass.concat(fileCssDefault);
@@ -40,14 +40,14 @@ gulp.task('css_default_concat', function () {
     return gulp
         .src(cssDefaultConcat)
         .pipe(concat(fileDefault + '.scss'))
-        .pipe(gulp.dest(configuration.branches + 'css/'));
+        .pipe(gulp.dest(configuration.development + 'css/'));
 });
 
 gulp.task('css_default_sass', function () {
     return gulp
-        .src(configuration.branches + 'css/' + fileDefault + '.scss')
+        .src(configuration.development + 'css/' + fileDefault + '.scss')
         .pipe(sass.sync().on('error', sass.logError))
-        .pipe(gulp.dest(configuration.tags + 'css/'));
+        .pipe(gulp.dest(configuration.homologation + 'css/'));
 });
 
 gulp.task('build_css_default', gulp.series(
@@ -65,14 +65,14 @@ gulp.task('css_plugin_concat', function () {
     return gulp
         .src(cssPluginConcat)
         .pipe(concat(filePlugin + '.scss'))
-        .pipe(gulp.dest(configuration.branches + 'css/'));
+        .pipe(gulp.dest(configuration.development + 'css/'));
 });
 
 gulp.task('css_plugin_sass', function () {
     return gulp
-        .src(configuration.branches + 'css/' + filePlugin + '.scss')
+        .src(configuration.development + 'css/' + filePlugin + '.scss')
         .pipe(sass.sync().on('error', sass.logError))
-        .pipe(gulp.dest(configuration.tags + 'css/'));
+        .pipe(gulp.dest(configuration.homologation + 'css/'));
 });
 
 gulp.task('build_css_plugin', gulp.series(
@@ -84,9 +84,9 @@ gulp.task('build_css_plugin', gulp.series(
 
 gulp.task('css_minify', function () {
     return gulp
-        .src(configuration.tags + 'css/*.*')
+        .src(configuration.homologation + 'css/*.*')
         .pipe(csso())
-        .pipe(gulp.dest(configuration.trunk + 'css/'));
+        .pipe(gulp.dest(configuration.production + 'css/'));
 });
 
 

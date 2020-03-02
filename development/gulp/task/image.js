@@ -9,17 +9,17 @@ var del = require('del'); //npm install del --save-dev //https://www.npmjs.com/p
 
 
 var fileImg = [
-    configuration.branches + 'img/*',
-    configuration.branches + 'img/**',
-    configuration.branches + 'img/**/*',
-    configuration.branches + 'img/**/*.*'
+    configuration.development + 'img/*',
+    configuration.development + 'img/**',
+    configuration.development + 'img/**/*',
+    configuration.development + 'img/**/*.*'
 ];
 
 var fileImgPublic = [
-    configuration.tags + 'img/*',
-    configuration.tags + 'img/**',
-    configuration.tags + 'img/**/*',
-    configuration.tags + 'img/**/*.*'
+    configuration.homologation + 'img/*',
+    configuration.homologation + 'img/**',
+    configuration.homologation + 'img/**/*',
+    configuration.homologation + 'img/**/*.*'
 ];
 
 
@@ -28,14 +28,14 @@ function clean(path) {
 }
 
 gulp.task('image_clean', function () {
-    var files = [configuration.tags + 'img/**'];
+    var files = [configuration.homologation + 'img/**'];
     return clean(files);
 });
 
 gulp.task('image_move', function (done) {
     return gulp
-        .src(configuration.branches + 'img/**/*.*')
-        .pipe(gulp.dest(configuration.tags + "img/"));
+        .src(configuration.development + 'img/**/*.*')
+        .pipe(gulp.dest(configuration.homologation + "img/"));
     done();
 });
 
@@ -43,10 +43,10 @@ gulp.task('image_move', function (done) {
 // fix enoent problem: node node_modules/optipng-bin/lib/install.js
 gulp.task('image_imagemin', function () {
     return gulp
-        .src(configuration.tags + 'img/**')
-        .pipe(newer(configuration.trunk + "img/"))
+        .src(configuration.homologation + 'img/**')
+        .pipe(newer(configuration.production + "img/"))
         .pipe(imagemin())
-        .pipe(gulp.dest(configuration.trunk + "img/"));
+        .pipe(gulp.dest(configuration.production + "img/"));
 });
 
 gulp.task('build_image', gulp.series(

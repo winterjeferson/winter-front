@@ -3,20 +3,20 @@ var configuration = require('./configuration.js');
 var del = require('del'); //npm install del --save-dev //https://www.npmjs.com/package/del
 
 
-gulp.task('project_move_trunk', function () {
+gulp.task('project_move_production', function () {
     gulp
-        .src(configuration.tags + '*.php')
-        .pipe(gulp.dest(configuration.trunk));
+        .src(configuration.homologation + '*.php')
+        .pipe(gulp.dest(configuration.production));
 
     gulp
-        .src(configuration.tags + '/php/**/*.*')
-        .pipe(gulp.dest(configuration.trunk + '/php/'));
+        .src(configuration.homologation + '/php/**/*.*')
+        .pipe(gulp.dest(configuration.production + '/php/'));
 
     gulp
-        .src(configuration.tags + '.htaccess')
-        .pipe(gulp.dest(configuration.trunk));
+        .src(configuration.homologation + '.htaccess')
+        .pipe(gulp.dest(configuration.production));
 
     return gulp
-        .src(configuration.tags + '/font/**/*.*')
-        .pipe(gulp.dest(configuration.trunk + '/font/'));
+        .src(configuration.homologation + '/font/**/*.*')
+        .pipe(gulp.dest(configuration.production + '/font/'));
 });
