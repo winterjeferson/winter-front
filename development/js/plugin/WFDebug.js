@@ -1,38 +1,38 @@
 /*removeIf(production)*/
-class Debug {
+class WFDebug {
     constructor() {
-        this.isLayout = true;
-        this.isManagement = true;
+        this.isWFLayout = true;
+        this.isWFManagement = true;
 
-        this.isLoading = true;
-        this.isTheme = true;
+        this.isWFLoading = true;
+        this.isWFTheme = true;
 
-        this.isCarousel = true;
-        this.isForm = true;
-        this.isGeneric = true;
-        this.isMenuDropDown = true;
-        this.isMenuTab = true;
-        this.isMenuToggle = true;
-        this.isModal = true;
-        this.isNotification = true;
-        this.isProgress = true;
-        this.isTable = true;
-        this.isTag = true;
-        this.isTooltip = true;
-        this.isTranslation = true;
+        this.isWFCarousel = true;
+        this.isWFForm = true;
+        this.isWFGeneric = true;
+        this.isWFMenuDropDown = true;
+        this.isWFMenuTab = true;
+        this.isWFMenuToggle = true;
+        this.isWFModal = true;
+        this.isWFNotification = true;
+        this.isWFProgress = true;
+        this.isWFTable = true;
+        this.isWFTag = true;
+        this.isWFTooltip = true;
+        this.isWFTranslation = true;
     }
 
-    debugMethod(obj, method, parameter = '') {
+    debugMethod(objWF, method, parameter = '') {
         let string = '';
-        let className = obj.constructor.name;
-        // let arrMethod = Object.getOwnPropertyNames(Object.getPrototypeOf(obj));
+        let className = objWF.constructor.name;
+        // let arrMethod = objWFect.getOwnPropertyNames(objWFect.getPrototypeOf(objWF));
 
         if (!this['is' + className]) {
             return false;
         }
 
         string += '%c';
-        string += 'obj' + className;
+        string += 'objWF' + className;
         string += '.';
         string += '%c';
         string += method;

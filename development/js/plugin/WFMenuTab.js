@@ -1,11 +1,11 @@
-class MenuTab {
+class WFMenuTab {
     build() {
-        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName()); /*endRemoveIf(production)*/
         this.defineActive();
     }
 
     defineActive() {
-        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
         let $arr = document.querySelectorAll('.menu-tab > ul > li > .bt');
 
@@ -17,7 +17,7 @@ class MenuTab {
     }
 
     buildClick(item) {
-        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName()); /*endRemoveIf(production)*/
         let classActive = 'menu-tab-active';
         let $arr = item.parentNode.parentNode.querySelectorAll('li');
 

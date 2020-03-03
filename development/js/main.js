@@ -1,34 +1,34 @@
 /*removeIf(production)*/
-const objDebug = new Debug();
+const objWFDebug = new WFDebug();
 /*endRemoveIf(production)*/
-const objLayout = new Layout();
-const objCarousel = new Carousel();
-const objForm = new Form();
-const objMenuDropDown = new MenuDropDown();
-const objMenuTab = new MenuTab();
-const objMenuToggle = new MenuToggle();
-const objModal = new Modal();
-const objNotification = new Notification();
-const objProgress = new Progress();
-const objTag = new Tag();
-const objTable = new Table();
-const objTooltip = new Tooltip();
-const objTranslation = new Translation();
+const objWFLayout = new WFLayout();
+const objWFCarousel = new WFCarousel();
+const objWFForm = new WFForm();
+const objWFMenuDropDown = new WFMenuDropDown();
+const objWFMenuTab = new WFMenuTab();
+const objWFMenuToggle = new WFMenuToggle();
+const objWFModal = new WFModal();
+const objWFNotification = new WFNotification();
+const objWFProgress = new WFProgress();
+const objWFTag = new WFTag();
+const objWFTable = new WFTable();
+const objWFTooltip = new WFTooltip();
+const objWFTranslation = new WFTranslation();
 
-const objLoading = new Loading();
-const objTheme = new Theme();
+const objWFLoading = new WFLoading();
+const objWFTheme = new WFTheme();
 
 
 
-objTranslation.build();
-objProgress.build();
-objForm.build();
-objModal.build();
-objCarousel.build();
-objMenuDropDown.build();
-objMenuTab.build();
-objMenuToggle.build();
-objNotification.build();
-objTable.build();
-objTag.build();
-objTooltip.build();
+objWFTranslation.build();
+objWFProgress.build();
+objWFForm.build();
+objWFModal.build();
+objWFCarousel.build();
+objWFMenuDropDown.build();
+objWFMenuTab.build();
+objWFMenuToggle.build();
+objWFNotification.build();
+objWFTable.build();
+objWFTag.build();
+objWFTooltip.build();

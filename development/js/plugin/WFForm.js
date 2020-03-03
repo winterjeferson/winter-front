@@ -1,9 +1,9 @@
-class Form {
+class WFForm {
     constructor() {
     }
 
     build() {
-        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName()); /*endRemoveIf(production)*/
         if (document.querySelectorAll('form').length < 1) {
             return;
         }
@@ -13,7 +13,7 @@ class Form {
     }
 
     buildKeyboard() {
-        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
 
         window.addEventListener('keyup', function (event) {
@@ -26,7 +26,7 @@ class Form {
     }
 
     buildFocus(target) {
-        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName()); /*endRemoveIf(production)*/
         let $arr = document.querySelectorAll(target);
 
         Array.prototype.forEach.call($arr, function (item) {
@@ -39,7 +39,7 @@ class Form {
     }
 
     buildInputFile() {
-        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
 
         Array.prototype.forEach.call(document.querySelectorAll('input[type="file"]'), function (item) {
@@ -76,9 +76,9 @@ class Form {
     }
 
     buildInputFileHtml() {
-        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName()); /*endRemoveIf(production)*/
         let inputFile = '';
-        let textFile = objTranslation.translation.default.input_upload;
+        let textFile = objWFTranslation.translation.default.input_upload;
 
         inputFile += '<div class="input-file">';
         inputFile += '    <div class="input-file-name"></div>';
@@ -89,7 +89,7 @@ class Form {
     }
 
     validateEmpty(arr) {
-        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName()); /*endRemoveIf(production)*/
         let arrEmpty = arr;
         let length = arrEmpty.length;
 

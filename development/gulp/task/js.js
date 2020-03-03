@@ -8,8 +8,8 @@ var configuration = require('./configuration.js');
 
 
 
-var fileJsDefaultFinal = 'script.js';
-var fileJsPluginFinal = 'plugin.js';
+var fileJsDefaultFinal = 'WFscript.js';
+var fileJsPluginFinal = 'WFplugin.js';
 
 var fileJs = [
     configuration.development + 'js/script/**/*.*',

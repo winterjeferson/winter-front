@@ -1,6 +1,6 @@
-class Progress {
+class WFProgress {
     constructor() {
-        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName()); /*endRemoveIf(production)*/
         this.$bar = document.querySelector('#loading_main .progress-bar');
         this.$all = document.querySelectorAll('div, section, article');
         this.$allLength = this.$all.length;
@@ -10,7 +10,7 @@ class Progress {
     }
 
     build() {
-        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
         let interval = setInterval(frame, 1);
         let total = this.buildProportion();
@@ -23,14 +23,14 @@ class Progress {
 
             if (self.progressSize >= total) {
                 clearInterval(interval);
-                objLoading.finish();
+                objWFLoading.finish();
                 self.isFinish = true;
             }
         }
     }
 
     buildProportion() {
-        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName()); /*endRemoveIf(production)*/
         if (this.$allLength > 1000) {
             return this.$allLength / 50;
         }

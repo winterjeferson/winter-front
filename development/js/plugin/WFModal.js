@@ -1,6 +1,6 @@
-class Modal {
+class WFModal {
     constructor() {
-        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName()); /*endRemoveIf(production)*/
         this.$body = document.querySelector('body');
 
         this.targetBuildGalleryChange = '';
@@ -8,7 +8,7 @@ class Modal {
     }
 
     updateVariable() {
-        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName()); /*endRemoveIf(production)*/
         this.$modal = document.querySelector('#modal');
         this.$modalFooter = this.$modal.querySelector('footer');
         this.$modalFooterConfirm = this.$modalFooter.querySelector('[data-id="confirm"]');
@@ -23,7 +23,7 @@ class Modal {
     }
 
     build() {
-            /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
+            /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName()); /*endRemoveIf(production)*/
         this.buildHtml();
         this.updateVariable();
         this.buildMenu();
@@ -33,13 +33,13 @@ class Modal {
     }
 
     buildHtml() {
-        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName()); /*endRemoveIf(production)*/
         let string = '';
 
         string += '<div id="modal" class="modal-close">';
         string += '     <div class="modal-box">';
         string += '         <header>';
-        string += '             <button id="modal_close" type="button" aria-label="' + objTranslation.translation.default.close + '" class="bt bt-sm bt-grey bt-transparent">';
+        string += '             <button id="modal_close" type="button" aria-label="' + objWFTranslation.translation.default.close + '" class="bt bt-sm bt-grey bt-transparent">';
         string += '                 <span class="fa fa-times" aria-hidden="true"></span>';
         string += '             </button>';
         string += '         </header>';
@@ -49,12 +49,12 @@ class Modal {
         string += '         <div class="menu-horizontal">';
         string += '             <ul class="navigation-arrow">';
         string += '                 <li>';
-        string += '                     <button type="button" class="bt bt-bi" data-id="nav-left" aria-label="' + objTranslation.translation.default.previous + '" >';
+        string += '                     <button type="button" class="bt bt-bi" data-id="nav-left" aria-label="' + objWFTranslation.translation.default.previous + '" >';
         string += '                         <span class="fa fa-angle-left" aria-hidden="true"></span>';
         string += '                     </button>';
         string += '                 </li>';
         string += '                 <li>';
-        string += '                     <button type="button" class="bt bt-bi" data-id="nav-right" aria-label="' + objTranslation.translation.default.next + '" >';
+        string += '                     <button type="button" class="bt bt-bi" data-id="nav-right" aria-label="' + objWFTranslation.translation.default.next + '" >';
         string += '                         <span class="fa fa-angle-right" aria-hidden="true"></span>';
         string += '                     </button>';
         string += '                 </li>';
@@ -79,13 +79,13 @@ class Modal {
     }
 
     buildTranslation() {
-        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
-        this.$modalFooterConfirm.innerHTML = objTranslation.translation.default.confirm;
-        this.$modalFooterCancel.innerHTML = objTranslation.translation.default.cancel;
+        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName()); /*endRemoveIf(production)*/
+        this.$modalFooterConfirm.innerHTML = objWFTranslation.translation.default.confirm;
+        this.$modalFooterCancel.innerHTML = objWFTranslation.translation.default.cancel;
     }
 
     buildKeyboard() {
-        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
 
         window.addEventListener('keyup', function (event) {
@@ -112,7 +112,7 @@ class Modal {
     }
 
     buildMenuGallery() {
-        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
 
         if (!this.$gallery) {
@@ -142,7 +142,7 @@ class Modal {
     }
 
     buildMenu() {
-        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
 
         this.$modalClose.addEventListener('click', function () {
@@ -163,7 +163,7 @@ class Modal {
     }
 
     buildGalleryNavigation(target) {
-        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName(), target); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName(), target); /*endRemoveIf(production)*/
         let array = [];
         let currentGallery = target.parentNode.parentNode;
         let siblingLength = currentGallery.querySelectorAll('a').length - 1;
@@ -196,7 +196,7 @@ class Modal {
     }
 
     buildModal(kind, content, size = 're', action = 'open') {
-        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName(), [kind, content, size, action]); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName(), [kind, content, size, action]); /*endRemoveIf(production)*/
         this.$modalFooter.classList.add(this.cssDisplay);
         action === 'open' ? this.openModal() : this.closeModal();
         this.buildModalSize(size);
@@ -204,7 +204,7 @@ class Modal {
     }
 
     buildModalKind(kind, content) {
-        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName(), [kind, content]); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName(), [kind, content]); /*endRemoveIf(production)*/
 
         if (kind === 'ajax') {
             this.buildContentAjax(content);
@@ -227,7 +227,7 @@ class Modal {
     }
 
     openModal() {
-        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName()); /*endRemoveIf(production)*/
         this.$body.classList.remove('overflow-y');
         this.$body.classList.add('overflow-hidden');
         this.$body.style.overflowY = 'hidden';
@@ -236,7 +236,7 @@ class Modal {
     }
 
     closeModal() {
-        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName()); /*endRemoveIf(production)*/
         this.$body.classList.add('overflow-y');
         this.$body.classList.remove('overflow-hidden');
         this.$body.style.overflowY = 'auto';
@@ -248,7 +248,7 @@ class Modal {
     }
 
     buildModalSize(size = 're') {
-        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName(), size); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName(), size); /*endRemoveIf(production)*/
         this.$modalBox.classList.remove('modal-es');
         this.$modalBox.classList.remove('modal-sm');
         this.$modalBox.classList.remove('modal-re');
@@ -259,7 +259,7 @@ class Modal {
     }
 
     buildContentAjax(target) {
-        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName(), target); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName(), target); /*endRemoveIf(production)*/
         let self = this;
         let ajax = new XMLHttpRequest();
 
@@ -275,7 +275,7 @@ class Modal {
     }
 
     buildGalleryImage(image, description) {
-        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName(), [image, description]); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName(), [image, description]); /*endRemoveIf(production)*/
         let stringImage = '<img src="' + image + '" class="img-responsive" style="margin:auto;" title="" alt=""/>';
 
         this.$modalContent.innerHTML = stringImage;
@@ -283,7 +283,7 @@ class Modal {
     }
 
     buildContentConfirmation(content) {
-        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName(), content); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName(), content); /*endRemoveIf(production)*/
         let string = '<div class="padding-re text-center">' + content + '</div>';
 
         this.$modalFooter.classList.remove(this.cssDisplay);
@@ -291,12 +291,12 @@ class Modal {
     }
 
     buildContentConfirmationAction(action) {
-        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName(), action); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName(), action); /*endRemoveIf(production)*/
         this.$modalFooterConfirm.setAttribute('onclick', action);
     }
 
     changeText(description) {
-        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName(), [description]); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName(), [description]); /*endRemoveIf(production)*/
         let string = '';
 
         if (description === '') {
@@ -313,26 +313,26 @@ class Modal {
     }
 
     resetOtherClass() {
-        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName()); /*endRemoveIf(production)*/
 
-        if (typeof objForm !== 'undefined') {
-            objForm.buildInputFile();
+        if (typeof objWFForm !== 'undefined') {
+            objWFForm.buildInputFile();
         }
 
-        if (typeof objMenuDropDown !== 'undefined') {
-            objMenuDropDown.reset();
+        if (typeof objWFMenuDropDown !== 'undefined') {
+            objWFMenuDropDown.reset();
         }
 
-        if (typeof objMenuToggle !== 'undefined') {
-            objMenuToggle.build();
+        if (typeof objWFMenuToggle !== 'undefined') {
+            objWFMenuToggle.build();
         }
 
-        if (typeof objTooltip !== 'undefined') {
-            objTooltip.reset();
+        if (typeof objWFTooltip !== 'undefined') {
+            objWFTooltip.reset();
         }
 
-        if (typeof objMenuTab !== 'undefined') {
-            objMenuTab.defineActive();
+        if (typeof objWFMenuTab !== 'undefined') {
+            objWFMenuTab.defineActive();
         }
     }
 }

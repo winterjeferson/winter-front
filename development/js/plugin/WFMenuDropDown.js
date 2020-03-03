@@ -1,6 +1,6 @@
-class MenuDropDown {
+class WFMenuDropDown {
     constructor() {
-        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName()); /*endRemoveIf(production)*/
         this.isClickBuild = false;
         this.classMenu = 'menu-drop-down';
         this.classArrow = 'bt-arrow';
@@ -14,7 +14,7 @@ class MenuDropDown {
     }
 
     build() {
-        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName()); /*endRemoveIf(production)*/
         if (this.$menu.length < 1) {
             return;
         }
@@ -30,7 +30,7 @@ class MenuDropDown {
     }
 
     buildIcon() {
-        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
         let $arr = document.querySelectorAll('.' + this.classMenu + ' ul > li > ul' + ' , .' + this.classMenuText + ' ul > li > ul');
 
@@ -42,7 +42,7 @@ class MenuDropDown {
     }
 
     buildClick() {
-        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
 
         Array.prototype.forEach.call(this.$menu, function (item) {
@@ -64,7 +64,7 @@ class MenuDropDown {
     }
 
     buildClickAction(item) {
-        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName()); /*endRemoveIf(production)*/
         let $menuChild = item.parentNode.querySelector('ul');
 
         if (!document.body.contains($menuChild)) {
@@ -89,26 +89,26 @@ class MenuDropDown {
     }
 
     buildClickOut() {
-        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName()); /*endRemoveIf(production)*/
         document.addEventListener('click', this.listener, true);
     }
 
     listener(event) {
-        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName()); /*endRemoveIf(production)*/
         if (event.toElement.classList.contains('bt') || event.toElement.classList.contains('link')) {
             return;
         }
 
-        Array.prototype.forEach.call(document.querySelectorAll('.' + objMenuDropDown.classShowMobile), function (item) {
-            item.classList.remove(objMenuDropDown.classShowMobile);
+        Array.prototype.forEach.call(document.querySelectorAll('.' + objWFMenuDropDown.classShowMobile), function (item) {
+            item.classList.remove(objWFMenuDropDown.classShowMobile);
         });
     }
 
     reset() {
         document.removeEventListener('click', event, true);
-        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
-        objMenuDropDown = new MenuDropDown();
+        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName()); /*endRemoveIf(production)*/
+        objWFMenuDropDown = new WFMenuDropDown();
         document.removeEventListener('click', this.listener, true);
-        objMenuDropDown.build();
+        objWFMenuDropDown.build();
     }
 }

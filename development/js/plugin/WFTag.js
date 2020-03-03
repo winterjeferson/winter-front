@@ -1,11 +1,11 @@
-class Tag {
+class WFTag {
     constructor() {
-        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName()); /*endRemoveIf(production)*/
         this.$tagBt = document.querySelectorAll('.tag-item-bt');
     }
 
     build() {
-        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName()); /*endRemoveIf(production)*/
         if (this.$tagBt.length < 1) {
             return;
         }
@@ -14,7 +14,7 @@ class Tag {
     }
 
     buildClick() {
-        /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName()); /*endRemoveIf(production)*/
         Array.prototype.forEach.call(this.$tagBt, function (item) {
             let $bt = item.querySelector('.tag-bt');
 
