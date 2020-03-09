@@ -1,5 +1,4 @@
 function getUrlParameter(target) {
-    /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName(), target); /*endRemoveIf(production)*/
     let url = top.location.search.substring(1);
     let parameter = url.split('&');
 
@@ -13,11 +12,10 @@ function getUrlParameter(target) {
 }
 
 function getUrlWord(target) {
-    /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName(), target); /*endRemoveIf(production)*/
     if (window.location.href.indexOf(target) > -1) {
         return true;
     }
-    
+
     return false;
 }
 
@@ -29,7 +27,6 @@ function offset(element) {
 }
 
 function verifyUrlFodler(target) {
-    /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName(), target); /*endRemoveIf(production)*/
     let arrFolder = window.location.pathname.split('/');
 
     if (arrFolder.indexOf(target) > -1) {

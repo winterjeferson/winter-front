@@ -9,10 +9,6 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
 function getUrlParameter(target) {
-  /*removeIf(production)*/
-  objDebug.debugMethod(this, objDebug.getMethodName(), target);
-  /*endRemoveIf(production)*/
-
   var url = top.location.search.substring(1);
   var parameter = url.split('&');
 
@@ -26,10 +22,6 @@ function getUrlParameter(target) {
 }
 
 function getUrlWord(target) {
-  /*removeIf(production)*/
-  objDebug.debugMethod(this, objDebug.getMethodName(), target);
-  /*endRemoveIf(production)*/
-
   if (window.location.href.indexOf(target) > -1) {
     return true;
   }
@@ -48,10 +40,6 @@ function offset(element) {
 }
 
 function verifyUrlFodler(target) {
-  /*removeIf(production)*/
-  objDebug.debugMethod(this, objDebug.getMethodName(), target);
-  /*endRemoveIf(production)*/
-
   var arrFolder = window.location.pathname.split('/');
 
   if (arrFolder.indexOf(target) > -1) {
