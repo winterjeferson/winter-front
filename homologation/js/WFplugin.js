@@ -8,23 +8,6 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-function buildURL(url) {
-  /*removeIf(production)*/
-  objDebug.debugMethod(this, objDebug.getMethodName());
-  /*endRemoveIf(production)*/
-
-  return url.toString() // Convert to string
-  .normalize('NFD') // Change diacritics
-  .replace(/[\u0300-\u036f]/g, '') // Remove illegal characters
-  .replace(/\s+/g, '-') // Change whitespace to dashes
-  .toLowerCase() // Change to lowercase
-  .replace(/&/g, '-and-') // Replace ampersand
-  .replace(/[^a-z0-9\-]/g, '') // Remove anything that is not a letter, number or dash
-  .replace(/-+/g, '-') // Remove duplicate dashes
-  .replace(/^-*/, '') // Remove starting dashes
-  .replace(/-*$/, ''); // Remove trailing dashes
-}
-
 function getUrlParameter(target) {
   /*removeIf(production)*/
   objDebug.debugMethod(this, objDebug.getMethodName(), target);
@@ -40,6 +23,18 @@ function getUrlParameter(target) {
       return parameterName[1];
     }
   }
+}
+
+function getUrlWord(target) {
+  /*removeIf(production)*/
+  objDebug.debugMethod(this, objDebug.getMethodName(), target);
+  /*endRemoveIf(production)*/
+
+  if (window.location.href.indexOf(target) > -1) {
+    return true;
+  }
+
+  return false;
 }
 
 function offset(element) {

@@ -12,6 +12,15 @@ function getUrlParameter(target) {
     }
 }
 
+function getUrlWord(target) {
+    /*removeIf(production)*/ objDebug.debugMethod(this, objDebug.getMethodName(), target); /*endRemoveIf(production)*/
+    if (window.location.href.indexOf(target) > -1) {
+        return true;
+    }
+    
+    return false;
+}
+
 function offset(element) {
     var rect = element.getBoundingClientRect(),
         scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
