@@ -1292,8 +1292,8 @@ function () {
       });
     }
   }, {
-    key: "addNotification",
-    value: function addNotification(message, style) {
+    key: "add",
+    value: function add(message, style) {
       var place = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : this.$notify;
 
       /*removeIf(production)*/
@@ -1308,25 +1308,27 @@ function () {
       }
 
       if (place !== this.$notify) {
-        newPlace = document.querySelector(place);
+        if (typeof place === 'string') {
+          newPlace = document.querySelector(place);
+        } else {
+          newPlace = place;
+        }
 
         if (!newPlace.querySelector('.notify-list')) {
           newPlace.insertAdjacentHTML('beforeend', '<ul class="notify-list"></ul>');
         }
-      }
 
-      if (place !== this.$notify) {
         newPlace.querySelector('.notify-list').insertAdjacentHTML('beforeend', string);
       } else {
         place.insertAdjacentHTML('beforeend', string);
       }
 
-      this.removeNotifyListItem(document.querySelector('#notify_' + this.notifyId), message.length);
+      this.remove(document.querySelector('#notify_' + this.notifyId), message.length);
       this.notifyId++;
     }
   }, {
-    key: "removeNotifyListItem",
-    value: function removeNotifyListItem(item, messageLength) {
+    key: "remove",
+    value: function remove(item, messageLength) {
       /*removeIf(production)*/
       objWFDebug.debugMethod(this, objWFDebug.getMethodName(), [item, messageLength]);
       /*endRemoveIf(production)*/
