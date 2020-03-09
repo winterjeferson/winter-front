@@ -12,11 +12,7 @@ function getUrlParameter(target) {
 }
 
 function getUrlWord(target) {
-    if (window.location.href.indexOf(target) > -1) {
-        return true;
-    }
-
-    return false;
+    return new RegExp('\\b' + target + '\\b', 'i').test(window.location.href);
 }
 
 function offset(element) {
