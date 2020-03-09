@@ -11,7 +11,7 @@ class WFTranslation {
 
     defineLanguege() {
         /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName()); /*endRemoveIf(production)*/
-        switch (globalFrameworkLanguage) {
+        switch (globalLanguage) {
             case 'pt':
                 this.translation = translationPTBR;
                 break;
