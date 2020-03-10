@@ -94,12 +94,12 @@ class WFForm {
         let length = arrEmpty.length;
 
         for (let i = 0; i < length; i++) {
-            if (arrEmpty[i].val() === '') {
+            if (arrEmpty[i].value === '') {
                 arrEmpty[i].focus();
                 return false;
             }
         }
-
+        
         return true;
     }
 }
