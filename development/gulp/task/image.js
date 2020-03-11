@@ -44,7 +44,7 @@ gulp.task('image_move', function (done) {
 gulp.task('image_imagemin', function () {
     return gulp
         .src(configuration.homologation + 'img/**')
-        .pipe(newer(configuration.production + "img/"))
+        // .pipe(newer(configuration.production + "img/"))
         .pipe(imagemin())
         .pipe(gulp.dest(configuration.production + "img/"));
 });
