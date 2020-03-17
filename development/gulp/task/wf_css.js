@@ -2,30 +2,29 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');//npm install gulp-sass --save-dev // https://www.npmjs.com/package/gulp-sass/
 var concat = require('gulp-concat');//npm install gulp-concat --save-dev //https://www.npmjs.com/package/gulp-concat/
 var csso = require('gulp-csso');//npm install gulp-csso --save-dev //https://www.npmjs.com/package/gulp-csso/
+var configuration = require('./wf_configuration.js');
+var project = require('./wf_project.js');
+var util = require('./wf_util.js');
 
-var configuration = require('./configuration.js');
-var project = require('./project.js');
-var util = require('./util.js');
 
-
-var fileCssSass = [
+var wf_fileCssSass = [
     configuration.development + 'css/plugin/sass_variable.scss',
     configuration.development + 'css/plugin/sass_color.scss',
     configuration.development + 'css/plugin/sass.scss',
 ];
 
-var fileCssDefault = [
+var wf_fileCssDefault = [
     configuration.development + 'css/build/*.scss'
 ];
 
-var fileCssPlugin = [
+var wf_fileCssPlugin = [
     configuration.development + 'css/library/*.scss'
 ];
 
-var cssDefaultConcat = fileCssSass.concat(fileCssDefault);
-var cssPluginConcat = fileCssSass.concat(fileCssPlugin);
-var fileDefault = 'wf_style';
-var filePlugin = 'wf_plugin';
+var wf_cssDefaultConcat = wf_fileCssSass.concat(wf_fileCssDefault);
+var wf_cssPluginConcat = wf_fileCssSass.concat(wf_fileCssPlugin);
+var wf_fileStyle = 'wf_style';
+var wf_filePlugin = 'wf_plugin';
 
 
 
@@ -36,23 +35,23 @@ var filePlugin = 'wf_plugin';
 
 
 
-gulp.task('css_default_concat', function () {
+gulp.task('css_style_concat', function () {
     return gulp
-        .src(cssDefaultConcat)
-        .pipe(concat(fileDefault + '.scss'))
+        .src(wf_cssDefaultConcat)
+        .pipe(concat(wf_fileStyle + '.scss'))
         .pipe(gulp.dest(configuration.development + 'css/'));
 });
 
-gulp.task('css_default_sass', function () {
+gulp.task('css_style_sass', function () {
     return gulp
-        .src(configuration.development + 'css/' + fileDefault + '.scss')
+        .src(configuration.development + 'css/' + wf_fileStyle + '.scss')
         .pipe(sass.sync().on('error', sass.logError))
         .pipe(gulp.dest(configuration.homologation + 'css/'));
 });
 
 gulp.task('build_css_default', gulp.series(
-    'css_default_concat',
-    'css_default_sass',
+    'css_style_concat',
+    'css_style_sass',
     'beep'
 ));
 
@@ -63,14 +62,14 @@ gulp.task('build_css_default', gulp.series(
 
 gulp.task('css_plugin_concat', function () {
     return gulp
-        .src(cssPluginConcat)
-        .pipe(concat(filePlugin + '.scss'))
+        .src(wf_cssPluginConcat)
+        .pipe(concat(wf_filePlugin + '.scss'))
         .pipe(gulp.dest(configuration.development + 'css/'));
 });
 
 gulp.task('css_plugin_sass', function () {
     return gulp
-        .src(configuration.development + 'css/' + filePlugin + '.scss')
+        .src(configuration.development + 'css/' + wf_filePlugin + '.scss')
         .pipe(sass.sync().on('error', sass.logError))
         .pipe(gulp.dest(configuration.homologation + 'css/'));
 });
@@ -93,6 +92,6 @@ gulp.task('css_minify', function () {
 
 
 module.exports = {
-    cssDefaultConcat: cssDefaultConcat,
-    cssPluginConcat: cssPluginConcat
+    wf_cssDefaultConcat: wf_cssDefaultConcat,
+    wf_cssPluginConcat: wf_cssPluginConcat
 };

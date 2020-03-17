@@ -1,22 +1,21 @@
 var gulp = require('gulp');
-var css = require('./css.js');
-var font = require('./font.js');
-var img = require('./image.js');
-var js = require('./js.js');
-var other = require('./other.js');
-var php = require('./php.js');
-var template = require('./template.js');
+var css = require('./wf_css.js');
+var font = require('./wf_font.js');
+var img = require('./wf_image.js');
+var js = require('./wf_js.js');
+var other = require('./wf_other.js');
+var template = require('./wf_template.js');
 
 
 
 gulp.task('default', function () {
 
-    gulp.watch(css.cssDefaultConcat, gulp.series('build_css_default'))
+    gulp.watch(css.wf_cssDefaultConcat, gulp.series('build_css_default'))
             .on('change', function (evt) {
                 console.log(evt);
             });
 
-    gulp.watch(css.cssPluginConcat, gulp.series('build_css_plugin'))
+    gulp.watch(css.wf_cssPluginConcat, gulp.series('build_css_plugin'))
             .on('change', function (evt) {
                 console.log(evt);
             });
@@ -49,13 +48,6 @@ gulp.task('default', function () {
 
 
     gulp.watch(other.fileOther, gulp.series('build_other'))
-            .on('change', function (evt) {
-                console.log(evt);
-            });
-
-
-
-    gulp.watch(php.filePHP, gulp.series('build_php'))
             .on('change', function (evt) {
                 console.log(evt);
             });
