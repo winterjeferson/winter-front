@@ -1,9 +1,11 @@
 var gulp = require('gulp');
-var configuration = require('./wf_configuration.js');
 var del = require('del'); //npm install del --save-dev //https://www.npmjs.com/package/del
 
+var configuration = require('./wf_configuration.js');
 
-gulp.task('project_move_production', function () {
+
+
+gulp.task('wf_project_move_production', function () {
     gulp
         .src(configuration.homologation + '*.html')
         .pipe(gulp.dest(configuration.production));

@@ -2,13 +2,14 @@ var gulp = require('gulp');
 var nunjucksRender = require('gulp-nunjucks-render'); //npm install gulp-nunjucks-render --save-dev // https://zellwk.com/blog/nunjucks-with-gulp/
 var rename = require("gulp-rename");//npm install gulp-rename --save-dev // https://www.npmjs.com/package/gulp-rename/
 var htmlmin = require('gulp-htmlmin'); //npm install gulp-htmlmin --save-dev  //https://www.npmjs.com/package/gulp-htmlmin/
-var configuration = require('./wf_configuration.js');
 var del = require('del'); //npm install del --save-dev //https://www.npmjs.com/package/del
 
+var wf_configuration = require('./wf_configuration.js');
 
 
 
-var folderTemplate = configuration.development + 'template/';
+
+var folderTemplate = wf_configuration.development + 'template/';
 var fileTemplate = folderTemplate + '*.html';
 var fileTemplateAdmin = folderTemplate + 'admin/*.html';
 var fileTemplateWatch = [
@@ -24,8 +25,8 @@ function clean(path) {
 
 gulp.task('template_clean', function () {
     var files = [
-        configuration.homologation + '*.html',
-        configuration.homologation + 'admin/' + '*.html',
+        wf_configuration.homologation + '*.html',
+        wf_configuration.homologation + 'admin/' + '*.html',
     ];
     return clean(files);
 });
@@ -38,7 +39,7 @@ gulp.task('template_include', function () {
                 path: [folderTemplate]
             }))
             .pipe(rename({extname: '.html'}))
-            .pipe(gulp.dest(configuration.homologation));
+            .pipe(gulp.dest(wf_configuration.homologation));
 });
 
 gulp.task('template_include_admin', function () {
@@ -49,14 +50,14 @@ gulp.task('template_include_admin', function () {
                 path: [folderTemplate]
             }))
             .pipe(rename({extname: '.html'}))
-            .pipe(gulp.dest(configuration.homologation + 'admin/'));
+            .pipe(gulp.dest(wf_configuration.homologation + 'admin/'));
 });
 
 gulp.task('template_minify', function () {
     return gulp
-            .src(configuration.homologation + '*.html')
+            .src(wf_configuration.homologation + '*.html')
             .pipe(htmlmin({collapseWhitespace: true}))
-            .pipe(gulp.dest(configuration.production));
+            .pipe(gulp.dest(wf_configuration.production));
 });
 
 gulp.task('build_template', gulp.series(

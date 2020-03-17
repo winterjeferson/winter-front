@@ -1,9 +1,10 @@
 var gulp = require('gulp');
 var concat = require('gulp-concat');//npm install gulp-concat --save-dev //https://www.npmjs.com/package/gulp-concat/
 var uglify = require("gulp-uglifyes");//npm install gulp-uglifyes --save-dev //https://www.npmjs.com/package/gulp-uglifyes
-const removeCode = require('gulp-remove-code');//npm install gulp-remove-code --save-dev https://www.npmjs.com/package/gulp-remove-code
-const babel = require('gulp-babel'); //npm install --save-dev gulp-babel @babel/core @babel/preset-env //https://www.npmjs.com/package/gulp-babel
-var configuration = require('./wf_configuration.js');
+var removeCode = require('gulp-remove-code');//npm install gulp-remove-code --save-dev https://www.npmjs.com/package/gulp-remove-code
+var babel = require('gulp-babel'); //npm install --save-dev gulp-babel @babel/core @babel/preset-env //https://www.npmjs.com/package/gulp-babel
+
+var wf_configuration = require('./wf_configuration.js');
 
 
 
@@ -12,17 +13,17 @@ var fileJsDefaultFinal = 'wf_script.js';
 var fileJsPluginFinal = 'wf_plugin.js';
 
 var fileJs = [
-    configuration.development + 'js/script/**/*.*',
-    configuration.development + 'js/main.js'
+    wf_configuration.development + 'js/script/**/*.*',
+    wf_configuration.development + 'js/main.js'
 ];
 
 var fileJsFinal = [
-    configuration.homologation + 'js/' + fileJsDefaultFinal,
-    configuration.homologation + 'js/' + fileJsPluginFinal
+    wf_configuration.homologation + 'js/' + fileJsDefaultFinal,
+    wf_configuration.homologation + 'js/' + fileJsPluginFinal
 ];
 
 var fileJsPlugin = [
-    configuration.development + 'js/plugin/**/*.*'
+    wf_configuration.development + 'js/plugin/**/*.*'
 ];
 
 
@@ -30,51 +31,51 @@ var fileJsPlugin = [
 
 
 
-gulp.task('js_babel', function () {
+gulp.task('wf_js_babel', function () {
     return gulp.src(fileJsFinal)
         .pipe(babel({
             presets: ['@babel/env']
         }))
-        .pipe(gulp.dest(configuration.homologation + 'js/'));
+        .pipe(gulp.dest(wf_configuration.homologation + 'js/'));
 });
 
-gulp.task('js_default_concat', function () {
+gulp.task('wf_js_default_concat', function () {
     return gulp.src(fileJs)
         .pipe(concat(fileJsDefaultFinal))
-        .pipe(gulp.dest(configuration.homologation + 'js/'));
+        .pipe(gulp.dest(wf_configuration.homologation + 'js/'));
 });
 
-gulp.task('js_remove_code', function () {
-    return gulp.src(configuration.homologation + 'js/*.js')
+gulp.task('wf_js_remove_code', function () {
+    return gulp.src(wf_configuration.homologation + 'js/*.js')
         .pipe(removeCode({ production: true }))
         .pipe(removeCode({ noDevFeatures: false, commentStart: '/*', commentEnd: '*/' }))
-        .pipe(gulp.dest(configuration.production + 'js/'));
+        .pipe(gulp.dest(wf_configuration.production + 'js/'));
 });
 
-gulp.task('build_js_default', gulp.series(
-    'js_default_concat',
+gulp.task('build_wf_js_default', gulp.series(
+    'wf_js_default_concat',
     'beep'
 ));
 
 
 
-gulp.task('js_plugin_concat', function () {
+gulp.task('wf_js_plugin_concat', function () {
     return gulp.src(fileJsPlugin)
         .pipe(concat(fileJsPluginFinal))
-        .pipe(gulp.dest(configuration.homologation + 'js/'));
+        .pipe(gulp.dest(wf_configuration.homologation + 'js/'));
 });
 
-gulp.task('build_js_plugin', gulp.series(
-    'js_plugin_concat',
+gulp.task('build_wf_js_plugin', gulp.series(
+    'wf_js_plugin_concat',
     'beep'
 ));
 
 
 
-gulp.task('js_minify', function () {
-    return gulp.src(configuration.homologation + 'js/*.*')
+gulp.task('wf_js_minify', function () {
+    return gulp.src(wf_configuration.homologation + 'js/*.*')
         .pipe(uglify())
-        .pipe(gulp.dest(configuration.production + 'js/'));
+        .pipe(gulp.dest(wf_configuration.production + 'js/'));
 });
 
 

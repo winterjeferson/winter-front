@@ -1,23 +1,24 @@
 var gulp = require('gulp');
-var configuration = require('./wf_configuration.js');
 var del = require('del'); //npm install del --save-dev //https://www.npmjs.com/package/del
+
+var wf_configuration = require('./wf_configuration.js');
 
 
 
 
 
 var fileOther = [
-    configuration.development + 'other/.htaccess',
-    configuration.development + 'other/*',
-    configuration.development + 'other/**',
-    configuration.development + 'other/**/*',
-    configuration.development + 'other/**/*.*'
+    wf_configuration.development + 'other/.htaccess',
+    wf_configuration.development + 'other/*',
+    wf_configuration.development + 'other/**',
+    wf_configuration.development + 'other/**/*',
+    wf_configuration.development + 'other/**/*.*'
 ];
 
 var fileOtherPublic = [
-    configuration.homologation + '.htaccess',
-    configuration.homologation + '*.htaccess',
-    configuration.homologation + '*.txt'
+    wf_configuration.homologation + '.htaccess',
+    wf_configuration.homologation + '*.htaccess',
+    wf_configuration.homologation + '*.txt'
 ];
 
 
@@ -32,7 +33,7 @@ gulp.task('other_clean', function () {
 gulp.task('other_move', function (done) {
     return gulp
             .src(fileOther)
-            .pipe(gulp.dest(configuration.homologation));
+            .pipe(gulp.dest(wf_configuration.homologation));
     done();
 });
 
