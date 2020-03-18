@@ -1,6 +1,20 @@
 "use strict";
 
-function _typeof2(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof2 = function _typeof2(obj) { return typeof obj; }; } else { _typeof2 = function _typeof2(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof2(obj); }
+function _typeof3(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof3 = function _typeof3(obj) { return typeof obj; }; } else { _typeof3 = function _typeof3(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof3(obj); }
+
+function _typeof2(obj) {
+  if (typeof Symbol === "function" && _typeof3(Symbol.iterator) === "symbol") {
+    _typeof2 = function _typeof2(obj) {
+      return _typeof3(obj);
+    };
+  } else {
+    _typeof2 = function _typeof2(obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : _typeof3(obj);
+    };
+  }
+
+  return _typeof2(obj);
+}
 
 function _typeof(obj) {
   if (typeof Symbol === "function" && _typeof2(Symbol.iterator) === "symbol") {
@@ -514,7 +528,7 @@ function () {
       /*endRemoveIf(production)*/
 
       var inputFile = '';
-      var textFile = objWFTranslation.translation["default"].input_upload;
+      var textFile = objWFTranslation.translation.input_upload;
       inputFile += '<div class="input-file">';
       inputFile += '    <div class="input-file-name"></div>';
       inputFile += '    <div class="input-file-text"><span class="fa fa-upload" aria-hidden="true"></span>&nbsp; ' + textFile + '</div>';
@@ -887,7 +901,7 @@ function () {
       string += '<div id="modal" class="modal-close">';
       string += '     <div class="modal-box">';
       string += '         <header>';
-      string += '             <button id="modal_close" type="button" aria-label="' + objWFTranslation.translation["default"].close + '" class="bt bt-sm bt-grey bt-transparent">';
+      string += '             <button id="modal_close" type="button" aria-label="' + objWFTranslation.translation.close + '" class="bt bt-sm bt-grey bt-transparent">';
       string += '                 <span class="fa fa-times" aria-hidden="true"></span>';
       string += '             </button>';
       string += '         </header>';
@@ -897,12 +911,12 @@ function () {
       string += '         <div class="menu-horizontal">';
       string += '             <ul class="navigation-arrow">';
       string += '                 <li>';
-      string += '                     <button type="button" class="bt bt-bi" data-id="nav-left" aria-label="' + objWFTranslation.translation["default"].previous + '" >';
+      string += '                     <button type="button" class="bt bt-bi" data-id="nav-left" aria-label="' + objWFTranslation.translation.previous + '" >';
       string += '                         <span class="fa fa-angle-left" aria-hidden="true"></span>';
       string += '                     </button>';
       string += '                 </li>';
       string += '                 <li>';
-      string += '                     <button type="button" class="bt bt-bi" data-id="nav-right" aria-label="' + objWFTranslation.translation["default"].next + '" >';
+      string += '                     <button type="button" class="bt bt-bi" data-id="nav-right" aria-label="' + objWFTranslation.translation.next + '" >';
       string += '                         <span class="fa fa-angle-right" aria-hidden="true"></span>';
       string += '                     </button>';
       string += '                 </li>';
@@ -931,8 +945,8 @@ function () {
       objWFDebug.debugMethod(this, objWFDebug.getMethodName());
       /*endRemoveIf(production)*/
 
-      this.$modalFooterConfirm.innerHTML = objWFTranslation.translation["default"].confirm;
-      this.$modalFooterCancel.innerHTML = objWFTranslation.translation["default"].cancel;
+      this.$modalFooterConfirm.innerHTML = objWFTranslation.translation.confirm;
+      this.$modalFooterCancel.innerHTML = objWFTranslation.translation.cancel;
     }
   }, {
     key: "buildKeyboard",
@@ -1299,7 +1313,7 @@ function () {
       string += '         <span class="text">';
       string += message;
       string += '         </span>';
-      string += '         <button type="button" class="bt" onclick="$(this).parent().parent().remove();" aria-label="' + objWFTranslation.translation["default"].close + '">';
+      string += '         <button type="button" class="bt" onclick="$(this).parent().parent().remove();" aria-label="' + objWFTranslation.translation.close + '">';
       string += '            <span class="fa fa-times" aria-hidden="true"></span>';
       string += '         </button>';
       string += '     </div>';
@@ -1934,7 +1948,7 @@ function () {
 
       switch (globalLanguage) {
         case 'pt':
-          this.translation = translationPTBR;
+          this.translation = translationPT;
           break;
 
         case 'en':

@@ -13,7 +13,7 @@ class WFTranslation {
         /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName()); /*endRemoveIf(production)*/
         switch (globalLanguage) {
             case 'pt':
-                this.translation = translationPTBR;
+                this.translation = translationPT;
                 break;
             case 'en':
                 this.translation = translationEN;

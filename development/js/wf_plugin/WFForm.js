@@ -78,7 +78,7 @@ class WFForm {
     buildInputFileHtml() {
         /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName()); /*endRemoveIf(production)*/
         let inputFile = '';
-        let textFile = objWFTranslation.translation.default.input_upload;
+        let textFile = objWFTranslation.translation.input_upload;
 
         inputFile += '<div class="input-file">';
         inputFile += '    <div class="input-file-name"></div>';

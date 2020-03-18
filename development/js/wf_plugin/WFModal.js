@@ -39,7 +39,7 @@ class WFModal {
         string += '<div id="modal" class="modal-close">';
         string += '     <div class="modal-box">';
         string += '         <header>';
-        string += '             <button id="modal_close" type="button" aria-label="' + objWFTranslation.translation.default.close + '" class="bt bt-sm bt-grey bt-transparent">';
+        string += '             <button id="modal_close" type="button" aria-label="' + objWFTranslation.translation.close + '" class="bt bt-sm bt-grey bt-transparent">';
         string += '                 <span class="fa fa-times" aria-hidden="true"></span>';
         string += '             </button>';
         string += '         </header>';
@@ -49,12 +49,12 @@ class WFModal {
         string += '         <div class="menu-horizontal">';
         string += '             <ul class="navigation-arrow">';
         string += '                 <li>';
-        string += '                     <button type="button" class="bt bt-bi" data-id="nav-left" aria-label="' + objWFTranslation.translation.default.previous + '" >';
+        string += '                     <button type="button" class="bt bt-bi" data-id="nav-left" aria-label="' + objWFTranslation.translation.previous + '" >';
         string += '                         <span class="fa fa-angle-left" aria-hidden="true"></span>';
         string += '                     </button>';
         string += '                 </li>';
         string += '                 <li>';
-        string += '                     <button type="button" class="bt bt-bi" data-id="nav-right" aria-label="' + objWFTranslation.translation.default.next + '" >';
+        string += '                     <button type="button" class="bt bt-bi" data-id="nav-right" aria-label="' + objWFTranslation.translation.next + '" >';
         string += '                         <span class="fa fa-angle-right" aria-hidden="true"></span>';
         string += '                     </button>';
         string += '                 </li>';
@@ -80,8 +80,8 @@ class WFModal {
 
     buildTranslation() {
         /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName()); /*endRemoveIf(production)*/
-        this.$modalFooterConfirm.innerHTML = objWFTranslation.translation.default.confirm;
-        this.$modalFooterCancel.innerHTML = objWFTranslation.translation.default.cancel;
+        this.$modalFooterConfirm.innerHTML = objWFTranslation.translation.confirm;
+        this.$modalFooterCancel.innerHTML = objWFTranslation.translation.cancel;
     }
 
     buildKeyboard() {

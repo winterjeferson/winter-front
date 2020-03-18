@@ -35,7 +35,7 @@ class WFNotification {
         string += '         <span class="text">';
         string += message;
         string += '         </span>';
-        string += '         <button type="button" class="bt" onclick="$(this).parent().parent().remove();" aria-label="' + objWFTranslation.translation.default.close + '">';
+        string += '         <button type="button" class="bt" onclick="$(this).parent().parent().remove();" aria-label="' + objWFTranslation.translation.close + '">';
         string += '            <span class="fa fa-times" aria-hidden="true"></span>';
         string += '         </button>';
         string += '     </div>';
