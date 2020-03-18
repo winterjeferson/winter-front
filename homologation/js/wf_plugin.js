@@ -1,59 +1,14 @@
 "use strict";
 
-function _typeof3(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof3 = function _typeof3(obj) { return typeof obj; }; } else { _typeof3 = function _typeof3(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof3(obj); }
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
-function _typeof2(obj) {
-  if (typeof Symbol === "function" && _typeof3(Symbol.iterator) === "symbol") {
-    _typeof2 = function _typeof2(obj) {
-      return _typeof3(obj);
-    };
-  } else {
-    _typeof2 = function _typeof2(obj) {
-      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : _typeof3(obj);
-    };
-  }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-  return _typeof2(obj);
-}
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-function _typeof(obj) {
-  if (typeof Symbol === "function" && _typeof2(Symbol.iterator) === "symbol") {
-    _typeof = function _typeof(obj) {
-      return _typeof2(obj);
-    };
-  } else {
-    _typeof = function _typeof(obj) {
-      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : _typeof2(obj);
-    };
-  }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-  return _typeof(obj);
-}
-
-function _classCallCheck(instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError("Cannot call a class as a function");
-  }
-}
-
-function _defineProperties(target, props) {
-  for (var i = 0; i < props.length; i++) {
-    var descriptor = props[i];
-    descriptor.enumerable = descriptor.enumerable || false;
-    descriptor.configurable = true;
-    if ("value" in descriptor) descriptor.writable = true;
-    Object.defineProperty(target, descriptor.key, descriptor);
-  }
-}
-
-function _createClass(Constructor, protoProps, staticProps) {
-  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
-  if (staticProps) _defineProperties(Constructor, staticProps);
-  return Constructor;
-}
 /*removeIf(production)*/
-
-
 var WFDebug =
 /*#__PURE__*/
 function () {
@@ -176,9 +131,8 @@ var WFCarousel =
 function () {
   function WFCarousel() {
     _classCallCheck(this, WFCarousel);
+
     /*removeIf(production)*/
-
-
     objWFDebug.debugMethod(this, objWFDebug.getMethodName());
     /*endRemoveIf(production)*/
 
@@ -559,14 +513,38 @@ function () {
   return WFForm;
 }();
 
+var WFLazyLoad =
+/*#__PURE__*/
+function () {
+  function WFLazyLoad() {
+    _classCallCheck(this, WFLazyLoad);
+
+    /*removeIf(production)*/
+    objWFDebug.debugMethod(this, objWFDebug.getMethodName());
+    /*endRemoveIf(production)*/
+  }
+
+  _createClass(WFLazyLoad, [{
+    key: "build",
+    value: function build() {
+      /*removeIf(production)*/
+      objWFDebug.debugMethod(this, objWFDebug.getMethodName());
+      /*endRemoveIf(production)*/
+
+      console.log('aaaaa');
+    }
+  }]);
+
+  return WFLazyLoad;
+}();
+
 var WFMenuDropDown =
 /*#__PURE__*/
 function () {
   function WFMenuDropDown() {
     _classCallCheck(this, WFMenuDropDown);
+
     /*removeIf(production)*/
-
-
     objWFDebug.debugMethod(this, objWFDebug.getMethodName());
     /*endRemoveIf(production)*/
 
@@ -765,9 +743,8 @@ var WFMenuToggle =
 function () {
   function WFMenuToggle() {
     _classCallCheck(this, WFMenuToggle);
+
     /*removeIf(production)*/
-
-
     objWFDebug.debugMethod(this, objWFDebug.getMethodName());
     /*endRemoveIf(production)*/
   }
@@ -846,9 +823,8 @@ var WFModal =
 function () {
   function WFModal() {
     _classCallCheck(this, WFModal);
+
     /*removeIf(production)*/
-
-
     objWFDebug.debugMethod(this, objWFDebug.getMethodName());
     /*endRemoveIf(production)*/
 
@@ -1070,8 +1046,8 @@ function () {
     value: function buildModal(kind, content) {
       var size = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 're';
       var action = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 'open';
-      /*removeIf(production)*/
 
+      /*removeIf(production)*/
       objWFDebug.debugMethod(this, objWFDebug.getMethodName(), [kind, content, size, action]);
       /*endRemoveIf(production)*/
 
@@ -1139,8 +1115,8 @@ function () {
     key: "buildModalSize",
     value: function buildModalSize() {
       var size = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 're';
-      /*removeIf(production)*/
 
+      /*removeIf(production)*/
       objWFDebug.debugMethod(this, objWFDebug.getMethodName(), size);
       /*endRemoveIf(production)*/
 
@@ -1261,9 +1237,8 @@ var WFNotification =
 function () {
   function WFNotification() {
     _classCallCheck(this, WFNotification);
+
     /*removeIf(production)*/
-
-
     objWFDebug.debugMethod(this, objWFDebug.getMethodName());
     /*endRemoveIf(production)*/
 
@@ -1302,8 +1277,8 @@ function () {
     value: function buildHtmlItem() {
       var style = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'grey';
       var message = arguments.length > 1 ? arguments[1] : undefined;
-      /*removeIf(production)*/
 
+      /*removeIf(production)*/
       objWFDebug.debugMethod(this, objWFDebug.getMethodName(), [style, message]);
       /*endRemoveIf(production)*/
 
@@ -1340,8 +1315,8 @@ function () {
     key: "add",
     value: function add(message, style) {
       var place = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : this.$notify;
-      /*removeIf(production)*/
 
+      /*removeIf(production)*/
       objWFDebug.debugMethod(this, objWFDebug.getMethodName(), [message, style, place]);
       /*endRemoveIf(production)*/
 
@@ -1396,9 +1371,8 @@ var WFProgress =
 function () {
   function WFProgress() {
     _classCallCheck(this, WFProgress);
+
     /*removeIf(production)*/
-
-
     objWFDebug.debugMethod(this, objWFDebug.getMethodName());
     /*endRemoveIf(production)*/
 
@@ -1487,9 +1461,8 @@ var WFTable =
 function () {
   function WFTable() {
     _classCallCheck(this, WFTable);
+
     /*removeIf(production)*/
-
-
     objWFDebug.debugMethod(this, objWFDebug.getMethodName());
     /*endRemoveIf(production)*/
 
@@ -1533,9 +1506,8 @@ var WFTag =
 function () {
   function WFTag() {
     _classCallCheck(this, WFTag);
+
     /*removeIf(production)*/
-
-
     objWFDebug.debugMethod(this, objWFDebug.getMethodName());
     /*endRemoveIf(production)*/
 
@@ -1579,9 +1551,8 @@ var WFTooltip =
 function () {
   function WFTooltip() {
     _classCallCheck(this, WFTooltip);
+
     /*removeIf(production)*/
-
-
     objWFDebug.debugMethod(this, objWFDebug.getMethodName());
     /*endRemoveIf(production)*/
 
@@ -1921,9 +1892,8 @@ var WFTranslation =
 function () {
   function WFTranslation() {
     _classCallCheck(this, WFTranslation);
+
     /*removeIf(production)*/
-
-
     objWFDebug.debugMethod(this, objWFDebug.getMethodName());
     /*endRemoveIf(production)*/
 
