@@ -10,51 +10,51 @@ var wf_template = require('./wf_template.js');
 
 
 gulp.task('default', function () {
-    gulp.watch(wf_css.wf_cssDefaultConcat, gulp.series('build_wf_css_style'))
+    gulp.watch(wf_css.wf_cssDefaultConcat, gulp.series('wf_css_style'))
             .on('change', function (evt) {
                 console.log(evt);
             });
 
-    gulp.watch(wf_css.wf_cssPluginConcat, gulp.series('build_wf_css_plugin'))
-            .on('change', function (evt) {
-                console.log(evt);
-            });
-
-
-
-    gulp.watch(wf_js.fileJs, gulp.series('build_wf_js_default', 'wf_js_babel'))
-            .on('change', function (evt) {
-                console.log(evt);
-            });
-
-    gulp.watch(wf_js.fileJsPlugin, gulp.series('build_wf_js_plugin', 'wf_js_babel'))
-            .on('change', function (evt) {
-                console.log(evt);
-            });
-
-
-    gulp.watch(wf_img.fileImg, gulp.series('build_image'))
+    gulp.watch(wf_css.wf_cssPluginConcat, gulp.series('wf_css_plugin'))
             .on('change', function (evt) {
                 console.log(evt);
             });
 
 
 
-    gulp.watch(wf_font.fileFont, gulp.series('build_font'))
+    gulp.watch(wf_js.fileJs, gulp.series('wf_js_default', 'wf_js_babel'))
+            .on('change', function (evt) {
+                console.log(evt);
+            });
+
+    gulp.watch(wf_js.fileJsPlugin, gulp.series('wf_js_plugin', 'wf_js_babel'))
+            .on('change', function (evt) {
+                console.log(evt);
+            });
+
+
+    gulp.watch(wf_img.fileImg, gulp.series('wf_image'))
             .on('change', function (evt) {
                 console.log(evt);
             });
 
 
 
-    gulp.watch(wf_other.fileOther, gulp.series('build_other'))
+    gulp.watch(wf_font.fileFont, gulp.series('wf_font'))
+            .on('change', function (evt) {
+                console.log(evt);
+            });
+
+
+
+    gulp.watch(wf_other.fileOther, gulp.series('wf_other'))
             .on('change', function (evt) {
                 console.log(evt);
             });
             
             
 
-    gulp.watch(wf_template.fileTemplateWatch, gulp.series('build_template'))
+    gulp.watch(wf_template.wf_fileTemplateWatch, gulp.series('wf_template'))
             .on('change', function (evt) {
                 console.log(evt);
             });

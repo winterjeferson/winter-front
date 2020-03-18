@@ -52,9 +52,9 @@ gulp.task('wf_js_remove_code', function () {
         .pipe(gulp.dest(wf_configuration.production + 'js/'));
 });
 
-gulp.task('build_wf_js_default', gulp.series(
+gulp.task('wf_js_default', gulp.series(
     'wf_js_default_concat',
-    'beep'
+    'wf_beep'
 ));
 
 
@@ -65,9 +65,9 @@ gulp.task('wf_js_plugin_concat', function () {
         .pipe(gulp.dest(wf_configuration.homologation + 'js/'));
 });
 
-gulp.task('build_wf_js_plugin', gulp.series(
+gulp.task('wf_js_plugin', gulp.series(
     'wf_js_plugin_concat',
-    'beep'
+    'wf_beep'
 ));
 
 

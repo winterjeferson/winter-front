@@ -28,12 +28,12 @@ function clean(path) {
     return del(path, { force: true }); // returns a promise
 }
 
-gulp.task('image_clean', function () {
+gulp.task('wf_image_clean', function () {
     var files = [wf_configuration.homologation + 'img/**'];
     return clean(files);
 });
 
-gulp.task('image_move', function (done) {
+gulp.task('wf_image_move', function (done) {
     return gulp
         .src(wf_configuration.development + 'img/**/*.*')
         .pipe(gulp.dest(wf_configuration.homologation + "img/"));
@@ -42,7 +42,7 @@ gulp.task('image_move', function (done) {
 
 
 // fix enoent problem: node node_modules/optipng-bin/lib/install.js
-gulp.task('image_imagemin', function () {
+gulp.task('wf_image_imagemin', function () {
     return gulp
         .src(wf_configuration.homologation + 'img/**')
         // .pipe(newer(wf_configuration.production + "img/"))
@@ -50,10 +50,10 @@ gulp.task('image_imagemin', function () {
         .pipe(gulp.dest(wf_configuration.production + "img/"));
 });
 
-gulp.task('build_image', gulp.series(
-    'image_clean',
-    'image_move',
-    'beep'
+gulp.task('wf_image', gulp.series(
+    'wf_image_clean',
+    'wf_image_move',
+    'wf_beep'
 ));
 
 

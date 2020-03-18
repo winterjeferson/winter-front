@@ -50,10 +50,10 @@ gulp.task('wf_css_style_sass', function () {
         .pipe(gulp.dest(wf_configuration.homologation + 'css/'));
 });
 
-gulp.task('build_wf_css_style', gulp.series(
+gulp.task('wf_css_style', gulp.series(
     'wf_css_style_concat',
     'wf_css_style_sass',
-    'beep'
+    'wf_beep'
 ));
 
 
@@ -75,10 +75,10 @@ gulp.task('wf_css_plugin_sass', function () {
         .pipe(gulp.dest(wf_configuration.homologation + 'css/'));
 });
 
-gulp.task('build_wf_css_plugin', gulp.series(
+gulp.task('wf_css_plugin', gulp.series(
     'wf_css_plugin_concat',
     'wf_css_plugin_sass',
-    'beep'
+    'wf_beep'
 ));
 
 

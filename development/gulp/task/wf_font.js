@@ -25,22 +25,22 @@ function clean(path) {
     return del(path, {force: true}); // returns a promise
 }
 
-gulp.task('font_clean', function () {
+gulp.task('wf_font_clean', function () {
     var files = [wf_configuration.homologation + 'font/**'];
     return clean(files);
 });
 
-gulp.task('font_move', function (done) {
+gulp.task('wf_font_move', function (done) {
     return gulp
             .src(wf_configuration.development + 'font/**/*.*')
             .pipe(gulp.dest(wf_configuration.homologation + "font/"));
     done();
 });
 
-gulp.task('build_font', gulp.series(
-        'font_clean',
-        'font_move',
-        'beep'
+gulp.task('wf_font', gulp.series(
+        'wf_font_clean',
+        'wf_font_move',
+        'wf_beep'
         ));
 
 

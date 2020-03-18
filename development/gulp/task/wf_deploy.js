@@ -6,12 +6,12 @@ var wf_image = require('./wf_image.js');
 var wf_js = require('./wf_js.js');
 var wf_template = require('./wf_template.js');
 
-gulp.task('deploy', gulp.series(
+gulp.task('wf_deploy', gulp.series(
         'wf_css_minify',
         'wf_js_remove_code',
         'wf_js_minify',
         'wf_project_move_production',
-        'image_imagemin',
-        'template_minify',
-        'beep'
+        'wf_image_imagemin',
+        'wf_template_minify',
+        'wf_beep'
 ));

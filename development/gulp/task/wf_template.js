@@ -9,13 +9,12 @@ var wf_configuration = require('./wf_configuration.js');
 
 
 
-var folderTemplate = wf_configuration.development + 'template/';
-var fileTemplate = folderTemplate + '*.html';
-var fileTemplateAdmin = folderTemplate + 'admin/*.html';
-var fileTemplateWatch = [
-    folderTemplate + '*.html',
-    folderTemplate + 'include/*.html',
-    folderTemplate + 'content/*.html'
+var wf_folderTemplate = wf_configuration.development + 'template/';
+var wf_fileTemplate = wf_folderTemplate + '*.html';
+var wf_fileTemplateWatch = [
+    wf_folderTemplate + '*.html',
+    wf_folderTemplate + 'include/*.html',
+    wf_folderTemplate + 'content/*.html'
 ];
 
 
@@ -23,7 +22,7 @@ function clean(path) {
     return del(path, {force: true}); // returns a promise
 }
 
-gulp.task('template_clean', function () {
+gulp.task('wf_template_clean', function () {
     var files = [
         wf_configuration.homologation + '*.html',
         wf_configuration.homologation + 'admin/' + '*.html',
@@ -31,40 +30,28 @@ gulp.task('template_clean', function () {
     return clean(files);
 });
 
-gulp.task('template_include', function () {
+gulp.task('wf_template_include', function () {
 
     return gulp
-            .src(fileTemplate)
+            .src(wf_fileTemplate)
             .pipe(nunjucksRender({
-                path: [folderTemplate]
+                path: [wf_folderTemplate]
             }))
             .pipe(rename({extname: '.html'}))
             .pipe(gulp.dest(wf_configuration.homologation));
 });
 
-gulp.task('template_include_admin', function () {
-
-    return gulp
-            .src(fileTemplateAdmin)
-            .pipe(nunjucksRender({
-                path: [folderTemplate]
-            }))
-            .pipe(rename({extname: '.html'}))
-            .pipe(gulp.dest(wf_configuration.homologation + 'admin/'));
-});
-
-gulp.task('template_minify', function () {
+gulp.task('wf_template_minify', function () {
     return gulp
             .src(wf_configuration.homologation + '*.html')
             .pipe(htmlmin({collapseWhitespace: true}))
             .pipe(gulp.dest(wf_configuration.production));
 });
 
-gulp.task('build_template', gulp.series(
-        'template_clean',
-        'template_include',
-        'template_include_admin',
-        'beep'
+gulp.task('wf_template', gulp.series(
+        'wf_template_clean',
+        'wf_template_include',
+        'wf_beep'
         ));
 
 
@@ -72,6 +59,6 @@ gulp.task('build_template', gulp.series(
 
 
 module.exports = {
-    fileTemplate: fileTemplate,
-    fileTemplateWatch: fileTemplateWatch
+    wf_fileTemplate: wf_fileTemplate,
+    wf_fileTemplateWatch: wf_fileTemplateWatch
 };

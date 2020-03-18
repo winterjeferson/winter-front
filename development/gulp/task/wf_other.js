@@ -26,21 +26,21 @@ function clean(path) {
     return del(path, {force: true}); // returns a promise
 }
 
-gulp.task('other_clean', function () {
+gulp.task('wf_other_clean', function () {
     return clean(fileOtherPublic);
 });
 
-gulp.task('other_move', function (done) {
+gulp.task('wf_other_move', function (done) {
     return gulp
             .src(fileOther)
             .pipe(gulp.dest(wf_configuration.homologation));
     done();
 });
 
-gulp.task('build_other', gulp.series(
-        'other_clean',
-        'other_move',
-        'beep'
+gulp.task('wf_other', gulp.series(
+        'wf_other_clean',
+        'wf_other_move',
+        'wf_beep'
         ));
 
 

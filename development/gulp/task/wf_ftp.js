@@ -17,7 +17,7 @@ var ftpPassword = '';
 
 
 
-gulp.task('build_ftp', function () {
+gulp.task('wf_ftp', function () {
     var conn = ftp.create({
         host: ftpHost,
         port: ftpPort,
