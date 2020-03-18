@@ -14,7 +14,7 @@ var fileJsPluginFinal = 'wf_plugin.js';
 
 var fileJs = [
     wf_configuration.development + 'js/wf_theme/**/*.*',
-    wf_configuration.development + 'js/main.js'
+    wf_configuration.development + 'js/wf_main.js'
 ];
 
 var fileJsFinal = [
