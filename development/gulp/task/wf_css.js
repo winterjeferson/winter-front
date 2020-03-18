@@ -9,9 +9,9 @@ var wf_util = require('./wf_util.js');
 
 
 var wf_fileCssSass = [
-    configuration.development + 'css/sass/sass_variable.scss',
-    configuration.development + 'css/sass/sass_color.scss',
-    configuration.development + 'css/sass/sass.scss',
+    configuration.development + 'css/wf_sass/sass_variable.scss',
+    configuration.development + 'css/wf_sass/sass_color.scss',
+    configuration.development + 'css/wf_sass/sass.scss',
 ];
 
 var wf_fileCssDefault = [
