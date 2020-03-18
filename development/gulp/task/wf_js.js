@@ -9,11 +9,11 @@ var wf_configuration = require('./wf_configuration.js');
 
 
 
-var fileJsDefaultFinal = 'wf_script.js';
+var fileJsDefaultFinal = 'wf_theme.js';
 var fileJsPluginFinal = 'wf_plugin.js';
 
 var fileJs = [
-    wf_configuration.development + 'js/script/**/*.*',
+    wf_configuration.development + 'js/wf_theme/**/*.*',
     wf_configuration.development + 'js/main.js'
 ];
 
@@ -23,7 +23,7 @@ var fileJsFinal = [
 ];
 
 var fileJsPlugin = [
-    wf_configuration.development + 'js/plugin/**/*.*'
+    wf_configuration.development + 'js/wf_plugin/**/*.*'
 ];
 
 

@@ -9,17 +9,17 @@ var wf_util = require('./wf_util.js');
 
 
 var wf_fileCssSass = [
-    wf_configuration.development + 'css/plugin/sass_variable.scss',
-    wf_configuration.development + 'css/plugin/sass_color.scss',
-    wf_configuration.development + 'css/plugin/sass.scss',
+    wf_configuration.development + 'css/sass/sass_variable.scss',
+    wf_configuration.development + 'css/sass/sass_color.scss',
+    wf_configuration.development + 'css/sass/sass.scss',
 ];
 
 var wf_fileCssDefault = [
-    wf_configuration.development + 'css/build/*.scss'
+    wf_configuration.development + 'css/wf_theme/*.scss'
 ];
 
 var wf_fileCssPlugin = [
-    wf_configuration.development + 'css/library/*.scss'
+    wf_configuration.development + 'css/wf_plugin/*.scss'
 ];
 
 var wf_cssDefaultConcat = wf_fileCssSass.concat(wf_fileCssDefault);
