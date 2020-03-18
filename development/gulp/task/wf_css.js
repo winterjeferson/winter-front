@@ -24,7 +24,7 @@ var wf_fileCssPlugin = [
 
 var wf_cssDefaultConcat = wf_fileCssSass.concat(wf_fileCssDefault);
 var wf_cssPluginConcat = wf_fileCssSass.concat(wf_fileCssPlugin);
-var wf_fileStyle = 'wf_style';
+var wf_fileStyle = 'wf_theme';
 var wf_filePlugin = 'wf_plugin';
 
 
