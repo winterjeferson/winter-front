@@ -1,24 +1,24 @@
 var gulp = require('gulp');
 var del = require('del'); //npm install del --save-dev //https://www.npmjs.com/package/del
 
-var wf_configuration = require('./wf_configuration.js');
+var configuration = require('./configuration.js');
 
 
 
 
 
 var fileFont = [
-    wf_configuration.development + 'font/*',
-    wf_configuration.development + 'font/**',
-    wf_configuration.development + 'font/**/*',
-    wf_configuration.development + 'font/**/*.*'
+    configuration.development + 'font/*',
+    configuration.development + 'font/**',
+    configuration.development + 'font/**/*',
+    configuration.development + 'font/**/*.*'
 ];
 
 var fileFontPublic = [
-    wf_configuration.homologation + 'font/*',
-    wf_configuration.homologation + 'font/**',
-    wf_configuration.homologation + 'font/**/*',
-    wf_configuration.homologation + 'font/**/*.*'
+    configuration.homologation + 'font/*',
+    configuration.homologation + 'font/**',
+    configuration.homologation + 'font/**/*',
+    configuration.homologation + 'font/**/*.*'
 ];
 
 function clean(path) {
@@ -26,14 +26,14 @@ function clean(path) {
 }
 
 gulp.task('wf_font_clean', function () {
-    var files = [wf_configuration.homologation + 'font/**'];
+    var files = [configuration.homologation + 'font/**'];
     return clean(files);
 });
 
 gulp.task('wf_font_move', function (done) {
     return gulp
-            .src(wf_configuration.development + 'font/**/*.*')
-            .pipe(gulp.dest(wf_configuration.homologation + "font/"));
+            .src(configuration.development + 'font/**/*.*')
+            .pipe(gulp.dest(configuration.homologation + "font/"));
     done();
 });
 

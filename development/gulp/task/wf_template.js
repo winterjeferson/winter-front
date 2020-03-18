@@ -4,12 +4,12 @@ var rename = require("gulp-rename");//npm install gulp-rename --save-dev // http
 var htmlmin = require('gulp-htmlmin'); //npm install gulp-htmlmin --save-dev  //https://www.npmjs.com/package/gulp-htmlmin/
 var del = require('del'); //npm install del --save-dev //https://www.npmjs.com/package/del
 
-var wf_configuration = require('./wf_configuration.js');
+var configuration = require('./configuration.js');
 
 
 
 
-var wf_folderTemplate = wf_configuration.development + 'template/';
+var wf_folderTemplate = configuration.development + 'template/';
 var wf_fileTemplate = wf_folderTemplate + '*.html';
 var wf_fileTemplateWatch = [
     wf_folderTemplate + '*.html',
@@ -24,8 +24,8 @@ function clean(path) {
 
 gulp.task('wf_template_clean', function () {
     var files = [
-        wf_configuration.homologation + '*.html',
-        wf_configuration.homologation + 'admin/' + '*.html',
+        configuration.homologation + '*.html',
+        configuration.homologation + 'admin/' + '*.html',
     ];
     return clean(files);
 });
@@ -38,14 +38,14 @@ gulp.task('wf_template_include', function () {
                 path: [wf_folderTemplate]
             }))
             .pipe(rename({extname: '.html'}))
-            .pipe(gulp.dest(wf_configuration.homologation));
+            .pipe(gulp.dest(configuration.homologation));
 });
 
 gulp.task('wf_template_minify', function () {
     return gulp
-            .src(wf_configuration.homologation + '*.html')
+            .src(configuration.homologation + '*.html')
             .pipe(htmlmin({collapseWhitespace: true}))
-            .pipe(gulp.dest(wf_configuration.production));
+            .pipe(gulp.dest(configuration.production));
 });
 
 gulp.task('wf_template', gulp.series(

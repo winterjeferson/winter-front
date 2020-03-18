@@ -2,12 +2,12 @@ var gulp = require('gulp');
 var ftp = require('vinyl-ftp'); //npm install --save-dev vinyl-ftp //https://www.npmjs.com/package/vinyl-ftp
 var util = require('gulp-util'); //npm install --save-dev gulp-util // https://www.npmjs.com/package/gulp-util
 
-var wf_configuration = require('./wf_configuration.js');
+var configuration = require('./configuration.js');
 
 
 
 
-var folderFtp = '/www/test/' + wf_configuration.projectName + '/' + wf_configuration.projectVersion + '/';
+var folderFtp = '/www/test/' + configuration.projectName + '/' + configuration.projectVersion + '/';
 var ftpHost = '';
 var ftpPort = '';
 var ftpUser = '';
@@ -28,8 +28,8 @@ gulp.task('wf_ftp', function () {
     });
 
     var globs = [
-        wf_configuration.production + '**/*.*',
-        wf_configuration.production + '.htaccess'
+        configuration.production + '**/*.*',
+        configuration.production + '.htaccess'
     ];
 
     return gulp
