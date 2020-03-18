@@ -9,20 +9,22 @@ var wf_configuration = require('./wf_configuration.js');
 
 
 
-var fileJsDefaultFinal = 'wf_theme.js';
-var fileJsPluginFinal = 'wf_plugin.js';
+var fileJs_wf_DefaultFinal = 'wf_theme.js';
+var fileJs_wf_PluginFinal = 'wf_plugin.js';
 
-var fileJs = [
+var fileJs_wf_ = [
+    wf_configuration.development + 'js/shared/**/*.*',
     wf_configuration.development + 'js/wf_theme/**/*.*',
     wf_configuration.development + 'js/wf_main.js'
 ];
 
-var fileJsFinal = [
-    wf_configuration.homologation + 'js/' + fileJsDefaultFinal,
-    wf_configuration.homologation + 'js/' + fileJsPluginFinal
+var fileJs_wf_Final = [
+    wf_configuration.homologation + 'js/' + fileJs_wf_DefaultFinal,
+    wf_configuration.homologation + 'js/' + fileJs_wf_PluginFinal
 ];
 
-var fileJsPlugin = [
+var fileJs_wf_Plugin = [
+    wf_configuration.development + 'js/shared/**/*.*',
     wf_configuration.development + 'js/wf_plugin/**/*.*'
 ];
 
@@ -32,7 +34,7 @@ var fileJsPlugin = [
 
 
 gulp.task('wf_js_babel', function () {
-    return gulp.src(fileJsFinal)
+    return gulp.src(fileJs_wf_Final)
         .pipe(babel({
             presets: ['@babel/env']
         }))
@@ -40,8 +42,8 @@ gulp.task('wf_js_babel', function () {
 });
 
 gulp.task('wf_js_default_concat', function () {
-    return gulp.src(fileJs)
-        .pipe(concat(fileJsDefaultFinal))
+    return gulp.src(fileJs_wf_)
+        .pipe(concat(fileJs_wf_DefaultFinal))
         .pipe(gulp.dest(wf_configuration.homologation + 'js/'));
 });
 
@@ -60,8 +62,8 @@ gulp.task('wf_js_default', gulp.series(
 
 
 gulp.task('wf_js_plugin_concat', function () {
-    return gulp.src(fileJsPlugin)
-        .pipe(concat(fileJsPluginFinal))
+    return gulp.src(fileJs_wf_Plugin)
+        .pipe(concat(fileJs_wf_PluginFinal))
         .pipe(gulp.dest(wf_configuration.homologation + 'js/'));
 });
 
@@ -82,6 +84,6 @@ gulp.task('wf_js_minify', function () {
 
 
 module.exports = {
-    fileJs: fileJs,
-    fileJsPlugin: fileJsPlugin
+    fileJs_wf_: fileJs_wf_,
+    fileJs_wf_Plugin: fileJs_wf_Plugin
 };
