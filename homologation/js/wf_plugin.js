@@ -531,7 +531,64 @@ function () {
       objWFDebug.debugMethod(this, objWFDebug.getMethodName());
       /*endRemoveIf(production)*/
 
-      console.log('aaaaa');
+      if (document.querySelectorAll('[data-lazy-load="true"]').length < 1) {
+        return;
+      }
+
+      this.addListener();
+      this.buildLoop();
+    }
+  }, {
+    key: "addListener",
+    value: function addListener() {
+      /*removeIf(production)*/
+      objWFDebug.debugMethod(this, objWFDebug.getMethodName());
+      /*endRemoveIf(production)*/
+
+      var self = this;
+      window.addEventListener('scroll', function (e) {
+        window.requestAnimationFrame(function () {
+          self.buildLoop();
+        });
+      });
+    }
+  }, {
+    key: "buildLoop",
+    value: function buildLoop() {
+      /*removeIf(production)*/
+      objWFDebug.debugMethod(this, objWFDebug.getMethodName());
+      /*endRemoveIf(production)*/
+
+      var self = this;
+      var $arr = document.querySelectorAll('[data-lazy-load="true"]');
+      Array.prototype.forEach.call($arr, function (item) {
+        self.verifyPosition(item);
+      });
+    }
+  }, {
+    key: "verifyPosition",
+    value: function verifyPosition(target) {
+      /*removeIf(production)*/
+      objWFDebug.debugMethod(this, objWFDebug.getMethodName());
+      /*endRemoveIf(production)*/
+
+      var windowScroll = window.scrollY;
+      var elemntPosition = offset(target).top;
+      var margin = window.outerHeight;
+
+      if (windowScroll >= elemntPosition - margin) {
+        this.buildImage(target);
+      }
+    }
+  }, {
+    key: "buildImage",
+    value: function buildImage(target) {
+      /*removeIf(production)*/
+      objWFDebug.debugMethod(this, objWFDebug.getMethodName());
+      /*endRemoveIf(production)*/
+
+      target.setAttribute('src', target.getAttribute('data-src'));
+      target.removeAttribute('data-lazy-load');
     }
   }]);
 

@@ -4,7 +4,19 @@
 <h1 class="page-title">
     Lazy Load
 </h1>
-<div class="row" id="page_lazy_load">
-    under development
+<div class="row">
+    <div class="col-es-12">
+        <div class="padding-re">
+            <img src="img/banner/2.png" alt="banner" class="img-responsive">
+        </div>
+    </div>
+
+    {% for color in arrColor %}
+    <div class="col-es-12">
+        <div class="padding-re">
+            <img src="" data-src="img/banner/1.png" alt="banner" class="img-responsive" data-lazy-load="true">
+        </div>
+    </div>
+    {% endfor %}
 </div>
 {% include "include/footer.html" %}
