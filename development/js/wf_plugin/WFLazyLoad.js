@@ -1,10 +1,10 @@
-class WFLazyLoad {
+class WfLazyLoad {
     constructor() {
-        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
     }
 
     build() {
-        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         if (document.querySelectorAll('[data-lazy-load="true"]').length < 1) {
             return;
         }
@@ -14,7 +14,7 @@ class WFLazyLoad {
     }
 
     addListener() {
-        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
 
         window.addEventListener('scroll', function (e) {
@@ -25,7 +25,7 @@ class WFLazyLoad {
     }
 
     buildLoop() {
-        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
         let $arr = document.querySelectorAll('[data-lazy-load="true"]');
 
@@ -35,7 +35,7 @@ class WFLazyLoad {
     }
 
     verifyPosition(target) {
-        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let windowScroll = window.scrollY;
         let elemntPosition = offset(target).top;
         let margin = window.outerHeight;
@@ -46,7 +46,7 @@ class WFLazyLoad {
     }
 
     buildImage(target) {
-        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         target.setAttribute('src', target.getAttribute('data-src'));
         target.removeAttribute('data-lazy-load');
     }

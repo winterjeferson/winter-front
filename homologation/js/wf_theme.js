@@ -24,44 +24,44 @@ function _createClass(Constructor, protoProps, staticProps) {
 /*removeIf(production)*/
 
 
-var WFDebug =
+var WfDebug =
 /*#__PURE__*/
 function () {
-  function WFDebug() {
-    _classCallCheck(this, WFDebug);
+  function WfDebug() {
+    _classCallCheck(this, WfDebug);
 
-    this.isWFLayout = true;
-    this.isWFManagement = true;
-    this.isWFLoading = true;
-    this.isWFTheme = true;
-    this.isWFCarousel = true;
-    this.isWFForm = true;
-    this.isWFGeneric = true;
-    this.isWFMenuDropDown = true;
-    this.isWFMenuTab = true;
-    this.isWFMenuToggle = true;
-    this.isWFModal = true;
-    this.isWFNotification = true;
-    this.isWFProgress = true;
-    this.isWFTable = true;
-    this.isWFTag = true;
-    this.isWFTooltip = true;
-    this.isWFTranslation = true;
+    this.isWfLayout = true;
+    this.isWfManagement = true;
+    this.isWfLoading = true;
+    this.isWfTheme = true;
+    this.isWfCarousel = true;
+    this.isWfForm = true;
+    this.isWfGeneric = true;
+    this.isWfMenuDropDown = true;
+    this.isWfMenuTab = true;
+    this.isWfMenuToggle = true;
+    this.isWfModal = true;
+    this.isWfNotification = true;
+    this.isWfProgress = true;
+    this.isWfTable = true;
+    this.isWfTag = true;
+    this.isWfTooltip = true;
+    this.isWfTranslation = true;
   }
 
-  _createClass(WFDebug, [{
+  _createClass(WfDebug, [{
     key: "debugMethod",
-    value: function debugMethod(objWF, method) {
+    value: function debugMethod(objWf, method) {
       var parameter = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : '';
       var string = '';
-      var className = objWF.constructor.name; // let arrMethod = objWFect.getOwnPropertyNames(objWFect.getPrototypeOf(objWF));
+      var className = objWf.constructor.name; // let arrMethod = objWfect.getOwnPropertyNames(objWfect.getPrototypeOf(objWf));
 
       if (!this['is' + className]) {
         return false;
       }
 
       string += '%c';
-      string += 'objWF' + className;
+      string += 'objWf' + className;
       string += '.';
       string += '%c';
       string += method;
@@ -99,7 +99,7 @@ function () {
     }
   }]);
 
-  return WFDebug;
+  return WfDebug;
 }();
 /*endRemoveIf(production)*/
 
@@ -121,15 +121,15 @@ var translationPT = {
   "previous": "Anterior"
 };
 
-var WFLayout =
+var WfLayout =
 /*#__PURE__*/
 function () {
-  function WFLayout() {
-    _classCallCheck(this, WFLayout);
+  function WfLayout() {
+    _classCallCheck(this, WfLayout);
     /*removeIf(production)*/
 
 
-    objWFDebug.debugMethod(this, objWFDebug.getMethodName());
+    objWfDebug.debugMethod(this, objWfDebug.getMethodName());
     /*endRemoveIf(production)*/
 
     this.$body = document.querySelector('body'); // this.$window = document.querySelector('window');
@@ -141,11 +141,11 @@ function () {
     this.breakPointExtraBig = 1200;
   }
 
-  _createClass(WFLayout, [{
+  _createClass(WfLayout, [{
     key: "buildSpinner",
     value: function buildSpinner(style) {
       /*removeIf(production)*/
-      objWFDebug.debugMethod(this, objWFDebug.getMethodName(), style);
+      objWfDebug.debugMethod(this, objWfDebug.getMethodName(), style);
       /*endRemoveIf(production)*/
 
       var spinner = '';
@@ -158,29 +158,29 @@ function () {
     }
   }]);
 
-  return WFLayout;
+  return WfLayout;
 }();
 
-var WFLoading =
+var WfLoading =
 /*#__PURE__*/
 function () {
-  function WFLoading() {
-    _classCallCheck(this, WFLoading);
+  function WfLoading() {
+    _classCallCheck(this, WfLoading);
     /*removeIf(production)*/
 
 
-    objWFDebug.debugMethod(this, objWFDebug.getMethodName());
+    objWfDebug.debugMethod(this, objWfDebug.getMethodName());
     /*endRemoveIf(production)*/
 
     this.$loadingMain = document.getElementById('loading_main');
     this.$body = document.querySelector('body');
   }
 
-  _createClass(WFLoading, [{
+  _createClass(WfLoading, [{
     key: "finish",
     value: function finish() {
       /*removeIf(production)*/
-      objWFDebug.debugMethod(this, objWFDebug.getMethodName());
+      objWfDebug.debugMethod(this, objWfDebug.getMethodName());
       /*endRemoveIf(production)*/
 
       this.$loadingMain.classList.add('loading-main-done');
@@ -191,25 +191,25 @@ function () {
     key: "remove",
     value: function remove(element) {
       /*removeIf(production)*/
-      objWFDebug.debugMethod(this, objWFDebug.getMethodName());
+      objWfDebug.debugMethod(this, objWfDebug.getMethodName());
       /*endRemoveIf(production)*/
 
       element.parentNode.removeChild(element);
     }
   }]);
 
-  return WFLoading;
+  return WfLoading;
 }();
 
-var WFTheme =
+var WfTheme =
 /*#__PURE__*/
 function () {
-  function WFTheme() {
-    _classCallCheck(this, WFTheme);
+  function WfTheme() {
+    _classCallCheck(this, WfTheme);
     /*removeIf(production)*/
 
 
-    objWFDebug.debugMethod(this, 'constructor');
+    objWfDebug.debugMethod(this, 'constructor');
     /*endRemoveIf(production)*/
 
     this.$body = document.querySelector('body');
@@ -218,11 +218,11 @@ function () {
     this.verifyLoad();
   }
 
-  _createClass(WFTheme, [{
+  _createClass(WfTheme, [{
     key: "verifyLoad",
     value: function verifyLoad() {
       /*removeIf(production)*/
-      objWFDebug.debugMethod(this, 'buildLoad');
+      objWfDebug.debugMethod(this, 'buildLoad');
       /*endRemoveIf(production)*/
 
       var self = this;
@@ -235,7 +235,7 @@ function () {
     key: "buildActiveMenu",
     value: function buildActiveMenu() {
       /*removeIf(production)*/
-      objWFDebug.debugMethod(this, 'buildActiveMenu');
+      objWfDebug.debugMethod(this, 'buildActiveMenu');
       /*endRemoveIf(production)*/
 
       var url = top.location.href;
@@ -249,7 +249,7 @@ function () {
         target[0].classList.add('active');
       }
     } // buildGoogleMaps() {
-    //     /*removeIf(production)*/ objWFDebug.debugMethod(this, 'buildGoogleMaps'); /*endRemoveIf(production)*/
+    //     /*removeIf(production)*/ objWfDebug.debugMethod(this, 'buildGoogleMaps'); /*endRemoveIf(production)*/
     //     let $maps1 = $('#google_maps_map');
     //     let $maps1Box = $('#google_maps_box');
     //     $maps1.addClass('scroll-off');
@@ -261,7 +261,7 @@ function () {
     //     });
     // }
     // doSlide(target) {
-    //     /*removeIf(production)*/ objWFDebug.debugMethod(this, 'doSlide', target); /*endRemoveIf(production)*/
+    //     /*removeIf(production)*/ objWfDebug.debugMethod(this, 'doSlide', target); /*endRemoveIf(production)*/
     //     $('html, body').animate({
     //         scrollTop: ($(target).offset().top) + 'px'
     //     }, 500);
@@ -269,40 +269,40 @@ function () {
 
   }]);
 
-  return WFTheme;
+  return WfTheme;
 }();
 /*removeIf(production)*/
 
 
-var objWFDebug = new WFDebug();
+var objWfDebug = new WfDebug();
 /*endRemoveIf(production)*/
 
-var objWFLayout = new WFLayout();
-var objWFCarousel = new WFCarousel();
-var objWFForm = new WFForm();
-var objWFLazyLoad = new WFLazyLoad();
-var objWFMenuDropDown = new WFMenuDropDown();
-var objWFMenuTab = new WFMenuTab();
-var objWFMenuToggle = new WFMenuToggle();
-var objWFModal = new WFModal();
-var objWFNotification = new WFNotification();
-var objWFProgress = new WFProgress();
-var objWFTag = new WFTag();
-var objWFTable = new WFTable();
-var objWFTooltip = new WFTooltip();
-var objWFTranslation = new WFTranslation();
-var objWFLoading = new WFLoading();
-var objWFTheme = new WFTheme();
-objWFTranslation.build();
-objWFProgress.build();
-objWFForm.build();
-objWFModal.build();
-objWFCarousel.build();
-objWFLazyLoad.build();
-objWFMenuDropDown.build();
-objWFMenuTab.build();
-objWFMenuToggle.build();
-objWFNotification.build();
-objWFTable.build();
-objWFTag.build();
-objWFTooltip.build();
+var objWfLayout = new WfLayout();
+var objWfCarousel = new WfCarousel();
+var objWfForm = new WfForm();
+var objWfLazyLoad = new WfLazyLoad();
+var objWfMenuDropDown = new WfMenuDropDown();
+var objWfMenuTab = new WfMenuTab();
+var objWfMenuToggle = new WfMenuToggle();
+var objWfModal = new WfModal();
+var objWfNotification = new WfNotification();
+var objWfProgress = new WfProgress();
+var objWfTag = new WfTag();
+var objWfTable = new WfTable();
+var objWfTooltip = new WfTooltip();
+var objWfTranslation = new WfTranslation();
+var objWfLoading = new WfLoading();
+var objWfTheme = new WfTheme();
+objWfTranslation.build();
+objWfProgress.build();
+objWfForm.build();
+objWfModal.build();
+objWfCarousel.build();
+objWfLazyLoad.build();
+objWfMenuDropDown.build();
+objWfMenuTab.build();
+objWfMenuToggle.build();
+objWfNotification.build();
+objWfTable.build();
+objWfTag.build();
+objWfTooltip.build();

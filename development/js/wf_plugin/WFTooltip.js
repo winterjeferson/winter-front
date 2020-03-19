@@ -1,6 +1,6 @@
-class WFTooltip {
+class WfTooltip {
     constructor() {
-        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.elementTop = 0;
         this.elementLeft = 0;
         this.elementWidth = 0;
@@ -18,7 +18,7 @@ class WFTooltip {
     }
 
     build() {
-        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.buildHtml();
         this.updateVariable(false);
 
@@ -32,7 +32,7 @@ class WFTooltip {
     }
 
     updateVariable(element) {
-        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName(), element); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName(), element); /*endRemoveIf(production)*/
         this.$tooltip = document.querySelector('#tooltip');
         this.$tooltipBody = document.querySelector('#tooltip_body');
         this.$tooltipPointer = document.querySelector('#tooltip_pointer');
@@ -58,7 +58,7 @@ class WFTooltip {
     }
 
     buildHtml() {
-        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let string = '';
 
         string += '<div id="tooltip">';
@@ -70,7 +70,7 @@ class WFTooltip {
     }
 
     buildResize() {
-        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
 
         window.onresize = function () {
@@ -80,7 +80,7 @@ class WFTooltip {
     }
 
     buildTooltip() {
-        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
 
         this.showTooltip(false);
@@ -106,12 +106,12 @@ class WFTooltip {
     }
 
     buildMaxWidth() {
-        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.$tooltip.style.maxWidth = this.windowWidth - (this.space * 2);
     }
 
     showTooltip(action) {
-        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName(), action); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName(), action); /*endRemoveIf(production)*/
         if (action) {
             this.$tooltip.classList.add('tooltip-show');
         } else {
@@ -120,7 +120,7 @@ class WFTooltip {
     }
 
     positionTooltipSwitchDirection(placement) {
-        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName(), placement); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName(), placement); /*endRemoveIf(production)*/
         let direction = typeof placement === 'undefined' ? 'top' : placement;
 
         switch (direction) {
@@ -150,31 +150,31 @@ class WFTooltip {
     }
 
     positionTooltipTop() {
-        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.positionTop = this.elementTop - this.tooltipHeight - this.space;
         this.positionLeft = this.elementLeft - this.centerWidth;
     }
 
     positionTooltipBottom() {
-        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.positionTop = this.elementTop + this.elementHeight + this.space;
         this.positionLeft = this.elementLeft - this.centerWidth;
     }
 
     positionTooltipRight() {
-        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.positionTop = this.elementTop + this.centerHeight;
         this.positionLeft = this.elementLeft + this.elementWidth + this.space;
     }
 
     positionTooltipLeft() {
-        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.positionTop = this.elementTop + this.centerHeight;
         this.positionLeft = this.elementLeft - this.tooltipWidth - this.space;
     }
 
     positionTooltip(element, placement) {
-        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName(), [element, placement]);
+        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName(), [element, placement]);
         this.updateVariable(element);
 
         let direction = this.positionTooltipSwitchDirection(placement);
@@ -207,7 +207,7 @@ class WFTooltip {
     }
 
     buildLimits() {
-        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         if (this.positionLeft <= 0) {
             this.positionLeft = this.space;
         }
@@ -218,17 +218,17 @@ class WFTooltip {
     }
 
     changeArrowPositionHorizontal() {
-        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.$tooltipPointer.style.left = this.$tooltip.offsetWidth / 2 + 'px';
     }
 
     changeArrowPositionVertical() {
-        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.$tooltipPointer.style.left = '';
     }
 
     changeArrowDirection(direction) {
-        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName(), direction); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName(), direction); /*endRemoveIf(production)*/
         this.$tooltipPointer.classList.remove('tooltip-direction-top');
         this.$tooltipPointer.classList.remove('tooltip-direction-bottom');
         this.$tooltipPointer.classList.remove('tooltip-direction-left');
@@ -237,7 +237,7 @@ class WFTooltip {
     }
 
     changeLayout(style) {
-        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName(), style); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName(), style); /*endRemoveIf(production)*/
         let newStyle = typeof style === 'undefined' ? newStyle = this.style : style;
 
         this.$tooltip.removeAttribute('class');
@@ -246,11 +246,11 @@ class WFTooltip {
     }
 
     reset() {
-        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let element = document.getElementById('tooltip');
 
         element.parentNode.removeChild(element);
-        objWFTooltip = new WFTooltip();
-        objWFTooltip.build();
+        objWfTooltip = new WfTooltip();
+        objWfTooltip.build();
     }
 }

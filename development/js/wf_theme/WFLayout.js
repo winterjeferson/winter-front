@@ -1,6 +1,6 @@
-class WFLayout {
+class WfLayout {
     constructor() {
-        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.$body = document.querySelector('body');
         // this.$window = document.querySelector('window');
 
@@ -12,7 +12,7 @@ class WFLayout {
     }
 
     buildSpinner(style) {
-        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName(), style); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName(), style); /*endRemoveIf(production)*/
         let spinner = '';
 
         spinner += '<div class="row text-center">';

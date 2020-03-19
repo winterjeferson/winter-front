@@ -1,6 +1,6 @@
-class WFNotification {
+class WfNotification {
     constructor() {
-        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.$body = document.querySelector('body');
         this.$notifyItem = document.querySelectorAll('.notify-item');
 
@@ -8,13 +8,13 @@ class WFNotification {
     }
 
     build() {
-        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.buildHtml();
         this.buildNavigation();
     }
 
     buildHtml() {
-        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let string = '';
 
         string += '<div id="notify">';
@@ -27,7 +27,7 @@ class WFNotification {
     }
 
     buildHtmlItem(style = 'grey', message) {
-        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName(), [style, message]); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName(), [style, message]); /*endRemoveIf(production)*/
         let string = '';
 
         string += '<li id="notify_' + this.notifyId + '">';
@@ -35,7 +35,7 @@ class WFNotification {
         string += '         <span class="text">';
         string += message;
         string += '         </span>';
-        string += '         <button type="button" class="bt" onclick="$(this).parent().parent().remove();" aria-label="' + objWFTranslation.translation.close + '">';
+        string += '         <button type="button" class="bt" onclick="$(this).parent().parent().remove();" aria-label="' + objWfTranslation.translation.close + '">';
         string += '            <span class="fa fa-times" aria-hidden="true"></span>';
         string += '         </button>';
         string += '     </div>';
@@ -45,7 +45,7 @@ class WFNotification {
     }
 
     buildNavigation() {
-        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
 
         Array.prototype.forEach.call(this.$notifyItem, function (item) {
             let bt = item.querySelectorAll('.bt')
@@ -59,7 +59,7 @@ class WFNotification {
     }
 
     add(message, style, place = this.$notify) {
-        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName(), [message, style, place]); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName(), [message, style, place]); /*endRemoveIf(production)*/
         let string = this.buildHtmlItem(style, message);
         let newPlace = '';
 
@@ -88,7 +88,7 @@ class WFNotification {
     }
 
     remove(item, messageLength) {
-        /*removeIf(production)*/ objWFDebug.debugMethod(this, objWFDebug.getMethodName(), [item, messageLength]); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName(), [item, messageLength]); /*endRemoveIf(production)*/
         let messageTime = messageLength * 150;
 
         function remove() {

@@ -1,38 +1,38 @@
 /*removeIf(production)*/
-class WFDebug {
+class WfDebug {
     constructor() {
-        this.isWFLayout = true;
-        this.isWFManagement = true;
+        this.isWfLayout = true;
+        this.isWfManagement = true;
 
-        this.isWFLoading = true;
-        this.isWFTheme = true;
+        this.isWfLoading = true;
+        this.isWfTheme = true;
 
-        this.isWFCarousel = true;
-        this.isWFForm = true;
-        this.isWFGeneric = true;
-        this.isWFMenuDropDown = true;
-        this.isWFMenuTab = true;
-        this.isWFMenuToggle = true;
-        this.isWFModal = true;
-        this.isWFNotification = true;
-        this.isWFProgress = true;
-        this.isWFTable = true;
-        this.isWFTag = true;
-        this.isWFTooltip = true;
-        this.isWFTranslation = true;
+        this.isWfCarousel = true;
+        this.isWfForm = true;
+        this.isWfGeneric = true;
+        this.isWfMenuDropDown = true;
+        this.isWfMenuTab = true;
+        this.isWfMenuToggle = true;
+        this.isWfModal = true;
+        this.isWfNotification = true;
+        this.isWfProgress = true;
+        this.isWfTable = true;
+        this.isWfTag = true;
+        this.isWfTooltip = true;
+        this.isWfTranslation = true;
     }
 
-    debugMethod(objWF, method, parameter = '') {
+    debugMethod(objWf, method, parameter = '') {
         let string = '';
-        let className = objWF.constructor.name;
-        // let arrMethod = objWFect.getOwnPropertyNames(objWFect.getPrototypeOf(objWF));
+        let className = objWf.constructor.name;
+        // let arrMethod = objWfect.getOwnPropertyNames(objWfect.getPrototypeOf(objWf));
 
         if (!this['is' + className]) {
             return false;
         }
 
         string += '%c';
-        string += 'objWF' + className;
+        string += 'objWf' + className;
         string += '.';
         string += '%c';
         string += method;
