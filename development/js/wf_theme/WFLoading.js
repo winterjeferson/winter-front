@@ -1,7 +1,7 @@
 class WfLoading {
     constructor() {
         /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
-        this.$loadingMain = document.getElementById('loading_main');
+        this.$loadingMain = document.getElementById('loadingMain');
         this.$body = document.querySelector('body');
     }
 

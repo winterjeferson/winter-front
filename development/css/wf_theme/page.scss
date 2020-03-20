@@ -1,23 +1,4 @@
-.google-maps {
-  height: 400px;
-  width: 100%;
-  border: 0;
-}
-
-.error {
-  text-align: center;
-
-  .title,
-  .text {
-    line-height: 50%;
-  }
-
-  .title {
-    font-family: $font-family-black;
-  }
-}
-
-#page_home {
+#pageHome {
   height: 100%;
 
   .carousel-slide,
@@ -45,7 +26,7 @@
   }
 }
 
-#page_palette {
+#pagePalette {
   [class*="color-"] {
     position: relative;
     width: calc(100% / 31);
@@ -171,8 +152,8 @@
   }
 }
 
-#page_responsive_grid,
-#page_responsive {
+#pageResponsiveGrid,
+#pageResponsive {
   [class*="grid-col-"],
   [class*="col-"] {
     text-align: center;
@@ -214,7 +195,7 @@
   }
 }
 
-#page_responsive {
+#pageResponsive {
   * {
     &:after,
     &:before {
@@ -224,13 +205,13 @@
   }
 }
 
-#page_form {
+#pageForm {
   .form {
     margin-bottom: 150px;
   }
 }
 
-#page_scroll {
+#pageScroll {
   .scrollbar {
     height: 300px;
     overflow-y: scroll;

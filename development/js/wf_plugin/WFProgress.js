@@ -1,7 +1,7 @@
 class WfProgress {
     constructor() {
         /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
-        this.$bar = document.querySelector('#loading_main .progress-bar');
+        this.$bar = document.querySelector('#loadingMain .progress-bar');
         this.$all = document.querySelectorAll('div, section, article');
         this.$allLength = this.$all.length;
 

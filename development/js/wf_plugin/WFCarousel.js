@@ -32,8 +32,8 @@ class WfCarousel {
             self.defineActive(item.querySelector('[data-id="' + item.getAttribute('data-current-slide') + '"]'));
 
             if (length === 1) {
-                item.querySelector('[data-id="nav-left"]').classList.add(self.classDisplay);
-                item.querySelector('[data-id="nav-right"]').classList.add(self.classDisplay);
+                item.querySelector('[data-id="navLeft"]').classList.add(self.classDisplay);
+                item.querySelector('[data-id="navRight"]').classList.add(self.classDisplay);
                 item.querySelector('.carousel-controller').classList.add(self.classDisplay);
             }
         });
@@ -99,7 +99,7 @@ class WfCarousel {
     buildNavigationArrowLeft(target) {
         /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
-        let button = target.querySelector('[data-id="nav-left"]');
+        let button = target.querySelector('[data-id="navLeft"]');
 
         button.onclick = function () {
             let $carousel = button.parentNode.parentNode.parentNode.parentNode;
@@ -124,7 +124,7 @@ class WfCarousel {
     buildNavigationArrowRight(target) {
         /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
-        let button = target.querySelector('[data-id="nav-right"]');
+        let button = target.querySelector('[data-id="navRight"]');
 
         button.onclick = function () {
             let $carousel = button.parentNode.parentNode.parentNode.parentNode;
@@ -183,7 +183,7 @@ class WfCarousel {
             self.counterCurrent = 0;
 
             Array.prototype.forEach.call(self.$carousel, function (item) {
-                item.querySelector('[data-id="nav-right"]').click();
+                item.querySelector('[data-id="navRight"]').click();
             });
         }
     }

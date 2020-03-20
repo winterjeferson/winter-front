@@ -19,7 +19,8 @@ var wf_fileCssDefault = [
 ];
 
 var wf_fileCssPlugin = [
-    configuration.development + 'css/wf_plugin/*.scss'
+    configuration.development + 'css/wf_plugin/reset.scss',
+    configuration.development + 'css/wf_plugin/!(reset)*.scss'
 ];
 
 var wf_cssDefaultConcat = wf_fileCssSass.concat(wf_fileCssDefault);

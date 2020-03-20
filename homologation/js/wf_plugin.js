@@ -173,8 +173,8 @@ function () {
         self.defineActive(item.querySelector('[data-id="' + item.getAttribute('data-current-slide') + '"]'));
 
         if (length === 1) {
-          item.querySelector('[data-id="nav-left"]').classList.add(self.classDisplay);
-          item.querySelector('[data-id="nav-right"]').classList.add(self.classDisplay);
+          item.querySelector('[data-id="navLeft"]').classList.add(self.classDisplay);
+          item.querySelector('[data-id="navRight"]').classList.add(self.classDisplay);
           item.querySelector('.carousel-controller').classList.add(self.classDisplay);
         }
       });
@@ -257,7 +257,7 @@ function () {
       /*endRemoveIf(production)*/
 
       var self = this;
-      var button = target.querySelector('[data-id="nav-left"]');
+      var button = target.querySelector('[data-id="navLeft"]');
 
       button.onclick = function () {
         var $carousel = button.parentNode.parentNode.parentNode.parentNode;
@@ -286,7 +286,7 @@ function () {
       /*endRemoveIf(production)*/
 
       var self = this;
-      var button = target.querySelector('[data-id="nav-right"]');
+      var button = target.querySelector('[data-id="navRight"]');
 
       button.onclick = function () {
         var $carousel = button.parentNode.parentNode.parentNode.parentNode;
@@ -349,7 +349,7 @@ function () {
       if (self.counterCurrent >= self.transition) {
         self.counterCurrent = 0;
         Array.prototype.forEach.call(self.$carousel, function (item) {
-          item.querySelector('[data-id="nav-right"]').click();
+          item.querySelector('[data-id="navRight"]').click();
         });
       }
     }
@@ -901,12 +901,12 @@ function () {
       this.$modalFooter = this.$modal.querySelector('footer');
       this.$modalFooterConfirm = this.$modalFooter.querySelector('[data-id="confirm"]');
       this.$modalFooterCancel = this.$modalFooter.querySelector('[data-id="cancel"]');
-      this.$modalClose = document.querySelector('#modal_close');
-      this.$modalContent = document.querySelector('#modal_content');
+      this.$modalClose = document.querySelector('#modalClose');
+      this.$modalContent = document.querySelector('#modalContent');
       this.$modalBox = this.$modal.querySelector('.modal-box');
       this.$modalNavigationArrow = this.$modal.querySelector('.navigation-arrow');
-      this.$modalNavigationArrowLeft = this.$modalNavigationArrow.querySelector('[data-id="nav-left"]');
-      this.$modalNavigationArrowRight = this.$modalNavigationArrow.querySelector('[data-id="nav-right"]');
+      this.$modalNavigationArrowLeft = this.$modalNavigationArrow.querySelector('[data-id="navLeft"]');
+      this.$modalNavigationArrowRight = this.$modalNavigationArrow.querySelector('[data-id="navRight"]');
       this.$gallery = document.querySelectorAll('.gallery');
     }
   }, {
@@ -934,22 +934,22 @@ function () {
       string += '<div id="modal" class="modal-close">';
       string += '     <div class="modal-box">';
       string += '         <header>';
-      string += '             <button id="modal_close" type="button" aria-label="' + objWfTranslation.translation.close + '" class="bt bt-sm bt-grey bt-transparent">';
+      string += '             <button id="modalClose" type="button" aria-label="' + objWfTranslation.translation.close + '" class="bt bt-sm bt-grey bt-transparent">';
       string += '                 <span class="fa fa-times" aria-hidden="true"></span>';
       string += '             </button>';
       string += '         </header>';
       string += '         <div class="row">';
-      string += '             <div id="modal_content" class="col-es-12"></div>';
+      string += '             <div id="modalContent" class="col-es-12"></div>';
       string += '         </div>';
       string += '         <div class="menu-horizontal">';
       string += '             <ul class="navigation-arrow">';
       string += '                 <li>';
-      string += '                     <button type="button" class="bt bt-bi" data-id="nav-left" aria-label="' + objWfTranslation.translation.previous + '" >';
+      string += '                     <button type="button" class="bt bt-bi" data-id="navLeft" aria-label="' + objWfTranslation.translation.previous + '" >';
       string += '                         <span class="fa fa-angle-left" aria-hidden="true"></span>';
       string += '                     </button>';
       string += '                 </li>';
       string += '                 <li>';
-      string += '                     <button type="button" class="bt bt-bi" data-id="nav-right" aria-label="' + objWfTranslation.translation.next + '" >';
+      string += '                     <button type="button" class="bt bt-bi" data-id="navRight" aria-label="' + objWfTranslation.translation.next + '" >';
       string += '                         <span class="fa fa-angle-right" aria-hidden="true"></span>';
       string += '                     </button>';
       string += '                 </li>';
@@ -1340,7 +1340,7 @@ function () {
       /*endRemoveIf(production)*/
 
       var string = '';
-      string += '<li id="notify_' + this.notifyId + '">';
+      string += '<li id="notify' + this.notifyId + '">';
       string += '     <div class="notify-item notify-' + style + '">';
       string += '         <span class="text">';
       string += message;
@@ -1400,7 +1400,7 @@ function () {
         place.insertAdjacentHTML('beforeend', string);
       }
 
-      this.remove(document.querySelector('#notify_' + this.notifyId), message.length);
+      this.remove(document.querySelector('#notify' + this.notifyId), message.length);
       this.notifyId++;
     }
   }, {
@@ -1433,7 +1433,7 @@ function () {
     objWfDebug.debugMethod(this, objWfDebug.getMethodName());
     /*endRemoveIf(production)*/
 
-    this.$bar = document.querySelector('#loading_main .progress-bar');
+    this.$bar = document.querySelector('#loadingMain .progress-bar');
     this.$all = document.querySelectorAll('div, section, article');
     this.$allLength = this.$all.length;
     this.isFinish = false;
@@ -1655,8 +1655,8 @@ function () {
       /*endRemoveIf(production)*/
 
       this.$tooltip = document.querySelector('#tooltip');
-      this.$tooltipBody = document.querySelector('#tooltip_body');
-      this.$tooltipPointer = document.querySelector('#tooltip_pointer');
+      this.$tooltipBody = document.querySelector('#tooltipBody');
+      this.$tooltipPointer = document.querySelector('#tooltipPointer');
       this.$tooltipData = document.querySelectorAll('[data-tooltip="true"]');
       this.windowWidth = window.offsetWidth;
       this.windowHeight = window.offsetHeight;
@@ -1681,8 +1681,8 @@ function () {
 
       var string = '';
       string += '<div id="tooltip">';
-      string += '    <div id="tooltip_body"></div>';
-      string += '    <div id="tooltip_pointer"></div>';
+      string += '    <div id="tooltipBody"></div>';
+      string += '    <div id="tooltipPointer"></div>';
       string += '</div>';
       document.querySelector('body').insertAdjacentHTML('beforeend', string);
     }

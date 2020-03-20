@@ -13,12 +13,12 @@ class WfModal {
         this.$modalFooter = this.$modal.querySelector('footer');
         this.$modalFooterConfirm = this.$modalFooter.querySelector('[data-id="confirm"]');
         this.$modalFooterCancel = this.$modalFooter.querySelector('[data-id="cancel"]');
-        this.$modalClose = document.querySelector('#modal_close');
-        this.$modalContent = document.querySelector('#modal_content');
+        this.$modalClose = document.querySelector('#modalClose');
+        this.$modalContent = document.querySelector('#modalContent');
         this.$modalBox = this.$modal.querySelector('.modal-box');
         this.$modalNavigationArrow = this.$modal.querySelector('.navigation-arrow');
-        this.$modalNavigationArrowLeft = this.$modalNavigationArrow.querySelector('[data-id="nav-left"]');
-        this.$modalNavigationArrowRight = this.$modalNavigationArrow.querySelector('[data-id="nav-right"]');
+        this.$modalNavigationArrowLeft = this.$modalNavigationArrow.querySelector('[data-id="navLeft"]');
+        this.$modalNavigationArrowRight = this.$modalNavigationArrow.querySelector('[data-id="navRight"]');
         this.$gallery = document.querySelectorAll('.gallery');
     }
 
@@ -39,22 +39,22 @@ class WfModal {
         string += '<div id="modal" class="modal-close">';
         string += '     <div class="modal-box">';
         string += '         <header>';
-        string += '             <button id="modal_close" type="button" aria-label="' + objWfTranslation.translation.close + '" class="bt bt-sm bt-grey bt-transparent">';
+        string += '             <button id="modalClose" type="button" aria-label="' + objWfTranslation.translation.close + '" class="bt bt-sm bt-grey bt-transparent">';
         string += '                 <span class="fa fa-times" aria-hidden="true"></span>';
         string += '             </button>';
         string += '         </header>';
         string += '         <div class="row">';
-        string += '             <div id="modal_content" class="col-es-12"></div>';
+        string += '             <div id="modalContent" class="col-es-12"></div>';
         string += '         </div>';
         string += '         <div class="menu-horizontal">';
         string += '             <ul class="navigation-arrow">';
         string += '                 <li>';
-        string += '                     <button type="button" class="bt bt-bi" data-id="nav-left" aria-label="' + objWfTranslation.translation.previous + '" >';
+        string += '                     <button type="button" class="bt bt-bi" data-id="navLeft" aria-label="' + objWfTranslation.translation.previous + '" >';
         string += '                         <span class="fa fa-angle-left" aria-hidden="true"></span>';
         string += '                     </button>';
         string += '                 </li>';
         string += '                 <li>';
-        string += '                     <button type="button" class="bt bt-bi" data-id="nav-right" aria-label="' + objWfTranslation.translation.next + '" >';
+        string += '                     <button type="button" class="bt bt-bi" data-id="navRight" aria-label="' + objWfTranslation.translation.next + '" >';
         string += '                         <span class="fa fa-angle-right" aria-hidden="true"></span>';
         string += '                     </button>';
         string += '                 </li>';

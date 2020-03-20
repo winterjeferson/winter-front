@@ -34,8 +34,8 @@ class WfTooltip {
     updateVariable(element) {
         /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName(), element); /*endRemoveIf(production)*/
         this.$tooltip = document.querySelector('#tooltip');
-        this.$tooltipBody = document.querySelector('#tooltip_body');
-        this.$tooltipPointer = document.querySelector('#tooltip_pointer');
+        this.$tooltipBody = document.querySelector('#tooltipBody');
+        this.$tooltipPointer = document.querySelector('#tooltipPointer');
         this.$tooltipData = document.querySelectorAll('[data-tooltip="true"]');
 
         this.windowWidth = window.offsetWidth;
@@ -62,8 +62,8 @@ class WfTooltip {
         let string = '';
 
         string += '<div id="tooltip">';
-        string += '    <div id="tooltip_body"></div>';
-        string += '    <div id="tooltip_pointer"></div>';
+        string += '    <div id="tooltipBody"></div>';
+        string += '    <div id="tooltipPointer"></div>';
         string += '</div>';
 
         document.querySelector('body').insertAdjacentHTML('beforeend', string);

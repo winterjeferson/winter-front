@@ -30,7 +30,7 @@ class WfNotification {
         /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName(), [style, message]); /*endRemoveIf(production)*/
         let string = '';
 
-        string += '<li id="notify_' + this.notifyId + '">';
+        string += '<li id="notify' + this.notifyId + '">';
         string += '     <div class="notify-item notify-' + style + '">';
         string += '         <span class="text">';
         string += message;
@@ -83,7 +83,7 @@ class WfNotification {
             place.insertAdjacentHTML('beforeend', string);
         }
 
-        this.remove(document.querySelector('#notify_' + this.notifyId), message.length);
+        this.remove(document.querySelector('#notify' + this.notifyId), message.length);
         this.notifyId++;
     }
 

@@ -1,4 +1,4 @@
-<div id="loading_main" class="bg-grey">
+<div id="loadingMain" class="bg-grey">
     <div class="col-middle">
         <div class="row">
             <div class="col-es-2 col-es-off-5">

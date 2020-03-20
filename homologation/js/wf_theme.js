@@ -121,45 +121,21 @@ var translationPT = {
   "previous": "Anterior"
 };
 
-var WfLayout =
-/*#__PURE__*/
-function () {
-  function WfLayout() {
-    _classCallCheck(this, WfLayout);
-    /*removeIf(production)*/
+var WfLayout = function WfLayout() {
+  _classCallCheck(this, WfLayout);
+  /*removeIf(production)*/
 
 
-    objWfDebug.debugMethod(this, objWfDebug.getMethodName());
-    /*endRemoveIf(production)*/
+  objWfDebug.debugMethod(this, objWfDebug.getMethodName());
+  /*endRemoveIf(production)*/
 
-    this.$body = document.querySelector('body'); // this.$window = document.querySelector('window');
-
-    this.breakPointExtraSmall = 0;
-    this.breakPointSmall = 576;
-    this.breakPointMedium = 768;
-    this.breakPointBig = 992;
-    this.breakPointExtraBig = 1200;
-  }
-
-  _createClass(WfLayout, [{
-    key: "buildSpinner",
-    value: function buildSpinner(style) {
-      /*removeIf(production)*/
-      objWfDebug.debugMethod(this, objWfDebug.getMethodName(), style);
-      /*endRemoveIf(production)*/
-
-      var spinner = '';
-      spinner += '<div class="row text-center">';
-      spinner += '    <div class="col-es-12">';
-      spinner += '        <span class="fa fa-circle-o-notch fa-spin fa-2x color-' + style + '"></span>';
-      spinner += '    </div>';
-      spinner += '</div>';
-      return spinner;
-    }
-  }]);
-
-  return WfLayout;
-}();
+  this.$body = document.querySelector('body');
+  this.breakPointExtraSmall = 0;
+  this.breakPointSmall = 576;
+  this.breakPointMedium = 768;
+  this.breakPointBig = 992;
+  this.breakPointExtraBig = 1200;
+};
 
 var WfLoading =
 /*#__PURE__*/
@@ -172,7 +148,7 @@ function () {
     objWfDebug.debugMethod(this, objWfDebug.getMethodName());
     /*endRemoveIf(production)*/
 
-    this.$loadingMain = document.getElementById('loading_main');
+    this.$loadingMain = document.getElementById('loadingMain');
     this.$body = document.querySelector('body');
   }
 
@@ -243,7 +219,7 @@ function () {
       var length = urlSplit.length;
       var file = urlSplit[length - 1];
       var fileSplit = file.split('.');
-      var target = document.querySelectorAll('#main_menu [data-id="' + fileSplit[0] + '"]');
+      var target = document.querySelectorAll('#mainMenu [data-id="' + fileSplit[0] + '"]');
 
       if (target.length > 0) {
         target[0].classList.add('active');
