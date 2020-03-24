@@ -32,7 +32,7 @@ class WfDebug {
         }
 
         string += '%c';
-        string += 'objWf' + className;
+        string += 'obj' + className;
         string += '.';
         string += '%c';
         string += method;
