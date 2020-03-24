@@ -1,12 +1,29 @@
 "use strict";
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
 
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+function _defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, descriptor.key, descriptor);
+  }
+}
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
+function _createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) _defineProperties(Constructor, staticProps);
+  return Constructor;
+}
 /*removeIf(production)*/
+
+
 var WfDebug =
 /*#__PURE__*/
 function () {
@@ -44,7 +61,7 @@ function () {
       }
 
       string += '%c';
-      string += 'objWf' + className;
+      string += 'obj' + className;
       string += '.';
       string += '%c';
       string += method;
@@ -106,8 +123,9 @@ var translationPT = {
 
 var WfLayout = function WfLayout() {
   _classCallCheck(this, WfLayout);
-
   /*removeIf(production)*/
+
+
   objWfDebug.debugMethod(this, objWfDebug.getMethodName());
   /*endRemoveIf(production)*/
 
@@ -124,8 +142,9 @@ var WfLoading =
 function () {
   function WfLoading() {
     _classCallCheck(this, WfLoading);
-
     /*removeIf(production)*/
+
+
     objWfDebug.debugMethod(this, objWfDebug.getMethodName());
     /*endRemoveIf(production)*/
 
@@ -163,8 +182,9 @@ var WfTheme =
 function () {
   function WfTheme() {
     _classCallCheck(this, WfTheme);
-
     /*removeIf(production)*/
+
+
     objWfDebug.debugMethod(this, 'constructor');
     /*endRemoveIf(production)*/
 
