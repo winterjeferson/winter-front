@@ -1,11 +1,11 @@
 var gulp = require('gulp');
 
-var wf_css = require('./wf_css.js');
-var wf_font = require('./wf_font.js');
-var wf_img = require('./wf_image.js');
-var wf_js = require('./wf_js.js');
-var wf_other = require('./wf_other.js');
-var wf_template = require('./wf_template.js');
+var wf_css = require('./wf-css.js');
+var wf_font = require('./wf-font.js');
+var wf_img = require('./wf-image.js');
+var wf_js = require('./wf-js.js');
+var wf_other = require('./wf-other.js');
+var wf_template = require('./wf-template.js');
 
 
 
