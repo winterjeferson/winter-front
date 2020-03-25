@@ -6656,6 +6656,7 @@ input:-webkit-autofill:active {
 .table {
   width: 100%;
   display: table;
+  table-layout: fixed;
   position: relative; }
   .table tr {
     background-color: #ffffff; }
