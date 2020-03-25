@@ -6508,7 +6508,6 @@ input:-webkit-autofill:active {
 .table {
   width: 100%;
   display: table;
-  table-layout: fixed;
   @extend %extend-border-solid;
   position: relative;
 
