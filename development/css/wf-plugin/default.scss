@@ -103,6 +103,10 @@ strong {
   pointer-events: none;
 }
 
+.truncate {
+  @extend %extend-truncate;
+}
+
 /* ------------------------------------------------------------------ DISPLAY */
 
 .display-none {

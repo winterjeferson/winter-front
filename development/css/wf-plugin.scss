@@ -1751,6 +1751,10 @@ strong {
   pointer-events: none;
 }
 
+.truncate {
+  @extend %extend-truncate;
+}
+
 /* ------------------------------------------------------------------ DISPLAY */
 
 .display-none {
@@ -4089,129 +4093,6 @@ strong {
   clip: auto;
 }
 
-@font-face {
-  font-family: $font-family-regular;
-  src: url("../font/roboto-regular/roboto-regular.woff2") format("woff2"),
-    url("../font/roboto-regular/roboto-regular.eot"), url("../font/roboto-regular/roboto-regular.woff") format("woff"),
-    url("../font/roboto-regular/roboto-regular.ttf") format("truetype"),
-    url("../font/roboto-regular/roboto-regular.svg#roboto-regular") format("svg");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: $font-family-bold;
-  src: url("../font/roboto-bold/roboto-bold.woff2") format("woff2"),
-    url("../font/roboto-bold/roboto-bold.woff") format("woff"), url("../font/roboto-bold/roboto-bold.eot"),
-    url("../font/roboto-bold/roboto-bold.svg#roboto-bold") format("svg"),
-    url("../font/roboto-bold/roboto-bold.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: $font-family-thin;
-  src: url("../font/roboto-thin/roboto-thin.woff2") format("woff2"), url("../font/roboto-thin/roboto-thin.eot"),
-    url("../font/roboto-thin/roboto-thin.woff") format("woff"),
-    url("../font/roboto-thin/roboto-thin.ttf") format("truetype"),
-    url("../font/roboto-thin/roboto-thin.svg#roboto-thin") format("svg");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: $font-family-black;
-  src: url("../font/roboto-black/roboto-black.woff2") format("woff2"),
-    url("../font/roboto-black/roboto-black.woff") format("woff"), url("../font/roboto-black/roboto-black.eot"),
-    url("../font/roboto-black/roboto-black.ttf") format("truetype"),
-    url("../font/roboto-black/roboto-black.svg#roboto-black") format("svg");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: $font-family-awesome;
-  src: url("../font/font-awesome/fontawesome.woff2?v=4.7.0") format("woff2"),
-    url("../font/font-awesome/fontawesome.woff?v=4.7.0") format("woff"),
-    url("../font/font-awesome/fontawesome.eot?v=4.7.0"),
-    url("../font/font-awesome/fontawesome.ttf?v=4.7.0") format("truetype"),
-    url("../font/font-awesome/fontawesome.svg?v=4.7.0#fontawesomeregular") format("svg");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-
-
-html,
-body {
-  font-size: $font-re;
-  font-family: $font-family-regular;
-}
-
-h1 {
-  font-size: 2.5rem;
-}
-h2 {
-  font-size: 2rem;
-}
-h3 {
-  font-size: 1.75rem;
-}
-h4 {
-  font-size: 1.5rem;
-}
-h5 {
-  font-size: 1.25rem;
-}
-h6 {
-  font-size: 1rem;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0.5em auto;
-  font-weight: normal;
-}
-
-p {
-  line-height: 150%;
-  margin-bottom: $re;
-}
-
-strong {
-  font-family: $font-family-bold;
-}
-
-small {
-  font-size: $font-sm;
-}
-
-/* ------------------------------------------------------------------ ALIGN */
-
-.text-left {
-  text-align: left !important;
-}
-
-.text-right {
-  text-align: right !important;
-}
-
-.text-center {
-  text-align: center !important;
-}
-
-.text-justify {
-  text-align: justify !important;
-}
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
@@ -6656,6 +6537,129 @@ input:-webkit-autofill:active {
   }
 }
 
+@font-face {
+  font-family: $font-family-regular;
+  src: url("../font/roboto-regular/roboto-regular.woff2") format("woff2"),
+    url("../font/roboto-regular/roboto-regular.eot"), url("../font/roboto-regular/roboto-regular.woff") format("woff"),
+    url("../font/roboto-regular/roboto-regular.ttf") format("truetype"),
+    url("../font/roboto-regular/roboto-regular.svg#roboto-regular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $font-family-bold;
+  src: url("../font/roboto-bold/roboto-bold.woff2") format("woff2"),
+    url("../font/roboto-bold/roboto-bold.woff") format("woff"), url("../font/roboto-bold/roboto-bold.eot"),
+    url("../font/roboto-bold/roboto-bold.svg#roboto-bold") format("svg"),
+    url("../font/roboto-bold/roboto-bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $font-family-thin;
+  src: url("../font/roboto-thin/roboto-thin.woff2") format("woff2"), url("../font/roboto-thin/roboto-thin.eot"),
+    url("../font/roboto-thin/roboto-thin.woff") format("woff"),
+    url("../font/roboto-thin/roboto-thin.ttf") format("truetype"),
+    url("../font/roboto-thin/roboto-thin.svg#roboto-thin") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $font-family-black;
+  src: url("../font/roboto-black/roboto-black.woff2") format("woff2"),
+    url("../font/roboto-black/roboto-black.woff") format("woff"), url("../font/roboto-black/roboto-black.eot"),
+    url("../font/roboto-black/roboto-black.ttf") format("truetype"),
+    url("../font/roboto-black/roboto-black.svg#roboto-black") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $font-family-awesome;
+  src: url("../font/font-awesome/fontawesome.woff2?v=4.7.0") format("woff2"),
+    url("../font/font-awesome/fontawesome.woff?v=4.7.0") format("woff"),
+    url("../font/font-awesome/fontawesome.eot?v=4.7.0"),
+    url("../font/font-awesome/fontawesome.ttf?v=4.7.0") format("truetype"),
+    url("../font/font-awesome/fontawesome.svg?v=4.7.0#fontawesomeregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+
+html,
+body {
+  font-size: $font-re;
+  font-family: $font-family-regular;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.75rem;
+}
+h4 {
+  font-size: 1.5rem;
+}
+h5 {
+  font-size: 1.25rem;
+}
+h6 {
+  font-size: 1rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0.5em auto;
+  font-weight: normal;
+}
+
+p {
+  line-height: 150%;
+  margin-bottom: $re;
+}
+
+strong {
+  font-family: $font-family-bold;
+}
+
+small {
+  font-size: $font-sm;
+}
+
+/* ------------------------------------------------------------------ ALIGN */
+
+.text-left {
+  text-align: left !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.text-justify {
+  text-align: justify !important;
+}
 #tooltip {
   position: absolute;
   z-index: z-index("tooltip");
