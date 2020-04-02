@@ -950,8 +950,7 @@ table td {
   .card header,
   .card .card-body,
   .card footer {
-    text-align: center;
-    display: block; }
+    text-align: center; }
   .card header {
     border-radius: 4px 4px 0 0;
     font-family: "roboto-bold";
@@ -5778,7 +5777,6 @@ input:-webkit-autofill:active {
     #modal .modal-box header,
     #modal .modal-box footer {
       padding: 10px;
-      display: table;
       width: 100%; }
     #modal .modal-box footer {
       background-color: #f2f2f2; }

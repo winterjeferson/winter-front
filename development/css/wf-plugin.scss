@@ -1514,7 +1514,6 @@ table td {
   footer {
     @extend %extend-border-solid;
     text-align: center;
-    display: block;
   }
 
   header {
@@ -5436,7 +5435,6 @@ input:-webkit-autofill:active {
     header,
     footer {
       padding: $re;
-      display: table;
       width: 100%;
     }
 
