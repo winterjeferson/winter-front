@@ -950,7 +950,8 @@ table td {
   .card header,
   .card .card-body,
   .card footer {
-    text-align: center; }
+    text-align: center;
+    display: block; }
   .card header {
     border-radius: 4px 4px 0 0;
     font-family: "roboto-bold";

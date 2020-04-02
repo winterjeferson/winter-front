@@ -10,6 +10,7 @@
   footer {
     @extend %extend-border-solid;
     text-align: center;
+    display: block;
   }
 
   header {
