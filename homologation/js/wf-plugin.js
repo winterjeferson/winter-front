@@ -126,6 +126,13 @@ function verifyUrlFodler(target) {
   }
 }
 
+function wrapItem(target, cssClass) {
+  var wrapper = document.createElement('div');
+  wrapper.className = cssClass;
+  target.parentNode.insertBefore(wrapper, target);
+  wrapper.appendChild(target);
+}
+
 var WfCarousel =
 /*#__PURE__*/
 function () {
@@ -1560,11 +1567,10 @@ function () {
       objWfDebug.debugMethod(this, objWfDebug.getMethodName());
       /*endRemoveIf(production)*/
 
+      var self = this;
       Array.prototype.forEach.call(this.$table, function (item) {
-        var wrapper = document.createElement('div');
-        wrapper.className = 'table-responsive';
-        item.parentNode.insertBefore(wrapper, item);
-        wrapper.appendChild(item);
+        wrapItem(item, 'table-responsive');
+        wrapItem(item.parentNode.parentNode.querySelector('.table-responsive'), 'table-responsive-wrapper');
       });
     }
   }]);

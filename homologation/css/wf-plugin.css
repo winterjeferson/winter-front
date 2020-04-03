@@ -6569,7 +6569,6 @@ input:-webkit-autofill:active {
 
 .table {
   width: 100%;
-  display: table;
   position: relative; }
   .table tr {
     background-color: #ffffff; }
@@ -6604,9 +6603,13 @@ input:-webkit-autofill:active {
   .table .td-wrapper-auto {
     max-height: initial !important; }
 
-.table-responsive {
-  overflow-x: auto;
-  max-width: 100%; }
+.table-responsive-wrapper {
+  width: 100%;
+  max-width: 100%;
+  display: grid; }
+  .table-responsive-wrapper .table-responsive {
+    overflow-x: auto;
+    max-width: 100%; }
 
 .table-grey {
   border-color: #e7e9ea; }

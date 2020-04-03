@@ -1,6 +1,5 @@
 .table {
   width: 100%;
-  display: table;
   @extend %extend-border-solid;
   position: relative;
 
@@ -62,9 +61,15 @@
   }
 }
 
-.table-responsive {
-  overflow-x: auto;
+.table-responsive-wrapper {
+  width: 100%;
   max-width: 100%;
+  display: grid;
+
+  .table-responsive {
+    overflow-x: auto;
+    max-width: 100%;
+  }
 }
 
 @each $color in $arrColor {

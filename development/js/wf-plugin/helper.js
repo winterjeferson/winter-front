@@ -31,3 +31,11 @@ function verifyUrlFodler(target) {
         return false;
     }
 }
+
+function wrapItem(target, cssClass) {
+    let wrapper = document.createElement('div');
+
+    wrapper.className = cssClass;
+    target.parentNode.insertBefore(wrapper, target);
+    wrapper.appendChild(target);
+}

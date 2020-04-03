@@ -5753,7 +5753,6 @@ input:-webkit-autofill:active {
   box-sizing: border-box;
   flex: 0 0 auto;
   flex-grow: 1;
-  // flex-basis: 0;
   flex-basis: $col-12;
   max-width: $col-12;
   position: relative;
@@ -6387,7 +6386,6 @@ input:-webkit-autofill:active {
 
 .table {
   width: 100%;
-  display: table;
   @extend %extend-border-solid;
   position: relative;
 
@@ -6449,9 +6447,15 @@ input:-webkit-autofill:active {
   }
 }
 
-.table-responsive {
-  overflow-x: auto;
+.table-responsive-wrapper {
+  width: 100%;
   max-width: 100%;
+  display: grid;
+
+  .table-responsive {
+    overflow-x: auto;
+    max-width: 100%;
+  }
 }
 
 @each $color in $arrColor {
