@@ -334,5 +334,9 @@ class WfModal {
         if (typeof objWfMenuTab !== 'undefined') {
             objWfMenuTab.defineActive();
         }
+
+        if (typeof objWfLazyLoad !== 'undefined') {
+            objWfLazyLoad.build();
+        }
     }
 }
