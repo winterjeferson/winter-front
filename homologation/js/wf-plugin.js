@@ -449,6 +449,13 @@ function () {
       var self = this;
       Array.prototype.forEach.call(document.querySelectorAll('input[type="file"]'), function (item) {
         var target = item.parentNode;
+
+        if (item.getAttribute('style')) {
+          if (item.getAttribute('style').indexOf('display:') != -1) {
+            return;
+          }
+        }
+
         item.style.display = 'none';
         target.insertAdjacentHTML('beforeend', self.buildInputFileHtml());
         target.setAttribute('tabIndex', 0);
@@ -461,17 +468,24 @@ function () {
         item.addEventListener('focusout', function () {
           target.querySelector('.input-file').classList.remove('focus');
         });
+        self.buildInputFileAddAction(item);
       });
-      Array.prototype.forEach.call(document.querySelectorAll('.input-file'), function (item) {
-        var $target = item.parentNode;
-        var $targetFileClass = $target.querySelector('.input-file-name');
-        var $targetFile = $target.querySelector('input[type="file"]');
-        item.addEventListener('click', function () {
-          $targetFile.click();
-        });
-        $targetFile.addEventListener('change', function () {
-          $targetFileClass.innerHTML = $targetFile.value;
-        });
+    }
+  }, {
+    key: "buildInputFileAddAction",
+    value: function buildInputFileAddAction(item) {
+      /*removeIf(production)*/
+      objWfDebug.debugMethod(this, objWfDebug.getMethodName());
+      /*endRemoveIf(production)*/
+
+      var $target = item.parentNode;
+      var $targetFileClass = $target.querySelector('.input-file-name');
+      var $targetFile = $target.querySelector('input[type="file"]');
+      $target.addEventListener('click', function () {
+        $targetFile.click();
+      });
+      $targetFile.addEventListener('change', function () {
+        $targetFileClass.innerHTML = $targetFile.value;
       });
     }
   }, {

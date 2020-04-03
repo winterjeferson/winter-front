@@ -44,7 +44,13 @@ class WfForm {
 
         Array.prototype.forEach.call(document.querySelectorAll('input[type="file"]'), function (item) {
             let target = item.parentNode;
-            
+
+            if (item.getAttribute('style')) {
+                if (item.getAttribute('style').indexOf('display:') != -1) {
+                    return;
+                }
+            }
+
             item.style.display = 'none';
             target.insertAdjacentHTML('beforeend', self.buildInputFileHtml());
             target.setAttribute('tabIndex', 0);
@@ -57,21 +63,23 @@ class WfForm {
             item.addEventListener('focusout', function () {
                 target.querySelector('.input-file').classList.remove('focus');
             });
+
+            self.buildInputFileAddAction(item);
+        });
+    }
+
+    buildInputFileAddAction(item) {
+        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        let $target = item.parentNode;
+        let $targetFileClass = $target.querySelector('.input-file-name');
+        let $targetFile = $target.querySelector('input[type="file"]');
+
+        $target.addEventListener('click', function () {
+            $targetFile.click();
         });
 
-        Array.prototype.forEach.call(document.querySelectorAll('.input-file'), function (item) {
-            let $target = item.parentNode;
-            let $targetFileClass = $target.querySelector('.input-file-name');
-            let $targetFile = $target.querySelector('input[type="file"]');
-
-            item.addEventListener('click', function () {
-                $targetFile.click();
-            });
-
-            $targetFile.addEventListener('change', function () {
-                $targetFileClass.innerHTML = $targetFile.value;
-            });
-
+        $targetFile.addEventListener('change', function () {
+            $targetFileClass.innerHTML = $targetFile.value;
         });
     }
 
@@ -99,7 +107,7 @@ class WfForm {
                 return false;
             }
         }
-        
+
         return true;
     }
 }
