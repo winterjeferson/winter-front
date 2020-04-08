@@ -16,15 +16,15 @@ function () {
     _classCallCheck(this, WfDebug);
 
     this.isWfLayout = true;
-    this.isWfManagement = true;
     this.isWfLoading = true;
     this.isWfTheme = true;
     this.isWfCarousel = true;
     this.isWfForm = true;
-    this.isWfGeneric = true;
+    this.isWfLazyLoad = true;
     this.isWfMenuDropDown = true;
     this.isWfMenuTab = true;
     this.isWfMenuToggle = true;
+    this.isWfMask = true;
     this.isWfModal = true;
     this.isWfNotification = true;
     this.isWfProgress = true;
@@ -614,6 +614,112 @@ function () {
   }]);
 
   return WfLazyLoad;
+}();
+
+var WfMask =
+/*#__PURE__*/
+function () {
+  function WfMask() {
+    _classCallCheck(this, WfMask);
+
+    /*removeIf(production)*/
+    objWfDebug.debugMethod(this, objWfDebug.getMethodName());
+    /*endRemoveIf(production)*/
+
+    this.$inputMask = document.querySelectorAll('[data-mask]');
+  }
+
+  _createClass(WfMask, [{
+    key: "build",
+    value: function build() {
+      /*removeIf(production)*/
+      objWfDebug.debugMethod(this, objWfDebug.getMethodName());
+      /*endRemoveIf(production)*/
+
+      if (this.$inputMask.length < 1) {
+        return;
+      }
+
+      this.addListener();
+    }
+  }, {
+    key: "addListener",
+    value: function addListener() {
+      /*removeIf(production)*/
+      objWfDebug.debugMethod(this, objWfDebug.getMethodName());
+      /*endRemoveIf(production)*/
+
+      var self = this;
+      this.$inputMask.forEach(function ($input) {
+        $input.addEventListener('input', function (e) {
+          var inputValue = e.target.value;
+          var inputMask = $input.dataset.mask;
+          var capitalized = inputMask.charAt(0).toUpperCase() + inputMask.slice(1);
+          e.target.value = self['mask' + capitalized](inputValue);
+        });
+      });
+    }
+  }, {
+    key: "maskCep",
+    value: function maskCep(value) {
+      /*removeIf(production)*/
+      objWfDebug.debugMethod(this, objWfDebug.getMethodName());
+      /*endRemoveIf(production)*/
+
+      return value.replace(/\D/g, '').replace(/(\d{5})(\d)/, '$1-$2').replace(/(-\d{3})\d+?$/, '$1');
+    }
+  }, {
+    key: "maskCpf",
+    value: function maskCpf(value) {
+      /*removeIf(production)*/
+      objWfDebug.debugMethod(this, objWfDebug.getMethodName());
+      /*endRemoveIf(production)*/
+
+      return value.replace(/\D/g, '') //only numbers
+      .replace(/(\d{3})(\d)/, '$1.$2') // add dot
+      .replace(/(\d{3})(\d)/, '$1.$2') // add dot
+      .replace(/(\d{3})(\d{1,2})/, '$1-$2') // add hyphen
+      .replace(/(-\d{2})\d+?$/, '$1'); // max length
+    }
+  }, {
+    key: "maskCnpj",
+    value: function maskCnpj(value) {
+      /*removeIf(production)*/
+      objWfDebug.debugMethod(this, objWfDebug.getMethodName());
+      /*endRemoveIf(production)*/
+
+      return value.replace(/\D/g, '').replace(/(\d{2})(\d)/, '$1.$2').replace(/(\d{3})(\d)/, '$1.$2').replace(/(\d{3})(\d)/, '$1/$2').replace(/(\d{4})(\d)/, '$1-$2').replace(/(-\d{2})\d+?$/, '$1');
+    }
+  }, {
+    key: "maskDate",
+    value: function maskDate(value) {
+      /*removeIf(production)*/
+      objWfDebug.debugMethod(this, objWfDebug.getMethodName());
+      /*endRemoveIf(production)*/
+
+      return value.replace(/\D/g, '').replace(/(\d{2})(\d)/, '$1/$2').replace(/(\d{2})(\d)/, '$1/$2').replace(/(\d{4})(\d)/, '$1');
+    }
+  }, {
+    key: "maskPhone",
+    value: function maskPhone(value) {
+      /*removeIf(production)*/
+      objWfDebug.debugMethod(this, objWfDebug.getMethodName());
+      /*endRemoveIf(production)*/
+
+      return value.replace(/\D/g, '').replace(/(\d{2})(\d)/, '($1) $2').replace(/(\d{4})(\d)/, '$1-$2').replace(/(\d{4})-(\d)(\d{4})/, '$1$2-$3').replace(/(-\d{4})\d+?$/, '$1');
+    }
+  }, {
+    key: "maskPis",
+    value: function maskPis(value) {
+      /*removeIf(production)*/
+      objWfDebug.debugMethod(this, objWfDebug.getMethodName());
+      /*endRemoveIf(production)*/
+
+      return value.replace(/\D/g, '').replace(/(\d{3})(\d)/, '$1.$2').replace(/(\d{5})(\d)/, '$1.$2').replace(/(\d{5}\.)(\d{2})(\d)/, '$1$2-$3').replace(/(-\d)\d+?$/, '$1');
+    }
+  }]);
+
+  return WfMask;
 }();
 
 var WfMenuDropDown =

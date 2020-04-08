@@ -2,17 +2,16 @@
 class WfDebug {
     constructor() {
         this.isWfLayout = true;
-        this.isWfManagement = true;
-
         this.isWfLoading = true;
         this.isWfTheme = true;
 
         this.isWfCarousel = true;
         this.isWfForm = true;
-        this.isWfGeneric = true;
+        this.isWfLazyLoad = true;
         this.isWfMenuDropDown = true;
         this.isWfMenuTab = true;
         this.isWfMenuToggle = true;
+        this.isWfMask = true;
         this.isWfModal = true;
         this.isWfNotification = true;
         this.isWfProgress = true;
