@@ -1509,14 +1509,14 @@ table td {
     border-bottom: 0;
   }
 
-  header,
+  > header,
   .card-body,
-  footer {
+  > footer {
     @extend %extend-border-solid;
     text-align: center;
   }
 
-  header {
+  > header {
     border-radius: $border-radius-re $border-radius-re 0 0;
     font-family: $font-family-bold;
     border-bottom: transparent;
@@ -1528,66 +1528,66 @@ table td {
     background-color: $color-white;
   }
 
-  footer {
+  > footer {
     border-radius: 0 0 $border-radius-re $border-radius-re;
     border-top: transparent;
   }
 }
 
 .card-es {
-  header,
+  > header,
   .card-body,
-  footer {
+  > footer {
     padding: $es;
   }
 }
 
 .card-sm {
-  header,
+  > header,
   .card-body,
-  footer {
+  > footer {
     padding: $sm;
   }
 }
 
 .card-re {
-  header,
+  > header,
   .card-body,
-  footer {
+  > footer {
     padding: $re;
   }
 }
 
 .card-bi {
-  header,
+  > header,
   .card-body,
-  footer {
+  > footer {
     padding: $bi;
   }
 }
 
 .card-eb {
-  header,
+  > header,
   .card-body,
-  footer {
+  > footer {
     padding: $eb;
   }
 }
 
 @each $color in $arrColor {
   .card-#{$color} {
-    header {
+    > header {
       color: color-dark(#{$color});
     }
 
-    header,
+    > header,
     .card-body,
-    footer {
+    > footer {
       border-color: color-light(#{$color});
     }
 
-    header,
-    footer {
+    > header,
+    > footer {
       background-color: color-light(#{$color});
     }
   }

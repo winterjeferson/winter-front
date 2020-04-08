@@ -12,9 +12,9 @@
 #modal {
   background-color: rgba(51, 51, 51, 0.9); }
 
-.bt, .card header,
+.bt, .card > header,
 .card .card-body,
-.card footer, .form .input-file,
+.card > footer, .form .input-file,
 .form input:not([type="checkbox"]),
 .form input:not([type="radio"]),
 .form select,
@@ -947,11 +947,11 @@ table td {
   margin: 5px; }
   .card .menu-tab {
     border-bottom: 0; }
-  .card header,
+  .card > header,
   .card .card-body,
-  .card footer {
+  .card > footer {
     text-align: center; }
-  .card header {
+  .card > header {
     border-radius: 4px 4px 0 0;
     font-family: "roboto-bold";
     border-bottom: transparent; }
@@ -959,177 +959,177 @@ table td {
     border-top: 0;
     border-bottom: 0;
     background-color: #ffffff; }
-  .card footer {
+  .card > footer {
     border-radius: 0 0 4px 4px;
     border-top: transparent; }
 
-.card-es header,
+.card-es > header,
 .card-es .card-body,
-.card-es footer {
+.card-es > footer {
   padding: 2.5px; }
 
-.card-sm header,
+.card-sm > header,
 .card-sm .card-body,
-.card-sm footer {
+.card-sm > footer {
   padding: 5px; }
 
-.card-re header,
+.card-re > header,
 .card-re .card-body,
-.card-re footer {
+.card-re > footer {
   padding: 10px; }
 
-.card-bi header,
+.card-bi > header,
 .card-bi .card-body,
-.card-bi footer {
+.card-bi > footer {
   padding: 20px; }
 
-.card-eb header,
+.card-eb > header,
 .card-eb .card-body,
-.card-eb footer {
+.card-eb > footer {
   padding: 40px; }
 
-.card-grey header {
+.card-grey > header {
   color: #7a848c; }
 
-.card-grey header,
+.card-grey > header,
 .card-grey .card-body,
-.card-grey footer {
+.card-grey > footer {
   border-color: #e7e9ea; }
 
-.card-grey header,
-.card-grey footer {
+.card-grey > header,
+.card-grey > footer {
   background-color: #e7e9ea; }
 
-.card-blue header {
+.card-blue > header {
   color: #1d6da4; }
 
-.card-blue header,
+.card-blue > header,
 .card-blue .card-body,
-.card-blue footer {
+.card-blue > footer {
   border-color: #cae4f6; }
 
-.card-blue header,
-.card-blue footer {
+.card-blue > header,
+.card-blue > footer {
   background-color: #cae4f6; }
 
-.card-green header {
+.card-green > header {
   color: #1f8d4e; }
 
-.card-green header,
+.card-green > header,
 .card-green .card-body,
-.card-green footer {
+.card-green > footer {
   border-color: #bbf0d2; }
 
-.card-green header,
-.card-green footer {
+.card-green > header,
+.card-green > footer {
   background-color: #bbf0d2; }
 
-.card-cyan header {
+.card-cyan > header {
   color: #178375; }
 
-.card-cyan header,
+.card-cyan > header,
 .card-cyan .card-body,
-.card-cyan footer {
+.card-cyan > footer {
   border-color: #aaf0e7; }
 
-.card-cyan header,
-.card-cyan footer {
+.card-cyan > header,
+.card-cyan > footer {
   background-color: #aaf0e7; }
 
-.card-orange header {
+.card-orange > header {
   color: #aa5912; }
 
-.card-orange header,
+.card-orange > header,
 .card-orange .card-body,
-.card-orange footer {
+.card-orange > footer {
   border-color: #f8dcc3; }
 
-.card-orange header,
-.card-orange footer {
+.card-orange > header,
+.card-orange > footer {
   background-color: #f8dcc3; }
 
-.card-red header {
+.card-red > header {
   color: #bf2120; }
 
-.card-red header,
+.card-red > header,
 .card-red .card-body,
-.card-red footer {
+.card-red > footer {
   border-color: #fae3e3; }
 
-.card-red header,
-.card-red footer {
+.card-red > header,
+.card-red > footer {
   background-color: #fae3e3; }
 
-.card-yellow header {
+.card-yellow > header {
   color: #a98a0a; }
 
-.card-yellow header,
+.card-yellow > header,
 .card-yellow .card-body,
-.card-yellow footer {
+.card-yellow > footer {
   border-color: #fbeeb7; }
 
-.card-yellow header,
-.card-yellow footer {
+.card-yellow > header,
+.card-yellow > footer {
   background-color: #fbeeb7; }
 
-.card-purple header {
+.card-purple > header {
   color: #703c86; }
 
-.card-purple header,
+.card-purple > header,
 .card-purple .card-body,
-.card-purple footer {
+.card-purple > footer {
   border-color: #e5d4ec; }
 
-.card-purple header,
-.card-purple footer {
+.card-purple > header,
+.card-purple > footer {
   background-color: #e5d4ec; }
 
-.card-brown header {
+.card-brown > header {
   color: #4e2f02; }
 
-.card-brown header,
+.card-brown > header,
 .card-brown .card-body,
-.card-brown footer {
+.card-brown > footer {
   border-color: #fbcc87; }
 
-.card-brown header,
-.card-brown footer {
+.card-brown > header,
+.card-brown > footer {
   background-color: #fbcc87; }
 
-.card-black header {
+.card-black > header {
   color: #0d0d0d; }
 
-.card-black header,
+.card-black > header,
 .card-black .card-body,
-.card-black footer {
+.card-black > footer {
   border-color: #cccccc; }
 
-.card-black header,
-.card-black footer {
+.card-black > header,
+.card-black > footer {
   background-color: #cccccc; }
 
-.card-white header {
+.card-white > header {
   color: #d9d9d9; }
 
-.card-white header,
+.card-white > header,
 .card-white .card-body,
-.card-white footer {
+.card-white > footer {
   border-color: #ffffff; }
 
-.card-white header,
-.card-white footer {
+.card-white > header,
+.card-white > footer {
   background-color: #ffffff; }
 
-.card-pink header {
+.card-pink > header {
   color: #a71182; }
 
-.card-pink header,
+.card-pink > header,
 .card-pink .card-body,
-.card-pink footer {
+.card-pink > footer {
   border-color: #fbd5f2; }
 
-.card-pink header,
-.card-pink footer {
+.card-pink > header,
+.card-pink > footer {
   background-color: #fbd5f2; }
 
 .carousel {
