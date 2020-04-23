@@ -3,7 +3,7 @@ var sass = require('gulp-sass');//npm install gulp-sass --save-dev // https://ww
 var concat = require('gulp-concat');//npm install gulp-concat --save-dev //https://www.npmjs.com/package/gulp-concat/
 var csso = require('gulp-csso');//npm install gulp-csso --save-dev //https://www.npmjs.com/package/gulp-csso/
 
-var configuration = require('./configuration.js');
+var configuration = require('./configuration-wf.js');
 var wf_project = require('./wf-project.js');
 var wf_util = require('./wf-util.js');
 

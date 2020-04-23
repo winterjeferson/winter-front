@@ -4,7 +4,7 @@ var uglify = require("gulp-uglifyes");//npm install gulp-uglifyes --save-dev //h
 var removeCode = require('gulp-remove-code');//npm install gulp-remove-code --save-dev https://www.npmjs.com/package/gulp-remove-code
 var babel = require('gulp-babel'); //npm install --save-dev gulp-babel @babel/core @babel/preset-env //https://www.npmjs.com/package/gulp-babel
 
-var configuration = require('./configuration.js');
+var configuration = require('./configuration-wf.js');
 
 
 

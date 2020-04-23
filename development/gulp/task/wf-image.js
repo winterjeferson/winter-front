@@ -3,7 +3,7 @@ var imagemin = require('gulp-imagemin'); //npm install gulp-imagemin --save-dev 
 var newer = require('gulp-newer'); //npm install gulp-newer --save-dev // https://www.npmjs.com/package/gulp-newer/
 var del = require('del'); //npm install del --save-dev //https://www.npmjs.com/package/del
 
-var configuration = require('./configuration.js');
+var configuration = require('./configuration-wf.js');
 
 
 
