@@ -233,8 +233,9 @@ table td {
     .bt-toggle {
       display: none !important; } }
   .bt-toggle span {
-    font-size: 25px;
-    font-weight: bold; }
+    margin: 10px 0;
+    font-weight: bold;
+    display: block; }
 
 .bt-arrow {
   float: right;
@@ -1387,14 +1388,14 @@ input:-webkit-autofill:active {
       box-shadow: inset 0 0 0 0px #ffffff;
       background-color: #ffffff; }
     .form .checkbox input[type="checkbox"] + .checkbox-label:after {
-      content: "\f00c";
+      content: "\2713";
       position: absolute;
       display: none;
-      font-size: 0.6rem;
+      font-size: 0.8em;
       font-family: "FontAwesome";
       color: #ffffff;
-      left: 13px;
-      top: 16px; }
+      left: 1em;
+      top: 0.9em; }
   .form .checkbox input[type="checkbox"]:checked + .checkbox-label:after {
     display: inline-block; }
   .form .checkbox input[type="checkbox"]:disabled + .checkbox-label {
