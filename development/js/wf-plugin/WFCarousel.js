@@ -2,7 +2,7 @@ class WfCarousel {
     constructor() {
         /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.$carousel = document.querySelectorAll('.carousel');
-        
+
         this.classDisplay = 'display-none';
         this.counterCurrent = 0;
         this.transition = 5;
@@ -54,7 +54,7 @@ class WfCarousel {
             });
         };
     }
-
+    
     buildLayoutController(target, length) {
         /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName(), [target, length]); /*endRemoveIf(production)*/
         let concat = '';
@@ -62,7 +62,7 @@ class WfCarousel {
         for (let i = 0; i < length; i++) {
             concat += '<li>';
             concat += '     <button type="button" class="bt-sm carousel-controller-bt" data-id="' + i + '" aria-hidden="true">';
-            concat += '         <span class="fa fa-circle" aria-hidden="true"></span>';
+            concat += '         <span aria-hidden="true">&bull;</span>';
             concat += '     </button>';
             concat += '</li>';
         }

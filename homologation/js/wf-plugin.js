@@ -217,7 +217,7 @@ function () {
       for (var i = 0; i < length; i++) {
         concat += '<li>';
         concat += '     <button type="button" class="bt-sm carousel-controller-bt" data-id="' + i + '" aria-hidden="true">';
-        concat += '         <span class="fa fa-circle" aria-hidden="true"></span>';
+        concat += '         <span aria-hidden="true">&bull;</span>';
         concat += '     </button>';
         concat += '</li>';
       }
@@ -1072,12 +1072,12 @@ function () {
       string += '             <ul class="navigation-arrow">';
       string += '                 <li>';
       string += '                     <button type="button" class="bt bt-bi" data-id="navLeft" aria-label="' + objWfTranslation.translation.previous + '" >';
-      string += '                         <span class="fa fa-angle-left" aria-hidden="true"></span>';
+      string += '                         <span aria-hidden="true">&lang;</span>';
       string += '                     </button>';
       string += '                 </li>';
       string += '                 <li>';
       string += '                     <button type="button" class="bt bt-bi" data-id="navRight" aria-label="' + objWfTranslation.translation.next + '" >';
-      string += '                         <span class="fa fa-angle-right" aria-hidden="true"></span>';
+      string += '                         <span aria-hidden="true">&rang;</span>';
       string += '                     </button>';
       string += '                 </li>';
       string += '             </ul>';

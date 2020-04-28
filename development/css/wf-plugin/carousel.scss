@@ -34,19 +34,26 @@
   }
 
   .carousel-controller-over {
-    bottom: $bi;
+    bottom: 0;
     position: absolute;
   }
 
   .carousel-controller-bt {
-    .fa {
+    span {
       color: $color-white;
     }
   }
 
   .carousel-controller-black {
-    .fa {
+    span {
       color: $color-black !important;
     }
+  }
+}
+
+.carousel-controller,
+.navigation-arrow {
+  span {
+    font-size: 40px !important;
   }
 }

@@ -1629,20 +1629,27 @@ table td {
   }
 
   .carousel-controller-over {
-    bottom: $bi;
+    bottom: 0;
     position: absolute;
   }
 
   .carousel-controller-bt {
-    .fa {
+    span {
       color: $color-white;
     }
   }
 
   .carousel-controller-black {
-    .fa {
+    span {
       color: $color-black !important;
     }
+  }
+}
+
+.carousel-controller,
+.navigation-arrow {
+  span {
+    font-size: 40px !important;
   }
 }
 
@@ -5290,49 +5297,44 @@ input:-webkit-autofill:active {
 .navigation-arrow {
   position: absolute;
   width: 100%;
+  height: 100%;
   font-size: 0;
-
-  @media only screen and (min-width: $break-point-es) {
-    top: calc(50% - 35px);
-  }
-
-  @media only screen and (min-width: $break-point-bi) {
-    top: calc(50% - 55px);
-  }
-
-  .fa {
-    @media only screen and (min-width: $break-point-es) {
-      font-size: 2em;
-    }
-
-    @media only screen and (min-width: $break-point-bi) {
-      font-size: 4em;
-    }
-  }
+  top: 0;
+  display: flex;
+  align-items: center;
+  pointer-events: none !important;
 
   li {
-    position: relative;
+    position: absolute;
     width: calc(50% - #{$sm});
+    height: auto;
+    display: inline-flex !important;
+    justify-content: center;
 
     &:first-child {
-      text-align: left;
+      left: 0;
+
+      .bt {
+        margin-left: calc(-100% + 80px);
+      }
     }
 
     &:last-child {
-      text-align: right;
+      right: 0;
+
+      .bt {
+        margin-left: calc(100% - 80px);
+      }
     }
+  }
 
-    .bt {
-      color: $color-white;
-      border: 0;
+  .bt {
+    pointer-events: initial !important;
+    color: $color-white;
+    border: 0;
 
-      @media only screen and (min-width: $break-point-es) {
-        margin: $re;
-      }
-
-      @media only screen and (min-width: $break-point-bi) {
-        margin: $bi;
-      }
+    span {
+      font-size: 40px;
     }
   }
 }

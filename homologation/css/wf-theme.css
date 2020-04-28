@@ -33,7 +33,7 @@
     @media (min-width: 992px) {
       #pageHome .slide-content {
         font-size: 72px;
-        padding: 80px; } }
+        padding: 160px; } }
 
 #pagePalette [class*="color-"] {
   position: relative;

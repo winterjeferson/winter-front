@@ -1155,12 +1155,16 @@ table td {
     text-align: center;
     width: 100%; }
   .carousel .carousel-controller-over {
-    bottom: 20px;
+    bottom: 0;
     position: absolute; }
-  .carousel .carousel-controller-bt .fa {
+  .carousel .carousel-controller-bt span {
     color: #ffffff; }
-  .carousel .carousel-controller-black .fa {
+  .carousel .carousel-controller-black span {
     color: #333333 !important; }
+
+.carousel-controller span,
+.navigation-arrow span {
+  font-size: 40px !important; }
 
 html,
 body {
@@ -5441,35 +5445,32 @@ input:-webkit-autofill:active {
 .navigation-arrow {
   position: absolute;
   width: 100%;
-  font-size: 0; }
-  @media only screen and (min-width: 0) {
-    .navigation-arrow {
-      top: calc(50% - 35px); } }
-  @media only screen and (min-width: 992px) {
-    .navigation-arrow {
-      top: calc(50% - 55px); } }
-  @media only screen and (min-width: 0) {
-    .navigation-arrow .fa {
-      font-size: 2em; } }
-  @media only screen and (min-width: 992px) {
-    .navigation-arrow .fa {
-      font-size: 4em; } }
+  height: 100%;
+  font-size: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  pointer-events: none !important; }
   .navigation-arrow li {
-    position: relative;
-    width: calc(50% - 5px); }
+    position: absolute;
+    width: calc(50% - 5px);
+    height: auto;
+    display: inline-flex !important;
+    justify-content: center; }
     .navigation-arrow li:first-child {
-      text-align: left; }
+      left: 0; }
+      .navigation-arrow li:first-child .bt {
+        margin-left: calc(-100% + 80px); }
     .navigation-arrow li:last-child {
-      text-align: right; }
-    .navigation-arrow li .bt {
-      color: #ffffff;
-      border: 0; }
-      @media only screen and (min-width: 0) {
-        .navigation-arrow li .bt {
-          margin: 10px; } }
-      @media only screen and (min-width: 992px) {
-        .navigation-arrow li .bt {
-          margin: 20px; } }
+      right: 0; }
+      .navigation-arrow li:last-child .bt {
+        margin-left: calc(100% - 80px); }
+  .navigation-arrow .bt {
+    pointer-events: initial !important;
+    color: #ffffff;
+    border: 0; }
+    .navigation-arrow .bt span {
+      font-size: 40px; }
 
 /* ---------------------------------------------------------------- MENU TAB */
 .menu-tab-grey {

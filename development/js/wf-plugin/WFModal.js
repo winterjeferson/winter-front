@@ -50,12 +50,12 @@ class WfModal {
         string += '             <ul class="navigation-arrow">';
         string += '                 <li>';
         string += '                     <button type="button" class="bt bt-bi" data-id="navLeft" aria-label="' + objWfTranslation.translation.previous + '" >';
-        string += '                         <span class="fa fa-angle-left" aria-hidden="true"></span>';
+        string += '                         <span aria-hidden="true">&lang;</span>';
         string += '                     </button>';
         string += '                 </li>';
         string += '                 <li>';
         string += '                     <button type="button" class="bt bt-bi" data-id="navRight" aria-label="' + objWfTranslation.translation.next + '" >';
-        string += '                         <span class="fa fa-angle-right" aria-hidden="true"></span>';
+        string += '                         <span aria-hidden="true">&rang;</span>';
         string += '                     </button>';
         string += '                 </li>';
         string += '             </ul>';
