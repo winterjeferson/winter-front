@@ -1302,6 +1302,7 @@ table td {
 
 .bt-toggle {
   margin-bottom: $sm;
+  line-height: 4px;
 
   @media only screen and (min-width: $break-point-es) {
     display: inline-block !important;
@@ -1309,6 +1310,11 @@ table td {
 
   @media only screen and (min-width: $break-point-bi) {
     display: none !important;
+  }
+
+  span {
+    font-size: 25px;
+    font-weight: bold;
   }
 }
 

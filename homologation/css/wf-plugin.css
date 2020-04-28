@@ -224,13 +224,17 @@ table td {
 
 /* ----------------------------------------------------------------------------- BUTTON */
 .bt-toggle {
-  margin-bottom: 5px; }
+  margin-bottom: 5px;
+  line-height: 4px; }
   @media only screen and (min-width: 0) {
     .bt-toggle {
       display: inline-block !important; } }
   @media only screen and (min-width: 992px) {
     .bt-toggle {
       display: none !important; } }
+  .bt-toggle span {
+    font-size: 25px;
+    font-weight: bold; }
 
 /* ----------------------------------------------------------------------------- BUTTON SIZE */
 .bt {
