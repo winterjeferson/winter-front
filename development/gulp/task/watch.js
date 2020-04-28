@@ -20,6 +20,11 @@ gulp.task('default', function () {
                 console.log(evt);
             });
 
+    gulp.watch(wf_css.wf_cssPluginOtherConcat, gulp.series('wf_css_plugin_other'))
+            .on('change', function (evt) {
+                console.log(evt);
+            });
+
 
 
     gulp.watch(wf_js.fileJs_wf_, gulp.series('wf_js_default', 'wf_js_babel'))

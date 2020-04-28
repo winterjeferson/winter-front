@@ -23,10 +23,16 @@ var wf_fileCssPlugin = [
     configuration.development + 'css/wf-plugin/!(reset)*.scss'
 ];
 
+var wf_fileCssPluginOther = [
+    configuration.development + 'css/plugin/*.scss'
+];
+
 var wf_cssDefaultConcat = wf_fileCssSass.concat(wf_fileCssDefault);
 var wf_cssPluginConcat = wf_fileCssSass.concat(wf_fileCssPlugin);
+var wf_cssPluginOtherConcat = wf_fileCssSass.concat(wf_fileCssPluginOther);
 var wf_fileStyle = 'wf-theme';
 var wf_filePlugin = 'wf-plugin';
+var wf_filePluginOther = 'plugin';
 
 
 
@@ -83,6 +89,36 @@ gulp.task('wf_css_plugin', gulp.series(
 ));
 
 
+
+
+
+
+gulp.task('wf_css_plugin_other_concat', function () {
+    return gulp
+        .src(wf_cssPluginOtherConcat)
+        .pipe(concat(wf_filePluginOther + '.scss'))
+        .pipe(gulp.dest(configuration.development + 'css/'));
+});
+
+
+gulp.task('wf_css_plugin_other_sass', function () {
+    return gulp
+        .src(configuration.development + 'css/' + wf_filePluginOther + '.scss')
+        .pipe(sass.sync().on('error', sass.logError))
+        .pipe(gulp.dest(configuration.homologation + 'css/'));
+});
+
+
+gulp.task('wf_css_plugin_other', gulp.series(
+    'wf_css_plugin_other_concat',
+    'wf_css_plugin_other_sass',
+    'wf_beep'
+));
+
+
+
+
+
 gulp.task('wf_css_minify', function () {
     return gulp
         .src(configuration.homologation + 'css/*.*')
@@ -95,5 +131,6 @@ gulp.task('wf_css_minify', function () {
 
 module.exports = {
     wf_cssDefaultConcat: wf_cssDefaultConcat,
-    wf_cssPluginConcat: wf_cssPluginConcat
+    wf_cssPluginConcat: wf_cssPluginConcat,
+    wf_cssPluginOtherConcat: wf_cssPluginOtherConcat,
 };
