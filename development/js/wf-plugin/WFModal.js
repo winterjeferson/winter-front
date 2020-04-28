@@ -40,7 +40,7 @@ class WfModal {
         string += '     <div class="modal-box">';
         string += '         <header>';
         string += '             <button id="modalClose" type="button" aria-label="' + objWfTranslation.translation.close + '" class="bt bt-sm bt-grey bt-transparent">';
-        string += '                 <span class="fa fa-times" aria-hidden="true"></span>';
+        string += '                 <span aria-hidden="true">&#10060;</span>';
         string += '             </button>';
         string += '         </header>';
         string += '         <div class="row">';
@@ -50,12 +50,12 @@ class WfModal {
         string += '             <ul class="navigation-arrow">';
         string += '                 <li>';
         string += '                     <button type="button" class="bt bt-bi" data-id="navLeft" aria-label="' + objWfTranslation.translation.previous + '" >';
-        string += '                         <span aria-hidden="true">&lang;</span>';
+        string += '                         <span aria-hidden="true">&#10094;</span>';
         string += '                     </button>';
         string += '                 </li>';
         string += '                 <li>';
         string += '                     <button type="button" class="bt bt-bi" data-id="navRight" aria-label="' + objWfTranslation.translation.next + '" >';
-        string += '                         <span aria-hidden="true">&rang;</span>';
+        string += '                         <span aria-hidden="true">&#10095;</span>';
         string += '                     </button>';
         string += '                 </li>';
         string += '             </ul>';

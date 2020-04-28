@@ -26,6 +26,13 @@
   }
 }
 
+.tag-bt{
+  span {
+    font-size: 0.8em;
+    font-weight: bold;
+  }
+}
+
 @each $color in $arrColor {
   .tag-#{$color} {
     @extend %extend-border-solid;
@@ -45,7 +52,7 @@
     }
 
     .tag-bt {
-      .fa {
+      span {
         color: color-regular(#{$color});
       }
     }

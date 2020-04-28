@@ -24,6 +24,13 @@
     box-shadow: none;
     padding: $sm;
     border: 0;
+
+    span {
+      position: relative;
+      font-size: 0.6em;
+      top: -0.2em;
+      font-weight: bold;
+    }
   }
 }
 
@@ -39,7 +46,7 @@
     border-color: color-extra-light-border(#{$color});
     color: color-dark(#{$color});
 
-    .fa {
+    span {
       color: color-regular(#{$color});
     }
   }

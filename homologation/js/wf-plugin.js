@@ -740,7 +740,7 @@ function () {
     this.$menu = document.querySelectorAll('.' + this.classMenu + ' , ' + '.' + this.classMenuText);
     this.$menuDropDownUl = document.querySelectorAll('.' + this.classMenu + ' ul' + ' , ' + '.' + this.classMenuText + ' ul');
     this.$menuDropDownLi = document.querySelectorAll('.' + this.classMenu + ' ul li' + ' , ' + '.' + this.classMenuText + ' ul li');
-    this.$icon = '<span class="' + this.classArrow + '">&nbsp;&nbsp;<span class="fa fa-caret-down" aria-hidden="true"></span></span>';
+    this.$icon = '<span class="' + this.classArrow + '" aria-hidden="true">&#9662;</span>';
   }
 
   _createClass(WfMenuDropDown, [{
@@ -1062,7 +1062,7 @@ function () {
       string += '     <div class="modal-box">';
       string += '         <header>';
       string += '             <button id="modalClose" type="button" aria-label="' + objWfTranslation.translation.close + '" class="bt bt-sm bt-grey bt-transparent">';
-      string += '                 <span class="fa fa-times" aria-hidden="true"></span>';
+      string += '                 <span aria-hidden="true">&#10060;</span>';
       string += '             </button>';
       string += '         </header>';
       string += '         <div class="row">';
@@ -1072,12 +1072,12 @@ function () {
       string += '             <ul class="navigation-arrow">';
       string += '                 <li>';
       string += '                     <button type="button" class="bt bt-bi" data-id="navLeft" aria-label="' + objWfTranslation.translation.previous + '" >';
-      string += '                         <span aria-hidden="true">&lang;</span>';
+      string += '                         <span aria-hidden="true">&#10094;</span>';
       string += '                     </button>';
       string += '                 </li>';
       string += '                 <li>';
       string += '                     <button type="button" class="bt bt-bi" data-id="navRight" aria-label="' + objWfTranslation.translation.next + '" >';
-      string += '                         <span aria-hidden="true">&rang;</span>';
+      string += '                         <span aria-hidden="true">&#10095;</span>';
       string += '                     </button>';
       string += '                 </li>';
       string += '             </ul>';
@@ -1477,7 +1477,7 @@ function () {
       string += message;
       string += '         </span>';
       string += '         <button type="button" class="bt" onclick="$(this).parent().parent().remove();" aria-label="' + objWfTranslation.translation.close + '">';
-      string += '            <span class="fa fa-times" aria-hidden="true"></span>';
+      string += '            <span aria-hidden="true">&#10060;</span>';
       string += '         </button>';
       string += '     </div>';
       string += '</li>';
