@@ -21,7 +21,6 @@ const objWfLoading = new WfLoading();
 const objWfTheme = new WfTheme();
 
 
-
 objWfTranslation.build();
 objWfProgress.build();
 objWfForm.build();

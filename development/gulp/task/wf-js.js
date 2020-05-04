@@ -19,12 +19,11 @@ var fileJs_wf_ = [
 ];
 
 var fileJs_wf_Final = [
-    configuration.homologation + 'js/' + fileJs_wf_DefaultFinal,
-    configuration.homologation + 'js/' + fileJs_wf_PluginFinal
+    configuration.homologation + configuration.folderAssets + 'js/' + fileJs_wf_DefaultFinal,
+    configuration.homologation + configuration.folderAssets + 'js/' + fileJs_wf_PluginFinal
 ];
 
 var fileJs_wf_Plugin = [
-    configuration.development + 'js/shared/**/*.*',
     configuration.development + 'js/wf-plugin/**/*.*'
 ];
 
