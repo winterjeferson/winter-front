@@ -30,27 +30,4 @@ class WfTheme {
             target[0].classList.add('active');
         }
     }
-
-    // buildGoogleMaps() {
-    //     /*removeIf(production)*/ objWfDebug.debugMethod(this, 'buildGoogleMaps'); /*endRemoveIf(production)*/
-    //     let $maps1 = $('#google_maps_map');
-    //     let $maps1Box = $('#google_maps_box');
-
-    //     $maps1.addClass('scroll-off');
-
-    //     $maps1Box.on('click', function () {
-    //         $maps1.removeClass('scroll-off');
-    //     });
-
-    //     $maps1Box.mouseleave(function () {
-    //         $maps1.addClass('scroll-off');
-    //     });
-    // }
-
-    // doSlide(target) {
-    //     /*removeIf(production)*/ objWfDebug.debugMethod(this, 'doSlide', target); /*endRemoveIf(production)*/
-    //     $('html, body').animate({
-    //         scrollTop: ($(target).offset().top) + 'px'
-    //     }, 500);
-    // }
 }

@@ -22,26 +22,26 @@ var fileFontPublic = [
 ];
 
 function clean(path) {
-    return del(path, {force: true}); // returns a promise
+    return del(path, { force: true }); // returns a promise
 }
 
 gulp.task('wf_font_clean', function () {
-    var files = [configuration.homologation + 'font/**'];
+    var files = [configuration.homologation + configuration.folderAssets + 'font/**'];
     return clean(files);
 });
 
 gulp.task('wf_font_move', function (done) {
     return gulp
-            .src(configuration.development + 'font/**/*.*')
-            .pipe(gulp.dest(configuration.homologation + "font/"));
+        .src(configuration.development + 'font/**/*.*')
+        .pipe(gulp.dest(configuration.homologation + configuration.folderAssets + "font/"));
     done();
 });
 
 gulp.task('wf_font', gulp.series(
-        'wf_font_clean',
-        'wf_font_move',
-        'wf_beep'
-        ));
+    'wf_font_clean',
+    'wf_font_move',
+    'wf_beep'
+));
 
 
 

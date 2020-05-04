@@ -38,20 +38,20 @@ gulp.task('wf_js_babel', function () {
         .pipe(babel({
             presets: ['@babel/env']
         }))
-        .pipe(gulp.dest(configuration.homologation + 'js/'));
+        .pipe(gulp.dest(configuration.homologation + configuration.folderAssets + 'js/'));
 });
 
 gulp.task('wf_js_default_concat', function () {
     return gulp.src(fileJs_wf_)
         .pipe(concat(fileJs_wf_DefaultFinal))
-        .pipe(gulp.dest(configuration.homologation + 'js/'));
+        .pipe(gulp.dest(configuration.homologation + configuration.folderAssets + 'js/'));
 });
 
 gulp.task('wf_js_remove_code', function () {
-    return gulp.src(configuration.homologation + 'js/*.js')
+    return gulp.src(configuration.homologation + configuration.folderAssets + 'js/*.js')
         .pipe(removeCode({ production: true }))
         .pipe(removeCode({ noDevFeatures: false, commentStart: '/*', commentEnd: '*/' }))
-        .pipe(gulp.dest(configuration.production + 'js/'));
+        .pipe(gulp.dest(configuration.production + configuration.folderAssets + 'js/'));
 });
 
 gulp.task('wf_js_default', gulp.series(
@@ -64,7 +64,7 @@ gulp.task('wf_js_default', gulp.series(
 gulp.task('wf_js_plugin_concat', function () {
     return gulp.src(fileJs_wf_Plugin)
         .pipe(concat(fileJs_wf_PluginFinal))
-        .pipe(gulp.dest(configuration.homologation + 'js/'));
+        .pipe(gulp.dest(configuration.homologation + configuration.folderAssets + 'js/'));
 });
 
 gulp.task('wf_js_plugin', gulp.series(
@@ -75,9 +75,9 @@ gulp.task('wf_js_plugin', gulp.series(
 
 
 gulp.task('wf_js_minify', function () {
-    return gulp.src(configuration.homologation + 'js/*.*')
+    return gulp.src(configuration.homologation + configuration.folderAssets + 'js/*.*')
         .pipe(uglify())
-        .pipe(gulp.dest(configuration.production + 'js/'));
+        .pipe(gulp.dest(configuration.production + configuration.folderAssets + 'js/'));
 });
 
 
