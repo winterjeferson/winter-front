@@ -1409,6 +1409,7 @@ table td {
 .bt-square-fu {
   padding: $bi $bi;
 }
+
 /* ----------------------------------------------------------------------------- OUTLINE */
 
 .bt-outline {
@@ -1442,13 +1443,21 @@ table td {
       background-color: color-dark(#{$color});
       border-color: color-dark-border(#{$color});
 
-      .fa {
+      .bt-arrow {
         color: color-regular-contrast(#{$color});
       }
     }
 
+    .bt-arrow {
+      color: color-regular(#{$color});
+    }
+
     &.active {
       background-color: color-dark(#{$color});
+
+      .bt-arrow {
+        color: color-dark(#{$color});
+      }
     }
 
     &:disabled {
@@ -1475,8 +1484,10 @@ table td {
 
   .bt-#{$color},
   .bt-outline-#{$color} {
+
     &.bt-es,
     &.bt-sm {
+
       &:focus,
       &.active {
         box-shadow: 0 0 0 3px rgba(color-regular(#{$color}), $component-opacity);
@@ -1486,6 +1497,7 @@ table td {
     &.bt-re,
     &.bt-bi,
     &.bt-fu {
+
       &:focus,
       &.active {
         box-shadow: 0 0 0 4px rgba(color-regular(#{$color}), $component-opacity);
@@ -1493,6 +1505,7 @@ table td {
     }
 
     &.bt-eb {
+
       &:focus,
       &.active {
         box-shadow: 0 0 0 6px rgba(color-regular(#{$color}), $component-opacity);
@@ -1513,7 +1526,6 @@ table td {
     }
   }
 }
-
 .card {
   margin: $sm;
 
@@ -2671,6 +2683,7 @@ input:-webkit-autofill:active {
 
     > li {
       padding: $sm;
+      width: auto !important;
 
       li {
         padding: $sm;
@@ -2797,8 +2810,8 @@ input:-webkit-autofill:active {
 }
 
 .menu-vertical {
-  > ul {
-    > li {
+  >ul {
+    >li {
       width: 100%;
       display: table;
       margin-bottom: $re;
@@ -2809,8 +2822,8 @@ input:-webkit-autofill:active {
 }
 
 .menu-horizontal {
-  > ul {
-    > li {
+  >ul {
+    >li {
       display: inline-block;
       margin: $es;
     }
@@ -2819,6 +2832,7 @@ input:-webkit-autofill:active {
 
 .menu-mobile {
   @media only screen and (min-width: $break-point-es) {
+
     li,
     .bt {
       width: 100%;
@@ -2826,6 +2840,7 @@ input:-webkit-autofill:active {
   }
 
   @media only screen and (min-width: $break-point-re) {
+
     li,
     .bt {
       width: auto;
@@ -2862,6 +2877,7 @@ input:-webkit-autofill:active {
     }
 
     &:first-child {
+
       .bt-es,
       .bt-sm {
         border-radius: $border-radius-sm 0 0 $border-radius-sm;
@@ -2878,6 +2894,7 @@ input:-webkit-autofill:active {
     }
 
     &:last-child {
+
       .bt-es,
       .bt-sm {
         border-radius: 0 $border-radius-sm $border-radius-sm 0;
@@ -2908,25 +2925,25 @@ input:-webkit-autofill:active {
   }
 
   &.text-left {
-    > ul {
-      > li {
+    >ul {
+      >li {
         left: -3px;
       }
     }
   }
 
   &.text-right {
-    > ul {
-      > li {
+    >ul {
+      >li {
         right: -3px;
       }
     }
   }
 
-  > ul {
+  >ul {
     display: table !important;
 
-    > li {
+    >li {
       position: relative;
       top: 3px;
       @extend %extend-border-solid;
@@ -2934,12 +2951,12 @@ input:-webkit-autofill:active {
       border-radius: $border-radius-re $border-radius-re 0 0;
       transition: $transition;
 
-      > ul {
+      >ul {
         border-color: $color-grey;
         margin-top: 3px;
         margin-left: -1px;
 
-        > li {
+        >li {
           margin-top: 0;
 
           .bt {
@@ -3032,11 +3049,11 @@ input:-webkit-autofill:active {
     border-color: color-regular(#{$color});
 
     ul {
-      > li {
-        > ul {
+      >li {
+        >ul {
           border-color: color-regular(#{$color});
 
-          > li {
+          >li {
             &:hover {
               background-color: color-extra-light(#{$color});
             }
@@ -3051,9 +3068,14 @@ input:-webkit-autofill:active {
       &:focus {
         box-shadow: 0 0 0 4px rgba(color-regular(#{$color}), $component-opacity);
       }
+
+      .bt-arrow {
+        color: color-regular(#{$color});
+      }
     }
 
     li {
+
       &:hover,
       &:focus,
       &.active {
@@ -3062,6 +3084,10 @@ input:-webkit-autofill:active {
         .bt {
           border-color: color-regular(#{$color});
           color: color-regular-contrast(#{$color});
+
+          .bt-arrow {
+            color: color-regular-contrast(#{$color});
+          }
         }
       }
 
@@ -3071,12 +3097,15 @@ input:-webkit-autofill:active {
 
         .bt {
           color: color-regular-contrast(#{$color});
+
+          .bt-arrow {
+            color: color-regular-contrast(#{$color});
+          }
         }
       }
     }
   }
 }
-
 #modal {
   will-change: auto;
   position: fixed;

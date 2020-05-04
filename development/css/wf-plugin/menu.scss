@@ -12,8 +12,8 @@
 }
 
 .menu-vertical {
-  > ul {
-    > li {
+  >ul {
+    >li {
       width: 100%;
       display: table;
       margin-bottom: $re;
@@ -24,8 +24,8 @@
 }
 
 .menu-horizontal {
-  > ul {
-    > li {
+  >ul {
+    >li {
       display: inline-block;
       margin: $es;
     }
@@ -34,6 +34,7 @@
 
 .menu-mobile {
   @media only screen and (min-width: $break-point-es) {
+
     li,
     .bt {
       width: 100%;
@@ -41,6 +42,7 @@
   }
 
   @media only screen and (min-width: $break-point-re) {
+
     li,
     .bt {
       width: auto;
@@ -77,6 +79,7 @@
     }
 
     &:first-child {
+
       .bt-es,
       .bt-sm {
         border-radius: $border-radius-sm 0 0 $border-radius-sm;
@@ -93,6 +96,7 @@
     }
 
     &:last-child {
+
       .bt-es,
       .bt-sm {
         border-radius: 0 $border-radius-sm $border-radius-sm 0;
@@ -123,25 +127,25 @@
   }
 
   &.text-left {
-    > ul {
-      > li {
+    >ul {
+      >li {
         left: -3px;
       }
     }
   }
 
   &.text-right {
-    > ul {
-      > li {
+    >ul {
+      >li {
         right: -3px;
       }
     }
   }
 
-  > ul {
+  >ul {
     display: table !important;
 
-    > li {
+    >li {
       position: relative;
       top: 3px;
       @extend %extend-border-solid;
@@ -149,12 +153,12 @@
       border-radius: $border-radius-re $border-radius-re 0 0;
       transition: $transition;
 
-      > ul {
+      >ul {
         border-color: $color-grey;
         margin-top: 3px;
         margin-left: -1px;
 
-        > li {
+        >li {
           margin-top: 0;
 
           .bt {
@@ -247,11 +251,11 @@
     border-color: color-regular(#{$color});
 
     ul {
-      > li {
-        > ul {
+      >li {
+        >ul {
           border-color: color-regular(#{$color});
 
-          > li {
+          >li {
             &:hover {
               background-color: color-extra-light(#{$color});
             }
@@ -266,9 +270,14 @@
       &:focus {
         box-shadow: 0 0 0 4px rgba(color-regular(#{$color}), $component-opacity);
       }
+
+      .bt-arrow {
+        color: color-regular(#{$color});
+      }
     }
 
     li {
+
       &:hover,
       &:focus,
       &.active {
@@ -277,6 +286,10 @@
         .bt {
           border-color: color-regular(#{$color});
           color: color-regular-contrast(#{$color});
+
+          .bt-arrow {
+            color: color-regular-contrast(#{$color});
+          }
         }
       }
 
@@ -286,6 +299,10 @@
 
         .bt {
           color: color-regular-contrast(#{$color});
+
+          .bt-arrow {
+            color: color-regular-contrast(#{$color});
+          }
         }
       }
     }

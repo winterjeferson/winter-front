@@ -114,6 +114,7 @@
 .bt-square-fu {
   padding: $bi $bi;
 }
+
 /* ----------------------------------------------------------------------------- OUTLINE */
 
 .bt-outline {
@@ -147,13 +148,21 @@
       background-color: color-dark(#{$color});
       border-color: color-dark-border(#{$color});
 
-      .fa {
+      .bt-arrow {
         color: color-regular-contrast(#{$color});
       }
     }
 
+    .bt-arrow {
+      color: color-regular(#{$color});
+    }
+
     &.active {
       background-color: color-dark(#{$color});
+
+      .bt-arrow {
+        color: color-dark(#{$color});
+      }
     }
 
     &:disabled {
@@ -180,8 +189,10 @@
 
   .bt-#{$color},
   .bt-outline-#{$color} {
+
     &.bt-es,
     &.bt-sm {
+
       &:focus,
       &.active {
         box-shadow: 0 0 0 3px rgba(color-regular(#{$color}), $component-opacity);
@@ -191,6 +202,7 @@
     &.bt-re,
     &.bt-bi,
     &.bt-fu {
+
       &:focus,
       &.active {
         box-shadow: 0 0 0 4px rgba(color-regular(#{$color}), $component-opacity);
@@ -198,6 +210,7 @@
     }
 
     &.bt-eb {
+
       &:focus,
       &.active {
         box-shadow: 0 0 0 6px rgba(color-regular(#{$color}), $component-opacity);
