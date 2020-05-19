@@ -77,7 +77,7 @@ gulp.task('wf_js_plugin', gulp.series(
 
 
 gulp.task('wf_js_minify', function () {
-    return gulp.src(configuration.homologation + configuration.folderAssets + 'js/*.*')
+    return gulp.src(configuration.production + configuration.folderAssets + 'js/*.*')
         .pipe(uglify())
         .pipe(gulp.dest(configuration.production + configuration.folderAssets + 'js/'));
 });

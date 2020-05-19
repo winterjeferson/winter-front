@@ -312,8 +312,8 @@ class WfModal {
         /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName(), [description]); /*endRemoveIf(production)*/
         let string = '';
 
-        if (description === '') {
-            return false;
+        if (description === '' || description === null) {
+            return;
         }
 
         string += '<p class="modal-description">';

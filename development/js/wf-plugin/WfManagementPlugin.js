@@ -6,7 +6,6 @@ class WfManagementPlugin {
 
     applyClass() {
         /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
-        // objWfLoading.build();
         objWfTranslation.build();
         objWfProgress.build();
         objWfForm.build();
