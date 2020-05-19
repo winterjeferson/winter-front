@@ -27,12 +27,12 @@ gulp.task('default', function () {
 
 
 
-    gulp.watch(wf_js.fileJs_wf_, gulp.series('wf_js_default', 'wf_js_babel'))
+    gulp.watch(wf_js.fileJs_wf_, gulp.series('wf_js_default'))
             .on('change', function (evt) {
                 console.log(evt);
             });
 
-    gulp.watch(wf_js.fileJs_wf_Plugin, gulp.series('wf_js_plugin', 'wf_js_babel'))
+    gulp.watch(wf_js.fileJs_wf_Plugin, gulp.series('wf_js_plugin'))
             .on('change', function (evt) {
                 console.log(evt);
             });

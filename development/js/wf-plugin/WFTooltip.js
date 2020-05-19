@@ -250,7 +250,6 @@ class WfTooltip {
         let element = document.getElementById('tooltip');
 
         element.parentNode.removeChild(element);
-        objWfTooltip = new WfTooltip();
         objWfTooltip.build();
     }
 }

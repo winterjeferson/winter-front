@@ -1,5 +1,5 @@
-{% from 'include/template-nunjucks.html' import arrSize, arrColor %}
-{% include "include/head.html" %}
+{% from 'shared/template-nunjucks.html' import arrSize, arrColor %}
+{% include "shared/head.html" %}
 
 <h1 class="page-title">
     Card
@@ -18,7 +18,7 @@
             </header>
             <div class="row card-body">
                 <div class="col-es-12">
-                    <img src="img/banner/1.png" class="img-responsive" alt="image">
+                    <img src="assets/img/banner/1.png" class="img-responsive" alt="image">
                     <p class="margin-sm text-left">
                         Lorem ipsum dolor sit amet, consecttur adipscing elit.
                         Proin ut ni diam. Nam ini pretium ligulas.
@@ -54,4 +54,4 @@
     {% endfor %}
 </div>
 
-{% include "include/footer.html" %}
+{% include "shared/footer.html" %}

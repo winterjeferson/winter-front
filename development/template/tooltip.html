@@ -1,6 +1,6 @@
-{% from 'include/template-nunjucks.html' import arrSize, arrColor %}
+{% from 'shared/template-nunjucks.html' import arrSize, arrColor %}
 {% set arrPosition = ['top', 'right', 'bottom', 'left'] %}
-{% include "include/head.html" %}
+{% include "shared/head.html" %}
 
 <h1 class="page-title">
     Tooltip
@@ -13,7 +13,7 @@
                 {% for position in arrPosition %}
                 <li>
                     <a href="javascript:;" class="link link-{{color}}"
-                        title="Lorem <strong class='color-red'>ipsum</strong> dolor sit amet, consecttur adipscing elit. <img src='img/banner/1.png' style='width: 100px; height: auto; padding: 10px;'>"
+                        title="Lorem <strong class='color-red'>ipsum</strong> dolor sit amet, consecttur adipscing elit. <img src='assets/img/banner/1.png' style='width: 100px; height: auto; padding: 10px;'>"
                         alt="" data-tooltip="true" data-tooltip-placement="{{position}}" data-tooltip-color="{{color}}">
                         {{color}} - ({{position}})
                     </a>
@@ -25,4 +25,4 @@
     {% endfor %}
 </div>
 
-{% include "include/footer.html" %}
+{% include "shared/footer.html" %}

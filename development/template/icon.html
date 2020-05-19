@@ -1,4 +1,4 @@
-{% from 'include/template-nunjucks.html' import arrSize, arrColor %}
+{% from 'shared/template-nunjucks.html' import arrSize, arrColor %}
 {% set arrIcon = [
 'fa-glass',
 'fa-music',
@@ -681,7 +681,7 @@
 'fa-meetup'
 ] %}
 
-{% include "include/head.html" %}
+{% include "shared/head.html" %}
 <link href="./css/plugin.css" rel="stylesheet">
 <h1 class="page-title">
     Icon
@@ -702,4 +702,5 @@
     </div>
     {% endfor %}
 </div>
-{% include "include/footer.html" %}
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+{% include "shared/footer.html" %}

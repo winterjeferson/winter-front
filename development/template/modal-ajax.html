@@ -1,4 +1,4 @@
-{% from 'include/template-nunjucks.html' import arrSize %}
+{% from 'shared/template-nunjucks.html' import arrSize %}
 <div class="row">
     <div class="col-es-12 padding-bi text-left">
         <h1 class="page-title">
@@ -40,7 +40,7 @@
             luctusa auctorf sit amet nec mauris. Nam tincidunt sodes risus, et aliquet ne que fermentum at?
             <a href="javascript:;" class="link link-blue" alt="" data-tooltip="true" data-tooltip-placement="top"
                 data-tooltip-color="blue"
-                title="Lorem <strong class='color-red'>ipsum</strong> dolor sit amet, consecttur adipscing elit. <img src='img/banner/1.png' style='width: 100px; height: auto; padding: 10px;'>">
+                title="Lorem <strong class='color-red'>ipsum</strong> dolor sit amet, consecttur adipscing elit. <img src='assets/img/banner/1.png' style='width: 100px; height: auto; padding: 10px;'>">
                 Tooltip
             </a>
         </p>
@@ -53,7 +53,7 @@
     {% for i in arrSize %}
     <div class="col-es-12">
         <div class="padding-re">
-            <img src="" data-src="img/banner/1.png" alt="banner" class="img-responsive" data-lazy-load="true">
+            <img src="" data-src="assets/img/banner/1.png" alt="banner" class="img-responsive" data-lazy-load="true">
         </div>
     </div>
     {% endfor %}

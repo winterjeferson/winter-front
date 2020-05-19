@@ -13,9 +13,9 @@ var fileJs_wf_DefaultFinal = 'wf-theme.js';
 var fileJs_wf_PluginFinal = 'wf-plugin.js';
 
 var fileJs_wf_ = [
-    configuration.development + 'js/shared/**/*.*',
+    // configuration.development + 'js/shared/**/*.*',
     configuration.development + 'js/wf-theme/**/*.*',
-    configuration.development + 'js/wf-main.js'
+    configuration.development + 'js/wf-main-theme.js'
 ];
 
 var fileJs_wf_Final = [
@@ -24,7 +24,10 @@ var fileJs_wf_Final = [
 ];
 
 var fileJs_wf_Plugin = [
-    configuration.development + 'js/wf-plugin/**/*.*'
+    configuration.development + 'js/shared/**/*.*',
+    configuration.development + 'js/translation/**/*.*',
+    configuration.development + 'js/wf-plugin/**/*.*',
+    configuration.development + 'js/wf-main-plugin.js'
 ];
 
 
@@ -32,13 +35,13 @@ var fileJs_wf_Plugin = [
 
 
 
-gulp.task('wf_js_babel', function () {
-    return gulp.src(fileJs_wf_Final)
-        .pipe(babel({
-            presets: ['@babel/env']
-        }))
-        .pipe(gulp.dest(configuration.homologation + configuration.folderAssets + 'js/'));
-});
+// gulp.task('wf_js_babel', function () {
+//     return gulp.src(fileJs_wf_Final)
+//         .pipe(babel({
+//             presets: ['@babel/env']
+//         }))
+//         .pipe(gulp.dest(configuration.homologation + configuration.folderAssets + 'js/'));
+// });
 
 gulp.task('wf_js_default_concat', function () {
     return gulp.src(fileJs_wf_)

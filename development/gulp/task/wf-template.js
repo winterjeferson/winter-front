@@ -13,7 +13,7 @@ var wf_folderTemplate = configuration.development + 'template/';
 var wf_fileTemplate = wf_folderTemplate + '*.html';
 var wf_fileTemplateWatch = [
     wf_folderTemplate + '*.html',
-    wf_folderTemplate + 'include/*.html',
+    wf_folderTemplate + 'shared/*.html',
     wf_folderTemplate + 'content/*.html'
 ];
 

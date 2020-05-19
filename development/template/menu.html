@@ -1,6 +1,6 @@
-{% from 'include/template-nunjucks.html' import arrSize, arrColor %}
+{% from 'shared/template-nunjucks.html' import arrSize, arrColor %}
 {% set arrStatus = ['', 'active', 'disabled'] %}
-{% include "include/head.html" %}
+{% include "shared/head.html" %}
 <h1 class="page-title">
     Menu drop down
 </h1>
@@ -201,4 +201,4 @@
 </div>
 {% endif %}
 {% endfor %}
-{% include "include/footer.html" %}
+{% include "shared/footer.html" %}

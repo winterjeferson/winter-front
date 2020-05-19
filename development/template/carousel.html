@@ -1,5 +1,5 @@
-{% from 'include/template-nunjucks.html' import arrSize, arrColor %}
-{% include "include/head.html" %}
+{% from 'shared/template-nunjucks.html' import arrSize, arrColor %}
+{% include "shared/head.html" %}
 {% set arrStyle = ['slide', 'fade'] %}
 
 <h1 class="page-title">
@@ -19,7 +19,7 @@
                         {% for image in arrImage %}
                         <li>
                             <a href="javascript:;">
-                                <img src="img/banner/{{image}}.png" alt="banner" class="img-responsive">
+                                <img src="assets/img/banner/{{image}}.png" alt="banner" class="img-responsive">
                             </a>
                         </li>
                         {% endfor %}
@@ -86,4 +86,4 @@
     </div>
     {% endfor %}
 </div>
-{% include "include/footer.html" %}
+{% include "shared/footer.html" %}

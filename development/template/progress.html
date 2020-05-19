@@ -1,5 +1,5 @@
-{% from 'include/template-nunjucks.html' import arrSize, arrColor %}
-{% include "include/head.html" %}
+{% from 'shared/template-nunjucks.html' import arrSize, arrColor %}
+{% include "shared/head.html" %}
 {% for size in arrSize %}
 <h1 class="page-title">
     {% if size !== 'fu' %}
@@ -20,4 +20,4 @@
     {% endfor %}
 </div>
 {% endfor %}
-{% include "include/footer.html" %}
+{% include "shared/footer.html" %}

@@ -4,17 +4,11 @@ class WfTheme {
         this.$body = document.querySelector('body');
         this.arrStyle = ['grey', 'blue', 'green', 'cyan', 'orange', 'red', 'yellow', 'purple', 'brown', 'black', 'white'];
         this.arrStyleLength = this.arrStyle.length;
-
-        this.verifyLoad();
     }
-
-    verifyLoad() {
+    
+    build() {
         /*removeIf(production)*/ objWfDebug.debugMethod(this, 'buildLoad'); /*endRemoveIf(production)*/
-        let self = this;
-
-        window.onload = function () {
-            self.buildActiveMenu();
-        };
+        this.buildActiveMenu();
     }
 
     buildActiveMenu() {
