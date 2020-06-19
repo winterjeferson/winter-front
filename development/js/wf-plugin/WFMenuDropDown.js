@@ -1,6 +1,10 @@
 class WfMenuDropDown {
     constructor() {
         /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+    }
+
+    update() {
+        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.isClickBuild = false;
         this.classMenu = 'menu-drop-down';
         this.classArrow = 'bt-arrow';
@@ -15,10 +19,12 @@ class WfMenuDropDown {
 
     build() {
         /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        this.update();
+
         if (this.$menu.length < 1) {
             return;
         }
-
+        
         this.buildIcon();
 
         if (!this.isClickBuild) {
@@ -105,9 +111,8 @@ class WfMenuDropDown {
     }
 
     reset() {
-        document.removeEventListener('click', event, true);
         /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
-        objWfMenuDropDown = new WfMenuDropDown();
+        document.removeEventListener('click', event, true);
         document.removeEventListener('click', this.listener, true);
         objWfMenuDropDown.build();
     }

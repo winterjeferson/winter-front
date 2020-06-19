@@ -54,7 +54,7 @@ gulp.task('wf_css_style_sass', function () {
     return gulp
         .src(configuration.development + 'css/' + wf_fileStyle + '.scss')
         .pipe(sass.sync().on('error', sass.logError))
-        .pipe(gulp.dest(configuration.homologation + 'css/'));
+        .pipe(gulp.dest(configuration.homologation + configuration.folderAssets + 'css/'));
 });
 
 gulp.task('wf_css_style', gulp.series(
@@ -79,7 +79,7 @@ gulp.task('wf_css_plugin_sass', function () {
     return gulp
         .src(configuration.development + 'css/' + wf_filePlugin + '.scss')
         .pipe(sass.sync().on('error', sass.logError))
-        .pipe(gulp.dest(configuration.homologation + 'css/'));
+        .pipe(gulp.dest(configuration.homologation + configuration.folderAssets + 'css/'));
 });
 
 gulp.task('wf_css_plugin', gulp.series(
@@ -105,7 +105,7 @@ gulp.task('wf_css_plugin_other_sass', function () {
     return gulp
         .src(configuration.development + 'css/' + wf_filePluginOther + '.scss')
         .pipe(sass.sync().on('error', sass.logError))
-        .pipe(gulp.dest(configuration.homologation + 'css/'));
+        .pipe(gulp.dest(configuration.homologation + configuration.folderAssets + 'css/'));
 });
 
 
@@ -121,9 +121,9 @@ gulp.task('wf_css_plugin_other', gulp.series(
 
 gulp.task('wf_css_minify', function () {
     return gulp
-        .src(configuration.homologation + 'css/*.*')
+        .src(configuration.homologation + configuration.folderAssets + 'css/*.*')
         .pipe(csso())
-        .pipe(gulp.dest(configuration.production + 'css/'));
+        .pipe(gulp.dest(configuration.production + configuration.folderAssets + 'css/'));
 });
 
 

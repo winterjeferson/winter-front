@@ -24,11 +24,6 @@
   }
 }
 
-.bt-arrow {
-  float: right;
-  margin-left: $sm;
-}
-
 /* ----------------------------------------------------------------------------- BUTTON SIZE */
 
 .bt {
@@ -36,8 +31,13 @@
   display: inline-block;
   cursor: pointer;
   text-decoration: none;
+  text-align: center;
   transition: $transition;
   @extend %extend-border-solid;
+
+  .bt-arrow {
+    margin-left: $sm;
+  }
 
   &.disabled,
   &:disabled {
@@ -143,6 +143,10 @@
     background-color: color-regular(#{$color});
     border-color: color-regular-border(#{$color});
 
+    .bt-arrow {
+      color: color-regular-contrast(#{$color});
+    }
+
     &:hover {
       color: color-regular-contrast(#{$color});
       background-color: color-dark(#{$color});
@@ -151,10 +155,6 @@
       .bt-arrow {
         color: color-regular-contrast(#{$color});
       }
-    }
-
-    .bt-arrow {
-      color: color-regular(#{$color});
     }
 
     &.active {
@@ -189,10 +189,8 @@
 
   .bt-#{$color},
   .bt-outline-#{$color} {
-
     &.bt-es,
     &.bt-sm {
-
       &:focus,
       &.active {
         box-shadow: 0 0 0 3px rgba(color-regular(#{$color}), $component-opacity);
@@ -202,7 +200,6 @@
     &.bt-re,
     &.bt-bi,
     &.bt-fu {
-
       &:focus,
       &.active {
         box-shadow: 0 0 0 4px rgba(color-regular(#{$color}), $component-opacity);
@@ -210,7 +207,6 @@
     }
 
     &.bt-eb {
-
       &:focus,
       &.active {
         box-shadow: 0 0 0 6px rgba(color-regular(#{$color}), $component-opacity);

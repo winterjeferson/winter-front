@@ -1,14 +1,15 @@
 class WfModal {
     constructor() {
         /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
-        this.$body = document.querySelector('body');
-
-        this.targetBuildGalleryChange = '';
-        this.cssDisplay = 'display-none';
     }
 
     updateVariable() {
         /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        this.targetBuildGalleryChange = '';
+        this.cssDisplay = 'display-none';
+        this.isModalOpen = false;
+
+        this.$body = document.querySelector('body');
         this.$modal = document.querySelector('#modal');
         this.$modalFooter = this.$modal.querySelector('footer');
         this.$modalFooterConfirm = this.$modalFooter.querySelector('[data-id="confirm"]');
@@ -23,7 +24,7 @@ class WfModal {
     }
 
     build() {
-            /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.buildHtml();
         this.updateVariable();
         this.buildMenu();
@@ -75,7 +76,7 @@ class WfModal {
         string += '     </div>';
         string += '</div>';
 
-        this.$body.insertAdjacentHTML('afterbegin', string);
+        document.querySelector('body').insertAdjacentHTML('afterbegin', string);
     }
 
     buildTranslation() {
@@ -90,10 +91,15 @@ class WfModal {
 
         window.addEventListener('keyup', function (event) {
             if (event.keyCode === 27) {
-                self.closeModal();
+                if (self.isModalOpen) {
+                    self.closeModal();
+                }
             }
 
             if (event.keyCode === 37) {
+                if (!self.isModalOpen) {
+                    return;
+                }
                 if (self.$modalNavigationArrowLeft.classList.contains(self.cssDisplay)) {
                     return;
                 } else {
@@ -102,6 +108,9 @@ class WfModal {
             }
 
             if (event.keyCode === 39) {
+                if (!self.isModalOpen) {
+                    return;
+                }
                 if (self.$modalNavigationArrowRight.classList.contains(self.cssDisplay)) {
                     return;
                 } else {
@@ -228,6 +237,8 @@ class WfModal {
 
     openModal() {
         /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        this.isModalOpen = true;
+
         this.$body.classList.remove('overflow-y');
         this.$body.classList.add('overflow-hidden');
         this.$body.style.overflowY = 'hidden';
@@ -237,6 +248,8 @@ class WfModal {
 
     closeModal() {
         /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        this.isModalOpen = false;
+
         this.$body.classList.add('overflow-y');
         this.$body.classList.remove('overflow-hidden');
         this.$body.style.overflowY = 'auto';
@@ -299,8 +312,8 @@ class WfModal {
         /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName(), [description]); /*endRemoveIf(production)*/
         let string = '';
 
-        if (description === '') {
-            return false;
+        if (description === '' || description === null) {
+            return;
         }
 
         string += '<p class="modal-description">';

@@ -8,5 +8,6 @@ class WfLayout {
         this.breakPointMedium = 768;
         this.breakPointBig = 992;
         this.breakPointExtraBig = 1200;
+        this.breakPointFullHd = 1920;
     }
 }

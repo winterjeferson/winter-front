@@ -15,8 +15,6 @@ class WfTable {
 
     buildResponsive() {
         /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
-        let self = this;
-
         Array.prototype.forEach.call(this.$table, function (item) {
             wrapItem(item, 'table-responsive');
             wrapItem(item.parentNode.parentNode.querySelector('.table-responsive'), 'table-responsive-wrapper');

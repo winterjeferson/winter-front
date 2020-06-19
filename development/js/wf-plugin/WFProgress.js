@@ -1,15 +1,30 @@
 class WfProgress {
     constructor() {
         /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
-        this.$bar = document.querySelector('#loadingMain .progress-bar');
-        this.$all = document.querySelectorAll('div, section, article');
-        this.$allLength = this.$all.length;
+    }
 
+    update() {
+        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.isFinish = false;
         this.progressSize = 0;
+        this.$loadingMain = document.getElementById('loadingMain');
+        this.$body = document.querySelector('body');
+        this.$bar = document.querySelector('#loadingMain').querySelector('.progress-bar');
+        this.$all = document.querySelectorAll('div, section, article');
+        this.$allLength = this.$all.length;
     }
 
     build() {
+        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        if (document.getElementById('loadingMain') < 1) {
+            return;
+        }
+
+        this.update();
+        this.start();
+    }
+
+    start() {
         /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
         let interval = setInterval(frame, 1);
@@ -23,10 +38,22 @@ class WfProgress {
 
             if (self.progressSize >= total) {
                 clearInterval(interval);
-                objWfLoading.finish();
+                self.finish();
                 self.isFinish = true;
             }
         }
+    }
+
+    finish() {
+        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        this.$loadingMain.classList.add('loading-main-done');
+        this.$body.classList.remove('overflow-hidden');
+        setTimeout(this.remove(this.$loadingMain), 1000);
+    }
+
+    remove(element) {
+        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        element.parentNode.removeChild(element);
     }
 
     buildProportion() {
