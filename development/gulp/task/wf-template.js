@@ -4,7 +4,7 @@ var rename = require("gulp-rename");//npm install gulp-rename --save-dev // http
 var htmlmin = require('gulp-htmlmin'); //npm install gulp-htmlmin --save-dev  //https://www.npmjs.com/package/gulp-htmlmin/
 var del = require('del'); //npm install del --save-dev //https://www.npmjs.com/package/del
 
-var configuration = require('./configuration-wf.js');
+var configuration = require('./configuration.js');
 
 
 

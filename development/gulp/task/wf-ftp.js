@@ -2,7 +2,7 @@ var gulp = require('gulp');
 var ftp = require('vinyl-ftp'); //npm install --save-dev vinyl-ftp //https://www.npmjs.com/package/vinyl-ftp
 var util = require('gulp-util'); //npm install --save-dev gulp-util // https://www.npmjs.com/package/gulp-util
 
-var configuration = require('./configuration-wf.js');
+var configuration = require('./configuration.js');
 
 
 
