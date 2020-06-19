@@ -26,14 +26,14 @@ function clean(path) {
 }
 
 gulp.task('wf_font_clean', function () {
-    var files = [configuration.homologation + configuration.folderAssets + 'font/**'];
+    var files = [configuration.homologation + configuration.assets + 'font/**'];
     return clean(files);
 });
 
 gulp.task('wf_font_move', function (done) {
     return gulp
         .src(configuration.development + 'font/**/*.*')
-        .pipe(gulp.dest(configuration.homologation + configuration.folderAssets + "font/"));
+        .pipe(gulp.dest(configuration.homologation + configuration.assets + "font/"));
     done();
 });
 

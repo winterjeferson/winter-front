@@ -19,8 +19,8 @@ var fileJs_wf_ = [
 ];
 
 var fileJs_wf_Final = [
-    configuration.homologation + configuration.folderAssets + 'js/' + fileJs_wf_DefaultFinal,
-    configuration.homologation + configuration.folderAssets + 'js/' + fileJs_wf_PluginFinal
+    configuration.homologation + configuration.assets + 'js/' + fileJs_wf_DefaultFinal,
+    configuration.homologation + configuration.assets + 'js/' + fileJs_wf_PluginFinal
 ];
 
 var fileJs_wf_Plugin = [
@@ -40,20 +40,20 @@ var fileJs_wf_Plugin = [
 //         .pipe(babel({
 //             presets: ['@babel/env']
 //         }))
-//         .pipe(gulp.dest(configuration.homologation + configuration.folderAssets + 'js/'));
+//         .pipe(gulp.dest(configuration.homologation + configuration.assets + 'js/'));
 // });
 
 gulp.task('wf_js_default_concat', function () {
     return gulp.src(fileJs_wf_)
         .pipe(concat(fileJs_wf_DefaultFinal))
-        .pipe(gulp.dest(configuration.homologation + configuration.folderAssets + 'js/'));
+        .pipe(gulp.dest(configuration.homologation + configuration.assets + 'js/'));
 });
 
 gulp.task('wf_js_remove_code', function () {
-    return gulp.src(configuration.homologation + configuration.folderAssets + 'js/*.js')
+    return gulp.src(configuration.homologation + configuration.assets + 'js/*.js')
         .pipe(removeCode({ production: true }))
         .pipe(removeCode({ noDevFeatures: false, commentStart: '/*', commentEnd: '*/' }))
-        .pipe(gulp.dest(configuration.production + configuration.folderAssets + 'js/'));
+        .pipe(gulp.dest(configuration.production + configuration.assets + 'js/'));
 });
 
 gulp.task('wf_js_default', gulp.series(
@@ -66,7 +66,7 @@ gulp.task('wf_js_default', gulp.series(
 gulp.task('wf_js_plugin_concat', function () {
     return gulp.src(fileJs_wf_Plugin)
         .pipe(concat(fileJs_wf_PluginFinal))
-        .pipe(gulp.dest(configuration.homologation + configuration.folderAssets + 'js/'));
+        .pipe(gulp.dest(configuration.homologation + configuration.assets + 'js/'));
 });
 
 gulp.task('wf_js_plugin', gulp.series(
@@ -77,9 +77,9 @@ gulp.task('wf_js_plugin', gulp.series(
 
 
 gulp.task('wf_js_minify', function () {
-    return gulp.src(configuration.production + configuration.folderAssets + 'js/*.*')
+    return gulp.src(configuration.production + configuration.assets + 'js/*.*')
         .pipe(uglify())
-        .pipe(gulp.dest(configuration.production + configuration.folderAssets + 'js/'));
+        .pipe(gulp.dest(configuration.production + configuration.assets + 'js/'));
 });
 
 

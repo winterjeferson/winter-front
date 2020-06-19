@@ -15,6 +15,6 @@ gulp.task('wf_project_move_production', function () {
         .pipe(gulp.dest(configuration.production));
 
     return gulp
-        .src(configuration.homologation + configuration.folderAssets + '/font/**/*.*')
-        .pipe(gulp.dest(configuration.production + configuration.folderAssets + '/font/'));
+        .src(configuration.homologation + configuration.assets + '/font/**/*.*')
+        .pipe(gulp.dest(configuration.production + configuration.assets + '/font/'));
 });
