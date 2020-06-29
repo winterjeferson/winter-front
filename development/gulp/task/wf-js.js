@@ -2,7 +2,6 @@ var gulp = require('gulp');
 var concat = require('gulp-concat');//npm install gulp-concat --save-dev //https://www.npmjs.com/package/gulp-concat/
 var uglify = require("gulp-uglifyes");//npm install gulp-uglifyes --save-dev //https://www.npmjs.com/package/gulp-uglifyes
 var removeCode = require('gulp-remove-code');//npm install gulp-remove-code --save-dev https://www.npmjs.com/package/gulp-remove-code
-var babel = require('gulp-babel'); //npm install --save-dev gulp-babel @babel/core @babel/preset-env //https://www.npmjs.com/package/gulp-babel
 
 var configuration = require('./configuration.js');
 
@@ -13,7 +12,6 @@ var fileJs_wf_DefaultFinal = 'wf-theme.js';
 var fileJs_wf_PluginFinal = 'wf-plugin.js';
 
 var fileJs_wf_ = [
-    // configuration.development + 'js/shared/**/*.*',
     configuration.development + 'js/wf-theme/**/*.*',
     configuration.development + 'js/wf-main-theme.js'
 ];
@@ -24,9 +22,9 @@ var fileJs_wf_Final = [
 ];
 
 var fileJs_wf_Plugin = [
-    configuration.development + 'js/shared/**/*.*',
+    configuration.development + 'js/wf-plugin/WfDebug.js',
     configuration.development + 'js/translation/**/*.*',
-    configuration.development + 'js/wf-plugin/**/*.*',
+    configuration.development + 'js/wf-plugin/**/!(WfDebug)*.js',
     configuration.development + 'js/wf-main-plugin.js'
 ];
 
@@ -34,14 +32,6 @@ var fileJs_wf_Plugin = [
 
 
 
-
-// gulp.task('wf_js_babel', function () {
-//     return gulp.src(fileJs_wf_Final)
-//         .pipe(babel({
-//             presets: ['@babel/env']
-//         }))
-//         .pipe(gulp.dest(configuration.homologation + configuration.assets + 'js/'));
-// });
 
 gulp.task('wf_js_default_concat', function () {
     return gulp.src(fileJs_wf_)
