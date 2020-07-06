@@ -12,8 +12,7 @@ var fileJs_wf_DefaultFinal = 'wf-theme.js';
 var fileJs_wf_PluginFinal = 'wf-plugin.js';
 
 var fileJs_wf_ = [
-    configuration.development + 'js/wf-theme/**/*.*',
-    configuration.development + 'js/wf-main-theme.js'
+    configuration.development + 'js/wf-theme/**/*.*'
 ];
 
 var fileJs_wf_Final = [
@@ -22,10 +21,10 @@ var fileJs_wf_Final = [
 ];
 
 var fileJs_wf_Plugin = [
-    configuration.development + 'js/wf-plugin/WfDebug.js',
+    configuration.development + 'js/wf-plugin/_WfDebug.js',
     configuration.development + 'js/translation/**/*.*',
-    configuration.development + 'js/wf-plugin/**/!(WfDebug)*.js',
-    configuration.development + 'js/wf-main-plugin.js'
+    configuration.development + 'js/wf-plugin/**/!(_)*.js',
+    configuration.development + 'js/wf-plugin/_main.js'
 ];
 
 
