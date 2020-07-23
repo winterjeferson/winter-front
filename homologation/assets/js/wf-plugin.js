@@ -183,17 +183,19 @@ class WfCarousel {
             });
         };
     }
-    
+
     buildLayoutController(target, length) {
         /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName(), [target, length]); /*endRemoveIf(production)*/
         let concat = '';
 
         for (let i = 0; i < length; i++) {
-            concat += '<li>';
-            concat += '     <button type="button" class="bt-sm carousel-controller-bt" data-id="' + i + '" aria-hidden="true">';
-            concat += '         <span aria-hidden="true">&bull;</span>';
-            concat += '     </button>';
-            concat += '</li>';
+            concat += `
+                <li>
+                    <button type="button" class="bt-sm carousel-controller-bt" data-id="${i}" aria-hidden="true">
+                        <span aria-hidden="true">&bull;</span>
+                    </button>
+                </li>
+            `;
         }
 
         target.querySelector('.carousel-controller').innerHTML = concat;
@@ -904,7 +906,7 @@ class WfModal {
                         </ul>
                     </div>
                     <footer class="display-none text-center">
-                        <nav class="menu menu-horizontal">
+                        <div class="menu menu-horizontal">
                             <ul>
                                 <li>
                                     <button type="button" class="bt bt-re bt-green" data-id="confirm"></button>
@@ -913,7 +915,7 @@ class WfModal {
                                     <button type="button" class="bt bt-re bt-grey" data-id="cancel"></button>
                                 </li>
                             </ul>
-                        </nav>
+                        </div>
                     </footer>
                 </div>
             </div>

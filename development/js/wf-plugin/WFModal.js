@@ -67,7 +67,7 @@ class WfModal {
                         </ul>
                     </div>
                     <footer class="display-none text-center">
-                        <nav class="menu menu-horizontal">
+                        <div class="menu menu-horizontal">
                             <ul>
                                 <li>
                                     <button type="button" class="bt bt-re bt-green" data-id="confirm"></button>
@@ -76,7 +76,7 @@ class WfModal {
                                     <button type="button" class="bt bt-re bt-grey" data-id="cancel"></button>
                                 </li>
                             </ul>
-                        </nav>
+                        </div>
                     </footer>
                 </div>
             </div>

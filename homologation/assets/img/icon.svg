@@ -22,6 +22,11 @@
 <symbol id="triangle" viewBox="0 0 100 100">
 	<polygon fill-rule="evenodd" clip-rule="evenodd" points="6.793,19.229 93.207,19.229 49.999,80.771 	"/>
 </symbol>
+<symbol id="menu" viewBox="0 0 100 100">
+	<rect x="5.872" y="42.947" display="inline" fill-rule="evenodd" clip-rule="evenodd" width="88.256" height="14.105"/>
+	<rect x="5.872" y="12.947" display="inline" fill-rule="evenodd" clip-rule="evenodd" width="88.256" height="14.105"/>
+	<rect x="5.872" y="72.947" display="inline" fill-rule="evenodd" clip-rule="evenodd" width="88.256" height="14.105"/>
+</symbol>
 <symbol id="instagram" viewBox="0 0 100 100">
 	<path d="M69.481,5.389H29.839c-13.451,0-24.356,10.905-24.356,24.355v39.642c0,13.454,10.905,24.357,24.356,24.357h39.643
 		c13.451,0,24.355-10.903,24.355-24.357V29.745C93.837,16.294,82.933,5.389,69.481,5.389z M86.697,69.286
