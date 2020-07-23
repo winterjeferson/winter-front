@@ -15,33 +15,31 @@ class WfNotification {
 
     buildHtml() {
         /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
-        let string = '';
+        let html = `
+            <div id="notify">
+                <ul class="notify-list">
+                </ul>
+            </div>
+        `;
 
-        string += '<div id="notify">';
-        string += '    <ul class="notify-list">';
-        string += '    </ul>';
-        string += '</div>';
-
-        this.$body.insertAdjacentHTML('beforeend', string);
+        this.$body.insertAdjacentHTML('beforeend', html);
         this.$notify = document.querySelector('#notify .notify-list');
     }
 
     buildHtmlItem(style = 'grey', message) {
         /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName(), [style, message]); /*endRemoveIf(production)*/
-        let string = '';
-
-        string += '<li id="notify' + this.notifyId + '">';
-        string += '     <div class="notify-item notify-' + style + '">';
-        string += '         <span class="text">';
-        string += message;
-        string += '         </span>';
-        string += '         <button type="button" class="bt" onclick="$(this).parent().parent().remove();" aria-label="' + objWfTranslation.translation.close + '">';
-        string += '            <span aria-hidden="true">&#10060;</span>';
-        string += '         </button>';
-        string += '     </div>';
-        string += '</li>';
-
-        return string;
+        return `
+            <li id="notify${this.notifyId}">
+                <div class="notify-item notify-${style}">
+                    <span class="text">${message}</span>
+                    <button type="button" class="bt" onclick="objWfNotification.remove(this.parentNode, 0)" aria-label="${objWfTranslation.translation.close}">
+                        <svg class="icon icon-re rotate-45">
+                            <use xlink:href="./assets/img/icon.svg#plus"></use>
+                        </svg>
+                    </button>
+                </div>
+            </li>
+        `;
     }
 
     buildNavigation() {

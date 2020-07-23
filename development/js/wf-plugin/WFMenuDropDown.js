@@ -14,7 +14,11 @@ class WfMenuDropDown {
         this.$menu = document.querySelectorAll('.' + this.classMenu + ' , ' + '.' + this.classMenuText);
         this.$menuDropDownUl = document.querySelectorAll('.' + this.classMenu + ' ul' + ' , ' + '.' + this.classMenuText + ' ul');
         this.$menuDropDownLi = document.querySelectorAll('.' + this.classMenu + ' ul li' + ' , ' + '.' + this.classMenuText + ' ul li');
-        this.$icon = '<span class="' + this.classArrow + '" aria-hidden="true">&#9662;</span>';
+        this.$icon = `
+            <svg class="icon icon-re ${this.classArrow}">
+                <use xlink:href="./assets/img/icon.svg#triangle"></use>
+            </svg>
+        `;
     }
 
     build() {
@@ -24,7 +28,7 @@ class WfMenuDropDown {
         if (this.$menu.length < 1) {
             return;
         }
-        
+
         this.buildIcon();
 
         if (!this.isClickBuild) {

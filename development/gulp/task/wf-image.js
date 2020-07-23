@@ -46,7 +46,14 @@ gulp.task('wf_image_imagemin', function () {
     return gulp
         .src(configuration.homologation + configuration.assets + 'img/**')
         .pipe(newer(configuration.production + configuration.assets + "img/"))
-        .pipe(imagemin())
+        .pipe(imagemin([
+            imagemin.svgo({
+                plugins: [
+                    { removeViewBox: true },
+                    { cleanupIDs: false }
+                ]
+            })
+        ]))
         .pipe(gulp.dest(configuration.production + configuration.assets + "img/"));
 });
 

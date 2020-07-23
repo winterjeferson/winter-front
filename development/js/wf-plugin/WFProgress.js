@@ -47,7 +47,7 @@ class WfProgress {
     finish() {
         /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.$loadingMain.classList.add('loading-main-done');
-        this.$body.classList.remove('overflow-hidden');
+        this.$body.style.overflowY = 'auto';
         setTimeout(this.remove(this.$loadingMain), 1000);
     }
 

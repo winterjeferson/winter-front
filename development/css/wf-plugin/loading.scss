@@ -61,7 +61,7 @@
   border-radius: 100%;
   margin: auto;
   border-style: solid;
-  display: inline-block;
+  display: flex;
   border-top-color: transparent !important;
 }
 
@@ -303,6 +303,6 @@
   }
 
   .loading-6-#{$color} {
-    color: color-regular(#{$color});
+    background-color: color-regular(#{$color});
   }
 }

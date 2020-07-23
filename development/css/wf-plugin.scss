@@ -1331,10 +1331,6 @@ table td {
   transition: $transition;
   @extend %extend-border-solid;
 
-  .bt-arrow {
-    margin-left: $sm;
-  }
-
   &.disabled,
   &:disabled {
     pointer-events: none;
@@ -1439,8 +1435,8 @@ table td {
     background-color: color-regular(#{$color});
     border-color: color-regular-border(#{$color});
 
-    .bt-arrow {
-      color: color-regular-contrast(#{$color});
+    .icon {
+      fill: color-regular-contrast(#{$color});
     }
 
     &:hover {
@@ -1448,16 +1444,16 @@ table td {
       background-color: color-dark(#{$color});
       border-color: color-dark-border(#{$color});
 
-      .bt-arrow {
-        color: color-regular-contrast(#{$color});
+      .icon {
+        fill: color-regular-contrast(#{$color});
       }
     }
 
     &.active {
       background-color: color-dark(#{$color});
 
-      .bt-arrow {
-        color: color-dark(#{$color});
+      .icon {
+        fill: color-dark(#{$color});
       }
     }
 
@@ -1485,8 +1481,10 @@ table td {
 
   .bt-#{$color},
   .bt-outline-#{$color} {
+
     &.bt-es,
     &.bt-sm {
+
       &:focus,
       &.active {
         box-shadow: 0 0 0 3px rgba(color-regular(#{$color}), $component-opacity);
@@ -1496,6 +1494,7 @@ table td {
     &.bt-re,
     &.bt-bi,
     &.bt-fu {
+
       &:focus,
       &.active {
         box-shadow: 0 0 0 4px rgba(color-regular(#{$color}), $component-opacity);
@@ -1503,6 +1502,7 @@ table td {
     }
 
     &.bt-eb {
+
       &:focus,
       &.active {
         box-shadow: 0 0 0 6px rgba(color-regular(#{$color}), $component-opacity);
@@ -1515,15 +1515,22 @@ table td {
   .link-#{$color} {
     color: color-regular(#{$color});
 
+    .icon {
+      fill: color-regular(#{$color});
+    }
+
     &:active,
     &:visited,
     &:focus,
     &:hover {
       color: color-dark(#{$color});
+
+      .icon {
+        fill: color-dark(#{$color});
+      }
     }
   }
 }
-
 .card {
   margin: $sm;
 
@@ -1668,8 +1675,7 @@ table td {
   }
 }
 
-.carousel-controller,
-.navigation-arrow {
+.carousel-controller{
   span {
     font-size: 40px !important;
   }
@@ -2231,6 +2237,39 @@ input:-webkit-autofill:active {
   }
 }
 
+// used at icons
+
+.rotate-45{
+    transform: rotate(45deg);
+}
+
+.rotate-180{
+    transform: rotate(180deg);
+}
+.icon-es {
+    width: $es;
+    height: $es;
+}
+
+.icon-sm {
+    width: $sm;
+    height: $sm;
+}
+
+.icon-re {
+    width: $re;
+    height: $re;
+}
+
+.icon-bi {
+    width: $bi;
+    height: $bi;
+}
+
+.icon-eb {
+    width: $eb;
+    height: $eb;
+}
 #loadingMain {
   position: fixed;
   top: 0;
@@ -2294,7 +2333,7 @@ input:-webkit-autofill:active {
   border-radius: 100%;
   margin: auto;
   border-style: solid;
-  display: inline-block;
+  display: flex;
   border-top-color: transparent !important;
 }
 
@@ -2536,7 +2575,7 @@ input:-webkit-autofill:active {
   }
 
   .loading-6-#{$color} {
-    color: color-regular(#{$color});
+    background-color: color-regular(#{$color});
   }
 }
 
@@ -3034,8 +3073,8 @@ input:-webkit-autofill:active {
     color: $color-white;
     border: 0;
 
-    span {
-      font-size: 40px;
+    .icon{
+      fill: white;
     }
   }
 }
@@ -3067,8 +3106,8 @@ input:-webkit-autofill:active {
         box-shadow: 0 0 0 4px rgba(color-regular(#{$color}), $component-opacity);
       }
 
-      .bt-arrow {
-        color: color-regular(#{$color});
+      .icon {
+        fill: color-regular(#{$color});
       }
     }
 
@@ -3083,8 +3122,8 @@ input:-webkit-autofill:active {
           border-color: color-regular(#{$color});
           color: color-regular-contrast(#{$color});
 
-          .bt-arrow {
-            color: color-regular-contrast(#{$color});
+          .icon {
+            fill: color-regular-contrast(#{$color});
           }
         }
       }
@@ -3096,8 +3135,8 @@ input:-webkit-autofill:active {
         .bt {
           color: color-regular-contrast(#{$color});
 
-          .bt-arrow {
-            color: color-regular-contrast(#{$color});
+          .icon {
+            fill: color-regular-contrast(#{$color});
           }
         }
       }
@@ -3312,13 +3351,6 @@ input:-webkit-autofill:active {
     box-shadow: none;
     padding: $sm;
     border: 0;
-
-    span {
-      position: relative;
-      font-size: 0.6em;
-      top: -0.2em;
-      font-weight: bold;
-    }
   }
 }
 
@@ -3334,8 +3366,8 @@ input:-webkit-autofill:active {
     border-color: color-extra-light-border(#{$color});
     color: color-dark(#{$color});
 
-    span {
-      color: color-regular(#{$color});
+    .icon {
+      fill: color-regular(#{$color});
     }
   }
 }
@@ -4235,13 +4267,6 @@ input:-webkit-autofill:active {
   }
 }
 
-.tag-bt{
-  span {
-    font-size: 0.8em;
-    font-weight: bold;
-  }
-}
-
 @each $color in $arrColor {
   .tag-#{$color} {
     @extend %extend-border-solid;
@@ -4261,13 +4286,13 @@ input:-webkit-autofill:active {
     }
 
     .tag-bt {
-      span {
-        color: color-regular(#{$color});
+
+      .icon {
+        fill: color-regular(#{$color});
       }
     }
   }
 }
-
 html,
 body {
   font-size: $font-re;

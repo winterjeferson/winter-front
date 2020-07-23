@@ -1349,6 +1349,10 @@ $arr-color-dark: (
   }
 }
 
+body{
+  overflow: hidden;
+}
+
 @each $color in $arrColor {
   .color-#{$color} {
     color: color-regular(#{$color});

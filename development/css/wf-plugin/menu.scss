@@ -238,8 +238,8 @@
     color: $color-white;
     border: 0;
 
-    span {
-      font-size: 40px;
+    .icon{
+      fill: white;
     }
   }
 }
@@ -271,8 +271,8 @@
         box-shadow: 0 0 0 4px rgba(color-regular(#{$color}), $component-opacity);
       }
 
-      .bt-arrow {
-        color: color-regular(#{$color});
+      .icon {
+        fill: color-regular(#{$color});
       }
     }
 
@@ -287,8 +287,8 @@
           border-color: color-regular(#{$color});
           color: color-regular-contrast(#{$color});
 
-          .bt-arrow {
-            color: color-regular-contrast(#{$color});
+          .icon {
+            fill: color-regular-contrast(#{$color});
           }
         }
       }
@@ -300,8 +300,8 @@
         .bt {
           color: color-regular-contrast(#{$color});
 
-          .bt-arrow {
-            color: color-regular-contrast(#{$color});
+          .icon {
+            fill: color-regular-contrast(#{$color});
           }
         }
       }

@@ -36,10 +36,6 @@
   transition: $transition;
   @extend %extend-border-solid;
 
-  .bt-arrow {
-    margin-left: $sm;
-  }
-
   &.disabled,
   &:disabled {
     pointer-events: none;
@@ -144,8 +140,8 @@
     background-color: color-regular(#{$color});
     border-color: color-regular-border(#{$color});
 
-    .bt-arrow {
-      color: color-regular-contrast(#{$color});
+    .icon {
+      fill: color-regular-contrast(#{$color});
     }
 
     &:hover {
@@ -153,16 +149,16 @@
       background-color: color-dark(#{$color});
       border-color: color-dark-border(#{$color});
 
-      .bt-arrow {
-        color: color-regular-contrast(#{$color});
+      .icon {
+        fill: color-regular-contrast(#{$color});
       }
     }
 
     &.active {
       background-color: color-dark(#{$color});
 
-      .bt-arrow {
-        color: color-dark(#{$color});
+      .icon {
+        fill: color-dark(#{$color});
       }
     }
 
@@ -190,8 +186,10 @@
 
   .bt-#{$color},
   .bt-outline-#{$color} {
+
     &.bt-es,
     &.bt-sm {
+
       &:focus,
       &.active {
         box-shadow: 0 0 0 3px rgba(color-regular(#{$color}), $component-opacity);
@@ -201,6 +199,7 @@
     &.bt-re,
     &.bt-bi,
     &.bt-fu {
+
       &:focus,
       &.active {
         box-shadow: 0 0 0 4px rgba(color-regular(#{$color}), $component-opacity);
@@ -208,6 +207,7 @@
     }
 
     &.bt-eb {
+
       &:focus,
       &.active {
         box-shadow: 0 0 0 6px rgba(color-regular(#{$color}), $component-opacity);
@@ -220,11 +220,19 @@
   .link-#{$color} {
     color: color-regular(#{$color});
 
+    .icon {
+      fill: color-regular(#{$color});
+    }
+
     &:active,
     &:visited,
     &:focus,
     &:hover {
       color: color-dark(#{$color});
+
+      .icon {
+        fill: color-dark(#{$color});
+      }
     }
   }
 }

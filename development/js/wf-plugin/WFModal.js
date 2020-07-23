@@ -35,46 +35,52 @@ class WfModal {
 
     buildHtml() {
         /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
-        let string = '';
-
-        string += '<div id="modal" class="modal-close">';
-        string += '     <div class="modal-box">';
-        string += '         <header>';
-        string += '             <button id="modalClose" type="button" aria-label="' + objWfTranslation.translation.close + '" class="bt bt-sm bt-grey bt-transparent">';
-        string += '                 <span aria-hidden="true">&#10060;</span>';
-        string += '             </button>';
-        string += '         </header>';
-        string += '         <div class="row">';
-        string += '             <div id="modalContent" class="col-es-12"></div>';
-        string += '         </div>';
-        string += '         <div class="menu-horizontal">';
-        string += '             <ul class="navigation-arrow">';
-        string += '                 <li>';
-        string += '                     <button type="button" class="bt bt-bi" data-id="navLeft" aria-label="' + objWfTranslation.translation.previous + '" >';
-        string += '                         <span aria-hidden="true">&#10094;</span>';
-        string += '                     </button>';
-        string += '                 </li>';
-        string += '                 <li>';
-        string += '                     <button type="button" class="bt bt-bi" data-id="navRight" aria-label="' + objWfTranslation.translation.next + '" >';
-        string += '                         <span aria-hidden="true">&#10095;</span>';
-        string += '                     </button>';
-        string += '                 </li>';
-        string += '             </ul>';
-        string += '         </div>';
-        string += '         <footer class="display-none text-center">';
-        string += '             <nav class="menu menu-horizontal">';
-        string += '                 <ul>';
-        string += '                     <li>';
-        string += '                         <button type="button" class="bt bt-re bt-green" data-id="confirm"></button>';
-        string += '                     </li>';
-        string += '                     <li>';
-        string += '                         <button type="button" class="bt bt-re bt-grey" data-id="cancel"></button>';
-        string += '                     </li>';
-        string += '                 </ul>';
-        string += '             </nav>';
-        string += '         </footer>';
-        string += '     </div>';
-        string += '</div>';
+        let string = `
+            <div id="modal" class="modal-close">
+                <div class="modal-box">
+                    <header>
+                        <button id="modalClose" type="button" aria-label="${objWfTranslation.translation.close}" class="bt bt-sm bt-grey bt-transparent">
+                            <svg class="icon icon-bi rotate-45">
+                                <use xlink:href="./assets/img/icon.svg#plus"></use>
+                            </svg>
+                        </button>
+                    </header>
+                    <div class="row">
+                        <div id="modalContent" class="col-es-12"></div>
+                    </div>
+                    <div class="menu-horizontal">
+                        <ul class="navigation-arrow">
+                            <li>
+                                <button type="button" class="bt bt-bi" data-id="navLeft" aria-label="${objWfTranslation.translation.previous}" >
+                                    <svg class="icon icon-eb">
+                                        <use xlink:href="./assets/img/icon.svg#previous"></use>
+                                    </svg>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="bt bt-bi" data-id="navRight" aria-label="${objWfTranslation.translation.next}" >
+                                    <svg class="icon icon-eb rotate-180">
+                                        <use xlink:href="./assets/img/icon.svg#previous"></use>
+                                    </svg>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                    <footer class="display-none text-center">
+                        <nav class="menu menu-horizontal">
+                            <ul>
+                                <li>
+                                    <button type="button" class="bt bt-re bt-green" data-id="confirm"></button>
+                                </li>
+                                <li>
+                                    <button type="button" class="bt bt-re bt-grey" data-id="cancel"></button>
+                                </li>
+                            </ul>
+                        </nav>
+                    </footer>
+                </div>
+            </div>
+        `;
 
         document.querySelector('body').insertAdjacentHTML('afterbegin', string);
     }

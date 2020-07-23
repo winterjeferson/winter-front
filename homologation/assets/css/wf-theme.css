@@ -1031,6 +1031,9 @@
 #pageScroll .scrollbar-force-overflow {
   min-height: 450px; }
 
+body {
+  overflow: hidden; }
+
 .color-grey {
   color: #bec3c7; }
 

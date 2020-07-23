@@ -1,25 +1,18 @@
 {% from 'shared/template-nunjucks.html' import arrSize, arrColor %}
-{% set arrSpinner = ['fa-spinner','fa-refresh','fa-cog','fa-circle-o-notch'] %}
 {% include "shared/head.html" %}
-<h1 class="page-title">
-    Loading (Font Aewsome)
-</h1>
-<div class="row text-center">
-    {% for i in arrSpinner %}
-    <div class="col-es-12">
-        {% for j in arrColor %}
-        <span class="fa {{i}} fa-spin fa-2x color-{{j}}"></span>
-        {% endfor %}
-    </div>
-    {% endfor %}
-</div>
+
 <h1 class="page-title">
     Loading
 </h1>
 <div class="row text-center">
     <div class="col-es-12">
         {% for i in arrColor %}
-        <div class="fa-spin loading-sm loading-1 loading-1-{{i}}"></div>
+        <div class="loading-1 loading-1-{{i}}"></div>
+        {% endfor %}
+    </div>
+    <div class="col-es-12">
+        {% for i in arrColor %}
+        <div class="loading-2 loading-2-{{i}}"></div>
         {% endfor %}
     </div>
     <div class="col-es-12">
@@ -40,11 +33,6 @@
     <div class="col-es-12">
         {% for i in arrColor %}
         <div class="loading-6 loading-6-{{i}}"></div>
-        {% endfor %}
-    </div>
-    <div class="col-es-12">
-        {% for i in arrColor %}
-        <div class="loading-2 loading-2-{{i}}"></div>
         {% endfor %}
     </div>
 </div>

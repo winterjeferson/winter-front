@@ -648,7 +648,11 @@ class WfMenuDropDown {
         this.$menu = document.querySelectorAll('.' + this.classMenu + ' , ' + '.' + this.classMenuText);
         this.$menuDropDownUl = document.querySelectorAll('.' + this.classMenu + ' ul' + ' , ' + '.' + this.classMenuText + ' ul');
         this.$menuDropDownLi = document.querySelectorAll('.' + this.classMenu + ' ul li' + ' , ' + '.' + this.classMenuText + ' ul li');
-        this.$icon = '<span class="' + this.classArrow + '" aria-hidden="true">&#9662;</span>';
+        this.$icon = `
+            <svg class="icon icon-re ${this.classArrow}">
+                <use xlink:href="./assets/img/icon.svg#triangle"></use>
+            </svg>
+        `;
     }
 
     build() {
@@ -658,7 +662,7 @@ class WfMenuDropDown {
         if (this.$menu.length < 1) {
             return;
         }
-        
+
         this.buildIcon();
 
         if (!this.isClickBuild) {
@@ -868,46 +872,52 @@ class WfModal {
 
     buildHtml() {
         /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
-        let string = '';
-
-        string += '<div id="modal" class="modal-close">';
-        string += '     <div class="modal-box">';
-        string += '         <header>';
-        string += '             <button id="modalClose" type="button" aria-label="' + objWfTranslation.translation.close + '" class="bt bt-sm bt-grey bt-transparent">';
-        string += '                 <span aria-hidden="true">&#10060;</span>';
-        string += '             </button>';
-        string += '         </header>';
-        string += '         <div class="row">';
-        string += '             <div id="modalContent" class="col-es-12"></div>';
-        string += '         </div>';
-        string += '         <div class="menu-horizontal">';
-        string += '             <ul class="navigation-arrow">';
-        string += '                 <li>';
-        string += '                     <button type="button" class="bt bt-bi" data-id="navLeft" aria-label="' + objWfTranslation.translation.previous + '" >';
-        string += '                         <span aria-hidden="true">&#10094;</span>';
-        string += '                     </button>';
-        string += '                 </li>';
-        string += '                 <li>';
-        string += '                     <button type="button" class="bt bt-bi" data-id="navRight" aria-label="' + objWfTranslation.translation.next + '" >';
-        string += '                         <span aria-hidden="true">&#10095;</span>';
-        string += '                     </button>';
-        string += '                 </li>';
-        string += '             </ul>';
-        string += '         </div>';
-        string += '         <footer class="display-none text-center">';
-        string += '             <nav class="menu menu-horizontal">';
-        string += '                 <ul>';
-        string += '                     <li>';
-        string += '                         <button type="button" class="bt bt-re bt-green" data-id="confirm"></button>';
-        string += '                     </li>';
-        string += '                     <li>';
-        string += '                         <button type="button" class="bt bt-re bt-grey" data-id="cancel"></button>';
-        string += '                     </li>';
-        string += '                 </ul>';
-        string += '             </nav>';
-        string += '         </footer>';
-        string += '     </div>';
-        string += '</div>';
+        let string = `
+            <div id="modal" class="modal-close">
+                <div class="modal-box">
+                    <header>
+                        <button id="modalClose" type="button" aria-label="${objWfTranslation.translation.close}" class="bt bt-sm bt-grey bt-transparent">
+                            <svg class="icon icon-bi rotate-45">
+                                <use xlink:href="./assets/img/icon.svg#plus"></use>
+                            </svg>
+                        </button>
+                    </header>
+                    <div class="row">
+                        <div id="modalContent" class="col-es-12"></div>
+                    </div>
+                    <div class="menu-horizontal">
+                        <ul class="navigation-arrow">
+                            <li>
+                                <button type="button" class="bt bt-bi" data-id="navLeft" aria-label="${objWfTranslation.translation.previous}" >
+                                    <svg class="icon icon-eb">
+                                        <use xlink:href="./assets/img/icon.svg#previous"></use>
+                                    </svg>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="bt bt-bi" data-id="navRight" aria-label="${objWfTranslation.translation.next}" >
+                                    <svg class="icon icon-eb rotate-180">
+                                        <use xlink:href="./assets/img/icon.svg#previous"></use>
+                                    </svg>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                    <footer class="display-none text-center">
+                        <nav class="menu menu-horizontal">
+                            <ul>
+                                <li>
+                                    <button type="button" class="bt bt-re bt-green" data-id="confirm"></button>
+                                </li>
+                                <li>
+                                    <button type="button" class="bt bt-re bt-grey" data-id="cancel"></button>
+                                </li>
+                            </ul>
+                        </nav>
+                    </footer>
+                </div>
+            </div>
+        `;
 
         document.querySelector('body').insertAdjacentHTML('afterbegin', string);
     }
@@ -1203,33 +1213,31 @@ class WfNotification {
 
     buildHtml() {
         /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
-        let string = '';
+        let html = `
+            <div id="notify">
+                <ul class="notify-list">
+                </ul>
+            </div>
+        `;
 
-        string += '<div id="notify">';
-        string += '    <ul class="notify-list">';
-        string += '    </ul>';
-        string += '</div>';
-
-        this.$body.insertAdjacentHTML('beforeend', string);
+        this.$body.insertAdjacentHTML('beforeend', html);
         this.$notify = document.querySelector('#notify .notify-list');
     }
 
     buildHtmlItem(style = 'grey', message) {
         /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName(), [style, message]); /*endRemoveIf(production)*/
-        let string = '';
-
-        string += '<li id="notify' + this.notifyId + '">';
-        string += '     <div class="notify-item notify-' + style + '">';
-        string += '         <span class="text">';
-        string += message;
-        string += '         </span>';
-        string += '         <button type="button" class="bt" onclick="$(this).parent().parent().remove();" aria-label="' + objWfTranslation.translation.close + '">';
-        string += '            <span aria-hidden="true">&#10060;</span>';
-        string += '         </button>';
-        string += '     </div>';
-        string += '</li>';
-
-        return string;
+        return `
+            <li id="notify${this.notifyId}">
+                <div class="notify-item notify-${style}">
+                    <span class="text">${message}</span>
+                    <button type="button" class="bt" onclick="objWfNotification.remove(this.parentNode, 0)" aria-label="${objWfTranslation.translation.close}">
+                        <svg class="icon icon-re rotate-45">
+                            <use xlink:href="./assets/img/icon.svg#plus"></use>
+                        </svg>
+                    </button>
+                </div>
+            </li>
+        `;
     }
 
     buildNavigation() {
@@ -1336,7 +1344,7 @@ class WfProgress {
     finish() {
         /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.$loadingMain.classList.add('loading-main-done');
-        this.$body.classList.remove('overflow-hidden');
+        this.$body.style.overflowY = 'auto';
         setTimeout(this.remove(this.$loadingMain), 1000);
     }
 
