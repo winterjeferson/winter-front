@@ -3042,7 +3042,7 @@ input:-webkit-autofill:active {
   top: 0;
   display: flex;
   align-items: center;
-  pointer-events: none !important;
+  pointer-events: none;
 
   li {
     position: absolute;
@@ -3069,7 +3069,7 @@ input:-webkit-autofill:active {
   }
 
   .bt {
-    pointer-events: initial !important;
+    pointer-events: initial;
     color: $color-white;
     border: 0;
 
@@ -3155,6 +3155,7 @@ input:-webkit-autofill:active {
   z-index: z-index("modal");
   opacity: 1;
   transition: $transition;
+  display: flex;
   @extend %extend-background-black;
 
   @media only screen and (min-width: $break-point-es) {
@@ -3208,6 +3209,11 @@ input:-webkit-autofill:active {
   .arrow-inactive {
     opacity: 0;
     pointer-events: none;
+
+    * {
+      opacity: 0;
+      pointer-events: none;
+    }
   }
 
   hr {
@@ -3310,7 +3316,8 @@ input:-webkit-autofill:active {
   transition: $transition;
   pointer-events: none !important;
 
-  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  @media screen and (-ms-high-contrast: active),
+  (-ms-high-contrast: none) {
     position: absolute;
     top: -100% !important;
   }
@@ -3324,7 +3331,6 @@ input:-webkit-autofill:active {
   transition: $transition;
   transform: translate(0, 0) !important;
 }
-
 #notify {
   position: fixed;
   top: 0;

@@ -10,6 +10,7 @@
   z-index: z-index("modal");
   opacity: 1;
   transition: $transition;
+  display: flex;
   @extend %extend-background-black;
 
   @media only screen and (min-width: $break-point-es) {
@@ -63,6 +64,11 @@
   .arrow-inactive {
     opacity: 0;
     pointer-events: none;
+
+    * {
+      opacity: 0;
+      pointer-events: none;
+    }
   }
 
   hr {
@@ -165,7 +171,8 @@
   transition: $transition;
   pointer-events: none !important;
 
-  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  @media screen and (-ms-high-contrast: active),
+  (-ms-high-contrast: none) {
     position: absolute;
     top: -100% !important;
   }
