@@ -22,3 +22,7 @@ class WfManagementPlugin {
         objWfTooltip.build();
     }
 }
+
+const objWfManagementPlugin = new WfManagementPlugin();
+
+objWfManagementPlugin.verifyLoad();

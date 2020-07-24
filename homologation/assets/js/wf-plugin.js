@@ -70,6 +70,10 @@ class WfDebug {
     }
 }
 /*endRemoveIf(production)*/
+
+/*removeIf(production)*/
+const objWfDebug = new WfDebug();
+/*endRemoveIf(production)*/
 var translationEN = {
     "cancel": "Cancel",
     "close": "Close",
@@ -110,7 +114,7 @@ function offset(element) {
     return { top: rect.top + scrollTop, left: rect.left + scrollLeft }
 }
 
-function verifyUrlFodler(target) {
+function verifyUrlRoute(target) {
     let arrFolder = window.location.pathname.split('/');
 
     if (arrFolder.indexOf(target) > -1) {
@@ -343,10 +347,9 @@ class WfCarousel {
         });
     }
 }
-class WfForm {
-    constructor() {
-    }
 
+const objWfCarousel = new WfCarousel();
+class WfForm {
     build() {
         /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         if (document.querySelectorAll('form').length < 1) {
@@ -456,6 +459,8 @@ class WfForm {
         return true;
     }
 }
+
+const objWfForm = new WfForm();
 class WfLayout {
     constructor() {
         /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
@@ -469,11 +474,9 @@ class WfLayout {
         this.breakPointFullHd = 1920;
     }
 }
-class WfLazyLoad {
-    constructor() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
-    }
 
+const objWfLayout = new WfLayout();
+class WfLazyLoad {
     build() {
         /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         if (document.querySelectorAll('[data-lazy-load="true"]').length < 1) {
@@ -522,30 +525,8 @@ class WfLazyLoad {
         target.removeAttribute('data-lazy-load');
     }
 }
-class WfManagementPlugin {
-    verifyLoad() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
-        window.addEventListener('load', this.applyClass(), { once: true });
-    }
 
-    applyClass() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
-        objWfTranslation.build();
-        objWfProgress.build();
-        objWfForm.build();
-        objWfMask.build();
-        objWfModal.build();
-        objWfCarousel.build();
-        objWfLazyLoad.build();
-        objWfMenuDropDown.build();
-        objWfMenuTab.build();
-        objWfMenuToggle.build();
-        objWfNotification.build();
-        objWfTable.build();
-        objWfTag.build();
-        objWfTooltip.build();
-    }
-}
+const objWfLazyLoad = new WfLazyLoad();
 class WfMask {
     constructor() {
         /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
@@ -634,11 +615,9 @@ class WfMask {
             .replace(/(-\d)\d+?$/, '$1')
     }
 }
-class WfMenuDropDown {
-    constructor() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
-    }
 
+const objWfMask = new WfMask();
+class WfMenuDropDown {
     update() {
         /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.isClickBuild = false;
@@ -757,6 +736,8 @@ class WfMenuDropDown {
         objWfMenuDropDown.build();
     }
 }
+
+const objWfMenuDropDown = new WfMenuDropDown();
 class WfMenuTab {
     build() {
         /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
@@ -787,11 +768,9 @@ class WfMenuTab {
         item.parentNode.classList.add(classActive);
     }
 }
-class WfMenuToggle {
-    constructor() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
-    }
 
+const objWfMenuTab = new WfMenuTab();
+class WfMenuToggle {
     build() {
        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.updateVariable();
@@ -837,11 +816,9 @@ class WfMenuToggle {
     }
 }
 
-class WfModal {
-    constructor() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
-    }
+const objWfMenuToggle = new WfMenuToggle();
 
+class WfModal {
     updateVariable() {
         /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.targetBuildGalleryChange = '';
@@ -1198,6 +1175,8 @@ class WfModal {
         }
     }
 }
+
+const objWfModal = new WfModal();
 class WfNotification {
     constructor() {
         /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
@@ -1297,11 +1276,8 @@ class WfNotification {
     }
 }
 
+const objWfNotification = new WfNotification();
 class WfProgress {
-    constructor() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
-    }
-
     update() {
         /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.isFinish = false;
@@ -1388,6 +1364,8 @@ class WfProgress {
         return this.$allLength;
     }
 }
+
+const objWfProgress = new WfProgress();
 class WfTable {
     constructor() {
         /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
@@ -1412,6 +1390,7 @@ class WfTable {
     }
 }
 
+const objWfTable = new WfTable();
 class WfTag {
     constructor() {
         /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
@@ -1438,6 +1417,8 @@ class WfTag {
         });
     }
 }
+
+const objWfTag = new WfTag();
 class WfTooltip {
     constructor() {
         /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
@@ -1499,14 +1480,14 @@ class WfTooltip {
 
     buildHtml() {
         /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
-        let string = '';
+        let html = `
+            <div id="tooltip">
+                <div id="tooltipBody"></div>
+                <div id="tooltipPointer"></div>
+            </div>
+        `;
 
-        string += '<div id="tooltip">';
-        string += '    <div id="tooltipBody"></div>';
-        string += '    <div id="tooltipPointer"></div>';
-        string += '</div>';
-
-        document.querySelector('body').insertAdjacentHTML('beforeend', string);
+        document.querySelector('body').insertAdjacentHTML('beforeend', html);
     }
 
     buildResize() {
@@ -1693,6 +1674,8 @@ class WfTooltip {
         objWfTooltip.build();
     }
 }
+
+const objWfTooltip = new WfTooltip();
 class WfTranslation {
     constructor() {
         /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
@@ -1717,24 +1700,32 @@ class WfTranslation {
     }
 }
 
-/*removeIf(production)*/
-const objWfDebug = new WfDebug();
-/*endRemoveIf(production)*/
-const objWfLayout = new WfLayout();
-const objWfCarousel = new WfCarousel();
-const objWfForm = new WfForm();
-const objWfLazyLoad = new WfLazyLoad();
-const objWfMenuDropDown = new WfMenuDropDown();
-const objWfMenuTab = new WfMenuTab();
-const objWfMenuToggle = new WfMenuToggle();
-const objWfMask = new WfMask();
-const objWfModal = new WfModal();
-const objWfManagementPlugin = new WfManagementPlugin();
-const objWfNotification = new WfNotification();
-const objWfProgress = new WfProgress();
-const objWfTag = new WfTag();
-const objWfTable = new WfTable();
-const objWfTooltip = new WfTooltip();
 const objWfTranslation = new WfTranslation();
+class WfManagementPlugin {
+    verifyLoad() {
+        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        window.addEventListener('load', this.applyClass(), { once: true });
+    }
+
+    applyClass() {
+        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        objWfTranslation.build();
+        objWfProgress.build();
+        objWfForm.build();
+        objWfMask.build();
+        objWfModal.build();
+        objWfCarousel.build();
+        objWfLazyLoad.build();
+        objWfMenuDropDown.build();
+        objWfMenuTab.build();
+        objWfMenuToggle.build();
+        objWfNotification.build();
+        objWfTable.build();
+        objWfTag.build();
+        objWfTooltip.build();
+    }
+}
+
+const objWfManagementPlugin = new WfManagementPlugin();
 
 objWfManagementPlugin.verifyLoad();

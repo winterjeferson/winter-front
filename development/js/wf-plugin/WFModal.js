@@ -1,8 +1,4 @@
 class WfModal {
-    constructor() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
-    }
-
     updateVariable() {
         /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.targetBuildGalleryChange = '';
@@ -359,3 +355,5 @@ class WfModal {
         }
     }
 }
+
+const objWfModal = new WfModal();

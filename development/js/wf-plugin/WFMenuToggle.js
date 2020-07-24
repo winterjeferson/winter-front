@@ -1,8 +1,4 @@
 class WfMenuToggle {
-    constructor() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
-    }
-
     build() {
        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.updateVariable();
@@ -47,3 +43,5 @@ class WfMenuToggle {
         this.build();
     }
 }
+
+const objWfMenuToggle = new WfMenuToggle();

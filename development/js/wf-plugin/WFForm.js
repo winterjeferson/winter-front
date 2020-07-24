@@ -1,7 +1,4 @@
 class WfForm {
-    constructor() {
-    }
-
     build() {
         /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         if (document.querySelectorAll('form').length < 1) {
@@ -111,3 +108,5 @@ class WfForm {
         return true;
     }
 }
+
+const objWfForm = new WfForm();

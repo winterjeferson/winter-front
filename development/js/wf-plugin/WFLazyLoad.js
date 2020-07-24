@@ -1,8 +1,4 @@
 class WfLazyLoad {
-    constructor() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
-    }
-
     build() {
         /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         if (document.querySelectorAll('[data-lazy-load="true"]').length < 1) {
@@ -51,3 +47,5 @@ class WfLazyLoad {
         target.removeAttribute('data-lazy-load');
     }
 }
+
+const objWfLazyLoad = new WfLazyLoad();

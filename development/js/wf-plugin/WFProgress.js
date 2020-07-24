@@ -1,8 +1,4 @@
 class WfProgress {
-    constructor() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
-    }
-
     update() {
         /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.isFinish = false;
@@ -89,3 +85,5 @@ class WfProgress {
         return this.$allLength;
     }
 }
+
+const objWfProgress = new WfProgress();

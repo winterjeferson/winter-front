@@ -24,3 +24,5 @@ class WfTag {
         });
     }
 }
+
+const objWfTag = new WfTag();

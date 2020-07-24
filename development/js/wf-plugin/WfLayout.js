@@ -11,3 +11,5 @@ class WfLayout {
         this.breakPointFullHd = 1920;
     }
 }
+
+const objWfLayout = new WfLayout();

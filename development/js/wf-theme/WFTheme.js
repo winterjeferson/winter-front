@@ -25,3 +25,5 @@ class WfTheme {
         }
     }
 }
+
+const objWfTheme = new WfTheme();

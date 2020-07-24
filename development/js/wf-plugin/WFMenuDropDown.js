@@ -1,8 +1,4 @@
 class WfMenuDropDown {
-    constructor() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
-    }
-
     update() {
         /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.isClickBuild = false;
@@ -121,3 +117,5 @@ class WfMenuDropDown {
         objWfMenuDropDown.build();
     }
 }
+
+const objWfMenuDropDown = new WfMenuDropDown();

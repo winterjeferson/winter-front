@@ -3203,12 +3203,14 @@ input:-webkit-autofill:active {
 
   .arrow-active {
     opacity: 1;
-    pointer-events: initial;
+
+    * {
+      pointer-events: initial;
+    }
   }
 
   .arrow-inactive {
     opacity: 0;
-    pointer-events: none;
 
     * {
       opacity: 0;

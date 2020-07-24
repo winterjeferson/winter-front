@@ -21,3 +21,5 @@ class WfTable {
         });
     }
 }
+
+const objWfTable = new WfTable();

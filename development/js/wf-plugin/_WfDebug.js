@@ -70,3 +70,7 @@ class WfDebug {
     }
 }
 /*endRemoveIf(production)*/
+
+/*removeIf(production)*/
+const objWfDebug = new WfDebug();
+/*endRemoveIf(production)*/

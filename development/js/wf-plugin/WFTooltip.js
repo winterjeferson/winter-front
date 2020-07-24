@@ -59,14 +59,14 @@ class WfTooltip {
 
     buildHtml() {
         /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
-        let string = '';
+        let html = `
+            <div id="tooltip">
+                <div id="tooltipBody"></div>
+                <div id="tooltipPointer"></div>
+            </div>
+        `;
 
-        string += '<div id="tooltip">';
-        string += '    <div id="tooltipBody"></div>';
-        string += '    <div id="tooltipPointer"></div>';
-        string += '</div>';
-
-        document.querySelector('body').insertAdjacentHTML('beforeend', string);
+        document.querySelector('body').insertAdjacentHTML('beforeend', html);
     }
 
     buildResize() {
@@ -253,3 +253,5 @@ class WfTooltip {
         objWfTooltip.build();
     }
 }
+
+const objWfTooltip = new WfTooltip();

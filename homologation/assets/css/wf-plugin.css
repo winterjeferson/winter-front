@@ -3660,11 +3660,11 @@ input:-webkit-autofill:active {
         #modal .modal-box footer {
           border-radius: 0 0 4px 4px; } }
   #modal .arrow-active {
-    opacity: 1;
-    pointer-events: initial; }
+    opacity: 1; }
+    #modal .arrow-active * {
+      pointer-events: initial; }
   #modal .arrow-inactive {
-    opacity: 0;
-    pointer-events: none; }
+    opacity: 0; }
     #modal .arrow-inactive * {
       opacity: 0;
       pointer-events: none; }

@@ -22,7 +22,7 @@ function offset(element) {
     return { top: rect.top + scrollTop, left: rect.left + scrollLeft }
 }
 
-function verifyUrlFodler(target) {
+function verifyUrlRoute(target) {
     let arrFolder = window.location.pathname.split('/');
 
     if (arrFolder.indexOf(target) > -1) {

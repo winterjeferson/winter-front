@@ -9,3 +9,7 @@ class WfManagementTheme {
         objWfTheme.build();
     }
 }
+
+const objWfManagementTheme = new WfManagementTheme();
+
+objWfManagementTheme.verifyLoad();

@@ -24,7 +24,7 @@ var fileJs_wf_Plugin = [
     configuration.development + 'js/wf-plugin/_WfDebug.js',
     configuration.development + 'js/translation/**/*.*',
     configuration.development + 'js/wf-plugin/**/!(_)*.js',
-    configuration.development + 'js/wf-plugin/_main.js'
+    configuration.development + 'js/wf-plugin/_WfManagementPlugin.js'
 ];
 
 
