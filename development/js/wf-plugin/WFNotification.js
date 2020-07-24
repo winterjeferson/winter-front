@@ -96,5 +96,3 @@ class WfNotification {
         setTimeout(remove, messageTime);
     }
 }
-
-const objWfNotification = new WfNotification();

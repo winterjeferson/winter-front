@@ -86,5 +86,3 @@ class WfMask {
             .replace(/(-\d)\d+?$/, '$1')
     }
 }
-
-const objWfMask = new WfMask();

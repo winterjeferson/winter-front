@@ -47,5 +47,3 @@ class WfLazyLoad {
         target.removeAttribute('data-lazy-load');
     }
 }
-
-const objWfLazyLoad = new WfLazyLoad();

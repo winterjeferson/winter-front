@@ -253,5 +253,3 @@ class WfTooltip {
         objWfTooltip.build();
     }
 }
-
-const objWfTooltip = new WfTooltip();

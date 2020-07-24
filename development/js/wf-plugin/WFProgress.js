@@ -85,5 +85,3 @@ class WfProgress {
         return this.$allLength;
     }
 }
-
-const objWfProgress = new WfProgress();

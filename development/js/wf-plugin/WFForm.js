@@ -108,5 +108,3 @@ class WfForm {
         return true;
     }
 }
-
-const objWfForm = new WfForm();

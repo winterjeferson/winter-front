@@ -21,5 +21,3 @@ class WfTranslation {
         }
     }
 }
-
-const objWfTranslation = new WfTranslation();

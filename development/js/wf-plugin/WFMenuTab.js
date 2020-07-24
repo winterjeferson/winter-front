@@ -28,5 +28,3 @@ class WfMenuTab {
         item.parentNode.classList.add(classActive);
     }
 }
-
-const objWfMenuTab = new WfMenuTab();

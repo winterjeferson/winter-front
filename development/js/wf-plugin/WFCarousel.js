@@ -214,5 +214,3 @@ class WfCarousel {
         });
     }
 }
-
-const objWfCarousel = new WfCarousel();

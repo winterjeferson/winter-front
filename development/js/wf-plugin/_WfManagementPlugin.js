@@ -23,6 +23,25 @@ class WfManagementPlugin {
     }
 }
 
+/*removeIf(production)*/
+const objWfDebug = new WfDebug();
+/*endRemoveIf(production)*/
 const objWfManagementPlugin = new WfManagementPlugin();
+
+const objWfCarousel = new WfCarousel();
+const objWfForm = new WfForm();
+const objWfLayout = new WfLayout();
+const objWfLazyLoad = new WfLazyLoad();
+const objWfMask = new WfMask();
+const objWfMenuDropDown = new WfMenuDropDown();
+const objWfMenuTab = new WfMenuTab();
+const objWfMenuToggle = new WfMenuToggle();
+const objWfModal = new WfModal();
+const objWfNotification = new WfNotification();
+const objWfProgress = new WfProgress();
+const objWfTable = new WfTable();
+const objWfTag = new WfTag();
+const objWfTooltip = new WfTooltip();
+const objWfTranslation = new WfTranslation();
 
 objWfManagementPlugin.verifyLoad();

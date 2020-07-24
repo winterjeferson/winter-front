@@ -355,5 +355,3 @@ class WfModal {
         }
     }
 }
-
-const objWfModal = new WfModal();

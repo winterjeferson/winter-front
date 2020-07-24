@@ -43,5 +43,3 @@ class WfMenuToggle {
         this.build();
     }
 }
-
-const objWfMenuToggle = new WfMenuToggle();

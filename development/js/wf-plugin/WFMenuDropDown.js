@@ -117,5 +117,3 @@ class WfMenuDropDown {
         objWfMenuDropDown.build();
     }
 }
-
-const objWfMenuDropDown = new WfMenuDropDown();
