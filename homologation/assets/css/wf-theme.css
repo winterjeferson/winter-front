@@ -1034,6 +1034,9 @@
 body {
   overflow: hidden; }
 
+#loadingMain {
+  background-color: #bec3c7; }
+
 .color-grey {
   color: #bec3c7; }
 

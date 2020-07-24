@@ -3256,7 +3256,7 @@ input:-webkit-autofill:active {
   top: 0;
   display: flex;
   align-items: center;
-  pointer-events: none !important; }
+  pointer-events: none; }
   .navigation-arrow li {
     position: absolute;
     width: calc(50% - 5px);
@@ -3272,7 +3272,7 @@ input:-webkit-autofill:active {
       .navigation-arrow li:last-child .bt {
         margin-left: calc(100% - 80px); }
   .navigation-arrow .bt {
-    pointer-events: initial !important;
+    pointer-events: initial;
     color: #ffffff;
     border: 0; }
     .navigation-arrow .bt .icon {
@@ -3625,7 +3625,8 @@ input:-webkit-autofill:active {
   overflow-y: auto;
   z-index: 3;
   opacity: 1;
-  transition: 0.3s; }
+  transition: 0.3s;
+  display: flex; }
   @media only screen and (min-width: 0) {
     #modal {
       padding: 5px; } }
@@ -3664,6 +3665,9 @@ input:-webkit-autofill:active {
   #modal .arrow-inactive {
     opacity: 0;
     pointer-events: none; }
+    #modal .arrow-inactive * {
+      opacity: 0;
+      pointer-events: none; }
   #modal hr {
     width: calc(100% - 40px);
     margin: auto; }
