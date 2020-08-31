@@ -78,6 +78,14 @@ var translationEN = {
     "next": "Next",
     "previous": "Previous",
 }
+var translationES = {
+    "cancel": "Cancelar",
+    "close": "Cerrar",
+    "confirm": "Confirmar",
+    "input_upload": "Seleccione Archivo...",
+    "next": "Siguiente",
+    "previous": "Anterior",
+}
 var translationPT = {
     "cancel": "Cancelar",
     "close": "Fechar",
