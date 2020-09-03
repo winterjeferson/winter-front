@@ -14,20 +14,20 @@
     "gulp-uglifyes": "^0.2.1",
     "gulp-util": "^3.0.8",
     "gulp-watch": "^5.0.1",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.20",
     "lodash.template": "^4.5.0",
     "require-dir": "^1.2.0",
     "run-sequence": "^2.2.1",
     "vinyl-ftp": "^0.6.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.2.2",
-    "@babel/preset-env": "^7.3.1",
+    "@babel/core": "^7.11.5",
+    "@babel/preset-env": "^7.11.5",
     "gulp-babel": "^8.0.0",
     "gulp-imagemin": "^5.0.3",
     "gulp-newer": "^1.4.0",
     "gulp-remove-code": "^3.0.4",
-    "gulp-sass": "^4.0.2"
+    "gulp-sass": "^4.1.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
