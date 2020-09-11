@@ -8,10 +8,11 @@ var wf_project = require('./wf-project.js');
 var wf_util = require('./wf-util.js');
 
 
+var folderSass = 'wf-sass';
 var wf_fileCssSass = [
-    configuration.development + 'css/wf-sass/sass-variable.scss',
-    configuration.development + 'css/wf-sass/sass-color.scss',
-    configuration.development + 'css/wf-sass/sass.scss',
+    configuration.development + 'css/' + folderSass + '/sass-variable.scss',
+    configuration.development + 'css/' + folderSass + '/sass-color.scss',
+    configuration.development + 'css/' + folderSass + '/sass.scss',
 ];
 
 var wf_fileCssDefault = [
@@ -47,13 +48,12 @@ gulp.task('wf_css_style_concat', function () {
     return gulp
         .src(wf_cssDefaultConcat)
         .pipe(concat(wf_fileStyle + '.scss'))
-        .pipe(gulp.dest(configuration.development + 'css/'));
+        .pipe(gulp.dest(configuration.homologation + folderSass + '/'));
 });
 
 gulp.task('wf_css_style_sass', function () {
-    console.log(configuration.homologation + configuration.assets + 'css/');
     return gulp
-        .src(configuration.development + 'css/' + wf_fileStyle + '.scss')
+        .src(configuration.homologation + folderSass + '/' + wf_fileStyle + '.scss')
         .pipe(sass.sync().on('error', sass.logError))
         .pipe(gulp.dest(configuration.homologation + configuration.assets + 'css/'));
 });
@@ -73,12 +73,12 @@ gulp.task('wf_css_plugin_concat', function () {
     return gulp
         .src(wf_cssPluginConcat)
         .pipe(concat(wf_filePlugin + '.scss'))
-        .pipe(gulp.dest(configuration.development + 'css/'));
+        .pipe(gulp.dest(configuration.homologation + folderSass + '/'));
 });
 
 gulp.task('wf_css_plugin_sass', function () {
     return gulp
-        .src(configuration.development + 'css/' + wf_filePlugin + '.scss')
+        .src(configuration.homologation + folderSass + '/' + wf_filePlugin + '.scss')
         .pipe(sass.sync().on('error', sass.logError))
         .pipe(gulp.dest(configuration.homologation + configuration.assets + 'css/'));
 });
