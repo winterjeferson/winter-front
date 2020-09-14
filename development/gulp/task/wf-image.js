@@ -28,11 +28,6 @@ function clean(path) {
     return del(path, { force: true }); // returns a promise
 }
 
-gulp.task('wf_image_clean', function () {
-    var files = [configuration.homologation + configuration.assets + 'img/**'];
-    return clean(files);
-});
-
 gulp.task('wf_image_move', function (done) {
     return gulp
         .src(configuration.development + 'img/**/*.*')
@@ -58,7 +53,6 @@ gulp.task('wf_image_imagemin', function () {
 });
 
 gulp.task('wf_image', gulp.series(
-    'wf_image_clean',
     'wf_image_move',
     'wf_beep'
 ));
