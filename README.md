@@ -15,4 +15,4 @@ How to use it:
 Thats all
 
 Take a look at:
-https://winterjeferson.github.io/winter-front/production
+https://winterjeferson.github.io/winter-front-1-0-0/production/
