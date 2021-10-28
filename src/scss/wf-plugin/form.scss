@@ -1,0 +1,105 @@
+$prefix: 'form';
+
+.form {
+    &__field {
+        align-items: center;
+        display: flex;
+        margin-bottom: $regular;
+    }
+
+    &__label {
+        font-weight: bold;
+        margin-bottom: $regular;
+        width: 100%;
+    }
+
+    &__input {
+        appearance: none;
+        @extend %extend-border-default;
+        border-radius: $border-radius-regular;
+        padding: $regular;
+        width: 100%;
+    }
+
+    select {
+        background-position:
+            calc(100% - 20px) calc(1em + 2px),
+            calc(100% - 15px) calc(1em + 2px),
+            calc(100% - 2.5em) 0.5em;
+        background-repeat: no-repeat;
+        background-size:
+            5px 5px,
+            5px 5px,
+            1px 1.5em;
+    }
+
+    select[multiple] {
+        background-image: none;
+    }
+
+    input[type="checkbox"],
+    input[type="radio"],
+    &__input {
+        transition: $transition;
+    }
+
+    input[type="color"] {
+        appearance: none;
+        background: none;
+        height: 40px;
+
+        &::-webkit-color-swatch-wrapper {
+            background-color: transparent;
+            padding: 0;
+        }
+
+        &::-webkit-color-swatch {
+            border: none;
+        }
+    }
+
+    &__option {
+        margin-right: $big;
+    }
+
+    select[multiple],
+    textarea {
+        height: 100px;
+    }
+
+    .column {
+        align-items: flex-start;
+        flex: 1;
+        @extend %extend-component-margin;
+    }
+
+    @each $color in $arrColorForm {
+        &--#{$color} {
+            $color-custom: color-light-border(#{$color});
+
+            select {
+                background-image: linear-gradient(45deg, transparent 50%, #{$color-custom} 50%),
+                linear-gradient(135deg, #{$color-custom} 50%, transparent 50%);
+            }
+
+            input[type="checkbox"],
+            input[type="radio"] {
+                &:focus {
+                    box-shadow: 0 0 0 4px rgba($color-custom, .7);
+                }
+            }
+
+            input[type="color"] {
+                border-color: $color-custom;
+            }
+
+            .#{$prefix}__input {
+                border-color: $color-custom;
+
+                &:focus {
+                    box-shadow: 0 0 0 4px rgba($color-custom, .7);
+                }
+            }
+        }
+    }
+}
