@@ -1,5 +1,5 @@
 
-Take a look: https://winterjeferson.github.io/winter-front-2/
+Take a look: https://winterjeferson.github.io/winter-front/
 
 Dependencies (you must have it installed):
 
