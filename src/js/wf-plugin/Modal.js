@@ -152,6 +152,7 @@ export class Modal {
         this.elModalFooter.classList.add(this.cssHide);
         typeof obj.action === 'undefined' ? this.openModal() : this.closeModal();
         typeof obj.click !== 'undefined' ? this.buildContentConfirmationAction(obj.click) : '';
+        typeof obj.confirmText !== 'undefined' ? this.elModalFooterConfirm.innerHTML = obj.confirmText : this.translate();
         this.buildModalSize(obj.size);
         this.buildModalKind(obj);
     }
