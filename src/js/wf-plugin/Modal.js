@@ -179,17 +179,22 @@ export class Modal {
     }
 
     buildContentAjax(target) {
+        const self = this;
         let ajax = new XMLHttpRequest();
 
-        ajax.onreadystatechange = () => {
-            if (this.readyState === 4 && this.status === 200) {
-                this.elModalContent.innerHTML = this.responseText;
-                this.resetOtherClass();
-            }
+        ajax.onreadystatechange = function () {
+            if (!this.readyState === 4 && this.status === 200) return;
+
+            self.buildContentAjaxSuccess(this.responseText);
         };
 
         ajax.open('GET', target, true);
         ajax.send();
+    }
+
+    buildContentAjaxSuccess(data) {
+        this.elModalContent.innerHTML = data;
+        this.resetOtherClass();
     }
 
     buildGalleryImage(image, description) {
