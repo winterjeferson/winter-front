@@ -16,7 +16,7 @@ export class MenuToggle {
         const elSibling = args.target.nextElementSibling;
         const isCss = elSibling.classList.contains(this.cssOpen);
 
-        if(isCss){
+        if (isCss) {
             elSibling.classList.remove(this.cssOpen);
             return;
         }
