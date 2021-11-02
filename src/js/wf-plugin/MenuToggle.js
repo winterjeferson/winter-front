@@ -1,27 +1,26 @@
 export class MenuToggle {
     constructor() {
-        this.classButton = 'toggle-menu';
+        this.cssButton = 'toggle-menu';
+        this.cssOpen = 'toggle-menu__open';
         this.isWatch = false;
-        this.addClick = this.addClick.bind(this);
-    }
-
-    addClick(args) {
-        const attribute = 'style';
-        const sibling = args.target.nextElementSibling;
-        const isStyle = sibling.hasAttribute(attribute);
-
-        if (isStyle) {
-            sibling.removeAttribute(attribute);
-            return;
-        }
-
-        sibling.style.display = 'flex';
+        this.handleClick = this.handleClick.bind(this);
     }
 
     buildMenu() {
         this.elButton.forEach((el) => {
-            helper.addClick(el, this.addClick);
+            helper.addClick(el, this.handleClick);
         });
+    }
+
+    handleClick(args) {
+        const elSibling = args.target.nextElementSibling;
+        const isCss = elSibling.classList.contains(this.cssOpen);
+
+        if(isCss){
+            elSibling.classList.remove(this.cssOpen);
+            return;
+        }
+        elSibling.classList.add(this.cssOpen);
     }
 
     init() {
@@ -35,7 +34,7 @@ export class MenuToggle {
     }
 
     update() {
-        this.elButton = document.querySelectorAll(`.${this.classButton}`);
+        this.elButton = document.querySelectorAll(`.${this.cssButton}`);
     }
 
     reset() {
