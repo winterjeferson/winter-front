@@ -220,14 +220,14 @@ export class Carousel {
     }
 
     watchResize() {
-        window.onresize = () => {
+        window.addEventListener('resize', () => {
             this.elCarousel.forEach((item) => {
                 this.watchResizeLoop(item);
             });
-        };
+        }, true);
     }
 
-    watchResizeLoop() {
+    watchResizeLoop(item) {
         const el = item.parentNode.parentNode.parentNode.parentNode;
         const elCarouselList = el.querySelector(`.${this.cssCarouselList}`);
         let newSlide = 0;
