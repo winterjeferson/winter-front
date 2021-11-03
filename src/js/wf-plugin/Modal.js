@@ -93,7 +93,7 @@ export class Modal {
             const description = target.querySelector('img').getAttribute('data-description');
 
             event.preventDefault();
-            this.buildModal('gallery', false, 'full');
+            this.buildModal({kind: 'gallery', size: 'big'});
             this.buildGalleryImage(href, description);
             this.buildGalleryNavigation(target);
         });
