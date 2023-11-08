@@ -107,14 +107,6 @@
     background-color: transparent;
     border-width: $border-width * 2;
 
-    &--extra-small,
-    &--small,
-    &--regular,
-    &--big,
-    &--extra-big {
-        border-radius: 0;
-    }
-
     @each $color in $arrColorButton {
         &--#{$color} {
             border-color: color-regular-border(#{$color});
@@ -200,6 +192,11 @@
         &--proportional {
             padding: $extra-big;
         }
+    }
+
+    &--full {
+        justify-content: center;
+        width: 100%;
     }
 
     &--transparent {

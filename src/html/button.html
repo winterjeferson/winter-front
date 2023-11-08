@@ -1,12 +1,12 @@
 {% from 'include/template-nunjucks.html' import arrSize, arrColor %}
 {% set arrSocial = [
-        'facebook',
-        'twitter',
-        'youtube',
-        'linkedin',
-        'github',
-        'instagram'
-    ]
+'facebook',
+'twitter',
+'youtube',
+'linkedin',
+'github',
+'instagram'
+]
 %}
 {% include "include/head.html" %}
 <section class="center">
@@ -16,7 +16,20 @@
     <nav class="button-wrapper row center">
         {% for color in arrColor %}
         <button type="button" class="button button--{{size}} button--{{color}}">
-            button {{size}} {{color}}
+            button button--{{size}} button--{{color}}
+        </button>
+        {% endfor %}
+    </nav>
+    {% endfor %}
+</section>
+<section class="center">
+    <h1 class="page__title">Button Full</h1>
+    {% for size in arrSize %}
+    <h2 class="page__sub-title">{{size}}</h2>
+    <nav class="button-wrapper row center">
+        {% for color in arrColor %}
+        <button type="button" class="button button--{{size}} button--{{color}} button--full">
+            button button--{{size}} button--{{color}} button--full
         </button>
         {% endfor %}
     </nav>
@@ -34,7 +47,8 @@
                 <a href="javascript:void(0);" class="button button--{{size}} button--{{color}}">Button</a>
                 <a href="javascript:void(0);" class="button button--{{size}} button--{{color}}">Drop down</a>
                 <a href="javascript:void(0);" class="button button--{{size}} button--{{color}}">Dolor sit amet</a>
-                <a href="javascript:void(0);" class="button button--{{size}} button--{{color}}">Consecttur adipscing elit</a>
+                <a href="javascript:void(0);" class="button button--{{size}} button--{{color}}">Consecttur adipscing
+                    elit</a>
                 <a href="javascript:void(0);" class="button button--{{size}} button--{{color}}">Lorem ipsum</a>
                 <a href="javascript:void(0);" class="button button--{{size}} button--{{color}}">Dolor sit amet</a>
             </div>
@@ -49,8 +63,8 @@
     <h2 class="page__sub-title">{{size}}</h2>
     <nav class="button-wrapper row center">
         {% for color in arrColor %}
-        <button type="button" class="button-outline button-outline--{{size}} button-outline--{{color}}">
-            button {{size}} {{color}}
+        <button type="button" class="button button-outline button--{{size}} button-outline--{{color}}">
+            button button-outline button--{{size}} button-outline--{{color}}
         </button>
         {% endfor %}
     </nav>
@@ -63,7 +77,7 @@
     <nav class="button-wrapper row center">
         {% for color in arrColor %}
         <button type="button" class="link link--{{size}} link--{{color}}">
-            button {{size}} {{color}}
+            link link--{{size}} link--{{color}}
         </button>
         {% endfor %}
     </nav>
