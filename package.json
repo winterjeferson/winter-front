@@ -29,7 +29,7 @@
     "gulp-imagemin": "^7.1.0",
     "gulp-newer": "^1.4.0",
     "gulp-remove-code": "^3.0.4",
-    "gulp-sass": "^4.1.0",
+    "gulp-sass": "^5.1.0",
     "gulp-stylelint": "^13.0.0",
     "gulp-webserver": "^0.9.1",
     "stylelint": "^13.8.0",
