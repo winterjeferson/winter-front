@@ -36,6 +36,19 @@
     {% endfor %}
 </section>
 <section class="center">
+    <h1 class="page__title">Button skeleton</h1>
+    {% for size in arrSize %}
+    <h2 class="page__sub-title">{{size}}</h2>
+    <nav class="button-wrapper row center">
+        {% for color in arrColor %}
+        <button type="button" class="button button--{{size}} button--{{color}} skeleton">
+            button button--{{size}} button--{{color}}
+        </button>
+        {% endfor %}
+    </nav>
+    {% endfor %}
+</section>
+<section class="center">
     <h1 class="page__title">Drop down</h1>
     {% for size in arrSize %}
     <h2 class="page__sub-title">{{size}}</h2>

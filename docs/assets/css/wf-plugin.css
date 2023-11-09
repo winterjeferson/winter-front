@@ -3101,3 +3101,27 @@ small {
 @media (min-width: 1920px) {
   .hide-full-hd {
     display: none; } }
+
+.extend-skeleton, .skeleton, .skeleton * {
+  border-color: transparent !important;
+  color: transparent !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+  resize: none !important;
+  user-select: none !important; }
+  .extend-skeleton::placeholder, .skeleton::placeholder, .skeleton ::placeholder {
+    color: transparent !important; }
+
+.skeleton {
+  animation: skeleton 1s linear infinite alternate; }
+  .skeleton * {
+    opacity: 0 !important; }
+
+.skeleton-no-border {
+  border-color: transparent !important; }
+
+@keyframes skeleton {
+  0% {
+    background-color: #c2cfd6; }
+  100% {
+    background-color: #f0f3f5; } }

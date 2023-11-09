@@ -1,0 +1,36 @@
+.extend-skeleton {
+    border-color: transparent !important;
+    color: transparent !important;
+    overflow: hidden !important;
+    pointer-events: none !important;
+    resize: none !important;
+    user-select: none !important;
+
+    &::placeholder {
+        color: transparent !important;
+    }
+}
+
+.skeleton {
+    animation: skeleton 1s linear infinite alternate;
+    @extend .extend-skeleton;
+
+    * {
+        @extend .extend-skeleton;
+        opacity: 0 !important;
+    }
+}
+
+.skeleton-no-border {
+    border-color: transparent !important;
+}
+
+@keyframes skeleton {
+    0% {
+        background-color: hsl(200, 20%, 80%);
+    }
+
+    100% {
+        background-color: hsl(200, 20%, 95%);
+    }
+}
