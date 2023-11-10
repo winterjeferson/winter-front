@@ -3116,6 +3116,9 @@ small {
   animation: skeleton 1s linear infinite alternate; }
   .skeleton * {
     opacity: 0 !important; }
+  .skeleton::after {
+    content: ' ';
+    display: inline-flex; }
 
 .skeleton-no-border {
   border-color: transparent !important; }
