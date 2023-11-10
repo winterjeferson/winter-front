@@ -154,6 +154,14 @@ small {
   .button-outline .icon,
   .link .icon {
     font-size: 0.87em; }
+  .button b,
+  .button strong,
+  .button-outline b,
+  .button-outline strong,
+  .link b,
+  .link strong {
+    display: contents;
+    font-size: inherit; }
 
 .button {
   border-width: 1px; }

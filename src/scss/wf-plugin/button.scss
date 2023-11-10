@@ -30,6 +30,12 @@
     .icon {
         font-size: 0.87em;
     }
+
+    b,
+    strong {
+        display: contents;
+        font-size: inherit;
+    }
 }
 
 .button {
