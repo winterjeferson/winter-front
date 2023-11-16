@@ -105,7 +105,8 @@ small {
 
 .column,
 .row {
-  display: flex; }
+  display: flex;
+  position: relative; }
 
 .center {
   align-items: center;
@@ -1060,7 +1061,8 @@ small {
       border-color: #bec3c7; }
 
 .button-wrapper {
-  align-items: center; }
+  align-items: center;
+  position: relative; }
   .button-wrapper .button,
   .button-wrapper .button-outline,
   .button-wrapper .drop-down,
@@ -1347,8 +1349,10 @@ small {
   .card--yellow .card__header {
     color: #a98a0a; }
 
-.card-wrapper .card {
-  margin: 10px; }
+.card-wrapper {
+  position: relative; }
+  .card-wrapper .card {
+    margin: 10px; }
 
 .carousel {
   overflow: hidden;
@@ -1442,7 +1446,8 @@ small {
 .form__field {
   align-items: center;
   display: flex;
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+  position: relative; }
 
 .form__label {
   font-weight: bold;
@@ -2076,6 +2081,7 @@ small {
   flex-grow: 1;
   margin: auto;
   max-width: 100%;
+  position: relative;
   width: 100%; }
   @media (min-width: 768px) {
     .container {
@@ -2657,6 +2663,8 @@ small {
     width: 100%; }
   .table--wrapper--auto {
     max-height: initial; }
+  .table--wrapper, .table--wrapper--auto {
+    position: relative; }
 
 .wrapper-table-responsive {
   display: grid;
@@ -2825,7 +2833,8 @@ small {
 .tag-wrapper {
   align-items: flex-end;
   display: flex;
-  flex-direction: row; }
+  flex-direction: row;
+  position: relative; }
 
 .tag {
   align-items: center;

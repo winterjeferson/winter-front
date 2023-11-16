@@ -5,6 +5,7 @@ $prefix: 'form';
         align-items: center;
         display: flex;
         margin-bottom: $regular;
+        position: relative;
     }
 
     &__label {

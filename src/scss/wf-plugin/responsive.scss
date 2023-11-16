@@ -7,6 +7,7 @@ $padding: $big;
     flex-grow: 1;
     margin: auto;
     max-width: 100%;
+    position: relative;
     width: 100%;
 
     @include tablet {
