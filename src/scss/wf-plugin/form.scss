@@ -22,6 +22,10 @@ $prefix: 'form';
         width: 100%;
     }
 
+    &__input-file {
+        padding: $small + $extra-small;
+    }
+
     select {
         background-position:
             calc(100% - 20px) calc(1em + 2px),
@@ -90,8 +94,19 @@ $prefix: 'form';
                 }
             }
 
+            input {
+                &.form__input--invalid {
+                    border-color: $color-red;
+                    box-shadow: 0 0 0 4px rgba($color-red, .7);
+                }
+            }
+
             input[type="color"] {
                 border-color: $color-custom;
+            }
+
+            &:disabled {
+                background-color: $color-red;
             }
 
             .#{$prefix}__input {
