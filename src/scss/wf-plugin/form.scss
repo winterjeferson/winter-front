@@ -94,13 +94,6 @@ $prefix: 'form';
                 }
             }
 
-            input {
-                &.form__input--invalid {
-                    border-color: $color-red;
-                    box-shadow: 0 0 0 4px rgba($color-red, .7);
-                }
-            }
-
             input[type="color"] {
                 border-color: $color-custom;
             }
@@ -114,6 +107,11 @@ $prefix: 'form';
 
                 &:focus {
                     box-shadow: 0 0 0 4px rgba($color-custom, .7);
+                }
+
+                &.#{$prefix}__input--invalid {
+                    border-color: $color-red;
+                    box-shadow: 0 0 0 4px rgba($color-red, .7);
                 }
             }
         }
