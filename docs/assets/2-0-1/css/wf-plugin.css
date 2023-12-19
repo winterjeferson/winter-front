@@ -2006,11 +2006,26 @@ small {
   display: flex;
   flex-direction: column;
   padding: 10px;
-  text-align: right; }
+  pointer-events: none;
+  position: fixed;
+  right: 0;
+  text-align: right;
+  top: 0;
+  user-select: none;
+  width: 100%;
+  z-index: 7; }
   .notification__item {
     align-items: center;
     margin-bottom: 5px;
     width: auto; }
+  .notification--center {
+    align-items: center; }
+  .notification--left {
+    align-items: flex-start; }
+  .notification--right {
+    align-items: flex-end; }
+  .notification .button {
+    pointer-events: initial; }
   .notification .button, .notification__text {
     display: inline-flex; }
   .notification--extra-small {
@@ -2028,11 +2043,6 @@ small {
   .notification--extra-big {
     border-radius: 8px;
     padding: 40px; }
-  .notification--default {
-    position: fixed;
-    right: 0;
-    top: 0;
-    z-index: 7; }
   .notification .notification--black {
     background-color: #f2f2f2;
     border-color: #d9d9d9;

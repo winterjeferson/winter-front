@@ -3,13 +3,36 @@
     display: flex;
     flex-direction: column;
     padding: $regular;
+    pointer-events: none;
+    position: fixed;
+    right: 0;
     text-align: right;
+    top: 0;
+    user-select: none;
+    width: 100%;
+    z-index: z-index("notification");
 
     &__item {
         align-items: center;
         @extend %extend-border-default;
         margin-bottom: $small;
         width: auto;
+    }
+
+    &--center {
+        align-items: center;
+    }
+
+    &--left {
+        align-items: flex-start;
+    }
+
+    &--right {
+        align-items: flex-end;
+    }
+
+    .button {
+        pointer-events: initial;
     }
 
     .button,
@@ -40,13 +63,6 @@
     &--extra-big {
         border-radius: $border-radius-extra-big;
         padding: $extra-big;
-    }
-
-    &--default {
-        position: fixed;
-        right: 0;
-        top: 0;
-        z-index: z-index("notification");
     }
 
     @each $color in $arrColorNotification {

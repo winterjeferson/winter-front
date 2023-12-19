@@ -3,12 +3,20 @@
 <h1 class="page__title">Notification</h1>
 <div class="button-wrapper center">
     <button type="button" class="button button--regular button--blue"
-        onclick="window.notification.add({'text': 'Lorem ipsum dolor sit amet, consecttur adipscing elit.', 'color': 'red'});">
-        Default Place
+        onclick="window.notification.add({'content': 'Lorem ipsum dolor sit amet, consecttur adipscing elit.', 'color': 'blue', 'position': 'right'});">
+        Right
     </button>
-    <button type="button" class="button button--regular button--blue"
-        onclick="window.notification.add({'text': 'Lorem ipsum dolor sit amet, consecttur adipscing elit.', 'color': 'red', 'place': '#notification_place'});">
-        Pointing Place
+    <button type="button" class="button button--regular button--red"
+        onclick="window.notification.add({'content': 'Lorem ipsum dolor sit amet, consecttur adipscing elit.', 'color': 'red', 'position': 'left'});">
+        Left
+    </button>
+    <button type="button" class="button button--regular button--green"
+        onclick="window.notification.add({'content': 'Lorem ipsum dolor sit amet, consecttur adipscing elit.', 'color': 'green', 'position': 'center', 'size': 'extra-big'});">
+        Center big
+    </button>
+    <button type="button" class="button button--regular button--orange"
+        onclick="window.notification.add({'content': 'Lorem ipsum dolor sit amet, consecttur adipscing elit.', 'color': 'orange', 'position': 'left', 'place': '#notification_place', 'size': 'extra-small'});">
+        Pointing Place target id exyta small
     </button>
 </div>
 <div id="notification_place" class="row">

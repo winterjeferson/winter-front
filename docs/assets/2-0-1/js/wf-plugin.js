@@ -997,35 +997,53 @@ export class Modal {
 export class Notification {
     constructor() {
         this.elBody = document.querySelector('body');
-        this.elNotificationId = 'notification';
+        this.id = 'notification';
         this.colorDefault = 'grey';
 
         this.notificationId = 0;
     }
 
-    add(obj) {
-        if (!obj.text) return;
+    add(props) {
+        if (!props.content) return;
 
-        this.placeItem(obj);
+        this.placeItem(props);
 
-        const el = document.querySelector(`#${this.elNotificationId + this.notificationId}`);
-        this.remove(el, obj.text.length);
+        const el = document.querySelector(`#${this.id + this.notificationId}`);
+        this.remove(el, props.content.length);
         this.notificationId++;
     }
 
-    buildHtml() {
-        const html = `<div id="${this.elNotificationId}" class="${this.elNotificationId} ${this.elNotificationId}--default"></div>`;
+    buildHtml(props) {
+        const id = props.id ? `id="${this.id}_${props.id}"` : '';
+        const position = props.position ? props.position : 'left';
+        const content = props.content ? props.content : '';
 
+        return `<div ${id} class="${this.id} ${this.id}--${position}">${content}</div>`;
+    }
+
+    buildHtmlDefault() {
+        const positions = ['center', 'left', 'right'];
+        let html = '';
+
+        positions.forEach((item) => {
+            html += this.buildHtml({ id: item, position: item });
+
+        });
         this.elBody.insertAdjacentHTML('beforeend', html);
     }
 
-    buildHtmlItem(obj) {
-        const color = typeof obj.color !== 'undefined' ? obj.color : this.colorDefault;
+    buildHtmlItem(props) {
+        const color = typeof props.color !== 'undefined' ? props.color : this.colorDefault;
+        const size = typeof props.size !== 'undefined' ? props.size : 'regular';
 
         return `
-            <div class="${this.elNotificationId}__item ${this.elNotificationId}--regular ${this.elNotificationId}--${color}" id="${this.elNotificationId}${this.notificationId}">
-                <span class="${this.elNotificationId}__text">${obj.text}</span>
-                <button type="button" class="button button--small button--small--proportional button--transparent" onclick="Notification.remove(this.parentNode, 0)" aria-label="${window.translation.translation.close}">
+            <div class="${this.id}__item ${this.id}--${size} ${this.id}--${color}" id="${this.id}${this.notificationId}">
+                <span class="${this.id}__text">${props.content}</span>
+                <button type="button" 
+                    class="button button--small button--small--proportional button--transparent" 
+                    onclick="notification.remove(this.parentNode, 0)" 
+                    aria-label="${window.translation.translation.close}"
+                >
                     <svg class="icon icon--regular rotate-45">
                         <use xlink:href="./assets/${globalVersion}/img/icon.svg#plus"></use>
                     </svg>
@@ -1035,30 +1053,31 @@ export class Notification {
     }
 
     init() {
-        this.buildHtml();
-        this.update();
+        this.buildHtmlDefault();
     }
 
-    placeItem(obj) {
-        let string = this.buildHtmlItem(obj);
-        let place = '';
+    placeItem(props) {
+        const isPlaceId = typeof props.place !== 'undefined';
+        const position = typeof props.position !== 'undefined' ? props.position : 'right';
+        let string = this.buildHtmlItem(props);
+        let elPlace = '';
 
-        if (typeof obj.place === 'undefined') {
-            place = this.elNotification;
-        } else {
-            let elList = document.querySelector(obj.place).querySelector(`.${this.elNotificationId}`);
+        if (isPlaceId) {
+            let elList = document.querySelector(props.place).querySelector(`.${this.id}`);
 
             if (elList === null) {
-                let newString = `<div class="${this.elNotificationId}">${string}</div>`;
+                let newString = this.buildHtml({ content: string, position });
 
                 string = newString;
-                place = document.querySelector(obj.place);
+                elPlace = document.querySelector(props.place);
             } else {
-                place = elList;
+                elList.style.position = 'relative';
+                elPlace = elList;
             }
+        } else {
+            elPlace = document.getElementById(`${this.id}_${position}`);
         }
-
-        place.insertAdjacentHTML('beforeend', string);
+        elPlace.insertAdjacentHTML('beforeend', string);
     }
 
     remove(item, messageLength) {
@@ -1073,12 +1092,6 @@ export class Notification {
         if (item.parentNode === null) return;
 
         item.parentNode.removeChild(item);
-    }
-
-    update() {
-        const el = document.querySelector(`#${this.elNotificationId}`);
-
-        this.elNotification = el;
     }
 }
 export class Table {
