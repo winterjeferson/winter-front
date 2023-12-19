@@ -1,4 +1,4 @@
-{% from 'include/template-nunjucks.html' import arrSize, arrColor %}
+{% from 'include/template-nunjucks.html' import version, arrSize, arrColor %}
 {% include "include/head.html" %}
 <h1 class="page__title">Tag</h1>
 {% for size in arrSize %}
@@ -11,7 +11,7 @@
             class="button button--{{size}} button--{{size}}--proportional button--transparent button__close"
             aria-label="close">
             <svg class="icon icon--{{size}} rotate-45">
-                <use xlink:href="./assets/img/icon.svg#plus"></use>
+                <use xlink:href="./assets/{{version}}/img/icon.svg#plus"></use>
             </svg>
         </button>
     </div>
@@ -21,7 +21,7 @@
             class="button button--{{size}} button--{{size}}--proportional button--transparent button__close"
             aria-label="close">
             <svg class="icon icon--{{size}} rotate-45">
-                <use xlink:href="./assets/img/icon.svg#plus"></use>
+                <use xlink:href="./assets/{{version}}/img/icon.svg#plus"></use>
             </svg>
         </button>
     </div>

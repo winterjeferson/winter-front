@@ -1,3 +1,4 @@
+{% from 'include/template-nunjucks.html' import version %}
 {% set arrSlide = [
     ['SASS,  Gulp JS, Nunjuck, Font Awasome' , 'cyan'],
     ['Lazyload for images' , 'orange'],
@@ -18,12 +19,12 @@
         <div class="navigation-change button-wrapper row center hide">
             <button type="button" class="button button--big" data-id="previous" aria-label="previous">
                 <svg class="icon icon--extra-big">
-                    <use xlink:href="./assets/img/icon.svg#previous"></use>
+                    <use xlink:href="./assets/{{version}}/img/icon.svg#previous"></use>
                 </svg>
             </button>
             <button type="button" class="button button--big" data-id="next" aria-label="next">
                 <svg class="icon icon--extra-big rotate-180">
-                    <use xlink:href="./assets/img/icon.svg#previous"></use>
+                    <use xlink:href="./assets/{{version}}/img/icon.svg#previous"></use>
                 </svg>
             </button>
         </div>

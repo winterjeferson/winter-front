@@ -1,4 +1,4 @@
-{% from 'include/template-nunjucks.html' import arrSize, arrColor %}
+{% from 'include/template-nunjucks.html' import version, arrSize, arrColor %}
 {% include "include/head.html" %}
 {% set arrStyle = ['slide', 'fade'] %}
 {% set arrImage = ['1', '2', '1', '2', '1'] %}
@@ -11,7 +11,7 @@
         {% for image in arrImage %}
         <li class="carousel__item">
             <a href="javascript:void(0);">
-                <img src="./assets/img/banner/{{image}}.png" alt="banner">
+                <img src="./assets/{{version}}/img/banner/{{image}}.png" alt="banner">
             </a>
         </li>
         {% endfor %}
@@ -19,12 +19,12 @@
     <div class="navigation-change button-wrapper row center">
         <button type="button" class="button button--big" data-id="previous" aria-label="previous">
             <svg class="icon icon--extra-big">
-                <use xlink:href="./assets/img/icon.svg#previous"></use>
+                <use xlink:href="./assets/{{version}}/img/icon.svg#previous"></use>
             </svg>
         </button>
         <button type="button" class="button button--big" data-id="next" aria-label="next">
             <svg class="icon icon--extra-big rotate-180">
-                <use xlink:href="./assets/img/icon.svg#previous"></use>
+                <use xlink:href="./assets/{{version}}/img/icon.svg#previous"></use>
             </svg>
         </button>
     </div>
@@ -50,12 +50,12 @@
     <div class="navigation-change button-wrapper row center hide">
         <button type="button" class="button button--big" data-id="previous" aria-label="previous">
             <svg class="icon icon--extra-big">
-                <use xlink:href="./assets/img/icon.svg#previous"></use>
+                <use xlink:href="./assets/{{version}}/img/icon.svg#previous"></use>
             </svg>
         </button>
         <button type="button" class="button button--big" data-id="next" aria-label="next">
             <svg class="icon icon--extra-big rotate-180">
-                <use xlink:href="./assets/img/icon.svg#previous"></use>
+                <use xlink:href="./assets/{{version}}/img/icon.svg#previous"></use>
             </svg>
         </button>
     </div>

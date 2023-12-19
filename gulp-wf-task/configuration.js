@@ -8,7 +8,7 @@ module.exports = {
     index: 'index',
     allFile: allFile,
     allFolderFile: `**/${allFile}`,
-    assets: 'assets/',
+    assets: 'assets/2-0-1/',
     prefix: 'wf-',
     ip: '127.0.0.1',
     port: '3015',

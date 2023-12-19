@@ -31,7 +31,7 @@ export class Notification {
                 <span class="${this.elNotificationId}__text">${obj.text}</span>
                 <button type="button" class="button button--small button--small--proportional button--transparent" onclick="Notification.remove(this.parentNode, 0)" aria-label="${window.translation.translation.close}">
                     <svg class="icon icon--regular rotate-45">
-                        <use xlink:href="./assets/img/icon.svg#plus"></use>
+                        <use xlink:href="./assets/${globalVersion}/img/icon.svg#plus"></use>
                     </svg>
                 </button>
             </div>

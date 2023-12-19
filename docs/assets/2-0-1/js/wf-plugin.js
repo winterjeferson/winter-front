@@ -705,7 +705,7 @@ export class Modal {
                     <header class="modal__header right">
                         <button type="button" aria-label="${window.translation.translation.close}" class="button button--small button--small--proportional button--grey button--transparent button--close">
                             <svg class="icon icon--regular rotate-45">
-                                <use xlink:href="./assets/img/icon.svg#plus"></use>
+                                <use xlink:href="./assets/${globalVersion}/img/icon.svg#plus"></use>
                             </svg>
                         </button>
                     </header>
@@ -715,12 +715,12 @@ export class Modal {
                     <div class="navigation-change button-wrapper row center ${this.cssHide}">
                         <button type="button" class="button button--big" data-id="previous" aria-label="${window.translation.translation.previous}" >
                             <svg class="icon icon--extra-big icon--white">
-                                <use xlink:href="./assets/img/icon.svg#previous"></use>
+                                <use xlink:href="./assets/${globalVersion}/img/icon.svg#previous"></use>
                             </svg>
                         </button>
                         <button type="button" class="button button--big" data-id="next" aria-label="${window.translation.translation.next}" >
                             <svg class="icon icon--extra-big icon--white rotate-180">
-                                <use xlink:href="./assets/img/icon.svg#previous"></use>
+                                <use xlink:href="./assets/${globalVersion}/img/icon.svg#previous"></use>
                             </svg>
                         </button>
                     </div>
@@ -1022,7 +1022,7 @@ export class Notification {
                 <span class="${this.elNotificationId}__text">${obj.text}</span>
                 <button type="button" class="button button--small button--small--proportional button--transparent" onclick="Notification.remove(this.parentNode, 0)" aria-label="${window.translation.translation.close}">
                     <svg class="icon icon--regular rotate-45">
-                        <use xlink:href="./assets/img/icon.svg#plus"></use>
+                        <use xlink:href="./assets/${globalVersion}/img/icon.svg#plus"></use>
                     </svg>
                 </button>
             </div>

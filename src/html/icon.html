@@ -1,4 +1,4 @@
-{% from 'include/template-nunjucks.html' import arrSize, arrColor %}
+{% from 'include/template-nunjucks.html' import version, arrSize, arrColor %}
 {% set arrIcon = [
 'home',
 'plus',
@@ -23,7 +23,7 @@
     <div class="card card--extra-small card--grey">
         <article class="card__body">
             <svg class="icon icon--extra-big icon--grey">
-                <use xlink:href="./assets/img/icon.svg#{{i}}"></use>
+                <use xlink:href="./assets/{{version}}/img/icon.svg#{{i}}"></use>
             </svg>
         </article>
         <footer class="card__footer">

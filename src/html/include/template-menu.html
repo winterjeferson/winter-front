@@ -1,3 +1,4 @@
+{% from 'include/template-nunjucks.html' import version %}
 {% set arrMenu = [
 'button',
 'card',
@@ -23,7 +24,7 @@
 <div class="theme-menu button-wrapper">
     <button type="button" class="button button--regular button--regular--proportional button--grey toggle-menu" aria-label="Menu">
         <svg class="icon icon--regular">
-            <use xlink:href="./assets/img/icon.svg#menu"></use>
+            <use xlink:href="./assets/{{version}}/img/icon.svg#menu"></use>
         </svg>
     </button>
     <nav class="column toggle-menu__content">

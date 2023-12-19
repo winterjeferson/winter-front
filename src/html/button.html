@@ -1,4 +1,4 @@
-{% from 'include/template-nunjucks.html' import arrSize, arrColor %}
+{% from 'include/template-nunjucks.html' import version, arrSize, arrColor %}
 {% set arrSocial = [
 'facebook',
 'twitter',
@@ -104,7 +104,7 @@
         <a href="javascript:void(0);" rel="noopener"
             class="button button--{{size}} button--{{size}}--proportional button--grey">
             <svg class="icon icon--{{size}} icon--black">
-                <use xlink:href="./assets/img/icon.svg#{{social}}"></use>
+                <use xlink:href="./assets/2-0-1/img/icon.svg#{{social}}"></use>
             </svg>
         </a>
         {% endfor %}

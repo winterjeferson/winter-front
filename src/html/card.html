@@ -1,4 +1,4 @@
-{% from 'include/template-nunjucks.html' import arrSize, arrColor %}
+{% from 'include/template-nunjucks.html' import version, arrSize, arrColor %}
 {% include "include/head.html" %}
 <section class="center page-card">
     <h1 class="page__title">Card</h1>
@@ -11,7 +11,7 @@
                 <h4>{{size}}</h4>
             </header>
             <article class="card__body">
-                <img src="assets/img/banner/1.png" alt="image">
+                <img src="assets/{{version}}/img/banner/1.png" alt="image">
                 <p>
                     Lorem ipsum dolor sit amet, consecttur adipscing elit.
                     Proin ut ni diam. Nam ini pretium ligulas.
@@ -45,7 +45,7 @@
                 <h4>{{size}}</h4>
             </header>
             <article class="card__body skeleton-no-border">
-                <img src="assets/img/banner/1.png" alt="image">
+                <img src="assets/{{version}}/img/banner/1.png" alt="image">
                 <p class="skeleton">&nbsp;</p>
                 <p class="skeleton">&nbsp;</p>
                 <p class="skeleton">&nbsp;</p>

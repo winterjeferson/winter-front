@@ -2,10 +2,14 @@
         <footer class="grid__footer">
             {% include "include/template-footer.html" %}
         </footer>
-
+        {% from 'include/template-nunjucks.html' import version %}
+        <script>
+            window.globalLanguage = "pt";
+            window.globalVersion = "{{version}}";
+        </script>
         <script type="module">
-            import * as wfp from './assets/js/wf-plugin.js';
-            import * as wft from './assets/js/wf-theme.js';
+            import * as wfp from './assets/{{version}}/js/wf-plugin.js';
+            import * as wft from './assets/{{version}}/js/wf-theme.js';
         </script>
     </main>
 </body>
