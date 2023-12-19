@@ -4,7 +4,7 @@ export class Translation {
         this.translationEn = {
             'cancel': 'Cancel',
             'close': 'Close',
-            'confirm': 'Confirm',
+            'confirm': 'OK',
             'input_upload': 'Select File...',
             'next': 'Next',
             'previous': 'Previous',
@@ -12,7 +12,7 @@ export class Translation {
         this.translationEs = {
             'cancel': 'Cancelar',
             'close': 'Cerrar',
-            'confirm': 'Confirmar',
+            'confirm': 'OK',
             'input_upload': 'Seleccione Archivo...',
             'next': 'Siguiente',
             'previous': 'Anterior',
@@ -20,7 +20,7 @@ export class Translation {
         this.translationPt = {
             'cancel': 'Cancelar',
             'close': 'Fechar',
-            'confirm': 'Confirmar',
+            'confirm': 'OK',
             'input_upload': 'Selecione o Arquivo...',
             'next': 'Próximo',
             'previous': 'Anterior',

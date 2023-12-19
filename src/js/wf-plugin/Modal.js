@@ -36,8 +36,8 @@ export class Modal {
                         </button>
                     </div>
                     <footer class="button-wrapper modal__footer center ${this.cssHide}">
-                        <button type="button" class="button button--regular button--green" data-id="confirm"></button>
                         <button type="button" class="button button--regular button--grey" data-id="cancel"></button>
+                        <button type="button" class="button button--regular button--blue" data-id="confirm"></button>
                     </footer>
                 </div>
             </div>
@@ -48,11 +48,11 @@ export class Modal {
 
     buildKeyboard() {
         window.addEventListener('keyup', (event) => {
-            const key = event.key;
-
-            if (key === 'Escape') this.buildKeyboardEscape();
-            if (key === 'ArrowLeft') this.buildKeyboardArrowLeft();
-            if (key === 'ArrowRight') this.buildKeyboardArrowRight();
+            switch (event.key) {
+                case 'Escape': return this.buildKeyboardEscape();
+                case 'ArrowLeft': return this.buildKeyboardArrowLeft();
+                case 'ArrowRight': return this.buildKeyboardArrowRight();
+            }
         });
     }
 
@@ -93,7 +93,7 @@ export class Modal {
             const description = target.querySelector('img').getAttribute('data-description');
 
             event.preventDefault();
-            this.buildModal({kind: 'gallery', size: 'big'});
+            this.buildModal({ kind: 'gallery', size: 'big' });
             this.buildGalleryImage(href, description);
             this.buildGalleryNavigation(target);
         });
@@ -150,16 +150,16 @@ export class Modal {
 
     buildModal(obj) {
         this.elModalFooter.classList.add(this.cssHide);
-        typeof obj.action === 'undefined' ? this.openModal() : this.closeModal();
-        typeof obj.click !== 'undefined' ? this.buildContentConfirmationAction(obj.click) : '';
+        typeof obj.click !== 'undefined' ? this.buildContentConfirmationAction(obj.click) : this.buildContentConfirmationAction('modal.closeModal()');
         typeof obj.confirmText !== 'undefined' ? this.elModalFooterConfirm.innerHTML = obj.confirmText : this.translate();
         this.buildModalSize(obj.size);
         this.buildModalKind(obj);
+        typeof obj.action === 'undefined' ? this.openModal() : this.closeModal();
     }
 
     buildModalKind(obj) {
         if (obj.kind === 'ajax') this.buildContentAjax(obj.content);
-        if (obj.kind === 'confirmation') this.buildContentConfirmation(obj.content);
+        if (obj.kind === 'confirmation') this.buildContentConfirmation(obj);
         if (obj.kind === 'gallery') {
             this.elModalNavigationArrow.classList.remove('hide');
             return;
@@ -205,9 +205,16 @@ export class Modal {
         this.changeText(description);
     }
 
-    buildContentConfirmation(content) {
+    buildContentConfirmation(props) {
+        const content = props.content;
+        const isCancelButton = props.isCancelButton;
         const html = `<div class="center">${content}</div>`;
 
+        if (isCancelButton) {
+            this.elModalFooterCancel.classList.add(this.cssHide);
+        } else {
+            this.elModalFooterCancel.classList.remove(this.cssHide);
+        }
         this.elModalFooter.classList.remove(this.cssHide);
         this.elModalContent.innerHTML = html;
     }
@@ -256,8 +263,14 @@ export class Modal {
         this.elBody.classList.remove('overflow-y');
         this.elBody.classList.add('overflow-hidden');
         this.elBody.style.overflowY = 'hidden';
-        this.elModal.classList.remove(this.cssClose);
         this.elModalBox.classList.add('modal-animate');
+        this.elModal.classList.remove(this.cssClose);
+    }
+
+    openConfirmation(props) {
+        props.kind = 'confirmation';
+
+        this.buildModal(props);
     }
 
     resetOtherClass() {
