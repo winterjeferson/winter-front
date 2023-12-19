@@ -76,17 +76,22 @@ export class Carousel {
             const length = el.length;
             const autoplay = item.getAttribute('data-autoplay');
             const atributte = item.getAttribute(this.attCurrentSlide);
+            const elImage = item.querySelectorAll('img');
+            const isImage = elImage.length > 0;
 
             if (autoplay === 'true') this.buildAutoplay();
-
             this.resize(item);
             this.buildController(item, length);
             this.defineActive(item.querySelector(`[data-id="${atributte}"]`));
-
             if (length === 1) {
                 item.querySelector(this.attPrevious).classList.add(this.cssDisplay);
                 item.querySelector(this.attNext).classList.add(this.cssDisplay);
                 item.querySelector(`.${this.cssCarouselController}`).classList.add(this.cssDisplay);
+            }
+            if (isImage) {
+                const width = elImage[0].naturalWidth;
+
+                item.style.maxWidth = `${width}px`;
             }
         });
     }

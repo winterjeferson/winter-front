@@ -1355,6 +1355,7 @@ small {
     margin: 10px; }
 
 .carousel {
+  margin: auto;
   overflow: hidden;
   position: relative;
   width: 100%;
