@@ -5,12 +5,10 @@ export class Modal {
         this.cssHide = 'hide';
         this.cssClose = 'modal--close';
         this.cssScrollbar = 'scrollbar scrollbar--grey';
-
-        this.elBody = document.querySelector('body');
     }
 
     buildHtml() {
-        const string = `
+        const html = `
             <div class="modal ${this.cssClose} ${this.cssScrollbar}">
                 <div class="modal__box">
                     <header class="modal__header right">
@@ -43,7 +41,7 @@ export class Modal {
             </div>
         `;
 
-        this.elBody.insertAdjacentHTML('afterbegin', string);
+        helper.elBody.insertAdjacentHTML('afterbegin', html);
     }
 
     buildKeyboard() {
@@ -232,10 +230,10 @@ export class Modal {
 
     closeModal() {
         this.isModalOpen = false;
-        this.elBody.classList.add('overflow-y');
-        this.elBody.classList.remove('overflow-hidden');
-        this.elBody.style.overflowY = 'auto';
-        this.elBody.style.position = 'relative';
+        helper.elBody.classList.add('overflow-y');
+        helper.elBody.classList.remove('overflow-hidden');
+        helper.elBody.style.overflowY = 'auto';
+        helper.elBody.style.position = 'relative';
         this.elModal.classList.add(this.cssClose);
         this.elModalBox.classList.remove('modal-animate');
         this.resetOtherClass();
@@ -260,17 +258,11 @@ export class Modal {
 
     openModal() {
         this.isModalOpen = true;
-        this.elBody.classList.remove('overflow-y');
-        this.elBody.classList.add('overflow-hidden');
-        this.elBody.style.overflowY = 'hidden';
+        helper.elBody.classList.remove('overflow-y');
+        helper.elBody.classList.add('overflow-hidden');
+        helper.elBody.style.overflowY = 'hidden';
         this.elModalBox.classList.add('modal-animate');
         this.elModal.classList.remove(this.cssClose);
-    }
-
-    openConfirmation(props) {
-        props.kind = 'confirmation';
-
-        this.buildModal(props);
     }
 
     resetOtherClass() {

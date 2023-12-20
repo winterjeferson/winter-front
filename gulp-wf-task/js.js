@@ -11,13 +11,11 @@ const filePrefix = `${configuration.prefix}${configuration.theme}`;
 const filePrefixPlugin = `${configuration.prefix}${configuration.plugin}`;
 const folder = `${configuration.src}${extension}/`;
 const file = [
-    `${folder}${filePrefix}/!(${configuration.index})*.${extension}`,
-    `${folder}${filePrefix}/${configuration.index}.${extension}`,
+    `${folder}${filePrefix}/!(${configuration.index})*.${extension}`
 
 ];
 const filePlugin = [
-    `${folder}${filePrefixPlugin}/!(${configuration.index})*.${extension}`,
-    `${folder}${filePrefixPlugin}/${configuration.index}.${extension}`,
+    `${folder}${filePrefixPlugin}/!(${configuration.index})*.${extension}`
 ];
 const fileName = `${filePrefix}.${extension}`;
 const fileNamePlugin = `${filePrefixPlugin}.${extension}`;

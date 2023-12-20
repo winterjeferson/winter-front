@@ -1,4 +1,8 @@
 export class Helper {
+    constructor() {
+        this.elBody = document.querySelector('body');
+    }
+
     addClass(target, classCss) {
         if (!target || !classCss) return;
 

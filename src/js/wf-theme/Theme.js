@@ -6,7 +6,7 @@ export class Theme {
         this.arrStyleLength = this.arrStyle.length;
     }
 
-    build() {
+    init() {
         const url = top.location.href;
         const urlSplit = url.split('/');
         const length = urlSplit.length;

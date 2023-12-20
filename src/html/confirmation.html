@@ -1,0 +1,17 @@
+{% include "include/head.html" %}
+<h1 class="page__title">Confirmation</h1>
+<div class="row button-wrapper center">
+    <button type="button" class="button button--regular button--blue"
+        onclick="window.confirmation.open({'title': 'Sit amet', 'content': 'Lorem ipsum dolor sit amet, consecttur adipscing elit?', 'size': 'small', 'onclick': 'console.log(this)'});">
+        small
+    </button>
+    <button type="button" class="button button--regular button--blue"
+        onclick="window.confirmation.open({'title': 'Sit amet', 'content': 'Lorem ipsum dolor sit amet, consecttur adipscing elit?', 'size': 'extra-small',  'buttonSize': 'small', 'onclick': 'console.log(this)'});">
+        extra-small
+    </button>
+    <button type="button" class="button button--regular button--blue"
+        onclick="window.confirmation.open({'content': 'Lorem ipsum dolor sit amet, consecttur adipscing elit?', 'size': 'extra-small', 'onclick': 'console.log(this)', 'colorConfirm': 'green', 'colorCancel': 'red'});">
+        color button, no title
+    </button>
+</div>
+{% include "include/footer.html" %}

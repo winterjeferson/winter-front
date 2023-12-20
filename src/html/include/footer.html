@@ -3,13 +3,52 @@
             {% include "include/template-footer.html" %}
         </footer>
         {% from 'include/template-nunjucks.html' import version %}
-        <script>
-            window.globalLanguage = "pt";
-            window.globalVersion = "{{version}}";
-        </script>
+     
         <script type="module">
             import * as wfp from './assets/{{version}}/js/wf-plugin.js';
             import * as wft from './assets/{{version}}/js/wf-theme.js';
+
+            window.globalLanguage = "pt";
+            window.globalVersion = "{{version}}";
+
+            window.carousel = new wfp.Carousel();
+            window.component = new wfp.Component();
+            window.confirmation = new wfp.Confirmation();
+            window.form = new wfp.Form();
+            window.helper = new wfp.Helper();
+            window.layout = new wfp.Layout();
+            window.lazyLoad = new wfp.LazyLoad();
+            window.loadingMain = new wfp.LoadingMain();
+            window.mask = new wfp.Mask();
+            window.menuDropDown = new wfp.MenuDropDown();
+            window.menuTab = new wfp.MenuTab();
+            window.menuToggle = new wfp.MenuToggle();
+            window.modal = new wfp.Modal();
+            window.notification = new wfp.Notification();
+            window.table = new wfp.Table();
+            window.tag = new wfp.Tag();
+            window.translation = new wfp.Translation();
+
+            window.theme = new wft.Theme();
+
+            window.addEventListener('load',
+                window.translation.init(),
+                window.mask.init(),
+                window.modal.init(),
+                window.carousel.init(),
+                window.lazyLoad.init(),
+                window.menuDropDown.init(),
+                window.menuTab.init(),
+                window.menuToggle.init(),
+                window.notification.init(),
+                window.table.init(),
+                window.tag.init(),
+
+                window.theme.init(),
+
+                window.loadingMain.hide(), {
+                    once: true
+                });
         </script>
     </main>
 </body>
