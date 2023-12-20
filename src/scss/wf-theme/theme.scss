@@ -1,16 +1,16 @@
 * {
-    font-family: sans-serif;
+    font-family: 'system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"', sans-serif;
 }
 
 .grid {
     display: grid;
     grid-template:
-        "grid__header grid__header"min-content "grid__menu grid__menu"min-content "grid__content grid__content"auto "grid__footer grid__footer"min-content / auto;
+        "grid__header grid__header" min-content "grid__menu grid__menu" min-content "grid__content grid__content" auto "grid__footer grid__footer" min-content / auto;
     height: 100%;
 
     @include tablet-landscape {
         grid-template:
-            "grid__header grid__header"min-content "grid__menu grid__content"auto "grid__footer grid__footer"min-content / 250px auto;
+            "grid__header grid__header" min-content "grid__menu grid__content" auto "grid__footer grid__footer" min-content / 250px auto;
     }
 
     &__header {
