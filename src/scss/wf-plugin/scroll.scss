@@ -1,5 +1,6 @@
 .scrollbar {
     &::-webkit-scrollbar {
+        height: $regular;
         width: $regular;
     }
 }
@@ -8,6 +9,7 @@
     .scrollbar--#{$color} {
         scrollbar-color: color-regular(#{$color}) color-extra-light(#{$color});
 
+        &::-webkit-scrollbar-corner,
         &::-webkit-scrollbar {
             background-color: color-light(#{$color});
         }
