@@ -19,7 +19,6 @@ export class Table {
 
     init() {
         if (!this.elTable) return;
-
         this.build();
     }
 

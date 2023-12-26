@@ -173,7 +173,6 @@ export class Modal {
         arr.forEach((item) => {
             this.elModalBox.classList.remove(`${prefix}${item}`);
         });
-
         this.elModalBox.classList.add(`${prefix}${size}`);
     }
 
@@ -186,7 +185,6 @@ export class Modal {
 
             self.buildContentAjaxSuccess(this.responseText);
         };
-
         ajax.open('GET', target, true);
         ajax.send();
     }

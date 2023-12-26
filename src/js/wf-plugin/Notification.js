@@ -94,7 +94,6 @@ export class Notification {
 
     removeItem(item) {
         if (item.parentNode === null) return;
-
         item.parentNode.removeChild(item);
     }
 }

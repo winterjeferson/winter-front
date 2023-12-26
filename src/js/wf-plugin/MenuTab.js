@@ -22,7 +22,6 @@ export class MenuTab {
         elButton.forEach((item) => {
             item.classList.remove(this.cssMenuActive);
         });
-
         item.classList.add(this.cssMenuActive);
     }
 
@@ -30,7 +29,6 @@ export class MenuTab {
         this.el = document.querySelectorAll(`.${this.cssMenu}`);
 
         if (!this.el) return;
-
         this.buildClick();
     }
 }

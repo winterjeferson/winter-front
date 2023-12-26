@@ -1,14 +1,15 @@
 export class Form {
-    validateEmpty(arr) {
-        const length = arr.length;
+    validateEmpty(itens) {
+        const length = itens.length;
 
         for (let i = 0; i < length; i++) {
-            if (arr[i].value === '') {
-                arr[i].focus();
+            const el = itens[i];
+
+            if (el.value === '') {
+                el.focus();
                 return false;
             }
         }
-
         return true;
     }
 }
