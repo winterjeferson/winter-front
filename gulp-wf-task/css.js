@@ -1,5 +1,5 @@
 const gulp = require('gulp');
-const sass = require('gulp-sass'); //npm install gulp-sass --save-dev // https://www.npmjs.com/package/gulp-sass/
+const sass = require('gulp-sass')(require('sass')); //npm install gulp-sass --save-dev // https://www.npmjs.com/package/gulp-sass/
 const csso = require('gulp-csso'); //npm install gulp-csso --save-dev //https://www.npmjs.com/package/gulp-csso/
 const rename = require('gulp-rename'); //npm install gulp-rename --save-dev // https://www.npmjs.com/package/gulp-rename/
 const gulpStylelint = require('gulp-stylelint'); //npm install stylelint gulp-stylelint --save-dev //https://www.npmjs.com/package/gulp-stylelint

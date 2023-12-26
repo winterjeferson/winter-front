@@ -1,5 +1,5 @@
 .modal {
-    background-color: rgba($color-black, .5);
+    background-color: rgba($color-black, .8);
     bottom: 0;
     display: flex;
     left: 0;
@@ -45,7 +45,6 @@
         margin: auto;
         pointer-events: initial;
         position: relative;
-        transform: translate(0, -200px);
         transition: $transition;
         width: 100%;
 

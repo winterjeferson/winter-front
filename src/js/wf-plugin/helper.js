@@ -38,21 +38,22 @@ export class Helper {
         el.addEventListener(event, action);
     }
 
-    ajax(obj) {
+    ajax(props) {
         return new Promise((resolve, reject) => {
-            const kind = typeof obj.kind === 'undefined' ? 'POST' : obj.kind;
+            const controller = props.controller;
+            const kind = props.kind ? props.kind : 'GET';
             let xhr = new XMLHttpRequest();
 
-            xhr.open(kind, obj.controller, true);
+            xhr.open(kind, props.controller, true);
             xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
             xhr.onload = () => {
                 if (xhr.status >= 200 && xhr.status < 300) {
                     resolve(xhr.responseText);
-                } else {
-                    reject(xhr.statusText);
                 }
+                reject(xhr.statusText);
             };
             xhr.onerror = () => reject(xhr.statusText);
+            xhr.send();
         });
     }
 

@@ -1,8 +1,8 @@
 const gulp = require('gulp');
 const concat = require('gulp-concat'); //npm install gulp-concat --save-dev //https://www.npmjs.com/package/gulp-concat/
-const uglify = require("gulp-uglifyes"); //npm install gulp-uglifyes --save-dev //https://www.npmjs.com/package/gulp-uglifyes
 const removeCode = require('gulp-remove-code'); //npm install gulp-remove-code --save-dev //https://www.npmjs.com/package/gulp-remove-code
 const eslint = require('gulp-eslint'); //npm install gulp-eslint --save-dev //https://www.npmjs.com/package/gulp-eslint
+const terser = require('gulp-terser'); //npm install gulp-terser --save-dev //https://www.npmjs.com/package/gulp-terser
 
 const configuration = require('./configuration.js');
 
@@ -38,7 +38,7 @@ gulp.task('buildJsConcatPlugin', () => {
 gulp.task('buildJsMinify', () => {
     return gulp
         .src(`${configuration.dist}${configuration.assets}${extension}/${configuration.allFile}`)
-        .pipe(uglify())
+        .pipe(terser())
         .pipe(gulp.dest(`${configuration.dist}${configuration.assets}${extension}/`));
 });
 

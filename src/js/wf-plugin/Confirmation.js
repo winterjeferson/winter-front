@@ -1,13 +1,9 @@
 export class Confirmation {
-    close(target) {
-        target.parentNode.parentNode.parentNode.remove();
-    }
-
     draw(props) {
         const size = props.size ? `modal--${props.size}` : '';
         const title = props.title ? `<h3>${props.title}</h3>` : '';
         const content = props.content ? `<p>${props.content}</p>` : '';
-        const actionClose = 'confirmation.close(this)';
+        const actionClose = 'modal.close(this)';
         const translationCancel = props.translationCancel ? props.translationCancel : window.translation.translation.cancel;
         const translationConfirm = props.translationConfirm ? props.translationConfirm : window.translation.translation.confirm;
         const colorConfirm = props.colorConfirm ? props.colorConfirm : 'blue';
@@ -28,7 +24,7 @@ export class Confirmation {
             onclick: `${props.onclick};${actionClose}`
         });
         const html = `
-            <div class="modal modal-close">
+            <div class="modal">
                 <div class="modal__box ${size}">
                     <header class="modal__header right">
                         ${buttonClose}

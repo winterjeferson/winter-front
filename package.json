@@ -31,7 +31,9 @@
     "gulp-remove-code": "^3.0.4",
     "gulp-sass": "^5.1.0",
     "gulp-stylelint": "^13.0.0",
+    "gulp-terser": "^2.1.0",
     "gulp-webserver": "^0.9.1",
+    "sass": "^1.69.5",
     "stylelint": "^13.8.0",
     "stylelint-config-standard": "^20.0.0",
     "stylelint-order": "^4.1.0"
