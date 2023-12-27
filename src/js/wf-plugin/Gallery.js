@@ -1,15 +1,13 @@
 export class Gallery {
     draw(props) {
-        const size = props.size ? `modal--${props.size}` : '';
-        const actionClose = 'modal.close(this)';
         const modalHeader = component.drawModalHeader({
-            onclick: actionClose
+            onclick: modal.getActionClose()
         });
         const modalContent = component.drawModalContent({
             content: ''
         });
         const html = component.drawModal({
-            size,
+            size: props.size,
             content: modalHeader + modalContent
         });
 

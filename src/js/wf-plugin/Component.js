@@ -43,11 +43,11 @@ export class Component {
     }
 
     drawModal(props) {
-        const content = props.content ? props.content : '';
         const size = props.size ? props.size : 'regular';
+        const content = props.content ? props.content : '';
         const html = `
             <div class="modal">
-                <div class="modal__box ${size}">
+                <div class="modal__box modal--${size}">
                     ${content}
                 </div>
             </div>

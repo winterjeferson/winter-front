@@ -1,9 +1,8 @@
 export class Confirmation {
     draw(props) {
-        const size = props.size ? `modal--${props.size}` : '';
         const title = props.title ? `<h3>${props.title}</h3>` : '';
         const content = props.content ? `<p>${props.content}</p>` : '';
-        const actionClose = 'modal.close(this)';
+        const actionClose = modal.getActionClose();
         const translationCancel = props.translationCancel ? props.translationCancel : window.translation.translation.cancel;
         const translationConfirm = props.translationConfirm ? props.translationConfirm : window.translation.translation.confirm;
         const colorConfirm = props.colorConfirm ? props.colorConfirm : 'blue';
@@ -30,7 +29,7 @@ export class Confirmation {
             content: buttonCancel + buttonConfirm
         });
         const html = component.drawModal({
-            size,
+            size: props.size,
             content: modalHeader + modalContent + modalFooter
         });
 

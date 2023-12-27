@@ -4,21 +4,23 @@ export class Modal {
     }
 
     async draw(props) {
-        const size = props.size ? `modal--${props.size}` : '';
-        const actionClose = 'modal.close(this)';
         const title = props.title ? `<h3>${props.title}</h3>` : '';
         const content = props.kind === 'ajax' ? await helper.ajax({ controller: props.content }) : props.content;
         const modalHeader = component.drawModalHeader({
-            onclick: actionClose
+            onclick: 'modal.close(this)'
         });
         const modalContent = component.drawModalContent({
             content: title + content
         });
         const html = component.drawModal({
-            size,
+            size: props.size,
             content: modalHeader + modalContent
         });
         this.show(html);
+    }
+
+    getActionClose() {
+        return 'modal.close(this)';
     }
 
     async open(props) {
