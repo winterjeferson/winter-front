@@ -18,7 +18,7 @@ export class Modal {
             size,
             content: modalHeader + modalContent
         });
-        helper.elBody.insertAdjacentHTML('afterbegin', html);
+        this.show(html);
     }
 
     async open(props) {
@@ -27,6 +27,10 @@ export class Modal {
         if (typeof menuToggle !== 'undefined') menuToggle.init();
         if (typeof menuTab !== 'undefined') menuTab.init();
         if (typeof lazyLoad !== 'undefined') lazyLoad.init();
+    }
+
+    show(html) {
+        helper.elBody.insertAdjacentHTML('afterbegin', html);
     }
 }
 

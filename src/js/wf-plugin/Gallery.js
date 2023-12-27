@@ -13,7 +13,7 @@ export class Gallery {
             content: modalHeader + modalContent
         });
 
-        helper.elBody.insertAdjacentHTML('afterbegin', html);
+        modal.show(html);
     }
 
     open(props) {

@@ -34,7 +34,7 @@ export class Confirmation {
             content: modalHeader + modalContent + modalFooter
         });
 
-        helper.elBody.insertAdjacentHTML('afterbegin', html);
+        modal.show(html);
     }
 
     open(props) {
