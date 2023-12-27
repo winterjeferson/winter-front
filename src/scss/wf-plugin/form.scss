@@ -79,7 +79,7 @@ $prefix: 'form';
     }
 
     @each $color in $arrColorForm {
-        &--#{$color} {
+        &--#{'' + $color + ''} {
             $color-custom: color-light-border(#{$color});
 
             select {

@@ -18,7 +18,7 @@ $button: button;
         border-color: transparent;
 
         @each $color in $arrColorButton {
-            &--#{$color} {
+            &--#{'' + $color + ''} {
                 color: color-regular(#{$color});
 
                 &:hover {
@@ -37,7 +37,7 @@ $button: button;
         margin-top: -$border-width;
 
         @each $color in $arrColorButton {
-            &--#{$color} {
+            &--#{'' + $color + ''} {
                 &:after {
                     @include triangle(color-regular(#{$color}), down, $size: $small, $position: relative, $round: false);
                 }
@@ -52,11 +52,11 @@ $button: button;
     }
 
     @each $color in $arrColorButton {
-        &--#{$color} {
+        &--#{'' + $color + ''} {
             border-bottom-color: color-regular(#{$color});
         }
 
-        .#{$button}--#{$color} {
+        .#{'' + $button + ''}--#{'' + $color + ''} {
             &.tab--active {
                 background-color: color-regular(#{$color});
                 border-color: color-regular(#{$color});

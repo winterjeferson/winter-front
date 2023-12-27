@@ -44,7 +44,7 @@ export class Helper {
             const kind = props.kind ? props.kind : 'GET';
             let xhr = new XMLHttpRequest();
 
-            xhr.open(kind, props.controller, true);
+            xhr.open(kind, controller, true);
             xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
             xhr.onload = () => {
                 if (xhr.status >= 200 && xhr.status < 300) {

@@ -57,7 +57,7 @@
     }
 
     @each $color in $arrColorLoading {
-        &--#{$color} {
+        &--#{'' + $color + ''} {
             color: color-regular(#{$color});
         }
     }
@@ -106,7 +106,7 @@
     }
 
     @each $color in $arrColorLoading {
-        &--#{$color} {
+        &--#{'' + $color + ''} {
             background-color: color-regular(#{$color});
         }
     }

@@ -62,7 +62,7 @@
     }
 
     @each $color in $arrColorButton {
-        &--#{$color} {
+        &--#{'' + $color + ''} {
             background-color: color-regular(#{$color});
             border-color: color-regular-border(#{$color});
             color: color-regular-contrast(#{$color});
@@ -114,7 +114,7 @@
     border-width: $border-width * 2;
 
     @each $color in $arrColorButton {
-        &--#{$color} {
+        &--#{'' + $color + ''} {
             border-color: color-regular-border(#{$color});
             color: color-regular(#{$color});
 
@@ -221,7 +221,7 @@
     }
 
     @each $color in $arrColorButton {
-        &--#{$color} {
+        &--#{'' + $color + ''} {
             color: color-regular(#{$color});
 
             .icon {
@@ -247,7 +247,7 @@
     >.button-outline,
     >.link {
         @each $color in $arrColorButton {
-            &--#{$color} {
+            &--#{'' + $color + ''} {
                 &:after {
                     @include triangle(color-regular-contrast(#{$color}), down, $size: $small, $position: relative, $round: false);
                 }
@@ -303,7 +303,7 @@
         }
 
         @each $color in $arrColorButton {
-            &--#{$color} {
+            &--#{'' + $color + ''} {
                 border-color: $color-grey;
             }
         }

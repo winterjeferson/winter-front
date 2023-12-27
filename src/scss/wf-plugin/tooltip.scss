@@ -1,5 +1,9 @@
-$spaceVertical: ($regular * 2 + $small);
-$spaceHorizontal: ($regular + $small);
+$spaceVertical: (
+    $regular * 2 + $small
+);
+$spaceHorizontal: (
+    $regular + $small
+);
 
 .tooltip {
     position: relative;
@@ -24,7 +28,7 @@ $spaceHorizontal: ($regular + $small);
     }
 
     @each $color in $arrColorTooltip {
-        &--#{$color} {
+        &--#{'' + $color + ''} {
             &:after {
                 background-color: color-regular(#{$color});
                 color: color-regular-contrast(#{$color});

@@ -79,7 +79,7 @@
 }
 
 @each $color in $arrColorTable {
-    .table--#{$color} {
+    .table--#{'' + $color + ''} {
         border-color: color-light(#{$color});
 
         thead {

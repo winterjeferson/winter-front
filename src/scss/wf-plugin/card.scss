@@ -119,7 +119,7 @@ $prefix: 'card';
     }
 
     @each $color in $arrColorCard {
-        &--#{$color} {
+        &--#{'' + $color + ''} {
 
             .#{$prefix}__header,
             .#{$prefix}__body,

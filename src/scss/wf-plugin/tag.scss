@@ -76,7 +76,7 @@
 }
 
 @each $color in $arrColorTag {
-    .tag--#{$color} {
+    .tag--#{'' + $color + ''} {
         @extend %extend-border-default;
         background-color: color-extra-light(#{$color});
         border-color: color-extra-light-border(#{$color});

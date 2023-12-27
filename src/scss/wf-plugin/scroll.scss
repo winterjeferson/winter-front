@@ -6,7 +6,7 @@
 }
 
 @each $color in $arrColorScroll {
-    .scrollbar--#{$color} {
+    .scrollbar--#{'' + $color + ''} {
         scrollbar-color: color-regular(#{$color}) color-extra-light(#{$color});
 
         &::-webkit-scrollbar-corner,

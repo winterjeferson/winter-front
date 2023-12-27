@@ -2,16 +2,19 @@
 {% include "include/head.html" %}
 <h1 class="page__title">Gallery</h1>
 <div class="row gallery">
-    <a href="assets/{{version}}/img/banner/1.png" class="gallery__item">
+    <button type="button" data-target="assets/{{version}}/img/banner/1.png" class="gallery__item"
+        onclick="gallery.open(this);">
         <img src="assets/{{version}}/img/banner/1.png" class="img-responsive" title="" alt="Lorem ipsum"
             data-description="Lorem ipsum dolor sit dictuquam ullamcorperat." />
-    </a>
-    <a href="assets/{{version}}/img/banner/2.png" class="gallery__item">
+    </button>
+    <button type="button" data-target="assets/{{version}}/img/banner/2.png" class="gallery__item"
+        onclick="gallery.open(this);">
         <img src="assets/{{version}}/img/banner/2.png" class="img-responsive" title="" alt="Dolor sit"
             data-description="Lorem ipsum dolor sit amet, consecttur adipscing elit. Proin ut ni diam. Nam ini pretium ligulas. Integersda dapibusa id quam non prium! Suspendisse sodalesa efficiturd nullsa, eta elementumds dui consequat eu. Curabituras interd augue, at dictuquam ullamcorperat." />
-    </a>
-    <a href="assets/{{version}}/img/banner/1.png" class="gallery__item">
+    </button>
+    <button type="button" data-target="assets/{{version}}/img/banner/1.png" class="gallery__item"
+        onclick="gallery.open(this);">
         <img src="assets/{{version}}/img/banner/1.png" class="img-responsive" title="" alt="Consecttur adipscing" />
-    </a>
+    </button>
 </div>
 {% include "include/footer.html" %}

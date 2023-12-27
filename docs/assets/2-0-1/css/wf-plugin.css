@@ -2205,6 +2205,12 @@ small {
   box-shadow: 0 0 0 4px rgba(225, 75, 74, 0.7);
 }
 
+.gallery__item {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
 .loading-main {
   background-color: #333333;
   height: 100%;

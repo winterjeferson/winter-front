@@ -9,15 +9,16 @@
      }
 
      @each $color in $arrColorDefault {
-         &.color--#{$color} {
+         &.color--#{'' + $color + ''} {
              background-color: color-regular(#{$color});
+             $value: calc($small / 2);
 
              &:after {
                  @include pseudo-element;
                  background-color: rgba(0, 0, 0, 0.2);
                  height: $small;
-                 left: calc(50% - #{$small / 2});
-                 top: calc(50% - #{$small / 2});
+                 left: calc(50% - #{$value});
+                 top: calc(50% - #{$value});
                  width: $small;
              }
          }

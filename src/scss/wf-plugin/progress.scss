@@ -32,7 +32,7 @@
     }
 
     @each $color in $arrColorProgress {
-        &--#{$color} {
+        &--#{'' + $color + ''} {
             .progress__bar {
                 background-color: color-regular(#{$color});
             }
