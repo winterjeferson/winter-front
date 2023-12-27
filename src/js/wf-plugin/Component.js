@@ -41,4 +41,55 @@ export class Component {
 
         return html;
     }
+
+    drawModal(props) {
+        const content = props.content ? props.content : '';
+        const size = props.size ? props.size : 'regular';
+        const html = `
+            <div class="modal">
+                <div class="modal__box ${size}">
+                    ${content}
+                </div>
+            </div>
+        `;
+
+        return html;
+    }
+
+    drawModalContent(props) {
+        const content = props.content ? props.content : '';
+        const html = `
+            <div class="row">
+                <div class="modal__content">
+                    ${content}
+                </div>
+            </div>
+        `;
+
+        return html;
+    }
+
+    drawModalFooter(props) {
+        const content = props.content ? props.content : '';
+        const html = `
+            <footer class="button-wrapper modal__footer right">
+                ${content}
+            </footer>
+        `;
+
+        return html;
+    }
+
+    drawModalHeader(props) {
+        const buttonClose = this.drawCloseButton({
+            onclick: props.onclick
+        });
+        const html = `
+            <header class="modal__header right">
+                ${buttonClose}
+            </header>
+        `;
+
+        return html;
+    }
 }

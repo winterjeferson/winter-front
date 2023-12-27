@@ -8,25 +8,16 @@ export class Modal {
         const actionClose = 'modal.close(this)';
         const title = props.title ? `<h3>${props.title}</h3>` : '';
         const content = props.kind === 'ajax' ? await helper.ajax({ controller: props.content }) : props.content;
-        const buttonClose = component.drawCloseButton({
+        const modalHeader = component.drawModalHeader({
             onclick: actionClose
         });
-
-        const html = `
-            <div class="modal">
-                <div class="modal__box ${size}">
-                    <header class="modal__header right">
-                        ${buttonClose}
-                    </header>
-                    <div class="row">
-                        <div class="modal__content">
-                            ${title}
-                            ${content}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        `;
+        const modalContent = component.drawModalContent({
+            content: title + content
+        });
+        const html = component.drawModal({
+            size,
+            content: modalHeader + modalContent
+        });
         helper.elBody.insertAdjacentHTML('afterbegin', html);
     }
 

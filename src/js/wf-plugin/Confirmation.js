@@ -8,9 +8,6 @@ export class Confirmation {
         const translationConfirm = props.translationConfirm ? props.translationConfirm : window.translation.translation.confirm;
         const colorConfirm = props.colorConfirm ? props.colorConfirm : 'blue';
         const colorCancel = props.colorCancel ? props.colorCancel : 'grey';
-        const buttonClose = component.drawCloseButton({
-            onclick: actionClose
-        });
         const buttonCancel = component.drawButton({
             color: colorCancel,
             label: translationCancel,
@@ -23,25 +20,19 @@ export class Confirmation {
             size: props.buttonSize,
             onclick: `${props.onclick};${actionClose}`
         });
-        const html = `
-            <div class="modal">
-                <div class="modal__box ${size}">
-                    <header class="modal__header right">
-                        ${buttonClose}
-                    </header>
-                    <div class="row">
-                        <div class="modal__content">
-                            ${title}
-                            ${content}
-                        </div>
-                    </div>
-                    <footer class="button-wrapper modal__footer right">
-                        ${buttonCancel}
-                        ${buttonConfirm}
-                    </footer>
-                </div>
-            </div>
-        `;
+        const modalHeader = component.drawModalHeader({
+            onclick: actionClose
+        });
+        const modalContent = component.drawModalContent({
+            content: title + content
+        });
+        const modalFooter = component.drawModalFooter({
+            content: buttonCancel + buttonConfirm
+        });
+        const html = component.drawModal({
+            size,
+            content: modalHeader + modalContent + modalFooter
+        });
 
         helper.elBody.insertAdjacentHTML('afterbegin', html);
     }

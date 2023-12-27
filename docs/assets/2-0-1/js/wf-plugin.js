@@ -288,6 +288,57 @@ export class Component {
 
         return html;
     }
+
+    drawModal(props) {
+        const content = props.content ? props.content : '';
+        const size = props.size ? props.size : 'regular';
+        const html = `
+            <div class="modal">
+                <div class="modal__box ${size}">
+                    ${content}
+                </div>
+            </div>
+        `;
+
+        return html;
+    }
+
+    drawModalContent(props) {
+        const content = props.content ? props.content : '';
+        const html = `
+            <div class="row">
+                <div class="modal__content">
+                    ${content}
+                </div>
+            </div>
+        `;
+
+        return html;
+    }
+
+    drawModalFooter(props) {
+        const content = props.content ? props.content : '';
+        const html = `
+            <footer class="button-wrapper modal__footer right">
+                ${content}
+            </footer>
+        `;
+
+        return html;
+    }
+
+    drawModalHeader(props) {
+        const buttonClose = this.drawCloseButton({
+            onclick: props.onclick
+        });
+        const html = `
+            <header class="modal__header right">
+                ${buttonClose}
+            </header>
+        `;
+
+        return html;
+    }
 }
 export class Confirmation {
     draw(props) {
@@ -299,9 +350,6 @@ export class Confirmation {
         const translationConfirm = props.translationConfirm ? props.translationConfirm : window.translation.translation.confirm;
         const colorConfirm = props.colorConfirm ? props.colorConfirm : 'blue';
         const colorCancel = props.colorCancel ? props.colorCancel : 'grey';
-        const buttonClose = component.drawCloseButton({
-            onclick: actionClose
-        });
         const buttonCancel = component.drawButton({
             color: colorCancel,
             label: translationCancel,
@@ -314,25 +362,19 @@ export class Confirmation {
             size: props.buttonSize,
             onclick: `${props.onclick};${actionClose}`
         });
-        const html = `
-            <div class="modal">
-                <div class="modal__box ${size}">
-                    <header class="modal__header right">
-                        ${buttonClose}
-                    </header>
-                    <div class="row">
-                        <div class="modal__content">
-                            ${title}
-                            ${content}
-                        </div>
-                    </div>
-                    <footer class="button-wrapper modal__footer right">
-                        ${buttonCancel}
-                        ${buttonConfirm}
-                    </footer>
-                </div>
-            </div>
-        `;
+        const modalHeader = component.drawModalHeader({
+            onclick: actionClose
+        });
+        const modalContent = component.drawModalContent({
+            content: title + content
+        });
+        const modalFooter = component.drawModalFooter({
+            content: buttonCancel + buttonConfirm
+        });
+        const html = component.drawModal({
+            size,
+            content: modalHeader + modalContent + modalFooter
+        });
 
         helper.elBody.insertAdjacentHTML('afterbegin', html);
     }
@@ -357,8 +399,25 @@ export class Form {
     }
 }
 export class Gallery {
-    open(target) {
-        console.log(target);
+    draw(props) {
+        const size = props.size ? `modal--${props.size}` : '';
+        const actionClose = 'modal.close(this)';
+        const modalHeader = component.drawModalHeader({
+            onclick: actionClose
+        });
+        const modalContent = component.drawModalContent({
+            content: ''
+        });
+        const html = component.drawModal({
+            size,
+            content: modalHeader + modalContent
+        });
+
+        helper.elBody.insertAdjacentHTML('afterbegin', html);
+    }
+
+    open(props) {
+        this.draw(props);
     }
 }
 export class Helper {
@@ -796,25 +855,16 @@ export class Modal {
         const actionClose = 'modal.close(this)';
         const title = props.title ? `<h3>${props.title}</h3>` : '';
         const content = props.kind === 'ajax' ? await helper.ajax({ controller: props.content }) : props.content;
-        const buttonClose = component.drawCloseButton({
+        const modalHeader = component.drawModalHeader({
             onclick: actionClose
         });
-
-        const html = `
-            <div class="modal">
-                <div class="modal__box ${size}">
-                    <header class="modal__header right">
-                        ${buttonClose}
-                    </header>
-                    <div class="row">
-                        <div class="modal__content">
-                            ${title}
-                            ${content}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        `;
+        const modalContent = component.drawModalContent({
+            content: title + content
+        });
+        const html = component.drawModal({
+            size,
+            content: modalHeader + modalContent
+        });
         helper.elBody.insertAdjacentHTML('afterbegin', html);
     }
 
