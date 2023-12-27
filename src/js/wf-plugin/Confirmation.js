@@ -1,5 +1,6 @@
 export class Confirmation {
     draw(props) {
+        const buttonSize = props.buttonSize ? props.buttonSize : 'regular';
         const title = props.title ? `<h3>${props.title}</h3>` : '';
         const content = props.content ? `<p>${props.content}</p>` : '';
         const actionClose = modal.getActionClose();
@@ -10,13 +11,13 @@ export class Confirmation {
         const buttonCancel = component.drawButton({
             color: colorCancel,
             label: translationCancel,
-            size: props.buttonSize,
+            size: buttonSize,
             onclick: actionClose
         });
         const buttonConfirm = component.drawButton({
             color: colorConfirm,
             label: translationConfirm,
-            size: props.buttonSize,
+            size: buttonSize,
             onclick: `${props.onclick};${actionClose}`
         });
         const modalHeader = component.drawModalHeader({
