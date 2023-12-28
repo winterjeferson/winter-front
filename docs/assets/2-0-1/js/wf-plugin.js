@@ -292,8 +292,9 @@ export class Component {
     drawModal(props) {
         const size = props.size ? props.size : 'regular';
         const content = props.content ? props.content : '';
+        const zIndex = this.drawModalZIndex();
         const html = `
-            <div class="modal">
+            <div class="modal" style="z-index:${zIndex}">
                 <div class="modal__box modal--${size}">
                     ${content}
                 </div>
@@ -301,6 +302,21 @@ export class Component {
         `;
 
         return html;
+    }
+
+    drawModalZIndex() {
+        const modals = modal?.getElModal();
+        const modalsLength = modals.length;
+        const isModal = modalsLength > 0;
+        let zIndex = 5;
+
+        if (isModal) {
+            const elModalLast = modals[0];
+            const zIndexCurrent = Number(elModalLast.style.zIndex);
+
+            zIndex = zIndexCurrent + 1;
+        }
+        return zIndex;
     }
 
     drawModalContent(props) {
@@ -421,6 +437,7 @@ export class Gallery {
 export class Helper {
     constructor() {
         this.elBody = document.querySelector('body');
+        this.onkeypress();
     }
 
     addClass(target, classCss) {
@@ -508,6 +525,22 @@ export class Helper {
         };
 
         return obj;
+    }
+
+    onkeypress() {
+        window.addEventListener('keyup', (event) => {
+            switch (event.key) {
+                case 'Escape':
+                    if (modal) modal.closeByKey();
+                    break;
+                case 'ArrowLeft':
+                    console.log(event.key);
+                    break;
+                case 'ArrowRight':
+                    console.log(event.key);
+                    break;
+            }
+        });
     }
 
     removeClass(target, classCss) {
@@ -848,11 +881,21 @@ export class Modal {
         target.parentNode.parentNode.parentNode.remove();
     }
 
+    closeByKey() {
+        const elModals = this.getElModal();
+        const length = elModals.length;
+        const elTarget = elModals[0];
+        const elButton = elTarget?.querySelector('.button--close');
+
+        if (length < 1) return;
+        elButton.click();
+    }
+
     async draw(props) {
         const title = props.title ? `<h3>${props.title}</h3>` : '';
         const content = props.kind === 'ajax' ? await helper.ajax({ controller: props.content }) : props.content;
         const modalHeader = component.drawModalHeader({
-            onclick: 'modal.close(this)'
+            onclick: this.getActionClose()
         });
         const modalContent = component.drawModalContent({
             content: title + content
@@ -866,6 +909,10 @@ export class Modal {
 
     getActionClose() {
         return 'modal.close(this)';
+    }
+
+    getElModal() {
+        return document.querySelectorAll('.modal');
     }
 
     async open(props) {

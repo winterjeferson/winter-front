@@ -3,11 +3,21 @@ export class Modal {
         target.parentNode.parentNode.parentNode.remove();
     }
 
+    closeByKey() {
+        const elModals = this.getElModal();
+        const length = elModals.length;
+        const elTarget = elModals[0];
+        const elButton = elTarget?.querySelector('.button--close');
+
+        if (length < 1) return;
+        elButton.click();
+    }
+
     async draw(props) {
         const title = props.title ? `<h3>${props.title}</h3>` : '';
         const content = props.kind === 'ajax' ? await helper.ajax({ controller: props.content }) : props.content;
         const modalHeader = component.drawModalHeader({
-            onclick: 'modal.close(this)'
+            onclick: this.getActionClose()
         });
         const modalContent = component.drawModalContent({
             content: title + content
@@ -21,6 +31,10 @@ export class Modal {
 
     getActionClose() {
         return 'modal.close(this)';
+    }
+
+    getElModal() {
+        return document.querySelectorAll('.modal');
     }
 
     async open(props) {

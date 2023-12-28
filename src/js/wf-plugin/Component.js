@@ -45,8 +45,9 @@ export class Component {
     drawModal(props) {
         const size = props.size ? props.size : 'regular';
         const content = props.content ? props.content : '';
+        const zIndex = this.drawModalZIndex();
         const html = `
-            <div class="modal">
+            <div class="modal" style="z-index:${zIndex}">
                 <div class="modal__box modal--${size}">
                     ${content}
                 </div>
@@ -54,6 +55,21 @@ export class Component {
         `;
 
         return html;
+    }
+
+    drawModalZIndex() {
+        const modals = modal?.getElModal();
+        const modalsLength = modals.length;
+        const isModal = modalsLength > 0;
+        let zIndex = 5;
+
+        if (isModal) {
+            const elModalLast = modals[0];
+            const zIndexCurrent = Number(elModalLast.style.zIndex);
+
+            zIndex = zIndexCurrent + 1;
+        }
+        return zIndex;
     }
 
     drawModalContent(props) {

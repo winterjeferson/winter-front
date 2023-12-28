@@ -1,6 +1,7 @@
 export class Helper {
     constructor() {
         this.elBody = document.querySelector('body');
+        this.onkeypress();
     }
 
     addClass(target, classCss) {
@@ -88,6 +89,22 @@ export class Helper {
         };
 
         return obj;
+    }
+
+    onkeypress() {
+        window.addEventListener('keyup', (event) => {
+            switch (event.key) {
+                case 'Escape':
+                    if (modal) modal.closeByKey();
+                    break;
+                case 'ArrowLeft':
+                    console.log(event.key);
+                    break;
+                case 'ArrowRight':
+                    console.log(event.key);
+                    break;
+            }
+        });
     }
 
     removeClass(target, classCss) {
