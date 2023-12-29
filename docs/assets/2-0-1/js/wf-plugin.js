@@ -20,14 +20,14 @@ export class Carousel {
         this.buildNavigationControllerClick = this.buildNavigationControllerClick.bind(this);
     }
 
-    animate(obj) {
-        const elCarouselList = obj.from === 'arrow' ?
-            obj.target.parentNode.querySelector(`.${this.cssCarouselList}`) :
-            obj.target.parentNode.parentNode.querySelector(`.${this.cssCarouselList}`);
+    animate(props) {
+        const elCarouselList = props.from === 'arrow' ?
+            props.target.parentNode.querySelector(`.${this.cssCarouselList}`) :
+            props.target.parentNode.parentNode.querySelector(`.${this.cssCarouselList}`);
         const elCarousel = elCarouselList.parentNode;
         const carouselStyle = elCarousel.getAttribute('data-style');
         const slideSize = Number(elCarouselList.querySelector(`.${this.cssCarouselListItem}`).offsetWidth);
-        const currentSlide = obj.currentSlide;
+        const currentSlide = props.currentSlide;
         const currentPosition = Number(currentSlide * slideSize);
 
         if (carouselStyle === 'fade') {
@@ -44,21 +44,21 @@ export class Carousel {
         });
     }
 
-    animateFade(obj) {
-        const el = obj.elCarouselList.querySelectorAll(`.${this.cssCarouselListItem}`);
-        const elCurrent = el[obj.currentSlide];
+    animateFade(props) {
+        const el = props.elCarouselList.querySelectorAll(`.${this.cssCarouselListItem}`);
+        const elCurrent = el[props.currentSlide];
 
         el.forEach((item) => {
             item.style.opacity = 0;
             item.style.transition = this.cssTransition;
         });
         elCurrent.style.opacity = 1;
-        elCurrent.style.left = `-${obj.currentPosition}px`;
+        elCurrent.style.left = `-${props.currentPosition}px`;
         elCurrent.style.transition = this.cssTransition;
     }
 
-    animateSlide(obj) {
-        obj.elCarouselList.style.transform = `translateX(-${obj.currentPosition}px)`;
+    animateSlide(props) {
+        props.elCarouselList.style.transform = `translateX(-${props.currentPosition}px)`;
     }
 
     buildAutoplay() {
@@ -135,15 +135,15 @@ export class Carousel {
         });
     }
 
-    buildNavigationArrow(obj) {
-        obj.button.onclick = () => {
-            const elCarousel = obj.button.parentNode.parentNode;
+    buildNavigationArrow(props) {
+        props.button.onclick = () => {
+            const elCarousel = props.button.parentNode.parentNode;
             const elCarouselList = elCarousel.querySelector(`.${this.cssCarouselList}`);
             const elCarouselListLength = Number(elCarouselList.querySelectorAll(`.${this.cssCarouselListItem}`).length);
             const currentSlide = Number(elCarousel.getAttribute(this.attCurrentSlide));
             let slide = 0;
 
-            if (obj.side === 'previous') {
+            if (props.side === 'previous') {
                 slide = currentSlide === 0 ? elCarouselListLength - 1 : currentSlide - 1;
             } else {
                 slide = currentSlide === (elCarouselListLength - 1) ? 0 : currentSlide + 1;
@@ -372,12 +372,13 @@ export class Component {
     }
 
     drawModalNavigation(props) {
-        const target = props.target;
-        const elGallery = target.parentNode;
-        const elGalleryItens = Array.from(elGallery.querySelectorAll('.gallery__item'));
-        const index = elGalleryItens.indexOf(target);
+        const target = props?.target;
+        if (!target) return;
+        const elGalleryItens = gallery.currentGalleryItens;
+        const index = gallery.currentGalleryIndex;
         const isItemFirst = index === 0;
         const isItemLast = elGalleryItens.length === index + 1;
+
         const iconLeft = this.drawIcon({
             size: 'extra-big',
             icon: 'previous',
@@ -393,13 +394,15 @@ export class Component {
             size: 'big',
             ariaLabel: window.translation.translation.previous,
             icon: iconLeft,
-            css: isItemFirst ? 'hide' : ''
+            css: isItemFirst ? 'hide' : '',
+            onclick: 'gallery.handlePrevious();'
         });
         const buttonNext = this.drawButton({
             size: 'big',
             ariaLabel: window.translation.translation.next,
             icon: iconRight,
-            css: isItemLast ? 'hide' : ''
+            css: isItemLast ? 'hide' : '',
+            onclick: 'gallery.handleNext();'
         });
         const html = `
             <div class="navigation-change button-wrapper row center">
@@ -470,6 +473,13 @@ export class Form {
     }
 }
 export class Gallery {
+    constructor() {
+        this.currentGallery;
+        this.currentGalleryItens;
+        this.currentGalleryIndex;
+        this.currentModal;
+    }
+
     draw(props) {
         const src = props?.target?.getAttribute('data-target');
         const description = props?.target?.getAttribute('data-description');
@@ -496,7 +506,30 @@ export class Gallery {
     }
 
     open(props) {
+        const target = props?.target;
+
+        this.currentGallery = target?.parentNode;
+        this.currentGalleryItens = Array.from(this.currentGallery.querySelectorAll('.gallery__item'));
+        this.currentGalleryIndex = this.currentGalleryItens.indexOf(target);
         this.draw(props);
+    }
+
+    handleChange(elTarget) {
+        if (!elTarget) return;
+        modal.closeByKey();
+        elTarget.click();
+    }
+
+    handleNext() {
+        const elTarget = this.currentGalleryItens[this.currentGalleryIndex + 1];
+
+        this.handleChange(elTarget);
+    }
+
+    handlePrevious() {
+        const elTarget = this.currentGalleryItens[this.currentGalleryIndex - 1];
+
+        this.handleChange(elTarget);
     }
 }
 export class Helper {
@@ -584,12 +617,12 @@ export class Helper {
         let rect = element.getBoundingClientRect();
         const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        const obj = {
-            'top': rect.top + scrollTop,
-            'left': rect.left + scrollLeft,
+        const props = {
+            top: rect.top + scrollTop,
+            left: rect.left + scrollLeft,
         };
 
-        return obj;
+        return props;
     }
 
     onkeypress() {
@@ -599,10 +632,10 @@ export class Helper {
                     if (modal) modal.closeByKey();
                     break;
                 case 'ArrowLeft':
-                    console.log(event.key);
+                    if (gallery) gallery.handlePrevious();
                     break;
                 case 'ArrowRight':
-                    console.log(event.key);
+                    if (gallery) gallery.handleNext();
                     break;
             }
         });
@@ -942,6 +975,10 @@ export class MenuToggle {
     }
 }
 export class Modal {
+    constructor() {
+        this.cssButtonClose = 'button--close';
+    }
+
     close(target) {
         target.parentNode.parentNode.parentNode.remove();
     }
@@ -950,7 +987,7 @@ export class Modal {
         const elModals = this.getElModal();
         const length = elModals.length;
         const elTarget = elModals[0];
-        const elButton = elTarget?.querySelector('.button--close');
+        const elButton = elTarget?.querySelector(`.${this.cssButtonClose}`);
 
         if (length < 1) return;
         elButton.click();

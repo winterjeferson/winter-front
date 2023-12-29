@@ -83,12 +83,12 @@ export class Helper {
         let rect = element.getBoundingClientRect();
         const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        const obj = {
-            'top': rect.top + scrollTop,
-            'left': rect.left + scrollLeft,
+        const props = {
+            top: rect.top + scrollTop,
+            left: rect.left + scrollLeft,
         };
 
-        return obj;
+        return props;
     }
 
     onkeypress() {
@@ -98,10 +98,10 @@ export class Helper {
                     if (modal) modal.closeByKey();
                     break;
                 case 'ArrowLeft':
-                    console.log(event.key);
+                    if (gallery) gallery.handlePrevious();
                     break;
                 case 'ArrowRight':
-                    console.log(event.key);
+                    if (gallery) gallery.handleNext();
                     break;
             }
         });

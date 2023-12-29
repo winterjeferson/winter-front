@@ -131,12 +131,13 @@ export class Component {
     }
 
     drawModalNavigation(props) {
-        const target = props.target;
-        const elGallery = target.parentNode;
-        const elGalleryItens = Array.from(elGallery.querySelectorAll('.gallery__item'));
-        const index = elGalleryItens.indexOf(target);
+        const target = props?.target;
+        if (!target) return;
+        const elGalleryItens = gallery.currentGalleryItens;
+        const index = gallery.currentGalleryIndex;
         const isItemFirst = index === 0;
         const isItemLast = elGalleryItens.length === index + 1;
+
         const iconLeft = this.drawIcon({
             size: 'extra-big',
             icon: 'previous',
@@ -152,13 +153,15 @@ export class Component {
             size: 'big',
             ariaLabel: window.translation.translation.previous,
             icon: iconLeft,
-            css: isItemFirst ? 'hide' : ''
+            css: isItemFirst ? 'hide' : '',
+            onclick: 'gallery.handlePrevious();'
         });
         const buttonNext = this.drawButton({
             size: 'big',
             ariaLabel: window.translation.translation.next,
             icon: iconRight,
-            css: isItemLast ? 'hide' : ''
+            css: isItemLast ? 'hide' : '',
+            onclick: 'gallery.handleNext();'
         });
         const html = `
             <div class="navigation-change button-wrapper row center">

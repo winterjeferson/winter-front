@@ -20,14 +20,14 @@ export class Carousel {
         this.buildNavigationControllerClick = this.buildNavigationControllerClick.bind(this);
     }
 
-    animate(obj) {
-        const elCarouselList = obj.from === 'arrow' ?
-            obj.target.parentNode.querySelector(`.${this.cssCarouselList}`) :
-            obj.target.parentNode.parentNode.querySelector(`.${this.cssCarouselList}`);
+    animate(props) {
+        const elCarouselList = props.from === 'arrow' ?
+            props.target.parentNode.querySelector(`.${this.cssCarouselList}`) :
+            props.target.parentNode.parentNode.querySelector(`.${this.cssCarouselList}`);
         const elCarousel = elCarouselList.parentNode;
         const carouselStyle = elCarousel.getAttribute('data-style');
         const slideSize = Number(elCarouselList.querySelector(`.${this.cssCarouselListItem}`).offsetWidth);
-        const currentSlide = obj.currentSlide;
+        const currentSlide = props.currentSlide;
         const currentPosition = Number(currentSlide * slideSize);
 
         if (carouselStyle === 'fade') {
@@ -44,21 +44,21 @@ export class Carousel {
         });
     }
 
-    animateFade(obj) {
-        const el = obj.elCarouselList.querySelectorAll(`.${this.cssCarouselListItem}`);
-        const elCurrent = el[obj.currentSlide];
+    animateFade(props) {
+        const el = props.elCarouselList.querySelectorAll(`.${this.cssCarouselListItem}`);
+        const elCurrent = el[props.currentSlide];
 
         el.forEach((item) => {
             item.style.opacity = 0;
             item.style.transition = this.cssTransition;
         });
         elCurrent.style.opacity = 1;
-        elCurrent.style.left = `-${obj.currentPosition}px`;
+        elCurrent.style.left = `-${props.currentPosition}px`;
         elCurrent.style.transition = this.cssTransition;
     }
 
-    animateSlide(obj) {
-        obj.elCarouselList.style.transform = `translateX(-${obj.currentPosition}px)`;
+    animateSlide(props) {
+        props.elCarouselList.style.transform = `translateX(-${props.currentPosition}px)`;
     }
 
     buildAutoplay() {
@@ -135,15 +135,15 @@ export class Carousel {
         });
     }
 
-    buildNavigationArrow(obj) {
-        obj.button.onclick = () => {
-            const elCarousel = obj.button.parentNode.parentNode;
+    buildNavigationArrow(props) {
+        props.button.onclick = () => {
+            const elCarousel = props.button.parentNode.parentNode;
             const elCarouselList = elCarousel.querySelector(`.${this.cssCarouselList}`);
             const elCarouselListLength = Number(elCarouselList.querySelectorAll(`.${this.cssCarouselListItem}`).length);
             const currentSlide = Number(elCarousel.getAttribute(this.attCurrentSlide));
             let slide = 0;
 
-            if (obj.side === 'previous') {
+            if (props.side === 'previous') {
                 slide = currentSlide === 0 ? elCarouselListLength - 1 : currentSlide - 1;
             } else {
                 slide = currentSlide === (elCarouselListLength - 1) ? 0 : currentSlide + 1;

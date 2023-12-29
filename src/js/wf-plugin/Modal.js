@@ -1,4 +1,8 @@
 export class Modal {
+    constructor() {
+        this.cssButtonClose = 'button--close';
+    }
+
     close(target) {
         target.parentNode.parentNode.parentNode.remove();
     }
@@ -7,7 +11,7 @@ export class Modal {
         const elModals = this.getElModal();
         const length = elModals.length;
         const elTarget = elModals[0];
-        const elButton = elTarget?.querySelector('.button--close');
+        const elButton = elTarget?.querySelector(`.${this.cssButtonClose}`);
 
         if (length < 1) return;
         elButton.click();
