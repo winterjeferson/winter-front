@@ -102,7 +102,7 @@ export class Carousel {
         let html = '';
 
         for (let i = 0; i < length; i++) {
-            html += `<button type="button"  class="${css}" data-id="${i}" aria-hidden="true"></button>`;
+            html += `<button type="button" class="${css}" data-id="${i}" aria-hidden="true"></button>`;
         }
 
         elController.innerHTML = html;

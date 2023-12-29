@@ -1815,6 +1815,78 @@ small {
 .carousel__controller-button--active {
   opacity: 1;
 }
+.carousel--black .carousel__controller-button {
+  background-color: #333333;
+}
+.carousel--black .navigation-change .button .icon {
+  fill: #333333;
+}
+.carousel--blue .carousel__controller-button {
+  background-color: #3297db;
+}
+.carousel--blue .navigation-change .button .icon {
+  fill: #3297db;
+}
+.carousel--brown .carousel__controller-button {
+  background-color: #7f4d04;
+}
+.carousel--brown .navigation-change .button .icon {
+  fill: #7f4d04;
+}
+.carousel--cyan .carousel__controller-button {
+  background-color: #23c4af;
+}
+.carousel--cyan .navigation-change .button .icon {
+  fill: #23c4af;
+}
+.carousel--green .carousel__controller-button {
+  background-color: #2dcc70;
+}
+.carousel--green .navigation-change .button .icon {
+  fill: #2dcc70;
+}
+.carousel--grey .carousel__controller-button {
+  background-color: #bec3c7;
+}
+.carousel--grey .navigation-change .button .icon {
+  fill: #bec3c7;
+}
+.carousel--orange .carousel__controller-button {
+  background-color: #e77e22;
+}
+.carousel--orange .navigation-change .button .icon {
+  fill: #e77e22;
+}
+.carousel--pink .carousel__controller-button {
+  background-color: #e81cb6;
+}
+.carousel--pink .navigation-change .button .icon {
+  fill: #e81cb6;
+}
+.carousel--purple .carousel__controller-button {
+  background-color: #9a59b5;
+}
+.carousel--purple .navigation-change .button .icon {
+  fill: #9a59b5;
+}
+.carousel--red .carousel__controller-button {
+  background-color: #e14b4a;
+}
+.carousel--red .navigation-change .button .icon {
+  fill: #e14b4a;
+}
+.carousel--white .carousel__controller-button {
+  background-color: #ffffff;
+}
+.carousel--white .navigation-change .button .icon {
+  fill: #ffffff;
+}
+.carousel--yellow .carousel__controller-button {
+  background-color: #f1c50e;
+}
+.carousel--yellow .navigation-change .button .icon {
+  fill: #f1c50e;
+}
 
 .icon--extra-small {
   height: 10px;

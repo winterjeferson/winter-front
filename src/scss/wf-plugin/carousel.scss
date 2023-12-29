@@ -45,4 +45,16 @@
             opacity: 1;
         }
     }
+
+    @each $color in $arrColorCarousel {
+        &--#{'' + $color + ''} {
+            .carousel__controller-button {
+                background-color: color-regular(#{$color});
+            }
+
+            .navigation-change .button .icon {
+                fill: color-regular(#{$color});
+            }
+        }
+    }
 }
