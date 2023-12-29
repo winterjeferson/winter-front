@@ -2584,7 +2584,6 @@ small {
   width: 100%;
 }
 .modal__description {
-  background-color: rgba(51, 51, 51, 0.6);
   bottom: 0;
   color: #ffffff;
   margin-bottom: 14px;
@@ -2597,6 +2596,90 @@ small {
   .modal__description {
     padding: 10px;
   }
+}
+.modal--black .modal__description {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+}
+.modal--black .navigation-change .icon {
+  fill: black;
+}
+.modal--blue .modal__description {
+  background-color: rgba(0, 0, 255, 0.6);
+  color: #ffffff;
+}
+.modal--blue .navigation-change .icon {
+  fill: blue;
+}
+.modal--brown .modal__description {
+  background-color: rgba(165, 42, 42, 0.6);
+  color: #ffffff;
+}
+.modal--brown .navigation-change .icon {
+  fill: brown;
+}
+.modal--cyan .modal__description {
+  background-color: rgba(0, 255, 255, 0.6);
+  color: #ffffff;
+}
+.modal--cyan .navigation-change .icon {
+  fill: cyan;
+}
+.modal--green .modal__description {
+  background-color: rgba(0, 128, 0, 0.6);
+  color: #ffffff;
+}
+.modal--green .navigation-change .icon {
+  fill: green;
+}
+.modal--grey .modal__description {
+  background-color: rgba(128, 128, 128, 0.6);
+  color: #333333;
+}
+.modal--grey .navigation-change .icon {
+  fill: grey;
+}
+.modal--orange .modal__description {
+  background-color: rgba(255, 165, 0, 0.6);
+  color: #ffffff;
+}
+.modal--orange .navigation-change .icon {
+  fill: orange;
+}
+.modal--pink .modal__description {
+  background-color: rgba(255, 192, 203, 0.6);
+  color: #ffffff;
+}
+.modal--pink .navigation-change .icon {
+  fill: pink;
+}
+.modal--purple .modal__description {
+  background-color: rgba(128, 0, 128, 0.6);
+  color: #ffffff;
+}
+.modal--purple .navigation-change .icon {
+  fill: purple;
+}
+.modal--red .modal__description {
+  background-color: rgba(255, 0, 0, 0.6);
+  color: #ffffff;
+}
+.modal--red .navigation-change .icon {
+  fill: red;
+}
+.modal--white .modal__description {
+  background-color: rgba(255, 255, 255, 0.6);
+  color: #333333;
+}
+.modal--white .navigation-change .icon {
+  fill: white;
+}
+.modal--yellow .modal__description {
+  background-color: rgba(255, 255, 0, 0.6);
+  color: #ffffff;
+}
+.modal--yellow .navigation-change .icon {
+  fill: yellow;
 }
 
 .modal--close {

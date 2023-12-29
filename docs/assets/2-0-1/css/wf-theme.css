@@ -147,13 +147,9 @@
   margin-bottom: 40px;
 }
 
-.gallery__item {
-  margin: 2px;
-}
 @media (min-width: 1024px) {
   .gallery__item {
     flex: 1;
-    margin: 10px;
   }
 }
 

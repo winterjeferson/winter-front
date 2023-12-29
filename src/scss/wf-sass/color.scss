@@ -6,6 +6,7 @@ $arrColorCard: $arrColorDefault;
 $arrColorCarousel: $arrColorDefault;
 $arrColorIcon: $arrColorDefault;
 $arrColorForm: $arrColorDefault;
+$arrColorGallery: $arrColorDefault;
 $arrColorLoading: $arrColorDefault;
 $arrColorNotification: $arrColorDefault;
 $arrColorProgress: $arrColorDefault;
@@ -801,7 +802,8 @@ $color-instagram-dark-18: darken($color-instagram, $multiply-18);
 $color-instagram-dark-19: darken($color-instagram, $multiply-19);
 $color-instagram-dark-20: darken($color-instagram, $multiply-20);
 
-$arr-color-extra-light: ("grey": $color-grey-light-4,
+$arr-color-extra-light: (
+  "grey": $color-grey-light-4,
   "blue": $color-blue-light-8,
   "green": $color-green-light-9,
   "cyan": $color-cyan-light-9,
@@ -812,9 +814,11 @@ $arr-color-extra-light: ("grey": $color-grey-light-4,
   "brown": $color-brown-light-14,
   "pink": $color-pink-light-9,
   "black": $color-black-light-15,
-  "white": $color-white);
+  "white": $color-white
+);
 
-$arr-color-extra-light-border: ("grey": $color-grey-light-2,
+$arr-color-extra-light-border: (
+  "grey": $color-grey-light-2,
   "blue": $color-blue-light-7,
   "green": $color-green-light-7,
   "cyan": $color-cyan-light-7,
@@ -825,9 +829,11 @@ $arr-color-extra-light-border: ("grey": $color-grey-light-2,
   "brown": $color-brown-light-12,
   "pink": $color-pink-light-8,
   "black": $color-black-light-13,
-  "white": $color-white-dark-2);
+  "white": $color-white-dark-2
+);
 
-$arr-color-light: ("grey": $color-grey-light-3,
+$arr-color-light: (
+  "grey": $color-grey-light-3,
   "blue": $color-blue-light-7,
   "green": $color-green-light-7,
   "cyan": $color-cyan-light-7,
@@ -838,9 +844,11 @@ $arr-color-light: ("grey": $color-grey-light-3,
   "brown": $color-brown-light-10,
   "pink": $color-pink-light-8,
   "black": $color-black-light-12,
-  "white": $color-white);
+  "white": $color-white
+);
 
-$arr-color-light-border: ("grey": $color-grey-light-2,
+$arr-color-light-border: (
+  "grey": $color-grey-light-2,
   "blue": $color-blue-light-5,
   "green": $color-green-light-3,
   "cyan": $color-cyan-light-2,
@@ -851,9 +859,11 @@ $arr-color-light-border: ("grey": $color-grey-light-2,
   "brown": $color-brown-light-7,
   "pink": $color-pink-light-7,
   "black": $color-black-light-10,
-  "white": $color-white-light-4);
+  "white": $color-white-light-4
+);
 
-$arr-color-regular: ("grey": $color-grey,
+$arr-color-regular: (
+  "grey": $color-grey,
   "blue": $color-blue,
   "green": $color-green,
   "cyan": $color-cyan,
@@ -864,9 +874,11 @@ $arr-color-regular: ("grey": $color-grey,
   "brown": $color-brown,
   "pink": $color-pink,
   "black": $color-black,
-  "white": $color-white);
+  "white": $color-white
+);
 
-$arr-color-regular-border: ("grey": $color-grey-dark-1,
+$arr-color-regular-border: (
+  "grey": $color-grey-dark-1,
   "blue": $color-blue-dark-1,
   "green": $color-green-dark-1,
   "cyan": $color-cyan-dark-1,
@@ -877,9 +889,11 @@ $arr-color-regular-border: ("grey": $color-grey-dark-1,
   "brown": $color-brown-dark-1,
   "pink": $color-pink-dark-1,
   "black": $color-black-dark-1,
-  "white": $color-white-dark-1);
+  "white": $color-white-dark-1
+);
 
-$arr-color-regular-invalid: ("grey": $color-red,
+$arr-color-regular-invalid: (
+  "grey": $color-red,
   "blue": $color-red,
   "green": $color-red,
   "cyan": $color-red,
@@ -890,9 +904,11 @@ $arr-color-regular-invalid: ("grey": $color-red,
   "brown": $color-red,
   "pink": $color-red,
   "black": $color-red,
-  "white": $color-red);
+  "white": $color-red
+);
 
-$arr-color-regular-contrast: ("grey": $color-black,
+$arr-color-regular-contrast: (
+  "grey": $color-black,
   "blue": $color-white,
   "green": $color-white,
   "cyan": $color-white,
@@ -903,9 +919,11 @@ $arr-color-regular-contrast: ("grey": $color-black,
   "brown": $color-white,
   "pink": $color-white,
   "black": $color-white,
-  "white": $color-black);
+  "white": $color-black
+);
 
-$arr-color-dark: ("grey": $color-grey-dark-5,
+$arr-color-dark: (
+  "grey": $color-grey-dark-5,
   "blue": $color-blue-dark-3,
   "green": $color-green-dark-3,
   "cyan": $color-cyan-dark-3,
@@ -916,4 +934,5 @@ $arr-color-dark: ("grey": $color-grey-dark-5,
   "brown": $color-brown-dark-2,
   "pink": $color-pink-dark-3,
   "black": $color-black-dark-3,
-  "white": $color-white-dark-3);
+  "white": $color-white-dark-3
+);

@@ -168,11 +168,8 @@
 .gallery {
 
     &__item {
-        margin: $extra-small;
-
         @include tablet-landscape {
             flex: 1;
-            margin: $regular;
         }
     }
 }

@@ -250,7 +250,7 @@ export class Component {
         const css = props.css ? props.css : '';
         const onclick = props.onclick ? `onclick="${props.onclick}"` : '';
         const label = props.label ? props.label : '';
-        const ariaLabel = label ? `aria-label="${label}"` : '';
+        const ariaLabel = props.ariaLabel ? `aria-label="${props.ariaLabel}"` : '';
         const icon = props.icon ? props.icon : '';
         const color = props.color ? props.color : 'grey';
         const size = props.size ? props.size : 'regular';
@@ -278,10 +278,11 @@ export class Component {
 
     drawIcon(props) {
         const rotate = props.rotate ? `rotate-${props.rotate}` : '';
+        const color = props.color ? `icon--${props.color}` : '';
         const size = props.size ? props.size : 'regular';
         const icon = props.icon ? props.icon : '';
         const html = `
-            <svg class="icon icon--${size} ${rotate}">
+            <svg class="icon icon--${size} ${rotate} ${color}">
                 <use xlink:href="./assets/${globalVersion}/img/icon.svg#${icon}"></use>
             </svg>
         `;
@@ -289,13 +290,25 @@ export class Component {
         return html;
     }
 
+    drawImage(props) {
+        const src = props.src ? `src="${props.src}"` : '';
+        const title = props.title ? `title="${props.title}"` : '';
+        const alt = props.alt ? `alt="${props.alt}"` : title;
+        const style = props.style ? `style="${props.style}"` : '';
+        const css = props.css ? `class="${props.css}"` : '';
+        const html = `<img ${src} ${css} ${style} ${title} ${alt}>`;
+
+        return html;
+    }
+
     drawModal(props) {
         const size = props.size ? props.size : 'regular';
         const content = props.content ? props.content : '';
+        const color = props.color ? props.color : 'grey';
         const zIndex = this.drawModalZIndex();
         const html = `
             <div class="modal" style="z-index:${zIndex}">
-                <div class="modal__box modal--${size}">
+                <div class="modal__box modal--${size} modal--${color}">
                     ${content}
                 </div>
             </div>
@@ -332,6 +345,14 @@ export class Component {
         return html;
     }
 
+    drawModalDresciption(props) {
+        const description = props.description;
+        if (!description) return '';
+        const html = `<p class="modal__description">${description}</p>`;
+
+        return html;
+    }
+
     drawModalFooter(props) {
         const content = props.content ? props.content : '';
         const html = `
@@ -351,6 +372,39 @@ export class Component {
             <header class="modal__header right">
                 ${buttonClose}
             </header>
+        `;
+
+        return html;
+    }
+
+    drawModalNavigation(props) {
+        const iconLeft = this.drawIcon({
+            size: 'extra-big',
+            icon: 'previous',
+            color: 'white',
+        });
+        const iconRight = this.drawIcon({
+            rotate: '180',
+            size: 'extra-big',
+            icon: 'previous',
+            color: 'white',
+        });
+        const buttonPrevious = this.drawButton({
+            size: 'big',
+            ariaLabel: window.translation.translation.previous,
+            icon: iconLeft
+        });
+        const buttonNext = this.drawButton({
+            size: 'big',
+            ariaLabel: window.translation.translation.next,
+            icon: iconRight
+        });
+
+        const html = `
+            <div class="navigation-change button-wrapper row center">
+                ${buttonPrevious}
+                ${buttonNext}
+            </div>
         `;
 
         return html;
@@ -416,15 +470,25 @@ export class Form {
 }
 export class Gallery {
     draw(props) {
+        const src = props?.target?.getAttribute('data-target');
+        const description = props?.target?.getAttribute('data-description');
         const modalHeader = component.drawModalHeader({
             onclick: modal.getActionClose()
         });
+        const modalNavigation = component.drawModalNavigation({});
+        const modalDescription = component.drawModalDresciption({ description });
+        const modalImage = component.drawImage({
+            style: 'margin:auto;',
+            css: 'img-responsive',
+            src,
+        });
         const modalContent = component.drawModalContent({
-            content: ''
+            content: modalImage + modalDescription
         });
         const html = component.drawModal({
-            size: props.size,
-            content: modalHeader + modalContent
+            size: props?.size,
+            color: props?.color,
+            content: modalHeader + modalContent + modalNavigation
         });
 
         modal.show(html);

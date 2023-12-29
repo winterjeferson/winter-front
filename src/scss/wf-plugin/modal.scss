@@ -104,7 +104,6 @@
     }
 
     &__description {
-        background-color: rgba($color-black, 0.6);
         bottom: 0;
         color: $color-white;
         margin-bottom: 14px;
@@ -115,6 +114,21 @@
 
         @include tablet-landscape {
             padding: $regular;
+        }
+    }
+
+    @each $color in $arrColorGallery {
+        &--#{'' + $color + ''} {
+            .modal__description {
+                background-color: rgba($color, 0.6);
+                color: color-regular-contrast(#{$color});
+            }
+
+            .navigation-change {
+                .icon {
+                    fill: $color
+                }
+            }
         }
     }
 }
