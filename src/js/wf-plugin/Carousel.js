@@ -38,7 +38,6 @@ export class Carousel {
             });
             return;
         }
-
         this.animateSlide({
             elCarouselList,
             currentPosition,
@@ -53,7 +52,6 @@ export class Carousel {
             item.style.opacity = 0;
             item.style.transition = this.cssTransition;
         });
-
         elCurrent.style.opacity = 1;
         elCurrent.style.left = `-${obj.currentPosition}px`;
         elCurrent.style.transition = this.cssTransition;
@@ -104,7 +102,6 @@ export class Carousel {
         for (let i = 0; i < length; i++) {
             html += `<button type="button" class="${css}" data-id="${i}" aria-hidden="true"></button>`;
         }
-
         elController.innerHTML = html;
     }
 
@@ -130,7 +127,6 @@ export class Carousel {
         const elCarousel = target.parentNode.parentNode;
 
         elCarousel.setAttribute(this.attCurrentSlide, dataId);
-
         this.defineActive(target);
         this.animate({
             'currentSlide': target.getAttribute('data-id'),
@@ -187,7 +183,6 @@ export class Carousel {
         el.forEach((item) => {
             item.classList.remove(this.cssButtonActive);
         });
-
         target.classList.add(this.cssButtonActive);
     }
 
@@ -211,7 +206,6 @@ export class Carousel {
         const self = window.carousel;
 
         self.counterCurrent++;
-
         if (self.counterCurrent >= self.transition) {
             self.counterCurrent = 0;
 

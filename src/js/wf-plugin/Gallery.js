@@ -5,7 +5,7 @@ export class Gallery {
         const modalHeader = component.drawModalHeader({
             onclick: modal.getActionClose()
         });
-        const modalNavigation = component.drawModalNavigation({});
+        const modalNavigation = component.drawModalNavigation(props);
         const modalDescription = component.drawModalDresciption({ description });
         const modalImage = component.drawImage({
             style: 'margin:auto;',

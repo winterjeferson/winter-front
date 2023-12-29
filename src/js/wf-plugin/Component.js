@@ -131,6 +131,12 @@ export class Component {
     }
 
     drawModalNavigation(props) {
+        const target = props.target;
+        const elGallery = target.parentNode;
+        const elGalleryItens = Array.from(elGallery.querySelectorAll('.gallery__item'));
+        const index = elGalleryItens.indexOf(target);
+        const isItemFirst = index === 0;
+        const isItemLast = elGalleryItens.length === index + 1;
         const iconLeft = this.drawIcon({
             size: 'extra-big',
             icon: 'previous',
@@ -145,14 +151,15 @@ export class Component {
         const buttonPrevious = this.drawButton({
             size: 'big',
             ariaLabel: window.translation.translation.previous,
-            icon: iconLeft
+            icon: iconLeft,
+            css: isItemFirst ? 'hide' : ''
         });
         const buttonNext = this.drawButton({
             size: 'big',
             ariaLabel: window.translation.translation.next,
-            icon: iconRight
+            icon: iconRight,
+            css: isItemLast ? 'hide' : ''
         });
-
         const html = `
             <div class="navigation-change button-wrapper row center">
                 ${buttonPrevious}

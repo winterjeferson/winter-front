@@ -38,7 +38,6 @@ export class Carousel {
             });
             return;
         }
-
         this.animateSlide({
             elCarouselList,
             currentPosition,
@@ -53,7 +52,6 @@ export class Carousel {
             item.style.opacity = 0;
             item.style.transition = this.cssTransition;
         });
-
         elCurrent.style.opacity = 1;
         elCurrent.style.left = `-${obj.currentPosition}px`;
         elCurrent.style.transition = this.cssTransition;
@@ -104,7 +102,6 @@ export class Carousel {
         for (let i = 0; i < length; i++) {
             html += `<button type="button" class="${css}" data-id="${i}" aria-hidden="true"></button>`;
         }
-
         elController.innerHTML = html;
     }
 
@@ -130,7 +127,6 @@ export class Carousel {
         const elCarousel = target.parentNode.parentNode;
 
         elCarousel.setAttribute(this.attCurrentSlide, dataId);
-
         this.defineActive(target);
         this.animate({
             'currentSlide': target.getAttribute('data-id'),
@@ -187,7 +183,6 @@ export class Carousel {
         el.forEach((item) => {
             item.classList.remove(this.cssButtonActive);
         });
-
         target.classList.add(this.cssButtonActive);
     }
 
@@ -211,7 +206,6 @@ export class Carousel {
         const self = window.carousel;
 
         self.counterCurrent++;
-
         if (self.counterCurrent >= self.transition) {
             self.counterCurrent = 0;
 
@@ -378,6 +372,12 @@ export class Component {
     }
 
     drawModalNavigation(props) {
+        const target = props.target;
+        const elGallery = target.parentNode;
+        const elGalleryItens = Array.from(elGallery.querySelectorAll('.gallery__item'));
+        const index = elGalleryItens.indexOf(target);
+        const isItemFirst = index === 0;
+        const isItemLast = elGalleryItens.length === index + 1;
         const iconLeft = this.drawIcon({
             size: 'extra-big',
             icon: 'previous',
@@ -392,14 +392,15 @@ export class Component {
         const buttonPrevious = this.drawButton({
             size: 'big',
             ariaLabel: window.translation.translation.previous,
-            icon: iconLeft
+            icon: iconLeft,
+            css: isItemFirst ? 'hide' : ''
         });
         const buttonNext = this.drawButton({
             size: 'big',
             ariaLabel: window.translation.translation.next,
-            icon: iconRight
+            icon: iconRight,
+            css: isItemLast ? 'hide' : ''
         });
-
         const html = `
             <div class="navigation-change button-wrapper row center">
                 ${buttonPrevious}
@@ -475,7 +476,7 @@ export class Gallery {
         const modalHeader = component.drawModalHeader({
             onclick: modal.getActionClose()
         });
-        const modalNavigation = component.drawModalNavigation({});
+        const modalNavigation = component.drawModalNavigation(props);
         const modalDescription = component.drawModalDresciption({ description });
         const modalImage = component.drawImage({
             style: 'margin:auto;',
@@ -991,300 +992,6 @@ export class Modal {
         helper.elBody.insertAdjacentHTML('afterbegin', html);
     }
 }
-
-
-// export class Modal {
-//     constructor() {
-//         this.isModalOpen = false;
-
-//         this.cssHide = 'hide';
-//         this.cssClose = 'modal--close';
-//         this.cssScrollbar = 'scrollbar scrollbar--grey';
-//     }
-
-//     buildHtml() {
-//         const html = `
-//             <div class="modal ${this.cssClose} ${this.cssScrollbar}">
-//                 <div class="modal__box">
-//                     <header class="modal__header right">
-//                         <button type="button" aria-label="${window.translation.translation.close}" class="button button--small button--small--proportional button--grey button--transparent button--close">
-//                             <svg class="icon icon--regular rotate-45">
-//                                 <use xlink:href="./assets/${globalVersion}/img/icon.svg#plus"></use>
-//                             </svg>
-//                         </button>
-//                     </header>
-//                     <div class="row">
-//                         <div class="modal__content"></div>
-//                     </div>
-//                     <div class="navigation-change button-wrapper row center ${this.cssHide}">
-//                         <button type="button" class="button button--big" data-id="previous" aria-label="${window.translation.translation.previous}" >
-//                             <svg class="icon icon--extra-big icon--white">
-//                                 <use xlink:href="./assets/${globalVersion}/img/icon.svg#previous"></use>
-//                             </svg>
-//                         </button>
-//                         <button type="button" class="button button--big" data-id="next" aria-label="${window.translation.translation.next}" >
-//                             <svg class="icon icon--extra-big icon--white rotate-180">
-//                                 <use xlink:href="./assets/${globalVersion}/img/icon.svg#previous"></use>
-//                             </svg>
-//                         </button>
-//                     </div>
-//                     <footer class="button-wrapper modal__footer center ${this.cssHide}">
-//                         <button type="button" class="button button--regular button--grey" data-id="cancel"></button>
-//                         <button type="button" class="button button--regular button--blue" data-id="confirm"></button>
-//                     </footer>
-//                 </div>
-//             </div>
-//         `;
-
-//         helper.elBody.insertAdjacentHTML('afterbegin', html);
-//     }
-
-//     buildKeyboard() {
-//         window.addEventListener('keyup', (event) => {
-//             switch (event.key) {
-//                 case 'Escape': return this.buildKeyboardEscape();
-//                 case 'ArrowLeft': return this.buildKeyboardArrowLeft();
-//                 case 'ArrowRight': return this.buildKeyboardArrowRight();
-//             }
-//         });
-//     }
-
-//     buildKeyboardEscape() {
-//         if (this.isModalOpen) this.closeModal();
-//     }
-
-//     buildKeyboardArrowLeft() {
-//         if (!this.isModalOpen) return;
-//         if (this.elModalNavigationArrowLeft.classList.contains(this.cssHide)) return;
-//         this.elModalNavigationArrowLeft.click();
-//     }
-
-//     buildKeyboardArrowRight() {
-//         if (!this.isModalOpen) return;
-//         if (this.elModalNavigationArrowRight.classList.contains(this.cssHide)) return;
-//         this.elModalNavigationArrowRight.click();
-//     }
-
-//     buildMenuGallery() {
-//         if (!this.elGallery) return;
-
-//         this.elGallery.forEach((item) => {
-//             const elButton = item.querySelectorAll('a');
-
-//             elButton.forEach((target) => {
-//                 this.buildMenuGalleryButton(target);
-//             });
-//         });
-
-//         helper.addClick(this.elModalNavigationArrowLeft, this.handleClickArrowLeft.bind(this));
-//         helper.addClick(this.elModalNavigationArrowRight, this.handleClickArrowRight.bind(this));
-//     }
-
-//     buildMenuGalleryButton(target) {
-//         target.addEventListener('click', event => {
-//             const href = target.getAttribute('href');
-//             const description = target.querySelector('img').getAttribute('data-description');
-
-//             event.preventDefault();
-//             this.buildModal({ kind: 'gallery', size: 'big' });
-//             this.buildGalleryImage(href, description);
-//             this.buildGalleryNavigation(target);
-//         });
-//     }
-
-//     buildMenu() {
-//         const elButtonCancel = this.elModalFooter.querySelector('[data-id="cancel"]');
-
-//         helper.addClick(this.elModalClose, this.closeModal.bind(this));
-//         helper.addClick(elButtonCancel, this.closeModal.bind(this));
-//     }
-
-//     buildGalleryNavigation(target) {
-//         const currentGallery = target.parentNode.parentNode;
-//         const elGallery = currentGallery.querySelectorAll('a');
-//         const siblingLength = elGallery.length - 1;
-//         let array = [];
-
-//         elGallery.forEach((item) => {
-//             array.push(item);
-//         });
-
-//         if (siblingLength > 0) {
-//             this.buildGalleryNavigationShow({
-//                 array,
-//                 target,
-//                 siblingLength
-//             });
-
-//             return;
-//         }
-
-//         this.elModalNavigationArrow.classList.add(this.cssHide);
-//     }
-
-//     buildGalleryNavigationShow(obj) {
-//         const currentPosition = obj.array.indexOf(obj.target);
-
-//         this.elModalNavigationArrow.classList.remove(this.cssHide);
-//         this.targetBuildGalleryChange = obj.target;
-
-//         if (currentPosition <= 0) {
-//             this.elModalNavigationArrowLeft.classList.add(this.cssHide);
-//         } else {
-//             this.elModalNavigationArrowLeft.classList.remove(this.cssHide);
-//         }
-
-//         if (currentPosition >= obj.siblingLength) {
-//             this.elModalNavigationArrowRight.classList.add(this.cssHide);
-//         } else {
-//             this.elModalNavigationArrowRight.classList.remove(this.cssHide);
-//         }
-//     }
-
-//     buildModal(obj) {
-//         this.elModalFooter.classList.add(this.cssHide);
-//         typeof obj.click !== 'undefined' ? this.buildContentConfirmationAction(obj.click) : this.buildContentConfirmationAction('modal.closeModal()');
-//         typeof obj.confirmText !== 'undefined' ? this.elModalFooterConfirm.innerHTML = obj.confirmText : this.translate();
-//         this.buildModalSize(obj.size);
-//         this.buildModalKind(obj);
-//         typeof obj.action === 'undefined' ? this.openModal() : this.closeModal();
-//     }
-
-//     buildModalKind(obj) {
-//         if (obj.kind === 'ajax') this.buildContentAjax(obj.content);
-//         if (obj.kind === 'confirmation') this.buildContentConfirmation(obj);
-//         if (obj.kind === 'gallery') {
-//             this.elModalNavigationArrow.classList.remove('hide');
-//             return;
-//         }
-
-//         this.elModalNavigationArrow.classList.add('hide');
-//     }
-
-//     buildModalSize(size = 'regular') {
-//         const prefix = 'modal--';
-//         const arr = ['extra-small', 'small', 'regular', 'big', 'extra-big', 'full'];
-
-//         arr.forEach((item) => {
-//             this.elModalBox.classList.remove(`${prefix}${item}`);
-//         });
-//         this.elModalBox.classList.add(`${prefix}${size}`);
-//     }
-
-//     buildContentAjax(target) {
-//         const self = this;
-//         let ajax = new XMLHttpRequest();
-
-//         ajax.onreadystatechange = function () {
-//             if (!this.readyState === 4 && this.status === 200) return;
-
-//             self.buildContentAjaxSuccess(this.responseText);
-//         };
-//         ajax.open('GET', target, true);
-//         ajax.send();
-//     }
-
-//     buildContentAjaxSuccess(data) {
-//         this.elModalContent.innerHTML = data;
-//         this.resetOtherClass();
-//     }
-
-//     buildGalleryImage(image, description) {
-//         const html = `<img src="${image}" class="img-responsive" style="margin:auto;" title="" alt=""/>`;
-
-//         this.elModalContent.innerHTML = html;
-//         this.changeText(description);
-//     }
-
-//     buildContentConfirmation(props) {
-//         const content = props.content;
-//         const isCancelButton = props.isCancelButton;
-//         const html = `<div class="center">${content}</div>`;
-
-//         if (isCancelButton) {
-//             this.elModalFooterCancel.classList.add(this.cssHide);
-//         } else {
-//             this.elModalFooterCancel.classList.remove(this.cssHide);
-//         }
-//         this.elModalFooter.classList.remove(this.cssHide);
-//         this.elModalContent.innerHTML = html;
-//     }
-
-//     buildContentConfirmationAction(action) {
-//         this.elModalFooterConfirm.setAttribute('onclick', action);
-//     }
-
-//     changeText(description) {
-//         const html = `<p class="modal__description">${description}</p>`;
-
-//         if (description === '' || description === null) return;
-//         this.elModalContent.insertAdjacentHTML('beforeend', html);
-//     }
-
-//     closeModal() {
-//         this.isModalOpen = false;
-//         helper.elBody.classList.add('overflow-y');
-//         helper.elBody.classList.remove('overflow-hidden');
-//         helper.elBody.style.overflowY = 'auto';
-//         helper.elBody.style.position = 'relative';
-//         this.elModal.classList.add(this.cssClose);
-//         this.elModalBox.classList.remove('modal-animate');
-//         this.resetOtherClass();
-//     }
-
-//     init() {
-//         this.buildHtml();
-//         this.update();
-//         this.buildMenu();
-//         this.buildMenuGallery();
-//         this.buildKeyboard();
-//         this.translate();
-//     }
-
-//     handleClickArrowLeft() {
-//         this.targetBuildGalleryChange.previousElementSibling.click();
-//     }
-
-//     handleClickArrowRight() {
-//         this.targetBuildGalleryChange.nextElementSibling.click();
-//     }
-
-//     openModal() {
-//         this.isModalOpen = true;
-//         helper.elBody.classList.remove('overflow-y');
-//         helper.elBody.classList.add('overflow-hidden');
-//         helper.elBody.style.overflowY = 'hidden';
-//         this.elModalBox.classList.add('modal-animate');
-//         this.elModal.classList.remove(this.cssClose);
-//     }
-
-//     resetOtherClass() {
-//         if (typeof menuDropDown !== 'undefined') menuDropDown.reset();
-//         if (typeof menuToggle !== 'undefined') menuToggle.init();
-//         if (typeof menuTab !== 'undefined') menuTab.init();
-//         if (typeof lazyLoad !== 'undefined') lazyLoad.init();
-//     }
-
-//     translate() {
-//         this.elModalFooterConfirm.innerHTML = translation.translation.confirm;
-//         this.elModalFooterCancel.innerHTML = translation.translation.cancel;
-//     }
-
-//     update() {
-//         this.targetBuildGalleryChange = '';
-//         this.elModal = document.querySelector('.modal');
-//         this.elModalFooter = this.elModal.querySelector('footer');
-//         this.elModalFooterConfirm = this.elModalFooter.querySelector('[data-id="confirm"]');
-//         this.elModalFooterCancel = this.elModalFooter.querySelector('[data-id="cancel"]');
-//         this.elModalClose = document.querySelector('.modal__header .button--close');
-//         this.elModalContent = document.querySelector('.modal__content');
-//         this.elModalBox = this.elModal.querySelector('.modal__box');
-//         this.elModalNavigationArrow = this.elModal.querySelector('.navigation-change');
-//         this.elModalNavigationArrowLeft = this.elModalNavigationArrow.querySelector('[data-id="previous"]');
-//         this.elModalNavigationArrowRight = this.elModalNavigationArrow.querySelector('[data-id="next"]');
-//         this.elGallery = document.querySelectorAll('.gallery');
-//     }
-// }
 export class Notification {
     constructor() {
         this.elBody = document.querySelector('body');
