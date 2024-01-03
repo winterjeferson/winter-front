@@ -9,26 +9,26 @@ export class Gallery {
     draw(props) {
         const src = props?.target?.getAttribute('data-target');
         const description = props?.target?.getAttribute('data-description');
-        const modalHeader = component.drawModalHeader({
-            onclick: modal.getActionClose()
+        const modalHeader = wfpComponent.drawModalHeader({
+            onclick: wfpModal.getActionClose()
         });
-        const modalNavigation = component.drawModalNavigation(props);
-        const modalDescription = component.drawModalDresciption({ description });
-        const modalImage = component.drawImage({
+        const modalNavigation = wfpComponent.drawModalNavigation(props);
+        const modalDescription = wfpComponent.drawModalDresciption({ description });
+        const modalImage = wfpComponent.drawImage({
             style: 'margin:auto;',
             css: 'img-responsive',
             src,
         });
-        const modalContent = component.drawModalContent({
+        const modalContent = wfpComponent.drawModalContent({
             content: modalImage + modalDescription
         });
-        const html = component.drawModal({
+        const html = wfpComponent.drawModal({
             size: props?.size,
             color: props?.color,
             content: modalHeader + modalContent + modalNavigation
         });
 
-        modal.show(html);
+        wfpModal.show(html);
     }
 
     open(props) {
@@ -42,7 +42,7 @@ export class Gallery {
 
     handleChange(elTarget) {
         if (!elTarget) return;
-        modal.closeByKey();
+        wfpModal.closeByKey();
         elTarget.click();
     }
 

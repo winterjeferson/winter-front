@@ -19,14 +19,14 @@ export class Modal {
 
     async draw(props) {
         const title = props.title ? `<h3>${props.title}</h3>` : '';
-        const content = props.kind === 'ajax' ? await helper.ajax({ controller: props.content }) : props.content;
-        const modalHeader = component.drawModalHeader({
+        const content = props.kind === 'ajax' ? await wfpHelper.ajax({ controller: props.content }) : props.content;
+        const modalHeader = wfpComponent.drawModalHeader({
             onclick: this.getActionClose()
         });
-        const modalContent = component.drawModalContent({
+        const modalContent = wfpComponent.drawModalContent({
             content: title + content
         });
-        const html = component.drawModal({
+        const html = wfpComponent.drawModal({
             size: props.size,
             content: modalHeader + modalContent
         });
@@ -34,7 +34,7 @@ export class Modal {
     }
 
     getActionClose() {
-        return 'modal.close(this)';
+        return 'wfpModal.close(this)';
     }
 
     getElModal() {
@@ -43,13 +43,13 @@ export class Modal {
 
     async open(props) {
         await this.draw(props);
-        if (typeof menuDropDown !== 'undefined') menuDropDown.reset();
-        if (typeof menuToggle !== 'undefined') menuToggle.init();
-        if (typeof menuTab !== 'undefined') menuTab.init();
-        if (typeof lazyLoad !== 'undefined') lazyLoad.init();
+        if (typeof wfpMenuDropDown !== 'undefined') wfpMenuDropDown.reset();
+        if (typeof wfpMenuToggle !== 'undefined') wfpMenuToggle.init();
+        if (typeof wfpMenuTab !== 'undefined') wfpMenuTab.init();
+        if (typeof wfpLazyLoad !== 'undefined') wfpLazyLoad.init();
     }
 
     show(html) {
-        helper.elBody.insertAdjacentHTML('afterbegin', html);
+        wfpHelper.elBody.insertAdjacentHTML('afterbegin', html);
     }
 }

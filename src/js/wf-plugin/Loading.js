@@ -12,6 +12,6 @@ export class LoadingMain {
         if (!this.elWrapper) return;
         this.elWrapper.classList.add(this.cssHide);
         this.elLoading.classList.remove(this.cssAnimation);
-        helper.elBody.style.overflow = 'auto';
+        wfpHelper.elBody.style.overflow = 'auto';
     }
 }

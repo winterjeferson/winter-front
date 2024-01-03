@@ -28,7 +28,7 @@ export class Translation {
     }
 
     defineLanguege() {
-        const capitalize = globalLanguage.charAt(0).toUpperCase() + globalLanguage.slice(1);
+        const capitalize = wfpLanguage.charAt(0).toUpperCase() + wfpLanguage.slice(1);
 
         this.translation = this[`translation${capitalize}`];
     }

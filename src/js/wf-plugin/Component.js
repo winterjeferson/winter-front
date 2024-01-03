@@ -19,7 +19,7 @@ export class Component {
     drawCloseButton(props) {
         props.size = 'extra-small';
         props.css = `button--${props.size} button--${props.size}--proportional button--transparent button--close`;
-        props.ariaLabel = window.translation.translation.close;
+        props.ariaLabel = window?.wfpTranslation?.translation?.close ? window?.wfpTranslation?.translation?.close : 'close';
         props.icon = this.drawIcon({
             rotate: '45',
             size: 'regular',
@@ -36,7 +36,7 @@ export class Component {
         const icon = props.icon ? props.icon : '';
         const html = `
             <svg class="icon icon--${size} ${rotate} ${color}">
-                <use xlink:href="./assets/${globalVersion}/img/icon.svg#${icon}"></use>
+                <use xlink:href="${wfpIconAddress + icon}"></use>
             </svg>
         `;
 
@@ -71,7 +71,7 @@ export class Component {
     }
 
     drawModalZIndex() {
-        const modals = modal?.getElModal();
+        const modals = wfpModal?.getElModal();
         const modalsLength = modals.length;
         const isModal = modalsLength > 0;
         let zIndex = 5;
@@ -133,8 +133,8 @@ export class Component {
     drawModalNavigation(props) {
         const target = props?.target;
         if (!target) return;
-        const elGalleryItens = gallery.currentGalleryItens;
-        const index = gallery.currentGalleryIndex;
+        const elGalleryItens = wfpGallery.currentGalleryItens;
+        const index = wfpGallery.currentGalleryIndex;
         const isItemFirst = index === 0;
         const isItemLast = elGalleryItens.length === index + 1;
 
@@ -151,17 +151,17 @@ export class Component {
         });
         const buttonPrevious = this.drawButton({
             size: 'big',
-            ariaLabel: window.translation.translation.previous,
+            ariaLabel: window.wfpTranslation.translation.previous,
             icon: iconLeft,
             css: isItemFirst ? 'hide' : '',
-            onclick: 'gallery.handlePrevious();'
+            onclick: 'wfpGallery.handlePrevious();'
         });
         const buttonNext = this.drawButton({
             size: 'big',
-            ariaLabel: window.translation.translation.next,
+            ariaLabel: window.wfpTranslation.translation.next,
             icon: iconRight,
             css: isItemLast ? 'hide' : '',
-            onclick: 'gallery.handleNext();'
+            onclick: 'wfpGallery.handleNext();'
         });
         const html = `
             <div class="navigation-change button-wrapper row center">

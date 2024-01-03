@@ -117,7 +117,7 @@ export class Carousel {
         const elButton = target.querySelectorAll(`.${this.cssButton}`);
 
         elButton.forEach((item) => {
-            helper.addClick(item, this.buildNavigationControllerClick);
+            wfpHelper.addClick(item, this.buildNavigationControllerClick);
         });
     }
 
@@ -203,7 +203,7 @@ export class Carousel {
     }
 
     verifyInterval() {
-        const self = window.carousel;
+        const self = window.wfpCarousel;
 
         self.counterCurrent++;
         if (self.counterCurrent >= self.transition) {

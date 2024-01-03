@@ -7,13 +7,13 @@ export class Table {
 
     build() {
         this.elTable.forEach((item) => {
-            helper.wrapItem(item, this.cssResponsive);
+            wfpHelper.wrapItem(item, this.cssResponsive);
             const elParent = item.parentNode.parentNode.querySelector(`.${this.cssResponsive}`);
             const color = this.getTableColor(item);
 
-            helper.addClass(elParent, 'scrollbar');
-            helper.addClass(elParent, `scrollbar--${color}`);
-            helper.wrapItem(elParent, `wrapper-${this.cssResponsive}`);
+            wfpHelper.addClass(elParent, 'scrollbar');
+            wfpHelper.addClass(elParent, `scrollbar--${color}`);
+            wfpHelper.wrapItem(elParent, `wrapper-${this.cssResponsive}`);
         });
     }
 

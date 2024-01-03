@@ -16,7 +16,7 @@ export class MenuDropDown {
         this.elMenu.forEach((item) => {
             const elButton = item.querySelectorAll('.button:first-child, .link:first-child')[0];
 
-            helper.addClick(elButton, this.addClickAction);
+            wfpHelper.addClick(elButton, this.addClickAction);
         });
     }
 
@@ -24,19 +24,19 @@ export class MenuDropDown {
         const elContent = item.target.parentNode.querySelector(`.${this.cssDropDownContent}`);
 
         if (elContent === null) return;
-        helper.addClass(elContent, this.cssOpend);
+        wfpHelper.addClass(elContent, this.cssOpend);
     }
 
     close() {
-        const self = window.menuDropDown;
+        const self = window.wfpMenuDropDown;
 
-        if (this.elMenu === typeof 'undefined') return;
+        if (self.elMenu === typeof 'undefined') return;
 
         self.elMenu.forEach((item) => {
             const elContent = item.querySelector(`.${self.cssDropDownContent}`);
 
             if (elContent === null) return;
-            helper.removeClass(elContent, this.cssOpend);
+            wfpHelper.removeClass(elContent, this.cssOpend);
         });
     }
 
@@ -54,7 +54,7 @@ export class MenuDropDown {
     }
 
     listener(event) {
-        const el = document.querySelectorAll(`.${window.menuDropDown.cssMobileShow}`);
+        const el = document.querySelectorAll(`.${window.wfpMenuDropDown.cssMobileShow}`);
 
         if (
             event.toElement.classList.contains('button') ||
@@ -62,12 +62,13 @@ export class MenuDropDown {
         ) return;
 
         el.forEach((item) => {
-            helper.removeClass(item, menuDropDown.cssMobileShow);
+            wfpHelper.removeClass(item, window.wfpMenuDropDown.cssMobileShow);
         });
     }
 
     reset() {
+        console.log('aqui');
         document.removeEventListener('click', this.listener, true);
-        window.menuDropDown.init();
+        window.wfpMenuDropDown.init();
     }
 }

@@ -8,7 +8,7 @@ export class MenuToggle {
 
     buildMenu() {
         this.elButton.forEach((el) => {
-            helper.addClick(el, this.handleClick);
+            wfpHelper.addClick(el, this.handleClick);
         });
     }
 

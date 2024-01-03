@@ -3,38 +3,38 @@ export class Confirmation {
         const buttonSize = props.buttonSize ? props.buttonSize : 'regular';
         const title = props.title ? `<h3>${props.title}</h3>` : '';
         const content = props.content ? `<p>${props.content}</p>` : '';
-        const actionClose = modal.getActionClose();
-        const translationCancel = props.translationCancel ? props.translationCancel : window.translation.translation.cancel;
-        const translationConfirm = props.translationConfirm ? props.translationConfirm : window.translation.translation.confirm;
+        const actionClose = wfpModal.getActionClose();
+        const translationCancel = props.translationCancel ? props.translationCancel : window.wfpTranslation.translation.cancel;
+        const translationConfirm = props.translationConfirm ? props.translationConfirm : window.wfpTranslation.translation.confirm;
         const colorConfirm = props.colorConfirm ? props.colorConfirm : 'blue';
         const colorCancel = props.colorCancel ? props.colorCancel : 'grey';
-        const buttonCancel = component.drawButton({
+        const buttonCancel = wfpComponent.drawButton({
             color: colorCancel,
             label: translationCancel,
             size: buttonSize,
             onclick: actionClose
         });
-        const buttonConfirm = component.drawButton({
+        const buttonConfirm = wfpComponent.drawButton({
             color: colorConfirm,
             label: translationConfirm,
             size: buttonSize,
             onclick: `${props.onclick};${actionClose}`
         });
-        const modalHeader = component.drawModalHeader({
+        const modalHeader = wfpComponent.drawModalHeader({
             onclick: actionClose
         });
-        const modalContent = component.drawModalContent({
+        const modalContent = wfpComponent.drawModalContent({
             content: title + content
         });
-        const modalFooter = component.drawModalFooter({
+        const modalFooter = wfpComponent.drawModalFooter({
             content: buttonCancel + buttonConfirm
         });
-        const html = component.drawModal({
+        const html = wfpComponent.drawModal({
             size: props.size,
             content: modalHeader + modalContent + modalFooter
         });
 
-        modal.show(html);
+        wfpModal.show(html);
     }
 
     open(props) {

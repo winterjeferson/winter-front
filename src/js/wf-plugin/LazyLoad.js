@@ -38,7 +38,7 @@ export class LazyLoad {
 
     verifyPosition(target) {
         const windowScroll = window.scrollY;
-        const elemntPosition = window.helper.offset(target).top;
+        const elemntPosition = window.wfpHelper.offset(target).top;
         const margin = window.outerHeight;
 
         if (windowScroll >= elemntPosition - margin) this.buildImage(target);

@@ -39,18 +39,22 @@ export class Notification {
     buildHtmlItem(props) {
         const color = typeof props.color !== 'undefined' ? props.color : this.colorDefault;
         const size = typeof props.size !== 'undefined' ? props.size : 'regular';
+        const ariaLabel = window?.translation?.translation?.close ? window?.translation?.translation?.close : 'close';
+        const icon = wfpComponent.drawIcon({
+            rotate: '45',
+            size: 'regular',
+            icon: 'plus',
+        });
 
         return `
             <div class="${this.id}__item ${this.id}--${size} ${this.id}--${color}" id="${this.id}${this.notificationId}">
                 <span class="${this.id}__text">${props.content}</span>
                 <button type="button" 
                     class="button button--small button--small--proportional button--transparent" 
-                    onclick="notification.remove(this.parentNode, 0)" 
-                    aria-label="${window.translation.translation.close}"
+                    onclick="wfpNotification.remove(this.parentNode, 0)" 
+                    aria-label="${ariaLabel}"
                 >
-                    <svg class="icon icon--regular rotate-45">
-                        <use xlink:href="./assets/${globalVersion}/img/icon.svg#plus"></use>
-                    </svg>
+                    ${icon}
                 </button>
             </div>
         `;
@@ -81,7 +85,7 @@ export class Notification {
         } else {
             elPlace = document.getElementById(`${this.id}_${position}`);
         }
-        elPlace.insertAdjacentHTML('beforeend', string);
+        if (elPlace) elPlace.insertAdjacentHTML('beforeend', string);
     }
 
     remove(item, messageLength) {

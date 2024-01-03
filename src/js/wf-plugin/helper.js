@@ -95,13 +95,13 @@ export class Helper {
         window.addEventListener('keyup', (event) => {
             switch (event.key) {
                 case 'Escape':
-                    if (modal) modal.closeByKey();
+                    if (wfpModal) wfpModal.closeByKey();
                     break;
                 case 'ArrowLeft':
-                    if (gallery) gallery.handlePrevious();
+                    if (wfpGallery) wfpGallery.handlePrevious();
                     break;
                 case 'ArrowRight':
-                    if (gallery) gallery.handleNext();
+                    if (wfpGallery) wfpGallery.handleNext();
                     break;
             }
         });

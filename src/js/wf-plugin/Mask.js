@@ -13,7 +13,7 @@ export class Mask {
         target.addEventListener('input', (e) => {
             const inputValue = e.target.value;
             const inputMask = target.dataset.mask;
-            const capitalized = helper.capitalize(inputMask);
+            const capitalized = wfpHelper.capitalize(inputMask);
 
             e.target.value = this[`mask${capitalized}`](inputValue);
         });
