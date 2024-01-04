@@ -23,6 +23,16 @@
     {% endfor %}
 </section>
 <section class="center">
+    <h1 class="page__title">Button disabled</h1>
+    <nav class="button-wrapper row center">
+        {% for color in arrColor %}
+        <button type="button" class="button button--regular button--{{color}}" disabled>
+            button button--regular button--{{color}} <b>bold</b>
+        </button>
+        {% endfor %}
+    </nav>
+</section>
+<section class="center">
     <h1 class="page__title">Button Full</h1>
     {% for size in arrSize %}
     <h2 class="page__sub-title">{{size}}</h2>

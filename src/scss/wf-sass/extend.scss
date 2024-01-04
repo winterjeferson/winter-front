@@ -10,7 +10,7 @@
 }
 
 %extend-disabled {
-    pointer-events: none;
+    cursor: not-allowed;
 }
 
 %extend-component-margin {

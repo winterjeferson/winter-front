@@ -26,6 +26,19 @@ $prefix: 'form';
         padding: $small + $extra-small;
     }
 
+    &__input-validation {
+        background-color: color-light('red');
+        border-radius: $border-radius-regular;
+        color: color-dark('red');
+        margin: $regular auto;
+        padding: $regular;
+        width: 100%;
+
+        &:empty {
+            display: none;
+        }
+    }
+
     select {
         background-position:
             calc(100% - 20px) calc(1em + 2px),
