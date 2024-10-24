@@ -1,3 +1,40 @@
-{% include "include/head.html" %}
-{% include "include/home.html" %}
-{% include "include/footer.html" %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Web Component Example</title>
+    <script src="./components/wf-button/wf-button.js"></script>
+    <script src="./components/wf-input/wf-input.js"></script>
+</head>
+
+<body>
+    <wf-button text="red" id="button" theme="red" size="small" id="id"></wf-button>
+    <wf-button text="blue" theme="blue" size="big"></wf-button>
+    <wf-button text="without theme"></wf-button>
+
+    <wf-input type="text"></wf-input>
+    <wf-input type="tel"></wf-input>
+</body>
+<script>
+    function buildInitialData() {
+        const elBody = document.getElementsByTagName('body')[0];
+        let html = '';
+
+        for (let i = 0; i < 5; i++) {
+            html += '<wf-button text="blue" theme="green" size="big" onclick="changeColor(this)"></wf-button>';
+        }
+        elBody.insertAdjacentHTML('beforebegin', html);
+    }
+    buildInitialData();
+
+    function changeColor(event) {
+        const el = document.getElementById('button');
+
+        el.setAttribute('text', 'now im blue');
+        el.setAttribute('theme', 'blue');
+        console.log(event);
+    }
+</script>
+
+</html>

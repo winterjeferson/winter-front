@@ -1,0 +1,29 @@
+ :host {
+     --color--blue: blue;
+     --color--grey: grey;
+     --color--red: red;
+     --color--green: green;
+ }
+
+ button {
+     padding: 10px 20px;
+     font-size: 2em;
+     cursor: pointer;
+     color: white;
+ }
+
+ .theme--blue {
+     background-color: var(--color--blue);
+ }
+
+ .theme--grey {
+     background-color: var(--color--grey);
+ }
+
+ .theme--red {
+     background-color: var(--color--red);
+ }
+
+ .theme--green {
+     background-color: var(--color--green);
+ }

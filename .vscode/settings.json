@@ -1,7 +1,17 @@
 {
     "files.exclude": {
+        // "gulp-task": true,
         "node_modules": true,
         "docs": true,
         ".vscode": true,
+        ".editorconfig": true,
+        ".gitignore": true,
+        ".htmllintrc": true,
+        ".stylelintrc.json": true,
+        "eslint.json": true,
+        // "gulpfile.js": true,
+        "package-lock.json": true,
+        "package.json": true,
+        "README.md": true,
     }
 }

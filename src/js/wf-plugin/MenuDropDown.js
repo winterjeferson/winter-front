@@ -42,24 +42,17 @@ export class MenuDropDown {
 
     init() {
         this.update();
-
         if (!this.elMenu) return;
-
         if (!this.isClickBuild) {
             this.isClickBuild = true;
             this.addClick();
         }
-
         document.addEventListener('click', this.close, true);
     }
 
     listener(event) {
         const el = document.querySelectorAll(`.${window.wfpMenuDropDown.cssMobileShow}`);
-
-        if (
-            event.toElement.classList.contains('button') ||
-            event.toElement.classList.contains('link')
-        ) return;
+        if (event.toElement.classList.contains('button') || event.toElement.classList.contains('link')) return;
 
         el.forEach((item) => {
             wfpHelper.removeClass(item, window.wfpMenuDropDown.cssMobileShow);
@@ -67,7 +60,6 @@ export class MenuDropDown {
     }
 
     reset() {
-        console.log('aqui');
         document.removeEventListener('click', this.listener, true);
         window.wfpMenuDropDown.init();
     }
