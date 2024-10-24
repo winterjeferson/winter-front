@@ -1,0 +1,21 @@
+{% from 'include/template-nunjucks.html' import arrColor %}
+{% from 'include/template-nunjucks.html' import arrSize %}
+<div class="row">
+    <h1 class="page__title">Ajax</h1>
+    <div class="row">
+        {% include "include/menu-drop-down.html" %}
+    </div>
+    <div class="row">
+        {% include "include/menu-tab.html" %}
+    </div>
+    <p>
+        Lorem ipsum dolor sit amet, consecttur adipscing elit. Phasellusa vel tincidunt urnad. Seda ut egestas
+        urnar, a gravidaa ante. Vestium vesum mi sit amet sem malesua, non cursus magna posuere. Etiamas consectet
+        elit et efficur feugiata. Lorem ipsum dolor sit amet, consecttur adipscing elit. Mauriss nec urnds id ex
+        luctusa auctorf sit amet nec mauris. Nam tincidunt sodes risus, et aliquet ne que fermentum at?
+        <button type="button" class="link link--regular link--red"
+            onclick="window.wfpConfirmation.open({'title': 'Sit amet', 'content': 'Lorem ipsum dolor sit amet, consecttur adipscing elit?', 'size': 'small', 'onclick': 'console.log(this)'});">
+            open confirmation
+        </button>
+    </p>
+</div>

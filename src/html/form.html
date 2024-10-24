@@ -1,0 +1,270 @@
+{% from 'include/template-nunjucks.html' import arrSize, arrColor %}
+{% include "include/head.html" %}
+<h1 class="page__title">Form</h1>
+{% for color in arrColor %}
+<form class="form form--{{color}}">
+    <h2 class="page__sub-title">{{color}}</h2>
+    <div class="row">
+        <div class="column form__field">
+            <label class="form__label" for="id_number_{{color}}">Number</label>
+            <input class="form__input" id="id_number_{{color}}" type="number" value="0" aria-label="number" />
+        </div>
+        <div class="column form__field">
+            <label class="form__label" for="id_color_{{color}}">Color</label>
+            <input class="form__input" id="id_color_{{color}}" type="color" aria-label="color" />
+        </div>
+        <div class="column form__field">
+            <label class="form__label" for="id_required_{{color}}">Text Required</label>
+            <input class="form__input" id="id_required_{{color}}" type="text" value="" required
+                aria-label="text required" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="column form__field">
+            <label class="form__label" for="id_cpf_{{color}}">Mask CPF</label>
+            <input class="form__input" id="id_cpf_{{color}}" type="text" value="" aria-label="cpf" data-mask="cpf"
+                placeholder="000.000.00-00" />
+        </div>
+        <div class="column form__field">
+            <label class="form__label" for="id_cnpj_{{color}}">Mask CNPJ</label>
+            <input class="form__input" id="id_cnpj_{{color}}" type="text" value="" aria-label="cnpj" data-mask="cnpj"
+                placeholder="00.000.000/0000-00" />
+        </div>
+        <div class="column form__field">
+            <label class="form__label" for="id_phone_{{color}}">Mask Phone</label>
+            <input class="form__input" id="id_phone_{{color}}" type="text" value="" aria-label="phone" data-mask="phone"
+                placeholder="(00) 00000-0000" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="column form__field">
+            <label class="form__label" for="id_cep_{{color}}">Mask CEP</label>
+            <input class="form__input" id="id_cep_{{color}}" type="text" value="" aria-label="cep" data-mask="cep"
+                placeholder="00000-000" />
+        </div>
+        <div class="column form__field">
+            <label class="form__label" for="id_pis_{{color}}">Mask PIS</label>
+            <input class="form__input" id="id_pis_{{color}}" type="text" value="" aria-label="pis" data-mask="pis"
+                placeholder="000.00000.00-0" />
+        </div>
+        <div class="column form__field">
+            <label class="form__label" for="id_date_{{color}}">Date</label>
+            <input class="form__input" id="id_date_{{color}}" type="text" value="" aria-label="date" data-mask="date"
+                placeholder="dd/mm/yyyy" />
+        </div>
+    </div>
+    <div class="row form__field">
+        <label class="form__label" for="id_select_{{color}}">Select</label>
+        <select class="form__input" id="id_select_{{color}}" aria-label="select">
+            <option value="0">option 0</option>
+            <option value="1">option 1</option>
+            <option value="2">option 2</option>
+            <option value="3">option 3</option>
+            <option value="4">option 4</option>
+        </select>
+    </div>
+    <div class="row">
+        <div class="column">
+            <h2 class="page__title">Radio</h2>
+            <div class="row form__field">
+                <div class="form__option">
+                    <input id="id_radio_1_{{color}}" name="radio" type="radio" checked="checked">
+                    <label for="id_radio_1_{{color}}">Checked</label>
+                </div>
+                <div class="form__option">
+                    <input id="id_radio_2_{{color}}" name="radio" type="radio">
+                    <label for="id_radio_2_{{color}}">Unchecked</label>
+                </div>
+                <div class="form__option">
+                    <input id="id_radio_3_{{color}}" name="radio" type="radio" disabled>
+                    <label for="id_radio_3_{{color}}">Disabled</label>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <h2 class="page__title">Checkbox</h2>
+            <div class="row form__field">
+                <div class="form__option">
+                    <input id="id_checkbox_1_{{color}}" name="checkbox" type="checkbox" checked="checked">
+                    <label for="id_checkbox_1_{{color}}" class="checkbox-label">Checked</label>
+                </div>
+                <div class="form__option">
+                    <input id="id_checkbox_2_{{color}}" name="checkbox" type="checkbox">
+                    <label for="id_checkbox_2_{{color}}" class="checkbox-label">Unchecked</label>
+                </div>
+                <div class="form__option">
+                    <input id="id_checkbox_4_{{color}}" name="checkbox" type="checkbox" disabled="disabled"
+                        checked="checked">
+                    <label for="id_checkbox_4_{{color}}" class="checkbox-label">Disabled</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row form__field">
+        <label class="form__label" for="id_email_{{color}}">E-mail</label>
+        <input class="form__input" id="id_email_{{color}}" type="email" value="" aria-label="e-mail" />
+    </div>
+    <div class="row">
+        <div class="column form__field">
+            <label for="id_textarea_{{color}}" class="form__label">Textarea</label>
+            <textarea id="id_textarea_{{color}}" class="form__input" aria-label="textarea"></textarea>
+        </div>
+        <div class="column form__field">
+            <label for="id_multiple_{{color}}" class="form__label">Multiple</label>
+            <select id="id_multiple_{{color}}" class="form__input" multiple="" aria-label="multiple">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="column form__field">
+            <label for="id_text_disabled_disabled_{{color}}" class="form__label">Disabled</label>
+            <input id="id_text_disabled_disabled_{{color}}" class="form__input" type="text" value="disabled" disabled
+                aria-label="text disabled" />
+        </div>
+        <div class="column form__field">
+            <label for="id_text_disabled_invalid_{{color}}" class="form__label">Invalid</label>
+            <input id="id_text_disabled_invalid_{{color}}" class="form__input form__input--invalid" type="text" value=""
+                aria-label="text invalid" />
+            <div class="form__input-validation">put an invalidation message in here</div>
+        </div>
+        <div class="column form__field">
+            <label for="id_file_{{color}}" class="form__label">File</label>
+            <input id="id_file_{{color}}" class="form__input form__input-file" type="file">
+        </div>
+    </div>
+</form>
+<form class="form form--{{color}}">
+    <h2 class="page__sub-title">{{color}} skeleton</h2>
+    <div class="row">
+        <div class="column form__field">
+            <label class="form__label skeleton" for="id_number_{{color}}">Number</label>
+            <input class="form__input skeleton" id="id_number_{{color}}" type="number" value="0" aria-label="number" />
+        </div>
+        <div class="column form__field skeleton">
+            <label class="form__label" for="id_color_{{color}}">Color</label>
+            <input class="form__input" id="id_color_{{color}}" type="color" aria-label="color" />
+        </div>
+        <div class="column form__field">
+            <label class="form__label skeleton" for="id_required_{{color}}">Text Required</label>
+            <input class="form__input skeleton" id="id_required_{{color}}" type="text" value="" required
+                aria-label="text required" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="column form__field">
+            <label class="form__label skeleton" for="id_cpf_{{color}}">Mask CPF</label>
+            <input class="form__input skeleton" id="id_cpf_{{color}}" type="text" value="" aria-label="cpf"
+                data-mask="cpf" placeholder="000.000.00-00" />
+        </div>
+        <div class="column form__field">
+            <label class="form__label skeleton" for="id_cnpj_{{color}}">Mask CNPJ</label>
+            <input class="form__input skeleton" id="id_cnpj_{{color}}" type="text" value="" aria-label="cnpj"
+                data-mask="cnpj" placeholder="00.000.000/0000-00" />
+        </div>
+        <div class="column form__field">
+            <label class="form__label skeleton" for="id_phone_{{color}}">Mask Phone</label>
+            <input class="form__input skeleton" id="id_phone_{{color}}" type="text" value="" aria-label="phone"
+                data-mask="phone" placeholder="(00) 00000-0000" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="column form__field">
+            <label class="form__label skeleton" for="id_cep_{{color}}">Mask CEP</label>
+            <input class="form__input skeleton" id="id_cep_{{color}}" type="text" value="" aria-label="cep"
+                data-mask="cep" placeholder="00000-000" />
+        </div>
+        <div class="column form__field">
+            <label class="form__label skeleton" for="id_pis_{{color}}">Mask PIS</label>
+            <input class="form__input skeleton" id="id_pis_{{color}}" type="text" value="" aria-label="pis"
+                data-mask="pis" placeholder="000.00000.00-0" />
+        </div>
+        <div class="column form__field">
+            <label class="form__label skeleton" for="id_date_{{color}}">Date</label>
+            <input class="form__input skeleton" id="id_date_{{color}}" type="text" value="" aria-label="date"
+                data-mask="date" placeholder="dd/mm/yyyy" />
+        </div>
+    </div>
+    <div class="row form__field">
+        <label class="form__label skeleton" for="id_select_{{color}}">Select</label>
+        <select class="form__input skeleton" id="id_select_{{color}}" aria-label="select">
+            <option value="0">option 0</option>
+            <option value="1">option 1</option>
+            <option value="2">option 2</option>
+            <option value="3">option 3</option>
+            <option value="4">option 4</option>
+        </select>
+    </div>
+    <div class="row">
+        <div class="column">
+            <h2 class="page__title">Radio</h2>
+            <div class="row form__field">
+                <div class="form__option skeleton">
+                    <input id="id_radio_1_{{color}}" name="radio" type="radio" checked="checked">
+                    <label for="id_radio_1_{{color}}">Checked</label>
+                </div>
+                <div class="form__option skeleton">
+                    <input id="id_radio_2_{{color}}" name="radio" type="radio">
+                    <label for="id_radio_2_{{color}}">Unchecked</label>
+                </div>
+                <div class="form__option skeleton">
+                    <input id="id_radio_3_{{color}}" name="radio" type="radio" disabled>
+                    <label for="id_radio_3_{{color}}">Disabled</label>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <h2 class="page__title">Checkbox</h2>
+            <div class="row form__field">
+                <div class="form__option skeleton">
+                    <input id="id_checkbox_1_{{color}}" name="checkbox" type="checkbox" checked="checked">
+                    <label for="id_checkbox_1_{{color}}" class="checkbox-label">Checked</label>
+                </div>
+                <div class="form__option skeleton">
+                    <input id="id_checkbox_2_{{color}}" name="checkbox" type="checkbox">
+                    <label for="id_checkbox_2_{{color}}" class="checkbox-label">Unchecked</label>
+                </div>
+                <div class="form__option skeleton">
+                    <input id="id_checkbox_4_{{color}}" name="checkbox" type="checkbox" disabled="disabled"
+                        checked="checked skeleton">
+                    <label for="id_checkbox_4_{{color}}" class="checkbox-label">Disabled</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row form__field">
+        <label class="form__label skeleton" for="id_email_{{color}}">E-mail</label>
+        <input class="form__input skeleton" id="id_email_{{color}}" type="email" value="" aria-label="e-mail" />
+    </div>
+    <div class="row">
+        <div class="column form__field">
+            <label for="id_textarea_{{color}}" class="form__label skeleton">Textarea</label>
+            <textarea id="id_textarea_{{color}}" class="form__input skeleton" aria-label="textarea"></textarea>
+        </div>
+        <div class="column form__field">
+            <label for="id_multiple_{{color}}" class="form__label skeleton">Multiple</label>
+            <select id="id_multiple_{{color}}" class="form__input skeleton" multiple="" aria-label="multiple">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+        </div>
+    </div>
+    <div class="row form__field">
+        <label for="id_text_{{color}}" class="form__label skeleton">Disabled</label>
+        <input id="id_text_{{color}}" class="form__input skeleton" type="text" value="disabled" disabled
+            aria-label="text disabled" />
+    </div>
+    <div class="row form__field skeleton">
+        <label for="id_file_{{color}}" class="form__label">File</label>
+        <input id="id_file_{{color}}" class="form__input" type="file">
+    </div>
+</form>
+{% endfor %}
+{% include "include/footer.html" %}

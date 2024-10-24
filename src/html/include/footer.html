@@ -1,0 +1,55 @@
+        </article>
+        <footer class="grid__footer">
+            {% include "include/template-footer.html" %}
+        </footer>
+        {% from 'include/template-nunjucks.html' import version %}
+     
+        <script type="module">
+            import * as wfp from './assets/{{version}}/js/wf-plugin.js';
+            import * as wft from './assets/{{version}}/js/wf-theme.js';
+
+            window.wfpLanguage = "pt";
+            window.wfpVersionWF = "{{version}}";
+            window.wfpIconAddress = "./assets/{{version}}/img/icon.svg#";
+
+            window.wfpCarousel = new wfp.Carousel();
+            window.wfpComponent = new wfp.Component();
+            window.wfpConfirmation = new wfp.Confirmation();
+            window.wfpForm = new wfp.Form();
+            window.wfpGallery = new wfp.Gallery();
+            window.wfpHelper = new wfp.Helper();
+            window.wfpLazyLoad = new wfp.LazyLoad();
+            window.wfpLoadingMain = new wfp.LoadingMain();
+            window.wfpMask = new wfp.Mask();
+            window.wfpMenuDropDown = new wfp.MenuDropDown();
+            window.wfpMenuTab = new wfp.MenuTab();
+            window.wfpMenuToggle = new wfp.MenuToggle();
+            window.wfpModal = new wfp.Modal();
+            window.wfpNotification = new wfp.Notification();
+            window.wfpTable = new wfp.Table();
+            window.wfpTag = new wfp.Tag();
+            window.wfpTranslation = new wfp.Translation();
+
+            window.wfpTheme = new wft.Theme();
+
+            window.addEventListener('load',
+                window.wfpTranslation.init(),
+                window.wfpMask.init(),
+                window.wfpCarousel.init(),
+                window.wfpLazyLoad.init(),
+                window.wfpMenuDropDown.init(),
+                window.wfpMenuTab.init(),
+                window.wfpMenuToggle.init(),
+                window.wfpNotification.init(),
+                window.wfpTable.init(),
+
+                window.wfpTheme.init(),
+
+                window.wfpLoadingMain.hide(), {
+                    once: true
+                });
+        </script>
+    </main>
+</body>
+
+</html>

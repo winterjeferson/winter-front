@@ -1,0 +1,124 @@
+{% from 'include/template-nunjucks.html' import version, arrSize, arrColor %}
+{% set arrSocial = [
+'facebook',
+'twitter',
+'youtube',
+'linkedin',
+'github',
+'instagram'
+]
+%}
+{% include "include/head.html" %}
+<section class="center">
+    <h1 class="page__title">Button</h1>
+    {% for size in arrSize %}
+    <h2 class="page__sub-title">{{size}}</h2>
+    <nav class="button-wrapper row center">
+        {% for color in arrColor %}
+        <button type="button" class="button button--{{size}} button--{{color}}">
+            button button--{{size}} button--{{color}} <b>bold</b> <strong>strong</strong>
+        </button>
+        {% endfor %}
+    </nav>
+    {% endfor %}
+</section>
+<section class="center">
+    <h1 class="page__title">Button disabled</h1>
+    <nav class="button-wrapper row center">
+        {% for color in arrColor %}
+        <button type="button" class="button button--regular button--{{color}}" disabled>
+            button button--regular button--{{color}} <b>bold</b>
+        </button>
+        {% endfor %}
+    </nav>
+</section>
+<section class="center">
+    <h1 class="page__title">Button Full</h1>
+    {% for size in arrSize %}
+    <h2 class="page__sub-title">{{size}}</h2>
+    <nav class="button-wrapper row center">
+        {% for color in arrColor %}
+        <button type="button" class="button button--{{size}} button--{{color}} button--full">
+            button button--{{size}} button--{{color}} button--full
+        </button>
+        {% endfor %}
+    </nav>
+    {% endfor %}
+</section>
+<section class="center">
+    <h1 class="page__title">Button skeleton</h1>
+    {% for size in arrSize %}
+    <h2 class="page__sub-title">{{size}}</h2>
+    <nav class="button-wrapper row center">
+        {% for color in arrColor %}
+        <button type="button" class="button button--{{size}} button--{{color}} skeleton">
+            button button--{{size}} button--{{color}}
+        </button>
+        {% endfor %}
+    </nav>
+    {% endfor %}
+</section>
+<section class="center">
+    <h1 class="page__title">Drop down</h1>
+    {% for size in arrSize %}
+    <h2 class="page__sub-title">{{size}}</h2>
+    <nav class="button-wrapper row center">
+        {% for color in arrColor %}
+        <div class="drop-down">
+            <a href="javascript:void(0);" class="button button--{{size}} button--{{color}}">Button</a>
+            <div class="drop-down__content">
+                <a href="javascript:void(0);" class="button button--{{size}} button--{{color}}">Button</a>
+                <a href="javascript:void(0);" class="button button--{{size}} button--{{color}}">Drop down</a>
+                <a href="javascript:void(0);" class="button button--{{size}} button--{{color}}">Dolor sit amet</a>
+                <a href="javascript:void(0);" class="button button--{{size}} button--{{color}}">Consecttur adipscing
+                    elit</a>
+                <a href="javascript:void(0);" class="button button--{{size}} button--{{color}}">Lorem ipsum</a>
+                <a href="javascript:void(0);" class="button button--{{size}} button--{{color}}">Dolor sit amet</a>
+            </div>
+        </div>
+        {% endfor %}
+    </nav>
+    {% endfor %}
+</section>
+<section class="center">
+    <h1 class="page__title">Button Outline</h1>
+    {% for size in arrSize %}
+    <h2 class="page__sub-title">{{size}}</h2>
+    <nav class="button-wrapper row center">
+        {% for color in arrColor %}
+        <button type="button" class="button button-outline button--{{size}} button-outline--{{color}}">
+            button button-outline button--{{size}} button-outline--{{color}}
+        </button>
+        {% endfor %}
+    </nav>
+    {% endfor %}
+</section>
+<section class="center">
+    <h1 class="page__title">Link</h1>
+    {% for size in arrSize %}
+    <h2 class="page__sub-title">{{size}}</h2>
+    <nav class="button-wrapper row center">
+        {% for color in arrColor %}
+        <button type="button" class="link link--{{size}} link--{{color}}">
+            link link--{{size}} link--{{color}}
+        </button>
+        {% endfor %}
+    </nav>
+    {% endfor %}
+</section>
+<section class="center">
+    <h1 class="page__title">Social</h1>
+    {% for size in arrSize %}
+    <div class="row center button-wrapper">
+        {% for social in arrSocial %}
+        <a href="javascript:void(0);" rel="noopener"
+            class="button button--{{size}} button--{{size}}--proportional button--grey">
+            <svg class="icon icon--{{size}} icon--black">
+                <use xlink:href="./assets/2-0-1/img/icon.svg#{{social}}"></use>
+            </svg>
+        </a>
+        {% endfor %}
+    </div>
+    {% endfor %}
+</section>
+{% include "include/footer.html" %}
